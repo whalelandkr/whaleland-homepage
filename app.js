@@ -1,109 +1,13 @@
 "use strict";
-
-function getNestedValue(source, path) {
-  return path.split(".").reduce((value, key) => value?.[key], source);
-}
-
-function createServiceCard(service) {
-  const article = document.createElement("article");
-  article.className = "service-card";
-  article.dataset.tone = service.tone || "";
-
-  const meta = document.createElement("div");
-  meta.className = "service-meta";
-
-  const number = document.createElement("span");
-  number.textContent = service.number || "";
-
-  const status = document.createElement("span");
-  status.textContent = service.status || "";
-
-  meta.append(number, status);
-
-  const category = document.createElement("div");
-  category.className = "service-category";
-  category.textContent = service.category || "";
-
-  const title = document.createElement("h3");
-  title.textContent = service.title || "";
-
-  const description = document.createElement("p");
-  description.textContent = service.description || "";
-
-  const link = document.createElement("a");
-  link.className = "service-link";
-  link.textContent = service.cta || "";
-  link.href = service.enabled ? service.url : "#";
-  link.setAttribute("aria-disabled", service.enabled ? "false" : "true");
-
-  if (service.enabled) {
-    link.rel = "noopener";
-  } else {
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-    });
-  }
-
-  article.append(meta, category, title, description, link);
-  return article;
-}
-
-async function initializePage() {
-  const locale = document.documentElement.dataset.locale || "ko";
-  const root = document.documentElement.dataset.root || "../";
-
-  localStorage.setItem("whalelandLanguage", locale);
-
-  document.querySelectorAll("[data-language]").forEach((link) => {
-    link.classList.toggle("is-active", link.dataset.language === locale);
-    link.addEventListener("click", () => {
-      localStorage.setItem("whalelandLanguage", link.dataset.language);
-    });
-  });
-
-  try {
-    const response = await fetch(`${root}locales/${locale}.json`, {
-      cache: "no-cache"
-    });
-
-    if (!response.ok) {
-      throw new Error(`Locale request failed: ${response.status}`);
-    }
-
-    const copy = await response.json();
-
-    document.title = copy.meta?.title || "Whale Land";
-
-    const metaDescription = document.querySelector(
-      'meta[name="description"]'
-    );
-
-    if (metaDescription && copy.meta?.description) {
-      metaDescription.setAttribute("content", copy.meta.description);
-    }
-
-    document.querySelectorAll("[data-i18n]").forEach((node) => {
-      const key = node.dataset.i18n;
-      const value = getNestedValue(copy, key);
-
-      if (typeof value === "string") {
-        node.textContent = value;
-      }
-    });
-
-    const serviceGrid = document.getElementById("serviceGrid");
-    serviceGrid.replaceChildren();
-
-    copy.services.items.forEach((service) => {
-      serviceGrid.appendChild(createServiceCard(service));
-    });
-  } catch (error) {
-    console.error("Whale Land locale loading failed.", error);
-
-    const serviceGrid = document.getElementById("serviceGrid");
-    serviceGrid.textContent =
-      "The language file could not be loaded. Please refresh the page.";
-  }
-}
-
-initializePage();
+const $=(s,r=document)=>r.querySelector(s);const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+function nested(o,p){return p.split('.').reduce((v,k)=>v?.[k],o)}
+async function loadCopy(){const root=document.documentElement.dataset.root||'./';const locale=document.documentElement.dataset.locale||'ko';const res=await fetch(`${root}locales/${locale}.json`,{cache:'no-cache'});if(!res.ok)throw new Error(`Locale ${res.status}`);return res.json()}
+function applyText(copy){$$('[data-i18n]').forEach(n=>{const v=nested(copy,n.dataset.i18n);if(typeof v==='string')n.textContent=v})}
+function illustration(service,root){return `${root}assets/illustrations/${service.slug==='korean-birth-type'?'birth-type':service.slug}.svg`}
+function renderWorlds(copy,root){const list=$('#worldList');if(!list)return;list.replaceChildren();Object.values(copy.services).forEach(service=>{const a=document.createElement('a');a.className='world-card reveal';a.dataset.theme=service.theme;a.href=`./services/${service.slug}/`;a.innerHTML=`<span class="world-index">${service.order}</span><div class="world-visual"><img src="${illustration(service,root)}" alt=""></div><div class="world-copy"><div class="service-meta"><span>${service.category}</span><span class="status-pill">${service.status}</span></div><h3>${service.cardTitle}</h3><p>${service.summary}</p></div><span class="world-link" aria-hidden="true">↗</span>`;list.append(a)})}
+function renderPrinciples(copy){const grid=$('#principleGrid');if(!grid)return;grid.replaceChildren();copy.home.principles.forEach(p=>{const el=document.createElement('article');el.className='principle reveal';el.innerHTML=`<span class="principle-index">${p.index}</span><h3>${p.title}</h3><p>${p.body}</p>`;grid.append(el)})}
+function renderService(copy,root){const slug=document.documentElement.dataset.service;const s=copy.services[slug];if(!s)return;document.body.dataset.theme=s.theme;document.title=`${s.title} — Whale Land`;const map={serviceOrder:`${s.order} / ${s.category}`,serviceStatus:s.status,serviceHeroTitle:s.heroTitle,serviceHeroLead:s.heroLead,serviceVisualCaption:s.visualCaption,statementEyebrow:s.statementEyebrow,statementTitle:s.statementTitle,statementBody:s.statementBody,featuresTitle:s.featuresTitle,processEyebrow:s.processEyebrow,processTitle:s.processTitle,closingTitle:s.closingTitle,closingBody:s.closingBody};Object.entries(map).forEach(([id,v])=>{const n=document.getElementById(id);if(n)n.textContent=v});const art=$('#serviceIllustration');art.src=illustration(s,root);const tags=$('#tagList');tags.replaceChildren(...s.tags.map(t=>{const x=document.createElement('span');x.className='tag';x.textContent=t;return x}));$$('[data-external-link]').forEach(a=>{a.href=s.externalUrl;a.textContent=s.externalCta;a.setAttribute('aria-label',`${s.externalCta}. ${copy.common.externalNotice}`)});const fg=$('#featureGrid');fg.replaceChildren(...s.features.map(f=>{const x=document.createElement('article');x.className='feature-card reveal';x.innerHTML=`<span class="feature-index">${f.index}</span><h3>${f.title}</h3><p>${f.body}</p>`;return x}));const pg=$('#processGrid');pg.replaceChildren(...s.steps.map(st=>{const x=document.createElement('article');x.className='process-step reveal';x.innerHTML=`<span class="step-index">${st.index}</span><h3>${st.title}</h3><p>${st.body}</p>`;return x}))}
+function setupReveal(){const nodes=$$('.reveal');if(!('IntersectionObserver'in window)){nodes.forEach(n=>n.classList.add('is-visible'));return}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.12});nodes.forEach(n=>io.observe(n))}
+function setupMenu(){const b=$('.menu-toggle'),p=$('.mobile-panel');if(!b||!p)return;b.addEventListener('click',()=>{const open=p.classList.toggle('is-open');b.setAttribute('aria-expanded',String(open))});$$('a',p).forEach(a=>a.addEventListener('click',()=>p.classList.remove('is-open')))}
+async function init(){try{const copy=await loadCopy();applyText(copy);const root=document.documentElement.dataset.root||'./';const page=document.documentElement.dataset.page;if(page==='home'){renderWorlds(copy,root);renderPrinciples(copy)}if(page==='service')renderService(copy,root);setupReveal();setupMenu();localStorage.setItem('whalelandLanguage',document.documentElement.dataset.locale||'ko')}catch(e){console.error(e);document.body.classList.add('locale-error')}}
+init();
