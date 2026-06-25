@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-locale="en" data-root="../">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whale Land | Creative Services and Travel Experiences</title>
+  <meta name="description" content="Discover Whale Land projects: Korean Birth Type, Haedurio, and C.O.V.E.R.T." />
+
+  <link rel="alternate" hreflang="ko" href="https://whalelandkr.com/ko/" />
+  <link rel="alternate" hreflang="en" href="https://whalelandkr.com/en/" />
+  <link rel="alternate" hreflang="ja" href="https://whalelandkr.com/ja/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://whalelandkr.com/zh-cn/" />
+  <link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/" />
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Whale Land home">
+      <span class="brand-mark" aria-hidden="true">W</span>
+      <span>Whale Land</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#about" data-i18n="nav.about"></a>
+      <a href="#services" data-i18n="nav.services"></a>
+      <a href="#contact" data-i18n="nav.contact"></a>
+    </nav>
+
+    <nav class="language-nav" aria-label="Language selector">
+      <a href="../ko/" data-language="ko">KR</a>
+      <a href="../en/" data-language="en">EN</a>
+      <a href="../ja/" data-language="ja">JP</a>
+      <a href="../zh-cn/" data-language="zh-cn">CN</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+        <h1 data-i18n="hero.title"></h1>
+        <p class="hero-tagline" data-i18n="hero.tagline"></p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#services" data-i18n="hero.primaryCta"></a>
+          <a class="button button-secondary" href="#about" data-i18n="hero.secondaryCta"></a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Whale Land logo">
+        <div class="logo-orbit logo-orbit-one"></div>
+        <div class="logo-orbit logo-orbit-two"></div>
+
+        <div class="logo-card">
+          <img
+            src="../whaleland-logo.png"
+            alt="Whale Land"
+            class="hero-logo"
+            onerror="this.hidden=true; this.nextElementSibling.hidden=false;"
+          />
+          <span class="logo-fallback" hidden>W</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="about.eyebrow"></p>
+        <h2 data-i18n="about.title"></h2>
+      </div>
+
+      <div class="about-panel">
+        <p data-i18n="about.body"></p>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="services.eyebrow"></p>
+        <h2 data-i18n="services.title"></h2>
+        <p class="section-description" data-i18n="services.description"></p>
+      </div>
+
+      <div class="service-grid" id="serviceGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-panel">
+        <div>
+          <p class="eyebrow" data-i18n="contact.eyebrow"></p>
+          <h2 data-i18n="contact.title"></h2>
+          <p data-i18n="contact.body"></p>
+        </div>
+
+        <a class="button button-secondary" href="#services" data-i18n="contact.cta"></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span data-i18n="footer.copyright"></span>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

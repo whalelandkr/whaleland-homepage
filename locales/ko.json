@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "title": "Whale Land | 창의적인 서비스와 여행 경험",
+    "description": "Whale Land의 Korean Birth Type, 해드리오, C.O.V.E.R.T 프로젝트를 소개합니다."
+  },
+  "nav": {
+    "about": "회사 소개",
+    "services": "서비스",
+    "contact": "연락처"
+  },
+  "hero": {
+    "eyebrow": "CREATIVE CONTENT STUDIO",
+    "title": "아이디어를 실제 경험으로 만듭니다.",
+    "tagline": "Whale Land는 자기이해 콘텐츠, 여행 지원 서비스, 미션형 관광 상품을 기획하고 운영합니다.",
+    "primaryCta": "서비스 보기",
+    "secondaryCta": "Whale Land 소개"
+  },
+  "about": {
+    "eyebrow": "ABOUT WHALE LAND",
+    "title": "감성과 기술을 연결하는 콘텐츠 스튜디오",
+    "body": "Whale Land는 일상과 여행에서 실제로 쓰일 수 있는 서비스에 이야기와 디자인을 더합니다. 서로 다른 세 프로젝트를 독립된 브랜드로 운영하면서도, 쉽고 즐거운 사용자 경험이라는 하나의 방향을 공유합니다."
+  },
+  "services": {
+    "eyebrow": "OUR SERVICES",
+    "title": "세 개의 독립적인 프로젝트",
+    "description": "각 카드를 누르면 해당 서비스의 공식 사이트로 이동합니다.",
+    "items": [
+      {
+        "number": "01",
+        "status": "LIVE",
+        "category": "SELF-DISCOVERY",
+        "title": "Korean Birth Type",
+        "description": "한국 전통 명리에서 영감을 받은 자기이해형 디지털 카드 리딩 서비스입니다. 예언보다 자신을 이해하는 새로운 관점을 제공합니다.",
+        "cta": "서비스 방문",
+        "url": "https://koreanbirthtype.com",
+        "enabled": true,
+        "tone": "birth"
+      },
+      {
+        "number": "02",
+        "status": "LIVE",
+        "category": "TRAVEL SUPPORT",
+        "title": "해드리오",
+        "description": "한국 여행 중 발생하는 예약, 구매, 배송, 분실 등 예상치 못한 문제를 해결하는 현지 지원 서비스입니다.",
+        "cta": "서비스 방문",
+        "url": "https://haedurio.com",
+        "enabled": true,
+        "tone": "haedurio"
+      },
+      {
+        "number": "03",
+        "status": "PREPARING",
+        "category": "MISSION TRAVEL",
+        "title": "C.O.V.E.R.T",
+        "description": "도시를 비밀 작전처럼 탐험하고 스탬프와 기록을 남기는 스파이 콘셉트의 미션형 여행 상품입니다.",
+        "cta": "미션 사이트",
+        "url": "https://covert.whalelandkr.com",
+        "enabled": false,
+        "tone": "covert"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title": "각 서비스의 최신 소식은 공식 페이지에서 확인해주세요.",
+    "body": "제휴 및 문의 채널은 정식 공개 후 이곳에 안내할 예정입니다.",
+    "cta": "서비스 목록 보기"
+  },
+  "footer": {
+    "copyright": "© 2026 Whale Land. All rights reserved."
+  }
+}

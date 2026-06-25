@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "title": "Whale Land | クリエイティブなサービスと旅の体験",
+    "description": "Whale LandのKorean Birth Type、ヘドゥリオ、C.O.V.E.R.Tをご紹介します。"
+  },
+  "nav": {
+    "about": "会社紹介",
+    "services": "サービス",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "eyebrow": "CREATIVE CONTENT STUDIO",
+    "title": "アイデアを、実際の体験へ。",
+    "tagline": "Whale Landは、自己理解コンテンツ、旅行サポートサービス、ミッション型観光商品を企画・運営しています。",
+    "primaryCta": "サービスを見る",
+    "secondaryCta": "Whale Landについて"
+  },
+  "about": {
+    "eyebrow": "ABOUT WHALE LAND",
+    "title": "感性とテクノロジーをつなぐコンテンツスタジオ",
+    "body": "Whale Landは、日常や旅行で実際に役立つサービスに、物語とデザインを加えます。3つのプロジェクトは独立したブランドとして運営しながら、分かりやすく、便利で、楽しいユーザー体験という共通の方向性を持っています。"
+  },
+  "services": {
+    "eyebrow": "OUR SERVICES",
+    "title": "3つの独立したプロジェクト",
+    "description": "カードを選択すると、各サービスの公式サイトへ移動します。",
+    "items": [
+      {
+        "number": "01",
+        "status": "公開中",
+        "category": "SELF-DISCOVERY",
+        "title": "Korean Birth Type",
+        "description": "韓国の伝統的な四柱推命から着想を得た、自己理解のためのデジタルカードリーディングです。未来を予言するのではなく、自分を理解する新しい視点を提供します。",
+        "cta": "サービスを見る",
+        "url": "https://koreanbirthtype.com",
+        "enabled": true,
+        "tone": "birth"
+      },
+      {
+        "number": "02",
+        "status": "公開中",
+        "category": "TRAVEL SUPPORT",
+        "title": "ヘドゥリオ",
+        "description": "韓国旅行中に発生する予約、購入、配送、紛失など、予想外のトラブルを解決する現地サポートサービスです。",
+        "cta": "サービスを見る",
+        "url": "https://haedurio.com",
+        "enabled": true,
+        "tone": "haedurio"
+      },
+      {
+        "number": "03",
+        "status": "準備中",
+        "category": "MISSION TRAVEL",
+        "title": "C.O.V.E.R.T",
+        "description": "街歩きを秘密作戦のように楽しみ、スタンプとフィールドノートで記録するスパイコンセプトのミッション型旅行商品です。",
+        "cta": "ミッションサイト",
+        "url": "https://covert.whalelandkr.com",
+        "enabled": false,
+        "tone": "covert"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title": "最新情報は各サービスの公式ページでご確認ください。",
+    "body": "提携・お問い合わせ窓口は、正式公開後にこちらでご案内します。",
+    "cta": "サービス一覧へ"
+  },
+  "footer": {
+    "copyright": "© 2026 Whale Land. All rights reserved."
+  }
+}

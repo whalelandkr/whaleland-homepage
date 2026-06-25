@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "title": "Whale Land | Creative Services and Travel Experiences",
+    "description": "Discover Whale Land projects: Korean Birth Type, Haedurio, and C.O.V.E.R.T."
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "CREATIVE CONTENT STUDIO",
+    "title": "We turn ideas into real experiences.",
+    "tagline": "Whale Land creates self-discovery content, travel support services, and mission-based tourism products.",
+    "primaryCta": "View services",
+    "secondaryCta": "About Whale Land"
+  },
+  "about": {
+    "eyebrow": "ABOUT WHALE LAND",
+    "title": "A content studio connecting emotion and technology",
+    "body": "Whale Land adds storytelling and thoughtful design to services people can actually use in daily life and while traveling. Our three projects operate as independent brands while sharing one goal: a simple, useful, and enjoyable user experience."
+  },
+  "services": {
+    "eyebrow": "OUR SERVICES",
+    "title": "Three independent projects",
+    "description": "Select a card to visit the official service website.",
+    "items": [
+      {
+        "number": "01",
+        "status": "LIVE",
+        "category": "SELF-DISCOVERY",
+        "title": "Korean Birth Type",
+        "description": "A digital self-discovery card reading inspired by Korean traditional saju, offering a new perspective for understanding yourself rather than predicting the future.",
+        "cta": "Visit service",
+        "url": "https://koreanbirthtype.com",
+        "enabled": true,
+        "tone": "birth"
+      },
+      {
+        "number": "02",
+        "status": "LIVE",
+        "category": "TRAVEL SUPPORT",
+        "title": "Haedurio",
+        "description": "A local support service that helps travelers in Korea handle unexpected issues involving bookings, purchases, deliveries, lost items, and more.",
+        "cta": "Visit service",
+        "url": "https://haedurio.com",
+        "enabled": true,
+        "tone": "haedurio"
+      },
+      {
+        "number": "03",
+        "status": "PREPARING",
+        "category": "MISSION TRAVEL",
+        "title": "C.O.V.E.R.T",
+        "description": "A spy-themed mission travel product that turns city exploration into a secret operation recorded through stamps and field notes.",
+        "cta": "Open mission site",
+        "url": "https://covert.whalelandkr.com",
+        "enabled": false,
+        "tone": "covert"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title": "Visit each official page for the latest updates.",
+    "body": "Partnership and inquiry channels will be announced here when they officially open.",
+    "cta": "View services"
+  },
+  "footer": {
+    "copyright": "© 2026 Whale Land. All rights reserved."
+  }
+}

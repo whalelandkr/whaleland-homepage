@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "title": "Whale Land | 创意服务与旅行体验",
+    "description": "了解 Whale Land 旗下的 Korean Birth Type、Haedurio 和 C.O.V.E.R.T。"
+  },
+  "nav": {
+    "about": "公司介绍",
+    "services": "服务",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "eyebrow": "CREATIVE CONTENT STUDIO",
+    "title": "让创意成为真实体验。",
+    "tagline": "Whale Land 策划并运营自我理解内容、旅行支援服务和任务型旅游产品。",
+    "primaryCta": "查看服务",
+    "secondaryCta": "了解 Whale Land"
+  },
+  "about": {
+    "eyebrow": "ABOUT WHALE LAND",
+    "title": "连接感性与技术的内容工作室",
+    "body": "Whale Land 为日常生活和旅行中真正有用的服务加入故事与设计。三个项目以独立品牌运营，同时共享同一个方向：简单、实用且愉快的用户体验。"
+  },
+  "services": {
+    "eyebrow": "OUR SERVICES",
+    "title": "三个独立项目",
+    "description": "点击卡片即可前往各服务的官方网站。",
+    "items": [
+      {
+        "number": "01",
+        "status": "已上线",
+        "category": "SELF-DISCOVERY",
+        "title": "Korean Birth Type",
+        "description": "一项受韩国传统四柱命理启发的数字化自我理解卡片解读服务。它不强调预测未来，而是提供理解自己的新视角。",
+        "cta": "访问服务",
+        "url": "https://koreanbirthtype.com",
+        "enabled": true,
+        "tone": "birth"
+      },
+      {
+        "number": "02",
+        "status": "已上线",
+        "category": "TRAVEL SUPPORT",
+        "title": "Haedurio",
+        "description": "为韩国旅行中的预订、购物、配送、物品遗失等突发问题提供本地协助的旅行支援服务。",
+        "cta": "访问服务",
+        "url": "https://haedurio.com",
+        "enabled": true,
+        "tone": "haedurio"
+      },
+      {
+        "number": "03",
+        "status": "筹备中",
+        "category": "MISSION TRAVEL",
+        "title": "C.O.V.E.R.T",
+        "description": "一款把城市探索设计成秘密任务，并通过印章和现场记录留下旅程痕迹的特工主题任务型旅游产品。",
+        "cta": "进入任务网站",
+        "url": "https://covert.whalelandkr.com",
+        "enabled": false,
+        "tone": "covert"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title": "请前往各服务的官方页面查看最新消息。",
+    "body": "合作与咨询渠道将在正式开放后于此公布。",
+    "cta": "查看服务"
+  },
+  "footer": {
+    "copyright": "© 2026 Whale Land. All rights reserved."
+  }
+}
