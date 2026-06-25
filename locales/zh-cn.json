@@ -43,7 +43,10 @@
         "title": "Built to travel",
         "body": "从一开始就考虑多语言与跨市场使用，而不是事后补充。"
       }
-    ]
+    ],
+    "voyageTop": "蓝天 · 开阔海洋",
+    "voyageLeft": "我们的航行 · 三个世界",
+    "voyageRight": "绿色岛屿 · 鲜活服务"
   },
   "services": {
     "korean-birth-type": {

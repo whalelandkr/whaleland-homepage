@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko" data-page="service">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Whale Land Service</title>
+  <meta name="description" content="Whale Land service introduction" />
+  <link rel="icon" href="./assets/whaleland-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="service-page">
+  <div class="page-grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="./index.html" data-home-link aria-label="Whale Land home">
+      <img src="./assets/whaleland-logo.png" alt="" />
+      <span>Whale Land</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="./index.html#worlds" data-home-section="worlds" data-i18n="common.navWorlds"></a>
+      <a href="./index.html#studio" data-home-section="studio" data-i18n="common.navStudio"></a>
+    </nav>
+
+    <div class="header-actions">
+      <nav class="language-nav" aria-label="Language selector">
+        <button type="button" data-lang="ko">KR</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ja">JP</button>
+        <button type="button" data-lang="zh-cn">CN</button>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Menu">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-panel" aria-label="Mobile navigation">
+    <a href="./index.html#worlds" data-home-section="worlds" data-i18n="common.navWorlds"></a>
+    <a href="./index.html#studio" data-home-section="studio" data-i18n="common.navStudio"></a>
+  </nav>
+
+  <main>
+    <section class="service-hero">
+      <div class="service-hero-copy reveal is-visible">
+        <p class="service-order" id="serviceOrder"></p>
+        <h1 class="service-hero-title" id="serviceHeroTitle"></h1>
+        <p class="service-hero-lead" id="serviceHeroLead"></p>
+        <div class="tag-list" id="tagList"></div>
+        <a class="button button-primary external-cta" data-external-link href="#"></a>
+      </div>
+
+      <div class="service-art reveal is-visible">
+        <div class="service-art-orbit" aria-hidden="true"></div>
+        <div class="service-art-frame">
+          <img id="serviceIllustration" alt="" />
+        </div>
+        <p class="service-art-caption" id="serviceVisualCaption"></p>
+      </div>
+    </section>
+
+    <section class="section statement-section">
+      <div class="section-inner statement-grid">
+        <div class="reveal">
+          <p class="eyebrow" id="statementEyebrow"></p>
+          <h2 class="statement-title" id="statementTitle"></h2>
+        </div>
+        <p class="statement-body reveal" id="statementBody"></p>
+      </div>
+    </section>
+
+    <section class="section feature-section">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">WHAT IT OFFERS</p>
+            <h2 class="section-title" id="featuresTitle"></h2>
+          </div>
+        </div>
+        <div class="feature-grid" id="featureGrid"></div>
+      </div>
+    </section>
+
+    <section class="section process-section">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow" id="processEyebrow"></p>
+            <h2 class="section-title" id="processTitle"></h2>
+          </div>
+        </div>
+        <div class="process-grid" id="processGrid"></div>
+      </div>
+    </section>
+
+    <section class="section closing-section">
+      <div class="section-inner">
+        <div class="closing-card reveal">
+          <h2 id="closingTitle"></h2>
+          <p id="closingBody"></p>
+          <a class="button button-primary" data-external-link href="#"></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span data-i18n="common.footerLine"></span>
+    <span data-i18n="common.copyright"></span>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

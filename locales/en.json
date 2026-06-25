@@ -43,7 +43,10 @@
         "title": "Built to travel",
         "body": "We plan for multiple languages and markets from the beginning, not as an afterthought."
       }
-    ]
+    ],
+    "voyageTop": "BLUE SKY · OPEN SEA",
+    "voyageLeft": "OUR VOYAGE · THREE WORLDS",
+    "voyageRight": "GREEN ISLAND · LIVING SERVICES"
   },
   "services": {
     "korean-birth-type": {

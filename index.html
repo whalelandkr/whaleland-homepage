@@ -1,1 +1,133 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Whale Land</title><meta name="description" content="Choose a language to enter Whale Land."><style>*{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;color:#f4efe7;background:radial-gradient(circle at 70% 20%,#233467 0,transparent 28%),radial-gradient(circle at 30% 80%,#15534f 0,transparent 26%),#08141d;font-family:Inter,system-ui,sans-serif}.wrap{width:min(780px,calc(100% - 32px));text-align:center}.mark{width:72px;height:72px;border-radius:23px}.k{margin:30px 0 0;color:#76ddd7;font-size:.72rem;font-weight:900;letter-spacing:.2em}.t{margin:14px 0 0;font-size:clamp(3.2rem,10vw,7rem);line-height:.9;letter-spacing:-.07em}.d{margin:22px 0 34px;color:#9caaaF}.langs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.langs a{padding:20px 12px;border:1px solid rgba(255,255,255,.14);border-radius:18px;color:#fff;text-decoration:none;font-weight:850;background:rgba(255,255,255,.04);transition:.2s}.langs a:hover{transform:translateY(-3px);background:rgba(255,255,255,.09)}@media(max-width:560px){.langs{grid-template-columns:1fr 1fr}}</style></head><body><main class="wrap"><img class="mark" src="assets/whaleland-mark.svg" alt=""><p class="k">WHALE LAND / SELECT LANGUAGE</p><h1 class="t">Enter<br>the worlds.</h1><p class="d">Choose your language / 언어를 선택하세요</p><nav class="langs"><a href="ko/" data-lang="ko">한국어</a><a href="en/" data-lang="en">English</a><a href="ja/" data-lang="ja">日本語</a><a href="zh-cn/" data-lang="zh-cn">简体中文</a></nav></main><script>(()=>{document.querySelectorAll('[data-lang]').forEach(a=>a.onclick=()=>localStorage.setItem('whalelandLanguage',a.dataset.lang));const p=new URLSearchParams(location.search);if(p.get('choose')==='1')return;const saved=localStorage.getItem('whalelandLanguage');if(['ko','en','ja','zh-cn'].includes(saved))location.replace(`${saved}/`)})();</script></body></html>
+<!doctype html>
+<html lang="ko" data-page="home">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Whale Land</title>
+  <meta name="description" content="Whale Land creative studio" />
+  <link rel="icon" href="./assets/whaleland-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="page-grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="./index.html" aria-label="Whale Land home">
+      <img src="./assets/whaleland-logo.png" alt="" />
+      <span>Whale Land</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#worlds" data-i18n="common.navWorlds"></a>
+      <a href="#studio" data-i18n="common.navStudio"></a>
+    </nav>
+
+    <div class="header-actions">
+      <nav class="language-nav" aria-label="Language selector">
+        <button type="button" data-lang="ko">KR</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="ja">JP</button>
+        <button type="button" data-lang="zh-cn">CN</button>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Menu">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-panel" aria-label="Mobile navigation">
+    <a href="#worlds" data-i18n="common.navWorlds"></a>
+    <a href="#studio" data-i18n="common.navStudio"></a>
+  </nav>
+
+  <main>
+    <section class="home-hero">
+      <div class="hero-sky" aria-hidden="true">
+        <span class="cloud cloud-one"></span>
+        <span class="cloud cloud-two"></span>
+        <span class="cloud cloud-three"></span>
+      </div>
+
+      <div class="hero-copy reveal is-visible">
+        <p class="eyebrow" data-i18n="home.eyebrow"></p>
+        <h1 class="hero-title" data-i18n="home.title"></h1>
+        <p class="hero-lead" data-i18n="home.lead"></p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#worlds" data-i18n="home.primaryCta"></a>
+          <a class="button button-ghost" href="#studio" data-i18n="home.secondaryCta"></a>
+        </div>
+
+        <p class="hero-note" data-i18n="home.note"></p>
+      </div>
+
+      <div class="voyage-scene" aria-hidden="true">
+        <div class="voyage-sun"></div>
+        <div class="voyage-ring voyage-ring-one"></div>
+        <div class="voyage-ring voyage-ring-two"></div>
+
+        <div class="voyage-logo-wrap">
+          <img class="voyage-logo" src="./assets/whaleland-logo.png" alt="" />
+        </div>
+
+        <div class="voyage-chip voyage-chip-top" data-i18n="home.voyageTop"></div>
+        <div class="voyage-chip voyage-chip-left" data-i18n="home.voyageLeft"></div>
+        <div class="voyage-chip voyage-chip-right" data-i18n="home.voyageRight"></div>
+
+        <div class="service-orb orb-birth"><span>Korean<br />Birth Type</span></div>
+        <div class="service-orb orb-haedurio"><span>Haedurio</span></div>
+        <div class="service-orb orb-covert"><span>C.O.V.E.R.T</span></div>
+
+        <div class="ocean-layer ocean-one"></div>
+        <div class="ocean-layer ocean-two"></div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span></span>
+        <small>SCROLL TO DISCOVER</small>
+      </div>
+    </section>
+
+    <section class="section worlds-section" id="worlds">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow" data-i18n="home.worldsEyebrow"></p>
+            <h2 class="section-title" data-i18n="home.worldsTitle"></h2>
+          </div>
+          <p class="section-body" data-i18n="home.worldsBody"></p>
+        </div>
+
+        <div class="world-list" id="worldList"></div>
+      </div>
+    </section>
+
+    <section class="section studio-section" id="studio">
+      <div class="studio-orbit" aria-hidden="true"></div>
+      <div class="section-inner">
+        <div class="studio-intro">
+          <div class="reveal">
+            <p class="eyebrow" data-i18n="home.studioEyebrow"></p>
+            <h2 class="studio-title" data-i18n="home.studioTitle"></h2>
+          </div>
+
+          <div class="studio-copy reveal">
+            <p data-i18n="home.studioBody"></p>
+            <p class="studio-quote" data-i18n="home.studioQuote"></p>
+          </div>
+        </div>
+
+        <div class="principle-grid" id="principleGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span data-i18n="common.footerLine"></span>
+    <span data-i18n="common.copyright"></span>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,13 +1,435 @@
 "use strict";
-const $=(s,r=document)=>r.querySelector(s);const $$=(s,r=document)=>[...r.querySelectorAll(s)];
-function nested(o,p){return p.split('.').reduce((v,k)=>v?.[k],o)}
-async function loadCopy(){const root=document.documentElement.dataset.root||'./';const locale=document.documentElement.dataset.locale||'ko';const res=await fetch(`${root}locales/${locale}.json`,{cache:'no-cache'});if(!res.ok)throw new Error(`Locale ${res.status}`);return res.json()}
-function applyText(copy){$$('[data-i18n]').forEach(n=>{const v=nested(copy,n.dataset.i18n);if(typeof v==='string')n.textContent=v})}
-function illustration(service,root){return `${root}assets/illustrations/${service.slug==='korean-birth-type'?'birth-type':service.slug}.svg`}
-function renderWorlds(copy,root){const list=$('#worldList');if(!list)return;list.replaceChildren();Object.values(copy.services).forEach(service=>{const a=document.createElement('a');a.className='world-card reveal';a.dataset.theme=service.theme;a.href=`./services/${service.slug}/`;a.innerHTML=`<span class="world-index">${service.order}</span><div class="world-visual"><img src="${illustration(service,root)}" alt=""></div><div class="world-copy"><div class="service-meta"><span>${service.category}</span><span class="status-pill">${service.status}</span></div><h3>${service.cardTitle}</h3><p>${service.summary}</p></div><span class="world-link" aria-hidden="true">↗</span>`;list.append(a)})}
-function renderPrinciples(copy){const grid=$('#principleGrid');if(!grid)return;grid.replaceChildren();copy.home.principles.forEach(p=>{const el=document.createElement('article');el.className='principle reveal';el.innerHTML=`<span class="principle-index">${p.index}</span><h3>${p.title}</h3><p>${p.body}</p>`;grid.append(el)})}
-function renderService(copy,root){const slug=document.documentElement.dataset.service;const s=copy.services[slug];if(!s)return;document.body.dataset.theme=s.theme;document.title=`${s.title} — Whale Land`;const map={serviceOrder:`${s.order} / ${s.category}`,serviceStatus:s.status,serviceHeroTitle:s.heroTitle,serviceHeroLead:s.heroLead,serviceVisualCaption:s.visualCaption,statementEyebrow:s.statementEyebrow,statementTitle:s.statementTitle,statementBody:s.statementBody,featuresTitle:s.featuresTitle,processEyebrow:s.processEyebrow,processTitle:s.processTitle,closingTitle:s.closingTitle,closingBody:s.closingBody};Object.entries(map).forEach(([id,v])=>{const n=document.getElementById(id);if(n)n.textContent=v});const art=$('#serviceIllustration');art.src=illustration(s,root);const tags=$('#tagList');tags.replaceChildren(...s.tags.map(t=>{const x=document.createElement('span');x.className='tag';x.textContent=t;return x}));$$('[data-external-link]').forEach(a=>{a.href=s.externalUrl;a.textContent=s.externalCta;a.setAttribute('aria-label',`${s.externalCta}. ${copy.common.externalNotice}`)});const fg=$('#featureGrid');fg.replaceChildren(...s.features.map(f=>{const x=document.createElement('article');x.className='feature-card reveal';x.innerHTML=`<span class="feature-index">${f.index}</span><h3>${f.title}</h3><p>${f.body}</p>`;return x}));const pg=$('#processGrid');pg.replaceChildren(...s.steps.map(st=>{const x=document.createElement('article');x.className='process-step reveal';x.innerHTML=`<span class="step-index">${st.index}</span><h3>${st.title}</h3><p>${st.body}</p>`;return x}))}
-function setupReveal(){const nodes=$$('.reveal');if(!('IntersectionObserver'in window)){nodes.forEach(n=>n.classList.add('is-visible'));return}const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.12});nodes.forEach(n=>io.observe(n))}
-function setupMenu(){const b=$('.menu-toggle'),p=$('.mobile-panel');if(!b||!p)return;b.addEventListener('click',()=>{const open=p.classList.toggle('is-open');b.setAttribute('aria-expanded',String(open))});$$('a',p).forEach(a=>a.addEventListener('click',()=>p.classList.remove('is-open')))}
-async function init(){try{const copy=await loadCopy();applyText(copy);const root=document.documentElement.dataset.root||'./';const page=document.documentElement.dataset.page;if(page==='home'){renderWorlds(copy,root);renderPrinciples(copy)}if(page==='service')renderService(copy,root);setupReveal();setupMenu();localStorage.setItem('whalelandLanguage',document.documentElement.dataset.locale||'ko')}catch(e){console.error(e);document.body.classList.add('locale-error')}}
-init();
+
+const SUPPORTED_LANGUAGES = ["ko", "en", "ja", "zh-cn"];
+const LANGUAGE_ALIASES = {
+  kr: "ko",
+  jp: "ja",
+  cn: "zh-cn",
+  zh: "zh-cn"
+};
+const DEFAULT_LANGUAGE = "ko";
+const SERVICE_SLUGS = ["korean-birth-type", "haedurio", "covert"];
+
+const $ = (selector, scope = document) => scope.querySelector(selector);
+const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+
+function normalizeLanguage(value) {
+  if (!value) {
+    return "";
+  }
+
+  const normalized = value.toLowerCase();
+  const alias = LANGUAGE_ALIASES[normalized] || normalized;
+  return SUPPORTED_LANGUAGES.includes(alias) ? alias : "";
+}
+
+function detectBrowserLanguage() {
+  const browserLanguage = (navigator.language || "").toLowerCase();
+
+  if (browserLanguage.startsWith("ja")) {
+    return "ja";
+  }
+
+  if (browserLanguage.startsWith("zh")) {
+    return "zh-cn";
+  }
+
+  if (browserLanguage.startsWith("en")) {
+    return "en";
+  }
+
+  return DEFAULT_LANGUAGE;
+}
+
+function getInitialLanguage() {
+  const params = new URLSearchParams(window.location.search);
+  const fromUrl = normalizeLanguage(params.get("lang"));
+
+  if (fromUrl) {
+    return fromUrl;
+  }
+
+  const fromStorage = normalizeLanguage(
+    localStorage.getItem("whalelandLanguage")
+  );
+
+  if (fromStorage) {
+    return fromStorage;
+  }
+
+  return detectBrowserLanguage();
+}
+
+function getServiceSlug() {
+  const params = new URLSearchParams(window.location.search);
+  const requested = params.get("service")?.toLowerCase() || "";
+  return SERVICE_SLUGS.includes(requested) ? requested : "";
+}
+
+function getNestedValue(source, path) {
+  return path.split(".").reduce((value, key) => value?.[key], source);
+}
+
+async function loadCopy(language) {
+  const response = await fetch(`./locales/${language}.json`, {
+    cache: "no-cache"
+  });
+
+  if (!response.ok) {
+    throw new Error(`Locale request failed: ${response.status}`);
+  }
+
+  return response.json();
+}
+
+function updateUrl(language, serviceSlug = "") {
+  const url = new URL(window.location.href);
+  url.searchParams.set("lang", language);
+
+  if (serviceSlug) {
+    url.searchParams.set("service", serviceSlug);
+  } else {
+    url.searchParams.delete("service");
+  }
+
+  window.history.replaceState({}, "", url);
+}
+
+function setDocumentLanguage(language) {
+  const htmlLanguages = {
+    ko: "ko",
+    en: "en",
+    ja: "ja",
+    "zh-cn": "zh-CN"
+  };
+
+  document.documentElement.lang = htmlLanguages[language] || "ko";
+}
+
+function setActiveLanguage(language) {
+  $$('[data-lang]').forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.lang === language);
+  });
+}
+
+function applyStaticText(copy) {
+  $$('[data-i18n]').forEach((node) => {
+    const value = getNestedValue(copy, node.dataset.i18n);
+
+    if (typeof value === "string") {
+      node.textContent = value;
+    }
+  });
+}
+
+function updateHomeLinks(language) {
+  $$('[data-home-link]').forEach((link) => {
+    link.href = `./index.html?lang=${encodeURIComponent(language)}`;
+  });
+
+  $$('[data-home-section]').forEach((link) => {
+    const section = link.dataset.homeSection;
+    link.href = `./index.html?lang=${encodeURIComponent(language)}#${section}`;
+  });
+}
+
+function illustrationPath(service) {
+  const fileNames = {
+    birth: "birth-type.svg",
+    haedurio: "haedurio.svg",
+    covert: "covert.svg"
+  };
+
+  return `./assets/illustrations/${fileNames[service.theme] || "covert.svg"}`;
+}
+
+function createWorldCard(service, language) {
+  const link = document.createElement("a");
+  link.className = "world-card reveal";
+  link.dataset.theme = service.theme;
+  link.href = `./service.html?service=${encodeURIComponent(service.slug)}&lang=${encodeURIComponent(language)}`;
+
+  link.innerHTML = `
+    <span class="world-index">${service.order}</span>
+    <div class="world-visual">
+      <img src="${illustrationPath(service)}" alt="" />
+    </div>
+    <div class="world-copy">
+      <div class="service-meta">
+        <span>${service.category}</span>
+        <span class="status-pill">${service.status}</span>
+      </div>
+      <h3>${service.cardTitle}</h3>
+      <p>${service.summary}</p>
+    </div>
+    <span class="world-link" aria-hidden="true">↗</span>
+  `;
+
+  return link;
+}
+
+function renderHome(copy, language) {
+  const worldList = $("#worldList");
+  const principleGrid = $("#principleGrid");
+
+  worldList?.replaceChildren(
+    ...Object.values(copy.services).map((service) =>
+      createWorldCard(service, language)
+    )
+  );
+
+  principleGrid?.replaceChildren(
+    ...copy.home.principles.map((principle) => {
+      const article = document.createElement("article");
+      article.className = "principle reveal";
+      article.innerHTML = `
+        <span class="principle-index">${principle.index}</span>
+        <h3>${principle.title}</h3>
+        <p>${principle.body}</p>
+      `;
+      return article;
+    })
+  );
+}
+
+function renderService(copy, language, serviceSlug) {
+  const service = copy.services[serviceSlug];
+
+  if (!service) {
+    window.location.replace(`./index.html?lang=${encodeURIComponent(language)}`);
+    return;
+  }
+
+  document.body.dataset.theme = service.theme;
+  document.title = `${service.title} — Whale Land`;
+
+  const metaDescription = $('meta[name="description"]');
+  if (metaDescription) {
+    metaDescription.content = service.summary;
+  }
+
+  const textMap = {
+    serviceOrder: `${service.order} / ${service.category}`,
+    serviceHeroTitle: service.heroTitle,
+    serviceHeroLead: service.heroLead,
+    serviceVisualCaption: service.visualCaption,
+    statementEyebrow: service.statementEyebrow,
+    statementTitle: service.statementTitle,
+    statementBody: service.statementBody,
+    featuresTitle: service.featuresTitle,
+    processEyebrow: service.processEyebrow,
+    processTitle: service.processTitle,
+    closingTitle: service.closingTitle,
+    closingBody: service.closingBody
+  };
+
+  Object.entries(textMap).forEach(([id, value]) => {
+    const node = document.getElementById(id);
+    if (node) {
+      node.textContent = value;
+    }
+  });
+
+  const illustration = $("#serviceIllustration");
+  if (illustration) {
+    illustration.src = illustrationPath(service);
+  }
+
+  const tags = $("#tagList");
+  tags?.replaceChildren(
+    ...service.tags.map((tag) => {
+      const span = document.createElement("span");
+      span.className = "tag";
+      span.textContent = tag;
+      return span;
+    })
+  );
+
+  $$('[data-external-link]').forEach((link) => {
+    link.href = service.externalUrl;
+    link.textContent = service.externalCta;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute(
+      "aria-label",
+      `${service.externalCta}. ${copy.common.externalNotice}`
+    );
+  });
+
+  const featureGrid = $("#featureGrid");
+  featureGrid?.replaceChildren(
+    ...service.features.map((feature) => {
+      const article = document.createElement("article");
+      article.className = "feature-card reveal";
+      article.innerHTML = `
+        <span class="feature-index">${feature.index}</span>
+        <h3>${feature.title}</h3>
+        <p>${feature.body}</p>
+      `;
+      return article;
+    })
+  );
+
+  const processGrid = $("#processGrid");
+  processGrid?.replaceChildren(
+    ...service.steps.map((step) => {
+      const article = document.createElement("article");
+      article.className = "process-step reveal";
+      article.innerHTML = `
+        <span class="step-index">${step.index}</span>
+        <h3>${step.title}</h3>
+        <p>${step.body}</p>
+      `;
+      return article;
+    })
+  );
+}
+
+function setupReveal() {
+  const nodes = $$(".reveal:not(.is-visible)");
+
+  if (!("IntersectionObserver" in window)) {
+    nodes.forEach((node) => node.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  nodes.forEach((node) => observer.observe(node));
+}
+
+function setupMenu() {
+  const button = $(".menu-toggle");
+  const panel = $(".mobile-panel");
+
+  if (!button || !panel || button.dataset.bound === "true") {
+    return;
+  }
+
+  button.dataset.bound = "true";
+
+  button.addEventListener("click", () => {
+    const isOpen = panel.classList.toggle("is-open");
+    button.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  $$("a", panel).forEach((link) => {
+    link.addEventListener("click", () => {
+      panel.classList.remove("is-open");
+      button.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+function setupVoyagePointerMotion() {
+  const scene = $(".voyage-scene");
+
+  if (!scene || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  scene.addEventListener("pointermove", (event) => {
+    const rect = scene.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+    scene.style.setProperty("--pointer-x", `${x * 16}px`);
+    scene.style.setProperty("--pointer-y", `${y * 12}px`);
+  });
+
+  scene.addEventListener("pointerleave", () => {
+    scene.style.setProperty("--pointer-x", "0px");
+    scene.style.setProperty("--pointer-y", "0px");
+  });
+}
+
+let currentLanguage = getInitialLanguage();
+let currentCopy = null;
+
+async function renderLanguage(language, { updateHistory = true } = {}) {
+  const normalized = normalizeLanguage(language) || DEFAULT_LANGUAGE;
+  const page = document.documentElement.dataset.page;
+  const serviceSlug = page === "service" ? getServiceSlug() : "";
+
+  currentLanguage = normalized;
+  localStorage.setItem("whalelandLanguage", normalized);
+  setDocumentLanguage(normalized);
+  setActiveLanguage(normalized);
+
+  if (updateHistory) {
+    updateUrl(normalized, serviceSlug);
+  }
+
+  currentCopy = await loadCopy(normalized);
+  document.title = currentCopy.meta?.title || "Whale Land";
+
+  const metaDescription = $('meta[name="description"]');
+  if (metaDescription && currentCopy.meta?.description) {
+    metaDescription.content = currentCopy.meta.description;
+  }
+
+  applyStaticText(currentCopy);
+  updateHomeLinks(normalized);
+
+  if (page === "home") {
+    renderHome(currentCopy, normalized);
+  } else if (page === "service") {
+    renderService(currentCopy, normalized, serviceSlug);
+  }
+
+  setupReveal();
+}
+
+function setupLanguageButtons() {
+  $$('[data-lang]').forEach((button) => {
+    button.addEventListener("click", async () => {
+      const nextLanguage = normalizeLanguage(button.dataset.lang);
+
+      if (!nextLanguage || nextLanguage === currentLanguage) {
+        return;
+      }
+
+      try {
+        await renderLanguage(nextLanguage);
+      } catch (error) {
+        console.error("Whale Land language switch failed.", error);
+      }
+    });
+  });
+}
+
+async function initialize() {
+  try {
+    const serviceSlug = getServiceSlug();
+
+    if (
+      document.documentElement.dataset.page === "service" &&
+      !serviceSlug
+    ) {
+      window.location.replace(
+        `./index.html?lang=${encodeURIComponent(currentLanguage)}`
+      );
+      return;
+    }
+
+    setupLanguageButtons();
+    setupMenu();
+    setupVoyagePointerMotion();
+    await renderLanguage(currentLanguage);
+  } catch (error) {
+    console.error("Whale Land initialization failed.", error);
+    document.body.classList.add("locale-error");
+  }
+}
+
+initialize();

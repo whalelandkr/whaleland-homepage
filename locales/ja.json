@@ -43,7 +43,10 @@
         "title": "Built to travel",
         "body": "言語や国が変わっても自然に使えるよう、最初から拡張性を考えます。"
       }
-    ]
+    ],
+    "voyageTop": "青い空 · 開かれた海",
+    "voyageLeft": "私たちの航海 · 3つの世界",
+    "voyageRight": "緑の島 · 生きたサービス"
   },
   "services": {
     "korean-birth-type": {
