@@ -246,14 +246,24 @@ function renderService(copy, language, serviceSlug) {
   );
 
   $$('[data-external-link]').forEach((link) => {
-    link.href = service.externalUrl;
+    const externalUrl = service.externalUrl || "#";
+    const isExternalUrl = /^https?:\/\//i.test(externalUrl);
+
+    link.href = externalUrl;
     link.textContent = service.externalCta;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.setAttribute(
-      "aria-label",
-      `${service.externalCta}. ${copy.common.externalNotice}`
-    );
+
+    if (isExternalUrl) {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.setAttribute(
+        "aria-label",
+        `${service.externalCta}. ${copy.common.externalNotice}`
+      );
+    } else {
+      link.removeAttribute("target");
+      link.removeAttribute("rel");
+      link.setAttribute("aria-label", service.externalCta);
+    }
   });
 
   const featureGrid = $("#featureGrid");
