@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>C.O.V.E.R.T Schedule Admin Local</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 32px;
+      background: #fff5d0;
+      color: #1f2228;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", sans-serif;
+    }
+    main { max-width: 980px; margin: 0 auto; }
+    h1 { font-size: clamp(2rem, 6vw, 4rem); margin: 0 0 16px; letter-spacing: -0.06em; }
+    p { line-height: 1.8; color: #6d6258; }
+    .panel {
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: 28px;
+      background: rgba(255,255,255,.68);
+      box-shadow: 0 18px 44px rgba(39,28,18,.10);
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 150px 130px 150px 1fr 1fr;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+    label { font-weight: 800; }
+    input, select, button {
+      min-height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(80,50,25,.16);
+      padding: 0 12px;
+      font: inherit;
+    }
+    button { cursor: pointer; border: 0; color: #fff; background: #61412b; font-weight: 900; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+    textarea {
+      width: 100%;
+      min-height: 280px;
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(80,50,25,.16);
+      font-family: "Courier New", monospace;
+    }
+    @media (max-width: 860px) {
+      .row { grid-template-columns: 1fr; padding: 14px; border: 1px solid rgba(80,50,25,.10); border-radius: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Schedule Admin Local</h1>
+    <p>
+      이 페이지는 서버에 직접 저장하지 않습니다. 날짜·장소·시간을 선택한 뒤
+      <strong>schedule.json 다운로드</strong>를 누르고, 다운로드된 파일을
+      <code>covert/data/schedule.json</code>에 덮어쓴 뒤 Git push 하면 됩니다.
+    </p>
+
+    <section class="panel">
+      <label for="startDate">시작 날짜</label>
+      <input id="startDate" type="date" />
+      <button id="makeRowsButton" type="button">7일 생성</button>
+
+      <div id="rows"></div>
+
+      <div class="actions">
+        <button id="generateButton" type="button">JSON 생성</button>
+        <button id="downloadButton" type="button">schedule.json 다운로드</button>
+      </div>
+
+      <textarea id="output" spellcheck="false"></textarea>
+    </section>
+  </main>
+
+  <script>
+    const locations = {
+      seongsu: { kr: "성수", en: "Seongsu", jp: "ソンス", cn: "圣水" },
+      hongdae: { kr: "홍대", en: "Hongdae", jp: "ホンデ", cn: "弘大" },
+      myeongdong: { kr: "명동", en: "Myeongdong", jp: "明洞", cn: "明洞" }
+    };
+
+    const rows = document.getElementById("rows");
+    const output = document.getElementById("output");
+    const startDate = document.getElementById("startDate");
+
+    function getKoreaDate() {
+      const parts = new Intl.DateTimeFormat("en-CA", {
+        timeZone: "Asia/Seoul",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).formatToParts(new Date());
+
+      const map = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+      return `${map.year}-${map.month}-${map.day}`;
+    }
+
+    function addDays(dateText, amount) {
+      const date = new Date(`${dateText}T00:00:00+09:00`);
+      date.setUTCDate(date.getUTCDate() + amount);
+      return new Intl.DateTimeFormat("en-CA", {
+        timeZone: "Asia/Seoul",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).format(date);
+    }
+
+    function makeRows() {
+      rows.replaceChildren();
+
+      for (let index = 0; index < 7; index += 1) {
+        const date = addDays(startDate.value, index);
+        const row = document.createElement("div");
+        row.className = "row";
+
+        row.innerHTML = `
+          <input type="date" value="${date}" data-field="date" />
+          <select data-field="status">
+            <option value="open">판매 있음</option>
+            <option value="closed">판매 없음</option>
+          </select>
+          <select data-field="location">
+            <option value="seongsu">성수</option>
+            <option value="hongdae">홍대</option>
+            <option value="myeongdong">명동</option>
+          </select>
+          <input type="time" value="13:00" data-field="start" />
+          <input type="time" value="18:00" data-field="end" />
+        `;
+
+        rows.appendChild(row);
+      }
+
+      generateJson();
+    }
+
+    function generateJson() {
+      const sales = Array.from(rows.querySelectorAll(".row")).map((row) => {
+        const get = (field) => row.querySelector(`[data-field="${field}"]`).value;
+        const status = get("status");
+
+        return {
+          date: get("date"),
+          status,
+          location: status === "open" ? get("location") : "",
+          start: status === "open" ? get("start") : "",
+          end: status === "open" ? get("end") : ""
+        };
+      });
+
+      const json = {
+        timezone: "Asia/Seoul",
+        locations,
+        sales,
+        onlineStoreEnabled: false,
+        onlineStoreUrl: ""
+      };
+
+      output.value = JSON.stringify(json, null, 2);
+    }
+
+    function downloadJson() {
+      generateJson();
+
+      const blob = new Blob([output.value], { type: "application/json;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "schedule.json";
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    startDate.value = getKoreaDate();
+    document.getElementById("makeRowsButton").addEventListener("click", makeRows);
+    document.getElementById("generateButton").addEventListener("click", generateJson);
+    document.getElementById("downloadButton").addEventListener("click", downloadJson);
+    rows.addEventListener("input", generateJson);
+    makeRows();
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>C.O.V.E.R.T | Incoming Mission</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="mission-page">
+  <main class="mission-screen">
+    <section class="incoming-panel" id="incomingPanel">
+      <img src="../assets/covert-agent-identification.png" alt="" />
+      <h1>INCOMING MISSION</h1>
+    </section>
+
+    <section class="terminal-panel" id="terminalPanel" hidden>
+      <pre id="missionText"></pre><span id="cursor" aria-hidden="true">█</span>
+    </section>
+
+    <img class="mission-bumi" src="../assets/bumi/bumi-tactical.png" alt="" />
+    <div class="noise-layer" id="noiseLayer" aria-hidden="true"></div>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

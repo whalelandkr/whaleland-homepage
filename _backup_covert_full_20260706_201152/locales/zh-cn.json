@@ -1,0 +1,239 @@
+﻿{
+    "meta":  {
+                 "title":  "Whale Land — 打造三个世界的创意工作室",
+                 "description":  "了解 Whale Land 旗下的 Korean Birth Type、Haedurio 和 C.O.V.E.R.T。"
+             },
+    "common":  {
+                   "navWorlds":  "服务",
+                   "navStudio":  "工作室",
+                   "backHome":  "返回 Whale Land",
+                   "officialSite":  "官方网站",
+                   "learnMore":  "了解详情",
+                   "externalNotice":  "即将前往独立服务网站。",
+                   "footerLine":  "Ideas made useful. Experiences made memorable.",
+                   "copyright":  "© 2026 Whale Land. All rights reserved."
+               },
+    "home":  {
+                 "eyebrow":  "WHALE LAND / INDEPENDENT CREATIVE STUDIO",
+                 "title":  "用同一种审美，打造三个不同的世界。",
+                 "lead":  "Whale Land 是一家独立创意工作室，为自我理解、旅行支援与城市探索设计数字服务和实体体验。",
+                 "primaryCta":  "探索三个世界",
+                 "secondaryCta":  "了解工作室",
+                 "note":  "SEOUL · EST. 2025",
+                 "worldsEyebrow":  "THREE INDEPENDENT WORLDS",
+                 "worldsTitle":  "三个拥有不同目的的独立服务",
+                 "worldsBody":  "主页展示每项服务的方向。选择服务后，可进入独立介绍页了解详情，再前往其官方网站。",
+                 "studioEyebrow":  "THE WHALE LAND WAY",
+                 "studioTitle":  "把有用的问题，变成令人记住的体验。",
+                 "studioBody":  "我们不从技术本身出发，而从用户真正会遇到的时刻开始。为必要功能建立清晰结构，也为容易变得普通的体验加入故事与个性。",
+                 "studioQuote":  "好的服务，往往在解释之前就能通过体验被理解。",
+                 "principles":  [
+                                    {
+                                        "index":  "01",
+                                        "title":  "Useful first",
+                                        "body":  "先解决真实问题，让功能和文字帮助用户轻松决定下一步。"
+                                    },
+                                    {
+                                        "index":  "02",
+                                        "title":  "Story-led",
+                                        "body":  "为每项服务建立独特的世界观与语气，也设计它值得被记住的理由。"
+                                    },
+                                    {
+                                        "index":  "03",
+                                        "title":  "Built to travel",
+                                        "body":  "从一开始就考虑多语言与跨市场使用，而不是事后补充。"
+                                    }
+                                ],
+                 "voyageTop":  "蓝天 · 开阔海洋",
+                 "voyageLeft":  "我们的航行 · 三个世界",
+                 "voyageRight":  "绿色岛屿 · 鲜活服务"
+             },
+    "services":  {
+                     "korean-birth-type":  {
+                                               "slug":  "korean-birth-type",
+                                               "order":  "01",
+                                               "theme":  "birth",
+                                               "status":  "已上线",
+                                               "category":  "SELF-DISCOVERY",
+                                               "title":  "Korean Birth Type",
+                                               "cardTitle":  "把韩国传统转化为现代自我理解。",
+                                               "summary":  "将四柱命理重新设计为理解自我的语言，而非预测未来的数字卡片解读服务。",
+                                               "heroTitle":  "源自韩国传统的现代自我理解。",
+                                               "heroLead":  "Korean Birth Type 将四柱命理重新设计为理解自我的界面，而不是占卜未来的语言。",
+                                               "visualCaption":  "A modern reading system inspired by Korean tradition.",
+                                               "externalUrl":  "https://koreanbirthtype.com",
+                                               "externalCta":  "开始 Korean Birth Type",
+                                               "tags":  [
+                                                            "SELF-DISCOVERY",
+                                                            "DIGITAL CARDS",
+                                                            "MULTILINGUAL"
+                                                        ],
+                                               "statementEyebrow":  "A DIFFERENT WAY TO READ YOURSELF",
+                                               "statementTitle":  "不是预言，而是阅读自己的另一种方式。",
+                                               "statementBody":  "体验从出生日期和时间开始，但目的并不是断言未来。日柱、五行、关系、财富与人生节奏被整理成现代卡片和语言，为自我观察提供新的框架。",
+                                               "featuresTitle":  "把复杂解读变成清晰的卡片体验",
+                                               "features":  [
+                                                                {
+                                                                    "index":  "01",
+                                                                    "title":  "用卡片阅读自己的结构",
+                                                                    "body":  "日柱动物、五行、四柱、关系和财富节奏以易于理解的顺序呈现。"
+                                                                },
+                                                                {
+                                                                    "index":  "02",
+                                                                    "title":  "为移动端设计的解读",
+                                                                    "body":  "从输入与支付到查看结果、保存图片，整个流程都能在移动网页中自然完成。"
+                                                                },
+                                                                {
+                                                                    "index":  "03",
+                                                                    "title":  "不同语言，同一种语气",
+                                                                    "body":  "保留韩国文化原型，同时在各语言中保持克制、现代且容易理解。"
+                                                                }
+                                                            ],
+                                               "processEyebrow":  "HOW IT FLOWS",
+                                               "processTitle":  "复杂计算留在后台，体验保持简单。",
+                                               "steps":  [
+                                                             {
+                                                                 "index":  "01",
+                                                                 "title":  "输入信息",
+                                                                 "body":  "填写出生日期与时间。"
+                                                             },
+                                                             {
+                                                                 "index":  "02",
+                                                                 "title":  "查看卡片解读",
+                                                                 "body":  "描述你个人模式的卡片会依次展开。"
+                                                             },
+                                                             {
+                                                                 "index":  "03",
+                                                                 "title":  "保存并再次查看",
+                                                                 "body":  "保存触动你的卡片，在需要时随时回看。"
+                                                             }
+                                                         ],
+                                               "closingTitle":  "查看你的 Korean Birth Type。",
+                                               "closingBody":  "与其寻找预测未来的答案，不如认识一种理解当下自己的新语言。"
+                                           },
+                     "haedurio":  {
+                                      "slug":  "haedurio",
+                                      "order":  "02",
+                                      "theme":  "haedurio",
+                                      "status":  "已上线",
+                                      "category":  "TRAVEL SUPPORT",
+                                      "title":  "Haedurio",
+                                      "cardTitle":  "旅行被卡住的时刻，由本地帮助解决。",
+                                      "summary":  "为韩国旅行中的预订、购物、配送、物品遗失等难以独自解决的问题提供本地支援。",
+                                      "heroTitle":  "旅行被卡住的时刻，由本地帮助解决。",
+                                      "heroLead":  "Haedurio 帮助旅行者理解韩国旅行中出现的预订、购物、配送、物品遗失等意外问题，并寻找实际可行的解决路径。",
+                                      "visualCaption":  "Local help for the moments that interrupt your trip.",
+                                      "externalUrl":  "https://haedurio.com",
+                                      "externalCta":  "访问 Haedurio",
+                                      "tags":  [
+                                                   "LOCAL SUPPORT",
+                                                   "TRAVEL HELP",
+                                                   "KOREA"
+                                               ],
+                                      "statementEyebrow":  "KEEP THE TRIP MOVING",
+                                      "statementTitle":  "减少寻找帮助的时间，让旅行继续。",
+                                      "statementBody":  "在陌生语言和地区中，即使是小问题也可能让整段行程停下来。Haedurio 会整理情况、确认本地环境，并帮助旅行者理解下一步该怎么做。",
+                                      "featuresTitle":  "从说明问题到找到下一步",
+                                      "features":  [
+                                                       {
+                                                           "index":  "01",
+                                                           "title":  "让情况更容易说明",
+                                                           "body":  "即使问题复杂，也会引导用户先整理真正需要的信息。"
+                                                       },
+                                                       {
+                                                           "index":  "02",
+                                                           "title":  "结合本地环境确认",
+                                                           "body":  "根据韩国的预订、购物和配送环境确认可行选项。"
+                                                       },
+                                                       {
+                                                           "index":  "03",
+                                                           "title":  "让信息连接到行动",
+                                                           "body":  "不止是翻译，还帮助用户理解实际应该采取的下一步。"
+                                                       }
+                                                   ],
+                                      "processEyebrow":  "HOW IT WORKS",
+                                      "processTitle":  "从问题出现的那一刻，到重新回到旅程。",
+                                      "steps":  [
+                                                    {
+                                                        "index":  "01",
+                                                        "title":  "说明情况",
+                                                        "body":  "告知发生了什么，并提供必要信息。"
+                                                    },
+                                                    {
+                                                        "index":  "02",
+                                                        "title":  "确认解决路径",
+                                                        "body":  "结合本地情况确认可行方法和所需步骤。"
+                                                    },
+                                                    {
+                                                        "index":  "03",
+                                                        "title":  "按照指引继续",
+                                                        "body":  "根据选择的方向进入下一步。"
+                                                    }
+                                                ],
+                                      "closingTitle":  "让问题短一点，让回忆长一点。",
+                                      "closingBody":  "在韩国旅行中需要帮助时，请把情况告诉 Haedurio。"
+                                  },
+                     "covert":  {
+                                    "slug":  "covert",
+                                    "order":  "03",
+                                    "theme":  "covert",
+                                    "status":  "筹备中",
+                                    "category":  "MISSION TRAVEL",
+                                    "title":  "C.O.V.E.R.T",
+                                    "cardTitle":  "不要只是逛城市，完成任务。",
+                                    "summary":  "把首尔变成秘密行动区域，并在护照式任务手册中收集印章和现场记录的特工主题旅行产品。",
+                                    "heroTitle":  "不要只是逛城市，完成任务。",
+                                    "heroLead":  "C.O.V.E.R.T 将首尔的地点转化为秘密行动区域，让旅行者成为现场特工，完成探索、收集与记录。",
+                                    "visualCaption":  "A field mission hidden inside an ordinary city trip.",
+                                    "externalUrl":  "/covert/?lang=cn",
+                                    "externalCta":  "进入 C.O.V.E.R.T",
+                                    "tags":  [
+                                                 "STAMP TOUR",
+                                                 "SEOUL",
+                                                 "FIELD MISSION"
+                                             ],
+                                    "statementEyebrow":  "YOUR CITY. YOUR MISSION.",
+                                    "statementTitle":  "从打卡景点的旅行，变成完成故事的任务。",
+                                    "statementBody":  "旅程不会停在看过著名地点。打开任务手册、寻找行动区域、收集印章与现场信息，整段首尔旅行就会变成一项秘密任务。",
+                                    "featuresTitle":  "可以拿在手中行走的秘密行动",
+                                    "features":  [
+                                                     {
+                                                         "index":  "01",
+                                                         "title":  "护照式任务手册",
+                                                         "body":  "便于携带的实体手册中包含任务简报、地点情报与记录空间。"
+                                                     },
+                                                     {
+                                                         "index":  "02",
+                                                         "title":  "首尔15个行动区域",
+                                                         "body":  "把传统、购物、美食、夜景与街区文化作为不同任务进行探索。"
+                                                     },
+                                                     {
+                                                         "index":  "03",
+                                                         "title":  "最终报告与下一项任务",
+                                                         "body":  "旅行结束后向总部提交报告，并接收下一座城市的行动情报。"
+                                                     }
+                                                 ],
+                                    "processEyebrow":  "MISSION FLOW",
+                                    "processTitle":  "接收简报，进入现场，留下记录。",
+                                    "steps":  [
+                                                  {
+                                                      "index":  "01",
+                                                      "title":  "接收简报",
+                                                      "body":  "在任务手册中确认首尔行动区域和指令。"
+                                                  },
+                                                  {
+                                                      "index":  "02",
+                                                      "title":  "执行现场行动",
+                                                      "body":  "移动于城市之间，收集印章和属于自己的现场记录。"
+                                                  },
+                                                  {
+                                                      "index":  "03",
+                                                      "title":  "向总部报告",
+                                                      "body":  "通过最后的二维码向总部发送任务结果。"
+                                                  }
+                                              ],
+                                    "closingTitle":  "首尔已经是行动区域。",
+                                    "closingBody":  "用于特工登记与最终报告的独立网站正在筹备中。"
+                                }
+                 }
+}

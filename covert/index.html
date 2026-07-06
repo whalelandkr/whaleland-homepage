@@ -1,68 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>C.O.V.E.R.T | Seoul Secret Mission</title>
   <meta name="description" content="C.O.V.E.R.T Seoul Secret Mission stamp tour product page." />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
-<body>
+<body class="covert-product-page">
   <header class="covert-header">
-    <a class="covert-brand" href="./" aria-label="C.O.V.E.R.T home">
+    <a class="covert-brand" href="./">
       <img src="./assets/covert-agent-identification.png" alt="" />
       <span>C.O.V.E.R.T</span>
     </a>
 
-    <nav class="covert-nav" aria-label="Main navigation">
+    <nav class="covert-nav" aria-label="C.O.V.E.R.T navigation">
+      <a href="./briefing/" data-link="briefing"></a>
       <a href="#kit" data-copy="navKit"></a>
-      <a href="#route" data-copy="navRoute"></a>
-      <a href="#store" data-copy="navStore"></a>
-      <a class="nav-report" href="./report/" data-report-link data-copy="navReport"></a>
+      <a href="#zones" data-copy="navZones"></a>
+      <a href="./store/" data-link="store"></a>
+      <a href="./report/" data-link="report"></a>
     </nav>
 
     <nav class="language-switcher" aria-label="Language selector">
-      <button type="button" data-lang="en">EN</button>
       <button type="button" data-lang="kr">KR</button>
-      <button type="button" data-lang="cn">CN</button>
+      <button type="button" data-lang="en">EN</button>
       <button type="button" data-lang="jp">JP</button>
+      <button type="button" data-lang="cn">CN</button>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-background" aria-hidden="true">
-        <div class="grid-layer"></div>
-        <div class="scan-line"></div>
-      </div>
-
+    <section class="product-hero">
       <div class="hero-copy">
-        <p class="eyebrow" data-copy="heroEyebrow"></p>
-        <h1 data-copy="heroTitle"></h1>
-        <p class="hero-lead" data-copy="heroLead"></p>
+        <p class="eyebrow" data-copy="productEyebrow"></p>
+        <h1 data-copy="productTitle"></h1>
+        <p class="hero-lead" data-copy="productLead"></p>
 
         <div class="hero-actions">
-          <a class="button button-primary" href="#store" data-copy="primaryCta"></a>
-          <a class="button button-ghost" href="./report/" data-report-link data-copy="reportCta"></a>
+          <a class="button button-primary" href="./store/" data-link="storeCta"></a>
+          <a class="button button-ghost" href="./briefing/" data-link="briefingCta"></a>
         </div>
-
-        <p class="mission-note" data-copy="missionNote"></p>
       </div>
 
-      <div class="product-visual" aria-hidden="true">
-        <div class="badge-orbit badge-orbit-one"></div>
-        <div class="badge-orbit badge-orbit-two"></div>
-
-        <div class="agent-badge">
-          <img src="./assets/covert-agent-identification.png" alt="" />
-        </div>
-
-        <div class="classified-tag tag-top">SEOUL / FIELD KIT</div>
-        <div class="classified-tag tag-bottom">LEVEL 7 CLEARANCE</div>
+      <div class="hero-characters" aria-hidden="true">
+        <img class="bumi-main" src="./assets/bumi/bumi-tactical.png" alt="" />
+        <img class="bumi-side bumi-side-one" src="./assets/bumi/bumi-tourist.png" alt="" />
+        <img class="bumi-side bumi-side-two" src="./assets/bumi/bumi-hanbok-blue.png" alt="" />
       </div>
     </section>
 
-    <section class="section kit-section" id="kit">
+    <section class="product-section kit-section" id="kit">
       <div class="section-head">
         <p class="eyebrow" data-copy="kitEyebrow"></p>
         <h2 data-copy="kitTitle"></h2>
@@ -72,48 +60,38 @@
       <div class="kit-grid" id="kitGrid"></div>
     </section>
 
-    <section class="section flow-section">
-      <div class="section-head">
-        <p class="eyebrow" data-copy="flowEyebrow"></p>
-        <h2 data-copy="flowTitle"></h2>
-      </div>
-
-      <div class="flow-grid" id="flowGrid"></div>
-    </section>
-
-    <section class="section route-section" id="route">
-      <div class="route-panel">
+    <section class="product-section zones-section" id="zones">
+      <div class="zones-card">
         <div>
-          <p class="eyebrow" data-copy="routeEyebrow"></p>
-          <h2 data-copy="routeTitle"></h2>
-          <p data-copy="routeLead"></p>
+          <p class="eyebrow" data-copy="zonesEyebrow"></p>
+          <h2 data-copy="zonesTitle"></h2>
+          <p data-copy="zonesLead"></p>
         </div>
-
-        <div class="route-list" id="routeList"></div>
+        <div class="zone-list" id="zoneList"></div>
       </div>
     </section>
 
-    <section class="section store-section" id="store">
-      <div class="store-card">
-        <p class="eyebrow" data-copy="storeEyebrow"></p>
-        <h2 data-copy="storeTitle"></h2>
-        <p data-copy="storeLead"></p>
-
-        <div class="store-actions">
-          <button class="button button-primary button-disabled" type="button" data-copy="buyButton"></button>
-          <a class="button button-ghost" href="./report/" data-report-link data-copy="alreadyAgentButton"></a>
+    <section class="product-section store-teaser">
+      <div class="store-teaser-card">
+        <img src="./assets/bumi/bumi-default.png" alt="" class="store-bumi" />
+        <div>
+          <p class="eyebrow" data-copy="storeEyebrow"></p>
+          <h2 data-copy="storeTitle"></h2>
+          <p data-copy="storeLead"></p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="./store/" data-link="storeCta"></a>
+            <a class="button button-ghost" href="./report/" data-link="reportCta"></a>
+          </div>
         </div>
-
-        <p class="store-note" data-copy="storeNote"></p>
       </div>
     </section>
   </main>
 
   <footer class="covert-footer">
     <span>C.O.V.E.R.T</span>
-    <span data-copy="footer"></span>
+    <span>Whale Land · Mission Travel Project</span>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>

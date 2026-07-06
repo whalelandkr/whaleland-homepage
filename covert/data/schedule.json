@@ -1,0 +1,48 @@
+{
+  "timezone": "Asia/Seoul",
+  "locations": {
+    "seongsu": {
+      "kr": "성수",
+      "en": "Seongsu",
+      "jp": "ソンス",
+      "cn": "圣水"
+    },
+    "hongdae": {
+      "kr": "홍대",
+      "en": "Hongdae",
+      "jp": "ホンデ",
+      "cn": "弘大"
+    },
+    "myeongdong": {
+      "kr": "명동",
+      "en": "Myeongdong",
+      "jp": "明洞",
+      "cn": "明洞"
+    }
+  },
+  "sales": [
+    {
+      "date": "2026-07-06",
+      "status": "open",
+      "location": "seongsu",
+      "start": "13:00",
+      "end": "18:00"
+    },
+    {
+      "date": "2026-07-07",
+      "status": "open",
+      "location": "hongdae",
+      "start": "14:00",
+      "end": "19:00"
+    },
+    {
+      "date": "2026-07-08",
+      "status": "closed",
+      "location": "",
+      "start": "",
+      "end": ""
+    }
+  ],
+  "onlineStoreEnabled": false,
+  "onlineStoreUrl": ""
+}

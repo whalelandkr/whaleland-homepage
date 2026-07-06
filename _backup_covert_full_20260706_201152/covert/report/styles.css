@@ -5281,11 +5281,11 @@ textarea {
 }
 
 .landing-page .badge-face-front {
-  transform: translateZ(14px) !important;
+  transform: translateZ(7px) !important;
 }
 
 .landing-page .badge-face-back {
-  transform: rotateY(180deg) translateZ(14px) !important;
+  transform: rotateY(180deg) translateZ(7px) !important;
 }
 
 .landing-page .badge-logo-visible {
@@ -5353,11 +5353,11 @@ textarea {
   }
 
   .landing-page .badge-face-front {
-    transform: translateZ(11px) !important;
+    transform: translateZ(5.5px) !important;
   }
 
   .landing-page .badge-face-back {
-    transform: rotateY(180deg) translateZ(11px) !important;
+    transform: rotateY(180deg) translateZ(5.5px) !important;
   }
 
   .landing-page .badge-logo-visible {
