@@ -1,41 +1,45 @@
 {
   "meta": {
-    "title": "Whale Land ??璵썬걮?꾠궋?ㅳ깈?㏂굮?듐꺖?볝궧?ャ걲?뗤폏鹽?,
-    "description": "Whale Land??곫??쀣걚?㏂궎?뉎궋?㏛툟?뚣굮?귙겂?ⓨ쩀礪섅겎亮멥걵?ャ걲?뗣궢?쇈깛?밤굮?ㅳ걦?듽겲?쇻?
+    "title": "Whale Land — 楽しいアイデアをサービスにする会社",
+    "description": "Whale Landは、楽しく遊び心のあるアイデアで世界をもっと多様で幸せにするサービスをつくります。"
   },
   "common": {
-    "navCompany": "鴉싩ㅎ榮밥퍔",
-    "navServiceIntro": "?듐꺖?볝궧榮밥퍔",
-    "navServiceList": "?듐꺖?볝궧訝誤?,
-    "navContact": "?듿븦?꾢릦?뤵걵",
-    "backHome": "Whale Land?멩댗??,
-    "officialSite": "?у폀?듐궎??,
-    "learnMore": "屋녈걮?뤺쫳??,
-    "externalNotice": "?х쳦?쀣걼?듐꺖?볝궧?듐궎?덀겦燁삣땿?쀣겲?쇻?,
+    "navCompany": "会社紹介",
+    "navServiceIntro": "サービス紹介",
+    "navServiceList": "サービス一覧",
+    "navContact": "お問い合わせ",
+    "backHome": "Whale Landへ戻る",
+    "officialSite": "公式サイト",
+    "learnMore": "詳しく見る",
+    "externalNotice": "独立したサービスサイトへ移動します。",
     "contactPhone": "070-8028-3008",
     "contactEmail": "contact@whalelandkr.com",
     "footerLine": "Fun ideas, useful services, happier moments.",
-    "copyright": "짤 2026 Whale Land. All rights reserved."
+    "copyright": "© 2026 Whale Land. All rights reserved."
   },
   "home": {
     "logoKicker": "WHALE LAND / IDEA COMPANY",
-    "logoNote": "SEOUL 쨌 IDEAS IN MOTION",
+    "logoNote": "SEOUL · IDEAS IN MOTION",
     "introEyebrow": "ABOUT WHALE LAND",
-    "introTitle": "璵썬걮?뤵겍?듽굚?쀣굧?꾠궋?ㅳ깈?㏂겎?곦툟?뚣굮弱묆걮?졼걨鸚싨쭣?㎩뭏?쎼겓??,
-    "introBody": "Whale Land??곫뿥躍멥굜?끹겗訝?겓弱뤵걬?ゆ??쀣걬?믣뒥?덀굥鴉싩ㅎ?믥쎅?뉎걮?╉걚?얇걲??n?녴궚?롢꺆?멥꺖?곭돥沃욁곥궘?ｃ꺀??궭?쇈곥꺁?㏂꺂?や퐪蟯볝굮?ょ뵳?ョ탡?욕릦?뤵걵?얇걲??n餓듽걗?뗣궢?쇈깛?밤겘?뷴츣?뺛굦?잆걲?밤겍?㎯겘?ゃ걦?곩쨯?뽧걮泳싥걨?딾hale Land??뤎?ⓦ겗冶욍겎?쇻?,
+    "introTitle": "楽しく遊び心のあるアイデアで、世界を少しだけ多様で幸せに。",
+    "introBody": "Whale Landは、日常や旅の中に小さな楽しさを加える会社を目指しています。\n技術、物語、キャラクター、リアルな体験を自由に組み合わせ、新しいサービスを実験しながらつくります。\n今あるサービスは完成形ではなく、変化し続けるWhale Landの現在の姿です。",
     "serviceSectionEyebrow": "SERVICE INTRODUCTION",
-    "serviceLinkCta": "?듐꺖?볝궧?싥꺖?멥굮誤뗣굥",
+    "serviceLinkCta": "サービスページを見る",
     "serviceListEyebrow": "SERVICE HUB",
-    "serviceListTitle": "?꾠겲?뷰폏?덀굥Whale Land??궢?쇈깛??,
-    "serviceListBody": "?앫굦?욁굦??궢?쇈깛?밤겘?곭떖?ゃ겗訝뽫븣誤녈겏艅잒꺗?믤똻?ㅳ깤??궦?㎯궚?덀겎?쇻귝뼭?쀣걚?듐꺖?볝궧?뚨뵟?얇굦?잆굢?곥걪??깗?뽧겓?ょ꽫?ヨ옙?졼걬?뚣겲?쇻?,
+    "serviceListTitle": "今出会えるWhale Landのサービス",
+    "serviceListBody": "それぞれのサービスは、独自の世界観と役割を持つ独立したプロジェクトです。新しいサービスが生まれたら、このハブに自然に追加されます。",
     "contactEyebrow": "CONTACT WHALE LAND",
-    "contactTitle": "?붹룓旅덀곩뜑璵?곥걡?뤵걚?덀굩?쎼굮?듿푷?▲걮?╉걚?얇걲??,
-    "contactBody": "?듐꺖?볝궧?⑴뵪?곫룓?뷩곩댍鵝쒌겓?㏂걲?뗣걡?뤵걚?덀굩?쎼겘訝뗨쮼?얇겎?딃곥굤?뤵걽?뺛걚?귙깳?쇈꺂?㏂깋?с궧??깭?욍꺍?㎯궠?붵꺖?㎯걤?얇걲??,
-    "contactPhoneLabel": "?삭㈀",
-    "contactEmailLabel": "?▲꺖??,
-    "contactCopyEmail": "?뤵걚?덀굩?쎼깳?쇈꺂?믡궠?붵꺖",
-    "contactCopiedEmail": "?▲꺖?ャ굮?녈깞?쇈걮?얇걮??,
-    "featuredServiceSlugs": ["korean-birth-type", "haedurio", "covert"],
+    "contactTitle": "新しい提案、協業、お問い合わせをお待ちしています。",
+    "contactBody": "サービス利用、提携、制作、事業に関するお問い合わせは、下記の連絡先へお送りください。メールアドレスはボタンでコピーできます。",
+    "contactPhoneLabel": "電話",
+    "contactEmailLabel": "メール",
+    "contactCopyEmail": "問い合わせメールをコピー",
+    "contactCopiedEmail": "メールをコピーしました",
+    "featuredServiceSlugs": [
+      "korean-birth-type",
+      "haedurio",
+      "covert"
+    ],
     "principles": []
   },
   "services": {
@@ -45,116 +49,200 @@
       "theme": "birth",
       "accent": "#8b6bff",
       "illustration": "birth-type.svg",
-      "status": "?ч뼀訝?,
+      "status": "公開中",
       "category": "SELF-DISCOVERY",
       "title": "Korean Birth Type",
-      "cardTitle": "?볟쎖凉뤵겗?쎿윶?ⓨ뫝?㎬눎?녴굮屋╉걮?╉겳?얇걵?볝걢??,
-      "summary": "?귙겒?잆겘?ゅ늽??걪?ⓦ굮?у퐪?ョ윥?ｃ겍?꾠겲?쇻걢竊잓윋?썲폀??썪?길렓?썬겎?ゅ늽?믦ĳ?쀣겍?욍겲?쀣굟?녴귙굚?쀣걢?쇻굥?ⓩ쑍壤볝겗?뗣굜?뗣겗?믡꺍?덀걣誤뗣겇?뗣굥?뗣굚?쀣굦?얇걵?볝?,
+      "cardTitle": "韓国式の四柱推命で自分を試してみる。",
+      "summary": "あなたは自分のことを本当に知っていますか？ 韓国式の四柱推命で自分を試してみてください。もしかすると、本当の恋や運のヒントが見つかるかもしれません。",
       "homeEyebrow": "KOREAN BIRTH TYPE",
-      "homeTitle": "?귙겒?잆겘?ゅ늽??걪?ⓦ굮?у퐪?ョ윥?ｃ겍?꾠겲?쇻걢竊?,
-      "homeDescription": "?볟쎖凉뤵겗?쎿윶?ⓨ뫝?㎬눎?녴굮屋╉걮?╉겳?얇걮?뉎걝?귙굚?쀣걢?쇻굥?ⓩ쑍壤볝겗?뗣굜?뗣겗?믡꺍?덀걣誤뗣겇?뗣굥?뗣굚?쀣굦?얇걵?볝?,
-      "heroTitle": "?볟쎖凉뤵겗?쎿윶?ⓨ뫝?㎬눎?녴굮屋╉걮?╉겳?뗣?,
-      "heroLead": "Korean Birth Type??곩썪?길렓?썬굮?띲걚雅덅??㎯겘?ゃ걦?곮눎?녴굮璵썬걮?뤺き?욤㎗?뤶퐪蟯볝겏?쀣겍?띹Þ鼇덀걮?잆궢?쇈깛?밤겎?쇻?,
+      "homeTitle": "あなたは自分のことを本当に知っていますか？",
+      "homeDescription": "韓国式の四柱推命で自分を試してみてください。本当の恋や運のヒントが見つかるかもしれません。",
+      "heroTitle": "韓国式の四柱推命で自分を試してみる。",
+      "heroLead": "Korean Birth Typeは、四柱推命を重い予言ではなく、自分を知るための楽しいテストのように体験できる自己理解サービスです。",
       "visualCaption": "A playful self-reading system inspired by Korean saju.",
       "externalUrl": "https://koreanbirthtype.com",
-      "externalCta": "Korean Birth Type?믣쭓?곥굥",
-      "tags": ["SELF-DISCOVERY", "SAJU", "DIGITAL CARDS"],
+      "externalCta": "Korean Birth Typeを始める",
+      "tags": [
+        "SELF-DISCOVERY",
+        "SAJU",
+        "DIGITAL CARDS"
+      ],
       "statementEyebrow": "A DIFFERENT WAY TO READ YOURSELF",
-      "statementTitle": "雅덅??덀굤邕썬걦?곮㉩??굠?딀런?뤵?,
-      "statementBody": "?잌뭅?덃뿥?ⓨ눣?잍셽?삠걢?됧쭓?얇굤?얇걲?뚣곫쑋?γ굮??츣?쇻굥?귙겗?㎯겘?귙굤?얇걵?볝귝뿥?긱곦틪烏뚣곲뼟岳귝㎯곲걢??탛?뚣굮?ャ꺖?됥겗?덀걝?ヨき?욍곮눎?녴굮?겹걮?꾥쭜佯╉걢?됭쫳?ㅳ굙?뗤퐪蟯볝겎?쇻?,
-      "featuresTitle": "?ゅ늽?믦き??ャ꺖?됦퐪蟯?,
+      "statementTitle": "予言より軽く、心理テストより深く。",
+      "statementBody": "生年月日と時間から始まりますが、未来を決めつけるものではありません。日柱、五行、関係性、運の流れをカードのように見せ、自分を新しく見るきっかけを提供します。",
+      "featuresTitle": "カードで読む自分の構造",
       "features": [
-        {"index": "01", "title": "?볟쎖凉뤵겗鰲ｉ뇠", "body": "?쎿윶?ⓨ뫝??쭓?졼굮?얌빰?꾠겒鼇?됥겏?ャ꺖?됦퐪蟯볝겓營?걤?쎼걟?얇걲??},
-        {"index": "02", "title": "?뗣겏?뗣겗?믡꺍??, "body": "?㏘퓗?㎯곫㎪졏?곫탛?뚣굮邕썬굜?뗣겎鼇섉넼?ユ츐?뗥숱?㎬쫳?쎼겲?쇻?},
-        {"index": "03", "title": "?㏂깘?ㅳ꺂岳앭춼", "body": "永먩옖?믡궖?쇈깋??굠?녴겓誤뗣겍?곫컱?ャ겒?뗥냵若밤굮岳앭춼?㎯걤?얇걲??}
+        {
+          "index": "01",
+          "title": "韓国式リーディング",
+          "body": "四柱推命の構造を現代的な言葉とカード体験に変換します。"
+        },
+        {
+          "index": "02",
+          "title": "恋と運のヒント",
+          "body": "関係性、傾向、流れを軽やかで記憶に残る形で見せます。"
+        },
+        {
+          "index": "03",
+          "title": "モバイル保存",
+          "body": "結果をカードのように読み、気になる部分を保存できます。"
+        }
       ],
       "processEyebrow": "HOW IT FLOWS",
-      "processTitle": "?ε뒟?쀣겍?곮き?볝겎?곦퓷耶섅걮?얇걲??,
+      "processTitle": "入力して、読んで、保存します。",
       "steps": [
-        {"index": "01", "title": "?잌뭅?덃뿥?믣뀯??, "body": "?ゃ꺖?뉎궍?녈궛?ュ퓚誤곥겒?뷸쑍?끻젿?믣뀯?쎼걮?얇걲??},
-        {"index": "02", "title": "?ャ꺖?됥꺁?쇈깈?ｃ꺍??, "body": "?쎿윶?ⓨ뫝?쇻꺖?밤겗鰲ｉ뇠?뚣궖?쇈깋?ⓦ걮??콝?뗣걬?뚣겲?쇻?},
-        {"index": "03", "title": "永먩옖閻븃첀", "body": "?계괌?ユ츐?ｃ걼?끻??믢퓷耶섅걮?곥걗?ⓦ겎誤뗨퓭?쎼겲?쇻?}
+        {
+          "index": "01",
+          "title": "生年月日を入力",
+          "body": "リーディングに必要な基本情報を入力します。"
+        },
+        {
+          "index": "02",
+          "title": "カードリーディング",
+          "body": "四柱推命ベースの解釈がカードの流れで展開されます。"
+        },
+        {
+          "index": "03",
+          "title": "結果を確認",
+          "body": "印象に残ったカードを保存して、あとで見返せます。"
+        }
       ],
-      "closingTitle": "?귙겒?잆겗Korean Birth Type?믥▶沃띲걮?얇걮?뉎걝??,
-      "closingBody": "?ゅ늽?믡굠?뤹윥?ｃ겍?꾠굥?ⓩ앫겂?╉걚?╉굚?곫뼭?쀣걚?믡꺍?덀겓?ゃ굥?뗣굚?쀣굦?얇걵?볝?
+      "closingTitle": "あなたのKorean Birth Typeを確認してください。",
+      "closingBody": "自分をよく知っていると思っていても、意外なヒントが見つかるかもしれません。"
     },
     "haedurio": {
       "slug": "haedurio",
       "order": "02",
       "theme": "haedurio",
-      "accent": "#16a6c8",
+      "accent": "#25b7c7",
       "illustration": "haedurio.svg",
-      "status": "?ч뼀訝?,
+      "status": "公開中",
       "category": "TRAVEL SUPPORT",
-      "title": "?섅깋?γ꺁??,
-      "cardTitle": "?볟쎖?㎩쎇?ｃ걼?볝겏?뚣걗?듽겲?쇻걢竊?,
-      "summary": "?볟쎖?㎩쎇?ｃ걼?볝겏?뚣걗?듽겲?쇻걢竊잋퐬?㎯굚鰲ｆ군?쇻굥?⒲겂雅뷩곥깦?됥궏?ゃ궕?믢슴?ｃ겍?욍겍?뤵걽?뺛걚??,
+      "title": "Haedurio",
+      "cardTitle": "韓国で困ったことがありますか？",
+      "summary": "韓国で困ったことがありますか？ 何でも解決するフィクサー、Haedurioを使ってみてください。",
       "homeEyebrow": "HAEDURIO",
-      "homeTitle": "?볟쎖?㎩쎇?ｃ걼?볝겏?뚣걗?듽겲?쇻걢竊?,
-      "homeDescription": "鵝뺛겎?귟㎗黎뷩걲?뗥뒰?ｄ볶?곥깦?됥궏?ゃ궕?믢슴?ｃ겍?욍겍?뤵걽?뺛걚?귝뾽??붶릎?㎪??얇겂?잏옱?볝굮?곥굚?녵?佯?땿?뗣걮?얇걲??,
-      "heroTitle": "?끹겗?붶릎?㎩쎇?ｃ걼?됥곥깦?됥궏?ゃ궕?뚦뒰?묆겲?쇻?,
-      "heroLead": "?섅깋?γ꺁?ゃ겘?곲윋?썸뾽烏뚥릎??틛榮꾠곮낵?γ곲뀓?곥곭킏鸚긱겒?⒲곦?雅뷩겎??㎗黎뷩걮?ャ걦?꾢븦窈뚣굮?당릤?쀣곫А??죱?뺛굮誤뗣겇?묆굥?잆굙??궢?쇈깛?밤겎?쇻?,
+      "homeTitle": "韓国で困ったことがありますか？",
+      "homeDescription": "何でも解決するフィクサー、Haedurioを使ってみてください。",
+      "heroTitle": "韓国旅行で困った瞬間を、現地で解決へ。",
+      "heroLead": "Haedurioは、韓国旅行中の予約、購入、配送、紛失など予想外の問題を整理し、解決の道筋を探す現地サポートサービスです。",
       "visualCaption": "Local help for the moments that interrupt your trip.",
       "externalUrl": "https://haedurio.com",
-      "externalCta": "?섅깋?γ꺁?ゃ굮?⑴뵪?쇻굥",
-      "tags": ["LOCAL SUPPORT", "TRAVEL HELP", "KOREA"],
+      "externalCta": "Haedurioを見る",
+      "tags": [
+        "LOCAL SUPPORT",
+        "TRAVEL HELP",
+        "KOREA"
+      ],
       "statementEyebrow": "KEEP THE TRIP MOVING",
-      "statementTitle": "?겹굥?귡뼋??윮?뤵곫뾽??걹??겲?양텥?뤵굠?녴겓??,
-      "statementBody": "?ｃ굦?ゃ걚鼇沃욁굜?겼윜?㎯겘?곩컦?뺛겒?뤻죱?㎯굚?끻뀲鵝볝걣閭㏂겲?ｃ겍?쀣겲?녴걪?ⓦ걣?귙굤?얇걲?귙깦?됥궏?ゃ궕??듁力곥굮?당릤?쀣곩룾?썬겒?멩뒢?㏂굮閻븃첀?쀣곫А?ヤ퐬?믡걲?밤걤?뗣굮黎뷩굙?뗦뎸?⒲걨?믡걮?얇걲??,
-      "featuresTitle": "?뤻죱沃ф삇?뗣굢鰲ｆ군?ャ꺖?덀겲??,
+      "statementTitle": "困る時間は短く、旅は続くように。",
+      "statementBody": "慣れない言語や環境では、小さな問題でも旅全体が止まってしまうことがあります。Haedurioは状況を整理し、現地の文脈を確認して、次の行動を決められるよう支援します。",
+      "featuresTitle": "問題説明から解決ルートまで",
       "features": [
-        {"index": "01", "title": "?뜻퀋?당릤", "body": "筽뉔썞?ょ듁力곥굚恙낁쫨?ゆ깄?긱걢?됮젂?ユ빐?녴걮?얇걲??},
-        {"index": "02", "title": "?얍쑑?뉓꼫??▶沃?, "body": "?볟쎖??틛榮꾠곮낵?γ곲뀓?곭뮥罌껁굮?뷸틬?ュ룾?썬겒?방퀡?믥▶沃띲걮?얇걲??},
-        {"index": "03", "title": "轝▲겗烏뚦땿旅덂냵", "body": "?섅겒?뗧옐鼇녈겎??겒?뤵곩츪?쎼겓鵝뺛굮?쇻겧?띲걢?녴걢?뗣굠?녷죭?끹걮?얇걲??}
+        {
+          "index": "01",
+          "title": "状況整理",
+          "body": "複雑な状況も、必要な情報から順番に整理できるよう案内します。"
+        },
+        {
+          "index": "02",
+          "title": "現地基準で確認",
+          "body": "韓国の予約、購入、配送環境を基準に可能な選択肢を確認します。"
+        },
+        {
+          "index": "03",
+          "title": "次の行動へ接続",
+          "body": "単なる翻訳を超えて、実際に何をすべきかを伝えます。"
+        }
       ],
       "processEyebrow": "HOW IT WORKS",
-      "processTitle": "?뤻죱?뚩돈?띲걼?ч뼋?뗣굢?곫뾽?ユ댗?뗣겲?㎯?,
+      "processTitle": "問題が起きた瞬間から、旅へ戻るまで。",
       "steps": [
-        {"index": "01", "title": "?뜻퀋?믣뀻??, "body": "鵝뺛걣壅룔걤?잆겗?뗣굮?쇻걟?╉걦?졼걬?꾠?},
-        {"index": "02", "title": "鰲ｆ군?방퀡?믥▶沃?, "body": "??꺗?ゆ뼶力뺛겏恙낁쫨?ゆ뎸?녴굮閻븃첀?쀣겲?쇻?},
-        {"index": "03", "title": "?꿱죱旅덂냵", "body": "?멥굯?졿뼶?묆겓?덀굩?쎼겍轝▲겗餘들쉸?면꿔겳?얇걲??}
+        {
+          "index": "01",
+          "title": "状況共有",
+          "body": "何が起きたのか、必要な内容を伝えます。"
+        },
+        {
+          "index": "02",
+          "title": "解決ルート確認",
+          "body": "可能な方法と必要な手順を現地基準で確認します。"
+        },
+        {
+          "index": "03",
+          "title": "進行案内",
+          "body": "選んだ方向に沿って次の段階へ進みます。"
+        }
       ],
-      "closingTitle": "?볟쎖?낁죱??뒰?ｄ볶?곥깦?됥궏?ゃ궕??,
-      "closingBody": "?겹겂?잏옱?볝걣?귙굦?겹곥깦?됥궏?ゃ궕?ョ듁力곥굮?γ굢?쎼겍?뤵걽?뺛걚??
+      "closingTitle": "旅の問題は短く、思い出は長く。",
+      "closingBody": "韓国で助けが必要な瞬間、Haedurioに状況を知らせてください。"
     },
     "covert": {
       "slug": "covert",
       "order": "03",
       "theme": "covert",
-      "accent": "#25384a",
+      "accent": "#52616d",
       "illustration": "covert.svg",
-      "status": "繹뽩굺訝?,
+      "status": "準備中",
       "category": "MISSION TRAVEL",
-      "title": "?쒌깱 ?밤궭?녈깤?꾠궋??,
-      "cardTitle": "??싥겗?낁죱??굚?녺탞?뤵굤竊?,
-      "summary": "??싥겗?낁죱??굚?녺탞?뤵굤竊곥걪?뚣걢?됥겘逆쒎뀯?㏂궚?룔깾?녘┳?됥겗?귚빰?㎯걲?귙깭?잆겏訝渶믡겓Mission CLEAR!",
+      "title": "Beomi Stamp Tour",
+      "cardTitle": "普通の旅行はもう終わり！",
+      "summary": "普通の旅行はもう終わり！ これからは潜入侵透アクション観光の時代です。Beomiと一緒にMission CLEAR！",
       "homeEyebrow": "BEOMI STAMP TOUR",
-      "homeTitle": "??싥겗?낁죱??굚?녺탞?뤵굤竊?,
-      "homeDescription": "?볝굦?뗣굢??퐳?γ궋??궥?㎯꺍誤녑뀎??셽餓ｃ겎?쇻귙깭?잆겏訝渶믡겓?썬궑?ャ굮藥▲굤?곥궧?욍꺍?쀣굮?녴굙?쪴ission CLEAR!",
-      "heroTitle": "?쒌깱?ⓧ?渶믡겓Mission CLEAR!",
-      "heroLead": "?쒌깱 ?밤궭?녈깤?꾠궋?쇈겘?곥궫?╉꺂??궧?앫긿?덀굮鵝쒏닰?뷴윜?ュ쨯?덀곫뾽烏뚩끹걣?잆긿?룔깾?녔뎸躍녈굮?곥겂??렋榮㏂겏鼇섌뙯?믣츑雅녴걲?뗣궧?묆궎?녈꺍?삠깤?덀겗?낁죱?녶뱚?㎯걲??,
+      "homeTitle": "普通の旅行はもう終わり！",
+      "homeDescription": "これからは潜入侵透アクション観光の時代です。Beomiと一緒にMission CLEAR！",
+      "heroTitle": "ソウル旅行を秘密ミッションに変えるスタンプツアー。",
+      "heroLead": "Beomi Stamp Tourは、ソウルの場所を作戦区域のように探索し、パスポート型ミッションブックにスタンプと記録を残す体験型観光プロジェクトです。",
       "visualCaption": "A field mission hidden inside an ordinary city trip.",
       "externalUrl": "/covert/?lang=kr",
-      "externalCta": "?쒌깱 ?밤궭?녈깤?꾠궋?쇈겦",
-      "tags": ["STAMP TOUR", "SEOUL", "MISSION"],
+      "externalCta": "Beomi Stamp Tourへ",
+      "tags": [
+        "STAMP TOUR",
+        "SEOUL",
+        "MISSION CLEAR"
+      ],
       "statementEyebrow": "YOUR CITY. YOUR MISSION.",
-      "statementTitle": "誤녑뀎?겹굮誤뗣굥?끹걢?됥곦뻣?쇻굮?붹닇?쇻굥?끹겦??,
-      "statementBody": "?됧릫?ゅ졃??믦쫳?뗣걽?묆겎??탞?뤵굤?얇걵?볝귙깱?껁궥?㎯꺍?뗥립?믧뼀?띲곦퐳??뙷?잆굮鼇ゃ굦?곥궧?욍꺍?쀣겏?얍쑑鼇섌뙯?믧썓?곥굥?ⓦ곥궫?╉꺂?낁죱?ⓧ퐪?뚣겛?ⓦ겇??쭣野녵뻣?쇻겓?ゃ굤?얇걲??,
-      "featuresTitle": "?뗣겓?곥겂????뤹쭣野녵퐳??,
+      "statementTitle": "観光地をチェックする旅から、ミッションを達成する旅へ。",
+      "statementBody": "有名な場所を見るだけでは終わりません。ミッションブックを開き、作戦区域を訪れ、スタンプと現地記録を集めることで、ソウル旅行全体がひとつの秘密任務になります。",
+      "featuresTitle": "手に持って歩く秘密作戦",
       "features": [
-        {"index": "01", "title": "?묆궧?앫꺖?덂엹?잆긿?룔깾?녔뎸躍?, "body": "鵝쒏닰?뽧꺁?쇈깢?ｃ꺍?겹곩졃??끻젿?곮쮼?꿔궧?싥꺖?밤굮?γ굦?잌츪?⒵뎸躍녈겎?쇻?},
-        {"index": "02", "title": "?썬궑?ヤ퐳??뙷??, "body": "鴉앯뎠?곥궥?㎯긿?붵꺍?겹곥궛?ャ깳?곩쩂??곮죿??뻼?뽧굮?잆긿?룔깾?녈겏?쀣겍?®뇨?쀣겲?쇻?},
-        {"index": "03", "title": "?쒌깱?ⓧ?渶믡겓", "body": "?뗣굩?꾠걚?ⓦ꺖?멥궒?녈깉??깭?잆겏訝渶믡겓?밤궭?녈깤?믧썓?곥곥깱?껁궥?㎯꺍?믡궚?ゃ궋?쀣겲?쇻?}
+        {
+          "index": "01",
+          "title": "パスポート型ミッションブック",
+          "body": "作戦ブリーフィング、場所情報、記録スペースを入れた実物冊子です。"
+        },
+        {
+          "index": "02",
+          "title": "ソウル作戦区域",
+          "body": "伝統、ショッピング、食、夜景、街の文化を別々のミッションのように探索します。"
+        },
+        {
+          "index": "03",
+          "title": "Mission CLEAR",
+          "body": "スタンプと記録を集め、自分だけのソウル作戦結果を完成させます。"
+        }
       ],
       "processEyebrow": "MISSION FLOW",
-      "processTitle": "?뽧꺁?쇈깢?ｃ꺍?겹굮?쀣걨?곭뤎?담겦燁삣땿?쀣곮쮼?꿔굮餘뗣걮?얇걲??,
+      "processTitle": "ブリーフィングを受け、現場へ移動し、記録を残します。",
       "steps": [
-        {"index": "01", "title": "?뽧꺁?쇈깢?ｃ꺍?겼룛??, "body": "?잆긿?룔깾?녔뎸躍녈겎鵝쒏닰?뷴윜?ⓩ뙁餓ㅳ굮閻븃첀?쀣겲?쇻?},
-        {"index": "02", "title": "?얍졃鵝쒏닰", "body": "烏쀣굮燁삣땿?쀣겒?뚣굢?밤궭?녈깤?①뤎?계쮼?꿔굮?녴굙?얇걲??},
-        {"index": "03", "title": "Mission CLEAR", "body": "?뗥립?믤??잆걮??눎?녴걽?묆겗?썬궑?ヤ퐳?╉굮若뚥틙?쀣겲?쇻?}
+        {
+          "index": "01",
+          "title": "ブリーフィング受領",
+          "body": "ミッションブックでソウルの作戦区域と指令を確認します。"
+        },
+        {
+          "index": "02",
+          "title": "現場作戦",
+          "body": "都市を移動しながらスタンプと自分だけの記録を集めます。"
+        },
+        {
+          "index": "03",
+          "title": "任務完了",
+          "body": "Beomiと一緒にMission CLEARを完成させます。"
+        }
       ],
-      "closingTitle": "?썬궑?ャ겘?쇻겎?ヤ퐳??뙷?잆겎?쇻?,
-      "closingBody": "?쒌깱?ⓧ?渶믡겓?곫솹?싥겗?낁죱?믡깱?껁궥?㎯꺍?ュ쨯?덀겍?욍겲?쀣굟?녴?
+      "closingTitle": "ソウルはすでに作戦区域です。",
+      "closingBody": "エージェント登録と最終報告のための独立サイトは準備中です。"
     }
   }
 }

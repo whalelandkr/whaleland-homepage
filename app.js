@@ -249,7 +249,7 @@ function createServiceListCard(service, language) {
       <h3>${escapeHtml(service.title)}</h3>
       <p>${escapeHtml(service.summary)}</p>
     </div>
-    <span class="world-link" aria-hidden="true">??/span>
+    <span class="world-link" aria-hidden="true">↗</span>
   `;
 
   return link;
@@ -303,7 +303,7 @@ function renderService(copy, language, serviceSlug) {
   }
 
   document.body.dataset.theme = service.theme;
-  document.title = `${service.title} ??Whale Land`;
+  document.title = `${service.title} — Whale Land`;
 
   const metaDescription = $('meta[name="description"]');
   if (metaDescription) {

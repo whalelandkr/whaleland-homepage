@@ -1,41 +1,45 @@
 {
   "meta": {
-    "title": "Whale Land ??利먭굅???꾩씠?붿뼱瑜??쒕퉬?ㅻ줈 留뚮뱶???뚯궗",
-    "description": "Whale Land???щ컡怨?利먭굅???꾩씠?붿뼱濡??몄긽?????ㅼ뼇?섍퀬 ?됰났?섍쾶 諛붽씀???쒕퉬?ㅻ? 留뚮벊?덈떎."
+    "title": "Whale Land — 즐거운 아이디어를 서비스로 만드는 회사",
+    "description": "Whale Land는 재밌고 즐거운 아이디어로 세상을 더 다양하고 행복하게 바꾸는 서비스를 만듭니다."
   },
   "common": {
-    "navCompany": "?뚯궗 ?뚭컻",
-    "navServiceIntro": "?쒕퉬???뚭컻",
-    "navServiceList": "?쒕퉬??紐⑸줉",
-    "navContact": "臾몄쓽",
-    "backHome": "Whale Land濡??뚯븘媛湲?,
-    "officialSite": "怨듭떇 ?ъ씠??,
-    "learnMore": "?먯꽭??蹂닿린",
-    "externalNotice": "?낅┰ ?쒕퉬???ъ씠?몃줈 ?대룞?⑸땲??",
+    "navCompany": "회사 소개",
+    "navServiceIntro": "서비스 소개",
+    "navServiceList": "서비스 목록",
+    "navContact": "문의",
+    "backHome": "Whale Land로 돌아가기",
+    "officialSite": "공식 사이트",
+    "learnMore": "자세히 보기",
+    "externalNotice": "독립 서비스 사이트로 이동합니다.",
     "contactPhone": "070-8028-3008",
     "contactEmail": "contact@whalelandkr.com",
     "footerLine": "Fun ideas, useful services, happier moments.",
-    "copyright": "짤 2026 Whale Land. All rights reserved."
+    "copyright": "© 2026 Whale Land. All rights reserved."
   },
   "home": {
     "logoKicker": "WHALE LAND / IDEA COMPANY",
-    "logoNote": "SEOUL 쨌 IDEAS IN MOTION",
+    "logoNote": "SEOUL · IDEAS IN MOTION",
     "introEyebrow": "ABOUT WHALE LAND",
-    "introTitle": "?щ컡怨?利먭굅???꾩씠?붿뼱濡? ?몄긽??議곌툑 ???ㅼ뼇?섍퀬 ?됰났?섍쾶.",
-    "introBody": "?⑥씪?쒕뱶???щ엺?ㅼ쓽 ?쇱긽怨??ы뻾 ?띿뿉 ?묒? ?щ?瑜??뷀븯???뚯궗瑜?吏?ν빀?덈떎.\n湲곗닠, ?댁빞湲? 罹먮┃?? ?ㅻЪ 寃쏀뿕???먯쑀濡?쾶 ?욎뼱 ?덈줈???쒕퉬?ㅻ? ?ㅽ뿕?섍퀬 留뚮벊?덈떎.\n吏湲덉쓽 ?쒕퉬?ㅻ뒗 ?앹씠 ?꾨땲?? 怨꾩냽 諛붾뚭퀬 ?뺤옣?섎뒗 ?⑥씪?쒕뱶???꾩옱 紐⑥뒿?낅땲??",
+    "introTitle": "재밌고 즐거운 아이디어로, 세상을 조금 더 다양하고 행복하게.",
+    "introBody": "웨일랜드는 사람들의 일상과 여행 속에 작은 재미를 더하는 회사를 지향합니다.\n기술, 이야기, 캐릭터, 오프라인 경험을 자유롭게 엮어 새로운 서비스를 실험하고 만듭니다.\n지금의 서비스는 끝이 아니라, 계속 바뀌고 확장되는 웨일랜드의 현재 모습입니다.",
     "serviceSectionEyebrow": "SERVICE INTRODUCTION",
-    "serviceLinkCta": "?쒕퉬???섏씠吏 蹂닿린",
+    "serviceLinkCta": "서비스 페이지 보기",
     "serviceListEyebrow": "SERVICE HUB",
-    "serviceListTitle": "吏湲?留뚮궇 ???덈뒗 ?⑥씪?쒕뱶???쒕퉬??,
-    "serviceListBody": "媛??쒕퉬?ㅻ뒗 ?낅┰???멸퀎愿怨?湲곕뒫??媛吏??꾨줈?앺듃?낅땲?? ???쒕퉬?ㅺ? ?앷린硫????덈툕???먯뿰?ㅻ읇寃?異붽??⑸땲??",
+    "serviceListTitle": "지금 만날 수 있는 웨일랜드의 서비스",
+    "serviceListBody": "각 서비스는 독립적인 세계관과 기능을 가진 프로젝트입니다. 새 서비스가 생기면 이 허브에 자연스럽게 추가됩니다.",
     "contactEyebrow": "CONTACT WHALE LAND",
-    "contactTitle": "?덈줈???쒖븞, ?묒뾽, 臾몄쓽瑜?湲곕떎由쎈땲??",
-    "contactBody": "?쒕퉬???댁슜, ?쒗쑕, ?쒖옉 臾몄쓽媛 ?덈떎硫??꾨옒 ?곕씫泥섎줈 蹂대궡二쇱꽭?? ?대찓??二쇱냼??踰꾪듉?쇰줈 諛붾줈 蹂듭궗?????덉뒿?덈떎.",
-    "contactPhoneLabel": "?꾪솕",
-    "contactEmailLabel": "?대찓??,
-    "contactCopyEmail": "臾몄쓽 ?대찓??蹂듭궗",
-    "contactCopiedEmail": "?대찓?쇱쓣 蹂듭궗?덉뒿?덈떎",
-    "featuredServiceSlugs": ["korean-birth-type", "haedurio", "covert"],
+    "contactTitle": "새로운 제안, 협업, 문의를 기다립니다.",
+    "contactBody": "서비스 이용, 제휴, 제작 문의가 있다면 아래 연락처로 보내주세요. 이메일 주소는 버튼으로 바로 복사할 수 있습니다.",
+    "contactPhoneLabel": "전화",
+    "contactEmailLabel": "이메일",
+    "contactCopyEmail": "문의 이메일 복사",
+    "contactCopiedEmail": "이메일을 복사했습니다",
+    "featuredServiceSlugs": [
+      "korean-birth-type",
+      "haedurio",
+      "covert"
+    ],
     "principles": []
   },
   "services": {
@@ -48,113 +52,197 @@
       "status": "LIVE",
       "category": "SELF-DISCOVERY",
       "title": "Korean Birth Type",
-      "cardTitle": "?쒓뎅???ъ＜ ?댁꽍?쇰줈 ?섎? ?쒗뿕?대낫?몄슂.",
-      "summary": "?뱀떊? ?뱀떊????댁꽌 ???뚭퀬 ?덈굹?? ?쒓뎅???ъ＜ ?댁꽍?쇰줈 ?뱀떊???쒗뿕?대낫?몄슂. ?댁찈硫??뱀떊??吏꾩쭨 ?щ옉怨??댁쓣 ?????덉쓣吏 紐곕씪??",
+      "cardTitle": "한국식 사주 해석으로 당신을 시험해보세요.",
+      "summary": "당신은 당신에 대해서 잘 알고 있나요? 한국식 사주 해석으로 당신을 시험해보세요. 어쩌면 당신의 진짜 사랑과 운을 알 수 있을지 몰라요.",
       "homeEyebrow": "KOREAN BIRTH TYPE",
-      "homeTitle": "?뱀떊? ?뱀떊????댁꽌 ???뚭퀬 ?덈굹??",
-      "homeDescription": "?쒓뎅???ъ＜ ?댁꽍?쇰줈 ?뱀떊???쒗뿕?대낫?몄슂. ?댁찈硫??뱀떊??吏꾩쭨 ?щ옉怨??댁쓣 ?????덉쓣吏 紐곕씪??",
-      "heroTitle": "?쒓뎅???ъ＜ ?댁꽍?쇰줈 ?섎? ?쒗뿕?대낫?몄슂.",
-      "heroLead": "Korean Birth Type? ?ъ＜瑜?臾닿굅???덉뼵???꾨땲?? ?섎? ?쎌뼱蹂대뒗 ?λ?濡쒖슫 ?먭린?댄빐 寃쏀뿕?쇰줈 ?ㅼ떆 留뚮뱺 ?쒕퉬?ㅼ엯?덈떎.",
+      "homeTitle": "당신은 당신에 대해서 잘 알고 있나요?",
+      "homeDescription": "한국식 사주 해석으로 당신을 시험해보세요. 어쩌면 당신의 진짜 사랑과 운을 알 수 있을지 몰라요.",
+      "heroTitle": "한국식 사주 해석으로 당신을 시험해보세요.",
+      "heroLead": "Korean Birth Type은 사주를 무겁고 단정적인 예언이 아니라, 나를 알아보는 즐거운 테스트처럼 풀어낸 자기이해 서비스입니다.",
       "visualCaption": "A playful self-reading system inspired by Korean saju.",
       "externalUrl": "https://koreanbirthtype.com",
-      "externalCta": "Korean Birth Type ?쒖옉?섍린",
-      "tags": ["SELF-DISCOVERY", "SAJU", "DIGITAL CARDS"],
+      "externalCta": "Korean Birth Type 시작하기",
+      "tags": [
+        "SELF-DISCOVERY",
+        "SAJU",
+        "DIGITAL CARDS"
+      ],
       "statementEyebrow": "A DIFFERENT WAY TO READ YOURSELF",
-      "statementTitle": "?덉뼵蹂대떎 媛蹂띻쾶, ?뚯뒪?몃낫??源딄쾶.",
-      "statementBody": "?쒖뼱???좎쭨? ?쒓컙?먯꽌 異쒕컻?섏?留?誘몃옒瑜??⑥젙?섏? ?딆뒿?덈떎. ?쇱＜, ?ㅽ뻾, 愿怨? ?щЪ???먮쫫??移대뱶泥섎읆 ?쎌쑝硫??닿? ?대뼡 ?щ엺?몄? ?덈∼寃??뺤씤?대낫??寃쏀뿕?낅땲??",
-      "featuresTitle": "?섎? ?쎈뒗 移대뱶??寃쏀뿕",
+      "statementTitle": "예언보다 가볍고, 심리 테스트보다 깊게.",
+      "statementBody": "태어난 날짜와 시간에서 출발하지만 목적은 미래를 단정하는 것이 아닙니다. 일주, 오행, 관계와 운의 흐름을 카드처럼 펼쳐 스스로를 새롭게 바라보는 실마리를 제공합니다.",
+      "featuresTitle": "카드로 읽는 나의 구조",
       "features": [
-        {"index": "01", "title": "?쒓뎅???댁꽍", "body": "?ъ＜??援ъ“瑜??꾨??곸씤 ?몄뼱? 移대뱶 寃쏀뿕?쇰줈 ??대깄?덈떎."},
-        {"index": "02", "title": "?щ옉怨??댁쓽 ?뚰듃", "body": "愿怨? ?깊뼢, ?먮쫫??媛蹂띿?留?湲곗뼲???⑤뒗 諛⑹떇?쇰줈 蹂댁뿬以띾땲??"},
-        {"index": "03", "title": "紐⑤컮?????, "body": "寃곌낵瑜?移대뱶泥섎읆 蹂닿퀬 ??ν븯硫??ㅼ떆 爰쇰궡蹂????덇쾶 ?ㅺ퀎?⑸땲??"}
+        {
+          "index": "01",
+          "title": "한국식 리딩",
+          "body": "사주의 구조를 현대적인 언어와 카드 경험으로 바꿉니다."
+        },
+        {
+          "index": "02",
+          "title": "사랑과 운의 힌트",
+          "body": "관계, 성향, 흐름을 가볍지만 기억에 남는 방식으로 보여줍니다."
+        },
+        {
+          "index": "03",
+          "title": "모바일 저장",
+          "body": "결과를 카드처럼 읽고 마음에 남는 부분을 저장할 수 있습니다."
+        }
       ],
       "processEyebrow": "HOW IT FLOWS",
-      "processTitle": "?낅젰?섍퀬, ?쎄퀬, ??ν빀?덈떎.",
+      "processTitle": "입력하고, 읽고, 저장합니다.",
       "steps": [
-        {"index": "01", "title": "?앸뀈?붿씪 ?낅젰", "body": "?섏쓽 湲곕낯 ?뺣낫瑜??낅젰?⑸땲??"},
-        {"index": "02", "title": "移대뱶 由щ뵫", "body": "?ъ＜ 湲곕컲 ?댁꽍??移대뱶泥섎읆 ?쇱퀜吏묐땲??"},
-        {"index": "03", "title": "寃곌낵 ?뺤씤", "body": "留덉쓬???⑤뒗 ?댁슜????ν븯怨??ㅼ떆 ?뺤씤?⑸땲??"}
+        {
+          "index": "01",
+          "title": "생년월일 입력",
+          "body": "리딩에 필요한 기본 정보를 입력합니다."
+        },
+        {
+          "index": "02",
+          "title": "카드 리딩",
+          "body": "사주 기반 해석이 카드 흐름으로 펼쳐집니다."
+        },
+        {
+          "index": "03",
+          "title": "결과 확인",
+          "body": "기억에 남는 카드를 저장하고 다시 확인합니다."
+        }
       ],
-      "closingTitle": "?뱀떊??Korean Birth Type???뺤씤?섏꽭??",
-      "closingBody": "?섎? ???덈떎怨??앷컖?덈뜕 ?щ엺?먭쾶???덈줈???뚰듃媛 ?????덉뒿?덈떎."
+      "closingTitle": "당신의 Korean Birth Type을 확인하세요.",
+      "closingBody": "이미 자신을 잘 안다고 생각해도, 의외의 단서를 발견할 수 있습니다."
     },
     "haedurio": {
       "slug": "haedurio",
       "order": "02",
       "theme": "haedurio",
-      "accent": "#16a6c8",
+      "accent": "#25b7c7",
       "illustration": "haedurio.svg",
       "status": "LIVE",
       "category": "TRAVEL SUPPORT",
-      "title": "?대뱶由ъ삤",
-      "cardTitle": "?쒓뎅?먯꽌 怨ㅻ????쇱씠 ?덈굹??",
-      "summary": "?쒓뎅?먯꽌 怨ㅻ????쇱씠 ?덈굹?? 臾댁뾿?대뱺 ?닿껐?섎뒗 ?닿껐?? ?대뱶由ъ삤 ?쒕퉬?ㅻ? ?댁슜?대낫?몄슂.",
+      "title": "해드리오",
+      "cardTitle": "한국에서 곤란한 일이 있나요?",
+      "summary": "한국에서 곤란한 일이 있나요? 무엇이든 해결하는 해결사, 해드리오 서비스를 이용해보세요.",
       "homeEyebrow": "HAEDURIO",
-      "homeTitle": "?쒓뎅?먯꽌 怨ㅻ????쇱씠 ?덈굹??",
-      "homeDescription": "臾댁뾿?대뱺 ?닿껐?섎뒗 ?닿껐?? ?대뱶由ъ삤 ?쒕퉬?ㅻ? ?댁슜?대낫?몄슂. ?ы뻾 以?留됲엺 ?쒓컙???ㅼ떆 ?吏곸씠寃?留뚮벊?덈떎.",
-      "heroTitle": "?ы뻾 以?留됲엺 ?쒓컙, ?대뱶由ъ삤媛 ?뺤뒿?덈떎.",
-      "heroLead": "?대뱶由ъ삤???쒓뎅 ?ы뻾 以??덉빟, 援щℓ, 諛곗넚, 遺꾩떎 ???쇱옄 ?닿껐?섍린 ?대젮??臾몄젣瑜??꾩? 留λ씫?쇰줈 ?뺣━?섍퀬 ?ㅼ쓬 ?됰룞??李얜룄濡??뺣뒗 ?쒕퉬?ㅼ엯?덈떎.",
+      "homeTitle": "한국에서 곤란한 일이 있나요?",
+      "homeDescription": "무엇이든 해결하는 해결사, 해드리오 서비스를 이용해보세요.",
+      "heroTitle": "한국 여행 중 막힌 순간, 현지에서 해결합니다.",
+      "heroLead": "해드리오는 한국 여행 중 예약, 구매, 배송, 분실 등 예상하지 못한 문제를 정리하고 해결 경로를 찾도록 돕는 현지 지원 서비스입니다.",
       "visualCaption": "Local help for the moments that interrupt your trip.",
       "externalUrl": "https://haedurio.com",
-      "externalCta": "?대뱶由ъ삤 ?댁슜?섍린",
-      "tags": ["LOCAL SUPPORT", "TRAVEL HELP", "KOREA"],
+      "externalCta": "해드리오 방문하기",
+      "tags": [
+        "LOCAL SUPPORT",
+        "TRAVEL HELP",
+        "KOREA"
+      ],
       "statementEyebrow": "KEEP THE TRIP MOVING",
-      "statementTitle": "怨ㅻ????쒓컙? 吏㏐쾶, ?ы뻾? 怨꾩냽?섍쾶.",
-      "statementBody": "??꽑 ?몄뼱? 吏??뿉?쒕뒗 ?묒? 臾몄젣???ы뻾 ?꾩껜瑜?硫덉텛寃??????덉뒿?덈떎. ?대뱶由ъ삤???곹솴???뺣━?섍퀬 媛?ν븳 ?좏깮吏瑜??뺤씤???ы뻾?먭? ?ㅼ쓬 ?됰룞??寃곗젙?????덈룄濡??뺤뒿?덈떎.",
-      "featuresTitle": "臾몄젣 ?ㅻ챸遺???닿껐 寃쎈줈源뚯?",
+      "statementTitle": "곤란한 시간은 짧게, 여행은 계속되게.",
+      "statementBody": "낯선 언어와 환경에서는 작은 문제도 여행 전체를 멈추게 할 수 있습니다. 해드리오는 상황을 정리하고 현지 맥락을 확인해 다음 행동을 결정할 수 있게 돕습니다.",
+      "featuresTitle": "문제 설명부터 해결 경로까지",
       "features": [
-        {"index": "01", "title": "?곹솴 ?뺣━", "body": "蹂듭옟???곹솴???꾩슂???뺣낫遺??李④렐李④렐 ?뺣━?⑸땲??"},
-        {"index": "02", "title": "?꾩? 留λ씫 ?뺤씤", "body": "?쒓뎅???덉빟, 援щℓ, 諛곗넚 ?섍꼍??湲곗??쇰줈 媛?ν븳 諛⑸쾿???뺤씤?⑸땲??"},
-        {"index": "03", "title": "?ㅼ쓬 ?됰룞 ?덈궡", "body": "臾댁뾿???댁빞 ?섎뒗吏 ?댄빐?????덈룄濡?吏꾪뻾 諛⑺뼢???쒖떆?⑸땲??"}
+        {
+          "index": "01",
+          "title": "상황 정리",
+          "body": "복잡한 상황도 필요한 정보부터 차근차근 정리할 수 있게 안내합니다."
+        },
+        {
+          "index": "02",
+          "title": "현지 기준 확인",
+          "body": "한국의 예약, 구매, 배송 환경을 기준으로 가능한 선택지를 확인합니다."
+        },
+        {
+          "index": "03",
+          "title": "다음 행동 연결",
+          "body": "단순 번역을 넘어 실제로 무엇을 해야 하는지 알려줍니다."
+        }
       ],
       "processEyebrow": "HOW IT WORKS",
-      "processTitle": "臾몄젣媛 ?앷릿 ?쒓컙遺?? ?ㅼ떆 ?ы뻾?쇰줈 ?뚯븘媛??뚭퉴吏.",
+      "processTitle": "문제가 생긴 순간부터 다시 여행으로 돌아갈 때까지.",
       "steps": [
-        {"index": "01", "title": "?곹솴 ?꾨떖", "body": "臾댁뒯 ?쇱씠 ?앷꼈?붿? ?뚮젮二쇱꽭??"},
-        {"index": "02", "title": "?닿껐 寃쎈줈 ?뺤씤", "body": "媛?ν븳 諛⑸쾿怨??꾩슂???덉감瑜??뺤씤?⑸땲??"},
-        {"index": "03", "title": "吏꾪뻾 ?덈궡", "body": "?좏깮??諛⑺뼢???곕씪 ?ㅼ쓬 ?④퀎濡??댁뼱吏묐땲??"}
+        {
+          "index": "01",
+          "title": "상황 전달",
+          "body": "무슨 일이 생겼는지 필요한 내용을 전달합니다."
+        },
+        {
+          "index": "02",
+          "title": "해결 경로 확인",
+          "body": "가능한 방법과 필요한 절차를 현지 기준으로 확인합니다."
+        },
+        {
+          "index": "03",
+          "title": "진행 안내",
+          "body": "선택한 방향에 따라 다음 단계로 이어집니다."
+        }
       ],
-      "closingTitle": "?쒓뎅 ?ы뻾???닿껐?? ?대뱶由ъ삤.",
-      "closingBody": "留됲엺 ?쒓컙???앷린硫??대뱶由ъ삤?먯꽌 ?곹솴???뚮젮二쇱꽭??"
+      "closingTitle": "여행의 문제는 짧게, 기억은 길게.",
+      "closingBody": "한국에서 도움이 필요한 순간, 해드리오에서 상황을 알려주세요."
     },
     "covert": {
       "slug": "covert",
       "order": "03",
       "theme": "covert",
-      "accent": "#25384a",
+      "accent": "#52616d",
       "illustration": "covert.svg",
       "status": "PREPARING",
       "category": "MISSION TRAVEL",
-      "title": "踰붿씠 ?ㅽ꺃???ъ뼱",
-      "cardTitle": "?됰쾾???ы뻾? 洹몃쭔!",
-      "summary": "?됰쾾???ы뻾? 洹몃쭔! ?댁젣???좎엯移⑦닾?≪뀡愿愿묒쓽 ?쒕??낅땲?? 踰붿씠? ?④퍡 Mission CLEAR!",
+      "title": "범이 스탬프 투어",
+      "cardTitle": "평범한 여행은 그만!",
+      "summary": "평범한 여행은 그만! 이제는 잠입침투액션관광의 시대입니다. 범이와 함께 Mission CLEAR!",
       "homeEyebrow": "BEOMI STAMP TOUR",
-      "homeTitle": "?됰쾾???ы뻾? 洹몃쭔!",
-      "homeDescription": "?댁젣???좎엯移⑦닾?≪뀡愿愿묒쓽 ?쒕??낅땲?? 踰붿씠? ?④퍡 ?쒖슱???꾨퉬怨? ?ㅽ꺃?꾨? 紐⑥쑝硫?Mission CLEAR!",
-      "heroTitle": "踰붿씠? ?④퍡 Mission CLEAR!",
-      "heroLead": "踰붿씠 ?ㅽ꺃???ъ뼱???쒖슱???μ냼瑜??묒쟾 援ъ뿭?쇰줈 諛붽씀怨? ?ы뻾?먭? 誘몄뀡 ?섏꺽???ㅺ퀬 吏곸젒 ?먰뿕怨?湲곕줉???꾩닔?섎뒗 ?ㅽ뙆??肄섏뀎???ы뻾 ?곹뭹?낅땲??",
+      "homeTitle": "평범한 여행은 그만!",
+      "homeDescription": "이제는 잠입침투액션관광의 시대입니다. 범이와 함께 Mission CLEAR!",
+      "heroTitle": "서울 여행을 비밀 미션으로 바꾸는 스탬프 투어.",
+      "heroLead": "범이 스탬프 투어는 서울의 장소를 작전 구역처럼 탐험하고, 여권형 미션 수첩에 스탬프와 기록을 남기는 체험형 관광 프로젝트입니다.",
       "visualCaption": "A field mission hidden inside an ordinary city trip.",
       "externalUrl": "/covert/?lang=kr",
-      "externalCta": "踰붿씠 ?ㅽ꺃???ъ뼱 ?낆옣",
-      "tags": ["STAMP TOUR", "SEOUL", "MISSION"],
+      "externalCta": "범이 스탬프 투어 입장",
+      "tags": [
+        "STAMP TOUR",
+        "SEOUL",
+        "MISSION CLEAR"
+      ],
       "statementEyebrow": "YOUR CITY. YOUR MISSION.",
-      "statementTitle": "愿愿묒?瑜?蹂대뒗 ?ы뻾?먯꽌, ?꾨Т瑜??꾩닔?섎뒗 ?ы뻾?쇰줈.",
-      "statementBody": "?좊챸???μ냼瑜?蹂대뒗 寃껊쭔?쇰줈 ?앸굹吏 ?딆뒿?덈떎. 誘몄뀡 ?섏꺽???쇱튂怨??묒쟾 援ъ뿭??李얠븘媛 ?ㅽ꺃?꾩? ?꾩옣 湲곕줉???섏쭛?섎㈃ ?쒖슱 ?ы뻾 ?꾩껜媛 ?섎굹??鍮꾨? ?꾨Т媛 ?⑸땲??",
-      "featuresTitle": "?먯뿉 ?ㅺ퀬 嫄룸뒗 鍮꾨? ?묒쟾",
+      "statementTitle": "관광지를 체크하는 여행에서, 임무를 완수하는 여행으로.",
+      "statementBody": "유명한 장소를 보는 것만으로 끝나지 않습니다. 미션 수첩을 펼치고 작전 구역을 찾아가 스탬프와 현장 정보를 수집하면, 서울 여행 전체가 하나의 비밀 임무가 됩니다.",
+      "featuresTitle": "손에 들고 걷는 비밀 작전",
       "features": [
-        {"index": "01", "title": "?ш텒??誘몄뀡 ?섏꺽", "body": "?묒쟾 釉뚮━?? ?μ냼 ?뺣낫, 湲곕줉 怨듦컙???댁? ?ㅻЪ ?섏꺽?낅땲??"},
-        {"index": "02", "title": "?쒖슱 ?묒쟾 援ъ뿭", "body": "?꾪넻, ?쇳븨, ?뚯떇, ?쇨꼍怨??숇꽕 臾명솕瑜?誘몄뀡泥섎읆 ?먰뿕?⑸땲??"},
-        {"index": "03", "title": "踰붿씠? ?④퍡", "body": "洹?ъ슫 ?붿썝 踰붿씠? ?④퍡 ?ㅽ꺃?꾨? 紐⑥쑝怨?誘몄뀡???대━?댄빀?덈떎."}
+        {
+          "index": "01",
+          "title": "여권형 미션 수첩",
+          "body": "작전 브리핑, 장소 정보, 기록 공간을 담은 실물 수첩입니다."
+        },
+        {
+          "index": "02",
+          "title": "서울 작전 구역",
+          "body": "전통, 쇼핑, 음식, 야경과 동네 문화를 서로 다른 미션처럼 탐험합니다."
+        },
+        {
+          "index": "03",
+          "title": "Mission CLEAR",
+          "body": "스탬프와 기록을 모아 나만의 서울 작전 결과를 완성합니다."
+        }
       ],
       "processEyebrow": "MISSION FLOW",
-      "processTitle": "釉뚮━?묒쓣 諛쏄퀬, ?꾩옣?쇰줈 ?대룞?섍퀬, 湲곕줉???④퉩?덈떎.",
+      "processTitle": "브리핑을 받고, 현장으로 이동하고, 기록을 남깁니다.",
       "steps": [
-        {"index": "01", "title": "釉뚮━???섎졊", "body": "誘몄뀡 ?섏꺽?먯꽌 ?묒쟾 援ъ뿭怨?吏?뱀쓣 ?뺤씤?⑸땲??"},
-        {"index": "02", "title": "?꾩옣 ?묒쟾", "body": "?꾩떆瑜??대룞?섎ŉ ?ㅽ꺃?꾩? ?꾩옣 湲곕줉???섏쭛?⑸땲??"},
-        {"index": "03", "title": "Mission CLEAR", "body": "?섏꺽??梨꾩슦怨??섎쭔???쒖슱 ?묒쟾???꾩닔?⑸땲??"}
+        {
+          "index": "01",
+          "title": "브리핑 수령",
+          "body": "미션 수첩에서 서울 작전 구역과 지령을 확인합니다."
+        },
+        {
+          "index": "02",
+          "title": "현장 작전",
+          "body": "도시를 이동하며 스탬프와 자신만의 기록을 수집합니다."
+        },
+        {
+          "index": "03",
+          "title": "임무 완료",
+          "body": "범이와 함께 Mission CLEAR를 완성합니다."
+        }
       ],
-      "closingTitle": "?쒖슱? ?대? ?묒쟾 援ъ뿭?낅땲??",
-      "closingBody": "踰붿씠? ?④퍡 ?됰쾾???ы뻾??誘몄뀡?쇰줈 諛붽퓭蹂댁꽭??"
+      "closingTitle": "서울은 이미 작전 구역입니다.",
+      "closingBody": "요원 등록과 최종 보고를 위한 독립 사이트는 계속 준비 중입니다."
     }
   }
 }
