@@ -8,7 +8,6 @@ const LANGUAGE_ALIASES = {
   zh: "zh-cn"
 };
 const DEFAULT_LANGUAGE = "ko";
-const SERVICE_SLUGS = ["korean-birth-type", "haedurio", "covert"];
 
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
@@ -62,12 +61,20 @@ function getInitialLanguage() {
 
 function getServiceSlug() {
   const params = new URLSearchParams(window.location.search);
-  const requested = params.get("service")?.toLowerCase() || "";
-  return SERVICE_SLUGS.includes(requested) ? requested : "";
+  return params.get("service")?.toLowerCase() || "";
 }
 
 function getNestedValue(source, path) {
   return path.split(".").reduce((value, key) => value?.[key], source);
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
 
 async function loadCopy(language) {
@@ -129,7 +136,45 @@ function updateHomeLinks(language) {
 
   $$('[data-home-section]').forEach((link) => {
     const section = link.dataset.homeSection;
-    link.href = `./index.html?lang=${encodeURIComponent(language)}#${section}`;
+
+    if (section) {
+      link.href = `./index.html?lang=${encodeURIComponent(language)}#${section}`;
+    }
+  });
+
+  $$('[data-service-link]').forEach((link) => {
+    const slug = link.dataset.serviceLink;
+
+    if (slug) {
+      link.href = `./service.html?service=${encodeURIComponent(slug)}&lang=${encodeURIComponent(language)}`;
+    }
+  });
+}
+
+function updateContactLinks(copy) {
+  const phone = copy.common?.contactPhone || "070-8028-3008";
+  const email = copy.common?.contactEmail || "contact@whalelandkr.com";
+
+  $$('[data-contact-phone-link]').forEach((link) => {
+    link.href = `tel:${phone.replace(/[^0-9+]/g, "")}`;
+
+    const textNode = $('[data-contact-phone-text]', link);
+    if (textNode) {
+      textNode.textContent = phone;
+    } else {
+      link.textContent = phone;
+    }
+  });
+
+  $$('[data-contact-email-link]').forEach((link) => {
+    link.href = `mailto:${email}`;
+
+    const textNode = $('[data-contact-email-text]', link);
+    if (textNode) {
+      textNode.textContent = email;
+    } else {
+      link.textContent = email;
+    }
   });
 }
 
@@ -139,53 +184,110 @@ function illustrationPath(service) {
     haedurio: "haedurio.svg",
     covert: "covert.svg"
   };
+  const fileName = service.illustration || fileNames[service.theme] || "covert.svg";
 
-  return `./assets/illustrations/${fileNames[service.theme] || "covert.svg"}`;
+  return `./assets/illustrations/${fileName}`;
 }
 
-function createWorldCard(service, language) {
+function getFeaturedServices(copy) {
+  const slugs = Array.isArray(copy.home?.featuredServiceSlugs)
+    ? copy.home.featuredServiceSlugs
+    : Object.keys(copy.services || {});
+
+  return slugs
+    .map((slug) => copy.services?.[slug])
+    .filter(Boolean);
+}
+
+function createServiceFeaturePanel(service, language, index) {
+  const section = document.createElement("section");
+  section.className = "chapter service-feature-panel reveal";
+  section.dataset.theme = service.theme;
+  section.style.setProperty("--service-accent", service.accent || "#1674d8");
+
+  section.innerHTML = `
+    <div class="service-feature-bg" aria-hidden="true"></div>
+    <div class="service-feature-inner">
+      <div class="service-feature-copy">
+        <p class="eyebrow">${escapeHtml(service.homeEyebrow || service.category)}</p>
+        <span class="service-feature-number">${String(index + 3).padStart(2, "0")}</span>
+        <h2>${escapeHtml(service.homeTitle || service.title)}</h2>
+        <p>${escapeHtml(service.homeDescription || service.summary)}</p>
+        <a class="button button-primary" data-service-link="${escapeHtml(service.slug)}" href="./service.html?service=${encodeURIComponent(service.slug)}&lang=${encodeURIComponent(language)}">
+          ${escapeHtml(currentCopy?.home?.serviceLinkCta || "View service page")}
+        </a>
+      </div>
+      <div class="service-feature-visual" aria-hidden="true">
+        <div class="service-feature-orbit"></div>
+        <div class="service-feature-frame">
+          <img src="${illustrationPath(service)}" alt="" />
+        </div>
+      </div>
+    </div>
+  `;
+
+  return section;
+}
+
+function createServiceListCard(service, language) {
   const link = document.createElement("a");
-  link.className = "world-card reveal";
+  link.className = "service-list-card reveal";
   link.dataset.theme = service.theme;
+  link.dataset.serviceLink = service.slug;
   link.href = `./service.html?service=${encodeURIComponent(service.slug)}&lang=${encodeURIComponent(language)}`;
 
   link.innerHTML = `
-    <span class="world-index">${service.order}</span>
-    <div class="world-visual">
+    <span class="service-list-index">${escapeHtml(service.order)}</span>
+    <div class="service-list-icon">
       <img src="${illustrationPath(service)}" alt="" />
     </div>
-    <div class="world-copy">
+    <div>
       <div class="service-meta">
-        <span>${service.category}</span>
-        <span class="status-pill">${service.status}</span>
+        <span>${escapeHtml(service.category)}</span>
+        <span class="status-pill">${escapeHtml(service.status)}</span>
       </div>
-      <h3>${service.cardTitle}</h3>
-      <p>${service.summary}</p>
+      <h3>${escapeHtml(service.title)}</h3>
+      <p>${escapeHtml(service.summary)}</p>
     </div>
-    <span class="world-link" aria-hidden="true">↗</span>
+    <span class="world-link" aria-hidden="true">??/span>
   `;
 
   return link;
 }
 
+function createWorldCard(service, language) {
+  return createServiceListCard(service, language);
+}
+
 function renderHome(copy, language) {
+  const services = getFeaturedServices(copy);
+  const serviceStory = $("#serviceStory, #service-story");
+  const serviceList = $("#serviceList");
   const worldList = $("#worldList");
   const principleGrid = $("#principleGrid");
 
-  worldList?.replaceChildren(
-    ...Object.values(copy.services).map((service) =>
-      createWorldCard(service, language)
+  serviceStory?.replaceChildren(
+    ...services.map((service, index) =>
+      createServiceFeaturePanel(service, language, index)
     )
   );
 
+  serviceList?.replaceChildren(
+    ...services.map((service) => createServiceListCard(service, language))
+  );
+
+  worldList?.replaceChildren(
+    ...services.map((service) => createWorldCard(service, language))
+  );
+
   principleGrid?.replaceChildren(
-    ...copy.home.principles.map((principle) => {
+    ...(copy.home.principles || []).map((principle) => {
       const article = document.createElement("article");
       article.className = "principle reveal";
       article.innerHTML = `
-        <span class="principle-index">${principle.index}</span>
-        <h3>${principle.title}</h3>
-        <p>${principle.body}</p>
+        <span class="principle-index">${escapeHtml(principle.index)}</span>
+        <h3>${escapeHtml(principle.title)}</h3>
+        <p>${escapeHtml(principle.body)}</p>
       `;
       return article;
     })
@@ -193,7 +295,7 @@ function renderHome(copy, language) {
 }
 
 function renderService(copy, language, serviceSlug) {
-  const service = copy.services[serviceSlug];
+  const service = copy.services?.[serviceSlug];
 
   if (!service) {
     window.location.replace(`./index.html?lang=${encodeURIComponent(language)}`);
@@ -201,7 +303,7 @@ function renderService(copy, language, serviceSlug) {
   }
 
   document.body.dataset.theme = service.theme;
-  document.title = `${service.title} — Whale Land`;
+  document.title = `${service.title} ??Whale Land`;
 
   const metaDescription = $('meta[name="description"]');
   if (metaDescription) {
@@ -226,7 +328,7 @@ function renderService(copy, language, serviceSlug) {
   Object.entries(textMap).forEach(([id, value]) => {
     const node = document.getElementById(id);
     if (node) {
-      node.textContent = value;
+      node.textContent = value || "";
     }
   });
 
@@ -237,7 +339,7 @@ function renderService(copy, language, serviceSlug) {
 
   const tags = $("#tagList");
   tags?.replaceChildren(
-    ...service.tags.map((tag) => {
+    ...(service.tags || []).map((tag) => {
       const span = document.createElement("span");
       span.className = "tag";
       span.textContent = tag;
@@ -250,7 +352,7 @@ function renderService(copy, language, serviceSlug) {
     const isExternalUrl = /^https?:\/\//i.test(externalUrl);
 
     link.href = externalUrl;
-    link.textContent = service.externalCta;
+    link.textContent = service.externalCta || copy.common.learnMore;
 
     if (isExternalUrl) {
       link.target = "_blank";
@@ -262,19 +364,19 @@ function renderService(copy, language, serviceSlug) {
     } else {
       link.removeAttribute("target");
       link.removeAttribute("rel");
-      link.setAttribute("aria-label", service.externalCta);
+      link.setAttribute("aria-label", service.externalCta || copy.common.learnMore);
     }
   });
 
   const featureGrid = $("#featureGrid");
   featureGrid?.replaceChildren(
-    ...service.features.map((feature) => {
+    ...(service.features || []).map((feature) => {
       const article = document.createElement("article");
       article.className = "feature-card reveal";
       article.innerHTML = `
-        <span class="feature-index">${feature.index}</span>
-        <h3>${feature.title}</h3>
-        <p>${feature.body}</p>
+        <span class="feature-index">${escapeHtml(feature.index)}</span>
+        <h3>${escapeHtml(feature.title)}</h3>
+        <p>${escapeHtml(feature.body)}</p>
       `;
       return article;
     })
@@ -282,13 +384,13 @@ function renderService(copy, language, serviceSlug) {
 
   const processGrid = $("#processGrid");
   processGrid?.replaceChildren(
-    ...service.steps.map((step) => {
+    ...(service.steps || []).map((step) => {
       const article = document.createElement("article");
       article.className = "process-step reveal";
       article.innerHTML = `
-        <span class="step-index">${step.index}</span>
-        <h3>${step.title}</h3>
-        <p>${step.body}</p>
+        <span class="step-index">${escapeHtml(step.index)}</span>
+        <h3>${escapeHtml(step.title)}</h3>
+        <p>${escapeHtml(step.body)}</p>
       `;
       return article;
     })
@@ -312,7 +414,7 @@ function setupReveal() {
         }
       });
     },
-    { threshold: 0.12 }
+    { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
   );
 
   nodes.forEach((node) => observer.observe(node));
@@ -342,7 +444,7 @@ function setupMenu() {
 }
 
 function setupVoyagePointerMotion() {
-  const scene = $(".voyage-scene");
+  const scene = $(".voyage-scene, .logo-chapter");
 
   if (!scene || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     return;
@@ -353,13 +455,38 @@ function setupVoyagePointerMotion() {
     const x = (event.clientX - rect.left) / rect.width - 0.5;
     const y = (event.clientY - rect.top) / rect.height - 0.5;
 
-    scene.style.setProperty("--pointer-x", `${x * 16}px`);
-    scene.style.setProperty("--pointer-y", `${y * 12}px`);
+    scene.style.setProperty("--pointer-x", `${x * 18}px`);
+    scene.style.setProperty("--pointer-y", `${y * 14}px`);
   });
 
   scene.addEventListener("pointerleave", () => {
     scene.style.setProperty("--pointer-x", "0px");
     scene.style.setProperty("--pointer-y", "0px");
+  });
+}
+
+function setupCopyEmail() {
+  $$('[data-copy-email]').forEach((button) => {
+    if (button.dataset.bound === "true") {
+      return;
+    }
+
+    button.dataset.bound = "true";
+    button.addEventListener("click", async () => {
+      const email = currentCopy?.common?.contactEmail || "contact@whalelandkr.com";
+      const defaultLabel = currentCopy?.home?.contactCopyEmail || email;
+      const copiedLabel = currentCopy?.home?.contactCopiedEmail || defaultLabel;
+
+      try {
+        await navigator.clipboard.writeText(email);
+        button.textContent = copiedLabel;
+        window.setTimeout(() => {
+          button.textContent = defaultLabel;
+        }, 1800);
+      } catch (error) {
+        window.location.href = `mailto:${email}`;
+      }
+    });
   });
 }
 
@@ -390,6 +517,7 @@ async function renderLanguage(language, { updateHistory = true } = {}) {
 
   applyStaticText(currentCopy);
   updateHomeLinks(normalized);
+  updateContactLinks(currentCopy);
 
   if (page === "home") {
     renderHome(currentCopy, normalized);
@@ -435,6 +563,7 @@ async function initialize() {
     setupLanguageButtons();
     setupMenu();
     setupVoyagePointerMotion();
+    setupCopyEmail();
     await renderLanguage(currentLanguage);
   } catch (error) {
     console.error("Whale Land initialization failed.", error);

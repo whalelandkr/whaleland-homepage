@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Whale Land</title>
-  <meta name="description" content="Whale Land creative studio" />
+  <meta name="description" content="Whale Land idea company" />
   <link rel="icon" href="./assets/whaleland-logo.png" />
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./hub.css" />
@@ -13,14 +13,15 @@
   <div class="page-grain" aria-hidden="true"></div>
 
   <header class="site-header">
-    <a class="brand" href="./index.html" aria-label="Whale Land home">
+    <a class="brand" href="./index.html" data-home-link aria-label="Whale Land home">
       <img src="./assets/whaleland-logo.png" alt="" />
       <span>Whale Land</span>
     </a>
 
     <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#worlds" data-i18n="common.navWorlds"></a>
-      <a href="#studio" data-i18n="common.navStudio"></a>
+      <a href="#company" data-home-section="company" data-i18n="common.navCompany"></a>
+      <a href="#service-story" data-home-section="service-story" data-i18n="common.navServiceIntro"></a>
+      <a href="#contact" data-home-section="contact" data-i18n="common.navContact"></a>
     </nav>
 
     <div class="header-actions">
@@ -38,130 +39,101 @@
   </header>
 
   <nav class="mobile-panel" aria-label="Mobile navigation">
-    <a href="#worlds" data-i18n="common.navWorlds"></a>
-    <a href="#studio" data-i18n="common.navStudio"></a>
+    <a href="#company" data-home-section="company" data-i18n="common.navCompany"></a>
+    <a href="#service-story" data-home-section="service-story" data-i18n="common.navServiceIntro"></a>
+    <a href="#service-list" data-home-section="service-list" data-i18n="common.navServiceList"></a>
+    <a href="#contact" data-home-section="contact" data-i18n="common.navContact"></a>
   </nav>
 
-  <main>
-    <section class="home-hero">
-      <div class="hero-sky" aria-hidden="true">
-        <span class="cloud cloud-one"></span>
-        <span class="cloud cloud-two"></span>
-        <span class="cloud cloud-three"></span>
+  <main class="home-main">
+    <section class="chapter logo-chapter" id="top">
+      <div class="chapter-bg chapter-bg-one" aria-hidden="true"></div>
+      <div class="logo-orbit logo-orbit-one" aria-hidden="true"></div>
+      <div class="logo-orbit logo-orbit-two" aria-hidden="true"></div>
+      <div class="floating-dot dot-one" aria-hidden="true"></div>
+      <div class="floating-dot dot-two" aria-hidden="true"></div>
+      <div class="floating-dot dot-three" aria-hidden="true"></div>
+
+      <div class="logo-stage reveal is-visible">
+        <p class="eyebrow" data-i18n="home.logoKicker"></p>
+        <img class="logo-stage-mark" src="./assets/whaleland-logo.png" alt="Whale Land" />
+        <h1 class="logo-stage-title">Whale Land</h1>
+        <p class="logo-stage-note" data-i18n="home.logoNote"></p>
       </div>
 
-      <div class="hero-copy reveal is-visible">
-        <p class="eyebrow" data-i18n="home.eyebrow"></p>
-        <h1 class="hero-title" data-i18n="home.title"></h1>
-        <p class="hero-lead" data-i18n="home.lead"></p>
-
-        <div class="hero-actions">
-          <a class="button button-primary" href="#worlds" data-i18n="home.primaryCta"></a>
-          <a class="button button-ghost" href="#studio" data-i18n="home.secondaryCta"></a>
-        </div>
-
-        <p class="hero-note" data-i18n="home.note"></p>
-      </div>
-
-      <div class="voyage-scene" aria-hidden="true">
-        <div class="voyage-sun"></div>
-        <div class="voyage-ring voyage-ring-one"></div>
-        <div class="voyage-ring voyage-ring-two"></div>
-
-        <div class="voyage-logo-wrap">
-          <img class="voyage-logo" src="./assets/whaleland-logo.png" alt="" />
-        </div>
-
-        <div class="voyage-chip voyage-chip-top" data-i18n="home.voyageTop"></div>
-        <div class="voyage-chip voyage-chip-left" data-i18n="home.voyageLeft"></div>
-        <div class="voyage-chip voyage-chip-right" data-i18n="home.voyageRight"></div>
-
-        <div class="service-orb orb-birth"><span>Korean<br />Birth Type</span></div>
-        <div class="service-orb orb-haedurio"><span>Haedurio</span></div>
-        <div class="service-orb orb-covert"><span>C.O.V.E.R.T</span></div>
-
-        <div class="ocean-layer ocean-one"></div>
-        <div class="ocean-layer ocean-two"></div>
-      </div>
-
-      <div class="scroll-indicator" aria-hidden="true">
+      <a class="chapter-scroll" href="#company" aria-label="Scroll to company introduction">
         <span></span>
-        <small>SCROLL TO DISCOVER</small>
+      </a>
+    </section>
+
+    <section class="chapter intro-chapter" id="company">
+      <div class="chapter-bg chapter-bg-two" aria-hidden="true"></div>
+      <div class="intro-card reveal">
+        <p class="eyebrow" data-i18n="home.introEyebrow"></p>
+        <h2 class="intro-title" data-i18n="home.introTitle"></h2>
+        <p class="intro-body" data-i18n="home.introBody"></p>
       </div>
     </section>
 
-    <section class="section worlds-section" id="worlds">
+    <div class="service-story-chapters" id="service-story" aria-label="Service introductions"></div>
+
+    <section class="chapter service-list-chapter" id="service-list">
       <div class="section-inner">
-        <div class="section-head reveal">
-          <div>
-            <p class="eyebrow" data-i18n="home.worldsEyebrow"></p>
-            <h2 class="section-title" data-i18n="home.worldsTitle"></h2>
-          </div>
-          <p class="section-body" data-i18n="home.worldsBody"></p>
+        <div class="service-list-head reveal">
+          <p class="eyebrow" data-i18n="home.serviceListEyebrow"></p>
+          <h2 class="section-title" data-i18n="home.serviceListTitle"></h2>
+          <p class="section-body" data-i18n="home.serviceListBody"></p>
         </div>
 
-        <div class="world-list" id="worldList"></div>
-
-        <aside class="pipeline-card reveal">
-          <span class="pipeline-label" data-i18n="home.pipelineLabel"></span>
-          <div>
-            <h3 data-i18n="home.pipelineTitle"></h3>
-            <p data-i18n="home.pipelineBody"></p>
-          </div>
-        </aside>
+        <div class="service-list-grid" id="serviceList"></div>
       </div>
     </section>
 
-    <section class="section studio-section" id="studio">
-      <div class="studio-orbit" aria-hidden="true"></div>
-      <div class="section-inner">
-        <div class="studio-intro">
-          <div class="reveal">
-            <p class="eyebrow" data-i18n="home.studioEyebrow"></p>
-            <h2 class="studio-title" data-i18n="home.studioTitle"></h2>
-          </div>
-
-          <div class="studio-copy reveal">
-            <p data-i18n="home.studioBody"></p>
-            <p class="studio-quote" data-i18n="home.studioQuote"></p>
-          </div>
+    <section class="chapter contact-chapter" id="contact">
+      <div class="chapter-bg chapter-bg-three" aria-hidden="true"></div>
+      <div class="contact-card reveal">
+        <div>
+          <p class="eyebrow" data-i18n="home.contactEyebrow"></p>
+          <h2 class="contact-title" data-i18n="home.contactTitle"></h2>
+          <p class="contact-body" data-i18n="home.contactBody"></p>
         </div>
 
-        <div class="principle-grid" id="principleGrid"></div>
+        <div class="contact-actions" aria-label="Contact information">
+          <a class="contact-line" data-contact-phone-link href="#">
+            <span data-i18n="home.contactPhoneLabel"></span>
+            <strong data-contact-phone-text></strong>
+          </a>
+          <a class="contact-line" data-contact-email-link href="#">
+            <span data-i18n="home.contactEmailLabel"></span>
+            <strong data-contact-email-text></strong>
+          </a>
+          <button class="copy-email-button" type="button" data-copy-email data-i18n="home.contactCopyEmail"></button>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <a class="footer-logo" href="./index.html" data-home-link aria-label="Whale Land home">
-          <img src="./assets/whaleland-logo.png" alt="" />
-          <span>Whale Land</span>
-        </a>
-        <p data-i18n="common.footerLine"></p>
-        <small data-i18n="common.copyright"></small>
-      </div>
-
-      <nav class="footer-column" aria-label="Whale Land footer navigation">
-        <h2 data-i18n="common.footerHubTitle"></h2>
-        <a href="./index.html" data-home-link data-i18n="common.footerHome"></a>
-        <a href="./index.html#worlds" data-home-section="worlds" data-i18n="common.footerServices"></a>
-        <a href="./index.html#studio" data-home-section="studio" data-i18n="common.footerStudio"></a>
-      </nav>
-
-      <nav class="footer-column" aria-label="Current Whale Land projects">
-        <h2 data-i18n="common.footerServicesTitle"></h2>
-        <a href="./service.html?service=korean-birth-type">Korean Birth Type</a>
-        <a href="./service.html?service=haedurio">Haedurio</a>
-        <a href="./service.html?service=covert">C.O.V.E.R.T</a>
-      </nav>
-
-      <div class="footer-column footer-note">
-        <h2 data-i18n="common.footerNoteTitle"></h2>
-        <p data-i18n="common.footerNote"></p>
+  <footer class="site-footer hub-footer">
+    <div class="footer-brand">
+      <img src="./assets/whaleland-logo.png" alt="" />
+      <div>
+        <strong>Whale Land</strong>
+        <span data-i18n="common.footerLine"></span>
       </div>
     </div>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="#company" data-home-section="company" data-i18n="common.navCompany"></a>
+      <a href="#service-story" data-home-section="service-story" data-i18n="common.navServiceIntro"></a>
+      <a href="#service-list" data-home-section="service-list" data-i18n="common.navServiceList"></a>
+      <a href="#contact" data-home-section="contact" data-i18n="common.navContact"></a>
+    </nav>
+
+    <address class="footer-contact">
+      <a data-contact-phone-link href="#"></a>
+      <a data-contact-email-link href="#"></a>
+      <span data-i18n="common.copyright"></span>
+    </address>
   </footer>
 
   <script src="./app.js"></script>

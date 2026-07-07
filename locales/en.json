@@ -1,239 +1,160 @@
-﻿{
-    "meta":  {
-                 "title":  "Whale Land — A creative studio building three worlds",
-                 "description":  "Discover Korean Birth Type, Haedurio, and C.O.V.E.R.T by Whale Land."
-             },
-    "common":  {
-                   "navWorlds":  "Services",
-                   "navStudio":  "Studio",
-                   "backHome":  "Back to Whale Land",
-                   "officialSite":  "Official site",
-                   "learnMore":  "Explore service",
-                   "externalNotice":  "You are entering an independent service site.",
-                   "footerLine":  "Ideas made useful. Experiences made memorable.",
-                   "copyright":  "© 2026 Whale Land. All rights reserved."
-               },
-    "home":  {
-                 "eyebrow":  "WHALE LAND / INDEPENDENT CREATIVE STUDIO",
-                 "title":  "Three different worlds, shaped by one point of view.",
-                 "lead":  "Whale Land is an independent creative studio designing digital services and physical experiences for self-discovery, travel support, and city exploration.",
-                 "primaryCta":  "Explore the three worlds",
-                 "secondaryCta":  "About the studio",
-                 "note":  "SEOUL · EST. 2025",
-                 "worldsEyebrow":  "THREE INDEPENDENT WORLDS",
-                 "worldsTitle":  "Three independent services, each with a purpose",
-                 "worldsBody":  "The homepage introduces the direction of each service. Select one to open its dedicated introduction page, then continue to the official service site.",
-                 "studioEyebrow":  "THE WHALE LAND WAY",
-                 "studioTitle":  "Turning useful ideas into memorable experiences.",
-                 "studioBody":  "We begin with moments people actually face, not with technology for its own sake. We give useful functions a clear structure, then add story and character to experiences that might otherwise feel ordinary.",
-                 "studioQuote":  "A good service is understood through experience before explanation.",
-                 "principles":  [
-                                    {
-                                        "index":  "01",
-                                        "title":  "Useful first",
-                                        "body":  "We solve a real problem first, designing every function and sentence to make the next action clear."
-                                    },
-                                    {
-                                        "index":  "02",
-                                        "title":  "Story-led",
-                                        "body":  "Each service has its own world and voice, giving people a reason to remember it."
-                                    },
-                                    {
-                                        "index":  "03",
-                                        "title":  "Built to travel",
-                                        "body":  "We plan for multiple languages and markets from the beginning, not as an afterthought."
-                                    }
-                                ],
-                 "voyageTop":  "BLUE SKY · OPEN SEA",
-                 "voyageLeft":  "OUR VOYAGE · THREE WORLDS",
-                 "voyageRight":  "GREEN ISLAND · LIVING SERVICES"
-             },
-    "services":  {
-                     "korean-birth-type":  {
-                                               "slug":  "korean-birth-type",
-                                               "order":  "01",
-                                               "theme":  "birth",
-                                               "status":  "LIVE",
-                                               "category":  "SELF-DISCOVERY",
-                                               "title":  "Korean Birth Type",
-                                               "cardTitle":  "Korean tradition, redesigned for modern self-understanding.",
-                                               "summary":  "A digital card reading that reframes saju as a language for understanding yourself rather than predicting the future.",
-                                               "heroTitle":  "Korean tradition, reimagined as modern self-understanding.",
-                                               "heroLead":  "Korean Birth Type redesigns saju as an interface for understanding yourself, not as a language of fortune-telling.",
-                                               "visualCaption":  "A modern reading system inspired by Korean tradition.",
-                                               "externalUrl":  "https://koreanbirthtype.com",
-                                               "externalCta":  "Start Korean Birth Type",
-                                               "tags":  [
-                                                            "SELF-DISCOVERY",
-                                                            "DIGITAL CARDS",
-                                                            "MULTILINGUAL"
-                                                        ],
-                                               "statementEyebrow":  "A DIFFERENT WAY TO READ YOURSELF",
-                                               "statementTitle":  "Not a prediction. A different way to read yourself.",
-                                               "statementBody":  "The experience begins with your birth date and time, but it does not attempt to define your future. It organizes Day Pillar, Five Elements, relationships, wealth, and life rhythms into modern cards that offer a new frame for self-reflection.",
-                                               "featuresTitle":  "Complex interpretation, translated into clear cards",
-                                               "features":  [
-                                                                {
-                                                                    "index":  "01",
-                                                                    "title":  "Your structure, one card at a time",
-                                                                    "body":  "Day animal, Five Elements, Four Pillars, relationships, and financial patterns are presented in a sequence you can understand."
-                                                                },
-                                                                {
-                                                                    "index":  "02",
-                                                                    "title":  "A reading designed for mobile",
-                                                                    "body":  "From input and payment to viewing and saving results, the experience flows naturally on the mobile web."
-                                                                },
-                                                                {
-                                                                    "index":  "03",
-                                                                    "title":  "One tone across languages",
-                                                                    "body":  "It preserves its Korean roots while remaining modern, calm, and accessible across markets."
-                                                                }
-                                                            ],
-                                               "processEyebrow":  "HOW IT FLOWS",
-                                               "processTitle":  "The calculation stays behind the scenes. The experience stays simple.",
-                                               "steps":  [
-                                                             {
-                                                                 "index":  "01",
-                                                                 "title":  "Enter your details",
-                                                                 "body":  "Add your birth date and time."
-                                                             },
-                                                             {
-                                                                 "index":  "02",
-                                                                 "title":  "Open your card reading",
-                                                                 "body":  "Cards that describe your patterns unfold in sequence."
-                                                             },
-                                                             {
-                                                                 "index":  "03",
-                                                                 "title":  "Save and revisit",
-                                                                 "body":  "Keep the cards that resonate and return whenever you need them."
-                                                             }
-                                                         ],
-                                               "closingTitle":  "Discover your Korean Birth Type.",
-                                               "closingBody":  "Meet a new language for understanding who you are now, rather than an answer that claims to predict your future."
-                                           },
-                     "haedurio":  {
-                                      "slug":  "haedurio",
-                                      "order":  "02",
-                                      "theme":  "haedurio",
-                                      "status":  "LIVE",
-                                      "category":  "TRAVEL SUPPORT",
-                                      "title":  "Haedurio",
-                                      "cardTitle":  "Local help for the moments that interrupt your trip.",
-                                      "summary":  "A local support service for travel problems in Korea that are difficult to solve alone, from bookings and purchases to deliveries and lost items.",
-                                      "heroTitle":  "When travel gets stuck, local help moves it forward.",
-                                      "heroLead":  "Haedurio helps travelers understand unexpected problems in Korea—bookings, purchases, deliveries, lost items, and more—and find a practical way forward.",
-                                      "visualCaption":  "Local help for the moments that interrupt your trip.",
-                                      "externalUrl":  "https://haedurio.com",
-                                      "externalCta":  "Visit Haedurio",
-                                      "tags":  [
-                                                   "LOCAL SUPPORT",
-                                                   "TRAVEL HELP",
-                                                   "KOREA"
-                                               ],
-                                      "statementEyebrow":  "KEEP THE TRIP MOVING",
-                                      "statementTitle":  "Spend less time searching for help, and more time continuing your trip.",
-                                      "statementBody":  "In an unfamiliar language and place, even a small problem can stop an entire day. Haedurio organizes the situation, checks the local context, and helps travelers understand what they can do next.",
-                                      "featuresTitle":  "From explaining the problem to finding the next step",
-                                      "features":  [
-                                                       {
-                                                           "index":  "01",
-                                                           "title":  "Make the situation easy to explain",
-                                                           "body":  "The service guides travelers to organize the important details, even when the problem feels complicated."
-                                                       },
-                                                       {
-                                                           "index":  "02",
-                                                           "title":  "Check it in the local context",
-                                                           "body":  "Possible options are reviewed against how bookings, shopping, and delivery actually work in Korea."
-                                                       },
-                                                       {
-                                                           "index":  "03",
-                                                           "title":  "Connect information to action",
-                                                           "body":  "Beyond translation, the service helps clarify what to do next."
-                                                       }
-                                                   ],
-                                      "processEyebrow":  "HOW IT WORKS",
-                                      "processTitle":  "From the moment a problem appears to the moment the trip can continue.",
-                                      "steps":  [
-                                                    {
-                                                        "index":  "01",
-                                                        "title":  "Share the situation",
-                                                        "body":  "Tell us what happened and provide the necessary details."
-                                                    },
-                                                    {
-                                                        "index":  "02",
-                                                        "title":  "Review the options",
-                                                        "body":  "Possible routes and required steps are checked in the local context."
-                                                    },
-                                                    {
-                                                        "index":  "03",
-                                                        "title":  "Continue with guidance",
-                                                        "body":  "Move forward according to the option you choose."
-                                                    }
-                                                ],
-                                      "closingTitle":  "Keep the problem short and the memory long.",
-                                      "closingBody":  "When you need help during a trip to Korea, tell Haedurio what happened."
-                                  },
-                     "covert":  {
-                                    "slug":  "covert",
-                                    "order":  "03",
-                                    "theme":  "covert",
-                                    "status":  "PREPARING",
-                                    "category":  "MISSION TRAVEL",
-                                    "title":  "C.O.V.E.R.T",
-                                    "cardTitle":  "Do not just walk the city. Complete the mission.",
-                                    "summary":  "A spy-themed stamp tour that turns Seoul into a field operation recorded in a passport-style mission book.",
-                                    "heroTitle":  "Do not just walk the city. Complete the mission.",
-                                    "heroLead":  "C.O.V.E.R.T transforms Seoul locations into classified mission zones, inviting travelers to explore, collect evidence, and complete the operation as field agents.",
-                                    "visualCaption":  "A field mission hidden inside an ordinary city trip.",
-                                    "externalUrl":  "/covert/?lang=en",
-                                    "externalCta":  "Enter C.O.V.E.R.T",
-                                    "tags":  [
-                                                 "STAMP TOUR",
-                                                 "SEOUL",
-                                                 "FIELD MISSION"
-                                             ],
-                                    "statementEyebrow":  "YOUR CITY. YOUR MISSION.",
-                                    "statementTitle":  "From checking off attractions to completing a story.",
-                                    "statementBody":  "The experience does not end with seeing famous places. Open the mission book, find each operational zone, collect stamps and field notes, and turn the entire Seoul trip into one classified assignment.",
-                                    "featuresTitle":  "A classified operation you can carry",
-                                    "features":  [
-                                                     {
-                                                         "index":  "01",
-                                                         "title":  "Passport-style mission book",
-                                                         "body":  "A compact physical book contains mission briefings, location intel, and space for field records."
-                                                     },
-                                                     {
-                                                         "index":  "02",
-                                                         "title":  "Fifteen operational zones in Seoul",
-                                                         "body":  "Explore tradition, shopping, food, night views, and neighborhoods as distinct assignments."
-                                                     },
-                                                     {
-                                                         "index":  "03",
-                                                         "title":  "Final report and next mission",
-                                                         "body":  "Send a final report to HQ and receive intelligence about the next city operation."
-                                                     }
-                                                 ],
-                                    "processEyebrow":  "MISSION FLOW",
-                                    "processTitle":  "Receive the briefing. Enter the field. Submit the report.",
-                                    "steps":  [
-                                                  {
-                                                      "index":  "01",
-                                                      "title":  "Receive the briefing",
-                                                      "body":  "Review Seoul mission zones and directives in the field book."
-                                                  },
-                                                  {
-                                                      "index":  "02",
-                                                      "title":  "Conduct field operations",
-                                                      "body":  "Move through the city, collecting stamps and personal field records."
-                                                  },
-                                                  {
-                                                      "index":  "03",
-                                                      "title":  "Report to HQ",
-                                                      "body":  "Use the final QR code to transmit the mission result."
-                                                  }
-                                              ],
-                                    "closingTitle":  "Seoul is already an operational zone.",
-                                    "closingBody":  "The independent site for agent registration and final reporting is currently being prepared."
-                                }
-                 }
+{
+  "meta": {
+    "title": "Whale Land ??An idea company for playful services",
+    "description": "Whale Land creates playful services that make the world more varied, useful, and happy."
+  },
+  "common": {
+    "navCompany": "Company",
+    "navServiceIntro": "Services",
+    "navServiceList": "Service list",
+    "navContact": "Contact",
+    "backHome": "Back to Whale Land",
+    "officialSite": "Official site",
+    "learnMore": "Learn more",
+    "externalNotice": "You are entering an independent service site.",
+    "contactPhone": "070-8028-3008",
+    "contactEmail": "contact@whalelandkr.com",
+    "footerLine": "Fun ideas, useful services, happier moments.",
+    "copyright": "짤 2026 Whale Land. All rights reserved."
+  },
+  "home": {
+    "logoKicker": "WHALE LAND / IDEA COMPANY",
+    "logoNote": "SEOUL 쨌 IDEAS IN MOTION",
+    "introEyebrow": "ABOUT WHALE LAND",
+    "introTitle": "We use playful ideas to make the world a little more varied and happy.",
+    "introBody": "Whale Land builds services that add small sparks of fun to everyday life and travel.\nWe mix technology, stories, characters, and physical experiences freely.\nThe services you see now are not a fixed lineup, but the current shape of an evolving company.",
+    "serviceSectionEyebrow": "SERVICE INTRODUCTION",
+    "serviceLinkCta": "View service page",
+    "serviceListEyebrow": "SERVICE HUB",
+    "serviceListTitle": "Whale Land services you can meet now",
+    "serviceListBody": "Each service is an independent project with its own world and purpose. New services can be added to this hub as Whale Land evolves.",
+    "contactEyebrow": "CONTACT WHALE LAND",
+    "contactTitle": "We welcome proposals, partnerships, and questions.",
+    "contactBody": "For service use, partnerships, production, or business inquiries, contact us below. You can copy the email address with one button.",
+    "contactPhoneLabel": "Phone",
+    "contactEmailLabel": "Email",
+    "contactCopyEmail": "Copy inquiry email",
+    "contactCopiedEmail": "Email copied",
+    "featuredServiceSlugs": ["korean-birth-type", "haedurio", "covert"],
+    "principles": []
+  },
+  "services": {
+    "korean-birth-type": {
+      "slug": "korean-birth-type",
+      "order": "01",
+      "theme": "birth",
+      "accent": "#8b6bff",
+      "illustration": "birth-type.svg",
+      "status": "LIVE",
+      "category": "SELF-DISCOVERY",
+      "title": "Korean Birth Type",
+      "cardTitle": "Test yourself through Korean-style saju reading.",
+      "summary": "Do you really know yourself? Test yourself through Korean-style saju reading. You may discover hints about your real love and luck.",
+      "homeEyebrow": "KOREAN BIRTH TYPE",
+      "homeTitle": "Do you really know yourself?",
+      "homeDescription": "Test yourself through Korean-style saju reading. You may discover hints about your real love and luck.",
+      "heroTitle": "Test yourself through Korean-style saju reading.",
+      "heroLead": "Korean Birth Type turns saju into a playful self-understanding experience, not a heavy prediction.",
+      "visualCaption": "A playful self-reading system inspired by Korean saju.",
+      "externalUrl": "https://koreanbirthtype.com",
+      "externalCta": "Start Korean Birth Type",
+      "tags": ["SELF-DISCOVERY", "SAJU", "DIGITAL CARDS"],
+      "statementEyebrow": "A DIFFERENT WAY TO READ YOURSELF",
+      "statementTitle": "Lighter than a prophecy, deeper than a quiz.",
+      "statementBody": "It starts from your birth date and time, but it does not define your future. It turns day pillars, five elements, relationships, and luck into cards that help you look at yourself in a new way.",
+      "featuresTitle": "A card-based way to read yourself",
+      "features": [
+        {"index": "01", "title": "Korean-style reading", "body": "Saju structures are translated into modern language and card experiences."},
+        {"index": "02", "title": "Hints on love and luck", "body": "Relationships, tendencies, and rhythms are shown in a light but memorable way."},
+        {"index": "03", "title": "Mobile saving", "body": "Read the result like cards, save what stays with you, and revisit it later."}
+      ],
+      "processEyebrow": "HOW IT FLOWS",
+      "processTitle": "Enter, read, and save.",
+      "steps": [
+        {"index": "01", "title": "Enter birth data", "body": "Add the basic information needed for the reading."},
+        {"index": "02", "title": "Card reading", "body": "The saju-based interpretation unfolds as cards."},
+        {"index": "03", "title": "Check results", "body": "Save memorable parts and return to them later."}
+      ],
+      "closingTitle": "Find your Korean Birth Type.",
+      "closingBody": "Even if you think you know yourself well, it may give you a new clue."
+    },
+    "haedurio": {
+      "slug": "haedurio",
+      "order": "02",
+      "theme": "haedurio",
+      "accent": "#16a6c8",
+      "illustration": "haedurio.svg",
+      "status": "LIVE",
+      "category": "TRAVEL SUPPORT",
+      "title": "Haedurio",
+      "cardTitle": "Having trouble in Korea?",
+      "summary": "Having trouble in Korea? Use Haedurio, the fixer service that helps solve almost anything.",
+      "homeEyebrow": "HAEDURIO",
+      "homeTitle": "Having trouble in Korea?",
+      "homeDescription": "Use Haedurio, the fixer service that helps solve almost anything. We help stuck travel moments move again.",
+      "heroTitle": "When your trip gets stuck, Haedurio helps.",
+      "heroLead": "Haedurio helps travelers in Korea organize problems such as reservations, purchases, delivery, and lost items, then find the next practical step.",
+      "visualCaption": "Local help for the moments that interrupt your trip.",
+      "externalUrl": "https://haedurio.com",
+      "externalCta": "Use Haedurio",
+      "tags": ["LOCAL SUPPORT", "TRAVEL HELP", "KOREA"],
+      "statementEyebrow": "KEEP THE TRIP MOVING",
+      "statementTitle": "Shorten the trouble. Keep the trip going.",
+      "statementBody": "In an unfamiliar language and place, small issues can stop the whole trip. Haedurio organizes the situation, checks possible options, and helps travelers decide what to do next.",
+      "featuresTitle": "From problem description to next step",
+      "features": [
+        {"index": "01", "title": "Situation sorting", "body": "We help organize complicated situations from the necessary information first."},
+        {"index": "02", "title": "Local context", "body": "We check possible options based on Korea's reservation, purchase, and delivery environment."},
+        {"index": "03", "title": "Next-step guidance", "body": "We help you understand what to do next beyond simple translation."}
+      ],
+      "processEyebrow": "HOW IT WORKS",
+      "processTitle": "From the moment a problem appears to the moment your trip moves again.",
+      "steps": [
+        {"index": "01", "title": "Share the situation", "body": "Tell us what happened."},
+        {"index": "02", "title": "Check paths", "body": "We check possible methods and needed steps."},
+        {"index": "03", "title": "Move forward", "body": "Continue with the option that fits your situation."}
+      ],
+      "closingTitle": "Haedurio, your Korea travel fixer.",
+      "closingBody": "When something gets stuck, tell Haedurio what happened."
+    },
+    "covert": {
+      "slug": "covert",
+      "order": "03",
+      "theme": "covert",
+      "accent": "#25384a",
+      "illustration": "covert.svg",
+      "status": "PREPARING",
+      "category": "MISSION TRAVEL",
+      "title": "Beomi Stamp Tour",
+      "cardTitle": "No more ordinary travel!",
+      "summary": "No more ordinary travel! It is time for infiltration-action tourism. Mission CLEAR with Beomi!",
+      "homeEyebrow": "BEOMI STAMP TOUR",
+      "homeTitle": "No more ordinary travel!",
+      "homeDescription": "It is time for infiltration-action tourism. Move through Seoul with Beomi, collect stamps, and Mission CLEAR!",
+      "heroTitle": "Mission CLEAR with Beomi!",
+      "heroLead": "Beomi Stamp Tour turns Seoul locations into operation zones. Travelers carry a mission booklet, explore the city, and complete records like field agents.",
+      "visualCaption": "A field mission hidden inside an ordinary city trip.",
+      "externalUrl": "/covert/?lang=kr",
+      "externalCta": "Enter Beomi Stamp Tour",
+      "tags": ["STAMP TOUR", "SEOUL", "MISSION"],
+      "statementEyebrow": "YOUR CITY. YOUR MISSION.",
+      "statementTitle": "From seeing tourist spots to clearing missions.",
+      "statementBody": "The trip does not end with simply seeing famous places. Open the mission booklet, visit operation zones, collect stamps and field notes, and Seoul becomes one secret mission.",
+      "featuresTitle": "A secret operation you can hold",
+      "features": [
+        {"index": "01", "title": "Passport-style booklet", "body": "A physical booklet with briefings, location info, and recording space."},
+        {"index": "02", "title": "Seoul operation zones", "body": "Explore tradition, shopping, food, night views, and local neighborhoods as missions."},
+        {"index": "03", "title": "With Beomi", "body": "Collect stamps and clear missions with cute agent Beomi."}
+      ],
+      "processEyebrow": "MISSION FLOW",
+      "processTitle": "Receive the briefing, move to the field, and leave records.",
+      "steps": [
+        {"index": "01", "title": "Receive briefing", "body": "Check operation zones and directives in the mission booklet."},
+        {"index": "02", "title": "Field operation", "body": "Move through the city and collect stamps and field records."},
+        {"index": "03", "title": "Mission CLEAR", "body": "Fill the booklet and complete your own Seoul operation."}
+      ],
+      "closingTitle": "Seoul is already an operation zone.",
+      "closingBody": "Turn ordinary travel into a mission with Beomi."
+    }
+  }
 }
