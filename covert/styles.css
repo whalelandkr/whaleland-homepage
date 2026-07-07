@@ -211,37 +211,49 @@ h2 {
 
 .hero-characters {
   position: relative;
-  min-height: 540px;
+  min-height: 620px;
   display: grid;
   place-items: center;
 }
 
 .bumi-main {
   position: relative;
-  z-index: 2;
-  width: min(430px, 82vw);
+  z-index: 3;
+  width: min(400px, 78vw);
   filter: drop-shadow(0 28px 42px rgba(41, 25, 12, 0.18));
   animation: floatBumi 5.6s ease-in-out infinite;
 }
 
 .bumi-side {
   position: absolute;
-  width: min(180px, 34vw);
-  opacity: 0.92;
+  width: min(170px, 28vw);
+  opacity: 0.94;
   filter: drop-shadow(0 18px 28px rgba(41, 25, 12, 0.14));
   animation: floatBumi 6.8s ease-in-out infinite reverse;
 }
 
 .bumi-side-one {
-  left: 0;
-  bottom: 8%;
-  transform: rotate(-8deg);
+  left: 1%;
+  bottom: 10%;
+  transform: rotate(-10deg);
 }
 
 .bumi-side-two {
-  right: 0;
-  top: 8%;
+  right: 2%;
+  top: 6%;
   transform: rotate(8deg);
+}
+
+.bumi-side-three {
+  left: 10%;
+  top: 4%;
+  transform: rotate(-5deg);
+}
+
+.bumi-side-four {
+  right: 8%;
+  bottom: 4%;
+  transform: rotate(6deg);
 }
 
 .product-section {
@@ -425,7 +437,8 @@ h2 {
 }
 
 .today-card {
-  max-width: 920px;
+  position: relative;
+  max-width: 1080px;
   margin: 0 auto;
   text-align: center;
 }
@@ -446,6 +459,8 @@ h2 {
 }
 
 .today-message {
+  position: relative;
+  z-index: 2;
   margin: 28px auto 0;
   padding: clamp(24px, 4vw, 40px);
   border-radius: 34px;
@@ -462,11 +477,42 @@ h2 {
   line-height: 1.8;
 }
 
-.store-character {
-  margin: 20px auto 0;
-  width: min(280px, 74vw);
+.store-characters {
+  position: relative;
+  margin: 24px auto 0;
+  min-height: 300px;
+  max-width: 980px;
+}
+
+.store-character-center {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  width: min(280px, 62vw);
   display: block;
   filter: drop-shadow(0 20px 30px rgba(41,25,12,0.16));
+  animation: floatBumi 5.6s ease-in-out infinite;
+}
+
+.store-character-side {
+  position: absolute;
+  z-index: 1;
+  width: min(180px, 26vw);
+  opacity: 0.94;
+  filter: drop-shadow(0 16px 24px rgba(41,25,12,0.12));
+  animation: floatBumi 6.8s ease-in-out infinite reverse;
+}
+
+.store-side-left {
+  left: 4%;
+  bottom: 10px;
+  transform: rotate(-8deg);
+}
+
+.store-side-right {
+  right: 4%;
+  bottom: 18px;
+  transform: rotate(8deg);
 }
 
 .schedule-grid {
@@ -602,8 +648,13 @@ h2 {
     padding: 56px 18px;
   }
 
-  .bumi-side {
+  .bumi-side,
+  .store-character-side {
     display: none;
+  }
+
+  .store-characters {
+    min-height: auto;
   }
 
   .product-section,

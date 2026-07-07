@@ -28,55 +28,55 @@ const messages = {
     "이번 임무는 서울의 작전 구역을 탐색하고,",
     "현장에서 미션을 완수한 뒤, 유유히 달아나세요.",
     "",
-    "요원님을 돕기 위한 현장 요원 '범이'를 보내드립니다.",
+    "요원님을 돕기 위한 현장 요원 'Beomi(범이)'를 보내드립니다.",
     "",
     "준비가 되었다면 작전을 시작하세요.",
     "",
-    "이 메시지는 곧 없어집니다.",
+    "이 메시지는 곧 사라집니다.",
     "무사 귀환을 빕니다."
-  ].join("\\n"),
+  ].join("\n"),
 
   en: [
     "Agent, a new mission has arrived.",
     "",
     "Your assignment is to explore the operation zones of Seoul,",
-    "complete the mission in the field, and slip away with ease.",
+    "complete the mission in the field, and slip away without drawing attention.",
     "",
-    "We are dispatching field agent 'Bumi' to assist you.",
+    "We are dispatching field agent 'Beomi (범이)' to assist you.",
     "",
-    "When ready, begin the operation.",
+    "When you are ready, begin the operation.",
     "",
     "This message will disappear shortly.",
-    "We wish you a safe return."
-  ].join("\\n"),
+    "Wishing you a safe return."
+  ].join("\n"),
 
   jp: [
-    "エージェント、新しいミッションが届きました。",
+    "エージェント、新たなミッションが届きました。",
     "",
     "今回の任務は、ソウルの作戦区域を探索し、",
     "現地でミッションを完了したのち、何食わぬ顔で離脱することです。",
     "",
-    "あなたを支援する現地エージェント「Bumi」を派遣します。",
+    "あなたを支援する現地エージェント「Beomi（범이）」を派遣します。",
     "",
     "準備ができたら、作戦を開始してください。",
     "",
     "このメッセージはまもなく消去されます。",
     "無事の帰還を祈ります。"
-  ].join("\\n"),
+  ].join("\n"),
 
   cn: [
     "特工，新的任务已经抵达。",
     "",
     "本次任务是探索首尔的作战区域，",
-    "在现场完成任务后，从容撤离。",
+    "在现场完成任务后，若无其事地撤离。",
     "",
-    "我们将派出现场特工“Bumi”协助你。",
+    "我们将派出现场特工“Beomi（범이）”协助你。",
     "",
     "准备就绪后，请开始行动。",
     "",
     "本消息即将消失。",
     "祝你平安归来。"
-  ].join("\\n")
+  ].join("\n")
 };
 
 const incomingPanel = document.getElementById("incomingPanel");
@@ -96,7 +96,7 @@ async function typeText(text, totalDuration) {
 
   for (const character of characters) {
     missionText.textContent += character;
-    await wait(character === "\\n" ? delay * 2.4 : delay);
+    await wait(character === "\n" ? delay * 2.4 : delay);
   }
 }
 

@@ -22,7 +22,7 @@ const COVERT_COPY = {
     kitLead: "서울을 관광지가 아니라 작전 구역으로 바라보게 만드는 미션형 스탬프북입니다.",
     kitItems: [
       ["01", "여권형 미션 수첩", "서울 작전 구역과 기록 공간을 담은 휴대용 스탬프북입니다."],
-      ["02", "현장 요원 범이", "임무를 안내하고 세계관을 연결하는 C.O.V.E.R.T 현장 요원입니다."],
+      ["02", "현장 요원 Beomi(범이)", "임무를 안내하고 세계관을 연결하는 C.O.V.E.R.T 현장 요원입니다."],
       ["03", "최종 보고 QR", "여행이 끝나면 HQ에 보고서를 보내고 다음 작전을 기다립니다."]
     ],
     zonesEyebrow: "OPERATION ZONES",
@@ -51,7 +51,7 @@ const COVERT_COPY = {
     kitLead: "A mission-style stamp book that turns Seoul from a tourist map into a field operation.",
     kitItems: [
       ["01", "Passport-style mission book", "A portable stamp book containing Seoul operation zones and field-note spaces."],
-      ["02", "Field agent Bumi", "The C.O.V.E.R.T field agent who guides the mission and carries the story."],
+      ["02", "Field agent Beomi (범이)", "The C.O.V.E.R.T field agent who guides the mission and carries the story."],
       ["03", "Final report QR", "Send your report to HQ and wait for the next operation."]
     ],
     zonesEyebrow: "OPERATION ZONES",
@@ -80,7 +80,7 @@ const COVERT_COPY = {
     kitLead: "ソウルを観光地ではなく作戦区域として楽しむミッション型スタンプブックです。",
     kitItems: [
       ["01", "パスポート型ミッションブック", "ソウルの作戦区域と記録スペースを収めた携帯用スタンプブックです。"],
-      ["02", "現地エージェント Bumi", "任務を案内し、世界観をつなぐC.O.V.E.R.Tの現地エージェントです。"],
+      ["02", "現地エージェント Beomi（범이）", "任務を案内し、世界観をつなぐC.O.V.E.R.Tの現地エージェントです。"],
       ["03", "最終報告QR", "旅の終わりにHQへ報告書を送り、次の作戦を待ちます。"]
     ],
     zonesEyebrow: "OPERATION ZONES",
@@ -109,7 +109,7 @@ const COVERT_COPY = {
     kitLead: "一款把首尔从观光地图变成作战区域的任务型集章册。",
     kitItems: [
       ["01", "护照式任务手册", "包含首尔任务区域和记录空间的便携式集章册。"],
-      ["02", "现场特工 Bumi", "引导任务并连接世界观的 C.O.V.E.R.T 现场特工。"],
+      ["02", "现场特工 Beomi（범이）", "引导任务并连接世界观的 C.O.V.E.R.T 现场特工。"],
       ["03", "最终报告 QR", "旅行结束后向总部提交报告，并等待下一次作战。"]
     ],
     zonesEyebrow: "OPERATION ZONES",

@@ -93,16 +93,6 @@ body {
   animation: cursorBlink 0.8s steps(1, end) infinite;
 }
 
-.mission-bumi {
-  position: absolute;
-  right: max(14px, 5vw);
-  bottom: -3%;
-  z-index: 1;
-  width: min(290px, 48vw);
-  opacity: 0.82;
-  filter: drop-shadow(0 0 30px rgba(130,255,130,0.12));
-}
-
 .noise-layer {
   position: absolute;
   inset: 0;
@@ -117,7 +107,6 @@ body {
 .noise-layer.active {
   animation: noiseFlash 1.15s steps(8, end) forwards;
 }
-
 @keyframes panelPulse {
   0%, 100% {
     opacity: 0.82;
@@ -149,8 +138,9 @@ body {
 }
 
 @media (max-width: 720px) {
-  .mission-bumi {
-    width: min(210px, 54vw);
-    opacity: 0.42;
+  .terminal-panel {
+    width: min(980px, calc(100% - 28px));
+    font-size: clamp(0.98rem, 4vw, 1.5rem);
+    line-height: 1.78;
   }
 }
