@@ -7,6 +7,7 @@
   <meta name="description" content="Whale Land service introduction" />
   <link rel="icon" href="./assets/whaleland-logo.png" />
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./hub.css" />
 </head>
 <body class="service-page">
   <div class="page-grain" aria-hidden="true"></div>
@@ -106,8 +107,35 @@
   </main>
 
   <footer class="site-footer">
-    <span data-i18n="common.footerLine"></span>
-    <span data-i18n="common.copyright"></span>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="footer-logo" href="./index.html" data-home-link aria-label="Whale Land home">
+          <img src="./assets/whaleland-logo.png" alt="" />
+          <span>Whale Land</span>
+        </a>
+        <p data-i18n="common.footerLine"></p>
+        <small data-i18n="common.copyright"></small>
+      </div>
+
+      <nav class="footer-column" aria-label="Whale Land footer navigation">
+        <h2 data-i18n="common.footerHubTitle"></h2>
+        <a href="./index.html" data-home-link data-i18n="common.footerHome"></a>
+        <a href="./index.html#worlds" data-home-section="worlds" data-i18n="common.footerServices"></a>
+        <a href="./index.html#studio" data-home-section="studio" data-i18n="common.footerStudio"></a>
+      </nav>
+
+      <nav class="footer-column" aria-label="Current Whale Land projects">
+        <h2 data-i18n="common.footerServicesTitle"></h2>
+        <a href="./service.html?service=korean-birth-type">Korean Birth Type</a>
+        <a href="./service.html?service=haedurio">Haedurio</a>
+        <a href="./service.html?service=covert">C.O.V.E.R.T</a>
+      </nav>
+
+      <div class="footer-column footer-note">
+        <h2 data-i18n="common.footerNoteTitle"></h2>
+        <p data-i18n="common.footerNote"></p>
+      </div>
+    </div>
   </footer>
 
   <script src="./app.js"></script>
