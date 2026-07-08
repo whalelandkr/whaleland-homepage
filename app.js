@@ -199,25 +199,44 @@ function getFeaturedServices(copy) {
     .filter(Boolean);
 }
 
+function serviceExternalUrl(service, language) {
+  return (
+    service.externalUrl ||
+    `./service.html?service=${encodeURIComponent(service.slug)}&lang=${encodeURIComponent(language)}`
+  );
+}
+
+function isExternalUrl(url) {
+  return /^https?:\/\//i.test(url);
+}
+
 function createServiceFeaturePanel(service, language, index) {
   const section = document.createElement("section");
-  section.className = "chapter service-feature-panel reveal";
+  section.className = "chapter service-feature-panel";
   section.dataset.theme = service.theme;
   section.style.setProperty("--service-accent", service.accent || "#1674d8");
 
+  const url = serviceExternalUrl(service, language);
+  const externalAttrs = isExternalUrl(url)
+    ? ' target="_blank" rel="noopener noreferrer"'
+    : "";
+  const ctaLabel =
+    service.externalCta ||
+    currentCopy?.home?.serviceLinkCta ||
+    "View service page";
+
   section.innerHTML = `
-    <div class="service-feature-bg" aria-hidden="true"></div>
     <div class="service-feature-inner">
-      <div class="service-feature-copy">
+      <div class="service-feature-copy reveal">
         <p class="eyebrow">${escapeHtml(service.homeEyebrow || service.category)}</p>
         <span class="service-feature-number">${String(index + 3).padStart(2, "0")}</span>
         <h2>${escapeHtml(service.homeTitle || service.title)}</h2>
         <p>${escapeHtml(service.homeDescription || service.summary)}</p>
-        <a class="button button-primary" data-service-link="${escapeHtml(service.slug)}" href="./service.html?service=${encodeURIComponent(service.slug)}&lang=${encodeURIComponent(language)}">
-          ${escapeHtml(currentCopy?.home?.serviceLinkCta || "View service page")}
+        <a class="button button-primary" href="${escapeHtml(url)}"${externalAttrs}>
+          ${escapeHtml(ctaLabel)}
         </a>
       </div>
-      <div class="service-feature-visual" aria-hidden="true">
+      <div class="service-feature-visual reveal" style="--rd:.15s" aria-hidden="true">
         <div class="service-feature-orbit"></div>
         <div class="service-feature-frame">
           <img src="${illustrationPath(service)}" alt="" />
@@ -229,12 +248,20 @@ function createServiceFeaturePanel(service, language, index) {
   return section;
 }
 
-function createServiceListCard(service, language) {
+function createServiceListCard(service, language, index = 0) {
   const link = document.createElement("a");
   link.className = "service-list-card reveal";
   link.dataset.theme = service.theme;
-  link.dataset.serviceLink = service.slug;
-  link.href = `./service.html?service=${encodeURIComponent(service.slug)}&lang=${encodeURIComponent(language)}`;
+  link.style.setProperty("--service-accent", service.accent || "#1674d8");
+  link.style.setProperty("--rd", `${index * 0.12}s`);
+
+  const url = serviceExternalUrl(service, language);
+  link.href = url;
+
+  if (isExternalUrl(url)) {
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+  }
 
   link.innerHTML = `
     <span class="service-list-index">${escapeHtml(service.order)}</span>
@@ -255,8 +282,8 @@ function createServiceListCard(service, language) {
   return link;
 }
 
-function createWorldCard(service, language) {
-  return createServiceListCard(service, language);
+function createWorldCard(service, language, index = 0) {
+  return createServiceListCard(service, language, index);
 }
 
 function renderHome(copy, language) {
@@ -273,11 +300,15 @@ function renderHome(copy, language) {
   );
 
   serviceList?.replaceChildren(
-    ...services.map((service) => createServiceListCard(service, language))
+    ...services.map((service, index) =>
+      createServiceListCard(service, language, index)
+    )
   );
 
   worldList?.replaceChildren(
-    ...services.map((service) => createWorldCard(service, language))
+    ...services.map((service, index) =>
+      createWorldCard(service, language, index)
+    )
   );
 
   principleGrid?.replaceChildren(
@@ -418,6 +449,23 @@ function setupReveal() {
   );
 
   nodes.forEach((node) => observer.observe(node));
+}
+
+function setupHeaderScroll() {
+  const header = $(".site-header");
+
+  if (!header || header.dataset.bound === "true") {
+    return;
+  }
+
+  header.dataset.bound = "true";
+
+  const update = () => {
+    header.classList.toggle("is-scrolled", window.scrollY > 8);
+  };
+
+  window.addEventListener("scroll", update, { passive: true });
+  update();
 }
 
 function setupMenu() {
@@ -561,6 +609,7 @@ async function initialize() {
     }
 
     setupLanguageButtons();
+    setupHeaderScroll();
     setupMenu();
     setupVoyagePointerMotion();
     setupCopyEmail();
