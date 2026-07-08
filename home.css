@@ -337,16 +337,13 @@ button { font-family: inherit; }
 .logo-mark-wrap {
   display: inline-grid;
   place-items: center;
-  width: clamp(220px, 34vw, 380px);
-  height: clamp(220px, 34vw, 380px);
-  margin: 10px auto 30px;
-  border-radius: 34%;
-  background: linear-gradient(160deg, #eef5ff, #f6f1ff);
-  box-shadow: var(--wl-shadow-hover);
+  width: clamp(300px, 60vw, 620px);
+  height: auto;
+  margin: 0 auto;
 }
 
 .logo-stage-mark {
-  width: 66%;
+  width: 100%;
   animation: logo-float 5s ease-in-out infinite;
 }
 
