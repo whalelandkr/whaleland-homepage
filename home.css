@@ -20,6 +20,12 @@
   --wl-shadow-hover: 0 14px 40px rgba(2, 32, 71, 0.12);
   --wl-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --header-h: 64px;
+
+  /* Body font (Korean-first) and display font (Latin headings / numbers).
+     Swap --wl-display to try a different candidate — see the <head> font links. */
+  --wl-body-font: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+  --wl-display: "Gmarket Sans", var(--wl-body-font);
 }
 
 * { box-sizing: border-box; }
@@ -33,8 +39,7 @@ body {
   margin: 0;
   background: var(--wl-bg);
   color: var(--wl-ink);
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+  font-family: var(--wl-body-font);
   font-size: 17px;
   line-height: 1.6;
   letter-spacing: -0.01em;
@@ -46,6 +51,31 @@ body {
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; }
+
+/* Display face (Gmarket Sans) — headings, eyebrows, big numbers.
+   Body text stays on Pretendard for Korean readability. */
+.eyebrow,
+.section-title,
+.intro-title,
+.contact-title,
+.service-feature-copy h2,
+.service-feature-number,
+.service-list-card h3,
+.logo-stage-note,
+.service-list-index,
+.status-pill,
+.footer-brand strong,
+.button {
+  font-family: var(--wl-display);
+}
+
+/* Gmarket Sans tops out at weight 700 — nudge letter-spacing so the
+   heavier headings don't feel too tight at large sizes. */
+.section-title,
+.intro-title,
+.service-feature-copy h2 {
+  letter-spacing: -0.02em;
+}
 
 /* --------------------------------------------------------------------------
    Header
@@ -307,17 +337,31 @@ button { font-family: inherit; }
 .logo-mark-wrap {
   display: inline-grid;
   place-items: center;
-  width: clamp(108px, 16vw, 148px);
-  height: clamp(108px, 16vw, 148px);
-  margin: 10px auto 26px;
-  border-radius: 32%;
+  width: clamp(220px, 34vw, 380px);
+  height: clamp(220px, 34vw, 380px);
+  margin: 10px auto 30px;
+  border-radius: 34%;
   background: linear-gradient(160deg, #eef5ff, #f6f1ff);
-  box-shadow: var(--wl-shadow);
+  box-shadow: var(--wl-shadow-hover);
 }
 
 .logo-stage-mark {
-  width: 62%;
+  width: 66%;
   animation: logo-float 5s ease-in-out infinite;
+}
+
+/* Screen-reader-only heading — keeps H1 for SEO without showing the wordmark */
+.logo-stage-title-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 @keyframes logo-float {
@@ -493,7 +537,9 @@ button { font-family: inherit; }
 }
 
 .service-feature-frame img {
-  width: 64%;
+  width: 80%;
+  max-height: 82%;
+  object-fit: contain;
   animation: logo-float 6s ease-in-out infinite;
 }
 
@@ -573,9 +619,15 @@ button { font-family: inherit; }
   height: 64px;
   border-radius: 20px;
   background: color-mix(in srgb, var(--accent) 10%, #fff);
+  overflow: hidden;
 }
 
-.service-list-icon img { width: 60%; }
+.service-list-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+}
 
 .service-meta {
   display: flex;

@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "title": "Whale Land — 즐거운 아이디어를 서비스로 만드는 회사",
+    "description": "Whale Land는 재밌고 즐거운 아이디어로 세상을 더 다양하고 행복하게 바꾸는 서비스를 만듭니다."
+  },
+  "common": {
+    "navCompany": "회사 소개",
+    "navServiceIntro": "서비스 소개",
+    "navServiceList": "서비스 목록",
+    "navContact": "문의",
+    "backHome": "Whale Land로 돌아가기",
+    "officialSite": "공식 사이트",
+    "learnMore": "자세히 보기",
+    "externalNotice": "독립 서비스 사이트로 이동합니다.",
+    "contactPhone": "070-8028-3008",
+    "contactEmail": "contact@whalelandkr.com",
+    "footerLine": "Fun ideas, useful services, happier moments.",
+    "copyright": "© 2026 Whale Land. All rights reserved."
+  },
+  "home": {
+    "logoKicker": "WHALE LAND / IDEA COMPANY",
+    "logoNote": "SEOUL · IDEAS IN MOTION",
+    "introEyebrow": "ABOUT WHALE LAND",
+    "introTitle": "재밌고 즐거운 아이디어로,\n세상을 더 다양하고 행복하게.",
+    "introBody": "웨일랜드는 일상과 여행에 작은 재미를 더하는 아이디어 회사입니다.\n기술과 이야기, 캐릭터, 오프라인 경험을 자유롭게 엮어\n세상을 조금 더 다양하고 행복하게 만드는 서비스를 실험하고 만듭니다.",
+    "serviceSectionEyebrow": "SERVICE INTRODUCTION",
+    "serviceLinkCta": "서비스 페이지 보기",
+    "serviceListEyebrow": "SERVICE HUB",
+    "serviceListTitle": "지금 만날 수 있는 웨일랜드의 서비스",
+    "serviceListBody": "각 서비스는 독립적인 세계관과 기능을 가진 프로젝트입니다. 새 서비스가 생기면 이 허브에 자연스럽게 추가됩니다.",
+    "contactEyebrow": "CONTACT WHALE LAND",
+    "contactTitle": "새로운 제안, 협업, 문의를 기다립니다.",
+    "contactBody": "서비스 이용, 제휴, 제작 문의가 있다면 아래 연락처로 보내주세요. 이메일 주소는 버튼으로 바로 복사할 수 있습니다.",
+    "contactPhoneLabel": "전화",
+    "contactEmailLabel": "이메일",
+    "contactCopyEmail": "문의 이메일 복사",
+    "contactCopiedEmail": "이메일을 복사했습니다",
+    "featuredServiceSlugs": [
+      "korean-birth-type",
+      "haedurio",
+      "covert"
+    ],
+    "principles": []
+  },
+  "services": {
+    "korean-birth-type": {
+      "slug": "korean-birth-type",
+      "order": "01",
+      "theme": "birth",
+      "accent": "#8b6bff",
+      "illustration": "birth-saju.png",
+      "status": "LIVE",
+      "category": "SELF-DISCOVERY",
+      "title": "Korean Birth Type",
+      "cardTitle": "한국식 사주 해석으로 당신을 시험해보세요.",
+      "summary": "당신은 당신에 대해서 잘 알고 있나요? 한국식 사주 해석으로 당신을 시험해보세요. 어쩌면 당신의 진짜 사랑과 운을 알 수 있을지 몰라요.",
+      "homeEyebrow": "KOREAN BIRTH TYPE",
+      "homeTitle": "당신은 당신에 대해서 잘 알고 있나요?",
+      "homeDescription": "한국식 사주 해석으로 당신을 시험해보세요. 어쩌면 당신의 진짜 사랑과 운을 알 수 있을지 몰라요.",
+      "heroTitle": "한국식 사주 해석으로 당신을 시험해보세요.",
+      "heroLead": "Korean Birth Type은 사주를 무겁고 단정적인 예언이 아니라, 나를 알아보는 즐거운 테스트처럼 풀어낸 자기이해 서비스입니다.",
+      "visualCaption": "A playful self-reading system inspired by Korean saju.",
+      "externalUrl": "https://koreanbirthtype.com",
+      "externalCta": "Korean Birth Type 시작하기",
+      "tags": [
+        "SELF-DISCOVERY",
+        "SAJU",
+        "DIGITAL CARDS"
+      ],
+      "statementEyebrow": "A DIFFERENT WAY TO READ YOURSELF",
+      "statementTitle": "예언보다 가볍고, 심리 테스트보다 깊게.",
+      "statementBody": "태어난 날짜와 시간에서 출발하지만 목적은 미래를 단정하는 것이 아닙니다. 일주, 오행, 관계와 운의 흐름을 카드처럼 펼쳐 스스로를 새롭게 바라보는 실마리를 제공합니다.",
+      "featuresTitle": "카드로 읽는 나의 구조",
+      "features": [
+        {
+          "index": "01",
+          "title": "한국식 리딩",
+          "body": "사주의 구조를 현대적인 언어와 카드 경험으로 바꿉니다."
+        },
+        {
+          "index": "02",
+          "title": "사랑과 운의 힌트",
+          "body": "관계, 성향, 흐름을 가볍지만 기억에 남는 방식으로 보여줍니다."
+        },
+        {
+          "index": "03",
+          "title": "모바일 저장",
+          "body": "결과를 카드처럼 읽고 마음에 남는 부분을 저장할 수 있습니다."
+        }
+      ],
+      "processEyebrow": "HOW IT FLOWS",
+      "processTitle": "입력하고, 읽고, 저장합니다.",
+      "steps": [
+        {
+          "index": "01",
+          "title": "생년월일 입력",
+          "body": "리딩에 필요한 기본 정보를 입력합니다."
+        },
+        {
+          "index": "02",
+          "title": "카드 리딩",
+          "body": "사주 기반 해석이 카드 흐름으로 펼쳐집니다."
+        },
+        {
+          "index": "03",
+          "title": "결과 확인",
+          "body": "기억에 남는 카드를 저장하고 다시 확인합니다."
+        }
+      ],
+      "closingTitle": "당신의 Korean Birth Type을 확인하세요.",
+      "closingBody": "이미 자신을 잘 안다고 생각해도, 의외의 단서를 발견할 수 있습니다."
+    },
+    "haedurio": {
+      "slug": "haedurio",
+      "order": "02",
+      "theme": "haedurio",
+      "accent": "#25b7c7",
+      "illustration": "haedurio-logo.png",
+      "status": "LIVE",
+      "category": "TRAVEL SUPPORT",
+      "title": "해드리오",
+      "cardTitle": "한국에서 곤란한 일이 있나요?",
+      "summary": "한국에서 곤란한 일이 있나요? 무엇이든 해결하는 해결사, 해드리오 서비스를 이용해보세요.",
+      "homeEyebrow": "HAEDURIO",
+      "homeTitle": "한국에서 곤란한 일이 있나요?",
+      "homeDescription": "무엇이든 해결하는 해결사, 해드리오 서비스를 이용해보세요.",
+      "heroTitle": "한국 여행 중 막힌 순간, 현지에서 해결합니다.",
+      "heroLead": "해드리오는 한국 여행 중 예약, 구매, 배송, 분실 등 예상하지 못한 문제를 정리하고 해결 경로를 찾도록 돕는 현지 지원 서비스입니다.",
+      "visualCaption": "Local help for the moments that interrupt your trip.",
+      "externalUrl": "https://haedurio.com",
+      "externalCta": "해드리오 방문하기",
+      "tags": [
+        "LOCAL SUPPORT",
+        "TRAVEL HELP",
+        "KOREA"
+      ],
+      "statementEyebrow": "KEEP THE TRIP MOVING",
+      "statementTitle": "곤란한 시간은 짧게, 여행은 계속되게.",
+      "statementBody": "낯선 언어와 환경에서는 작은 문제도 여행 전체를 멈추게 할 수 있습니다. 해드리오는 상황을 정리하고 현지 맥락을 확인해 다음 행동을 결정할 수 있게 돕습니다.",
+      "featuresTitle": "문제 설명부터 해결 경로까지",
+      "features": [
+        {
+          "index": "01",
+          "title": "상황 정리",
+          "body": "복잡한 상황도 필요한 정보부터 차근차근 정리할 수 있게 안내합니다."
+        },
+        {
+          "index": "02",
+          "title": "현지 기준 확인",
+          "body": "한국의 예약, 구매, 배송 환경을 기준으로 가능한 선택지를 확인합니다."
+        },
+        {
+          "index": "03",
+          "title": "다음 행동 연결",
+          "body": "단순 번역을 넘어 실제로 무엇을 해야 하는지 알려줍니다."
+        }
+      ],
+      "processEyebrow": "HOW IT WORKS",
+      "processTitle": "문제가 생긴 순간부터 다시 여행으로 돌아갈 때까지.",
+      "steps": [
+        {
+          "index": "01",
+          "title": "상황 전달",
+          "body": "무슨 일이 생겼는지 필요한 내용을 전달합니다."
+        },
+        {
+          "index": "02",
+          "title": "해결 경로 확인",
+          "body": "가능한 방법과 필요한 절차를 현지 기준으로 확인합니다."
+        },
+        {
+          "index": "03",
+          "title": "진행 안내",
+          "body": "선택한 방향에 따라 다음 단계로 이어집니다."
+        }
+      ],
+      "closingTitle": "여행의 문제는 짧게, 기억은 길게.",
+      "closingBody": "한국에서 도움이 필요한 순간, 해드리오에서 상황을 알려주세요."
+    },
+    "covert": {
+      "slug": "covert",
+      "order": "03",
+      "theme": "covert",
+      "accent": "#52616d",
+      "illustration": "covert-bummy.png",
+      "status": "PREPARING",
+      "category": "MISSION TRAVEL",
+      "title": "범이 스탬프 투어",
+      "cardTitle": "평범한 여행은 그만!",
+      "summary": "평범한 여행은 그만! 이제는 잠입침투액션관광의 시대입니다. 범이와 함께 Mission CLEAR!",
+      "homeEyebrow": "BEOMI STAMP TOUR",
+      "homeTitle": "평범한 여행은 그만!",
+      "homeDescription": "이제는 잠입침투액션관광의 시대입니다. 범이와 함께 Mission CLEAR!",
+      "heroTitle": "서울 여행을 비밀 미션으로 바꾸는 스탬프 투어.",
+      "heroLead": "범이 스탬프 투어는 서울의 장소를 작전 구역처럼 탐험하고, 여권형 미션 수첩에 스탬프와 기록을 남기는 체험형 관광 프로젝트입니다.",
+      "visualCaption": "A field mission hidden inside an ordinary city trip.",
+      "externalUrl": "/covert/?lang=kr",
+      "externalCta": "범이 스탬프 투어 입장",
+      "tags": [
+        "STAMP TOUR",
+        "SEOUL",
+        "MISSION CLEAR"
+      ],
+      "statementEyebrow": "YOUR CITY. YOUR MISSION.",
+      "statementTitle": "관광지를 체크하는 여행에서, 임무를 완수하는 여행으로.",
+      "statementBody": "유명한 장소를 보는 것만으로 끝나지 않습니다. 미션 수첩을 펼치고 작전 구역을 찾아가 스탬프와 현장 정보를 수집하면, 서울 여행 전체가 하나의 비밀 임무가 됩니다.",
+      "featuresTitle": "손에 들고 걷는 비밀 작전",
+      "features": [
+        {
+          "index": "01",
+          "title": "여권형 미션 수첩",
+          "body": "작전 브리핑, 장소 정보, 기록 공간을 담은 실물 수첩입니다."
+        },
+        {
+          "index": "02",
+          "title": "서울 작전 구역",
+          "body": "전통, 쇼핑, 음식, 야경과 동네 문화를 서로 다른 미션처럼 탐험합니다."
+        },
+        {
+          "index": "03",
+          "title": "Mission CLEAR",
+          "body": "스탬프와 기록을 모아 나만의 서울 작전 결과를 완성합니다."
+        }
+      ],
+      "processEyebrow": "MISSION FLOW",
+      "processTitle": "브리핑을 받고, 현장으로 이동하고, 기록을 남깁니다.",
+      "steps": [
+        {
+          "index": "01",
+          "title": "브리핑 수령",
+          "body": "미션 수첩에서 서울 작전 구역과 지령을 확인합니다."
+        },
+        {
+          "index": "02",
+          "title": "현장 작전",
+          "body": "도시를 이동하며 스탬프와 자신만의 기록을 수집합니다."
+        },
+        {
+          "index": "03",
+          "title": "임무 완료",
+          "body": "범이와 함께 Mission CLEAR를 완성합니다."
+        }
+      ],
+      "closingTitle": "서울은 이미 작전 구역입니다.",
+      "closingBody": "요원 등록과 최종 보고를 위한 독립 사이트는 계속 준비 중입니다."
+    }
+  }
+}

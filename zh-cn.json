@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "title": "Whale Land — 把有趣创意变成服务的公司",
+    "description": "Whale Land 用好玩又快乐的创意，打造让世界更多样、更幸福的服务。"
+  },
+  "common": {
+    "navCompany": "公司介绍",
+    "navServiceIntro": "服务介绍",
+    "navServiceList": "服务列表",
+    "navContact": "联系",
+    "backHome": "返回 Whale Land",
+    "officialSite": "官方网站",
+    "learnMore": "了解详情",
+    "externalNotice": "即将前往独立服务网站。",
+    "contactPhone": "070-8028-3008",
+    "contactEmail": "contact@whalelandkr.com",
+    "footerLine": "Fun ideas, useful services, happier moments.",
+    "copyright": "© 2026 Whale Land. All rights reserved."
+  },
+  "home": {
+    "logoKicker": "WHALE LAND / IDEA COMPANY",
+    "logoNote": "SEOUL · IDEAS IN MOTION",
+    "introEyebrow": "ABOUT WHALE LAND",
+    "introTitle": "用好玩又快乐的创意，\n让世界更多样、更幸福。",
+    "introBody": "Whale Land 是一家为日常与旅行增添小小乐趣的创意公司。\n我们自由结合技术、故事、角色与线下体验，\n打造让世界更多样、更幸福的服务。",
+    "serviceSectionEyebrow": "SERVICE INTRODUCTION",
+    "serviceLinkCta": "查看服务页面",
+    "serviceListEyebrow": "SERVICE HUB",
+    "serviceListTitle": "现在可以体验的 Whale Land 服务",
+    "serviceListBody": "每项服务都是拥有独立世界观和功能的项目。未来有新服务时，也会自然加入这个服务中枢。",
+    "contactEyebrow": "CONTACT WHALE LAND",
+    "contactTitle": "欢迎新的提案、合作与咨询。",
+    "contactBody": "如有服务使用、合作、制作或商务咨询，请通过下方联系方式与我们联系。邮箱地址可以一键复制。",
+    "contactPhoneLabel": "电话",
+    "contactEmailLabel": "邮箱",
+    "contactCopyEmail": "复制咨询邮箱",
+    "contactCopiedEmail": "邮箱已复制",
+    "featuredServiceSlugs": [
+      "korean-birth-type",
+      "haedurio",
+      "covert"
+    ],
+    "principles": []
+  },
+  "services": {
+    "korean-birth-type": {
+      "slug": "korean-birth-type",
+      "order": "01",
+      "theme": "birth",
+      "accent": "#8b6bff",
+      "illustration": "birth-saju.png",
+      "status": "已上线",
+      "category": "SELF-DISCOVERY",
+      "title": "Korean Birth Type",
+      "cardTitle": "用韩式四柱解读测试你自己。",
+      "summary": "你真的了解自己吗？ 用韩式四柱解读测试你自己。也许你会发现关于真爱与运气的线索。",
+      "homeEyebrow": "KOREAN BIRTH TYPE",
+      "homeTitle": "你真的了解自己吗？",
+      "homeDescription": "用韩式四柱解读测试你自己。也许你会发现关于真爱与运气的线索。",
+      "heroTitle": "用韩式四柱解读测试你自己。",
+      "heroLead": "Korean Birth Type 将四柱命理变成一种轻松的自我理解体验，而不是沉重的预言。",
+      "visualCaption": "A playful self-reading system inspired by Korean saju.",
+      "externalUrl": "https://koreanbirthtype.com",
+      "externalCta": "开始 Korean Birth Type",
+      "tags": [
+        "SELF-DISCOVERY",
+        "SAJU",
+        "DIGITAL CARDS"
+      ],
+      "statementEyebrow": "A DIFFERENT WAY TO READ YOURSELF",
+      "statementTitle": "比预言更轻松，比测试更深入。",
+      "statementBody": "体验从出生日期和时间开始，但并不是为了断定未来。它把日柱、五行、关系和运势节奏转化为卡片，帮助你用新的角度看见自己。",
+      "featuresTitle": "用卡片阅读自己的结构",
+      "features": [
+        {
+          "index": "01",
+          "title": "韩式解读",
+          "body": "将四柱结构转化为现代语言和卡片体验。"
+        },
+        {
+          "index": "02",
+          "title": "爱情与运气的提示",
+          "body": "以轻松但令人印象深刻的方式呈现关系、倾向与节奏。"
+        },
+        {
+          "index": "03",
+          "title": "移动端保存",
+          "body": "像看卡片一样阅读结果，并保存让你在意的部分。"
+        }
+      ],
+      "processEyebrow": "HOW IT FLOWS",
+      "processTitle": "输入、阅读、保存。",
+      "steps": [
+        {
+          "index": "01",
+          "title": "输入出生信息",
+          "body": "输入解读所需的基本信息。"
+        },
+        {
+          "index": "02",
+          "title": "卡片解读",
+          "body": "基于四柱的解释会以卡片形式展开。"
+        },
+        {
+          "index": "03",
+          "title": "查看结果",
+          "body": "保存印象深刻的卡片，之后可以再次查看。"
+        }
+      ],
+      "closingTitle": "查看你的 Korean Birth Type。",
+      "closingBody": "即使你以为已经很了解自己，也可能发现新的线索。"
+    },
+    "haedurio": {
+      "slug": "haedurio",
+      "order": "02",
+      "theme": "haedurio",
+      "accent": "#25b7c7",
+      "illustration": "haedurio-logo.png",
+      "status": "已上线",
+      "category": "TRAVEL SUPPORT",
+      "title": "Haedurio",
+      "cardTitle": "在韩国遇到困难了吗？",
+      "summary": "在韩国遇到困难了吗？ 试试什么都能帮你解决的帮手服务 Haedurio。",
+      "homeEyebrow": "HAEDURIO",
+      "homeTitle": "在韩国遇到困难了吗？",
+      "homeDescription": "试试什么都能帮你解决的帮手服务 Haedurio。",
+      "heroTitle": "韩国旅行中卡住的时刻，由当地支持来解决。",
+      "heroLead": "Haedurio 是一项当地支持服务，帮助旅行者整理在韩国遇到的预约、购买、配送、遗失等突发问题，并找到下一步解决路径。",
+      "visualCaption": "Local help for the moments that interrupt your trip.",
+      "externalUrl": "https://haedurio.com",
+      "externalCta": "访问 Haedurio",
+      "tags": [
+        "LOCAL SUPPORT",
+        "TRAVEL HELP",
+        "KOREA"
+      ],
+      "statementEyebrow": "KEEP THE TRIP MOVING",
+      "statementTitle": "让麻烦更短，让旅行继续。",
+      "statementBody": "在陌生语言和环境中，小问题也可能让整段旅行停下来。Haedurio 帮助整理状况、确认当地背景，并选择下一步行动。",
+      "featuresTitle": "从问题说明到解决路径",
+      "features": [
+        {
+          "index": "01",
+          "title": "整理状况",
+          "body": "即使情况复杂，也会从必要信息开始一步步整理。"
+        },
+        {
+          "index": "02",
+          "title": "按当地标准确认",
+          "body": "根据韩国的预约、购买和配送环境确认可行选择。"
+        },
+        {
+          "index": "03",
+          "title": "连接下一步",
+          "body": "不只是翻译，还帮助你理解实际该怎么做。"
+        }
+      ],
+      "processEyebrow": "HOW IT WORKS",
+      "processTitle": "从问题出现的瞬间，到重新回到旅程。",
+      "steps": [
+        {
+          "index": "01",
+          "title": "说明情况",
+          "body": "告诉我们发生了什么和必要信息。"
+        },
+        {
+          "index": "02",
+          "title": "确认解决路径",
+          "body": "根据当地情况确认可行方法和所需步骤。"
+        },
+        {
+          "index": "03",
+          "title": "继续推进",
+          "body": "根据选择的方向进入下一步。"
+        }
+      ],
+      "closingTitle": "让旅行的问题短一点，让回忆长一点。",
+      "closingBody": "在韩国需要帮助时，请告诉 Haedurio 发生了什么。"
+    },
+    "covert": {
+      "slug": "covert",
+      "order": "03",
+      "theme": "covert",
+      "accent": "#52616d",
+      "illustration": "covert-bummy.png",
+      "status": "准备中",
+      "category": "MISSION TRAVEL",
+      "title": "Beomi Stamp Tour",
+      "cardTitle": "告别普通旅行！",
+      "summary": "告别普通旅行！ 现在是潜入渗透动作观光的时代。和 Beomi 一起 Mission CLEAR！",
+      "homeEyebrow": "BEOMI STAMP TOUR",
+      "homeTitle": "告别普通旅行！",
+      "homeDescription": "现在是潜入渗透动作观光的时代。和 Beomi 一起 Mission CLEAR！",
+      "heroTitle": "把首尔旅行变成秘密任务的印章旅行。",
+      "heroLead": "Beomi Stamp Tour 是一项体验型旅游项目，让你像执行作战一样探索首尔地点，并在护照式任务手册中留下印章和记录。",
+      "visualCaption": "A field mission hidden inside an ordinary city trip.",
+      "externalUrl": "/covert/?lang=kr",
+      "externalCta": "进入 Beomi Stamp Tour",
+      "tags": [
+        "STAMP TOUR",
+        "SEOUL",
+        "MISSION CLEAR"
+      ],
+      "statementEyebrow": "YOUR CITY. YOUR MISSION.",
+      "statementTitle": "从打卡景点，到完成任务。",
+      "statementBody": "旅行不止是看著名地点。打开任务手册，前往作战区域，收集印章和现场记录，整个首尔旅行都会变成一项秘密任务。",
+      "featuresTitle": "拿在手里行走的秘密作战",
+      "features": [
+        {
+          "index": "01",
+          "title": "护照式任务手册",
+          "body": "包含作战简报、地点信息和记录空间的实体手册。"
+        },
+        {
+          "index": "02",
+          "title": "首尔作战区域",
+          "body": "把传统、购物、美食、夜景和街区文化当作不同任务来探索。"
+        },
+        {
+          "index": "03",
+          "title": "Mission CLEAR",
+          "body": "收集印章和记录，完成属于你的首尔作战结果。"
+        }
+      ],
+      "processEyebrow": "MISSION FLOW",
+      "processTitle": "接收简报，前往现场，留下记录。",
+      "steps": [
+        {
+          "index": "01",
+          "title": "接收简报",
+          "body": "在任务手册中确认首尔作战区域和指令。"
+        },
+        {
+          "index": "02",
+          "title": "现场作战",
+          "body": "在城市中移动，收集印章和属于自己的记录。"
+        },
+        {
+          "index": "03",
+          "title": "任务完成",
+          "body": "和 Beomi 一起完成 Mission CLEAR。"
+        }
+      ],
+      "closingTitle": "首尔已经是作战区域。",
+      "closingBody": "用于特工注册和最终报告的独立网站正在准备中。"
+    }
+  }
+}

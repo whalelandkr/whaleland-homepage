@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "title": "Whale Land — 楽しいアイデアをサービスにする会社",
+    "description": "Whale Landは、楽しく遊び心のあるアイデアで世界をもっと多様で幸せにするサービスをつくります。"
+  },
+  "common": {
+    "navCompany": "会社紹介",
+    "navServiceIntro": "サービス紹介",
+    "navServiceList": "サービス一覧",
+    "navContact": "お問い合わせ",
+    "backHome": "Whale Landへ戻る",
+    "officialSite": "公式サイト",
+    "learnMore": "詳しく見る",
+    "externalNotice": "独立したサービスサイトへ移動します。",
+    "contactPhone": "070-8028-3008",
+    "contactEmail": "contact@whalelandkr.com",
+    "footerLine": "Fun ideas, useful services, happier moments.",
+    "copyright": "© 2026 Whale Land. All rights reserved."
+  },
+  "home": {
+    "logoKicker": "WHALE LAND / IDEA COMPANY",
+    "logoNote": "SEOUL · IDEAS IN MOTION",
+    "introEyebrow": "ABOUT WHALE LAND",
+    "introTitle": "楽しく遊び心のあるアイデアで、\n世界をもっと多様で幸せに。",
+    "introBody": "Whale Landは、日常と旅に小さな楽しさを添えるアイデアカンパニーです。\n技術・物語・キャラクター・オフライン体験を自由に組み合わせ、\n世界を少しだけ多様で幸せにするサービスをつくっています。",
+    "serviceSectionEyebrow": "SERVICE INTRODUCTION",
+    "serviceLinkCta": "サービスページを見る",
+    "serviceListEyebrow": "SERVICE HUB",
+    "serviceListTitle": "今出会えるWhale Landのサービス",
+    "serviceListBody": "それぞれのサービスは、独自の世界観と役割を持つ独立したプロジェクトです。新しいサービスが生まれたら、このハブに自然に追加されます。",
+    "contactEyebrow": "CONTACT WHALE LAND",
+    "contactTitle": "新しい提案、協業、お問い合わせをお待ちしています。",
+    "contactBody": "サービス利用、提携、制作、事業に関するお問い合わせは、下記の連絡先へお送りください。メールアドレスはボタンでコピーできます。",
+    "contactPhoneLabel": "電話",
+    "contactEmailLabel": "メール",
+    "contactCopyEmail": "問い合わせメールをコピー",
+    "contactCopiedEmail": "メールをコピーしました",
+    "featuredServiceSlugs": [
+      "korean-birth-type",
+      "haedurio",
+      "covert"
+    ],
+    "principles": []
+  },
+  "services": {
+    "korean-birth-type": {
+      "slug": "korean-birth-type",
+      "order": "01",
+      "theme": "birth",
+      "accent": "#8b6bff",
+      "illustration": "birth-saju.png",
+      "status": "公開中",
+      "category": "SELF-DISCOVERY",
+      "title": "Korean Birth Type",
+      "cardTitle": "韓国式の四柱推命で自分を試してみる。",
+      "summary": "あなたは自分のことを本当に知っていますか？ 韓国式の四柱推命で自分を試してみてください。もしかすると、本当の恋や運のヒントが見つかるかもしれません。",
+      "homeEyebrow": "KOREAN BIRTH TYPE",
+      "homeTitle": "あなたは自分のことを本当に知っていますか？",
+      "homeDescription": "韓国式の四柱推命で自分を試してみてください。本当の恋や運のヒントが見つかるかもしれません。",
+      "heroTitle": "韓国式の四柱推命で自分を試してみる。",
+      "heroLead": "Korean Birth Typeは、四柱推命を重い予言ではなく、自分を知るための楽しいテストのように体験できる自己理解サービスです。",
+      "visualCaption": "A playful self-reading system inspired by Korean saju.",
+      "externalUrl": "https://koreanbirthtype.com",
+      "externalCta": "Korean Birth Typeを始める",
+      "tags": [
+        "SELF-DISCOVERY",
+        "SAJU",
+        "DIGITAL CARDS"
+      ],
+      "statementEyebrow": "A DIFFERENT WAY TO READ YOURSELF",
+      "statementTitle": "予言より軽く、心理テストより深く。",
+      "statementBody": "生年月日と時間から始まりますが、未来を決めつけるものではありません。日柱、五行、関係性、運の流れをカードのように見せ、自分を新しく見るきっかけを提供します。",
+      "featuresTitle": "カードで読む自分の構造",
+      "features": [
+        {
+          "index": "01",
+          "title": "韓国式リーディング",
+          "body": "四柱推命の構造を現代的な言葉とカード体験に変換します。"
+        },
+        {
+          "index": "02",
+          "title": "恋と運のヒント",
+          "body": "関係性、傾向、流れを軽やかで記憶に残る形で見せます。"
+        },
+        {
+          "index": "03",
+          "title": "モバイル保存",
+          "body": "結果をカードのように読み、気になる部分を保存できます。"
+        }
+      ],
+      "processEyebrow": "HOW IT FLOWS",
+      "processTitle": "入力して、読んで、保存します。",
+      "steps": [
+        {
+          "index": "01",
+          "title": "生年月日を入力",
+          "body": "リーディングに必要な基本情報を入力します。"
+        },
+        {
+          "index": "02",
+          "title": "カードリーディング",
+          "body": "四柱推命ベースの解釈がカードの流れで展開されます。"
+        },
+        {
+          "index": "03",
+          "title": "結果を確認",
+          "body": "印象に残ったカードを保存して、あとで見返せます。"
+        }
+      ],
+      "closingTitle": "あなたのKorean Birth Typeを確認してください。",
+      "closingBody": "自分をよく知っていると思っていても、意外なヒントが見つかるかもしれません。"
+    },
+    "haedurio": {
+      "slug": "haedurio",
+      "order": "02",
+      "theme": "haedurio",
+      "accent": "#25b7c7",
+      "illustration": "haedurio-logo.png",
+      "status": "公開中",
+      "category": "TRAVEL SUPPORT",
+      "title": "Haedurio",
+      "cardTitle": "韓国で困ったことがありますか？",
+      "summary": "韓国で困ったことがありますか？ 何でも解決するフィクサー、Haedurioを使ってみてください。",
+      "homeEyebrow": "HAEDURIO",
+      "homeTitle": "韓国で困ったことがありますか？",
+      "homeDescription": "何でも解決するフィクサー、Haedurioを使ってみてください。",
+      "heroTitle": "韓国旅行で困った瞬間を、現地で解決へ。",
+      "heroLead": "Haedurioは、韓国旅行中の予約、購入、配送、紛失など予想外の問題を整理し、解決の道筋を探す現地サポートサービスです。",
+      "visualCaption": "Local help for the moments that interrupt your trip.",
+      "externalUrl": "https://haedurio.com",
+      "externalCta": "Haedurioを見る",
+      "tags": [
+        "LOCAL SUPPORT",
+        "TRAVEL HELP",
+        "KOREA"
+      ],
+      "statementEyebrow": "KEEP THE TRIP MOVING",
+      "statementTitle": "困る時間は短く、旅は続くように。",
+      "statementBody": "慣れない言語や環境では、小さな問題でも旅全体が止まってしまうことがあります。Haedurioは状況を整理し、現地の文脈を確認して、次の行動を決められるよう支援します。",
+      "featuresTitle": "問題説明から解決ルートまで",
+      "features": [
+        {
+          "index": "01",
+          "title": "状況整理",
+          "body": "複雑な状況も、必要な情報から順番に整理できるよう案内します。"
+        },
+        {
+          "index": "02",
+          "title": "現地基準で確認",
+          "body": "韓国の予約、購入、配送環境を基準に可能な選択肢を確認します。"
+        },
+        {
+          "index": "03",
+          "title": "次の行動へ接続",
+          "body": "単なる翻訳を超えて、実際に何をすべきかを伝えます。"
+        }
+      ],
+      "processEyebrow": "HOW IT WORKS",
+      "processTitle": "問題が起きた瞬間から、旅へ戻るまで。",
+      "steps": [
+        {
+          "index": "01",
+          "title": "状況共有",
+          "body": "何が起きたのか、必要な内容を伝えます。"
+        },
+        {
+          "index": "02",
+          "title": "解決ルート確認",
+          "body": "可能な方法と必要な手順を現地基準で確認します。"
+        },
+        {
+          "index": "03",
+          "title": "進行案内",
+          "body": "選んだ方向に沿って次の段階へ進みます。"
+        }
+      ],
+      "closingTitle": "旅の問題は短く、思い出は長く。",
+      "closingBody": "韓国で助けが必要な瞬間、Haedurioに状況を知らせてください。"
+    },
+    "covert": {
+      "slug": "covert",
+      "order": "03",
+      "theme": "covert",
+      "accent": "#52616d",
+      "illustration": "covert-bummy.png",
+      "status": "準備中",
+      "category": "MISSION TRAVEL",
+      "title": "Beomi Stamp Tour",
+      "cardTitle": "普通の旅行はもう終わり！",
+      "summary": "普通の旅行はもう終わり！ これからは潜入侵透アクション観光の時代です。Beomiと一緒にMission CLEAR！",
+      "homeEyebrow": "BEOMI STAMP TOUR",
+      "homeTitle": "普通の旅行はもう終わり！",
+      "homeDescription": "これからは潜入侵透アクション観光の時代です。Beomiと一緒にMission CLEAR！",
+      "heroTitle": "ソウル旅行を秘密ミッションに変えるスタンプツアー。",
+      "heroLead": "Beomi Stamp Tourは、ソウルの場所を作戦区域のように探索し、パスポート型ミッションブックにスタンプと記録を残す体験型観光プロジェクトです。",
+      "visualCaption": "A field mission hidden inside an ordinary city trip.",
+      "externalUrl": "/covert/?lang=kr",
+      "externalCta": "Beomi Stamp Tourへ",
+      "tags": [
+        "STAMP TOUR",
+        "SEOUL",
+        "MISSION CLEAR"
+      ],
+      "statementEyebrow": "YOUR CITY. YOUR MISSION.",
+      "statementTitle": "観光地をチェックする旅から、ミッションを達成する旅へ。",
+      "statementBody": "有名な場所を見るだけでは終わりません。ミッションブックを開き、作戦区域を訪れ、スタンプと現地記録を集めることで、ソウル旅行全体がひとつの秘密任務になります。",
+      "featuresTitle": "手に持って歩く秘密作戦",
+      "features": [
+        {
+          "index": "01",
+          "title": "パスポート型ミッションブック",
+          "body": "作戦ブリーフィング、場所情報、記録スペースを入れた実物冊子です。"
+        },
+        {
+          "index": "02",
+          "title": "ソウル作戦区域",
+          "body": "伝統、ショッピング、食、夜景、街の文化を別々のミッションのように探索します。"
+        },
+        {
+          "index": "03",
+          "title": "Mission CLEAR",
+          "body": "スタンプと記録を集め、自分だけのソウル作戦結果を完成させます。"
+        }
+      ],
+      "processEyebrow": "MISSION FLOW",
+      "processTitle": "ブリーフィングを受け、現場へ移動し、記録を残します。",
+      "steps": [
+        {
+          "index": "01",
+          "title": "ブリーフィング受領",
+          "body": "ミッションブックでソウルの作戦区域と指令を確認します。"
+        },
+        {
+          "index": "02",
+          "title": "現場作戦",
+          "body": "都市を移動しながらスタンプと自分だけの記録を集めます。"
+        },
+        {
+          "index": "03",
+          "title": "任務完了",
+          "body": "Beomiと一緒にMission CLEARを完成させます。"
+        }
+      ],
+      "closingTitle": "ソウルはすでに作戦区域です。",
+      "closingBody": "エージェント登録と最終報告のための独立サイトは準備中です。"
+    }
+  }
+}

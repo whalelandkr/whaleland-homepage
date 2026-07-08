@@ -8,6 +8,25 @@
   <link rel="icon" href="./assets/whaleland-logo.png" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" /></noscript>
+  <style>
+    /* Gmarket Sans — display face for headings (SIL OFL, free for commercial use) */
+    @font-face {
+      font-family: 'Gmarket Sans';
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+      src: url('https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSansMedium.woff2') format('woff2'),
+           url('https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSansMedium.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Gmarket Sans';
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+      src: url('https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSansBold.woff2') format('woff2'),
+           url('https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSansBold.woff') format('woff');
+    }
+  </style>
   <link rel="stylesheet" href="./home.css" />
 </head>
 <body>
@@ -57,8 +76,8 @@
         <div class="logo-mark-wrap hero-rise" style="--rise:.12s">
           <img class="logo-stage-mark" src="./assets/whaleland-logo.png" alt="Whale Land" />
         </div>
-        <h1 class="logo-stage-title hero-rise" style="--rise:.24s">Whale&nbsp;Land</h1>
-        <p class="logo-stage-note hero-rise" style="--rise:.36s" data-i18n="home.logoNote"></p>
+        <h1 class="logo-stage-title-sr">Whale Land</h1>
+        <p class="logo-stage-note hero-rise" style="--rise:.24s" data-i18n="home.logoNote"></p>
       </div>
 
       <a class="chapter-scroll hero-rise" style="--rise:.6s" href="#company" aria-label="Scroll to company introduction">
