@@ -447,6 +447,42 @@ button { font-family: inherit; }
 
 .service-feature-panel:nth-of-type(odd) { background: var(--wl-bg-soft); }
 
+/* --------------------------------------------------------------------------
+   Per-service brand colors (overrides odd/even background above)
+   -------------------------------------------------------------------------- */
+/* Korean Birth Type — warm cream bg, gold accent, black text kept */
+.service-feature-panel[data-theme="birth"] {
+  background: #f7efdf;
+}
+.service-feature-panel[data-theme="birth"] .service-feature-number {
+  color: color-mix(in srgb, var(--accent) 32%, transparent);
+}
+
+/* Haedurio — yellow bg, navy accent, black text kept */
+.service-feature-panel[data-theme="haedurio"] {
+  background: #f8f218;
+}
+.service-feature-panel[data-theme="haedurio"] .service-feature-number {
+  color: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+/* COVERT — deep navy bg, all type unified to gold (#d4b26f) */
+.service-feature-panel[data-theme="covert"] {
+  background: #0a2499;
+}
+.service-feature-panel[data-theme="covert"] .eyebrow,
+.service-feature-panel[data-theme="covert"] .service-feature-copy h2,
+.service-feature-panel[data-theme="covert"] .service-feature-copy > p {
+  color: #d4b26f;
+}
+.service-feature-panel[data-theme="covert"] .service-feature-number {
+  color: color-mix(in srgb, #d4b26f 42%, transparent);
+}
+.service-feature-panel[data-theme="covert"] .button-primary {
+  background: #d4b26f;
+  color: #0a2499;
+}
+
 .service-feature-inner {
   display: grid;
   gap: clamp(36px, 6vw, 72px);
@@ -481,6 +517,7 @@ button { font-family: inherit; }
   font-weight: 800;
   line-height: 1.25;
   letter-spacing: -0.028em;
+  white-space: pre-line;
 }
 
 .service-feature-copy > p {
@@ -489,6 +526,7 @@ button { font-family: inherit; }
   font-size: clamp(16px, 1.8vw, 19px);
   line-height: 1.7;
   color: var(--wl-body);
+  white-space: pre-line;
 }
 
 .button-primary {
