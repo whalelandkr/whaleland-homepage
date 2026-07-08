@@ -229,7 +229,7 @@ function createServiceFeaturePanel(service, language, index) {
     <div class="service-feature-inner">
       <div class="service-feature-copy reveal">
         <p class="eyebrow">${escapeHtml(service.homeEyebrow || service.category)}</p>
-        <span class="service-feature-number">${String(index + 3).padStart(2, "0")}</span>
+        <span class="service-feature-number">${String(index + 1).padStart(2, "0")}</span>
         <h2>${escapeHtml(service.homeTitle || service.title)}</h2>
         <p>${escapeHtml(service.homeDescription || service.summary)}</p>
         <a class="button button-primary" href="${escapeHtml(url)}"${externalAttrs}>
