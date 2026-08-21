@@ -14,6 +14,7 @@ const STORE_COPY = {
     closedBody: "아래 3일 판매 일정을 확인해주세요.",
     openSchedule: "{location} · {time}",
     closedSchedule: "판매 없음",
+    siteLink: "공식 사이트에서 키트 보기",
     shopTitle: "온라인 쇼핑몰 준비 중",
     shopBody: "현재는 얼리버드 운영 기간으로 현장 구매만 가능합니다.",
     shopButton: "온라인 쇼핑몰",
@@ -28,6 +29,7 @@ const STORE_COPY = {
     closedBody: "Please check the 3-day field sale schedule below.",
     openSchedule: "{location} · {time}",
     closedSchedule: "No field sale",
+    siteLink: "See the kit on the official site",
     shopTitle: "Online shop preparing",
     shopBody: "During the early-bird period, purchases are available on site only.",
     shopButton: "Online shop",
@@ -42,6 +44,7 @@ const STORE_COPY = {
     closedBody: "下の3日間の販売スケジュールをご確認ください。",
     openSchedule: "{location} · {time}",
     closedSchedule: "販売なし",
+    siteLink: "公式サイトでキットを見る",
     shopTitle: "オンラインショップ準備中",
     shopBody: "現在はアーリーバード期間のため、現地購入のみ可能です。",
     shopButton: "オンラインショップ",
@@ -56,6 +59,7 @@ const STORE_COPY = {
     closedBody: "请查看下方3天销售日程。",
     openSchedule: "{location} · {time}",
     closedSchedule: "无现场销售",
+    siteLink: "在官方网站查看套装",
     shopTitle: "线上商店准备中",
     shopBody: "目前为早鸟运营期，仅支持现场购买。",
     shopButton: "线上商店",
@@ -187,6 +191,13 @@ function renderStore() {
   document.getElementById("shopBody").textContent = copy.shopBody;
   document.getElementById("shopButton").textContent = copy.shopButton;
   document.getElementById("helpBox").textContent = copy.help;
+
+  /* 새 공식 사이트. 영어판은 루트, 나머지는 언어 폴더로 보낸다. */
+  const siteLink = document.getElementById("siteLink");
+  if (siteLink) {
+    siteLink.textContent = copy.siteLink;
+    siteLink.href = currentLanguage === "en" ? "../site/" : "../site/" + currentLanguage + "/";
+  }
 
   const params = new URLSearchParams(window.location.search);
   params.set("lang", currentLanguage);

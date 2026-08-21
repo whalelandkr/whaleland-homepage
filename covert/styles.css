@@ -720,3 +720,19 @@ h2 {
 .covert-nav .nav-site {
   color: var(--orange);
 }
+
+/* 판매 안내의 어두운 카드(#111824) 안에 놓이는 링크.
+   button-ghost 는 갈색 글자라 이 배경에서 읽히지 않는다. */
+.store-site-row {
+  margin-top: 16px;
+}
+
+.store-site-link {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.30);
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.store-site-link:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
