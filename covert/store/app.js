@@ -15,10 +15,10 @@ const STORE_COPY = {
     openSchedule: "{location} · {time}",
     closedSchedule: "판매 없음",
     siteLink: "공식 사이트에서 키트 보기",
-    shopTitle: "온라인 쇼핑몰 준비 중",
-    shopBody: "현재는 얼리버드 운영 기간으로 현장 구매만 가능합니다.",
+    shopTitle: "정식 판매 중",
+    shopBody: "얼리버드 기간이 끝나고 정식 판매로 전환되었습니다. 온라인 쇼핑몰은 곧 열립니다.",
     shopButton: "온라인 쇼핑몰",
-    help: "현재는 얼리버드 운영 기간으로 성수, 홍대, 명동 등 현장 구매만 가능합니다. 온라인 구매 버튼은 정식 판매 오픈 후 활성화됩니다."
+    help: "정식 판매로 전환되었습니다. 지금은 성수, 홍대, 명동 등 지정된 현장에서 구매하실 수 있고, 온라인 구매 버튼은 쇼핑몰이 열리면 활성화됩니다. 키트 구성과 배송·환불 안내는 공식 사이트에서 확인하실 수 있습니다."
   },
   en: {
     htmlLang: "en",
@@ -30,10 +30,10 @@ const STORE_COPY = {
     openSchedule: "{location} · {time}",
     closedSchedule: "No field sale",
     siteLink: "See the kit on the official site",
-    shopTitle: "Online shop preparing",
-    shopBody: "During the early-bird period, purchases are available on site only.",
+    shopTitle: "Now on general sale",
+    shopBody: "The early-bird period has ended and the kit is now on general sale. The online shop opens soon.",
     shopButton: "Online shop",
-    help: "During the early-bird period, C.O.V.E.R.T is available only through on-site purchases in areas such as Seongsu, Hongdae, and Myeongdong. The online shop button will be enabled after the official launch."
+    help: "The kit is now on general sale. For now it is available at field locations such as Seongsu, Hongdae, and Myeongdong, and the online purchase button will be enabled once the shop opens. You can find what is in the kit, along with shipping and refund details, on the official site."
   },
   jp: {
     htmlLang: "ja",
@@ -45,10 +45,10 @@ const STORE_COPY = {
     openSchedule: "{location} · {time}",
     closedSchedule: "販売なし",
     siteLink: "公式サイトでキットを見る",
-    shopTitle: "オンラインショップ準備中",
-    shopBody: "現在はアーリーバード期間のため、現地購入のみ可能です。",
+    shopTitle: "正式販売中",
+    shopBody: "アーリーバード期間が終了し、正式販売に切り替わりました。オンラインショップは近日オープンします。",
     shopButton: "オンラインショップ",
-    help: "現在はアーリーバード期間のため、ソンス、ホンデ、明洞などでの現地購入のみ可能です。オンライン購入ボタンは正式販売開始後に有効になります。"
+    help: "正式販売に切り替わりました。現在はソンス、ホンデ、明洞など指定の現場でご購入いただけます。オンライン購入ボタンはショップの開設後に有効になります。キットの内容と配送・返品のご案内は公式サイトでご確認いただけます。"
   },
   cn: {
     htmlLang: "zh-CN",
@@ -60,10 +60,10 @@ const STORE_COPY = {
     openSchedule: "{location} · {time}",
     closedSchedule: "无现场销售",
     siteLink: "在官方网站查看套装",
-    shopTitle: "线上商店准备中",
-    shopBody: "目前为早鸟运营期，仅支持现场购买。",
+    shopTitle: "正式发售中",
+    shopBody: "早鸟期已结束，现已转为正式发售。线上商店即将开放。",
     shopButton: "线上商店",
-    help: "目前为早鸟运营期，仅可在圣水、弘大、明洞等现场购买。线上购买按钮将在正式销售开始后启用。"
+    help: "现已转为正式发售。目前可在圣水、弘大、明洞等指定现场购买，线上购买按钮将在商店开放后启用。套装内容与配送、退换说明可在官方网站查看。"
   }
 };
 

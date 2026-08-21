@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://whalelandkr.com/sitemap.xml
+# C.O.V.E.R.T 공식 사이트 (/covert/site/). 위 줄은 그대로 둔다.
+Sitemap: https://whalelandkr.com/covert/site/sitemap.xml
