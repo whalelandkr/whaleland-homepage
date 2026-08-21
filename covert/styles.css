@@ -667,3 +667,51 @@ h2 {
     flex-direction: column;
   }
 }
+
+/* ---- 새 공식 사이트 안내 배너 ----
+   /covert/ 는 구버전 페이지다. 방문자를 /covert/site/ 로 보내는 자리.
+   헤더 위에 두어 처음 한 번 보이고 스크롤하면 지나간다. */
+.site-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px max(16px, 4vw);
+  text-decoration: none;
+  color: var(--brown);
+  background: linear-gradient(135deg, rgba(241, 154, 69, 0.18), rgba(255, 249, 230, 0.92));
+  border-bottom: 1px solid var(--line);
+  transition: background 0.18s ease;
+}
+
+.site-banner:hover {
+  background: linear-gradient(135deg, rgba(241, 154, 69, 0.30), rgba(255, 249, 230, 0.96));
+}
+
+.site-banner-tag {
+  flex: none;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+}
+
+.site-banner-text {
+  flex: 1 1 auto;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.site-banner-arrow {
+  flex: none;
+  font-weight: 950;
+}
+
+@media (max-width: 560px) {
+  .site-banner { gap: 10px; padding: 12px 16px; }
+  .site-banner-tag { padding: 3px 8px; font-size: 0.62rem; }
+  .site-banner-text { font-size: 0.82rem; }
+}

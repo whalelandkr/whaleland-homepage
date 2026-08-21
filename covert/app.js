@@ -31,7 +31,11 @@ const COVERT_COPY = {
     zones: ["Gyeongbokgung", "Gwanghwamun", "National Museum", "COEX", "The Hyundai Seoul", "Dosan Park", "Lotte Tower", "Namsan", "Banpo Hangang", "Itaewon", "Seongsu", "Hongdae", "Myeongdong", "DDP", "Gwangjang Market"],
     storeEyebrow: "FIELD SALES",
     storeTitle: "지금은 현장 구매로만 요원 등록이 가능합니다.",
-    storeLead: "성수, 홍대, 명동 등 지정된 현장에서 일정에 따라 판매합니다. 온라인 쇼핑몰은 추후 오픈 예정입니다."
+    storeLead: "성수, 홍대, 명동 등 지정된 현장에서 일정에 따라 판매합니다. 온라인 쇼핑몰은 추후 오픈 예정입니다.",
+    navSite: "공식 사이트",
+    siteTag: "NEW",
+    siteBanner: "공식 사이트가 열렸습니다. 키트 구성과 15개 구역을 확인하세요.",
+    siteCta: "공식 사이트 보기"
   },
   en: {
     htmlLang: "en",
@@ -60,7 +64,11 @@ const COVERT_COPY = {
     zones: ["Gyeongbokgung", "Gwanghwamun", "National Museum", "COEX", "The Hyundai Seoul", "Dosan Park", "Lotte Tower", "Namsan", "Banpo Hangang", "Itaewon", "Seongsu", "Hongdae", "Myeongdong", "DDP", "Gwangjang Market"],
     storeEyebrow: "FIELD SALES",
     storeTitle: "Agent registration is currently available on site only.",
-    storeLead: "Sales take place at selected field locations such as Seongsu, Hongdae, and Myeongdong. Online purchase will open later."
+    storeLead: "Sales take place at selected field locations such as Seongsu, Hongdae, and Myeongdong. Online purchase will open later.",
+    navSite: "Official site",
+    siteTag: "NEW",
+    siteBanner: "The official site is open. See the kit and all fifteen zones.",
+    siteCta: "Visit the official site"
   },
   jp: {
     htmlLang: "ja",
@@ -89,7 +97,11 @@ const COVERT_COPY = {
     zones: ["Gyeongbokgung", "Gwanghwamun", "National Museum", "COEX", "The Hyundai Seoul", "Dosan Park", "Lotte Tower", "Namsan", "Banpo Hangang", "Itaewon", "Seongsu", "Hongdae", "Myeongdong", "DDP", "Gwangjang Market"],
     storeEyebrow: "FIELD SALES",
     storeTitle: "現在、エージェント登録は現地購入のみ可能です。",
-    storeLead: "ソンス、ホンデ、明洞など指定された現地で、スケジュールに沿って販売します。オンライン購入は後日オープン予定です。"
+    storeLead: "ソンス、ホンデ、明洞など指定された現地で、スケジュールに沿って販売します。オンライン購入は後日オープン予定です。",
+    navSite: "公式サイト",
+    siteTag: "NEW",
+    siteBanner: "公式サイトを公開しました。キットの内容と15の区域をご覧ください。",
+    siteCta: "公式サイトを見る"
   },
   cn: {
     htmlLang: "zh-CN",
@@ -118,7 +130,11 @@ const COVERT_COPY = {
     zones: ["Gyeongbokgung", "Gwanghwamun", "National Museum", "COEX", "The Hyundai Seoul", "Dosan Park", "Lotte Tower", "Namsan", "Banpo Hangang", "Itaewon", "Seongsu", "Hongdae", "Myeongdong", "DDP", "Gwangjang Market"],
     storeEyebrow: "FIELD SALES",
     storeTitle: "目前只能通过现场购买完成特工登记。",
-    storeLead: "将在圣水、弘大、明洞等指定现场按日程销售。线上购买功能将于之后开放。"
+    storeLead: "将在圣水、弘大、明洞等指定现场按日程销售。线上购买功能将于之后开放。",
+    navSite: "官方网站",
+    siteTag: "NEW",
+    siteBanner: "官方网站已上线。查看套装内容与 15 个任务区域。",
+    siteCta: "查看官方网站"
   }
 };
 
@@ -176,6 +192,13 @@ function applyLanguage(language) {
     if (type === "report" || type === "reportCta") {
       link.href = `./report/?lang=${encoded}`;
       link.textContent = type === "report" ? copy.navReport : copy.reportCta;
+    }
+    /* 새 공식 사이트(/covert/site/). 영어판은 루트, 나머지는 언어 폴더로 보낸다.
+       siteHref 는 주소만 바꾸고 안쪽 문구는 data-copy 가 채우게 둔다. */
+    if (type === "site" || type === "siteCta" || type === "siteHref") {
+      link.href = currentLanguage === "en" ? "./site/" : "./site/" + currentLanguage + "/";
+      if (type === "site") link.textContent = copy.navSite;
+      if (type === "siteCta") link.textContent = copy.siteCta;
     }
   });
 
