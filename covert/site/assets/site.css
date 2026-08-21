@@ -1,0 +1,117 @@
+/* ==========================================================
+   C.O.V.E.R.T — shared stylesheet
+   모든 페이지가 이 파일 하나를 참조합니다.
+   페이지 고유 스타일은 각 HTML 안에 둡니다.
+   ========================================================== */
+
+:root{
+  --paper:#E5DCC5;
+  --paper-hi:#F1EBDC;
+  --paper-lo:#D2C7AC;
+  --paper-deep:#C2B496;
+  --paper-edge:#AC9C7F;
+  --ink:#1C2B3A;
+  --ink-soft:#5A6673;
+  --ink-faint:#8B9099;
+  --red:#B22C1E;
+  --orange:#E8792B;
+  --mono:'Courier Prime',ui-monospace,'Courier New',monospace;
+  --body:'Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',sans-serif;
+  --w:1060px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;overflow-x:hidden;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75;
+  background-color:var(--paper);
+  background-image:
+    repeating-linear-gradient(96deg, rgba(140,120,80,.030) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(3deg, rgba(140,120,80,.022) 0 1px, transparent 1px 8px),
+    radial-gradient(120% 70% at 15% -5%, rgba(255,253,246,.8) 0%, transparent 55%),
+    radial-gradient(90% 65% at 90% 95%, rgba(150,128,88,.14) 0%, transparent 60%);
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;z-index:99;background:var(--ink);color:var(--paper-hi);padding:10px 16px;font-family:var(--mono);font-size:13px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.wrap{max-width:var(--w);margin:0 auto;padding:0 28px;position:relative}
+.wrap-narrow{max-width:720px}
+
+/* ---------- type ---------- */
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin:0 0 14px}
+.kicker-dim{color:var(--ink-faint)}
+.head{font-family:var(--body);font-weight:800;font-size:clamp(28px,4.6vw,46px);line-height:1.18;letter-spacing:-.025em;margin:0 0 18px}
+.say{font-size:16.5px;line-height:1.85;color:var(--ink-soft);margin:0 0 26px;max-width:56ch}
+.rule{border:0;border-top:1px solid var(--paper-edge);margin:0}
+
+/* ---------- header : 로고 + 언어 전환만 ---------- */
+.topbar{position:absolute;top:0;left:0;right:0;z-index:60}
+.topbar-in{max-width:var(--w);margin:0 auto;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.mark{font-family:var(--mono);font-weight:700;font-size:13.5px;letter-spacing:.32em}
+.mark i{font-style:normal;color:var(--red)}
+.langsel{position:relative}
+.langsel select{
+  appearance:none;-webkit-appearance:none;background:transparent;border:1px solid var(--paper-edge);
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;color:var(--ink);
+  padding:8px 30px 8px 12px;border-radius:0;cursor:pointer
+}
+.langsel select:hover{border-color:var(--ink)}
+.langsel::after{content:"▾";position:absolute;right:11px;top:50%;transform:translateY(-50%);font-size:10px;color:var(--ink-soft);pointer-events:none}
+
+/* ---------- buttons ---------- */
+.cta{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:14px 24px;background:var(--ink);color:var(--paper-hi);border:1px solid var(--ink);border-radius:0;transition:transform .14s ease,background .2s ease}
+.cta:hover{background:#0F1B27;transform:translate(-1px,-1px)}
+.cta-2{background:transparent;color:var(--ink)}
+.cta-2:hover{background:rgba(28,43,58,.06)}
+/* 아직 주소가 정해지지 않은 버튼. 링크처럼 보이되 눌리지 않습니다.
+   주소가 생기면 마크업을 <a class="cta"> 로 되돌리고 이 규칙을 지웁니다. */
+.cta-off{background:var(--paper-lo);color:var(--ink-faint);border-color:var(--paper-edge);cursor:default;pointer-events:none}
+.cta-off:hover{background:var(--paper-lo);transform:none}
+.linkarrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);border-bottom:1px solid var(--red);padding-bottom:3px;display:inline-block;transition:padding .18s ease}
+.linkarrow:hover{padding-left:6px}
+
+/* ---------- paper ---------- */
+.sheet{background:var(--paper-hi);border:1px solid var(--paper-edge);border-radius:0;box-shadow:2px 4px 0 rgba(120,100,66,.12), 0 14px 30px rgba(70,58,36,.11);position:relative}
+.rubber{display:inline-block;font-family:var(--mono);font-weight:700;letter-spacing:.18em;color:var(--red);border:2.5px solid var(--red);padding:5px 12px;transform:rotate(-4deg);opacity:.85}
+
+/* ---------- footer : 이 사이트의 유일한 내비게이션 ---------- */
+.foot{border-top:1px solid var(--paper-edge);margin-top:40px;padding:56px 0 44px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.4fr;gap:36px}
+.foot-h{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin:0 0 16px}
+.foot-list{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.foot-list a{font-size:14.5px;color:var(--ink-soft);border-bottom:1px solid transparent}
+.foot-list a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.foot-mark{font-family:var(--mono);font-weight:700;font-size:13.5px;letter-spacing:.3em;margin:0 0 12px}
+.foot-tag{font-size:13.5px;color:var(--ink-soft);line-height:1.7;margin:0 0 18px;max-width:30ch}
+.sns{display:flex;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ink-faint);flex-wrap:wrap}
+.sns a:hover{color:var(--ink)}
+/* 주소가 없는 채널은 링크가 아니라 글자로 둡니다. */
+.sns span{opacity:.5;cursor:default}
+.news p{font-size:13.5px;color:var(--ink-soft);line-height:1.65;margin:0 0 14px}
+.news-soon{font-size:12.5px;color:var(--red);line-height:1.6;margin:10px 0 0}
+.legal{border-top:1px solid var(--paper-edge);margin-top:40px;padding-top:26px;font-size:12px;line-height:1.95;color:var(--ink-faint)}
+.legal-links{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.12em;margin-bottom:14px}
+.legal-links a{color:var(--ink-soft)}
+.legal-links a:hover{color:var(--ink)}
+
+/* ---------- scroll reveal ---------- */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media (max-width:600px){
+  .foot-grid{grid-template-columns:1fr}
+  .topbar-in{padding:16px 22px}
+  .wrap{padding:0 22px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}

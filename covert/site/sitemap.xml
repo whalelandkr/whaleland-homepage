@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- /terms/ 와 /privacy/ 는 noindex 라 의도적으로 제외했습니다. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://whalelandkr.com/covert/site/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/kr/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/jp/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/cn/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/mission/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/mission/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/mission/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/mission/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/mission/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/mission/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/kr/mission/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/mission/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/mission/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/mission/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/mission/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/mission/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/jp/mission/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/mission/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/mission/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/mission/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/mission/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/mission/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/cn/mission/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/mission/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/mission/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/mission/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/mission/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/mission/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/kit/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/kit/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/kit/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/kit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/kit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/kit/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/kr/kit/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/kit/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/kit/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/kit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/kit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/kit/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/jp/kit/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/kit/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/kit/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/kit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/kit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/kit/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/cn/kit/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/kit/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/kit/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/kit/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/kit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/kit/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/report/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/report/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/report/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/report/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/report/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/report/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/kr/report/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/report/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/report/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/report/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/report/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/report/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/jp/report/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/report/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/report/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/report/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/report/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/report/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/cn/report/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/report/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/report/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/report/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/report/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/report/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/support/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/support/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/support/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/kr/support/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/support/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/support/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/jp/support/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/support/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/support/"/>
+  </url>
+  <url>
+    <loc>https://whalelandkr.com/covert/site/cn/support/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/support/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/support/"/>
+  </url>
+</urlset>

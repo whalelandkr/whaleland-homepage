@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>プライバシーポリシー — C.O.V.E.R.T</title>
+<meta name="description" content="本ウェブサイトにおける個人情報の取り扱いについて。ホエールランド運営。" />
+<meta name="robots" content="noindex, follow" />
+
+<!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
+<link rel="canonical" href="https://whalelandkr.com/covert/site/jp/privacy/" />
+<link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/privacy/" />
+<link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/privacy/" />
+<link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/privacy/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/privacy/" />
+<link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/privacy/" />
+
+<!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
+<link rel="icon" href="../../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../../assets/site.css" />
+
+<style>
+/* ================= LEGAL ONLY ================= */
+
+/* --- JP ONLY : 본문 서체 --- */
+:root{
+  --body:'Pretendard JP Variable','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,'Hiragino Sans','Yu Gothic',sans-serif;
+}
+
+.legaldoc{padding:132px 0 24px}
+.legal-lede{font-size:16px;line-height:1.9;color:var(--ink-soft);max-width:34em;margin:0 0 20px}
+.stamp-date{font-size:13px;color:var(--red);margin:0 0 7px}
+.stamp-eff{font-size:13.5px;line-height:1.75;color:var(--ink-soft);margin:0 0 44px}
+
+.doc{padding:34px 36px 32px;margin:0 0 30px}
+.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
+  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 26px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.doc-h b{color:var(--red);font-weight:400}
+
+.arts{list-style:none;margin:0;padding:0;counter-reset:art}
+.arts > li{counter-increment:art;padding:0 0 26px;margin:0 0 26px;border-bottom:1px dotted var(--paper-edge)}
+.arts > li:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
+.arts > li > h2{font-family:var(--body);font-weight:700;font-size:16px;letter-spacing:-.01em;margin:0 0 10px}
+.arts > li > h2::before{content:counter(art,decimal-leading-zero);display:block;
+  font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.16em;color:var(--red);margin:0 0 5px}
+.arts p{margin:0 0 10px;font-size:14.5px;line-height:1.95;color:var(--ink-soft)}
+.arts p:last-child{margin-bottom:0}
+.arts ol,.arts ul{margin:0 0 10px;padding-left:20px}
+.arts li li{font-size:14.5px;line-height:1.95;color:var(--ink-soft);margin:0 0 7px}
+.arts li li:last-child{margin-bottom:0}
+
+.biz{list-style:none;margin:0;padding:0}
+.biz li{display:grid;grid-template-columns:170px 1fr;gap:0 20px;padding:9px 0;border-bottom:1px dotted var(--paper-edge)}
+.biz li:last-child{border-bottom:0}
+.biz b{font-weight:700;font-size:13.5px;line-height:1.5;color:var(--ink);padding-top:1px}
+.biz p{margin:0;font-size:14.5px;line-height:1.7}
+
+.none{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--red);margin:0 0 10px}
+
+.mailto{margin:8px 0 64px;font-size:15px}
+.mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
+
+/* --- JP ONLY : 서체 보정 --- */
+.linkarrow,
+.cta,
+.legal-links a{font-family:var(--body)}
+.linkarrow,
+.cta{letter-spacing:.02em;text-transform:none}
+
+@media (max-width:600px){
+  .legaldoc{padding:112px 0 16px}
+  .doc{padding:26px 22px 24px}
+  .biz li{grid-template-columns:96px 1fr;gap:0 16px;padding:11px 0}
+  .biz b{font-size:12.5px;line-height:1.45}
+  .biz p{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="../" class="mark">C.O.V.E.R.T<i>.</i></a>
+    <div class="langsel">
+      <label class="sr" for="lang">言語</label>
+      <select id="lang">
+        <option value="../../privacy/">EN — English</option>
+        <option value="../../kr/privacy/">KR — 한국어</option>
+        <option value="../../jp/privacy/" selected>JP — 日本語</option>
+        <option value="../../cn/privacy/">CN — 简体中文</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="legaldoc">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">LEGAL</p>
+    <h1 class="head">プライバシーポリシー</h1>
+    <p class="legal-lede">本ウェブサイトにおける個人情報の取り扱いについてご説明します。端的に申し上げますと、本サイトは個人情報を収集しておりません。ただし実際に保存されるもの二つと、その取り扱い主体を以下に記しておきます。</p>
+    <p class="stamp-date">公告日: 2026年8月21日 &nbsp;|&nbsp; 施行日: 2026年8月28日</p>
+    <p class="stamp-eff">本プライバシーポリシーは2026年8月28日より施行されます。</p>
+
+    <!-- 관리자 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>CONTROLLER</b></span><span>WHO IS RESPONSIBLE</span></p>
+      <ul class="biz">
+        <li><b>事業者名</b><p>ホエールランド (Whale Land)</p></li>
+        <li><b>代表者</b><p>チャン・ウク</p></li>
+        <li><b>事業者登録番号</b><p>428-04-03222</p></li>
+        <li><b>所在地</b><p>大韓民国 ソウル特別市 江南区 彦州路 425</p></li>
+        <li><b>個人情報保護責任者</b><p>チャン・ウク &mdash; contact@whalelandkr.com</p></li>
+      </ul>
+    </div>
+
+    <!-- 조문 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>POLICY</b></span><span>WHAT WE DO AND DON'T HOLD</span></p>
+      <ol class="arts">
+        <li>
+          <h2>本サイトが収集する個人情報</h2>
+          <p class="none">ありません</p>
+          <p>本サイトには会員登録、ログイン、カート、決済、入力フォームがありません。いずれの画面でもお名前、ご連絡先、お支払い情報をお伺いすることはなく、訪問者に関するデータベースも一切保有しておりません。</p>
+        </li>
+        <li>
+          <h2>ブラウザに保存される値</h2>
+          <p>はじめてお越しの際に、ブラウザの言語設定を一度だけ確認し、該当する言語フォルダへご案内します。訪問のたびに繰り返さないよう、ブラウザのローカルストレージに印をひとつ残します。</p>
+          <ul>
+            <li><b>cov_lang</b> — 値は <b>1</b>。それ以外はありません。確認がすでに行われたという事実だけを記録します。</li>
+          </ul>
+          <p>この値はブラウザ内にのみ残り、当方へ送信されることはありません。ブラウザのストレージを消去されると一緒に削除されますが、消去されてもサイトは問題なく動作します。広告や追跡を目的とした Cookie は使用しておりません。</p>
+        </li>
+        <li>
+          <h2>ホスティングとアクセスログ</h2>
+          <p>本サイトは GitHub Pages でホスティングされています。他のウェブサーバーと同様、当該サービスは受信したリクエストを記録し、そこには IP アドレスが含まれることがあります。この記録はホスティング事業者に帰属し、同事業者の方針に従って取り扱われます。当方が受け取ることも、控えを保管することもありません。</p>
+        </li>
+        <li>
+          <h2>外部から読み込む書体</h2>
+          <p>書体は Google Fonts および jsDelivr から読み込んでいます。ブラウザが各サービスへ直接接続してフォントファイルを取得するため、その過程で当該サービスがリクエストを認識します。この過程で当方が受け取る情報はありません。</p>
+        </li>
+        <li>
+          <h2>ご購入の際</h2>
+          <p>ご購入は本サイトではなくオンラインショップで行われます。そちらでご入力になるお名前、ご住所、ご連絡先、お支払い情報は、当該ショップのプライバシーポリシーに従って収集・処理されますので、ご注文前にそちらをご確認ください。本ページはその部分を扱っておりません。</p>
+        </li>
+        <li>
+          <h2>まだ有効にしていないもの</h2>
+          <p>お問い合わせフォーム、ニュースレターの登録、ウェブサイト解析ツールを今後導入する予定です。現時点ではいずれも稼働しておりません。そのいずれかを開始する時点で、何をどのような目的で収集し、どれだけの期間保有するのかを本ページに先に反映し、変更日を併記いたします。</p>
+        </li>
+        <li>
+          <h2>第三者提供と業務委託</h2>
+          <p class="none">ありません</p>
+          <p>本サイトを通じて保有する個人情報がないため、第三者へ提供するものも、処理を委託するものも、国外へ移転するものもありません。</p>
+        </li>
+        <li>
+          <h2>ご本人の権利</h2>
+          <p>大韓民国の個人情報保護法に基づき、ご自身の個人情報について開示、訂正・削除、処理の停止を求めることができます。本サイトを通じて保有している情報がないため、お見せできる内容もございませんが、ご確認をご希望でしたらご連絡ください。確認のうえご回答いたします。</p>
+          <p>ご購入時にご入力になった情報に関するご請求は、ご注文されたショップへお願いいたします。</p>
+        </li>
+        <li>
+          <h2>本方針の変更</h2>
+          <p>収集する内容が変わった場合、または法令上必要が生じた場合には、本方針を改定し、新しい施行日とともに本ページに掲示します。重要な変更は施行前にお知らせいたします。</p>
+        </li>
+      </ol>
+    </div>
+
+    <p class="mailto">
+      個人情報についてのご質問はこちらへ <a href="mailto:contact@whalelandkr.com">contact@whalelandkr.com</a>
+    </p>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-tag">ふつうの旅を、特別な任務に。</p>
+        <div class="sns">
+          <span>INSTAGRAM</span>
+          <span>FACEBOOK</span>
+          <span>YOUTUBE</span>
+          <span>TIKTOK</span>
+          <a href="https://tumblbug.com/covertkr" target="_blank" rel="me noopener">TUMBLBUG</a>
+        </div>
+      </div>
+
+      <nav aria-label="作戦">
+        <p class="foot-h">Operation</p>
+        <ul class="foot-list">
+          <li><a href="../mission/">ブリーフィング</a></li>
+          <li><a href="../kit/">キット</a></li>
+          <li><a href="../report/">フィールドレポート</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="サポート">
+        <p class="foot-h">Support</p>
+        <ul class="foot-list">
+          <li><a href="../support/">配送 &middot; 返品</a></li>
+          <li><a href="../support/#faq">よくある質問</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <div class="news">
+        <p class="foot-h">Dispatches</p>
+        <p>新しい作戦と再入荷のお知らせだけをお送りします。年に四回ほどです。</p>
+        <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">リストに登録</a> -->
+        <span class="cta cta-2 cta-off">リストに登録</span>
+        <p class="news-soon">登録は近日開始します。</p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-links">
+        <a href="../terms/">利用規約</a>
+        <a href="./">プライバシーポリシー</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
+      </div>
+      <p>
+        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T は Whale Land の商標です。
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var sel = document.getElementById('lang');
+  if(sel){ sel.addEventListener('change', function(){
+    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
+    location.href = sel.value;
+  }); }
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.05});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Q&amp;A — C.O.V.E.R.T</title>
+<meta name="description" content="C.O.V.E.R.T 的配送、撤销订单与换货说明，以及最常被问到的问题。" />
+
+<!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
+<link rel="canonical" href="https://whalelandkr.com/covert/site/cn/support/" />
+<link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/support/" />
+<link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/support/" />
+<link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/support/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/support/" />
+<link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/support/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:title" content="Q&amp;A — C.O.V.E.R.T" />
+<meta property="og:description" content="配送、撤销订单与换货说明，以及最常被问到的问题。" />
+<meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
+<meta property="og:locale" content="zh_CN" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
+<link rel="icon" href="../../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Noto+Sans+SC:wght@400;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../../assets/site.css" />
+
+<style>
+/* ================= SUPPORT ONLY ================= */
+
+/* --- CN ONLY : 본문 서체 --- */
+:root{
+  --body:'Noto Sans SC','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,'PingFang SC','Microsoft YaHei',sans-serif;
+}
+
+.sup{padding:132px 0 24px}
+.sup-lede{font-size:16.5px;line-height:1.9;color:var(--ink-soft);max-width:34em;margin:0 0 44px}
+
+.doc{padding:34px 36px 32px;margin:0 0 30px;scroll-margin-top:100px}
+.doc:nth-of-type(even){transform:rotate(.4deg)}
+.doc:nth-of-type(odd){transform:rotate(-.4deg)}
+.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
+  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 22px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.doc-h b{color:var(--red);font-weight:400}
+
+/* 라벨은 왼쪽, 본문은 오른쪽. 좁은 화면에서도 위아래로 쪼개지 않는다.
+   쪼개면 라벨이 그냥 굵은 한 줄로 묻혀서 훑어보기 어렵다. */
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:112px 1fr;gap:0 22px;padding:15px 0;border-bottom:1px dotted var(--paper-edge)}
+.rows li:last-child{border-bottom:0}
+.rows b{grid-column:1;grid-row:1;font-weight:700;font-size:14px;line-height:1.5;color:var(--ink);padding-top:1px}/* 문단이 여러 개여도 전부 오른쪽 칸에 쌓이게 한다. 고정하지 않으면 두 번째 문단이 라벨 칸으로 밀려난다. */
+.rows p{grid-column:2;margin:0;font-size:14.5px;line-height:1.8}
+.rows p + p{margin-top:8px}
+.rows p b{font-weight:700;font-size:inherit;color:var(--ink);padding:0}
+
+.faq{list-style:none;margin:0;padding:0}
+.faq li{padding:0 0 20px;margin:0 0 20px;border-bottom:1px dotted var(--paper-edge)}
+.faq li:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
+.faq q{display:block;font-weight:700;font-size:15.5px;margin:0 0 7px;quotes:none}
+.faq q::before{content:"Q. ";font-family:var(--mono);font-weight:400;font-size:12px;color:var(--red);letter-spacing:.08em}
+.faq p{margin:0;font-size:14.5px;line-height:1.9;color:var(--ink-soft)}
+
+.fine{font-size:13px;line-height:1.9;color:var(--ink-faint);margin:22px 0 0;padding-top:18px;border-top:1px solid var(--paper-lo)}
+.fine b{color:var(--red);font-weight:400;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;display:block;margin:0 0 6px}
+
+.mailto{margin:8px 0 64px;font-size:15px}
+.mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
+
+/* --- CN ONLY : 서체 보정 --- */
+.linkarrow,
+.cta,
+.legal-links a{font-family:var(--body)}
+.linkarrow,
+.cta{letter-spacing:.02em;text-transform:none}
+
+@media (max-width:600px){
+  .sup{padding:112px 0 16px}
+  .doc{padding:26px 22px 24px}
+  .doc:nth-of-type(even),.doc:nth-of-type(odd){transform:none}
+  .rows li{grid-template-columns:78px 1fr;gap:0 14px;padding:14px 0}
+  .rows b{font-size:12.5px;line-height:1.45}
+  .rows p{font-size:14px;line-height:1.75}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="../" class="mark">C.O.V.E.R.T<i>.</i></a>
+    <div class="langsel">
+      <label class="sr" for="lang">语言</label>
+      <select id="lang">
+        <option value="../../support/">EN — English</option>
+        <option value="../../kr/support/">KR — 한국어</option>
+        <option value="../../jp/support/">JP — 日本語</option>
+        <option value="../../cn/support/" selected>CN — 简体中文</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="sup">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">SUPPORT</p>
+    <h1 class="head">Q&amp;A</h1>
+    <p class="sup-lede">从下单到收货，可能想问的都在这里。以下内容适用于通过线上商店下的订单。这里没有写到的，请发邮件问我们，每一封我们都会亲自回复。</p>
+
+    <!-- 배송 -->
+    <div class="sheet doc rv" id="shipping">
+      <p class="doc-h"><span><b>SHIPPING</b></span><span>ONLINE ORDERS</span></p>
+      <ul class="rows">
+        <li>
+          <b>出货</b>
+          <p>我们在工作日打包并交给快递公司。周末与韩国的法定假日不计入工作日。</p>
+        </li>
+        <li>
+          <b>韩国境内</b>
+          <p>由 CJ 大韩通运寄出。运费为 3,000 韩元，订单满 50,000 韩元免运费。发货后 1 至 3 个工作日送达。</p>
+        </li>
+        <li>
+          <b>国际配送</b>
+          <p>由韩国邮政 EMS 寄出。运费在下单时按目的地国家与重量以 EMS 标准费率自动计算，另加包装费 3,000 韩元。海外配送不适用免运费。</p>
+          <p>发货后 2 至 5 个工作日送达，清关所需时间不计在内。关税与进口环节税由目的地国家征收，由收件人承担。我们无法事先代为计算。</p>
+        </li>
+        <li>
+          <b>地址填写有误</b>
+          <p>若因地址或联系方式填写有误、或无人签收而退回，再次寄送的运费由买家承担。</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 취소·교환·환불 -->
+    <div class="sheet doc rv" id="returns">
+      <p class="doc-h"><span><b>RETURNS</b></span><span>CANCELLATION &middot; EXCHANGE &middot; REFUND</span></p>
+      <ul class="rows">
+        <li>
+          <b>出货前取消</b>
+          <p>在包裹离开我们之前，随时可以取消，我们会全额退款。</p>
+        </li>
+        <li>
+          <b>收货后撤销</b>
+          <p>自收到商品之日起 <b>7 天内</b>可以撤销订单。请把套装完整寄回，我们会办理退款。若属于个人原因改变主意，退货运费由您承担；若是商品瑕疵或我们发错货，运费由我们承担。</p>
+        </li>
+        <li>
+          <b>海外退货</b>
+          <p>海外订单若因个人原因退货，寄出与寄回的国际运费均由买家承担。若属于商品瑕疵或我们发错货，则由我们承担。</p>
+        </li>
+        <li>
+          <b>瑕疵 · 错发</b>
+          <p>印刷或装订不良、信封破损、贴纸缺失或破损、钥匙扣损坏、收到了别的商品 —— 这些我们会换货或退款。请在收货后 3 个月内，或在发现问题后 30 天内联系我们。</p>
+          <p>请提供订单编号，以及全部物品的照片和问题部位的照片，我们会据此直接处理。</p>
+        </li>
+        <li>
+          <b>撤销的限制</b>
+          <p>收货后经使用或损坏、已贴上贴纸或已在护照上书写、以及其他因使用导致商品价值明显下降的情况，可能无法受理撤销。</p>
+        </li>
+        <li>
+          <b>随机钥匙扣</b>
+          <p>钥匙扣从 15 款中随机发出。拿到重复的款式，或不是您想要的那一款，本身都不构成换货理由。但这并不影响您在 7 天内撤销订单的权利。</p>
+        </li>
+        <li>
+          <b>印刷差异</b>
+          <p>印刷色彩与纸张质感可能与本站图片略有差异，裁切也会有细微误差。这是印刷品的常见特性，不按瑕疵处理。</p>
+        </li>
+      </ul>
+      <p class="fine">
+        <b>NOTE</b>
+        本页内容不限制消费者保护相关法规所保障的权利。本说明与法规不一致时，以法规为准。
+      </p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="sheet doc rv" id="faq">
+      <p class="doc-h"><span><b>FAQ</b></span><span>ASKED MOST OFTEN</span></p>
+      <ul class="faq">
+        <li>
+          <q>看不懂韩文可以吗？</q>
+          <p>可以。套装有三个版本：韩英合本、日文、简体中文。挑一个您读得懂的，任务、当地提示和填写栏都会是那个语言。</p>
+        </li>
+        <li>
+          <q>需要装应用吗？</q>
+          <p>不需要。没有应用，也没有账号，全程用纸完成。最后一页有一个二维码可以把报告发回总部，但那是可选的，没有任何环节依赖它。</p>
+        </li>
+        <li>
+          <q>要去哪里盖章吗？</q>
+          <p>不用。没有盖章台，也没有必须去的合作门店。套装里附有透明贴纸，每走完一个区域，由您自己把那一页封上。</p>
+        </li>
+        <li>
+          <q>大概需要多久？</q>
+          <p>您想花多久都行。没有期限，也没有固定顺序。一个下午走完一个区域可以，把 15 个区域分到几次旅行里也可以。</p>
+        </li>
+        <li>
+          <q>必须走完 15 个区域吗？</q>
+          <p>不必。每个区域各自独立成篇，走完一个，本身就是完整的一件事。</p>
+        </li>
+        <li>
+          <q>钥匙扣能指定款式吗？</q>
+          <p>不能。15 款中随机装入一款，一次买多个可能会重复。其余款式作为单品另行销售。</p>
+        </li>
+        <li>
+          <q>两个人可以共用一套吗？</q>
+          <p>一套只登记一名特工，护照和特工证各一份。一起走当然没问题，但若想各自留下一份记录，就需要两套。</p>
+        </li>
+        <li>
+          <q>到了发现没开门怎么办？</q>
+          <p>确实会遇到。护照上每个区域都附了当地提示，写明休息日和不建议前往的时段。出门前先读一下那一页就好。</p>
+        </li>
+        <li>
+          <q>适合带孩子一起吗？</q>
+          <p>区域里包含博物馆、公园和综合商场，任务也多是寻找、品尝和观察。不过要走一些路，也有需要阅读的内容，年幼的特工建议由大人陪同。</p>
+        </li>
+      </ul>
+    </div>
+
+    <p class="mailto">
+      还是没解决？ <a href="mailto:contact@whalelandkr.com">contact@whalelandkr.com</a>
+    </p>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-tag">把平凡的旅行，变成特别的任务。</p>
+        <div class="sns">
+          <span>INSTAGRAM</span>
+          <span>FACEBOOK</span>
+          <span>YOUTUBE</span>
+          <span>TIKTOK</span>
+          <a href="https://tumblbug.com/covertkr" target="_blank" rel="me noopener">TUMBLBUG</a>
+        </div>
+      </div>
+
+      <nav aria-label="行动">
+        <p class="foot-h">Operation</p>
+        <ul class="foot-list">
+          <li><a href="../mission/">简报</a></li>
+          <li><a href="../kit/">套装</a></li>
+          <li><a href="../report/">现场报告</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="支持">
+        <p class="foot-h">Support</p>
+        <ul class="foot-list">
+          <li><a href="./">配送 &middot; 退换</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">联系我们</a></li>
+        </ul>
+      </nav>
+
+      <div class="news">
+        <p class="foot-h">Dispatches</p>
+        <p>只发送新行动和补货消息。一年大约四次。</p>
+        <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">加入名单</a> -->
+        <span class="cta cta-2 cta-off">加入名单</span>
+        <p class="news-soon">登记即将开放。</p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-links">
+        <a href="../terms/">服务条款</a>
+        <a href="../privacy/">隐私政策</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
+      </div>
+      <p>
+        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T 是 Whale Land 的商标。
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sel = document.getElementById('lang');
+  if(sel){ sel.addEventListener('change', function(){
+    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
+    location.href = sel.value;
+  }); }
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.1});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+
+<!-- ============================================================
+     GA4 — 측정 ID 발급 후 G-XXXXXXXXXX 를 교체하고 주석을 해제하세요
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+     ============================================================ -->
+
+<!-- ============================================================
+     META PIXEL — 픽셀 ID 발급 후 000000000000000 을 교체하고 주석을 해제하세요
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '000000000000000');
+  fbq('track', 'PageView');
+</script>
+     ============================================================ -->
+
+</body>
+</html>

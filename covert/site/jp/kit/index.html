@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>キットを購入 — C.O.V.E.R.T</title>
+<meta name="description" content="C.O.V.E.R.T キットをオンラインショップでご購入いただけます。構成品6種、₩30,000、税込・送料別。" />
+
+<!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
+<link rel="canonical" href="https://whalelandkr.com/covert/site/jp/kit/" />
+<link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/kit/" />
+<link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/kit/" />
+<link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/kit/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/kit/" />
+<link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/kit/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:title" content="キットを購入 — C.O.V.E.R.T" />
+<meta property="og:description" content="構成品6種、₩30,000。オンラインショップからご購入いただけます。" />
+<meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
+<link rel="icon" href="../../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+
+<!-- JP: 가나·한자용 / KR: 푸터 사업자 정보의 한글용. 둘 다 동적 서브셋 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../../assets/site.css" />
+
+<style>
+/* ================= KIT ONLY ================= */
+
+/* --- JP ONLY : 본문 서체 --- */
+:root{
+  --body:'Pretendard JP Variable','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,'Hiragino Sans','Yu Gothic',sans-serif;
+}
+
+.kit{padding:132px 0 24px}
+.kit-lede{font-size:16.5px;line-height:1.9;color:var(--ink-soft);max-width:34em;margin:0 0 44px}
+
+/* 서류 한 장 */
+.doc{padding:34px 36px 32px;margin:0 0 30px}
+.doc:nth-of-type(even){transform:rotate(.4deg)}
+.doc:nth-of-type(odd){transform:rotate(-.4deg)}
+.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
+  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 22px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.doc-h b{color:var(--red);font-weight:400}
+
+/* 물품 명세서 */
+.pack{list-style:none;margin:0;padding:0}
+.pack li{display:flex;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px dotted var(--paper-edge);flex-wrap:wrap}
+.pack li:last-child{border-bottom:0}
+.pack i{font-family:var(--mono);font-style:normal;font-size:11px;color:var(--red);flex-shrink:0;width:22px}
+.pack b{font-weight:700;font-size:15.5px}
+.pack s{flex:1;height:0;border-bottom:1px dotted var(--paper-edge);text-decoration:none;min-width:16px;transform:translateY(-3px)}
+.pack em{font-family:var(--mono);font-style:normal;font-size:12px;color:var(--ink-soft);flex-shrink:0;letter-spacing:.06em}
+.pack p{margin:5px 0 0 34px;font-size:13.5px;line-height:1.85;color:var(--ink-soft);flex-basis:100%}
+
+/* 명세 표 */
+.spec{width:100%;border-collapse:collapse}
+.spec th,.spec td{text-align:left;padding:10px 0;border-bottom:1px solid var(--paper-lo);vertical-align:top}
+.spec tr:last-child th,.spec tr:last-child td{border-bottom:0}
+.spec th{font-weight:700;font-size:13.5px;line-height:1.5;color:var(--ink);width:32%;padding-right:18px}
+.spec td{font-size:15px}
+.spec td span{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);display:block;margin-top:3px;letter-spacing:.06em}
+
+/* 가격 */
+.buy{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap}
+.buy-fig{font-family:var(--body);font-weight:800;font-size:clamp(34px,5vw,48px);letter-spacing:-.03em;line-height:1;margin:0}
+.buy-note{font-size:13px;color:var(--ink-faint);margin:9px 0 0}
+/* 카페24 상품 URL 이 아직 없어 구매 버튼을 비활성 상태로 둡니다.
+   URL 이 정해지면 아래 .buy-soon 마크업과 이 규칙을 함께 지웁니다.
+   .cta-off 는 푸터에서도 쓰므로 site.css 에 있습니다. */
+.buy-soon{display:flex;flex-direction:column;align-items:flex-start}
+.buy-soon-note{font-family:var(--body);font-size:11.5px;color:var(--red);margin:9px 0 0}
+.fine{font-size:13px;line-height:1.85;color:var(--ink-faint);margin:24px 0 0;padding-top:18px;border-top:1px solid var(--paper-lo)}
+.fine b{color:var(--red);font-weight:400;font-family:var(--mono);font-size:11px;letter-spacing:.16em;display:block;margin:0 0 6px}
+
+.back{margin:8px 0 64px}
+
+/* --- JP ONLY : 서체 보정 ---
+   Courier Prime 에는 가나·한자 글리프가 없습니다.
+   일본어가 들어가는 요소만 본문 서체로 되돌립니다. */
+.linkarrow,
+.cta,
+.legal-links a{font-family:var(--body)}
+.linkarrow,
+.cta{letter-spacing:.02em;text-transform:none}
+
+@media (max-width:600px){
+  .kit{padding:112px 0 16px}
+  .doc{padding:26px 22px 24px}
+  .doc:nth-of-type(even),.doc:nth-of-type(odd){transform:none}
+  .spec th{width:34%;padding-right:14px;font-size:12.5px}
+  .spec td{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="../" class="mark">C.O.V.E.R.T<i>.</i></a>
+    <div class="langsel">
+      <label class="sr" for="lang">言語</label>
+      <select id="lang">
+        <option value="../../kit/">EN — English</option>
+        <option value="../../kr/kit/">KR — 한국어</option>
+        <option value="../../jp/kit/" selected>JP — 日本語</option>
+        <option value="../../cn/kit/">CN — 简体中文</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="kit">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">BUY</p>
+    <h1 class="head">キットを購入する</h1>
+    <p class="kit-lede">OPERATION 01 に必要なものは、すべて封をしたクラフト封筒ひとつに入っています。構成品6種と仕様を下でご確認のうえ、オンラインショップからそのままご購入いただけます。セット1種のみの販売で、単品販売はございません。</p>
+
+    <!-- 물품 명세서 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>PACKING LIST</b></span><span>OPERATION 01 — SEOUL</span></p>
+      <ul class="pack">
+        <li>
+          <i>01</i><b>機密封筒</b><s></s><em>× 1</em>
+          <p>紐で結ぶクラフトの書類封筒です。表と裏に機関のロゴと TOP SECRET の印章が入っています。封を開けるところからブリーフィングが始まりますので、ゆっくり開けてみてください。</p>
+        </li>
+        <li>
+          <i>02</i><b>エージェントパスポート</b><s></s><em>× 1</em>
+          <p>88 × 125 mm、40ページ。レザーテックス貼りの表紙に、マット金箔でエンブレムを箔押ししています。中には15の区域、30か所、45の任務。場所ごとにその街に合わせて変装したボミのイラストが30種、あわせて入っています。</p>
+        </li>
+        <li>
+          <i>03</i><b>スタンプシール</b><s></s><em>× 20</em>
+          <p>機関のエンブレムが入った透明シールです。区域ページの印章欄にぴたりと収まるよう断裁しています。15区域分に予備を5枚加え、シールごとに任務を終えた年月日時を書き込む欄があります。</p>
+        </li>
+        <li>
+          <i>04</i><b>ボーディングパス型ミッションカード</b><s></s><em>× 1</em>
+          <p>本物の航空券の形をしたカードです。要員名と要員番号、入国日を書き込めば、世界にひとつだけの搭乗券になります。</p>
+        </li>
+        <li>
+          <i>05</i><b>要員証セット</b><s></s><em>× 1 SET</em>
+          <p>ボミの PVC 要員証に、カードケースとネックストラップまでお付けします。ボミの署名まで入っていて、実際の社員証に劣らない作り込みです。仕上がった状態で届きますので、記入する箇所はありません。</p>
+        </li>
+        <li>
+          <i>06</i><b>ボミのキーリング</b><s></s><em>× 1 RANDOM</em>
+          <p>区域ごとにひとつずつ、その街に似合う服を着たボミのキーリングが15種あります。どのボミが入っているかは、封筒を開けてみてのお楽しみです。</p>
+        </li>
+      </ul>
+      <p class="fine">
+        <b>ALSO INCLUDED</b>
+        最終ページの QR から、本部へ任務報告書をお送りいただけます。あくまで任意です。15の区域は紙だけで最初から最後まで完結し、インストールするアプリも、立ち寄るべき提携先もありません。
+      </p>
+    </div>
+
+    <!-- 명세 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>SPECIFICATIONS</b></span><span>FULL SET</span></p>
+      <table class="spec">
+        <tbody>
+          <tr><th>パスポート</th><td>表紙込み40ページ<span>88 × 125 MM · 40 PAGES</span></td></tr>
+          <tr><th>表紙</th><td>レザーテックス貼り、マット金箔<span>PANTONE 289 C</span></td></tr>
+          <tr><th>本文用紙</th><td>上質マット紙、単色印刷<span>#FFFDF5 · RISOGRAPH</span></td></tr>
+          <tr><th>封筒</th><td>クラフト、紐結び<span>175 × 240 × 20 MM</span></td></tr>
+          <tr><th>ボーディングパス</th><td>カード紙、記入式<span>156 × 76 MM</span></td></tr>
+          <tr><th>要員証セット</th><td>PVC カード・ケース・ストラップ<span>CARD 54 × 86 MM · BOTH SIDES</span></td></tr>
+          <tr><th>シール</th><td>透明、15区域分 + 予備5枚<span>20 TOTAL</span></td></tr>
+          <tr><th>収録範囲</th><td>15の区域、30か所<span>45 ASSIGNMENTS · 30 DISGUISES</span></td></tr>
+          <tr><th>版</th><td>韓英合本 · 日本語 · 中国語簡体<span>3 EDITIONS</span></td></tr>
+          <tr><th>初回生産</th><td>全版合計<span>1,500 SETS</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 가격 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>ISSUE</b></span><span>ONE SET — NO PARTS SOLD SEPARATELY</span></p>
+      <div class="buy">
+        <div>
+          <p class="buy-fig">₩30,000</p>
+          <p class="buy-note">税込 · 送料別</p>
+        </div>
+        <!-- 카페24 상품 URL 이 정해지면 아래 <div class="buy-soon"> 블록 전체를 이 한 줄로 되돌립니다.
+             <a class="cta" href="상품URL" target="_blank" rel="noopener">キットを購入する</a> -->
+        <div class="buy-soon">
+          <span class="cta cta-off">キットを購入する</span>
+          <p class="buy-soon-note">販売ページのリンクは近日公開します。</p>
+        </div>
+      </div>
+
+      <p class="fine">
+        <b>NOTICE</b>
+        キーリングは15種の中からランダムでお送りします。デザインのご指定はできず、複数ご注文の場合は同じものが重なることがあります。ランダムの結果や重複は交換の対象になりませんが、製造上の不良はいつでも交換いたしますのでご連絡ください。
+        印刷の色や紙の質感は、画面上の画像と多少異なる場合があります。
+      </p>
+    </div>
+
+    <p class="back"><a class="linkarrow" href="../mission/">ブリーフィングを読む →</a></p>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-tag">ふつうの旅を、特別な任務に。</p>
+        <div class="sns">
+          <span>INSTAGRAM</span>
+          <span>FACEBOOK</span>
+          <span>YOUTUBE</span>
+          <span>TIKTOK</span>
+          <a href="https://tumblbug.com/covertkr" target="_blank" rel="me noopener">TUMBLBUG</a>
+        </div>
+      </div>
+
+      <nav aria-label="作戦">
+        <p class="foot-h">Operation</p>
+        <ul class="foot-list">
+          <li><a href="../mission/">ブリーフィング</a></li>
+          <li><a href="./">キット</a></li>
+          <li><a href="../report/">フィールドレポート</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="サポート">
+        <p class="foot-h">Support</p>
+        <ul class="foot-list">
+          <li><a href="../support/">配送 &middot; 返品</a></li>
+          <li><a href="../support/#faq">よくある質問</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <div class="news">
+        <p class="foot-h">Dispatches</p>
+        <p>新しい作戦と再入荷のお知らせだけをお送りします。年に四回ほどです。</p>
+        <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">リストに登録</a> -->
+        <span class="cta cta-2 cta-off">リストに登録</span>
+        <p class="news-soon">登録は近日開始します。</p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-links">
+        <a href="../terms/">利用規約</a>
+        <a href="../privacy/">プライバシーポリシー</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
+      </div>
+      <p>
+        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T は Whale Land の商標です。
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- 언어 선택 ---- */
+  var sel = document.getElementById('lang');
+  if(sel){ sel.addEventListener('change', function(){
+    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
+    location.href = sel.value;
+  }); }
+
+  /* ---- 스크롤 등장 ---- */
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.12});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+
+<!-- ============================================================
+     GA4 — 측정 ID 발급 후 G-XXXXXXXXXX 를 교체하고 주석을 해제하세요
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+     ============================================================ -->
+
+<!-- ============================================================
+     META PIXEL — 픽셀 ID 발급 후 000000000000000 을 교체하고 주석을 해제하세요
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '000000000000000');
+  fbq('track', 'PageView');
+</script>
+     ============================================================ -->
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Q&amp;A — C.O.V.E.R.T</title>
+<meta name="description" content="Shipping, cancellation and exchange terms for C.O.V.E.R.T, plus answers to the questions we get asked most." />
+
+<!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
+<link rel="canonical" href="https://whalelandkr.com/covert/site/support/" />
+<link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/support/" />
+<link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/support/" />
+<link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/support/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/support/" />
+<link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/support/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:title" content="Q&amp;A — C.O.V.E.R.T" />
+<meta property="og:description" content="Shipping, cancellation and exchange terms, plus answers to common questions." />
+<meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
+<link rel="icon" href="../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../assets/site.css" />
+
+<style>
+/* ================= SUPPORT ONLY ================= */
+.sup{padding:132px 0 24px}
+.sup-lede{font-size:16.5px;line-height:1.85;color:var(--ink-soft);max-width:52ch;margin:0 0 44px}
+
+.doc{padding:34px 36px 32px;margin:0 0 30px;scroll-margin-top:100px}
+.doc:nth-of-type(even){transform:rotate(.4deg)}
+.doc:nth-of-type(odd){transform:rotate(-.4deg)}
+.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
+  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 22px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.doc-h b{color:var(--red);font-weight:400}
+
+/* 항목 목록 */
+/* 라벨은 왼쪽, 본문은 오른쪽. 좁은 화면에서도 위아래로 쪼개지 않는다.
+   쪼개면 라벨이 그냥 굵은 한 줄로 묻혀서 훑어보기 어렵다. */
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:128px 1fr;gap:0 22px;padding:15px 0;border-bottom:1px dotted var(--paper-edge)}
+.rows li:last-child{border-bottom:0}
+.rows b{grid-column:1;grid-row:1;font-weight:700;font-size:14px;line-height:1.5;color:var(--ink);padding-top:1px}/* 문단이 여러 개여도 전부 오른쪽 칸에 쌓이게 한다. 고정하지 않으면 두 번째 문단이 라벨 칸으로 밀려난다. */
+.rows p{grid-column:2;margin:0;font-size:14.5px;line-height:1.8}
+.rows p + p{margin-top:8px}
+/* 본문 안의 강조는 라벨용 .rows b 스타일을 상속하지 않게 되돌린다 */
+.rows p b{font-family:var(--body);font-size:inherit;font-weight:700;letter-spacing:0;
+  color:var(--ink);text-transform:none;display:inline;padding:0}
+
+/* FAQ */
+.faq{list-style:none;margin:0;padding:0}
+.faq li{padding:0 0 20px;margin:0 0 20px;border-bottom:1px dotted var(--paper-edge)}
+.faq li:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
+.faq q{display:block;font-weight:700;font-size:15.5px;margin:0 0 7px;quotes:none}
+.faq q::before{content:"Q. ";font-family:var(--mono);font-weight:400;font-size:12px;color:var(--red);letter-spacing:.08em}
+.faq p{margin:0;font-size:14.5px;line-height:1.8;color:var(--ink-soft)}
+
+.fine{font-size:13px;line-height:1.8;color:var(--ink-faint);margin:22px 0 0;padding-top:18px;border-top:1px solid var(--paper-lo)}
+.fine b{color:var(--red);font-weight:400;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;display:block;margin:0 0 6px}
+
+.mailto{margin:8px 0 64px;font-size:15px}
+.mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
+
+@media (max-width:600px){
+  .sup{padding:112px 0 16px}
+  .doc{padding:26px 22px 24px}
+  .doc:nth-of-type(even),.doc:nth-of-type(odd){transform:none}
+  .rows li{grid-template-columns:78px 1fr;gap:0 14px;padding:14px 0}
+  .rows b{font-size:12.5px;line-height:1.45}
+  .rows p{font-size:14px;line-height:1.75}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="../" class="mark">C.O.V.E.R.T<i>.</i></a>
+    <div class="langsel">
+      <label class="sr" for="lang">Language</label>
+      <select id="lang">
+        <option value="../support/" selected>EN — English</option>
+        <option value="../kr/support/">KR — 한국어</option>
+        <option value="../jp/support/">JP — 日本語</option>
+        <option value="../cn/support/">CN — 简体中文</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="sup">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">Support</p>
+    <h1 class="head">Q&amp;A</h1>
+    <p class="sup-lede">Everything you might wonder about, from ordering to arrival. What follows applies to orders placed through our online shop. If something isn't covered here, write to us — we answer every message ourselves.</p>
+
+    <!-- 배송 -->
+    <div class="sheet doc rv" id="shipping">
+      <p class="doc-h"><span><b>SHIPPING</b></span><span>ONLINE ORDERS</span></p>
+      <ul class="rows">
+        <li>
+          <b>Dispatch</b>
+          <p>Orders are packed and handed to the carrier on business days. Weekends and public holidays in Korea are not counted.</p>
+        </li>
+        <li>
+          <b>Within Korea</b>
+          <p>Sent by CJ Logistics. Shipping is ₩3,000, and free on orders over ₩50,000. Delivery takes one to three business days after dispatch.</p>
+        </li>
+        <li>
+          <b>International</b>
+          <p>Sent by Korea Post EMS. The charge is worked out at checkout from the destination and the weight at standard EMS rates, plus ₩3,000 for packing. Free shipping doesn't apply to international orders.</p>
+          <p>Delivery takes two to five business days after dispatch, not counting time in customs. Any customs duty or import tax is charged by the destination country and paid by the recipient. We can't calculate it in advance.</p>
+        </li>
+        <li>
+          <b>Address errors</b>
+          <p>If a parcel comes back because the address or contact number was wrong, or because nobody could receive it, the cost of sending it again is yours.</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 취소·교환·환불 -->
+    <div class="sheet doc rv" id="returns">
+      <p class="doc-h"><span><b>RETURNS</b></span><span>CANCELLATION &middot; EXCHANGE &middot; REFUND</span></p>
+      <ul class="rows">
+        <li>
+          <b>Before dispatch</b>
+          <p>Cancel any time before the parcel leaves us, and you'll be refunded in full.</p>
+        </li>
+        <li>
+          <b>After delivery</b>
+          <p>You may cancel the order within <b>7 days</b> of receiving it. Send the kit back complete and we'll refund it. If you're simply changing your mind, the return postage is yours; if the kit is faulty or we sent the wrong thing, it's ours.</p>
+        </li>
+        <li>
+          <b>Returning from abroad</b>
+          <p>If you send an international order back because you changed your mind, both the postage out and the postage back are yours. If the kit is faulty or we sent the wrong thing, they're ours.</p>
+        </li>
+        <li>
+          <b>Faults</b>
+          <p>Printing or binding defects, a damaged envelope, missing or damaged stickers, a broken keyring, or a wrong item — we exchange or refund these. Contact us within 3 months of delivery, or within 30 days of noticing the problem.</p>
+          <p>Send your order number and photographs of the full contents along with the damage, and we'll arrange it from there.</p>
+        </li>
+        <li>
+          <b>What we can't take back</b>
+          <p>A kit that has been used or damaged after delivery, once stickers have been applied or the passport written in, or where the value has clearly dropped through use.</p>
+        </li>
+        <li>
+          <b>Random keyrings</b>
+          <p>The keyring is shipped at random from fifteen designs. Getting a duplicate, or not getting the one you wanted, isn't grounds for an exchange — but it doesn't take away your right to cancel the order within 7 days.</p>
+        </li>
+        <li>
+          <b>Print variation</b>
+          <p>Colour and paper texture may differ slightly from the images on this site, and trimming can vary by a hair. These are normal for printed goods and aren't treated as faults.</p>
+        </li>
+      </ul>
+      <p class="fine">
+        <b>NOTE</b>
+        Nothing here limits the rights you have under Korean consumer law. Where this page and the law disagree, the law applies.
+      </p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="sheet doc rv" id="faq">
+      <p class="doc-h"><span><b>FAQ</b></span><span>ASKED MOST OFTEN</span></p>
+      <ul class="faq">
+        <li>
+          <q>Do I need to read Korean?</q>
+          <p>No. The kit is printed in three editions — Korean-English combined, Japanese, and Simplified Chinese. Pick the one you read; the missions, the tips and the forms are all in that language.</p>
+        </li>
+        <li>
+          <q>Do I have to install an app?</q>
+          <p>No. There's no app and no account. The whole thing runs on paper. A QR code on the last page lets you file a report with headquarters afterwards, but that's optional and nothing depends on it.</p>
+        </li>
+        <li>
+          <q>Is there a stamp I have to find somewhere?</q>
+          <p>No. There are no stamp desks and no partner venues to visit. Clear stickers come in the kit — you close each district page yourself once you've finished it.</p>
+        </li>
+        <li>
+          <q>How long does it take?</q>
+          <p>As long as you like. There's no deadline and no set order. Do one district in an afternoon, or spread the fifteen across several trips.</p>
+        </li>
+        <li>
+          <q>Do I have to finish all fifteen districts?</q>
+          <p>No. Every district stands on its own. Finishing one is a complete thing in itself.</p>
+        </li>
+        <li>
+          <q>Can I choose which keyring I get?</q>
+          <p>No. One of fifteen is packed at random, and ordering several may give you duplicates. The remaining designs are sold separately.</p>
+        </li>
+        <li>
+          <q>Can two of us share one kit?</q>
+          <p>One kit registers one agent — there's a single passport and a single ID. You're welcome to travel together, but for two sets of records you'd want two kits.</p>
+        </li>
+        <li>
+          <q>What if a place is closed when I get there?</q>
+          <p>It happens. The passport carries a field note for each district covering closing days and the times worth avoiding, so check the page before you set out.</p>
+        </li>
+        <li>
+          <q>Is this suitable for children?</q>
+          <p>The districts include museums, parks and malls, and the assignments are things like finding, tasting and noticing. Younger agents will want an adult along for the walking and the reading.</p>
+        </li>
+      </ul>
+    </div>
+
+    <p class="mailto">
+      Still stuck? <a href="mailto:contact@whalelandkr.com">contact@whalelandkr.com</a>
+    </p>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-tag">Ordinary trips, turned into extraordinary missions.</p>
+        <div class="sns">
+          <span>INSTAGRAM</span>
+          <span>FACEBOOK</span>
+          <span>YOUTUBE</span>
+          <span>TIKTOK</span>
+          <a href="https://tumblbug.com/covertkr" target="_blank" rel="me noopener">TUMBLBUG</a>
+        </div>
+      </div>
+
+      <nav aria-label="Operations">
+        <p class="foot-h">Operation</p>
+        <ul class="foot-list">
+          <li><a href="../mission/">The briefing</a></li>
+          <li><a href="../kit/">The kit</a></li>
+          <li><a href="../report/">Field reports</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Support">
+        <p class="foot-h">Support</p>
+        <ul class="foot-list">
+          <li><a href="./">Shipping &amp; returns</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">Contact us</a></li>
+        </ul>
+      </nav>
+
+      <div class="news">
+        <p class="foot-h">Dispatches</p>
+        <p>New operations, restocks, and nothing else. We send maybe four times a year.</p>
+        <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">Join the roster</a> -->
+        <span class="cta cta-2 cta-off">Join the roster</span>
+        <p class="news-soon">Sign-up opening soon.</p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-links">
+        <a href="../terms/">Terms of service</a>
+        <a href="../privacy/">Privacy policy</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
+      </div>
+      <p>
+        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T is a trademark of Whale Land.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sel = document.getElementById('lang');
+  if(sel){ sel.addEventListener('change', function(){
+    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
+    location.href = sel.value;
+  }); }
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.1});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+
+<!-- ============================================================
+     GA4 — 측정 ID 발급 후 G-XXXXXXXXXX 를 교체하고 주석을 해제하세요
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+     ============================================================ -->
+
+<!-- ============================================================
+     META PIXEL — 픽셀 ID 발급 후 000000000000000 을 교체하고 주석을 해제하세요
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '000000000000000');
+  fbq('track', 'PageView');
+</script>
+     ============================================================ -->
+
+</body>
+</html>

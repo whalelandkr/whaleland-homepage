@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Buy the Kit — C.O.V.E.R.T</title>
+<meta name="description" content="Buy the C.O.V.E.R.T kit from our online shop. Six items, ₩30,000, VAT included, shipping not included." />
+
+<!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
+<link rel="canonical" href="https://whalelandkr.com/covert/site/kit/" />
+<link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/kit/" />
+<link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/kit/" />
+<link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/kit/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/kit/" />
+<link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/kit/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:title" content="Buy the Kit — C.O.V.E.R.T" />
+<meta property="og:description" content="Six items, ₩30,000. Available from our online shop." />
+<meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
+<link rel="icon" href="../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../assets/site.css" />
+
+<style>
+/* ================= KIT ONLY ================= */
+.kit{padding:132px 0 24px}
+.kit-lede{font-size:16.5px;line-height:1.85;color:var(--ink-soft);max-width:52ch;margin:0 0 44px}
+
+/* 서류 한 장 */
+.doc{padding:34px 36px 32px;margin:0 0 30px}
+.doc:nth-of-type(even){transform:rotate(.4deg)}
+.doc:nth-of-type(odd){transform:rotate(-.4deg)}
+.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
+  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 22px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.doc-h b{color:var(--red);font-weight:400}
+
+/* 물품 명세서 : 번호 · 품명 · 점선 · 수량 */
+.pack{list-style:none;margin:0;padding:0}
+.pack li{display:flex;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px dotted var(--paper-edge)}
+.pack li:last-child{border-bottom:0}
+.pack i{font-family:var(--mono);font-style:normal;font-size:11px;color:var(--red);flex-shrink:0;width:22px}
+.pack b{font-weight:700;font-size:15.5px}
+.pack s{flex:1;height:0;border-bottom:1px dotted var(--paper-edge);text-decoration:none;min-width:16px;transform:translateY(-3px)}
+.pack em{font-family:var(--mono);font-style:normal;font-size:12px;color:var(--ink-soft);flex-shrink:0;letter-spacing:.06em}
+.pack p{margin:5px 0 0 34px;font-size:13.5px;line-height:1.7;color:var(--ink-soft);flex-basis:100%}
+
+/* 명세 표 */
+.spec{width:100%;border-collapse:collapse}
+.spec th,.spec td{text-align:left;padding:10px 0;border-bottom:1px solid var(--paper-lo);vertical-align:top}
+.spec tr:last-child th,.spec tr:last-child td{border-bottom:0}
+.spec th{font-weight:700;font-size:13.5px;line-height:1.5;color:var(--ink);width:32%;padding-right:18px}
+.spec td{font-size:15px}
+.spec td span{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);display:block;margin-top:3px}
+
+/* 가격 */
+.buy{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap}
+.buy-fig{font-family:var(--body);font-weight:800;font-size:clamp(34px,5vw,48px);letter-spacing:-.03em;line-height:1;margin:0}
+.buy-note{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--ink-faint);margin:9px 0 0}
+/* 카페24 상품 URL 이 아직 없어 구매 버튼을 비활성 상태로 둡니다.
+   URL 이 정해지면 아래 .buy-soon 마크업과 이 규칙을 함께 지웁니다.
+   .cta-off 는 푸터에서도 쓰므로 site.css 에 있습니다. */
+.buy-soon{display:flex;flex-direction:column;align-items:flex-start}
+.buy-soon-note{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--red);margin:9px 0 0}
+.fine{font-size:13px;line-height:1.75;color:var(--ink-faint);margin:24px 0 0;padding-top:18px;border-top:1px solid var(--paper-lo)}
+.fine b{color:var(--red);font-weight:400;font-family:var(--mono);font-size:11px;letter-spacing:.16em;display:block;margin:0 0 6px}
+
+.back{margin:8px 0 64px}
+
+@media (max-width:600px){
+  .kit{padding:112px 0 16px}
+  .doc{padding:26px 22px 24px}
+  .doc:nth-of-type(even),.doc:nth-of-type(odd){transform:none}
+  .spec th{width:34%;padding-right:14px;font-size:12.5px}
+  .spec td{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="../" class="mark">C.O.V.E.R.T<i>.</i></a>
+    <div class="langsel">
+      <label class="sr" for="lang">Language</label>
+      <select id="lang">
+        <option value="../kit/" selected>EN — English</option>
+        <option value="../kr/kit/">KR — 한국어</option>
+        <option value="../jp/kit/">JP — 日本語</option>
+        <option value="../cn/kit/">CN — 简体中文</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="kit">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">Buy</p>
+    <h1 class="head">Buy the kit</h1>
+    <p class="kit-lede">Everything you need for Operation 01 arrives in a single sealed kraft envelope. Check the six items and the specifications below, then buy it from our online shop. One set only — nothing is sold separately.</p>
+
+    <!-- 물품 명세서 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>PACKING LIST</b></span><span>OPERATION 01 — SEOUL</span></p>
+      <ul class="pack">
+        <li>
+          <i>01</i><b>Classified envelope</b><s></s><em>× 1</em>
+          <p>Kraft paper, closed with a string tie, the agency crest printed front and back under a TOP SECRET seal. Opening it is the first part of the briefing, so take your time with it.</p>
+        </li>
+        <li>
+          <i>02</i><b>Agent passport</b><s></s><em>× 1</em>
+          <p>Forty pages at 88 × 125 mm, bound in a leathertex laminate cover with a matte gold foil crest. Fifteen districts, thirty places, forty-five assignments — and thirty illustrations of Bummy in disguise, one for every place you're sent.</p>
+        </li>
+        <li>
+          <i>03</i><b>Stamp stickers</b><s></s><em>× 20</em>
+          <p>Clear stickers carrying the agency emblem, cut to sit inside the seal ring on each district page. Fifteen for the districts and five spares, each with a line for the date and time you finished.</p>
+        </li>
+        <li>
+          <i>04</i><b>Boarding pass card</b><s></s><em>× 1</em>
+          <p>Shaped like a real airline ticket. Write in your agent name, agent number and arrival date, and it becomes a pass that exists exactly once.</p>
+        </li>
+        <li>
+          <i>05</i><b>Agent ID set</b><s></s><em>× 1 set</em>
+          <p>Bummy's own PVC identification card, with a card holder and a lanyard to wear it on. It's built to the detail of a real staff pass, right down to Bummy's signature — and it arrives finished, so there's nothing to fill in.</p>
+        </li>
+        <li>
+          <i>06</i><b>Bummy keyring</b><s></s><em>× 1, random</em>
+          <p>Fifteen designs, one for each district, and Bummy is dressed for every one of them. Which one lands in your envelope is a surprise.</p>
+        </li>
+      </ul>
+      <p class="fine">
+        <b>ALSO INCLUDED</b>
+        A QR code on the last page opens an after-action report, where you can send your results back to headquarters once the trip is over. It's entirely optional — the fifteen districts work start to finish on paper alone, with nothing to install and no venue to check in with.
+      </p>
+    </div>
+
+    <!-- 명세 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>SPECIFICATIONS</b></span><span>FULL SET</span></p>
+      <table class="spec">
+        <tbody>
+          <tr><th>Passport</th><td>88 × 125 mm, 40 pages<span>COVER TO COVER</span></td></tr>
+          <tr><th>Cover</th><td>Leathertex laminate, matte gold foil<span>PANTONE 289 C</span></td></tr>
+          <tr><th>Inner pages</th><td>Premium uncoated, single black ink<span>#FFFDF5 · RISOGRAPH TEXTURE</span></td></tr>
+          <tr><th>Envelope</th><td>Kraft paper, string tie<span>175 × 240 × 20 MM</span></td></tr>
+          <tr><th>Boarding pass</th><td>Card stock, write-in fields<span>156 × 76 MM</span></td></tr>
+          <tr><th>Agent ID set</th><td>PVC card, holder, lanyard<span>CARD 54 × 86 MM · BOTH SIDES</span></td></tr>
+          <tr><th>Stickers</th><td>Clear, 15 districts + 5 spare<span>20 TOTAL</span></td></tr>
+          <tr><th>Coverage</th><td>Fifteen districts, thirty places<span>45 ASSIGNMENTS · 30 DISGUISES</span></td></tr>
+          <tr><th>Editions</th><td>Korean-English combined, Japanese, Simplified Chinese<span>3 EDITIONS</span></td></tr>
+          <tr><th>First run</th><td>1,500 sets<span>ACROSS ALL EDITIONS</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 가격 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>ISSUE</b></span><span>ONE SET — NO PARTS SOLD SEPARATELY</span></p>
+      <div class="buy">
+        <div>
+          <p class="buy-fig">₩30,000</p>
+          <p class="buy-note">VAT INCLUDED · SHIPPING NOT INCLUDED</p>
+        </div>
+        <!-- 카페24 상품 URL 이 정해지면 아래 <div class="buy-soon"> 블록 전체를 이 한 줄로 되돌립니다.
+             <a class="cta" href="상품URL" target="_blank" rel="noopener">Buy the kit</a> -->
+        <div class="buy-soon">
+          <span class="cta cta-off">Buy the kit</span>
+          <p class="buy-soon-note">Store link opening soon.</p>
+        </div>
+      </div>
+
+      <p class="fine">
+        <b>NOTICE</b>
+        The keyring is shipped at random from fifteen designs, so it can't be chosen, and ordering more than one may give you duplicates. Random results and duplicates aren't grounds for exchange, though manufacturing defects always are — just get in touch.
+        Printed colour and paper texture may differ slightly from the images shown here.
+      </p>
+    </div>
+
+    <p class="back"><a class="linkarrow" href="../mission/">Read the briefing →</a></p>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-tag">Ordinary trips, turned into extraordinary missions.</p>
+        <div class="sns">
+          <span>INSTAGRAM</span>
+          <span>FACEBOOK</span>
+          <span>YOUTUBE</span>
+          <span>TIKTOK</span>
+          <a href="https://tumblbug.com/covertkr" target="_blank" rel="me noopener">TUMBLBUG</a>
+        </div>
+      </div>
+
+      <nav aria-label="Operations">
+        <p class="foot-h">Operation</p>
+        <ul class="foot-list">
+          <li><a href="../mission/">The briefing</a></li>
+          <li><a href="./">The kit</a></li>
+          <li><a href="../report/">Field reports</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Support">
+        <p class="foot-h">Support</p>
+        <ul class="foot-list">
+          <li><a href="../support/">Shipping &amp; returns</a></li>
+          <li><a href="../support/#faq">FAQ</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">Contact us</a></li>
+        </ul>
+      </nav>
+
+      <div class="news">
+        <p class="foot-h">Dispatches</p>
+        <p>New operations, restocks, and nothing else. We send maybe four times a year.</p>
+        <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">Join the roster</a> -->
+        <span class="cta cta-2 cta-off">Join the roster</span>
+        <p class="news-soon">Sign-up opening soon.</p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-links">
+        <a href="../terms/">Terms of service</a>
+        <a href="../privacy/">Privacy policy</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
+      </div>
+      <p>
+        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T is a trademark of Whale Land.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- 언어 선택 ---- */
+  var sel = document.getElementById('lang');
+  if(sel){ sel.addEventListener('change', function(){
+    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
+    location.href = sel.value;
+  }); }
+
+  /* ---- 스크롤 등장 ---- */
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.12});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+
+<!-- ============================================================
+     GA4 — 측정 ID 발급 후 G-XXXXXXXXXX 를 교체하고 주석을 해제하세요
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+     ============================================================ -->
+
+<!-- ============================================================
+     META PIXEL — 픽셀 ID 발급 후 000000000000000 을 교체하고 주석을 해제하세요
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '000000000000000');
+  fbq('track', 'PageView');
+</script>
+     ============================================================ -->
+
+</body>
+</html>

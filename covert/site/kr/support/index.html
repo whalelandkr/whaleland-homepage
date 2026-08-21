@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Q&amp;A — C.O.V.E.R.T</title>
+<meta name="description" content="C.O.V.E.R.T의 배송, 청약철회, 교환 안내와 자주 묻는 질문." />
+
+<!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
+<link rel="canonical" href="https://whalelandkr.com/covert/site/kr/support/" />
+<link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/support/" />
+<link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/support/" />
+<link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/support/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/support/" />
+<link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/support/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:title" content="Q&amp;A — C.O.V.E.R.T" />
+<meta property="og:description" content="배송, 청약철회, 교환 안내와 자주 묻는 질문." />
+<meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
+<link rel="icon" href="../../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../../assets/site.css" />
+
+<style>
+/* ================= SUPPORT ONLY ================= */
+.sup{padding:132px 0 24px}
+.sup-lede{font-size:16.5px;line-height:1.85;color:var(--ink-soft);max-width:34em;margin:0 0 44px}
+
+.doc{padding:34px 36px 32px;margin:0 0 30px;scroll-margin-top:100px}
+.doc:nth-of-type(even){transform:rotate(.4deg)}
+.doc:nth-of-type(odd){transform:rotate(-.4deg)}
+.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
+  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 22px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.doc-h b{color:var(--red);font-weight:400}
+
+/* 라벨은 왼쪽, 본문은 오른쪽. 좁은 화면에서도 위아래로 쪼개지 않는다.
+   쪼개면 라벨이 그냥 굵은 한 줄로 묻혀서 훑어보기 어렵다. */
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:112px 1fr;gap:0 22px;padding:15px 0;border-bottom:1px dotted var(--paper-edge)}
+.rows li:last-child{border-bottom:0}
+.rows b{grid-column:1;grid-row:1;font-weight:700;font-size:14px;line-height:1.5;color:var(--ink);padding-top:1px}
+/* 문단이 여러 개여도 전부 오른쪽 칸에 쌓이게 한다. 고정하지 않으면 두 번째 문단이 라벨 칸으로 밀려난다. */
+.rows p{grid-column:2;margin:0;font-size:14.5px;line-height:1.8}
+.rows p + p{margin-top:8px}
+.rows p b{font-weight:700;font-size:inherit;color:var(--ink);padding:0}
+
+.faq{list-style:none;margin:0;padding:0}
+.faq li{padding:0 0 20px;margin:0 0 20px;border-bottom:1px dotted var(--paper-edge)}
+.faq li:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
+.faq q{display:block;font-weight:700;font-size:15.5px;margin:0 0 7px;quotes:none}
+.faq q::before{content:"Q. ";font-family:var(--mono);font-weight:400;font-size:12px;color:var(--red);letter-spacing:.08em}
+.faq p{margin:0;font-size:14.5px;line-height:1.85;color:var(--ink-soft)}
+
+.fine{font-size:13px;line-height:1.85;color:var(--ink-faint);margin:22px 0 0;padding-top:18px;border-top:1px solid var(--paper-lo)}
+.fine b{color:var(--red);font-weight:400;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;display:block;margin:0 0 6px}
+
+.mailto{margin:8px 0 64px;font-size:15px}
+.mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
+
+/* --- KR ONLY : 한글 서체 보정 --- */
+.linkarrow,
+.cta,
+.legal-links a{font-family:var(--body)}
+.linkarrow,
+.cta{letter-spacing:.02em;text-transform:none}
+
+@media (max-width:600px){
+  .sup{padding:112px 0 16px}
+  .doc{padding:26px 22px 24px}
+  .doc:nth-of-type(even),.doc:nth-of-type(odd){transform:none}
+  .rows li{grid-template-columns:80px 1fr;gap:0 14px;padding:14px 0}
+  .rows b{font-size:12.5px;line-height:1.45}
+  .rows p{font-size:14px;line-height:1.75}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="../" class="mark">C.O.V.E.R.T<i>.</i></a>
+    <div class="langsel">
+      <label class="sr" for="lang">언어</label>
+      <select id="lang">
+        <option value="../../support/">EN — English</option>
+        <option value="../../kr/support/" selected>KR — 한국어</option>
+        <option value="../../jp/support/">JP — 日本語</option>
+        <option value="../../cn/support/">CN — 简体中文</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="sup">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">SUPPORT</p>
+    <h1 class="head">Q&amp;A</h1>
+    <p class="sup-lede">주문부터 수령까지, 궁금하실 만한 것들을 모았습니다. 아래 내용은 온라인 쇼핑몰에서 주문하신 경우에 적용됩니다. 여기에 없는 내용은 메일로 문의해 주세요. 모든 문의에 직접 답변드립니다.</p>
+
+    <!-- 배송 -->
+    <div class="sheet doc rv" id="shipping">
+      <p class="doc-h"><span><b>SHIPPING</b></span><span>ONLINE ORDERS</span></p>
+      <ul class="rows">
+        <li>
+          <b>출고</b>
+          <p>영업일에 포장해서 택배사에 넘깁니다. 주말과 공휴일은 영업일에 포함되지 않습니다.</p>
+        </li>
+        <li>
+          <b>국내 배송</b>
+          <p>CJ대한통운으로 보내드립니다. 배송비는 3,000원이고, 5만원 이상 주문하시면 무료입니다. 출고 후 받으시기까지 1~3영업일이 걸립니다.</p>
+        </li>
+        <li>
+          <b>해외 배송</b>
+          <p>우체국 EMS로 보내드립니다. 배송비는 주문하실 때 도착 국가와 무게에 따라 EMS 표준 요율로 자동 계산되고, 여기에 포장비 3,000원이 더해집니다. 해외 배송에는 무료배송이 적용되지 않습니다.</p>
+          <p>출고 후 받으시기까지 2~5영업일이 걸립니다. 통관에 걸리는 시간은 여기에 포함되지 않습니다. 관세와 수입 부가세는 도착 국가에서 부과하며 수령인이 부담합니다. 저희가 미리 계산해 드릴 수 없습니다.</p>
+        </li>
+        <li>
+          <b>주소 오류</b>
+          <p>주소나 연락처를 잘못 적으셨거나 수취인 부재로 반송된 경우, 재발송 배송비는 구매자 부담입니다.</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 취소·교환·환불 -->
+    <div class="sheet doc rv" id="returns">
+      <p class="doc-h"><span><b>RETURNS</b></span><span>CANCELLATION &middot; EXCHANGE &middot; REFUND</span></p>
+      <ul class="rows">
+        <li>
+          <b>출고 전 취소</b>
+          <p>상품이 출고되기 전이라면 언제든 취소하실 수 있고, 전액 환불해 드립니다.</p>
+        </li>
+        <li>
+          <b>수령 후 철회</b>
+          <p>상품을 받으신 날부터 <b>7일 이내</b>에 청약철회를 하실 수 있습니다. 구성품을 모두 갖춰 보내주시면 환불해 드립니다. 단순 변심이라면 반품 배송비는 구매자 부담이고, 하자나 오배송이라면 저희가 부담합니다.</p>
+        </li>
+        <li>
+          <b>해외 반품</b>
+          <p>해외에서 단순 변심으로 반품하시는 경우, 보내드릴 때 든 국제 운임과 돌려보내시는 국제 운임을 모두 구매자께서 부담하십니다. 하자나 오배송이라면 저희가 부담합니다.</p>
+        </li>
+        <li>
+          <b>하자 · 오배송</b>
+          <p>인쇄나 제본 불량, 봉투 훼손, 스티커 누락이나 훼손, 키링 파손, 다른 상품이 온 경우에는 교환이나 환불로 처리해 드립니다. 수령일부터 3개월 이내, 또는 그 사실을 아신 날부터 30일 이내에 연락 주세요.</p>
+          <p>주문번호와 함께 전체 구성품 사진, 그리고 문제가 있는 부분의 사진을 보내주시면 바로 진행해 드립니다.</p>
+        </li>
+        <li>
+          <b>철회 제한</b>
+          <p>수령 후 사용하셨거나 훼손된 경우, 스티커를 붙였거나 여권에 기입한 경우, 그 밖에 사용으로 상품 가치가 뚜렷하게 떨어진 경우에는 청약철회가 제한될 수 있습니다.</p>
+        </li>
+        <li>
+          <b>랜덤 키링</b>
+          <p>키링은 15종 중 무작위로 발송됩니다. 중복이 나오거나 원하시던 디자인이 아니어도 그 자체로는 교환 사유가 되지 않습니다. 다만 그렇다고 7일 이내 청약철회권이 없어지는 것은 아닙니다.</p>
+        </li>
+        <li>
+          <b>인쇄 편차</b>
+          <p>인쇄 색상과 종이 질감은 화면의 이미지와 다소 다를 수 있고, 재단에도 미세한 오차가 생깁니다. 인쇄물의 일반적인 특성이라 하자로 보지 않습니다.</p>
+        </li>
+      </ul>
+      <p class="fine">
+        <b>NOTE</b>
+        이 페이지의 내용은 소비자보호 관련 법령이 보장하는 권리를 제한하지 않습니다. 이 안내와 법령이 다를 경우 법령이 우선합니다.
+      </p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="sheet doc rv" id="faq">
+      <p class="doc-h"><span><b>FAQ</b></span><span>ASKED MOST OFTEN</span></p>
+      <ul class="faq">
+        <li>
+          <q>한국어를 못 읽어도 되나요?</q>
+          <p>됩니다. 판본이 세 가지입니다. 한영 합본, 일본어, 중국어(간체) 중 읽으실 수 있는 것을 고르시면 임무도 현장 팁도 기입란도 모두 그 언어로 되어 있습니다.</p>
+        </li>
+        <li>
+          <q>앱을 설치해야 하나요?</q>
+          <p>아니요. 앱도 계정도 없습니다. 전부 종이로 진행됩니다. 마지막 면의 QR로 본부에 보고서를 보내실 수 있지만 어디까지나 선택 사항이고, 여기에 매여 있는 건 아무것도 없습니다.</p>
+        </li>
+        <li>
+          <q>어디 가서 도장을 찍어야 하나요?</q>
+          <p>아니요. 도장대도 없고 들러야 할 제휴처도 없습니다. 투명 스티커가 키트에 들어 있어서, 구역을 하나 마칠 때마다 직접 그 면을 봉하시면 됩니다.</p>
+        </li>
+        <li>
+          <q>얼마나 걸리나요?</q>
+          <p>원하시는 만큼입니다. 기한도 정해진 순서도 없습니다. 하루 오후에 한 구역만 도셔도 되고, 15개 구역을 여러 번에 나눠 오셔도 됩니다.</p>
+        </li>
+        <li>
+          <q>15개 구역을 다 해야 하나요?</q>
+          <p>아니요. 구역 하나하나가 그 자체로 완결됩니다. 한 구역만 마치셔도 그것으로 충분합니다.</p>
+        </li>
+        <li>
+          <q>키링을 고를 수 있나요?</q>
+          <p>고르실 수 없습니다. 15종 중 한 종이 무작위로 들어가고, 여러 개를 주문하시면 같은 것이 겹칠 수 있습니다. 나머지 디자인은 단품으로 따로 판매합니다.</p>
+        </li>
+        <li>
+          <q>둘이서 하나를 같이 써도 되나요?</q>
+          <p>키트 하나에 요원 한 명이 등록됩니다. 여권도 요원증도 한 부씩입니다. 함께 다니시는 것은 얼마든지 좋지만, 두 사람의 기록을 각각 남기시려면 키트가 두 개 필요합니다.</p>
+        </li>
+        <li>
+          <q>갔는데 문을 닫았으면 어떻게 하나요?</q>
+          <p>그럴 때가 있습니다. 여권에는 구역마다 현장 팁이 실려 있어 휴무일과 피해야 할 시간대를 미리 확인하실 수 있습니다. 출발 전에 그 면을 한 번 읽어 주세요.</p>
+        </li>
+        <li>
+          <q>아이와 함께 해도 되나요?</q>
+          <p>구역에 박물관, 공원, 복합몰이 들어 있고, 임무도 찾고 맛보고 살펴보는 것들입니다. 다만 걷는 거리와 읽어야 할 내용이 있어 어린 요원에게는 보호자가 함께하시는 편이 좋습니다.</p>
+        </li>
+      </ul>
+    </div>
+
+    <p class="mailto">
+      더 궁금한 점이 있으신가요? <a href="mailto:contact@whalelandkr.com">contact@whalelandkr.com</a>
+    </p>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-tag">평범한 여행을 특별한 임무로.</p>
+        <div class="sns">
+          <span>INSTAGRAM</span>
+          <span>FACEBOOK</span>
+          <span>YOUTUBE</span>
+          <span>TIKTOK</span>
+          <a href="https://tumblbug.com/covertkr" target="_blank" rel="me noopener">TUMBLBUG</a>
+        </div>
+      </div>
+
+      <nav aria-label="작전">
+        <p class="foot-h">Operation</p>
+        <ul class="foot-list">
+          <li><a href="../mission/">브리핑</a></li>
+          <li><a href="../kit/">키트</a></li>
+          <li><a href="../report/">요원 보고서</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="고객 지원">
+        <p class="foot-h">Support</p>
+        <ul class="foot-list">
+          <li><a href="./">배송 &middot; 환불</a></li>
+          <li><a href="#faq">자주 묻는 질문</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">문의하기</a></li>
+        </ul>
+      </nav>
+
+      <div class="news">
+        <p class="foot-h">Dispatches</p>
+        <p>새로운 작전과 재입고 소식만 전합니다. 1년에 네 번 정도 보냅니다.</p>
+        <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">명단에 등록</a> -->
+        <span class="cta cta-2 cta-off">명단에 등록</span>
+        <p class="news-soon">등록은 곧 열립니다.</p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-links">
+        <a href="../terms/">이용약관</a>
+        <a href="../privacy/">개인정보처리방침</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">웨일랜드</a>
+      </div>
+      <p>
+        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T는 웨일랜드의 상표입니다.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sel = document.getElementById('lang');
+  if(sel){ sel.addEventListener('change', function(){
+    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
+    location.href = sel.value;
+  }); }
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.1});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+
+<!-- ============================================================
+     GA4 — 측정 ID 발급 후 G-XXXXXXXXXX 를 교체하고 주석을 해제하세요
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+     ============================================================ -->
+
+<!-- ============================================================
+     META PIXEL — 픽셀 ID 발급 후 000000000000000 을 교체하고 주석을 해제하세요
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '000000000000000');
+  fbq('track', 'PageView');
+</script>
+     ============================================================ -->
+
+</body>
+</html>

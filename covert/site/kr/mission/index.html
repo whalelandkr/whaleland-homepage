@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>브리핑 — C.O.V.E.R.T</title>
+<meta name="description" content="구역 15개, 장소 30곳, 임무 45개. 첫 번째 작전은 서울이다. 앱도 인솔자도 일정도 없다. 순서와 속도는 당신이 정한다." />
+
+<!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
+<link rel="canonical" href="https://whalelandkr.com/covert/site/kr/mission/" />
+<link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/mission/" />
+<link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/mission/" />
+<link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/mission/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/mission/" />
+<link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/mission/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:title" content="브리핑 — C.O.V.E.R.T" />
+<meta property="og:description" content="15개 구역, 30개 장소, 45개 임무. 첫 번째 작전은 서울이다." />
+<meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
+<link rel="icon" href="../../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../../assets/site.css" />
+
+<style>
+/* ================= MISSION ONLY ================= */
+.brief{padding:132px 0 24px}
+.brief-lede{font-size:16.5px;line-height:1.85;color:var(--ink-soft);max-width:34em;margin:0 0 44px}
+
+.doc{padding:34px 36px 32px;margin:0 0 30px}
+.doc:nth-of-type(even){transform:rotate(.4deg)}
+.doc:nth-of-type(odd){transform:rotate(-.4deg)}
+.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
+  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 22px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.doc-h b{color:var(--red);font-weight:400}
+
+/* 4단계 */
+.steps{list-style:none;margin:0;padding:0;counter-reset:st}
+.steps li{position:relative;padding:0 0 22px 46px;counter-increment:st}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:counter(st,decimal-leading-zero);position:absolute;left:0;top:1px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--red)}
+.steps li::after{content:"";position:absolute;left:11px;top:20px;bottom:2px;width:1px;background:var(--paper-lo)}
+.steps li:last-child::after{display:none}
+.steps b{display:block;font-weight:700;font-size:15.5px;margin:0 0 4px}
+.steps p{margin:0;font-size:13.5px;line-height:1.8;color:var(--ink-soft)}
+
+/* 구역 명부 */
+.roster{width:100%;border-collapse:collapse;font-size:14.5px}
+.roster th{font-weight:400;font-size:11.5px;color:var(--ink-faint);
+  text-align:left;padding:0 10px 8px 0;border-bottom:1px solid var(--paper-edge)}
+.roster td{padding:9px 10px 9px 0;border-bottom:1px dotted var(--paper-edge);vertical-align:top}
+.roster tr:last-child td{border-bottom:0}
+.roster .no{font-family:var(--mono);font-size:11.5px;color:var(--red);width:34px;white-space:nowrap}
+.roster .zone{font-weight:700;width:34%}
+.roster .note{color:var(--ink-soft);font-size:13.5px;line-height:1.7}
+.roster .stn{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:.06em;display:block;margin-top:3px}
+
+.tip{font-size:13px;line-height:1.8;color:var(--ink-faint);margin:20px 0 0;padding-top:16px;border-top:1px solid var(--paper-lo)}
+.tip b{color:var(--red);font-weight:400;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;display:block;margin:0 0 6px}
+
+.next{display:flex;gap:26px;flex-wrap:wrap;margin:8px 0 64px}
+
+/* --- KR ONLY : 한글 서체 보정 --- */
+.linkarrow,
+.cta,
+.legal-links a{font-family:var(--body)}
+.linkarrow,
+.cta{letter-spacing:.02em;text-transform:none}
+
+@media (max-width:600px){
+  .brief{padding:112px 0 16px}
+  .doc{padding:26px 22px 24px}
+  .doc:nth-of-type(even),.doc:nth-of-type(odd){transform:none}
+  .roster .zone{width:auto}
+  .roster thead{display:none}
+  .roster tr{display:grid;grid-template-columns:34px 1fr;gap:0 6px;padding:10px 0;border-bottom:1px dotted var(--paper-edge)}
+  .roster td{border-bottom:0;padding:0}
+  .roster .no{grid-row:span 2}
+  .roster .note{margin-top:3px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="../" class="mark">C.O.V.E.R.T<i>.</i></a>
+    <div class="langsel">
+      <label class="sr" for="lang">언어</label>
+      <select id="lang">
+        <option value="../../mission/">EN — English</option>
+        <option value="../../kr/mission/" selected>KR — 한국어</option>
+        <option value="../../jp/mission/">JP — 日本語</option>
+        <option value="../../cn/mission/">CN — 简体中文</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="brief">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">OPERATION 01 — SEOUL</p>
+    <h1 class="head">여행을 임무로</h1>
+    <p class="brief-lede">C.O.V.E.R.T는 서울을 작전 지도로 바꾼다. 구역은 15개. 대표적인 명소에서 행하는 미션들.</p>
+
+    <!-- 진행 방식 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>PROTOCOL</b></span><span>HOW THE OPERATION RUNS</span></p>
+      <ol class="steps">
+        <li>
+          <b>봉인을 뜯는다</b>
+          <p>봉투를 열어 안에 미션 여권, 요원증, 보딩패스, 키링까지 확인하기.</p>
+        </li>
+        <li>
+          <b>구역을 고른다</b>
+          <p>정해진 순서는 없다. 15개 구역 중 지금 가까운 곳을 펼치고, 그 면의 지령을 읽는다.</p>
+        </li>
+        <li>
+          <b>현장을 뛴다</b>
+          <p>구역마다 임무 세 개. 찾을 것 하나, 먹을 것 하나, 볼 것 하나. 하나씩 해치우면서 여권에 체크하고, 그날을 기록한다.</p>
+        </li>
+        <li>
+          <b>페이지를 봉한다</b>
+          <p>투명 스티커로 인장 자리를 덮고 끝낸 시각을 적는다. 여행이 끝나면 마지막 면의 QR로 본부에 보고서를 낼 수 있다.</p>
+        </li>
+      </ol>
+    </div>
+
+    <!-- 구역 명부 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>SECTOR ROSTER</b></span><span>15 DISTRICTS · 30 PLACES</span></p>
+      <table class="roster">
+        <thead>
+          <tr><th class="no">SEC</th><th class="zone">작전 구역</th><th class="note">지형</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="no">01</td><td class="zone">경복궁 &middot; 서촌</td><td class="note">왕궁의 뜰과 그 뒤의 골목.<span class="stn">GYEONGBOKGUNG STN. / EXIT 05</span></td></tr>
+          <tr><td class="no">02</td><td class="zone">광화문 &middot; 북촌</td><td class="note">도심 한복판의 상징, 그리고 한옥 언덕.<span class="stn">GWANGHWAMUN STN. / EXIT 07</span></td></tr>
+          <tr><td class="no">03</td><td class="zone">국립중앙박물관 &middot; 용리단길</td><td class="note">국가 기록보관소와 그 옆의 미식 거리.<span class="stn">ICHON STN. / EXIT 02</span></td></tr>
+          <tr><td class="no">04</td><td class="zone">코엑스 &middot; 봉은사</td><td class="note">지하 도시와 그 위에 앉은 사찰.<span class="stn">BONGEUNSA STN. / EXIT 07</span></td></tr>
+          <tr><td class="no">05</td><td class="zone">여의도 &middot; 더현대</td><td class="note">강변 평지와 건물 안의 숲.<span class="stn">YEOUIDO STN. / EXIT 03</span></td></tr>
+          <tr><td class="no">06</td><td class="zone">압구정 로데오 &middot; 도산공원</td><td class="note">플래그십이 늘어선 거리, 그리고 조용한 공원.<span class="stn">APGUJEONG RODEO STN. / EXIT 05</span></td></tr>
+          <tr><td class="no">07</td><td class="zone">롯데타워 &middot; 석촌호수</td><td class="note">국내에서 가장 높은 전망대와 평평한 호수 한 바퀴.<span class="stn">JAMSIL STN. / EXIT 02</span></td></tr>
+          <tr><td class="no">08</td><td class="zone">남산 &middot; 해방촌 신흥시장</td><td class="note">스카이라인 전부, 그 아래 언덕 시장.<span class="stn">MYEONG-DONG STN. / EXIT 03</span></td></tr>
+          <tr><td class="no">09</td><td class="zone">반포 한강공원 &middot; 파미에스테이션</td><td class="note">야간 분수와 지하 상가.<span class="stn">EXPRESS BUS TERMINAL STN. / EXIT 8-1</span></td></tr>
+          <tr><td class="no">10</td><td class="zone">이태원 &middot; 한남동</td><td class="note">온 세계의 음식, 야경까지 이어지는 가파른 오르막.<span class="stn">ITAEWON STN. / EXIT 01</span></td></tr>
+          <tr><td class="no">11</td><td class="zone">성수동 &middot; 서울숲</td><td class="note">카페가 된 붉은 벽돌 공장, 그리고 사슴.<span class="stn">SEONGSU STN. / EXIT 03</span></td></tr>
+          <tr><td class="no">12</td><td class="zone">홍대 &middot; 연남동</td><td class="note">길 위의 음악, 철길이 된 공원.<span class="stn">HONGIK UNIV. STN. / EXIT 09</span></td></tr>
+          <tr><td class="no">13</td><td class="zone">명동 &middot; 을지로</td><td class="note">네온과 긴 줄, 그리고 간판 없는 뒷방.<span class="stn">MYEONG-DONG STN. / EXIT 06</span></td></tr>
+          <tr><td class="no">14</td><td class="zone">DDP &middot; 흥인지문</td><td class="note">조선의 성문 옆에 세워둔 은빛 선체.<span class="stn">DONGDAEMUN HISTORY &amp; CULTURE PARK STN. / EXIT 01</span></td></tr>
+          <tr><td class="no">15</td><td class="zone">광장시장 &middot; 청계천</td><td class="note">시장 천막과 한 단 아래의 물길.<span class="stn">JONGNO 5-GA STN. / EXIT 08</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="next">
+      <a class="linkarrow" href="../kit/">키트 살펴보기 →</a>
+    </p>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-tag">평범한 여행을 특별한 임무로.</p>
+        <div class="sns">
+          <span>INSTAGRAM</span>
+          <span>FACEBOOK</span>
+          <span>YOUTUBE</span>
+          <span>TIKTOK</span>
+          <a href="https://tumblbug.com/covertkr" target="_blank" rel="me noopener">TUMBLBUG</a>
+        </div>
+      </div>
+
+      <nav aria-label="작전">
+        <p class="foot-h">Operation</p>
+        <ul class="foot-list">
+          <li><a href="./">브리핑</a></li>
+          <li><a href="../kit/">키트</a></li>
+          <li><a href="../report/">요원 보고서</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="고객 지원">
+        <p class="foot-h">Support</p>
+        <ul class="foot-list">
+          <li><a href="../support/">배송 &middot; 환불</a></li>
+          <li><a href="../support/#faq">자주 묻는 질문</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">문의하기</a></li>
+        </ul>
+      </nav>
+
+      <div class="news">
+        <p class="foot-h">Dispatches</p>
+        <p>새로운 작전과 재입고 소식만 전합니다. 1년에 네 번 정도 보냅니다.</p>
+        <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">명단에 등록</a> -->
+        <span class="cta cta-2 cta-off">명단에 등록</span>
+        <p class="news-soon">등록은 곧 열립니다.</p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-links">
+        <a href="../terms/">이용약관</a>
+        <a href="../privacy/">개인정보처리방침</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">웨일랜드</a>
+      </div>
+      <p>
+        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T는 웨일랜드의 상표입니다.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sel = document.getElementById('lang');
+  if(sel){ sel.addEventListener('change', function(){
+    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
+    location.href = sel.value;
+  }); }
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.1});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+
+<!-- ============================================================
+     GA4 — 측정 ID 발급 후 G-XXXXXXXXXX 를 교체하고 주석을 해제하세요
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+     ============================================================ -->
+
+<!-- ============================================================
+     META PIXEL — 픽셀 ID 발급 후 000000000000000 을 교체하고 주석을 해제하세요
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '000000000000000');
+  fbq('track', 'PageView');
+</script>
+     ============================================================ -->
+
+</body>
+</html>

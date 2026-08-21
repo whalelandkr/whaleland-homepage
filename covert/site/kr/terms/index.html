@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>이용약관 — C.O.V.E.R.T</title>
+<meta name="description" content="웨일랜드가 운영하는 C.O.V.E.R.T 웹사이트 이용약관." />
+<meta name="robots" content="noindex, follow" />
+
+<!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
+<link rel="canonical" href="https://whalelandkr.com/covert/site/kr/terms/" />
+<link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/terms/" />
+<link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/terms/" />
+<link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/terms/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/terms/" />
+<link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/terms/" />
+
+<!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
+<link rel="icon" href="../../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../../assets/site.css" />
+
+<style>
+/* ================= LEGAL ONLY ================= */
+.legaldoc{padding:132px 0 24px}
+.legal-lede{font-size:16px;line-height:1.85;color:var(--ink-soft);max-width:34em;margin:0 0 20px}
+.stamp-date{font-size:13px;color:var(--red);margin:0 0 7px}
+.stamp-eff{font-size:13.5px;line-height:1.75;color:var(--ink-soft);margin:0 0 44px}
+
+.doc{padding:34px 36px 32px;margin:0 0 30px}
+.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
+  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 26px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.doc-h b{color:var(--red);font-weight:400}
+
+/* 조문 */
+.arts{list-style:none;margin:0;padding:0;counter-reset:art}
+.arts > li{counter-increment:art;padding:0 0 26px;margin:0 0 26px;border-bottom:1px dotted var(--paper-edge)}
+.arts > li:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
+.arts > li > h2{font-family:var(--body);font-weight:700;font-size:16px;letter-spacing:-.01em;margin:0 0 10px}
+.arts > li > h2::before{content:"제 " counter(art) " 조";display:block;
+  font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.16em;color:var(--red);margin:0 0 5px}
+.arts p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--ink-soft)}
+.arts p:last-child{margin-bottom:0}
+.arts ol{margin:0;padding-left:20px}
+.arts ol li{font-size:14.5px;line-height:1.9;color:var(--ink-soft);margin:0 0 7px}
+.arts ol li:last-child{margin-bottom:0}
+
+.biz{list-style:none;margin:0;padding:0}
+.biz li{display:grid;grid-template-columns:130px 1fr;gap:0 20px;padding:9px 0;border-bottom:1px dotted var(--paper-edge)}
+.biz li:last-child{border-bottom:0}
+.biz b{font-weight:700;font-size:13.5px;line-height:1.5;color:var(--ink);padding-top:1px}
+.biz p{margin:0;font-size:14.5px;line-height:1.7}
+
+.mailto{margin:8px 0 64px;font-size:15px}
+.mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
+
+/* --- KR ONLY : 한글 서체 보정 --- */
+.linkarrow,
+.cta,
+.legal-links a{font-family:var(--body)}
+.linkarrow,
+.cta{letter-spacing:.02em;text-transform:none}
+
+@media (max-width:600px){
+  .legaldoc{padding:112px 0 16px}
+  .doc{padding:26px 22px 24px}
+  .biz li{grid-template-columns:96px 1fr;gap:0 16px;padding:11px 0}
+  .biz b{font-size:12.5px;line-height:1.45}
+  .biz p{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="../" class="mark">C.O.V.E.R.T<i>.</i></a>
+    <div class="langsel">
+      <label class="sr" for="lang">언어</label>
+      <select id="lang">
+        <option value="../../terms/">EN — English</option>
+        <option value="../../kr/terms/" selected>KR — 한국어</option>
+        <option value="../../jp/terms/">JP — 日本語</option>
+        <option value="../../cn/terms/">CN — 简体中文</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="legaldoc">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">LEGAL</p>
+    <h1 class="head">이용약관</h1>
+    <p class="legal-lede">이 약관은 본 웹사이트의 이용에 관한 사항을 정합니다. 사이트를 운영하고 C.O.V.E.R.T를 발행하는 웨일랜드가 작성했습니다.</p>
+    <p class="stamp-date">공고일자: 2026년 8월 21일 &nbsp;|&nbsp; 시행일자: 2026년 8월 28일</p>
+    <p class="stamp-eff">본 약관은 2026년 8월 28일부터 시행됩니다.</p>
+
+    <!-- 사업자 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>OPERATOR</b></span><span>WHO RUNS THIS SITE</span></p>
+      <ul class="biz">
+        <li><b>상호</b><p>웨일랜드 (Whale Land)</p></li>
+        <li><b>대표자</b><p>장욱</p></li>
+        <li><b>사업자등록번호</b><p>428-04-03222</p></li>
+        <li><b>통신판매업신고</b><p>2025-서울강남-04140</p></li>
+        <li><b>주소</b><p>서울특별시 강남구 언주로 425</p></li>
+        <li><b>연락처</b><p>contact@whalelandkr.com</p></li>
+      </ul>
+    </div>
+
+    <!-- 조문 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>TERMS</b></span><span>USE OF THIS WEBSITE</span></p>
+      <ol class="arts">
+        <li>
+          <h2>목적</h2>
+          <p>이 약관은 웨일랜드와 본 웹사이트를 이용하는 분 사이의 권리, 의무, 책임에 관한 사항을 정하는 것을 목적으로 합니다.</p>
+        </li>
+        <li>
+          <h2>사이트의 성격</h2>
+          <p>본 사이트는 C.O.V.E.R.T와 그 판본을 소개하는 정보 제공 사이트입니다. 주문을 접수하거나 장바구니를 운영하거나 결제를 처리하지 않으며, 회원 정보도 보관하지 않습니다.</p>
+        </li>
+        <li>
+          <h2>구매</h2>
+          <p>구매는 본 사이트에서 링크로 연결되는 온라인 쇼핑몰에서 이루어집니다. 매매 계약은 그곳에서 체결되며, 해당 쇼핑몰의 약관과 청약철회 정책, 개인정보 처리방침이 적용됩니다.</p>
+          <p>본 사이트에 표시된 가격과 사양은 안내를 위한 것입니다. 본 사이트와 쇼핑몰의 내용이 다를 경우, 구매 시점의 쇼핑몰 표시가 기준이 됩니다.</p>
+        </li>
+        <li>
+          <h2>약관의 개정</h2>
+          <p>관련 법령이나 운영상 필요에 따라 이 약관을 개정할 수 있습니다. 개정된 약관은 시행일과 함께 이 페이지에 게시하며, 게시한 시행일부터 효력이 발생합니다. 시행일 이후에도 사이트를 계속 이용하시는 경우 개정 내용에 동의하신 것으로 봅니다.</p>
+        </li>
+        <li>
+          <h2>지식재산권</h2>
+          <p>C.O.V.E.R.T의 명칭과 표장, 범이 캐릭터, 일러스트, 미션 문안, 지면 디자인, 사진, 그리고 본 사이트의 디자인에 관한 권리는 웨일랜드 또는 이를 웨일랜드에 이용 허락한 자에게 있습니다.</p>
+          <p>키트의 내용물을 포함한 위 저작물을 사전 서면 동의 없이 복제, 배포, 판매하거나 2차적 저작물로 만드실 수 없습니다. 다만 출처를 밝힌 짧은 인용, 그리고 직접 구매하신 키트를 촬영해 게시하시는 것은 자유롭게 하셔도 됩니다.</p>
+          <p>표지 및 일러스트 일부는 생성형 AI(Midjourney, 미드저니)를 사용해 제작했습니다. 감추지 않기 위해 여기에 적어 둡니다.</p>
+        </li>
+        <li>
+          <h2>이용자의 의무</h2>
+          <p>다음 행위는 삼가 주시기 바랍니다.</p>
+          <ol>
+            <li>사이트의 운영을 방해하거나 정상적이지 않은 방법으로 접근을 시도하는 행위</li>
+            <li>일반적인 열람의 범위를 넘어 자동화된 수단으로 사이트의 내용을 수집하는 행위</li>
+            <li>웨일랜드를 사칭하거나, 실제로 없는 관계가 있는 것처럼 C.O.V.E.R.T의 명칭을 사용하는 행위</li>
+            <li>그 밖에 법령을 위반하거나 타인의 권리를 침해하는 행위</li>
+          </ol>
+        </li>
+        <li>
+          <h2>외부 링크</h2>
+          <p>본 사이트는 온라인 쇼핑몰과 제3자가 운영하는 서비스로 연결되는 링크를 포함합니다. 웨일랜드는 해당 사이트를 통제하지 않으며 그 내용이나 운영에 대해 책임지지 않습니다. 링크를 통해 이동하신 이후에는 해당 사이트의 약관이 적용됩니다.</p>
+        </li>
+        <li>
+          <h2>서비스 제공과 면책</h2>
+          <p>사이트가 안정적으로 제공되도록 노력하지만, 점검이나 기술적 장애, 통제할 수 없는 사정으로 이용이 중단될 수 있습니다. 이러한 중단으로 발생한 손해에 대해서는 법령에 다른 정함이 있는 경우를 제외하고 책임을 지지 않습니다.</p>
+          <p>키트의 임무는 제3자가 운영하는 공개된 장소에서 수행됩니다. 운영 시간, 입장 조건, 현장 상황은 예고 없이 바뀔 수 있으며, 방문하시는 날 특정 장소가 열려 있거나 접근 가능하다는 점을 보장해 드릴 수 없습니다. 현장에서는 스스로의 안전에 유의해 주세요.</p>
+        </li>
+        <li>
+          <h2>준거법과 분쟁 해결</h2>
+          <p>이 약관은 대한민국 법을 준거법으로 합니다. 분쟁이 발생한 경우 민사소송법에 따른 관할 법원에 소를 제기합니다. 이 약관의 어떤 내용도 소비자로서 법령상 보장받는 권리를 제한하지 않습니다.</p>
+        </li>
+      </ol>
+    </div>
+
+    <p class="mailto">
+      약관에 대해 궁금한 점이 있으신가요? <a href="mailto:contact@whalelandkr.com">contact@whalelandkr.com</a>
+    </p>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-tag">평범한 여행을 특별한 임무로.</p>
+        <div class="sns">
+          <span>INSTAGRAM</span>
+          <span>FACEBOOK</span>
+          <span>YOUTUBE</span>
+          <span>TIKTOK</span>
+          <a href="https://tumblbug.com/covertkr" target="_blank" rel="me noopener">TUMBLBUG</a>
+        </div>
+      </div>
+
+      <nav aria-label="작전">
+        <p class="foot-h">Operation</p>
+        <ul class="foot-list">
+          <li><a href="../mission/">브리핑</a></li>
+          <li><a href="../kit/">키트</a></li>
+          <li><a href="../report/">요원 보고서</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="고객 지원">
+        <p class="foot-h">Support</p>
+        <ul class="foot-list">
+          <li><a href="../support/">배송 &middot; 환불</a></li>
+          <li><a href="../support/#faq">자주 묻는 질문</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">문의하기</a></li>
+        </ul>
+      </nav>
+
+      <div class="news">
+        <p class="foot-h">Dispatches</p>
+        <p>새로운 작전과 재입고 소식만 전합니다. 1년에 네 번 정도 보냅니다.</p>
+        <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">명단에 등록</a> -->
+        <span class="cta cta-2 cta-off">명단에 등록</span>
+        <p class="news-soon">등록은 곧 열립니다.</p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-links">
+        <a href="./">이용약관</a>
+        <a href="../privacy/">개인정보처리방침</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">웨일랜드</a>
+      </div>
+      <p>
+        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T는 웨일랜드의 상표입니다.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var sel = document.getElementById('lang');
+  if(sel){ sel.addEventListener('change', function(){
+    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
+    location.href = sel.value;
+  }); }
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.05});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+
+</body>
+</html>

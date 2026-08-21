@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>C.O.V.E.R.T — 観光客として着き、諜報員として発つ。</title>
+<meta name="description" content="密封された封筒、紙のパスポート、45の指令。最初の作戦はソウル。インストールするアプリも、ついて回る引率者もない。あなたと、まだあなたを知らない街だけ。" />
+
+<!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
+<link rel="canonical" href="https://whalelandkr.com/covert/site/jp/" />
+<link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/" />
+<link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/" />
+<link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/" />
+<link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:title" content="C.O.V.E.R.T — 観光客として着き、諜報員として発つ。" />
+<meta property="og:description" content="密封された封筒、紙のパスポート、45の指令。最初の作戦はソウル。" />
+<meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
+<link rel="icon" href="../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+
+<!-- 동적 서브셋: 페이지에 실제로 쓰인 글자 범위만 내려받습니다.
+     JP 판에는 두 개를 겁니다.
+       - JP  : 가나·한자용. 서체명이 'Pretendard JP Variable' 로 다릅니다
+       - KR  : 푸터 사업자 정보의 한글용. 서체명은 'Pretendard Variable'
+     둘 다 동적 서브셋이라 실제 사용된 글자 조각만 받습니다. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../assets/site.css" />
+
+<style>
+/* ================= HOME ONLY ================= */
+
+/* --- JP ONLY : 본문 서체 ---
+   Pretendard JP 를 우선 쓰고, 한글(푸터 사업자 정보)은 Pretendard 로 넘깁니다.
+   site.css 의 --body 를 이 페이지에서만 덮어씁니다. */
+:root{
+  --body:'Pretendard JP Variable','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,'Hiragino Sans','Yu Gothic',sans-serif;
+}
+
+/* --- 01 : envelope hero --- */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:104px 0 56px;position:relative;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:1fr 460px;gap:56px;align-items:center}
+.hero-slug{font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--ink-faint);display:flex;gap:16px;flex-wrap:wrap;margin:0 0 30px}
+.hero-slug b{color:var(--red);font-weight:400}
+/* 일본어는 가나·한자가 한 글자당 약 1em 이라 영문판보다 크기를 낮춰 잡는다.
+   확정 문구 "観光客として着き、"(9자 ≒ 8.7em)가 좌측 컬럼 488px 안에
+   한 줄로 들어가도록 상한을 48px 로 잡는다. */
+.hero h1{
+  font-family:var(--body);font-weight:800;
+  font-size:clamp(28px,4vw,48px);line-height:1.24;letter-spacing:-.035em;
+  margin:0 0 24px
+}
+.hero h1 span{display:block}
+.hero h1 .lo{color:var(--ink-soft)}
+.hero-lede{font-size:17px;line-height:1.9;color:var(--ink-soft);max-width:24em;margin:0 0 34px}
+.hero-scroll{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--ink-faint);display:inline-flex;align-items:center;gap:10px}
+.hero-scroll i{display:block;width:1px;height:26px;background:var(--paper-edge);animation:drop 1.9s ease-in-out infinite}
+@keyframes drop{0%,100%{transform:scaleY(.3);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+
+/* envelope */
+.env-stage{perspective:1400px;position:relative;height:400px}
+.env{position:relative;width:100%;max-width:420px;margin:0 auto;height:270px;transform-style:preserve-3d}
+.env-doc{
+  position:absolute;left:7%;width:86%;height:300px;bottom:26px;z-index:2;
+  background:var(--paper-hi);border:1px solid var(--paper-edge);
+  box-shadow:0 -2px 0 rgba(120,100,66,.08), 0 18px 34px rgba(70,58,36,.18);
+  padding:22px 22px 0;transform:translateY(46px);
+}
+.env-doc-h{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--ink-faint);border-bottom:1px solid var(--paper-lo);padding-bottom:9px;display:flex;justify-content:space-between}
+.env-doc-t{font-family:var(--body);font-weight:800;font-size:23px;letter-spacing:-.02em;margin:16px 0 4px}
+.env-doc-s{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--red);margin:0 0 18px}
+.env-doc-lines{display:grid;gap:9px}
+.env-doc-lines i{display:block;height:5px;background:var(--paper-lo)}
+.env-doc-lines i:nth-child(2){width:88%}
+.env-doc-lines i:nth-child(3){width:72%}
+.env-doc-lines i:nth-child(4){width:80%}
+.env-stamp{position:absolute;right:16px;bottom:74px;z-index:5;font-size:12px;opacity:0}
+.env-body{
+  position:absolute;inset:0;top:auto;height:200px;bottom:0;z-index:3;
+  background:var(--paper-lo);border:1px solid var(--paper-edge);
+  clip-path:polygon(0 0, 50% 40%, 100% 0, 100% 100%, 0 100%);
+  box-shadow:0 14px 30px rgba(70,58,36,.16)
+}
+.env-body::after{content:"";position:absolute;left:0;right:0;top:0;height:100%;
+  background:linear-gradient(180deg, rgba(120,100,66,.10), transparent 34%)}
+.env-flap{
+  position:absolute;left:0;right:0;top:70px;height:98px;z-index:4;
+  background:var(--paper-deep);border:1px solid var(--paper-edge);
+  clip-path:polygon(0 0, 100% 0, 50% 100%);
+  transform-origin:top center;backface-visibility:hidden
+}
+.env-seal{position:absolute;left:50%;top:132px;width:44px;height:44px;margin-left:-22px;z-index:6;
+  border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-weight:700;font-size:10px;letter-spacing:.06em;color:var(--paper-hi);
+  box-shadow:0 3px 8px rgba(120,30,20,.4)}
+.env-cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);text-align:center;margin:22px 0 0}
+
+.play .env-flap{animation:flap 1s cubic-bezier(.4,0,.2,1) .5s forwards}
+.play .env-seal{animation:seal .35s ease .5s forwards}
+.play .env-doc{animation:rise 1.1s cubic-bezier(.3,0,.2,1) 1.2s forwards}
+.play .env-stamp{animation:stamp .45s cubic-bezier(.2,1.5,.4,1) 2.1s forwards}
+@keyframes flap{0%{transform:rotateX(0)}50%{z-index:4}51%{z-index:1}100%{transform:rotateX(-168deg);z-index:1}}
+@keyframes seal{to{opacity:0;transform:scale(.6)}}
+@keyframes rise{to{transform:translateY(-118px)}}
+@keyframes stamp{0%{opacity:0;transform:rotate(-4deg) scale(2.4)}60%{opacity:.85;transform:rotate(-4deg) scale(.94)}100%{opacity:.85;transform:rotate(-4deg) scale(1)}}
+
+/* --- 02 : operation --- */
+.op{padding:110px 0 96px;position:relative}
+.op-card{max-width:660px;padding:44px 46px;transform:rotate(-.7deg)}
+.op-no{font-family:var(--mono);font-size:11px;letter-spacing:.26em;color:var(--red);margin:0 0 10px}
+.op-city{font-family:var(--body);font-weight:800;font-size:clamp(38px,6vw,62px);line-height:1;letter-spacing:-.04em;margin:0 0 6px}
+.op-meta{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;color:var(--ink-faint);border-bottom:1px solid var(--paper-lo);padding-bottom:18px;margin:0 0 22px}
+.op-body{font-size:16px;line-height:1.95;color:var(--ink-soft);margin:0 0 28px}
+.op-links{display:flex;gap:26px;flex-wrap:wrap}
+.op-next{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--ink-faint);margin:34px 0 0;display:flex;align-items:center;gap:12px}
+.op-next i{display:block;flex:1;height:1px;background:var(--paper-edge);max-width:120px}
+
+/* --- 03 : agent --- */
+.agent{padding:20px 0 110px}
+.agent-in{display:flex;align-items:flex-end;gap:34px;flex-wrap:wrap}
+.agent-fig{width:170px;flex-shrink:0}
+.agent-fig img{filter:drop-shadow(2px 6px 12px rgba(90,74,44,.3))}
+.agent-say{flex:1;min-width:260px}
+.agent-say p{font-family:var(--mono);font-size:17px;line-height:1.75;margin:0 0 14px;max-width:38ch}
+.agent-by{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--ink-faint);margin:0}
+.agent-by b{color:var(--red);font-weight:400}
+
+/* --- JP ONLY : 서체 보정 ---
+   Courier Prime 에는 가나·한자 글리프가 없습니다. 일본어 문장이 들어가는 요소만
+   본문 서체로 되돌립니다. 영문 라벨은 타자기체를 그대로 씁니다.
+   .agent-by 는 영문 라벨이므로 :not() 으로 반드시 제외합니다.
+   (제외하지 않으면 .agent-say p 가 특정도에서 .agent-by 를 이겨버립니다) */
+.agent-say p:not(.agent-by),
+.linkarrow,
+.cta,
+.legal-links a{font-family:var(--body)}
+.linkarrow,
+.cta{letter-spacing:.02em;text-transform:none}
+
+/* 일본어는 타자기체를 못 써서 범이 대사가 본문 문단과 구분되지 않는다.
+   붉은 세로선으로 "인용된 전문" 성격을 되살린다. */
+.agent-say p:not(.agent-by){
+  font-size:16.5px;line-height:1.9;max-width:22em;
+  border-left:2px solid var(--red);padding-left:20px
+}
+.agent-by{padding-left:22px}
+
+@media (max-width:960px){
+  .hero-in{grid-template-columns:1fr;gap:20px}
+  .hero{min-height:auto;padding:96px 0 64px}
+  .env-stage{height:360px;margin-top:10px}
+  .op-card{padding:34px 26px;transform:none}
+}
+@media (max-width:600px){
+  .env-stage{height:330px}
+  .env{height:250px}
+  .agent-fig{width:126px}
+}
+@media (prefers-reduced-motion:reduce){
+  .env-doc{transform:translateY(-118px)}
+  .env-flap{transform:rotateX(-168deg);z-index:1}
+  .env-seal{display:none}
+  .env-stamp{opacity:.85}
+  .hero-scroll i{animation:none}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">本文へスキップ</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="./" class="mark">C.O.V.E.R.T<i>.</i></a>
+    <div class="langsel">
+      <label class="sr" for="lang">言語</label>
+      <select id="lang">
+        <option value="../">EN — English</option>
+        <option value="../kr/">KR — 한국어</option>
+        <option value="../jp/" selected>JP — 日本語</option>
+        <option value="../cn/">CN — 简体中文</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 01 -->
+<section class="hero" id="hero">
+  <div class="wrap hero-in">
+    <div>
+      <p class="hero-slug"><b>CLASSIFIED</b><span>AGENT REGISTRATION OPEN</span><span>EST. 2026</span></p>
+      <h1><span>観光客として着き、</span><span class="lo">諜報員として発つ。</span></h1>
+      <p class="hero-lede">密封された封筒がひとつ。紙のパスポートが一冊。45の指令、そして、まだあなたを知らない街。</p>
+      <span class="hero-scroll"><i></i> SCROLL TO OPEN FILE</span>
+    </div>
+
+    <div class="env-stage" aria-hidden="true">
+      <div class="env">
+        <div class="env-doc">
+          <p class="env-doc-h"><span>FIELD DOCUMENT</span><span>NO. ____</span></p>
+          <p class="env-doc-t">諜報員パスポート</p>
+          <p class="env-doc-s">ISSUED ON REGISTRATION</p>
+          <div class="env-doc-lines"><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="env-body"></div>
+        <div class="env-flap"></div>
+        <div class="env-seal">C.O.</div>
+        <span class="rubber env-stamp">OPEN</span>
+      </div>
+      <p class="env-cap">CONTENTS SEALED UNTIL DELIVERY</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- 02 -->
+<section class="op">
+  <div class="wrap">
+    <div class="sheet op-card rv" data-par="0.05">
+      <p class="op-no">OPERATION 01</p>
+      <h2 class="op-city">ソウル</h2>
+      <p class="op-meta">15 DISTRICTS · 45 ASSIGNMENTS · NO DEADLINE</p>
+      <p class="op-body">15の区域、45の任務。自分で埋めていくパスポートが一冊。同僚要員のボミと行く、スパイの旅。終わったあとに残るのは、あなたがそこにいたという事実ひとつだ。</p>
+      <div class="op-links">
+        <a class="linkarrow" href="mission/">ブリーフィングを読む →</a>
+        <a class="linkarrow" href="kit/">キットを見る →</a>
+      </div>
+      <p class="op-next"><i></i> OPERATION 02 — LOCATION CLASSIFIED</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="agent">
+  <div class="wrap">
+    <div class="agent-in rv" data-par="0.03">
+      <div class="agent-fig">
+        <img src="../assets/bummy-black-suit.png" alt="同僚諜報員 BUMMY" width="340" height="421" loading="lazy" decoding="async" />
+      </div>
+      <div class="agent-say">
+        <p>封筒を開けて、ひとつずつ片づけていけばいい。一緒に行こう。</p>
+        <p class="agent-by"><b>BUMMY</b> · FELLOW AGENT, OPERATION 01</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-tag">ふつうの旅を、特別な任務に。</p>
+        <div class="sns">
+          <span>INSTAGRAM</span>
+          <span>FACEBOOK</span>
+          <span>YOUTUBE</span>
+          <span>TIKTOK</span>
+          <a href="https://tumblbug.com/covertkr" target="_blank" rel="me noopener">TUMBLBUG</a>
+        </div>
+      </div>
+
+      <nav aria-label="作戦">
+        <p class="foot-h">Operation</p>
+        <ul class="foot-list">
+          <li><a href="mission/">ブリーフィング</a></li>
+          <li><a href="kit/">キット</a></li>
+          <li><a href="report/">フィールドレポート</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="サポート">
+        <p class="foot-h">Support</p>
+        <ul class="foot-list">
+          <li><a href="support/">配送 &middot; 返品</a></li>
+          <li><a href="support/#faq">よくある質問</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <div class="news">
+        <p class="foot-h">Dispatches</p>
+        <p>新しい作戦と再入荷のお知らせだけをお送りします。年に四回ほどです。</p>
+        <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">リストに登録</a> -->
+        <span class="cta cta-2 cta-off">リストに登録</span>
+        <p class="news-soon">登録は近日開始します。</p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-links">
+        <a href="terms/">利用規約</a>
+        <a href="privacy/">プライバシーポリシー</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
+      </div>
+      <p>
+        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T は Whale Land の商標です。
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 언어 자동 전환은 영문 홈에만 둡니다. 여기서도 돌리면 서로 튕겨냅니다. */
+
+  /* ---- 언어 선택 ---- */
+  var sel = document.getElementById('lang');
+  if(sel){ sel.addEventListener('change', function(){
+    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
+    location.href = sel.value;
+  }); }
+
+  /* ---- 봉투 개봉 ---- */
+  var hero = document.getElementById('hero');
+  if(hero && !reduce){ requestAnimationFrame(function(){ hero.classList.add('play'); }); }
+
+  /* ---- 스크롤 등장 ---- */
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.14});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+
+  /* ---- 스크롤 연동 패럴랙스 ---- */
+  if(!reduce){
+    var pars = [].slice.call(document.querySelectorAll('[data-par]'));
+    var env = document.querySelector('.env-stage');
+    var tick = false;
+    function frame(){
+      var y = window.pageYOffset;
+      if(env){ env.style.transform = 'translateY(' + (y * 0.12) + 'px)'; }
+      pars.forEach(function(el){
+        var r = el.getBoundingClientRect();
+        var d = (window.innerHeight - r.top) * parseFloat(el.getAttribute('data-par'));
+        if(r.top < window.innerHeight && r.bottom > 0){ el.style.setProperty('--shift', d.toFixed(1) + 'px'); }
+      });
+      tick = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!tick){ tick = true; requestAnimationFrame(frame); }
+    }, {passive:true});
+    frame();
+  }
+})();
+</script>
+
+<!-- ============================================================
+     GA4 — 측정 ID 발급 후 G-XXXXXXXXXX 를 교체하고 주석을 해제하세요
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+     ============================================================ -->
+
+<!-- ============================================================
+     META PIXEL — 픽셀 ID 발급 후 000000000000000 을 교체하고 주석을 해제하세요
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '000000000000000');
+  fbq('track', 'PageView');
+</script>
+     ============================================================ -->
+
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>购买套装 — C.O.V.E.R.T</title>
+<meta name="description" content="可在线上商店购买 C.O.V.E.R.T 套装。6 件物品，₩30,000，含税，运费另计。" />
+
+<!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
+<link rel="canonical" href="https://whalelandkr.com/covert/site/cn/kit/" />
+<link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/kit/" />
+<link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/kit/" />
+<link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/kit/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/kit/" />
+<link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/kit/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:title" content="购买套装 — C.O.V.E.R.T" />
+<meta property="og:description" content="6 件物品，₩30,000。可在线上商店购买。" />
+<meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
+<meta property="og:locale" content="zh_CN" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
+<link rel="icon" href="../../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Noto+Sans+SC:wght@400;800&display=swap" rel="stylesheet" />
+
+<!-- 푸터 사업자 정보의 한글용. Noto Sans SC 에는 한글 글리프가 없습니다. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../../assets/site.css" />
+
+<style>
+/* ================= KIT ONLY ================= */
+
+/* --- CN ONLY : 본문 서체 ---
+   Noto Sans SC 를 맨 앞에 두어 한자를 통일합니다.
+   한글(푸터 사업자 정보)만 Pretendard 로 넘어갑니다. */
+:root{
+  --body:'Noto Sans SC','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,'PingFang SC','Microsoft YaHei',sans-serif;
+}
+
+.kit{padding:132px 0 24px}
+.kit-lede{font-size:16.5px;line-height:1.9;color:var(--ink-soft);max-width:34em;margin:0 0 44px}
+
+/* 서류 한 장 */
+.doc{padding:34px 36px 32px;margin:0 0 30px}
+.doc:nth-of-type(even){transform:rotate(.4deg)}
+.doc:nth-of-type(odd){transform:rotate(-.4deg)}
+.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
+  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 22px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.doc-h b{color:var(--red);font-weight:400}
+
+/* 물품 명세서 */
+.pack{list-style:none;margin:0;padding:0}
+.pack li{display:flex;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px dotted var(--paper-edge);flex-wrap:wrap}
+.pack li:last-child{border-bottom:0}
+.pack i{font-family:var(--mono);font-style:normal;font-size:11px;color:var(--red);flex-shrink:0;width:22px}
+.pack b{font-weight:700;font-size:15.5px}
+.pack s{flex:1;height:0;border-bottom:1px dotted var(--paper-edge);text-decoration:none;min-width:16px;transform:translateY(-3px)}
+.pack em{font-family:var(--mono);font-style:normal;font-size:12px;color:var(--ink-soft);flex-shrink:0;letter-spacing:.06em}
+.pack p{margin:5px 0 0 34px;font-size:13.5px;line-height:1.85;color:var(--ink-soft);flex-basis:100%}
+
+/* 명세 표 */
+.spec{width:100%;border-collapse:collapse}
+.spec th,.spec td{text-align:left;padding:10px 0;border-bottom:1px solid var(--paper-lo);vertical-align:top}
+.spec tr:last-child th,.spec tr:last-child td{border-bottom:0}
+.spec th{font-weight:700;font-size:13.5px;line-height:1.5;color:var(--ink);width:32%;padding-right:18px}
+.spec td{font-size:15px}
+.spec td span{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);display:block;margin-top:3px;letter-spacing:.06em}
+
+/* 가격 */
+.buy{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap}
+.buy-fig{font-family:var(--body);font-weight:800;font-size:clamp(34px,5vw,48px);letter-spacing:-.03em;line-height:1;margin:0}
+.buy-note{font-size:13px;color:var(--ink-faint);margin:9px 0 0}
+/* 카페24 상품 URL 이 아직 없어 구매 버튼을 비활성 상태로 둡니다.
+   URL 이 정해지면 아래 .buy-soon 마크업과 이 규칙을 함께 지웁니다.
+   .cta-off 는 푸터에서도 쓰므로 site.css 에 있습니다. */
+.buy-soon{display:flex;flex-direction:column;align-items:flex-start}
+.buy-soon-note{font-family:var(--body);font-size:11.5px;color:var(--red);margin:9px 0 0}
+.fine{font-size:13px;line-height:1.85;color:var(--ink-faint);margin:24px 0 0;padding-top:18px;border-top:1px solid var(--paper-lo)}
+.fine b{color:var(--red);font-weight:400;font-family:var(--mono);font-size:11px;letter-spacing:.16em;display:block;margin:0 0 6px}
+
+.back{margin:8px 0 64px}
+
+/* --- CN ONLY : 서체 보정 ---
+   Courier Prime 에는 한자 글리프가 없습니다.
+   중국어가 들어가는 요소만 본문 서체로 되돌립니다. */
+.linkarrow,
+.cta,
+.legal-links a{font-family:var(--body)}
+.linkarrow,
+.cta{letter-spacing:.02em;text-transform:none}
+
+@media (max-width:600px){
+  .kit{padding:112px 0 16px}
+  .doc{padding:26px 22px 24px}
+  .doc:nth-of-type(even),.doc:nth-of-type(odd){transform:none}
+  .spec th{width:34%;padding-right:14px;font-size:12.5px}
+  .spec td{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="../" class="mark">C.O.V.E.R.T<i>.</i></a>
+    <div class="langsel">
+      <label class="sr" for="lang">语言</label>
+      <select id="lang">
+        <option value="../../kit/">EN — English</option>
+        <option value="../../kr/kit/">KR — 한국어</option>
+        <option value="../../jp/kit/">JP — 日本語</option>
+        <option value="../../cn/kit/" selected>CN — 简体中文</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="kit">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">BUY</p>
+    <h1 class="head">购买套装</h1>
+    <p class="kit-lede">OPERATION 01 需要的一切，都装在一个封好的牛皮纸信封里。请在下方确认 6 件物品与规格，然后到线上商店直接购买。只售整套，不拆开单卖。</p>
+
+    <!-- 물품 명세서 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>PACKING LIST</b></span><span>OPERATION 01 — SEOUL</span></p>
+      <ul class="pack">
+        <li>
+          <i>01</i><b>机密信封</b><s></s><em>× 1</em>
+          <p>用绳扣系合的牛皮纸文件信封。正反两面印有机构徽标和 TOP SECRET 印章。拆开信封本身就是简报的一部分，请慢慢来。</p>
+        </li>
+        <li>
+          <i>02</i><b>特工护照</b><s></s><em>× 1</em>
+          <p>88 × 125 mm，40 页。皮纹合成纸封面，配哑光烫金徽标。里面收录 15 个区域、30 个地点、45 项任务，每个地点还有一幅按当地风格乔装的范伊插画，共 30 幅。</p>
+        </li>
+        <li>
+          <i>03</i><b>印章贴纸</b><s></s><em>× 20</em>
+          <p>印有机构徽章的透明贴纸，按区域页上的印章位裁切。15 个区域各一张，另加 5 张备用，每张贴纸都留有填写完成日期与时间的位置。</p>
+        </li>
+        <li>
+          <i>04</i><b>登机牌任务卡</b><s></s><em>× 1</em>
+          <p>做成真实登机牌的样子。填上你的特工代号、特工编号和入境日期，它就成了世上仅此一张的登机牌。</p>
+        </li>
+        <li>
+          <i>05</i><b>特工证套装</b><s></s><em>× 1 SET</em>
+          <p>范伊的 PVC 特工证，附卡套和挂绳。连范伊的签名都做了出来，细节达到真实工牌的水准。到手即是成品，无需填写。</p>
+        </li>
+        <li>
+          <i>06</i><b>范伊钥匙扣</b><s></s><em>× 1 RANDOM</em>
+          <p>每个区域一款，穿着与那条街相配的衣服，共 15 款。信封里装的是哪一只，要打开才知道。</p>
+        </li>
+      </ul>
+      <p class="fine">
+        <b>ALSO INCLUDED</b>
+        最后一页的二维码可以把任务报告发回总部，完全是可选的。15 个区域仅凭纸张就能从头走到尾，无需安装应用，也不必前往任何合作门店。
+      </p>
+    </div>
+
+    <!-- 명세 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>SPECIFICATIONS</b></span><span>FULL SET</span></p>
+      <table class="spec">
+        <tbody>
+          <tr><th>护照</th><td>含封面 40 页<span>88 × 125 MM · 40 PAGES</span></td></tr>
+          <tr><th>封面</th><td>皮纹合成纸，哑光烫金<span>PANTONE 289 C</span></td></tr>
+          <tr><th>内页</th><td>高级哑光纸，单色印刷<span>#FFFDF5 · RISOGRAPH</span></td></tr>
+          <tr><th>信封</th><td>牛皮纸，绳扣系合<span>175 × 240 × 20 MM</span></td></tr>
+          <tr><th>登机牌</th><td>卡纸，可填写<span>156 × 76 MM</span></td></tr>
+          <tr><th>特工证套装</th><td>PVC 卡 · 卡套 · 挂绳<span>CARD 54 × 86 MM · BOTH SIDES</span></td></tr>
+          <tr><th>贴纸</th><td>透明，15 区域 + 5 备用<span>20 TOTAL</span></td></tr>
+          <tr><th>收录范围</th><td>15 个区域，30 个地点<span>45 ASSIGNMENTS · 30 DISGUISES</span></td></tr>
+          <tr><th>版本</th><td>韩英合本 · 日文 · 简体中文<span>3 EDITIONS</span></td></tr>
+          <tr><th>首批产量</th><td>全部版本合计<span>1,500 SETS</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 가격 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>ISSUE</b></span><span>ONE SET — NO PARTS SOLD SEPARATELY</span></p>
+      <div class="buy">
+        <div>
+          <p class="buy-fig">₩30,000</p>
+          <p class="buy-note">含税 · 运费另计</p>
+        </div>
+        <!-- 카페24 상품 URL 이 정해지면 아래 <div class="buy-soon"> 블록 전체를 이 한 줄로 되돌립니다.
+             <a class="cta" href="상품URL" target="_blank" rel="noopener">购买套装</a> -->
+        <div class="buy-soon">
+          <span class="cta cta-off">购买套装</span>
+          <p class="buy-soon-note">商店链接即将开放。</p>
+        </div>
+      </div>
+
+      <p class="fine">
+        <b>NOTICE</b>
+        钥匙扣从 15 款中随机发出，无法指定款式，一次购买多个时可能出现重复。随机结果与重复不属于换货范围，但制造瑕疵随时可以换货，请与我们联系。
+        印刷色彩与纸张质感可能与屏幕上的图片略有差异。
+      </p>
+    </div>
+
+    <p class="back"><a class="linkarrow" href="../mission/">阅读简报 →</a></p>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-tag">把平凡的旅行，变成特别的任务。</p>
+        <div class="sns">
+          <span>INSTAGRAM</span>
+          <span>FACEBOOK</span>
+          <span>YOUTUBE</span>
+          <span>TIKTOK</span>
+          <a href="https://tumblbug.com/covertkr" target="_blank" rel="me noopener">TUMBLBUG</a>
+        </div>
+      </div>
+
+      <nav aria-label="行动">
+        <p class="foot-h">Operation</p>
+        <ul class="foot-list">
+          <li><a href="../mission/">简报</a></li>
+          <li><a href="./">套装</a></li>
+          <li><a href="../report/">现场报告</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="支持">
+        <p class="foot-h">Support</p>
+        <ul class="foot-list">
+          <li><a href="../support/">配送 &middot; 退换</a></li>
+          <li><a href="../support/#faq">常见问题</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">联系我们</a></li>
+        </ul>
+      </nav>
+
+      <div class="news">
+        <p class="foot-h">Dispatches</p>
+        <p>只发送新行动和补货消息。一年大约四次。</p>
+        <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">加入名单</a> -->
+        <span class="cta cta-2 cta-off">加入名单</span>
+        <p class="news-soon">登记即将开放。</p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-links">
+        <a href="../terms/">服务条款</a>
+        <a href="../privacy/">隐私政策</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
+      </div>
+      <p>
+        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T 是 Whale Land 的商标。
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- 언어 선택 ---- */
+  var sel = document.getElementById('lang');
+  if(sel){ sel.addEventListener('change', function(){
+    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
+    location.href = sel.value;
+  }); }
+
+  /* ---- 스크롤 등장 ---- */
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.12});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+
+<!-- ============================================================
+     GA4 — 측정 ID 발급 후 G-XXXXXXXXXX 를 교체하고 주석을 해제하세요
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+     ============================================================ -->
+
+<!-- ============================================================
+     META PIXEL — 픽셀 ID 발급 후 000000000000000 을 교체하고 주석을 해제하세요
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '000000000000000');
+  fbq('track', 'PageView');
+</script>
+     ============================================================ -->
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="C.O.V.E.R.T">
+  <!-- 글꼴에 의존하지 않도록 C 를 패스로 그립니다.
+       바깥 반지름 22, 안쪽 12, 오른쪽 80도를 터서 C 자를 만듭니다. -->
+  <rect width="64" height="64" fill="#B22C1E"/>
+  <path fill="#F1EBDC"
+        d="M48.85 17.86
+           A22 22 0 1 0 48.85 46.14
+           L41.19 39.71
+           A12 12 0 1 1 41.19 24.29
+           Z"/>
+</svg>

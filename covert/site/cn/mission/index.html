@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>简报 — C.O.V.E.R.T</title>
+<meta name="description" content="15 个区域，30 个地点，45 项任务。第一次行动在首尔。没有应用，没有领队，没有日程。顺序和节奏由你决定。" />
+
+<!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
+<link rel="canonical" href="https://whalelandkr.com/covert/site/cn/mission/" />
+<link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/mission/" />
+<link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/mission/" />
+<link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/mission/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/mission/" />
+<link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/mission/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:title" content="简报 — C.O.V.E.R.T" />
+<meta property="og:description" content="15 个区域，30 个地点，45 项任务。第一次行动在首尔。" />
+<meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
+<meta property="og:locale" content="zh_CN" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
+<link rel="icon" href="../../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Noto+Sans+SC:wght@400;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../../assets/site.css" />
+
+<style>
+/* ================= MISSION ONLY ================= */
+
+/* --- CN ONLY : 본문 서체 --- */
+:root{
+  --body:'Noto Sans SC','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,'PingFang SC','Microsoft YaHei',sans-serif;
+}
+
+.brief{padding:132px 0 24px}
+.brief-lede{font-size:16.5px;line-height:1.9;color:var(--ink-soft);max-width:34em;margin:0 0 44px}
+
+.doc{padding:34px 36px 32px;margin:0 0 30px}
+.doc:nth-of-type(even){transform:rotate(.4deg)}
+.doc:nth-of-type(odd){transform:rotate(-.4deg)}
+.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
+  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 22px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.doc-h b{color:var(--red);font-weight:400}
+
+.steps{list-style:none;margin:0;padding:0;counter-reset:st}
+.steps li{position:relative;padding:0 0 22px 46px;counter-increment:st}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:counter(st,decimal-leading-zero);position:absolute;left:0;top:1px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--red)}
+.steps li::after{content:"";position:absolute;left:11px;top:20px;bottom:2px;width:1px;background:var(--paper-lo)}
+.steps li:last-child::after{display:none}
+.steps b{display:block;font-weight:700;font-size:15.5px;margin:0 0 4px}
+.steps p{margin:0;font-size:13.5px;line-height:1.9;color:var(--ink-soft)}
+
+.roster{width:100%;border-collapse:collapse;font-size:14.5px}
+.roster th{font-weight:400;font-size:11.5px;color:var(--ink-faint);
+  text-align:left;padding:0 10px 8px 0;border-bottom:1px solid var(--paper-edge)}
+.roster td{padding:9px 10px 9px 0;border-bottom:1px dotted var(--paper-edge);vertical-align:top}
+.roster tr:last-child td{border-bottom:0}
+.roster .no{font-family:var(--mono);font-size:11.5px;color:var(--red);width:34px;white-space:nowrap}
+.roster .zone{font-weight:700;width:34%}
+.roster .note{color:var(--ink-soft);font-size:13.5px;line-height:1.8}
+.roster .stn{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:.06em;display:block;margin-top:3px}
+
+.tip{font-size:13px;line-height:1.9;color:var(--ink-faint);margin:20px 0 0;padding-top:16px;border-top:1px solid var(--paper-lo)}
+.tip b{color:var(--red);font-weight:400;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;display:block;margin:0 0 6px}
+
+.next{display:flex;gap:26px;flex-wrap:wrap;margin:8px 0 64px}
+
+/* --- CN ONLY : 서체 보정 --- */
+.linkarrow,
+.cta,
+.legal-links a{font-family:var(--body)}
+.linkarrow,
+.cta{letter-spacing:.02em;text-transform:none}
+
+@media (max-width:600px){
+  .brief{padding:112px 0 16px}
+  .doc{padding:26px 22px 24px}
+  .doc:nth-of-type(even),.doc:nth-of-type(odd){transform:none}
+  .roster .zone{width:auto}
+  .roster thead{display:none}
+  .roster tr{display:grid;grid-template-columns:34px 1fr;gap:0 6px;padding:10px 0;border-bottom:1px dotted var(--paper-edge)}
+  .roster td{border-bottom:0;padding:0}
+  .roster .no{grid-row:span 2}
+  .roster .note{margin-top:3px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="../" class="mark">C.O.V.E.R.T<i>.</i></a>
+    <div class="langsel">
+      <label class="sr" for="lang">语言</label>
+      <select id="lang">
+        <option value="../../mission/">EN — English</option>
+        <option value="../../kr/mission/">KR — 한국어</option>
+        <option value="../../jp/mission/">JP — 日本語</option>
+        <option value="../../cn/mission/" selected>CN — 简体中文</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="brief">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">OPERATION 01 — SEOUL</p>
+    <h1 class="head">把旅行变成任务。</h1>
+    <p class="brief-lede">C.O.V.E.R.T 把首尔变成一张行动地图。区域 15 个。在这座城市的代表性地标执行的任务。</p>
+
+    <!-- 진행 방식 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>PROTOCOL</b></span><span>HOW THE OPERATION RUNS</span></p>
+      <ol class="steps">
+        <li>
+          <b>拆开封印</b>
+          <p>打开信封，确认里面的任务护照、特工证、登机牌，还有钥匙扣。</p>
+        </li>
+        <li>
+          <b>选一个区域</b>
+          <p>没有固定顺序。在 15 个区域里翻到眼下离得最近的那一个，读那一页的指令。</p>
+        </li>
+        <li>
+          <b>把现场走完</b>
+          <p>每个区域三项任务。一件要找的，一件要吃的，一件要看的。边走边在护照上打勾，走完再把这一天写下来。</p>
+        </li>
+        <li>
+          <b>封上这一页</b>
+          <p>用透明贴纸盖住印章位，写下完成的时刻。旅程结束后，可以用最后一页的二维码把报告发回总部。</p>
+        </li>
+      </ol>
+    </div>
+
+    <!-- 구역 명부 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>SECTOR ROSTER</b></span><span>15 DISTRICTS · 30 PLACES</span></p>
+      <table class="roster">
+        <thead>
+          <tr><th class="no">SEC</th><th class="zone">行动区域</th><th class="note">地形</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="no">01</td><td class="zone">景福宫 &middot; 西村</td><td class="note">王宫的庭院，以及它背后的小巷。<span class="stn">GYEONGBOKGUNG STN. / EXIT 05</span></td></tr>
+          <tr><td class="no">02</td><td class="zone">光化门 &middot; 北村</td><td class="note">城市的中轴线，与韩屋山坡。<span class="stn">GWANGHWAMUN STN. / EXIT 07</span></td></tr>
+          <tr><td class="no">03</td><td class="zone">国立中央博物馆 &middot; 龙里团街</td><td class="note">国家档案库，与旁边的美食街。<span class="stn">ICHON STN. / EXIT 02</span></td></tr>
+          <tr><td class="no">04</td><td class="zone">COEX &middot; 奉恩寺</td><td class="note">地下的城市，与它上头的寺庙。<span class="stn">BONGEUNSA STN. / EXIT 07</span></td></tr>
+          <tr><td class="no">05</td><td class="zone">汝矣岛 &middot; The Hyundai</td><td class="note">江边的平地，与室内的森林。<span class="stn">YEOUIDO STN. / EXIT 03</span></td></tr>
+          <tr><td class="no">06</td><td class="zone">狎鸥亭罗德奥 &middot; 岛山公园</td><td class="note">旗舰店林立的街道，与安静的公园。<span class="stn">APGUJEONG RODEO STN. / EXIT 05</span></td></tr>
+          <tr><td class="no">07</td><td class="zone">乐天塔 &middot; 石村湖</td><td class="note">全国最高的观景台，与绕湖一圈的平路。<span class="stn">JAMSIL STN. / EXIT 02</span></td></tr>
+          <tr><td class="no">08</td><td class="zone">南山 &middot; 解放村新兴市场</td><td class="note">整片天际线，与它脚下的坡上市场。<span class="stn">MYEONG-DONG STN. / EXIT 03</span></td></tr>
+          <tr><td class="no">09</td><td class="zone">盘浦汉江公园 &middot; Famille Station</td><td class="note">夜里的喷泉，与地下商街。<span class="stn">EXPRESS BUS TERMINAL STN. / EXIT 8-1</span></td></tr>
+          <tr><td class="no">10</td><td class="zone">梨泰院 &middot; 汉南洞</td><td class="note">全世界的食物，与通往夜景的陡坡。<span class="stn">ITAEWON STN. / EXIT 01</span></td></tr>
+          <tr><td class="no">11</td><td class="zone">圣水洞 &middot; 首尔林</td><td class="note">变成咖啡馆的红砖工厂，还有鹿。<span class="stn">SEONGSU STN. / EXIT 03</span></td></tr>
+          <tr><td class="no">12</td><td class="zone">弘大 &middot; 延南洞</td><td class="note">街头的音乐，与铁路改成的公园。<span class="stn">HONGIK UNIV. STN. / EXIT 09</span></td></tr>
+          <tr><td class="no">13</td><td class="zone">明洞 &middot; 乙支路</td><td class="note">霓虹与长队，还有没有招牌的隐蔽小店。<span class="stn">MYEONG-DONG STN. / EXIT 06</span></td></tr>
+          <tr><td class="no">14</td><td class="zone">DDP &middot; 兴仁之门</td><td class="note">停在朝鲜城门旁的银色船体。<span class="stn">DONGDAEMUN HISTORY &amp; CULTURE PARK STN. / EXIT 01</span></td></tr>
+          <tr><td class="no">15</td><td class="zone">广藏市场 &middot; 清溪川</td><td class="note">市场的顶棚，与低一层的水道。<span class="stn">JONGNO 5-GA STN. / EXIT 08</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="next">
+      <a class="linkarrow" href="../kit/">查看套装 →</a>
+    </p>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-tag">把平凡的旅行，变成特别的任务。</p>
+        <div class="sns">
+          <span>INSTAGRAM</span>
+          <span>FACEBOOK</span>
+          <span>YOUTUBE</span>
+          <span>TIKTOK</span>
+          <a href="https://tumblbug.com/covertkr" target="_blank" rel="me noopener">TUMBLBUG</a>
+        </div>
+      </div>
+
+      <nav aria-label="行动">
+        <p class="foot-h">Operation</p>
+        <ul class="foot-list">
+          <li><a href="./">简报</a></li>
+          <li><a href="../kit/">套装</a></li>
+          <li><a href="../report/">现场报告</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="支持">
+        <p class="foot-h">Support</p>
+        <ul class="foot-list">
+          <li><a href="../support/">配送 &middot; 退换</a></li>
+          <li><a href="../support/#faq">常见问题</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">联系我们</a></li>
+        </ul>
+      </nav>
+
+      <div class="news">
+        <p class="foot-h">Dispatches</p>
+        <p>只发送新行动和补货消息。一年大约四次。</p>
+        <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">加入名单</a> -->
+        <span class="cta cta-2 cta-off">加入名单</span>
+        <p class="news-soon">登记即将开放。</p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-links">
+        <a href="../terms/">服务条款</a>
+        <a href="../privacy/">隐私政策</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
+      </div>
+      <p>
+        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T 是 Whale Land 的商标。
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sel = document.getElementById('lang');
+  if(sel){ sel.addEventListener('change', function(){
+    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
+    location.href = sel.value;
+  }); }
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.1});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+
+<!-- ============================================================
+     GA4 — 측정 ID 발급 후 G-XXXXXXXXXX 를 교체하고 주석을 해제하세요
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+     ============================================================ -->
+
+<!-- ============================================================
+     META PIXEL — 픽셀 ID 발급 후 000000000000000 을 교체하고 주석을 해제하세요
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '000000000000000');
+  fbq('track', 'PageView');
+</script>
+     ============================================================ -->
+
+</body>
+</html>

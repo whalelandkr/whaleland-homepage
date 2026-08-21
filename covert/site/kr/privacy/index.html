@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>개인정보처리방침 — C.O.V.E.R.T</title>
+<meta name="description" content="본 웹사이트의 개인정보 처리에 관한 안내. 웨일랜드 운영." />
+<meta name="robots" content="noindex, follow" />
+
+<!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
+<link rel="canonical" href="https://whalelandkr.com/covert/site/kr/privacy/" />
+<link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/site/privacy/" />
+<link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/site/kr/privacy/" />
+<link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/privacy/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/privacy/" />
+<link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/privacy/" />
+
+<!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
+<link rel="icon" href="../../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<link rel="stylesheet" href="../../assets/site.css" />
+
+<style>
+/* ================= LEGAL ONLY ================= */
+.legaldoc{padding:132px 0 24px}
+.legal-lede{font-size:16px;line-height:1.85;color:var(--ink-soft);max-width:34em;margin:0 0 20px}
+.stamp-date{font-size:13px;color:var(--red);margin:0 0 7px}
+.stamp-eff{font-size:13.5px;line-height:1.75;color:var(--ink-soft);margin:0 0 44px}
+
+.doc{padding:34px 36px 32px;margin:0 0 30px}
+.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
+  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 26px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.doc-h b{color:var(--red);font-weight:400}
+
+.arts{list-style:none;margin:0;padding:0;counter-reset:art}
+.arts > li{counter-increment:art;padding:0 0 26px;margin:0 0 26px;border-bottom:1px dotted var(--paper-edge)}
+.arts > li:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
+.arts > li > h2{font-family:var(--body);font-weight:700;font-size:16px;letter-spacing:-.01em;margin:0 0 10px}
+.arts > li > h2::before{content:counter(art,decimal-leading-zero);display:block;
+  font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.16em;color:var(--red);margin:0 0 5px}
+.arts p{margin:0 0 10px;font-size:14.5px;line-height:1.9;color:var(--ink-soft)}
+.arts p:last-child{margin-bottom:0}
+.arts ol,.arts ul{margin:0 0 10px;padding-left:20px}
+.arts li li{font-size:14.5px;line-height:1.9;color:var(--ink-soft);margin:0 0 7px}
+.arts li li:last-child{margin-bottom:0}
+
+.biz{list-style:none;margin:0;padding:0}
+.biz li{display:grid;grid-template-columns:150px 1fr;gap:0 20px;padding:9px 0;border-bottom:1px dotted var(--paper-edge)}
+.biz li:last-child{border-bottom:0}
+.biz b{font-weight:700;font-size:13.5px;line-height:1.5;color:var(--ink);padding-top:1px}
+.biz p{margin:0;font-size:14.5px;line-height:1.7}
+
+.none{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--red);margin:0 0 10px}
+
+.mailto{margin:8px 0 64px;font-size:15px}
+.mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
+
+/* --- KR ONLY : 한글 서체 보정 --- */
+.linkarrow,
+.cta,
+.legal-links a{font-family:var(--body)}
+.linkarrow,
+.cta{letter-spacing:.02em;text-transform:none}
+
+@media (max-width:600px){
+  .legaldoc{padding:112px 0 16px}
+  .doc{padding:26px 22px 24px}
+  .biz li{grid-template-columns:96px 1fr;gap:0 16px;padding:11px 0}
+  .biz b{font-size:12.5px;line-height:1.45}
+  .biz p{font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="../" class="mark">C.O.V.E.R.T<i>.</i></a>
+    <div class="langsel">
+      <label class="sr" for="lang">언어</label>
+      <select id="lang">
+        <option value="../../privacy/">EN — English</option>
+        <option value="../../kr/privacy/" selected>KR — 한국어</option>
+        <option value="../../jp/privacy/">JP — 日本語</option>
+        <option value="../../cn/privacy/">CN — 简体中文</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="legaldoc">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">LEGAL</p>
+    <h1 class="head">개인정보처리방침</h1>
+    <p class="legal-lede">본 웹사이트에서 개인정보가 어떻게 처리되는지 안내합니다. 짧게 말씀드리면, 이 사이트는 개인정보를 수집하지 않습니다. 다만 실제로 저장되는 두 가지와 그 처리 주체를 아래에 밝혀 둡니다.</p>
+    <p class="stamp-date">공고일자: 2026년 8월 21일 &nbsp;|&nbsp; 시행일자: 2026년 8월 28일</p>
+    <p class="stamp-eff">본 개인정보처리방침은 2026년 8월 28일부터 시행됩니다.</p>
+
+    <!-- 관리자 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>CONTROLLER</b></span><span>WHO IS RESPONSIBLE</span></p>
+      <ul class="biz">
+        <li><b>상호</b><p>웨일랜드 (Whale Land)</p></li>
+        <li><b>대표자</b><p>장욱</p></li>
+        <li><b>사업자등록번호</b><p>428-04-03222</p></li>
+        <li><b>주소</b><p>서울특별시 강남구 언주로 425</p></li>
+        <li><b>개인정보 보호책임자</b><p>장욱 &mdash; contact@whalelandkr.com</p></li>
+      </ul>
+    </div>
+
+    <!-- 조문 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>POLICY</b></span><span>WHAT WE DO AND DON'T HOLD</span></p>
+      <ol class="arts">
+        <li>
+          <h2>본 사이트가 수집하는 개인정보</h2>
+          <p class="none">없음</p>
+          <p>본 사이트에는 회원가입, 로그인, 장바구니, 결제, 입력 양식이 없습니다. 어느 화면에서도 성명, 연락처, 결제 정보를 요구하지 않으며, 방문자에 관한 어떠한 데이터베이스도 보유하고 있지 않습니다.</p>
+        </li>
+        <li>
+          <h2>브라우저에 저장되는 값</h2>
+          <p>처음 방문하실 때 브라우저의 언어 설정을 한 번 확인해 해당 언어 폴더로 이동시켜 드립니다. 방문할 때마다 반복되지 않도록, 브라우저의 로컬 저장소에 값 하나를 남깁니다.</p>
+          <ul>
+            <li><b>cov_lang</b> — 값은 <b>1</b>. 그 외에는 없습니다. 이미 한 번 확인했다는 사실만 기록합니다.</li>
+          </ul>
+          <p>이 값은 브라우저 안에만 남고 저희에게 전송되지 않습니다. 브라우저 저장소를 지우시면 함께 삭제되며, 지우셔도 사이트는 정상 작동합니다. 광고나 추적 목적의 쿠키는 사용하지 않습니다.</p>
+        </li>
+        <li>
+          <h2>호스팅과 접속 기록</h2>
+          <p>본 사이트는 GitHub Pages에서 호스팅됩니다. 다른 웹 서버와 마찬가지로 해당 서비스는 수신한 요청을 기록하며, 여기에는 IP 주소가 포함될 수 있습니다. 이 기록은 호스팅 사업자에게 귀속되어 그 사업자의 방침에 따라 처리되며, 저희는 이를 전달받지도 보관하지도 않습니다.</p>
+        </li>
+        <li>
+          <h2>외부에서 불러오는 서체</h2>
+          <p>서체는 Google Fonts와 jsDelivr에서 불러옵니다. 브라우저가 해당 서비스에 직접 접속해 글꼴 파일을 받아오므로, 그 과정에서 해당 서비스에 요청 기록이 남습니다. 저희가 이 과정에서 전달받는 정보는 없습니다.</p>
+        </li>
+        <li>
+          <h2>구매하실 때</h2>
+          <p>구매는 이 사이트가 아니라 온라인 쇼핑몰에서 이루어집니다. 그곳에 입력하시는 성명, 주소, 연락처, 결제 정보는 해당 쇼핑몰의 개인정보처리방침에 따라 수집·처리되므로, 주문 전에 그 방침을 확인해 주세요. 이 페이지는 그 부분을 다루지 않습니다.</p>
+        </li>
+        <li>
+          <h2>아직 켜지 않은 것들</h2>
+          <p>문의 양식, 뉴스레터 신청, 웹사이트 분석 도구를 추후 도입할 예정입니다. 현재는 어느 것도 작동하고 있지 않습니다. 그중 하나라도 시작되는 시점에는, 무엇을 어떤 목적으로 수집하고 얼마나 보유하는지를 이 페이지에 먼저 반영하고 변경일자를 함께 기재하겠습니다.</p>
+        </li>
+        <li>
+          <h2>제3자 제공과 처리위탁</h2>
+          <p class="none">없음</p>
+          <p>본 사이트를 통해 보유하는 개인정보가 없으므로, 제3자에게 제공할 것도, 처리를 위탁할 것도, 국외로 이전할 것도 없습니다.</p>
+        </li>
+        <li>
+          <h2>정보주체의 권리</h2>
+          <p>개인정보 보호법에 따라 자신의 개인정보에 대한 열람, 정정·삭제, 처리정지를 요구하실 수 있습니다. 본 사이트를 통해 보유한 정보가 없어 보여 드릴 내용도 없습니다만, 직접 확인을 원하시면 연락 주세요. 알아보고 회신드리겠습니다.</p>
+          <p>구매 과정에서 입력하신 정보에 관한 요청은 주문하신 쇼핑몰로 해 주세요.</p>
+        </li>
+        <li>
+          <h2>방침의 변경</h2>
+          <p>수집하는 내용이 달라지거나 법령상 필요가 생기면 이 방침을 개정하고 새 시행일과 함께 이 페이지에 게시합니다. 중요한 변경은 시행 전에 미리 알려 드립니다.</p>
+        </li>
+      </ol>
+    </div>
+
+    <p class="mailto">
+      개인정보에 관해 궁금한 점이 있으신가요? <a href="mailto:contact@whalelandkr.com">contact@whalelandkr.com</a>
+    </p>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-tag">평범한 여행을 특별한 임무로.</p>
+        <div class="sns">
+          <span>INSTAGRAM</span>
+          <span>FACEBOOK</span>
+          <span>YOUTUBE</span>
+          <span>TIKTOK</span>
+          <a href="https://tumblbug.com/covertkr" target="_blank" rel="me noopener">TUMBLBUG</a>
+        </div>
+      </div>
+
+      <nav aria-label="작전">
+        <p class="foot-h">Operation</p>
+        <ul class="foot-list">
+          <li><a href="../mission/">브리핑</a></li>
+          <li><a href="../kit/">키트</a></li>
+          <li><a href="../report/">요원 보고서</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="고객 지원">
+        <p class="foot-h">Support</p>
+        <ul class="foot-list">
+          <li><a href="../support/">배송 &middot; 환불</a></li>
+          <li><a href="../support/#faq">자주 묻는 질문</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">문의하기</a></li>
+        </ul>
+      </nav>
+
+      <div class="news">
+        <p class="foot-h">Dispatches</p>
+        <p>새로운 작전과 재입고 소식만 전합니다. 1년에 네 번 정도 보냅니다.</p>
+        <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">명단에 등록</a> -->
+        <span class="cta cta-2 cta-off">명단에 등록</span>
+        <p class="news-soon">등록은 곧 열립니다.</p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-links">
+        <a href="../terms/">이용약관</a>
+        <a href="./">개인정보처리방침</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">웨일랜드</a>
+      </div>
+      <p>
+        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T는 웨일랜드의 상표입니다.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var sel = document.getElementById('lang');
+  if(sel){ sel.addEventListener('change', function(){
+    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
+    location.href = sel.value;
+  }); }
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var rv = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.05});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+
+</body>
+</html>
