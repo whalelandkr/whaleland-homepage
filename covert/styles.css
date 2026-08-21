@@ -715,3 +715,8 @@ h2 {
   .site-banner-tag { padding: 3px 8px; font-size: 0.62rem; }
   .site-banner-text { font-size: 0.82rem; }
 }
+
+/* 새 공식 사이트로 가는 내비 항목. 나머지와 구분되게 오렌지로 둔다. */
+.covert-nav .nav-site {
+  color: var(--orange);
+}
