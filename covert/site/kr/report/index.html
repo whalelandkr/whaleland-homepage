@@ -26,28 +26,22 @@
 <link rel="icon" href="../../favicon.ico" sizes="any" />
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다. 외부 웹폰트를 받지 않습니다. -->
 <link rel="stylesheet" href="../../assets/site.css" />
 
 <style>
 /* ================= REPORT ONLY ================= */
-.rep{padding:132px 0 24px}
+.rep{padding:56px 0 24px}
 .rep-lede{font-size:16.5px;line-height:1.85;color:var(--ink-soft);max-width:34em;margin:0 0 44px}
 
-.doc{padding:34px 36px 32px;margin:0 0 30px;position:relative}
-.doc:nth-of-type(even){transform:rotate(.4deg)}
-.doc:nth-of-type(odd){transform:rotate(-.4deg)}
-.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
-  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 22px;
+.doc{padding:clamp(26px,3.4vw,42px);margin:0 0 26px;position:relative}
+.doc-h{font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  border-bottom:1px solid var(--line);padding-bottom:13px;margin:0 0 26px;
   display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.doc-h b{color:var(--red);font-weight:400}
+.doc-h b{color:var(--orange);font-weight:950}
 
 .log{width:100%;border-collapse:collapse;margin:0}
-.log th,.log td{text-align:left;padding:9px 0;border-bottom:1px dotted var(--paper-edge)}
+.log th,.log td{text-align:left;padding:9px 0;border-bottom:1px solid var(--line)}
 .log tr:last-child th,.log tr:last-child td{border-bottom:0}
 .log th{font-weight:400;font-size:13.5px;color:var(--ink-faint);width:46%}
 .log td{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-align:right}
@@ -59,22 +53,14 @@
 .fields li::before{content:"";position:absolute;left:0;top:5px;width:13px;height:13px;
   border:1.5px solid var(--ink-faint)}
 
-.fine{font-size:13px;line-height:1.85;color:var(--ink-faint);margin:22px 0 0;padding-top:18px;border-top:1px solid var(--paper-lo)}
+.fine{font-size:13px;line-height:1.85;color:var(--ink-faint);margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line)}
 .fine b{color:var(--red);font-weight:400;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;display:block;margin:0 0 6px}
 
 .next{display:flex;gap:26px;flex-wrap:wrap;margin:8px 0 64px}
 
-/* --- KR ONLY : 한글 서체 보정 --- */
-.linkarrow,
-.cta,
-.legal-links a{font-family:var(--body)}
-.linkarrow,
-.cta{letter-spacing:.02em;text-transform:none}
-
 @media (max-width:600px){
-  .rep{padding:112px 0 16px}
-  .doc{padding:26px 22px 24px}
-  .doc:nth-of-type(even),.doc:nth-of-type(odd){transform:none}
+  .rep{padding:44px 0 16px}
+  .doc{padding:24px 20px 22px}
   .log th{width:auto}
 }
 </style>

@@ -19,28 +19,24 @@
 <link rel="icon" href="../favicon.ico" sizes="any" />
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다. 외부 웹폰트를 받지 않습니다. -->
 <link rel="stylesheet" href="../assets/site.css" />
 
 <style>
 /* ================= LEGAL ONLY ================= */
-.legaldoc{padding:132px 0 24px}
+.legaldoc{padding:56px 0 24px}
 .legal-lede{font-size:16px;line-height:1.85;color:var(--ink-soft);max-width:52ch;margin:0 0 20px}
 .stamp-date{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--red);margin:0 0 7px}
 .stamp-eff{font-size:13.5px;line-height:1.75;color:var(--ink-soft);margin:0 0 44px}
 
-.doc{padding:34px 36px 32px;margin:0 0 30px}
-.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
-  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 26px;
+.doc{padding:clamp(26px,3.4vw,42px);margin:0 0 26px}
+.doc-h{font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  border-bottom:1px solid var(--line);padding-bottom:13px;margin:0 0 26px;
   display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.doc-h b{color:var(--red);font-weight:400}
+.doc-h b{color:var(--orange);font-weight:950}
 
 .arts{list-style:none;margin:0;padding:0;counter-reset:art}
-.arts > li{counter-increment:art;padding:0 0 26px;margin:0 0 26px;border-bottom:1px dotted var(--paper-edge)}
+.arts > li{counter-increment:art;padding:0 0 26px;margin:0 0 26px;border-bottom:1px solid var(--line)}
 .arts > li:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
 .arts > li > h2{font-family:var(--body);font-weight:700;font-size:16px;letter-spacing:-.01em;margin:0 0 10px}
 .arts > li > h2::before{content:counter(art,decimal-leading-zero);display:block;
@@ -52,7 +48,7 @@
 .arts li li:last-child{margin-bottom:0}
 
 .biz{list-style:none;margin:0;padding:0}
-.biz li{display:grid;grid-template-columns:170px 1fr;gap:0 20px;padding:9px 0;border-bottom:1px dotted var(--paper-edge)}
+.biz li{display:grid;grid-template-columns:170px 1fr;gap:0 20px;padding:9px 0;border-bottom:1px solid var(--line)}
 .biz li:last-child{border-bottom:0}
 .biz b{font-weight:700;font-size:13.5px;line-height:1.5;color:var(--ink);padding-top:1px}
 .biz p{margin:0;font-size:14.5px;line-height:1.7}
@@ -63,8 +59,8 @@
 .mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
 
 @media (max-width:600px){
-  .legaldoc{padding:112px 0 16px}
-  .doc{padding:26px 22px 24px}
+  .legaldoc{padding:44px 0 16px}
+  .doc{padding:24px 20px 22px}
   .biz li{grid-template-columns:96px 1fr;gap:0 16px;padding:11px 0}
   .biz b{font-size:12.5px;line-height:1.45}
   .biz p{font-size:14px}

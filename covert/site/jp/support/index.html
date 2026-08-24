@@ -26,37 +26,25 @@
 <link rel="icon" href="../../favicon.ico" sizes="any" />
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다. 외부 웹폰트를 받지 않습니다. -->
 <link rel="stylesheet" href="../../assets/site.css" />
 
 <style>
 /* ================= SUPPORT ONLY ================= */
 
-/* --- JP ONLY : 본문 서체 --- */
-:root{
-  --body:'Pretendard JP Variable','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,'Hiragino Sans','Yu Gothic',sans-serif;
-}
-
-.sup{padding:132px 0 24px}
+.sup{padding:56px 0 24px}
 .sup-lede{font-size:16.5px;line-height:1.9;color:var(--ink-soft);max-width:34em;margin:0 0 44px}
 
-.doc{padding:34px 36px 32px;margin:0 0 30px;scroll-margin-top:100px}
-.doc:nth-of-type(even){transform:rotate(.4deg)}
-.doc:nth-of-type(odd){transform:rotate(-.4deg)}
-.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
-  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 22px;
+.doc{padding:clamp(26px,3.4vw,42px);margin:0 0 26px;scroll-margin-top:100px}
+.doc-h{font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  border-bottom:1px solid var(--line);padding-bottom:13px;margin:0 0 26px;
   display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.doc-h b{color:var(--red);font-weight:400}
+.doc-h b{color:var(--orange);font-weight:950}
 
 /* 라벨은 왼쪽, 본문은 오른쪽. 좁은 화면에서도 위아래로 쪼개지 않는다.
    쪼개면 라벨이 그냥 굵은 한 줄로 묻혀서 훑어보기 어렵다. */
 .rows{list-style:none;margin:0;padding:0}
-.rows li{display:grid;grid-template-columns:120px 1fr;gap:0 22px;padding:15px 0;border-bottom:1px dotted var(--paper-edge)}
+.rows li{display:grid;grid-template-columns:120px 1fr;gap:0 22px;padding:15px 0;border-bottom:1px solid var(--line)}
 .rows li:last-child{border-bottom:0}
 .rows b{grid-column:1;grid-row:1;font-weight:700;font-size:14px;line-height:1.5;color:var(--ink);padding-top:1px}/* 문단이 여러 개여도 전부 오른쪽 칸에 쌓이게 한다. 고정하지 않으면 두 번째 문단이 라벨 칸으로 밀려난다. */
 .rows p{grid-column:2;margin:0;font-size:14.5px;line-height:1.8}
@@ -64,29 +52,21 @@
 .rows p b{font-weight:700;font-size:inherit;color:var(--ink);padding:0}
 
 .faq{list-style:none;margin:0;padding:0}
-.faq li{padding:0 0 20px;margin:0 0 20px;border-bottom:1px dotted var(--paper-edge)}
+.faq li{padding:0 0 20px;margin:0 0 20px;border-bottom:1px solid var(--line)}
 .faq li:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
 .faq q{display:block;font-weight:700;font-size:15.5px;margin:0 0 7px;quotes:none}
 .faq q::before{content:"Q. ";font-family:var(--mono);font-weight:400;font-size:12px;color:var(--red);letter-spacing:.08em}
 .faq p{margin:0;font-size:14.5px;line-height:1.9;color:var(--ink-soft)}
 
-.fine{font-size:13px;line-height:1.9;color:var(--ink-faint);margin:22px 0 0;padding-top:18px;border-top:1px solid var(--paper-lo)}
+.fine{font-size:13px;line-height:1.9;color:var(--ink-faint);margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line)}
 .fine b{color:var(--red);font-weight:400;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;display:block;margin:0 0 6px}
 
 .mailto{margin:8px 0 64px;font-size:15px}
 .mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
 
-/* --- JP ONLY : 서체 보정 --- */
-.linkarrow,
-.cta,
-.legal-links a{font-family:var(--body)}
-.linkarrow,
-.cta{letter-spacing:.02em;text-transform:none}
-
 @media (max-width:600px){
-  .sup{padding:112px 0 16px}
-  .doc{padding:26px 22px 24px}
-  .doc:nth-of-type(even),.doc:nth-of-type(odd){transform:none}
+  .sup{padding:44px 0 16px}
+  .doc{padding:24px 20px 22px}
   .rows li{grid-template-columns:78px 1fr;gap:0 14px;padding:14px 0}
   .rows b{font-size:12.5px;line-height:1.45}
   .rows p{font-size:14px;line-height:1.75}

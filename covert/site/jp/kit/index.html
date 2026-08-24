@@ -27,48 +27,36 @@
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
-
 <!-- JP: 가나·한자용 / KR: 푸터 사업자 정보의 한글용. 둘 다 동적 서브셋 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다. 외부 웹폰트를 받지 않습니다. -->
 <link rel="stylesheet" href="../../assets/site.css" />
 
 <style>
 /* ================= KIT ONLY ================= */
 
-/* --- JP ONLY : 본문 서체 --- */
-:root{
-  --body:'Pretendard JP Variable','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,'Hiragino Sans','Yu Gothic',sans-serif;
-}
-
-.kit{padding:132px 0 24px}
+.kit{padding:56px 0 24px}
 .kit-lede{font-size:16.5px;line-height:1.9;color:var(--ink-soft);max-width:34em;margin:0 0 44px}
 
 /* 서류 한 장 */
-.doc{padding:34px 36px 32px;margin:0 0 30px}
-.doc:nth-of-type(even){transform:rotate(.4deg)}
-.doc:nth-of-type(odd){transform:rotate(-.4deg)}
-.doc-h{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;color:var(--ink-faint);
-  border-bottom:1px solid var(--paper-lo);padding-bottom:10px;margin:0 0 22px;
+.doc{padding:clamp(26px,3.4vw,42px);margin:0 0 26px}
+.doc-h{font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  border-bottom:1px solid var(--line);padding-bottom:13px;margin:0 0 26px;
   display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.doc-h b{color:var(--red);font-weight:400}
+.doc-h b{color:var(--orange);font-weight:950}
 
 /* 물품 명세서 */
 .pack{list-style:none;margin:0;padding:0}
-.pack li{display:flex;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px dotted var(--paper-edge);flex-wrap:wrap}
+.pack li{display:flex;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
 .pack li:last-child{border-bottom:0}
 .pack i{font-family:var(--mono);font-style:normal;font-size:11px;color:var(--red);flex-shrink:0;width:22px}
 .pack b{font-weight:700;font-size:15.5px}
-.pack s{flex:1;height:0;border-bottom:1px dotted var(--paper-edge);text-decoration:none;min-width:16px;transform:translateY(-3px)}
+.pack s{flex:1;height:0;border-bottom:1px solid var(--line);text-decoration:none;min-width:16px;transform:translateY(-3px)}
 .pack em{font-family:var(--mono);font-style:normal;font-size:12px;color:var(--ink-soft);flex-shrink:0;letter-spacing:.06em}
 .pack p{margin:5px 0 0 34px;font-size:13.5px;line-height:1.85;color:var(--ink-soft);flex-basis:100%}
 
 /* 명세 표 */
 .spec{width:100%;border-collapse:collapse}
-.spec th,.spec td{text-align:left;padding:10px 0;border-bottom:1px solid var(--paper-lo);vertical-align:top}
+.spec th,.spec td{text-align:left;padding:10px 0;border-bottom:1px solid var(--line);vertical-align:top}
 .spec tr:last-child th,.spec tr:last-child td{border-bottom:0}
 .spec th{font-weight:700;font-size:13.5px;line-height:1.5;color:var(--ink);width:32%;padding-right:18px}
 .spec td{font-size:15px}
@@ -83,24 +71,14 @@
    .cta-off 는 푸터에서도 쓰므로 site.css 에 있습니다. */
 .buy-soon{display:flex;flex-direction:column;align-items:flex-start}
 .buy-soon-note{font-family:var(--body);font-size:11.5px;color:var(--red);margin:9px 0 0}
-.fine{font-size:13px;line-height:1.85;color:var(--ink-faint);margin:24px 0 0;padding-top:18px;border-top:1px solid var(--paper-lo)}
+.fine{font-size:13px;line-height:1.85;color:var(--ink-faint);margin:24px 0 0;padding-top:18px;border-top:1px solid var(--line)}
 .fine b{color:var(--red);font-weight:400;font-family:var(--mono);font-size:11px;letter-spacing:.16em;display:block;margin:0 0 6px}
 
 .back{margin:8px 0 64px}
 
-/* --- JP ONLY : 서체 보정 ---
-   Courier Prime 에는 가나·한자 글리프가 없습니다.
-   일본어가 들어가는 요소만 본문 서체로 되돌립니다. */
-.linkarrow,
-.cta,
-.legal-links a{font-family:var(--body)}
-.linkarrow,
-.cta{letter-spacing:.02em;text-transform:none}
-
 @media (max-width:600px){
-  .kit{padding:112px 0 16px}
-  .doc{padding:26px 22px 24px}
-  .doc:nth-of-type(even),.doc:nth-of-type(odd){transform:none}
+  .kit{padding:44px 0 16px}
+  .doc{padding:24px 20px 22px}
   .spec th{width:34%;padding-right:14px;font-size:12.5px}
   .spec td{font-size:14px}
 }
@@ -143,7 +121,7 @@
         </li>
         <li>
           <i>02</i><b>エージェントパスポート</b><s></s><em>× 1</em>
-          <p>88 × 125 mm、40ページ。レザーテックス貼りの表紙に、マット金箔でエンブレムを箔押ししています。中には15の区域、30か所、45の任務。場所ごとにその街に合わせて変装したボミのイラストが30種、あわせて入っています。</p>
+          <p>88 × 125 mm、40ページ。レザーテックス貼りの表紙に、マット金箔でエンブレムを箔押ししています。中には15の区域、30か所、45の任務。場所ごとにその街に合わせて変装した BUMMY のイラストが30種、あわせて入っています。</p>
         </li>
         <li>
           <i>03</i><b>スタンプシール</b><s></s><em>× 20</em>
@@ -155,11 +133,11 @@
         </li>
         <li>
           <i>05</i><b>要員証セット</b><s></s><em>× 1 SET</em>
-          <p>ボミの PVC 要員証に、カードケースとネックストラップまでお付けします。ボミの署名まで入っていて、実際の社員証に劣らない作り込みです。仕上がった状態で届きますので、記入する箇所はありません。</p>
+          <p>BUMMY の PVC 要員証に、カードケースとネックストラップまでお付けします。BUMMY の署名まで入っていて、実際の社員証に劣らない作り込みです。仕上がった状態で届きますので、記入する箇所はありません。</p>
         </li>
         <li>
-          <i>06</i><b>ボミのキーリング</b><s></s><em>× 1 RANDOM</em>
-          <p>区域ごとにひとつずつ、その街に似合う服を着たボミのキーリングが15種あります。どのボミが入っているかは、封筒を開けてみてのお楽しみです。</p>
+          <i>06</i><b>BUMMY のキーリング</b><s></s><em>× 1 RANDOM</em>
+          <p>区域ごとにひとつずつ、その街に似合う服を着た BUMMY のキーリングが15種あります。どの BUMMY が入っているかは、封筒を開けてみてのお楽しみです。</p>
         </li>
       </ul>
       <p class="fine">
