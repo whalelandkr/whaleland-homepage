@@ -32,7 +32,9 @@ body{
     radial-gradient(90% 65% at 90% 95%, rgba(150,128,88,.14) 0%, transparent 60%);
   -webkit-font-smoothing:antialiased;
 }
-img{max-width:100%;display:block}
+/* height:auto 가 없으면 img 의 height 속성값이 그대로 남아 세로만 고정된다.
+   width="340" height="421" 이 붙은 범이 이미지가 170x421 로 눌렸던 원인이다. */
+img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--red);outline-offset:3px}
 .skip{position:absolute;left:-9999px}
