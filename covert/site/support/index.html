@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Q&amp;A — C.O.V.E.R.T</title>
+<title>Shipping &middot; Returns &middot; FAQ — C.O.V.E.R.T</title>
 <meta name="description" content="Shipping, cancellation and exchange terms for C.O.V.E.R.T, plus answers to the questions we get asked most." />
 
 <!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
@@ -15,8 +15,9 @@
 <link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/support/" />
 
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://whalelandkr.com/covert/site/support/" />
 <meta property="og:site_name" content="C.O.V.E.R.T" />
-<meta property="og:title" content="Q&amp;A — C.O.V.E.R.T" />
+<meta property="og:title" content="Shipping &middot; Returns &middot; FAQ — C.O.V.E.R.T" />
 <meta property="og:description" content="Shipping, cancellation and exchange terms, plus answers to common questions." />
 <meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
 <meta property="og:locale" content="en_US" />
@@ -28,17 +29,15 @@
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
 <!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다. 외부 웹폰트를 받지 않습니다. -->
 <link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/boot.js"></script>
 
 <style>
 /* ================= SUPPORT ONLY ================= */
 .sup{padding:56px 0 24px}
 .sup-lede{font-size:16.5px;line-height:1.85;color:var(--ink-soft);max-width:52ch;margin:0 0 44px}
 
-.doc{padding:clamp(26px,3.4vw,42px);margin:0 0 26px;scroll-margin-top:100px}
-.doc-h{font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
-  border-bottom:1px solid var(--line);padding-bottom:13px;margin:0 0 26px;
-  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.doc-h b{color:var(--orange-ink);font-weight:950}
+/* 공용 .doc 에 이 페이지만의 한 가지를 더한다 (site.css 참조) */
+.doc{scroll-margin-top:100px}
 
 /* 항목 목록 */
 /* 라벨은 왼쪽, 본문은 오른쪽. 좁은 화면에서도 위아래로 쪼개지 않는다.
@@ -64,12 +63,9 @@
 .fine{font-size:13px;line-height:1.8;color:var(--ink-faint);margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line)}
 .fine b{color:var(--red);font-weight:400;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;display:block;margin:0 0 6px}
 
-.mailto{margin:8px 0 64px;font-size:15px}
-.mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
-
 @media (max-width:600px){
   .sup{padding:44px 0 16px}
-  .doc{padding:24px 20px 22px}
+
   .rows li{grid-template-columns:78px 1fr;gap:0 14px;padding:14px 0}
   .rows b{font-size:12.5px;line-height:1.45}
   .rows p{font-size:14px;line-height:1.75}
@@ -105,7 +101,7 @@
 
     <!-- 배송 -->
     <div class="sheet doc rv" id="shipping">
-      <p class="doc-h"><span><b>SHIPPING</b></span><span>ONLINE ORDERS</span></p>
+      <h2 class="doc-h"><span><b>SHIPPING</b></span><span>ONLINE ORDERS</span></h2>
       <ul class="rows">
         <li>
           <b>Dispatch</b>
@@ -113,11 +109,11 @@
         </li>
         <li>
           <b>Within Korea</b>
-          <p>Sent by CJ Logistics. Shipping is ₩3,000, and free on orders over ₩50,000. Delivery takes one to three business days after dispatch.</p>
+          <p>Sent by CJ Logistics. Shipping is ₩3,000, and free on orders over ₩50,000. Jeju adds ₩3,000 and other remote or island areas add ₩5,000. Delivery takes one to three business days after dispatch.</p>
         </li>
         <li>
           <b>International</b>
-          <p>Sent by Korea Post EMS. The charge is worked out at checkout from the destination and the weight at standard EMS rates, plus ₩3,000 for packing. Free shipping doesn't apply to international orders.</p>
+          <p>Sent by Korea Post EMS. The charge is worked out at checkout from the destination and the weight at standard EMS rates. There is no packing fee. Free shipping doesn't apply to international orders.</p>
           <p>Delivery takes two to five business days after dispatch, not counting time in customs. Any customs duty or import tax is charged by the destination country and paid by the recipient. We can't calculate it in advance.</p>
         </li>
         <li>
@@ -129,7 +125,7 @@
 
     <!-- 취소·교환·환불 -->
     <div class="sheet doc rv" id="returns">
-      <p class="doc-h"><span><b>RETURNS</b></span><span>CANCELLATION &middot; EXCHANGE &middot; REFUND</span></p>
+      <h2 class="doc-h"><span><b>RETURNS</b></span><span>CANCELLATION &middot; EXCHANGE &middot; REFUND</span></h2>
       <ul class="rows">
         <li>
           <b>Before dispatch</b>
@@ -169,27 +165,27 @@
 
     <!-- FAQ -->
     <div class="sheet doc rv" id="faq">
-      <p class="doc-h"><span><b>FAQ</b></span><span>ASKED MOST OFTEN</span></p>
+      <h2 class="doc-h"><span><b>FAQ</b></span><span>ASKED MOST OFTEN</span></h2>
       <ul class="faq">
         <li>
           <q>Do I need to read Korean?</q>
-          <p>No. The kit is printed in four editions — Korean, English, Japanese, and Simplified Chinese. Pick the one you read; the missions, the tips and the forms are all in that language.</p>
+          <p>No. The kit is printed in four editions — Korean, English, Japanese, and Simplified Chinese. Pick the one you read; the assignments, the tips and the forms are all in that language.</p>
         </li>
         <li>
           <q>Do I have to install an app?</q>
-          <p>No. There's no app and no account. The whole thing runs on paper. A QR code on the last page lets you file a report with headquarters afterwards, but that's optional and nothing depends on it.</p>
+          <p>No. There's no app and no account. The whole thing runs on paper. A QR code at the back of the passport lets you file a report with headquarters afterwards, but that's optional and nothing depends on it.</p>
         </li>
         <li>
           <q>Is there a stamp I have to find somewhere?</q>
-          <p>No. There are no stamp desks and no partner venues to visit. Clear stickers come in the kit — you close each district page yourself once you've finished it.</p>
+          <p>No. There are no stamp desks and no partner venues to visit. Clear stickers come in the kit — you close each zone page yourself once you've finished it.</p>
         </li>
         <li>
           <q>How long does it take?</q>
-          <p>As long as you like. There's no deadline and no set order. Do one district in an afternoon, or spread the fifteen across several trips.</p>
+          <p>As long as you like. There's no deadline and no set order. Do one zone in an afternoon, or spread the fifteen across several trips.</p>
         </li>
         <li>
-          <q>Do I have to finish all fifteen districts?</q>
-          <p>No. Every district stands on its own. Finishing one is a complete thing in itself.</p>
+          <q>Do I have to finish all fifteen zones?</q>
+          <p>No. Every zone stands on its own. Finishing one is a complete thing in itself.</p>
         </li>
         <li>
           <q>Can I choose which keyring I get?</q>
@@ -201,11 +197,11 @@
         </li>
         <li>
           <q>What if a place is closed when I get there?</q>
-          <p>It happens. The passport carries a field note for each district covering closing days and the times worth avoiding, so check the page before you set out.</p>
+          <p>It happens. The passport carries a field note for each zone covering closing days and the times worth avoiding, so check the page before you set out.</p>
         </li>
         <li>
           <q>Is this suitable for children?</q>
-          <p>The districts include museums, parks and malls, and the assignments are things like finding, tasting and noticing. Younger agents will want an adult along for the walking and the reading.</p>
+          <p>The zones include museums, parks and malls, and the assignments are things like finding, tasting and noticing. Younger agents will want an adult along for the walking and the reading.</p>
         </li>
       </ul>
     </div>
@@ -222,7 +218,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--orange)">.</i></p>
         <p class="foot-tag">Ordinary trips, turned into extraordinary missions.</p>
         <div class="sns">
           <span>INSTAGRAM</span>
@@ -236,15 +232,16 @@
       <nav aria-label="Operations">
         <p class="foot-h">Operation</p>
         <ul class="foot-list">
-          <li><a href="../mission/">The briefing</a></li>
+          <li><a href="../zones/">The zones</a></li>
           <li><a href="../kit/">The kit</a></li>
-          <li><a href="../report/">Field reports</a></li>
+          <li><a href="../field-report/">Field reports</a></li>
         </ul>
       </nav>
 
       <nav aria-label="Support">
         <p class="foot-h">Support</p>
         <ul class="foot-list">
+          <li><a href="../get/">How to get it</a></li>
           <li><a href="./">Shipping &amp; returns</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="mailto:contact@whalelandkr.com">Contact us</a></li>
@@ -268,56 +265,15 @@
         <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
       </div>
       <p>
-        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
-        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        웨일랜드 (Whale Land) · 대표 김정후 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 010-9937-1628<br />
+        서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)<br />
         contact@whalelandkr.com<br />
         © 2026 Whale Land. C.O.V.E.R.T is a trademark of Whale Land.
       </p>
     </div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var sel = document.getElementById('lang');
-  if(sel){ sel.addEventListener('change', function(){
-    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
-    location.href = sel.value;
-  }); }
-  var rv = document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window && !reduce){
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    },{threshold:.1});
-    rv.forEach(function(el){ io.observe(el); });
-  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
-})();
-</script>
-
-<!-- ============================================================
-     GA4 — 측정 ID 발급 후 G-XXXXXXXXXX 를 교체하고 주석을 해제하세요
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
-     ============================================================ -->
-
-<!-- ============================================================
-     META PIXEL — 픽셀 ID 발급 후 000000000000000 을 교체하고 주석을 해제하세요
-<script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '000000000000000');
-  fbq('track', 'PageView');
-</script>
-     ============================================================ -->
 
 </body>
 </html>

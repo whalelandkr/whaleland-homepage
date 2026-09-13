@@ -24,6 +24,10 @@
   --green:#54be78;
   --shadow:0 26px 70px rgba(39,28,18,.14);
 
+  /* 헤더 높이. 개봉 구간의 핀이 calc(100svh - var(--bar)) 로 이 값을 씁니다.
+     두 군데 적으면 반드시 어긋납니다. */
+  --bar:70px;
+
   --body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR','Noto Sans JP','Noto Sans SC',sans-serif;
   --w:1120px;
 
@@ -43,7 +47,10 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;overflow-x:hidden;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75;
+  /* ⚠️ overflow-x:hidden 을 쓰면 body 가 스크롤 컨테이너가 되어
+     자손의 position:sticky 가 «붙지 않는다». 개봉 구간의 핀이 여기에 걸린다.
+     clip 은 잘라 내기만 하고 스크롤 컨테이너를 만들지 않아 sticky 가 산다. */
+  margin:0;overflow-x:clip;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75;
   background:
     url("cream-bg.png") center / cover fixed,
     linear-gradient(180deg, var(--cream) 0%, #fffdf3 100%);
@@ -53,7 +60,10 @@ body{
    width="340" height="421" 이 붙은 범이 이미지가 170x421 로 눌렸던 원인이다. */
 img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+/* ⚠️ --orange 는 크림 바탕에서 2.03:1 이라 «초점이 어디 있는지 안 보인다».
+   WCAG 2.2 SC 1.4.11 은 초점 표시에 3:1 을 요구한다. --orange-ink 는 4.51:1 이다.
+   2026-09-13 에 실측해 바꿨다. --orange 로 되돌리지 말 것 */
+:focus-visible{outline:2px solid var(--orange-ink);outline-offset:3px}
 .skip{position:absolute;left:-9999px}
 .skip:focus{left:12px;top:12px;z-index:99;background:var(--brown);color:#fff;padding:10px 18px;border-radius:999px;font-size:13px;font-weight:800}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -114,6 +124,85 @@ a{color:inherit;text-decoration:none}
 }
 .linkarrow:hover{border-bottom-color:var(--orange)}
 
+/* ---------- 장면 (홈 챕터 · 하위 페이지 공통) ----------
+   사진 한 장과 글 한 덩이가 좌우로 서는 틀입니다. 개봉 같은 «핀»이 없고 평범하게 흐릅니다.
+   홈의 일곱 챕터와 /zones/ 의 설명 장면이 같은 틀을 씁니다.
+   ⚠️ 카피 규격은 _카피규칙.md 입니다. 고친 뒤 node social/_copycheck.mjs 를 돌립니다.
+   홈에서는 개봉이 «영화», 이 장면들이 «설명서» 역할입니다 — 리듬을 바꾸는 것이 의도입니다. */
+
+.chapter{
+  max-width:1240px;margin:0 auto;
+  padding:clamp(72px,10vh,128px) clamp(20px,5vw,64px);
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+  align-items:center;gap:clamp(28px,5vw,72px);
+}
+/* 사진과 글의 좌우를 번갈아 놓는다. 같은 배치가 이어지면 지루하다 */
+.chapter.flip .shot{order:2}
+.chapter.flip .copy{order:1}
+
+/* ⚠️ 내지 사진은 배경이 흰색·회색이다. 히어로처럼 크림에 흘려 넣을 수 없어서
+   (배경과 종이의 밝기가 겹친다) 둥근 카드에 담는다 — 규칙의 38px 이다 */
+.shot{border-radius:38px;overflow:hidden;box-shadow:var(--shadow);background:#fdf3e3;line-height:0}
+.shot img{width:100%;height:auto;display:block}
+/* 세로로 긴 컷. 칸을 꽉 채우면 글 쪽이 밀려 두 칸의 무게가 안 맞는다 */
+.chapter.portrait .shot{max-width:470px;margin:0 auto}
+
+.chapter h2{
+  color:var(--brown);font-weight:800;margin:0 0 18px;
+  font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.2;letter-spacing:-.022em;
+}
+.chapter .lead{
+  color:var(--muted);line-height:1.8;margin:0;
+  font-size:clamp(.96rem,1.4vw,1.08rem);max-width:27em;
+}
+.chapter .lead + .lead{margin-top:.85em}
+/* ⚠️ 한국어는 기본 규칙으로 줄을 바꾸면 «어절 중간»에서 끊긴다 */
+.chapter h2,.chapter .lead,.chapter .kicker{word-break:keep-all}
+/* ⚠️ 그런데 keep-all 은 «어절이 있는» 한국어 규칙이다. 일본어·중국어는 어절이 없어서
+      한 줄이 통째로 안 끊기고 화면을 넘는다. 네 언어가 이 파일을 같이 쓰므로 여기서 푼다.
+      :lang(zh) 는 lang="zh-Hans" 도 받는다 (앞자리 일치) */
+:lang(ja) .chapter h2,:lang(ja) .chapter .lead,:lang(ja) .chapter .kicker,
+:lang(zh) .chapter h2,:lang(zh) .chapter .lead,:lang(zh) .chapter .kicker{
+  word-break:normal;line-break:strict;
+}
+.chapter .go{margin:26px 0 0}
+
+/* ── 숫자 전용 장면 ─────────────────────────────────
+   사진 대신 «수»를 세운다. 산문에 숫자를 박아 넣지 않기 위한 자리다
+   (_카피규칙.md 「숫자는 문장 밖으로 꺼낸다」 · Banorama 가 쓰는 방식) */
+.chapter.band{
+  grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center;
+  gap:clamp(22px,3.4vw,38px);
+}
+.chapter.band .copy{max-width:640px}
+.chapter.band .lead{max-width:30em;margin-left:auto;margin-right:auto}
+
+.bignum{
+  margin:0;color:var(--brown);font-weight:800;
+  font-size:clamp(1rem,1.5vw,1.12rem);
+  display:flex;align-items:baseline;gap:.45em;flex-wrap:wrap;justify-content:center;
+}
+.bignum b{
+  font-size:clamp(2.6rem,6.4vw,4.2rem);line-height:1;font-weight:800;
+  font-variant-numeric:tabular-nums;letter-spacing:-.04em;
+}
+.bignum i{font-style:normal;color:var(--orange);font-weight:950}
+
+/* ⚠️ .badge 는 letter-spacing .14em + uppercase 라 «라틴 대문자 전제»다.
+   「한국어」「日本語」에 그대로 걸면 자간만 뜯어지고 uppercase 는 무효다
+   (_카피규칙.md 「kicker 주의」와 같은 함정). 알약 안에서만 푼다 */
+.pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0}
+.pills .badge{letter-spacing:0;text-transform:none;font-size:.84rem;padding:8px 17px}
+/* 「없다」를 말하는 알약은 오렌지로 칠하지 않는다 — 자랑이 아니라 조건이다 */
+.pills .badge.off{background:rgba(255,255,255,.52);color:var(--muted);box-shadow:inset 0 0 0 1px var(--line)}
+
+@media (max-width:900px){
+  .chapter{grid-template-columns:1fr;gap:26px;padding:clamp(56px,8vh,86px) clamp(20px,5vw,64px)}
+  /* 한 칸으로 쌓이면 좌우 교대는 뜻이 없습니다. 어느 장면이든 사진이 먼저입니다 */
+  .chapter.flip .shot,.chapter.flip .copy{order:0}
+  .chapter .lead{max-width:none}
+}
+
 /* ---------- cards ---------- */
 .sheet{
   background:rgba(255,255,255,.64);border:1px solid rgba(255,255,255,.6);
@@ -146,9 +235,79 @@ a{color:inherit;text-decoration:none}
 .legal-links a{color:var(--muted)}
 .legal-links a:hover{color:var(--brown)}
 
+/* ---------- 문서 지면 : 약관 · 처리방침 · 안내 ----------
+   24개 파일이 같은 규칙을 각자 품고 있었습니다. 한 곳으로 올립니다.
+   한 언어를 고치면 나머지 셋도 고쳐야 하는데, 규칙이 24곳에 흩어져 있으면
+   그 규칙을 지킬 수가 없습니다. */
+.doc{padding:clamp(26px,3.4vw,42px);margin:0 0 26px}
+.doc-h{
+  font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+  border-bottom:1px solid var(--line);padding-bottom:13px;margin:0 0 26px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap
+}
+.doc-h b{color:var(--orange-ink);font-weight:950}
+.mailto{margin:8px 0 64px;font-size:15px}
+.mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
+
+/* ---------- 라벨:값 한 줄 ----------
+   「구역 15 · 장소 30 · 임무 45」처럼 «세어 보여 주는» 자리.
+   분위기 문구만으로는 무엇을 파는지 3초 안에 전해지지 않습니다. */
+.tagrow{display:flex;flex-wrap:wrap;gap:9px 22px;margin:18px 0 0;font-size:.86rem;color:var(--muted)}
+.tagrow span{display:inline-flex;align-items:baseline;gap:7px;white-space:nowrap}
+.tagrow b{color:var(--brown);font-weight:900;font-variant-numeric:tabular-nums}
+
+/* ---------- 고시표 ----------
+   상품정보제공고시「기타재화」처럼 «법이 요구해서 싣는» 표.
+   좁은 화면에서는 라벨을 값 위로 올립니다. 두 칸으로 누르면 글자가 갈라집니다. */
+.notice{width:100%;border-collapse:collapse;font-size:.86rem;line-height:1.7}
+.notice th,.notice td{text-align:left;vertical-align:top;padding:11px 0;border-bottom:1px solid var(--line)}
+.notice th{width:34%;padding-right:18px;color:var(--brown);font-weight:800;font-size:.8rem}
+.notice tr:last-child th,.notice tr:last-child td{border-bottom:0}
+@media (max-width:560px){
+  .notice th{display:block;width:auto;border-bottom:0;padding:11px 0 2px}
+  .notice td{display:block;padding-top:0}
+}
+
+/* ---------- 개봉 구간이 쓰는 것 ----------
+   핀이 잡는 높이가 헤더 높이와 «같은 단위»여야 합니다.
+   숫자를 두 군데 적으면 반드시 어긋납니다. */
+/* ⚠️ --bar 를 .topbar 에 걸면 핀이 그 값을 «못 받는다». 핀은 헤더 밖에 있다.
+   축소형을 쓰는 페이지가 html 에 --bar:48px 를 걸고, 여기서는 쓰기만 한다 */
+.topbar.slim{min-height:var(--bar)}
+.topbar.slim .topbar-in{min-height:var(--bar);padding-top:0;padding-bottom:0}
+.topbar.slim .mark{font-size:.86rem}
+/* 건너뛰기 — 초점을 받았을 때만 나오는 .skip 과 달리 «항상» 보입니다.
+   푸터가 유일한 내비인데 개봉 구간이 그 위에 열 화면을 깔기 때문입니다. */
+.skip-btn{
+  position:absolute;right:max(16px,3vw);top:calc(var(--bar) + 14px);z-index:30;
+  font:inherit;font-size:.76rem;font-weight:900;letter-spacing:.06em;
+  color:var(--brown);background:rgba(255,255,255,.62);
+  border:1px solid rgba(97,65,43,.16);border-radius:999px;padding:7px 14px;cursor:pointer
+}
+.skip-btn:hover{background:rgba(255,255,255,.85)}
+/* ⚠️ 좁은 화면에서는 이 단추가 «제목 위»에 얹힙니다. 히어로가 화면 폭을 다 쓰기 때문입니다
+   (360px 에서 「도착해서,」 가 단추 뒤로 들어갔습니다). 아래로 내립니다 —
+   건너뛰는 방향이 아래이기도 해서 자리가 오히려 맞습니다. */
+@media (max-width:760px){
+  .skip-btn{top:auto;bottom:calc(16px + env(safe-area-inset-bottom, 0px))}
+}
+
+/* ---------- 모션 3상태 ----------
+   자동 / 전체 / 정적. 2단으로 두면 한 번 끈 사람이 영영 정적에 갇힙니다.
+   자리는 푸터 글자 한 줄입니다 — 우하단 플로팅은 나중에 다른 버튼과 자리를 다툽니다. */
+.motionbtn{
+  background:none;border:0;padding:0;margin:0;font:inherit;
+  font-size:.78rem;font-weight:800;color:var(--muted);cursor:pointer;
+  border-bottom:1px dotted rgba(97,65,43,.35)
+}
+.motionbtn:hover{color:var(--brown)}
+
 /* ---------- scroll reveal ---------- */
 .rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
+/* JS 가 꺼져 있으면 .in 이 붙지 않아 본문이 통째로 사라집니다.
+   boot.js 가 제일 먼저 html 에 .js 를 붙이므로, 없으면 그냥 보입니다. */
+html:not(.js) .rv{opacity:1;transform:none}
 
 @media (max-width:900px){
   .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
@@ -158,7 +317,13 @@ a{color:inherit;text-decoration:none}
   .foot-grid{grid-template-columns:1fr}
   .sheet{border-radius:24px}
 }
+/* ⚠️ 예전에는 여기서 «*{animation:none!important}» 를 걸었다. 두 가지가 잘못됐다.
+   (1) JS 가 인라인으로 건 transition 까지 !important 로 이겨서 장면 전환이 뚝 끊겼다.
+   (2) 정작 rAF 로 도는 개봉 연출은 전혀 막지 못한다 — 반쪽짜리였다.
+   막아야 할 것만 이름으로 막는다. 개봉은 JS 가 모션 모드로 처리한다. */
 @media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .cta,.cta-2,.linkarrow{transition:none}
+  .cta:hover{transform:none}
 }

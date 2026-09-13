@@ -14,6 +14,15 @@
 <link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/terms/" />
 <link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/terms/" />
 <link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/terms/" />
+<!-- noindex 라 검색에는 안 뜨지만, 메신저로 주소를 보내면 미리보기가 뜹니다. -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:url" content="https://whalelandkr.com/covert/site/kr/terms/" />
+<meta property="og:title" content="이용약관 — C.O.V.E.R.T" />
+<meta property="og:description" content="웨일랜드가 운영하는 C.O.V.E.R.T 웹사이트 이용약관." />
+<meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
+<meta property="og:locale" content="ko_KR" />
+<meta name="twitter:card" content="summary_large_image" />
 
 <!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
 <link rel="icon" href="../../favicon.ico" sizes="any" />
@@ -21,6 +30,7 @@
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
 <!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다. 외부 웹폰트를 받지 않습니다. -->
 <link rel="stylesheet" href="../../assets/site.css" />
+<script src="../../assets/boot.js"></script>
 
 <style>
 /* ================= LEGAL ONLY ================= */
@@ -28,12 +38,6 @@
 .legal-lede{font-size:16px;line-height:1.85;color:var(--ink-soft);max-width:34em;margin:0 0 20px}
 .stamp-date{font-size:13px;color:var(--red);margin:0 0 7px}
 .stamp-eff{font-size:13.5px;line-height:1.75;color:var(--ink-soft);margin:0 0 44px}
-
-.doc{padding:clamp(26px,3.4vw,42px);margin:0 0 26px}
-.doc-h{font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
-  border-bottom:1px solid var(--line);padding-bottom:13px;margin:0 0 26px;
-  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.doc-h b{color:var(--orange-ink);font-weight:950}
 
 /* 조문 */
 .arts{list-style:none;margin:0;padding:0;counter-reset:art}
@@ -54,15 +58,19 @@
 .biz b{font-weight:700;font-size:13.5px;line-height:1.5;color:var(--ink);padding-top:1px}
 .biz p{margin:0;font-size:14.5px;line-height:1.7}
 
-.mailto{margin:8px 0 64px;font-size:15px}
-.mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
-
 @media (max-width:600px){
   .legaldoc{padding:44px 0 16px}
-  .doc{padding:24px 20px 22px}
-  .biz li{grid-template-columns:96px 1fr;gap:0 16px;padding:11px 0}
+
+  .biz li{grid-template-columns:96px minmax(0,1fr);gap:0 16px;padding:11px 0}
   .biz b{font-size:12.5px;line-height:1.45}
   .biz p{font-size:14px}
+}
+/* ⚠️ 아주 좁은 화면에서는 라벨을 «위»로 올립니다. 값 칸이 1fr 이라 min-content 아래로
+   줄지 않아, 320px 에서 contact@whalelandkr.com 이 안 끊겨 문서가 가로로 넘쳤습니다.
+   법정 고지가 옆으로 밀리면 안 됩니다. 고친 뒤 node social/_check-overflow.mjs */
+@media (max-width:380px){
+  .biz li{grid-template-columns:1fr;gap:2px 0}
+  .biz b{padding-top:0}
 }
 </style>
 </head>
@@ -100,11 +108,11 @@
       <p class="doc-h"><span><b>OPERATOR</b></span><span>WHO RUNS THIS SITE</span></p>
       <ul class="biz">
         <li><b>상호</b><p>웨일랜드 (Whale Land)</p></li>
-        <li><b>대표자</b><p>장욱</p></li>
+        <li><b>대표자</b><p>김정후</p></li>
         <li><b>사업자등록번호</b><p>428-04-03222</p></li>
         <li><b>통신판매업신고</b><p>2025-서울강남-04140</p></li>
-        <li><b>주소</b><p>서울특별시 강남구 언주로 425</p></li>
-        <li><b>연락처</b><p>contact@whalelandkr.com</p></li>
+        <li><b>주소</b><p>서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)</p></li>
+        <li><b>연락처</b><p>contact@whalelandkr.com · 010-9937-1628</p></li>
       </ul>
     </div>
 
@@ -122,12 +130,13 @@
         </li>
         <li>
           <h2>구매</h2>
-          <p>구매는 본 사이트에서 링크로 연결되는 온라인 쇼핑몰에서 이루어집니다. 매매 계약은 그곳에서 체결되며, 해당 쇼핑몰의 약관과 청약철회 정책, 개인정보 처리방침이 적용됩니다.</p>
+          <p>구매는 이 사이트가 아니라 웨일랜드의 온라인 쇼핑몰에서 이루어집니다. 매매 계약은 그곳에서 체결되며, 해당 쇼핑몰의 약관과 청약철회 정책, 개인정보 처리방침이 적용됩니다. 쇼핑몰이 열리면 이 사이트에서 링크로 이어 드립니다.</p>
           <p>본 사이트에 표시된 가격과 사양은 안내를 위한 것입니다. 본 사이트와 쇼핑몰의 내용이 다를 경우, 구매 시점의 쇼핑몰 표시가 기준이 됩니다.</p>
         </li>
         <li>
           <h2>약관의 개정</h2>
-          <p>관련 법령이나 운영상 필요에 따라 이 약관을 개정할 수 있습니다. 개정된 약관은 시행일과 함께 이 페이지에 게시하며, 게시한 시행일부터 효력이 발생합니다. 시행일 이후에도 사이트를 계속 이용하시는 경우 개정 내용에 동의하신 것으로 봅니다.</p>
+          <p>관련 법령이나 운영상 필요에 따라 이 약관을 개정할 수 있습니다. 개정된 약관은 적용일자와 개정 사유를 밝혀 <b>적용일 7일 전부터</b> 이 페이지에 게시합니다. 이용자에게 불리한 개정은 <b>30일 전부터</b> 게시하며, 개정 전후를 견주어 보실 수 있도록 함께 밝힙니다.</p>
+          <p>게시 기간 안에 거부 의사를 밝히지 않으시면 개정에 동의하신 것으로 봅니다. 동의하지 않으시면 사이트 이용을 그만두실 수 있으며, 개정된 약관은 적용일 전에 이미 성립한 거래에는 적용되지 않습니다.</p>
         </li>
         <li>
           <h2>지식재산권</h2>
@@ -151,12 +160,13 @@
         </li>
         <li>
           <h2>서비스 제공과 면책</h2>
-          <p>사이트가 안정적으로 제공되도록 노력하지만, 점검이나 기술적 장애, 통제할 수 없는 사정으로 이용이 중단될 수 있습니다. 이러한 중단으로 발생한 손해에 대해서는 법령에 다른 정함이 있는 경우를 제외하고 책임을 지지 않습니다.</p>
+          <p>사이트가 안정적으로 제공되도록 노력하지만, 점검이나 기술적 장애, 통제할 수 없는 사정으로 이용이 중단될 수 있습니다. 이러한 중단으로 발생한 손해에 대해서는 책임을 지지 않습니다. <b>다만 웨일랜드의 고의 또는 중대한 과실로 인한 손해는 그러하지 않습니다.</b></p>
           <p>키트의 임무는 제3자가 운영하는 공개된 장소에서 수행됩니다. 운영 시간, 입장 조건, 현장 상황은 예고 없이 바뀔 수 있으며, 방문하시는 날 특정 장소가 열려 있거나 접근 가능하다는 점을 보장해 드릴 수 없습니다. 현장에서는 스스로의 안전에 유의해 주세요.</p>
         </li>
         <li>
           <h2>준거법과 분쟁 해결</h2>
-          <p>이 약관은 대한민국 법을 준거법으로 합니다. 분쟁이 발생한 경우 민사소송법에 따른 관할 법원에 소를 제기합니다. 이 약관의 어떤 내용도 소비자로서 법령상 보장받는 권리를 제한하지 않습니다.</p>
+          <p>이 약관은 대한민국 법을 준거법으로 합니다. 분쟁이 발생한 경우 소를 제기하는 때의 이용자 주소지, 주소가 없는 경우 거소지를 관할하는 법원에 소를 제기합니다. 주소와 거소가 분명하지 않거나 해외에 계신 경우에는 민사소송법에 따른 관할 법원으로 합니다.</p>
+          <p>이 약관의 어떤 내용도 소비자로서 법령상 보장받는 권리를 제한하지 않습니다. 네 가지 언어로 제공하며, 번역본의 뜻이 서로 다를 경우 한국어판을 기준으로 합니다.</p>
         </li>
       </ol>
     </div>
@@ -173,7 +183,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--orange)">.</i></p>
         <p class="foot-tag">평범한 여행을 특별한 임무로.</p>
         <div class="sns">
           <span>INSTAGRAM</span>
@@ -187,15 +197,16 @@
       <nav aria-label="작전">
         <p class="foot-h">Operation</p>
         <ul class="foot-list">
-          <li><a href="../mission/">브리핑</a></li>
+          <li><a href="../zones/">구역</a></li>
           <li><a href="../kit/">키트</a></li>
-          <li><a href="../report/">요원 보고서</a></li>
+          <li><a href="../field-report/">요원 보고서</a></li>
         </ul>
       </nav>
 
       <nav aria-label="고객 지원">
         <p class="foot-h">Support</p>
         <ul class="foot-list">
+          <li><a href="../get/">수령</a></li>
           <li><a href="../support/">배송 &middot; 환불</a></li>
           <li><a href="../support/#faq">자주 묻는 질문</a></li>
           <li><a href="mailto:contact@whalelandkr.com">문의하기</a></li>
@@ -219,32 +230,15 @@
         <a href="https://whalelandkr.com" target="_blank" rel="noopener">웨일랜드</a>
       </div>
       <p>
-        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
-        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        웨일랜드 (Whale Land) · 대표 김정후 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 010-9937-1628<br />
+        서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)<br />
         contact@whalelandkr.com<br />
         © 2026 Whale Land. C.O.V.E.R.T는 웨일랜드의 상표입니다.
       </p>
     </div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var sel = document.getElementById('lang');
-  if(sel){ sel.addEventListener('change', function(){
-    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
-    location.href = sel.value;
-  }); }
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var rv = document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window && !reduce){
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    },{threshold:.05});
-    rv.forEach(function(el){ io.observe(el); });
-  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
-})();
-</script>
 
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>キットを購入 — C.O.V.E.R.T</title>
-<meta name="description" content="C.O.V.E.R.T キットをオンラインショップでご購入いただけます。構成品6種、₩30,000、税込・送料別。" />
+<title>キット — C.O.V.E.R.T</title>
+<meta name="description" content="実物六点が書類封筒ひとつに入っています。構成品と規格、価格をご確認いただけます。₩30,000・付加価値税込・送料別。" />
 
 <!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
 <link rel="canonical" href="https://whalelandkr.com/covert/site/jp/kit/" />
@@ -15,9 +15,10 @@
 <link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/kit/" />
 
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://whalelandkr.com/covert/site/jp/kit/" />
 <meta property="og:site_name" content="C.O.V.E.R.T" />
-<meta property="og:title" content="キットを購入 — C.O.V.E.R.T" />
-<meta property="og:description" content="構成品6種、₩30,000。オンラインショップからご購入いただけます。" />
+<meta property="og:title" content="キット — C.O.V.E.R.T" />
+<meta property="og:description" content="実物六点が書類封筒ひとつに入っています。₩30,000・送料別。" />
 <meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
 <meta property="og:locale" content="ja_JP" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -26,61 +27,120 @@
 <link rel="icon" href="../../favicon.ico" sizes="any" />
 <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
-
-<!-- JP: 가나·한자용 / KR: 푸터 사업자 정보의 한글용. 둘 다 동적 서브셋 -->
 <!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다. 외부 웹폰트를 받지 않습니다. -->
 <link rel="stylesheet" href="../../assets/site.css" />
+<script src="../../assets/boot.js"></script>
 
 <style>
-/* ================= KIT ONLY ================= */
+/* ================= KIT ONLY =================
+   장면 틀(.chapter · .lead · .band · .shot)과 서류 카드(.doc · .notice)는
+   assets/site.css 에 있습니다. 여기에는 이 페이지에만 필요한 것만 둡니다. */
 
-.kit{padding:56px 0 24px}
-.kit-lede{font-size:16.5px;line-height:1.9;color:var(--ink-soft);max-width:34em;margin:0 0 44px}
+/* 히어로 — /zones/ 와 같은 모양으로, 제목만 h1 입니다 */
+.kithero h1{
+  color:var(--brown);font-weight:800;margin:0 0 18px;
+  font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.18;letter-spacing:-.025em;
+  word-break:normal;line-break:strict;
+}
+.kithero{padding-bottom:clamp(20px,3vh,36px)}
 
-/* 서류 한 장 */
-.doc{padding:clamp(26px,3.4vw,42px);margin:0 0 26px}
-.doc-h{font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
-  border-bottom:1px solid var(--line);padding-bottom:13px;margin:0 0 26px;
-  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.doc-h b{color:var(--orange-ink);font-weight:950}
+/* 대표 사진 한 장. 글 없이 «무엇이 들어 있는지»만 보여 주는 자리입니다 */
+.bigshot{padding:0 0 clamp(30px,5vh,56px)}
+.bigshot .wrap{max-width:1000px}
+.bigshot .shot{margin:0}
 
-/* 물품 명세서 */
+.docs{padding:0 0 clamp(30px,5vh,60px)}
+.docs .wrap{max-width:880px}
+
+/* ── 물품 명세서 : 번호 · 품명 · 점선 · 수량 ──
+   ⚠️ 값 칸에 과장을 넣지 않습니다 (_어투와디자인-규칙.md T6 — 한 목록에 최대 1칸).
+      여기는 «사양»만 적고, 기대는 사진이 만들게 둡니다. */
 .pack{list-style:none;margin:0;padding:0}
-.pack li{display:flex;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.pack li:last-child{border-bottom:0}
-.pack i{font-family:var(--mono);font-style:normal;font-size:11px;color:var(--red);flex-shrink:0;width:22px}
-.pack b{font-weight:700;font-size:15.5px}
-.pack s{flex:1;height:0;border-bottom:1px solid var(--line);text-decoration:none;min-width:16px;transform:translateY(-3px)}
-.pack em{font-family:var(--mono);font-style:normal;font-size:12px;color:var(--ink-soft);flex-shrink:0;letter-spacing:.06em}
-.pack p{margin:5px 0 0 34px;font-size:13.5px;line-height:1.85;color:var(--ink-soft);flex-basis:100%}
+.pack li{
+  display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  padding:14px 0;border-bottom:1px solid var(--line);
+}
+.pack li:last-child{border-bottom:0;padding-bottom:0}
+.pack i{
+  font-style:normal;font-size:.7rem;font-weight:950;letter-spacing:.14em;
+  color:var(--orange-ink);flex-shrink:0;width:24px;font-variant-numeric:tabular-nums;
+}
+.pack b{font-weight:800;font-size:1rem;color:var(--brown);word-break:normal;line-break:strict}
+/* 품명과 수량 사이를 잇는 «점선». 장식이라 접근성 트리에서 뺀다 —
+   예전에는 <s> 였는데, 그건 「이제는 맞지 않는 내용」을 뜻해서
+   화면낭독기가 여섯 줄마다 「취소선」을 읽었다 */
+.pack .leader{flex:1;height:0;border-bottom:1px dotted var(--line);min-width:16px;transform:translateY(-4px)}
+.pack em{
+  font-style:normal;font-size:.72rem;font-weight:900;letter-spacing:.1em;
+  color:var(--muted);flex-shrink:0;font-variant-numeric:tabular-nums;
+}
+.pack p{margin:6px 0 0 36px;font-size:.9rem;line-height:1.8;color:var(--muted);flex-basis:100%;word-break:normal;line-break:strict}
 
-/* 명세 표 */
+/* 사진 두 장을 나란히. 품목 설명만으로는 크기가 안 잡히는 것들입니다 */
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2.4vw,22px);margin:26px 0 0}
+.pair figure{margin:0}
+.pair .shot{margin:0}
+.pair figcaption{
+  margin:10px 2px 0;font-size:.76rem;line-height:1.6;color:var(--muted);word-break:normal;line-break:strict;
+}
+
+/* ── 여행이 끝난 뒤 — 지면 다섯 장 ──
+   ⚠️ 작게 싣습니다. 크게 실으면 편지 글씨가 읽혀 «받아야 보이는 것»이 미리 새어 나갑니다. */
+.strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(10px,1.6vw,18px);margin:24px 0 0}
+.strip figure{margin:0}
+.strip img{
+  width:100%;height:auto;border-radius:10px;
+  box-shadow:0 8px 22px rgba(39,28,18,.12);background:#fdf3e3;
+}
+.strip figcaption{
+  margin:9px 0 0;font-size:.7rem;line-height:1.5;color:var(--muted);
+  word-break:normal;line-break:strict;text-align:center;
+}
+
+/* ── 명세 표 ── */
 .spec{width:100%;border-collapse:collapse}
-.spec th,.spec td{text-align:left;padding:10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.spec th,.spec td{text-align:left;padding:12px 0;border-bottom:1px solid var(--line);vertical-align:top}
 .spec tr:last-child th,.spec tr:last-child td{border-bottom:0}
-.spec th{font-weight:700;font-size:13.5px;line-height:1.5;color:var(--ink);width:32%;padding-right:18px}
-.spec td{font-size:15px}
-.spec td span{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);display:block;margin-top:3px;letter-spacing:.06em}
+.spec th{font-weight:800;font-size:.86rem;line-height:1.55;color:var(--brown);width:32%;padding-right:18px;word-break:normal;line-break:strict}
+.spec td{font-size:.94rem;color:var(--ink);word-break:normal;line-break:strict}
+.spec td span{
+  display:block;margin-top:4px;font-size:.72rem;letter-spacing:.08em;
+  color:var(--muted);font-variant-numeric:tabular-nums;
+}
 
-/* 가격 */
+/* ── 가격 ── */
 .buy{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap}
-.buy-fig{font-family:var(--body);font-weight:800;font-size:clamp(34px,5vw,48px);letter-spacing:-.03em;line-height:1;margin:0}
-.buy-note{font-size:13px;color:var(--ink-faint);margin:9px 0 0}
-/* 카페24 상품 URL 이 아직 없어 구매 버튼을 비활성 상태로 둡니다.
-   URL 이 정해지면 아래 .buy-soon 마크업과 이 규칙을 함께 지웁니다.
-   .cta-off 는 푸터에서도 쓰므로 site.css 에 있습니다. */
+.buy-fig{font-weight:800;font-size:clamp(2.2rem,5vw,3rem);letter-spacing:-.03em;line-height:1;margin:0;color:var(--brown);font-variant-numeric:tabular-nums}
+.buy-note{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+/* 구매 버튼. 상품 URL 은 2026-09-13 에 확정됐고 몰 네 곳 모두 열어 확인했습니다
+   (whaleland.cafe24.com · 상품번호 11).  ⚠️ 그런데 «결제가 아직 안 됩니다» —
+   PG 미계약이고 쇼핑몰 푸터의 무통장 계좌가 0000-000-00000 자리표시자입니다.
+   그래서 버튼을 꺼 둡니다. 켜는 스위치는 social/_buy-link.mjs 의 OPEN 한 줄입니다. */
 .buy-soon{display:flex;flex-direction:column;align-items:flex-start}
-.buy-soon-note{font-family:var(--body);font-size:11.5px;color:var(--red);margin:9px 0 0}
-.fine{font-size:13px;line-height:1.85;color:var(--ink-faint);margin:24px 0 0;padding-top:18px;border-top:1px solid var(--line)}
-.fine b{color:var(--red);font-weight:400;font-family:var(--mono);font-size:11px;letter-spacing:.16em;display:block;margin:0 0 6px}
+.buy-soon-note{font-size:.76rem;color:var(--orange-ink);margin:10px 0 0}
 
-.back{margin:8px 0 64px}
+.fine{font-size:.84rem;line-height:1.85;color:var(--muted);margin:26px 0 0;padding-top:20px;border-top:1px solid var(--line);word-break:normal;line-break:strict}
+.fine b{
+  display:block;margin:0 0 8px;color:var(--orange-ink);
+  font-size:.7rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase;
+}
+.fine + .fine{border-top:0;margin-top:14px;padding-top:0}
 
-@media (max-width:600px){
-  .kit{padding:44px 0 16px}
-  .doc{padding:24px 20px 22px}
-  .spec th{width:34%;padding-right:14px;font-size:12.5px}
-  .spec td{font-size:14px}
+/* ⚠️ .doc-h 는 «라틴 대문자 전제»입니다 — 자간 .18em + uppercase.
+   한글을 그대로 넣으면 자간만 뜯어지고 uppercase 는 무효입니다
+   (_카피규칙.md 「kicker 주의」와 같은 함정). 한글 칸만 풉니다. */
+.doc-h .ko{letter-spacing:.02em;text-transform:none;font-size:.82rem;word-break:normal;line-break:strict}
+
+.back{margin:0;padding:0 0 clamp(40px,7vh,80px);text-align:center}
+
+@media (max-width:700px){
+  .pair{grid-template-columns:1fr}
+  .strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .spec th{width:38%;padding-right:12px;font-size:.8rem}
+  .spec td{font-size:.88rem}
+}
+@media (max-width:420px){
+  .strip{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 </style>
 </head>
@@ -104,101 +164,291 @@
 </header>
 
 <main id="main">
-<section class="kit">
-  <div class="wrap wrap-narrow">
 
-    <p class="kicker">BUY</p>
-    <h1 class="head">キットを購入する</h1>
-    <p class="kit-lede">OPERATION 01 に必要なものは、すべて封をしたクラフト封筒ひとつに入っています。構成品6種と仕様を下でご確認のうえ、オンラインショップからそのままご購入いただけます。セット1種のみの販売で、単品販売はございません。</p>
+<!-- ═══════════════════════════════════════════════════════════════
+     ⚠️ 이 페이지는 «파는 자리»입니다. 말투를 층으로 나눕니다
+        (_어투와디자인-규칙.md §2 층 표).
 
-    <!-- 물품 명세서 -->
+          ① 킥커      로마자 대문자
+          ② 히어로     선언 「~다」
+          ④ 설명 본문  「~습니다」 — 지령형 금지
+          ⑤ 라벨:값    명세표 · 수량 · 고시표
+          ⑥ 버튼      명령형은 «여기 한 층에만»
+          ⑦ 정책      「~합니다」
+
+     ⚠️ 판별 테스트 (고친 뒤 눈으로 세어 봅니다)
+          T2 설명문·정책문에 지령형 0문장
+          T6 한 목록의 값 칸에서 과장 최대 1칸 — 여기는 0칸으로 둡니다
+          T7 상품명·옵션명에 세계관 단어  ← CLAUDE.md 확정 품명과 충돌합니다.
+             지금은 CLAUDE.md 구성품 표의 확정 품명을 씁니다 (대표 결정 대기)
+
+     ⚠️ 여기 적는 값은 전부 CLAUDE.md 「제품 사실 (확정)」에 있는 것입니다.
+        2026-09-12 검수에서 아래가 «지어낸 값»으로 확인되어 빠졌습니다 —
+          · 요원증의 「범이의 서명」      (실물 사진에 없음)
+          · 스티커의 「연월일시 기입란」   (실물 사진에 없음 · 날짜 칸은 지면 쪽에 있음)
+          · 봉투 「앞뒤 로고」           (앞면에는 TOP SECRET 인장뿐)
+          · 내지 「고급 무광지」         (종이 등급은 확정값이 아님)
+          · 키링 15종의 「구역 1:1 대응」  (확정값이 아님)
+        되살리려면 CLAUDE.md 구성품 표에 «먼저» 적고 네 판본에 같이 넣습니다.
+     ═══════════════════════════════════════════════════════════════ -->
+
+<section class="chapter band kithero">
+  <div class="copy">
+    <p class="kicker rv">The Kit</p>
+    <h1 class="rv">封筒ひとつで届く</h1>
+    <p class="lead rv">実物六点が書類封筒ひとつに入っている。</p>
+    <p class="lead rv">届いたその場で使えて、別に買うものはない。</p>
+  </div>
+</section>
+
+<section class="bigshot">
+  <div class="wrap">
+    <div class="shot rv">
+      <img src="../../assets/cream/kit-all.jpg" width="1200" height="900"
+           loading="lazy" decoding="async"
+           alt="クラフト封筒とパスポート型ミッションブック、ボーディングパスカード、ケースに入った要員証とランヤード、透明シール、BUMMYキーリングを広げたところ">
+    </div>
+  </div>
+</section>
+
+<section class="docs">
+  <div class="wrap">
+
+    <!-- ── 구성품 ──────────────────────────────────────────
+         품명은 CLAUDE.md 구성품 표의 확정 품명입니다. 임의로 바꾸지 않습니다.
+         ⚠️ 보딩패스형 미션카드를 빠뜨리기 쉽습니다. 실물 6종에 포함됩니다. -->
     <div class="sheet doc rv">
-      <p class="doc-h"><span><b>PACKING LIST</b></span><span>OPERATION 01 — SEOUL</span></p>
+      <h2 class="doc-h"><span><b>PACKING LIST</b></span><span>OPERATION 01 — SEOUL</span></h2>
       <ul class="pack">
         <li>
-          <i>01</i><b>機密封筒</b><s></s><em>× 1</em>
-          <p>紐で結ぶクラフトの書類封筒です。表と裏に機関のロゴと TOP SECRET の印章が入っています。封を開けるところからブリーフィングが始まりますので、ゆっくり開けてみてください。</p>
+          <i>01</i><b>専用機密封筒</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
+          <p>紐で留めるクラフト書類封筒です。表に TOP SECRET の印章が入っています。</p>
         </li>
         <li>
-          <i>02</i><b>エージェントパスポート</b><s></s><em>× 1</em>
-          <p>88 × 125 mm、40ページ。レザーテックス貼りの表紙に、マット金箔でエンブレムを箔押ししています。中には15の区域、30か所、45の任務。場所ごとにその街に合わせて変装した BUMMY のイラストが30種、あわせて入っています。</p>
+          <i>02</i><b>パスポート型ミッションブック</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
+          <p>レザーテックス合紙の表紙に、マットな金箔でエンブレムを押しています。区域と場所、任務が順に載っています。</p>
         </li>
         <li>
-          <i>03</i><b>スタンプシール</b><s></s><em>× 20</em>
-          <p>機関のエンブレムが入った透明シールです。区域ページの印章欄にぴたりと収まるよう断裁しています。15区域分に予備を5枚加え、シールごとに任務を終えた年月日時を書き込む欄があります。</p>
+          <i>03</i><b>スタンプ型シール</b><span class="leader" aria-hidden="true"></span><em>× 20</em>
+          <p>貼ると下の印刷が透ける透明シールです。紙面の印章の位置に合わせて断裁してあり、円の中にエンブレムが入っています。</p>
         </li>
         <li>
-          <i>04</i><b>ボーディングパス型ミッションカード</b><s></s><em>× 1</em>
-          <p>本物の航空券の形をしたカードです。要員名と要員番号、入国日を書き込めば、世界にひとつだけの搭乗券になります。</p>
+          <i>04</i><b>ボーディングパス型ミッションカード</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
+          <p>航空券の形をしたカードです。要員名と要員番号、入国審査の欄はご自身で記入します。</p>
         </li>
         <li>
-          <i>05</i><b>要員証セット</b><s></s><em>× 1 SET</em>
-          <p>BUMMY の PVC 要員証に、カードケースとネックストラップまでお付けします。BUMMY の署名まで入っていて、実際の社員証に劣らない作り込みです。仕上がった状態で届きますので、記入する箇所はありません。</p>
+          <i>05</i><b>要員証セット</b><span class="leader" aria-hidden="true"></span><em>× 1 SET</em>
+          <p>PVC の要員証にカードケースとランヤードが付きます。両面とも印刷済みで届くため、記入する欄はありません。</p>
         </li>
         <li>
-          <i>06</i><b>BUMMY のキーリング</b><s></s><em>× 1 RANDOM</em>
-          <p>区域ごとにひとつずつ、その街に似合う服を着た BUMMY のキーリングが15種あります。どの BUMMY が入っているかは、封筒を開けてみてのお楽しみです。</p>
+          <i>06</i><b>BUMMYキーリング</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
+          <p>十五種のうちひとつが無作為に入ります。種類はお選びいただけません。</p>
         </li>
       </ul>
+
+      <div class="pair rv">
+        <figure>
+          <div class="shot">
+            <img src="../../assets/product/boarding.jpg" width="1200" height="800"
+                 loading="lazy" decoding="async"
+                 alt="要員名と要員番号、入国審査の欄が空いているボーディングパス型ミッションカード">
+          </div>
+          <figcaption>ボーディングパス型ミッションカード — 左の三つの欄はご自身で記入します。</figcaption>
+        </figure>
+        <figure>
+          <div class="shot">
+            <img src="../../assets/product/keyrings.jpg" width="1200" height="800"
+                 loading="lazy" decoding="async"
+                 alt="それぞれ違う服を着たBUMMYキーリング十五種と銀色の包装袋">
+          </div>
+          <figcaption>BUMMYキーリング — 十五種のうちひとつが封をしたまま入ります。</figcaption>
+        </figure>
+      </div>
+
       <p class="fine">
-        <b>ALSO INCLUDED</b>
-        最終ページの QR から、本部へ任務報告書をお送りいただけます。あくまで任意です。15の区域は紙だけで最初から最後まで完結し、インストールするアプリも、立ち寄るべき提携先もありません。
+        <b>Also included</b>
+        パスポート内の QR から本部へ報告書をお送りいただけます。任意です — 十五の区域は紙だけで最後まで進み、入れるアプリも立ち寄る提携先もありません。
       </p>
     </div>
 
-    <!-- 명세 -->
+    <!-- ── 여행이 끝난 뒤 ───────────────────────────────────
+         2026-09-11 에 홈 개봉 연출에서 «뗀» 지면들이 여기로 왔습니다.
+         ⚠️ 지면의 «문장»은 옮기지 않습니다. 편지도 마지막 면도 받아야 보이는 것입니다. -->
     <div class="sheet doc rv">
-      <p class="doc-h"><span><b>SPECIFICATIONS</b></span><span>FULL SET</span></p>
+      <h2 class="doc-h"><span><b>AFTER THE TRIP</b></span><span class="ko">旅が終わったあと</span></h2>
+      <p class="lead" style="max-width:none;margin:0">パスポートの後ろには、旅を終えたあとに書く紙面が別にあります。</p>
+      <p class="lead" style="max-width:none;margin:.85em 0 0">物として残ったものと、心に残ったものを分けて書き、写真を一枚貼る場所があります。</p>
+
+      <div class="strip">
+        <figure>
+          <img src="../../assets/book/jp/p36.webp" width="480" height="682" loading="lazy" decoding="async"
+               alt="食べたもの、手に入れたもの、印象に残った場所を書く記録面">
+          <figcaption>物として残ったもの</figcaption>
+        </figure>
+        <figure>
+          <img src="../../assets/book/jp/p37.webp" width="480" height="682" loading="lazy" decoding="async"
+               alt="出会った人と記憶に残る瞬間を書き、描く記録面">
+          <figcaption>心に残ったもの</figcaption>
+        </figure>
+        <figure>
+          <img src="../../assets/book/jp/p38.webp" width="480" height="682" loading="lazy" decoding="async"
+               alt="手書きの手紙一枚と、その下に写真を貼る欄">
+          <figcaption>一通の手紙</figcaption>
+        </figure>
+        <figure>
+          <img src="../../assets/book/jp/p39.webp" width="480" height="682" loading="lazy" decoding="async"
+               alt="ディープネイビーの地に QR がひとつ置かれた面">
+          <figcaption>最後の QR</figcaption>
+        </figure>
+        <figure>
+          <img src="../../assets/book/jp/p40.webp" width="480" height="682" loading="lazy" decoding="async"
+               alt="金色の文字五行で閉じる裏表紙">
+          <figcaption>閉じる面</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- ── 규격 ──────────────────────────────────────────── -->
+    <div class="sheet doc rv">
+      <h2 class="doc-h"><span><b>SPECIFICATIONS</b></span><span>FULL SET</span></h2>
       <table class="spec">
         <tbody>
-          <tr><th>パスポート</th><td>表紙込み40ページ<span>88 × 125 MM · 40 PAGES</span></td></tr>
-          <tr><th>表紙</th><td>レザーテックス貼り、マット金箔<span>PANTONE 289 C</span></td></tr>
-          <tr><th>本文用紙</th><td>上質マット紙、単色印刷<span>#FFFDF5 · RISOGRAPH</span></td></tr>
-          <tr><th>封筒</th><td>クラフト、紐結び<span>175 × 240 × 20 MM</span></td></tr>
-          <tr><th>ボーディングパス</th><td>カード紙、記入式<span>156 × 76 MM</span></td></tr>
-          <tr><th>要員証セット</th><td>PVC カード・ケース・ストラップ<span>CARD 54 × 86 MM · BOTH SIDES</span></td></tr>
-          <tr><th>シール</th><td>透明、15区域分 + 予備5枚<span>20 TOTAL</span></td></tr>
-          <tr><th>収録範囲</th><td>15の区域、30か所<span>45 ASSIGNMENTS · 30 DISGUISES</span></td></tr>
-          <tr><th>版</th><td>韓国語 · 英語 · 日本語 · 中国語簡体<span>4 EDITIONS</span></td></tr>
-          <tr><th>初回生産</th><td>全版合計<span>1,500 SETS</span></td></tr>
+          <tr><th>パスポート型ミッションブック</th><td>表紙を含め40ページ<span>88 × 125 MM · 40 PAGES</span></td></tr>
+          <tr><th>表紙</th><td>レザーテックス合紙、マット金箔<span>PANTONE 289 C</span></td></tr>
+          <tr><th>本文</th><td>単色印刷<span>#FFFDF5 · RISOGRAPH TEXTURE</span></td></tr>
+          <tr><th>封筒</th><td>クラフト、紐留め<span>175 × 240 × 20 MM</span></td></tr>
+          <tr><th>ボーディングパス型ミッションカード</th><td>記入式<span>156 × 76 MM</span></td></tr>
+          <tr><th>要員証セット</th><td>PVCカード · ケース · ランヤード<span>CARD 54 × 86 MM · 両面印刷</span></td></tr>
+          <tr><th>スタンプ型シール</th><td>透明 · 基本15枚 + 予備5枚<span>20 TOTAL</span></td></tr>
+          <tr><th>収録範囲</th><td>区域と場所、任務<span>15 ZONES · 30 PLACES · 45 ASSIGNMENTS</span></td></tr>
+          <tr><th>イラスト</th><td>変装したBUMMY<span>30 DISGUISES</span></td></tr>
+          <tr><th>版</th><td>韓国語 · 英語 · 日本語 · 中国語簡体 — ご注文時にお選びいただきます<span>4 EDITIONS</span></td></tr>
+          <tr><th>初回数量</th><td>全版合計<span>1,500 SETS</span></td></tr>
         </tbody>
       </table>
     </div>
 
-    <!-- 가격 -->
+    <!-- ── 가격 ──────────────────────────────────────────── -->
     <div class="sheet doc rv">
-      <p class="doc-h"><span><b>ISSUE</b></span><span>ONE SET — NO PARTS SOLD SEPARATELY</span></p>
+      <h2 class="doc-h"><span><b>ISSUE</b></span><span>ONE SET — NO PARTS SOLD SEPARATELY</span></h2>
       <div class="buy">
         <div>
           <p class="buy-fig">₩30,000</p>
-          <p class="buy-note">税込 · 送料別</p>
+          <p class="buy-note">付加価値税込 · 送料別</p>
         </div>
-        <!-- 카페24 상품 URL 이 정해지면 아래 <div class="buy-soon"> 블록 전체를 이 한 줄로 되돌립니다.
-             <a class="cta" href="상품URL" target="_blank" rel="noopener">キットを購入する</a> -->
-        <div class="buy-soon">
+        <!-- ⚠️ 이 안은 «손으로 고치지 않습니다». node social/_buy-link.mjs --write 가 씁니다.
+             켜는 스위치도 문구도 그 파일 한 곳에 있습니다 — 켜는 날 한 줄만 바꾸면 됩니다.
+             반드시 _kit-page.mjs «다음»에 돌립니다. -->
+        <div class="buy-soon"><!--BUY:START-->
           <span class="cta cta-off">キットを購入する</span>
-          <p class="buy-soon-note">販売ページのリンクは近日公開します。</p>
-        </div>
+          <p class="buy-soon-note">販売先リンクは近日つながります。</p>
+<!--BUY:END--></div>
       </div>
-
       <p class="fine">
-        <b>NOTICE</b>
-        キーリングは15種の中からランダムでお送りします。デザインのご指定はできず、複数ご注文の場合は同じものが重なることがあります。ランダムの結果や重複は交換の対象になりませんが、製造上の不良はいつでも交換いたしますのでご連絡ください。
-        印刷の色や紙の質感は、画面上の画像と多少異なる場合があります。
+        <b>Notice</b>
+        キーリングは十五種の中から無作為に発送します。デザインのご指定はできず、複数ご注文の場合は同じものが重なることがあります。無作為の結果と重複はそれ自体では交換の理由になりません。製造不良は交換いたします。
+      </p>
+      <p class="fine">
+        印刷の色と紙の質感は画面の画像と多少異なることがあり、断裁にもわずかな誤差が出ます。印刷物の一般的な特性であり、不良とは扱いません。
       </p>
     </div>
 
-    <p class="back"><a class="linkarrow" href="../mission/">ブリーフィングを読む →</a></p>
+    <!-- ══════════════════════════════════════════════════════
+         상품정보제공고시 — 법이 요구해서 싣는 표입니다. «분위기»가 아니라 «고지»입니다.
+
+         근거 — 「전자상거래 등에서의 상품 등의 정보제공에 관한 고시」
+                공정거래위원회고시 제2022-15호 (2022. 8. 3. 일부개정 · 시행 2023. 1. 1.)
+                위임 근거: 전자상거래법 제13조제4항
+         품목 — (40) 기타 재화.  Ⅲ. 1. 품목별 재화 등에 관한 정보 › (40)
+                + Ⅲ. 2. 거래조건에 관한 정보 가~마
+         ⚠️ 이 고시에 «별표»는 없습니다. 「별표 1」 식으로 인용하면 틀린 인용입니다.
+         ⚠️ 2026-09-12 에 세 사람이 «따로» 조사해 셋 다 (40) 기타 재화로 일치했습니다.
+
+         왜 (40) 인가 — 고시 품목 40개에 「문구·사무용품」도 「완구」도 없습니다.
+           (10) 사무용기기는 컴퓨터·프린터류이고, 완구는 (23) 어린이제품 안에만 있습니다.
+           실물 6종이 묶인 세트라 (1)~(38)에 유사 품목이 없어
+           Ⅱ. 일반원칙 2의 보충 규정이 그대로 적용됩니다.
+
+         ⚠️⚠️ 가장 큰 위험 — (23) 어린이제품으로 오분류되는 것입니다.
+           만 13세 이하를 겨냥한 것으로 «표시·광고»되면 자동으로 그쪽이 되고,
+           항목이 5개에서 13개로 늘며 KC 인증이 «판매 전제조건»이 됩니다.
+           상세페이지에 「어린이용·아동용·키즈」 표현을 쓰지 않습니다.
+           ✅ 2026-09-13 대표 결정 — 만 13세 이하를 대상으로 «표시·광고» 하지 않습니다.
+           /support/ FAQ 「아이와 함께 해도 되나요?」 답변은 어린이를 «대상으로 삼는» 문장이 아니라
+           걷는 거리와 읽을 분량을 알리는 문장이라 그대로 둡니다 (네 언어 모두).
+
+         ⚠️ 빈칸으로 두면 그 자체가 위반입니다 (Ⅱ. 일반원칙 3).
+            채울 수 없는 항목은 «구체적인 사유»를 적습니다.
+         ⚠️ 인증·허가 항목은 «문자»로 적습니다 (Ⅳ. 2). 사진이나 「제품에 별도 표기」로 대체할 수 없습니다.
+         ⚠️ 배포 직전에 law.go.kr 에서 제2022-15호가 아직 「현행」인지 한 번 더 확인합니다.
+         ══════════════════════════════════════════════════════ -->
+    <div class="sheet doc rv">
+      <h2 class="doc-h"><span><b class="ko">商品情報提供告示</b></span><span class="ko">その他の財貨</span></h2>
+            <!-- ⚠️ role 을 «일부러» 적었습니다. 560px 이하에서 th·td 에 display:block 을 걸어
+           라벨을 값 위로 올리는데, 그러면 접근성 트리에서 표 구조가 통째로 사라집니다.
+           법이 요구하는 고지표라 「이 값이 어느 항목의 값인지」가 들려야 합니다.
+           보이는 모습은 그대로입니다. 2026-09-13 마무리 점검에서 넣었습니다. -->
+      <table class="notice" role="table">
+        <tbody role="rowgroup">
+          <tr role="row"><th role="rowheader" scope="row">品名および型名</th><td role="cell">C.O.V.E.R.T ミッションキット — OPERATION 01 SEOUL<br>型名 OPERATION 01 SEOUL</td></tr>
+          <tr role="row">
+            <th role="rowheader" scope="row">法令による認証・許可等</th>
+            <td role="cell">該当ありません。満13歳以下の子どもが使用することを目的に製造・販売する製品ではないため、「子ども製品安全特別法」による安全認証・安全確認の対象ではありません。</td>
+          </tr>
+          <tr role="row"><th role="rowheader" scope="row">製造国または原産地</th><td role="cell">大韓民国 — パスポート型ミッションブック、スタンプ型シール、ボーディングパス型ミッションカード、専用機密封筒<br>中国 — 要員証セット（PVCカード・カードケース・ランヤード）、BUMMYキーリング</td></tr>
+          <tr role="row"><th role="rowheader" scope="row">製造者 / 輸入者</th><td role="cell">Whale Land（委託生産）</td></tr>
+          <tr role="row"><th role="rowheader" scope="row">アフターサービス責任者と電話番号</th><td role="cell">Whale Land · 010-9937-1628</td></tr>
+
+          <tr role="row">
+            <th role="rowheader" scope="row">供給方法および供給時期</th>
+            <td role="cell">
+              国内は CJ大韓通運、海外は郵便局 EMS でお送りします。営業日に出荷し、出荷後は国内1〜3営業日・海外2〜5営業日かかります（通関時間は含みません）。
+              送料は国内3,000ウォン、5万ウォン以上のご注文で無料です。済州は3,000ウォン、その他の離島・山間地域は5,000ウォンが加算されます。海外は EMS 標準料率で自動計算され、梱包費はいただきません。
+            </td>
+          </tr>
+          <tr role="row">
+            <th role="rowheader" scope="row">申込みの撤回および契約解除</th>
+            <td role="cell">
+              出荷前はいつでもキャンセルでき、全額返金いたします。受け取り日から7日以内に申込みの撤回ができ、単なるお気持ちの変更による場合、返品送料はご購入者のご負担となります（海外は往復の国際運賃）。
+              ご使用になった場合や破損した場合、シールを貼ったりパスポートに記入されたりして使用により商品価値が明らかに下がったときは、申込みの撤回が制限されることがあります。
+              瑕疵や誤配送の場合は、受け取り日から3か月以内、またはその事実を知った日から30日以内に申込みの撤回ができ、返品費用は販売者が負担します。
+            </td>
+          </tr>
+          <tr role="row">
+            <th role="rowheader" scope="row">交換 · 返品 · 保証および返金</th>
+            <td role="cell">
+              品質保証基準は「消費者基本法」第16条による消費者紛争解決基準に従います。交換・返品のお問い合わせは Whale Land 010-9937-1628 · contact@whalelandkr.com にて承ります。
+              返金はお支払いいただいた手段にお戻しし、返金が遅れた場合は電子商取引法が定める遅延賠償金をお支払いします。
+            </td>
+          </tr>
+          <tr role="row">
+            <th role="rowheader" scope="row">消費者被害補償 · 苦情および紛争処理</th>
+            <td role="cell">
+              消費者被害補償と苦情の処理は contact@whalelandkr.com にて受け付け、関係法令と消費者紛争解決基準に従って処理します。
+              協議が整わない場合は、韓国消費者院の消費者相談センター（市外局番なしの1372）または消費者紛争調整委員会を通じて調整を申し立てることができます。
+            </td>
+          </tr>
+          <tr role="row"><th role="rowheader" scope="row">取引に関する約款</th><td role="cell"><a class="linkarrow" href="../terms/" style="font-size:.86rem">利用規約 →</a></td></tr>
+        </tbody>
+      </table>
+      <p class="fine">
+        この表の内容は、消費者保護に関する法令が保障する権利を制限しません。この案内と法令が異なる場合は法令が優先します。
+        配送と返金の詳しい内容は <a class="linkarrow" href="../support/" style="font-size:.84rem">配送 · 返金 →</a> にあります。
+      </p>
+    </div>
 
   </div>
 </section>
+
+<p class="back"><a class="linkarrow" href="../zones/">区域を見る →</a></p>
+
 </main>
 
 <footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--orange)">.</i></p>
         <p class="foot-tag">ふつうの旅を、特別な任務に。</p>
         <div class="sns">
           <span>INSTAGRAM</span>
@@ -212,15 +462,16 @@
       <nav aria-label="作戦">
         <p class="foot-h">Operation</p>
         <ul class="foot-list">
-          <li><a href="../mission/">ブリーフィング</a></li>
+          <li><a href="../zones/">区域</a></li>
           <li><a href="./">キット</a></li>
-          <li><a href="../report/">フィールドレポート</a></li>
+          <li><a href="../field-report/">フィールドレポート</a></li>
         </ul>
       </nav>
 
       <nav aria-label="サポート">
         <p class="foot-h">Support</p>
         <ul class="foot-list">
+          <li><a href="../get/">お受け取り</a></li>
           <li><a href="../support/">配送 &middot; 返品</a></li>
           <li><a href="../support/#faq">よくある質問</a></li>
           <li><a href="mailto:contact@whalelandkr.com">お問い合わせ</a></li>
@@ -244,60 +495,15 @@
         <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
       </div>
       <p>
-        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
-        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        웨일랜드 (Whale Land) · 대표 김정후 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 010-9937-1628<br />
+        서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)<br />
         contact@whalelandkr.com<br />
         © 2026 Whale Land. C.O.V.E.R.T は Whale Land の商標です。
       </p>
     </div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---- 언어 선택 ---- */
-  var sel = document.getElementById('lang');
-  if(sel){ sel.addEventListener('change', function(){
-    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
-    location.href = sel.value;
-  }); }
-
-  /* ---- 스크롤 등장 ---- */
-  var rv = document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window && !reduce){
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    },{threshold:.12});
-    rv.forEach(function(el){ io.observe(el); });
-  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
-})();
-</script>
-
-<!-- ============================================================
-     GA4 — 측정 ID 발급 후 G-XXXXXXXXXX 를 교체하고 주석을 해제하세요
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
-     ============================================================ -->
-
-<!-- ============================================================
-     META PIXEL — 픽셀 ID 발급 후 000000000000000 을 교체하고 주석을 해제하세요
-<script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '000000000000000');
-  fbq('track', 'PageView');
-</script>
-     ============================================================ -->
 
 </body>
 </html>

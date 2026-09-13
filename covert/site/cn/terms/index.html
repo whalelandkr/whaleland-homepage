@@ -14,6 +14,15 @@
 <link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/terms/" />
 <link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/terms/" />
 <link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/terms/" />
+<!-- noindex 라 검색에는 안 뜨지만, 메신저로 주소를 보내면 미리보기가 뜹니다. -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:url" content="https://whalelandkr.com/covert/site/cn/terms/" />
+<meta property="og:title" content="服务条款 — C.O.V.E.R.T" />
+<meta property="og:description" content="由 Whale Land 运营的 C.O.V.E.R.T 网站服务条款。" />
+<meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
+<meta property="og:locale" content="zh_CN" />
+<meta name="twitter:card" content="summary_large_image" />
 
 <!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
 <link rel="icon" href="../../favicon.ico" sizes="any" />
@@ -21,6 +30,7 @@
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
 <!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다. 외부 웹폰트를 받지 않습니다. -->
 <link rel="stylesheet" href="../../assets/site.css" />
+<script src="../../assets/boot.js"></script>
 
 <style>
 /* ================= LEGAL ONLY ================= */
@@ -29,12 +39,6 @@
 .legal-lede{font-size:16px;line-height:1.9;color:var(--ink-soft);max-width:34em;margin:0 0 20px}
 .stamp-date{font-size:13px;color:var(--red);margin:0 0 7px}
 .stamp-eff{font-size:13.5px;line-height:1.75;color:var(--ink-soft);margin:0 0 44px}
-
-.doc{padding:clamp(26px,3.4vw,42px);margin:0 0 26px}
-.doc-h{font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
-  border-bottom:1px solid var(--line);padding-bottom:13px;margin:0 0 26px;
-  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.doc-h b{color:var(--orange-ink);font-weight:950}
 
 .arts{list-style:none;margin:0;padding:0;counter-reset:art}
 .arts > li{counter-increment:art;padding:0 0 26px;margin:0 0 26px;border-bottom:1px solid var(--line)}
@@ -54,15 +58,19 @@
 .biz b{font-weight:700;font-size:13.5px;line-height:1.5;color:var(--ink);padding-top:1px}
 .biz p{margin:0;font-size:14.5px;line-height:1.7}
 
-.mailto{margin:8px 0 64px;font-size:15px}
-.mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
-
 @media (max-width:600px){
   .legaldoc{padding:44px 0 16px}
-  .doc{padding:24px 20px 22px}
-  .biz li{grid-template-columns:96px 1fr;gap:0 16px;padding:11px 0}
+
+  .biz li{grid-template-columns:96px minmax(0,1fr);gap:0 16px;padding:11px 0}
   .biz b{font-size:12.5px;line-height:1.45}
   .biz p{font-size:14px}
+}
+/* ⚠️ 아주 좁은 화면에서는 라벨을 «위»로 올립니다. 값 칸이 1fr 이라 min-content 아래로
+   줄지 않아, 320px 에서 contact@whalelandkr.com 이 안 끊겨 문서가 가로로 넘쳤습니다.
+   법정 고지가 옆으로 밀리면 안 됩니다. 고친 뒤 node social/_check-overflow.mjs */
+@media (max-width:380px){
+  .biz li{grid-template-columns:1fr;gap:2px 0}
+  .biz b{padding-top:0}
 }
 </style>
 </head>
@@ -100,11 +108,11 @@
       <p class="doc-h"><span><b>OPERATOR</b></span><span>WHO RUNS THIS SITE</span></p>
       <ul class="biz">
         <li><b>公司名称</b><p>Whale Land（웨일랜드）</p></li>
-        <li><b>法定代表人</b><p>张旭</p></li>
+        <li><b>法定代表人</b><p>김정후</p></li>
         <li><b>营业执照号</b><p>428-04-03222</p></li>
-        <li><b>通信销售备案号</b><p>2025-首尔江南-04140</p></li>
-        <li><b>地址</b><p>大韩民国 首尔特别市 江南区 彦州路 425</p></li>
-        <li><b>联系方式</b><p>contact@whalelandkr.com</p></li>
+        <li><b>通信销售备案号</b><p>2025-서울강남-04140</p></li>
+        <li><b>地址</b><p>서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)</p></li>
+        <li><b>联系方式</b><p>contact@whalelandkr.com · 010-9937-1628</p></li>
       </ul>
     </div>
 
@@ -122,12 +130,13 @@
         </li>
         <li>
           <h2>关于购买</h2>
-          <p>购买在通过本站链接前往的线上商店完成。买卖合同在该处成立，并适用该商店自身的条款、撤销政策与隐私政策。</p>
+          <p>购买不在本站进行，而是在 Whale Land 的线上商店完成。买卖合同在该处成立，并适用该商店自身的条款、撤销政策与隐私政策。商店开放后，我们会在本站以链接指引您前往。</p>
           <p>本站显示的价格与规格仅供参考。本站与商店内容不一致时，以购买当时商店的显示为准。</p>
         </li>
         <li>
           <h2>条款的修订</h2>
-          <p>因相关法规或运营需要，我们可能修订本条款。修订后的条款将连同生效日公布于本页，并自公布的生效日起生效。若您在生效日之后继续使用本站，视为您同意修订内容。</p>
+          <p>因相关法规或运营需要，我们可能修订本条款。修订后的条款将写明适用日期与修订事由，<b>自适用日的 7 日前起</b>公布于本页；对使用者不利的修订，则<b>自 30 日前起</b>公布，并同时列出修订前后的内容以便对照。</p>
+          <p>在公布期间内，若您未表示拒绝，视为您同意该修订。若您不同意，可以停止使用本站；修订后的条款不适用于适用日之前已经成立的交易。</p>
         </li>
         <li>
           <h2>知识产权</h2>
@@ -151,12 +160,13 @@
         </li>
         <li>
           <h2>服务提供与免责</h2>
-          <p>我们会尽力保持本站稳定可用，但可能因维护、技术故障或不可控事由而中断。对于此类中断造成的损失，除法规另有规定外，我们不承担责任。</p>
+          <p>我们会尽力保持本站稳定可用，但可能因维护、技术故障或不可控事由而中断。对于此类中断造成的损失，我们不承担责任。<b>但因 Whale Land 的故意或重大过失造成的损失，不在此限。</b></p>
           <p>套装中的任务在第三方运营的公共场所进行。营业时间、入场条件与现场状况可能不经通知即变更，我们无法保证您前往当日某处一定开放或可以进入。在现场请注意自身安全。</p>
         </li>
         <li>
           <h2>准据法与争议解决</h2>
-          <p>本条款以大韩民国法律为准据法。发生争议时，向依大韩民国民事诉讼法确定的管辖法院提起诉讼。本条款的任何内容均不限制您作为消费者依法享有的权利。</p>
+          <p>本条款以大韩民国法律为准据法。发生争议时，向提起诉讼时使用者住所地的管辖法院提起诉讼；没有住所的，向居所地的管辖法院提起。住所与居所不明确，或使用者身在境外时，以依大韩民国民事诉讼法确定的管辖法院为准。</p>
+          <p>本条款的任何内容均不限制您作为消费者依法享有的权利。本条款以四种语言提供，各语言版本含义不一致时，以韩文版为准。</p>
         </li>
       </ol>
     </div>
@@ -173,7 +183,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--orange)">.</i></p>
         <p class="foot-tag">把平凡的旅行，变成特别的任务。</p>
         <div class="sns">
           <span>INSTAGRAM</span>
@@ -187,15 +197,16 @@
       <nav aria-label="行动">
         <p class="foot-h">Operation</p>
         <ul class="foot-list">
-          <li><a href="../mission/">简报</a></li>
+          <li><a href="../zones/">区域</a></li>
           <li><a href="../kit/">套装</a></li>
-          <li><a href="../report/">现场报告</a></li>
+          <li><a href="../field-report/">现场报告</a></li>
         </ul>
       </nav>
 
       <nav aria-label="支持">
         <p class="foot-h">Support</p>
         <ul class="foot-list">
+          <li><a href="../get/">领取</a></li>
           <li><a href="../support/">配送 &middot; 退换</a></li>
           <li><a href="../support/#faq">常见问题</a></li>
           <li><a href="mailto:contact@whalelandkr.com">联系我们</a></li>
@@ -219,32 +230,15 @@
         <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
       </div>
       <p>
-        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
-        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        웨일랜드 (Whale Land) · 대표 김정후 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 010-9937-1628<br />
+        서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)<br />
         contact@whalelandkr.com<br />
         © 2026 Whale Land. C.O.V.E.R.T 是 Whale Land 的商标。
       </p>
     </div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var sel = document.getElementById('lang');
-  if(sel){ sel.addEventListener('change', function(){
-    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
-    location.href = sel.value;
-  }); }
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var rv = document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window && !reduce){
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    },{threshold:.05});
-    rv.forEach(function(el){ io.observe(el); });
-  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
-})();
-</script>
 
 </body>
 </html>

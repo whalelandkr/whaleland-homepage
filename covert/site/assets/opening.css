@@ -1,0 +1,640 @@
+/* ==========================================================
+   C.O.V.E.R.T — 개봉 연출 전용 스타일
+   ⚠️ 이 파일은 social/_extract-opening.mjs 가 «생성»한다. 직접 고치지 않는다.
+      원본은 _개봉-바닐라.html 의 <style> 이다.
+
+   모든 선택자가 #op-opening 안에 갇혀 있다. 홈의 다른 구간에 새지 않는다.
+   팔레트 · body · .kicker · .rv 는 assets/site.css 것을 쓴다.
+   ========================================================== */
+#op-opening{
+  /* 히어로 사진의 실측 배경색. 핀 구간 내내 고정돼야 하므로 단색이다 —
+     페이지 «전체 높이» 기준 그라데이션을 깔면 스크롤에 따라 색이 밀린다 */
+  --photo-bg:#f9e9d0;
+  background:var(--photo-bg);
+  position:relative;
+}
+/* 개봉의 사진 배경과 본문 크림이 만나는 자리를 이어 붙인다.
+   ⚠️ 구간 «전체 높이» 기준 그라데이션을 깔면 안 된다 — 스크롤에 따라 색이 밀린다.
+      그래서 끝에 고정 높이 한 겹만 얹는다 */
+/* 정적 모드에는 «쓰는 동작»이 없다. 다 쓴 상태로 못 박는다.
+   ⚠️ 안 그러면 손글씨와 인장을 «받아만 놓고 한 획도 안 보인다» — 바이트만 내고
+      화면에는 빈 기입란이 남는다.
+   ⚠️ 인라인의 --w:var(--hd1) 은 --hd1 이 없으면 «보장된 무효»가 된다. 부모에
+      --w:1 을 걸어도 닿지 않는다 — 실제로 안 닿았다(계산값이 빈 문자열이었다).
+      그래서 그림은 clip-path 를 직접 끄고, 상속으로 받는 것들만 값을 준다 */
+/* ⚠️ 원본 규칙이 «.leaf .face .fill .h» 라 클래스가 넷이다. 같은 수 이상이어야 이긴다 —
+   .fill .h 로만 적었더니 조용히 졌다 (특이도 1,3,1 대 1,4,0) */
+html[data-motion="static"] #op-opening .leaf .face .fill .h{-webkit-clip-path:none;clip-path:none}
+html[data-motion="static"] #op-opening .leaf .face .fill .tick,
+html[data-motion="static"] #op-opening .leaf .face .fill .sign{stroke-dashoffset:0}
+html[data-motion="static"] #op-opening .fill{--wh:1;--wg:1}
+#op-opening::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:720px;
+  background:linear-gradient(180deg, rgba(249,233,208,0), #fffdf3);
+  pointer-events:none;z-index:0;
+}
+/* ───────── 공통 타이포 ───────── */
+
+  /* ⚠️ 외부 웹폰트를 받지 않는다 (CLAUDE.md). Black Han Sans 를 뺐다 —
+     라틴 전용 디스플레이 폰트는 4판본에서 CJK 제목이 깨진다.
+     무게는 «굵기»가 아니라 «크기»로 만든다는 것이 조사 결론이지만,
+     시스템 스택에서 400 은 너무 얇아 CLAUDE.md 규정값 800 을 쓴다.
+     ⚠️ 계단 그림자 3겹도 제거했다 — 41곳 조사에 선례 0, «무게»가 아니라 «활기»로 읽힌다 */
+  #op-opening h1,
+#op-opening h2{
+    font-weight:800;
+    color:var(--brown);margin:0 0 18px;line-height:1.18;letter-spacing:-.02em;
+  }
+  #op-opening h1{font-size:clamp(2.2rem,4.8vw,3.9rem)}
+  #op-opening h2{font-size:clamp(1.9rem,4.0vw,3.1rem)}
+  /* ⚠️ 폭을 ch 로 잡으면 안 된다. ch 는 «0» 글자 너비 기준이라
+     한글에서는 34ch 가 실제로는 28자쯤밖에 안 된다. em 으로 잡는다 */
+  #op-opening .lead{color:var(--muted);line-height:1.75;margin:0;font-size:clamp(.94rem,1.4vw,1.06rem);max-width:27em}
+  /* ⚠️ 한국어는 기본 규칙으로 줄을 바꾸면 «단어 중간»에서 끊긴다.
+     («어디로 가야 하는지 / 가 여기 있다» 처럼)
+     keep-all 이면 어절 단위로만 끊긴다 */
+  #op-opening h1,
+#op-opening h2,
+#op-opening .lead,
+#op-opening .kicker{word-break:keep-all}
+
+  /* ───────── 3초 테스트 : 실체 한 줄 ─────────
+     «이게 물건으로 뭔지»를 첫 화면에서 끝낸다.
+     ⚠️ .lead 로 두면 안 된다. S0 만 본문이 두 문장이 되어 네 장면의 문장 수가
+        어긋난다 (_카피규칙.md 「본문 문장 수 네 장면 전부 동일」).
+        그래서 «본문»이 아니라 «라벨»의 모양을 준다 —
+        TRAVELER'S COMPANY 가 서술문 뒤에 [specs] 를 대괄호로 붙이는 방식이다.
+     ⚠️ 숫자는 넣지 않는다. 조사한 브랜드 중 홈 첫 화면에 스펙을 넣은 곳은 0곳이었고,
+        여기 두는 것은 «수»가 아니라 «무엇»이다 */
+  #op-opening .spec{
+    margin:20px 0 0;font-size:.78rem;line-height:1.9;color:var(--muted);
+    letter-spacing:.02em;max-width:27em;word-break:keep-all;
+  }
+  #op-opening .spec i{font-style:normal;color:var(--orange-ink, var(--orange));font-weight:900}
+  #op-opening .go{margin:18px 0 0}
+
+  /* ═════════════════════════════════════════════════════════
+     기본 상태 = «정적». 장면 4개를 위아래로 편다.
+
+     JS 가 없어도, GSAP CDN 이 막혀도, 움직임을 줄여 달라고 한 브라우저에서도
+     이 배치가 그대로 보인다. 애니메이션은 여기에 «덧입히는» 것이다.
+     반대로 짜면(애니메이션이 기본) 셋 중 하나만 어긋나도 화면이 깨진다
+     ═════════════════════════════════════════════════════════ */
+  #op-opening{position:relative}
+  /* 사진 가장자리를 페이지 색으로 평탄화해 뒀으므로 단색이면 된다.
+     ⚠️ 여기에 그라데이션을 깔면 오히려 사각 테두리가 «드러난다» —
+        사진은 열 안에 letterbox 되어 있어 뷰포트 기준 그라데이션과 위치가 안 맞는다 */
+  #op-opening .pin{position:relative}
+  #op-opening .scene{
+    max-width:1240px;margin:0 auto;
+    padding:72px clamp(20px,5vw,64px);
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+    align-items:center;gap:clamp(16px,4vw,56px);
+  }
+  #op-opening .scene + .scene{border-top:1px solid var(--line)}
+  #op-opening .scene .pic{
+    position:relative;display:grid;place-items:center;
+    perspective:1400px;min-width:0;min-height:0;
+  }
+
+  /* 사진과 «그 위에 얹는 것»이 정확히 같은 상자를 쓰게 한다.
+     img 에 max-width/max-height 만 주면 레터박스 때문에 실제 그림 상자를 알 수 없어
+     여권 누끼를 봉투 입구에 맞출 수 없다 */
+  #op-opening .frame{position:relative;max-width:100%;max-height:100%;min-width:0;min-height:0}
+  #op-opening .frame.sq{aspect-ratio:1/1}
+  #op-opening .frame.ls{aspect-ratio:4/3}
+  /* ⚠️ .frame.bk (여권 한 면 0.704 비율) 규칙은 지웠다.
+     sc3 의 정지 표지 사진을 3D 책으로 바꾸면서 쓰는 곳이 하나도 없어졌다 */
+  #op-opening .frame > img{
+    width:100%;height:100%;display:block;object-fit:contain;
+
+    /* 바깥 0.5% 만 흘린다. 리샘플링으로 생기는 1px 이음선을 감추는 정도다.
+
+       ⚠️ «사각 테두리»는 CSS 로 풀면 안 된다. 사진 쪽에서 풀었다.
+       사진 배경이 좌상 255,243,227 → 우하 250,216,179 로 기울어 있어서
+       단색 페이지와 어느 값으로도 맞지 않았다. 예전에는 넓은 페이드로 가렸는데
+       그러면 «피사체»까지 지워진다 —
+         · 원형 마스크(closest-side)는 내접원이라 봉투 모서리와 끈 끝이 잘렸다
+         · 여권 상단은 프레임 2.9% 지점이라 통째로 날아갔다
+         · 페이드를 좁히면 이번엔 불투명 원이 «원반»으로 드러났다
+
+       해결 — social/_flatten-bg.mjs 로 «바깥쪽 배경»만 페이지 색(#f9e9d0)으로 평탄화했다.
+       봉투 실루엣을 먼저 만들고 그 바깥만 건드리므로 피사체를 침범할 수 없다
+       (실측: 세 장 모두 침범 0px). 제미나이 워터마크(흰 반짝이)도 이때 같이 지워진다.
+       그 결과 네 변이 249,233,208 로 «정확히» 페이지 색과 같아졌다.
+       원본은 assets/hero/_raw/ 에 있다. 사진을 갈아 끼우면 그 스크립트를 다시 돌릴 것 */
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0, #000 .5%, #000 99.5%, transparent 100%),
+      linear-gradient(to bottom, transparent 0, #000 .5%, #000 99.5%, transparent 100%);
+            mask-image:
+      linear-gradient(to right, transparent 0, #000 .5%, #000 99.5%, transparent 100%),
+      linear-gradient(to bottom, transparent 0, #000 .5%, #000 99.5%, transparent 100%);
+    -webkit-mask-composite:source-in;
+            mask-composite:intersect;
+  }
+
+  /* ───────── 여권이 봉투에서 나오는 합성 ─────────
+     두 장으로 만든다. 둘 다 대표가 만든 컷이고 «같은 봉투»다.
+       env-open.jpg      빈 봉투        — 바탕
+       env-passport.jpg  여권이 나온 컷 — 여권 누끼의 원본이자 마지막 정지 그림
+
+     앞판 입술선   봉투속 어둠 → 크라프트 전이를 열별로 검출
+                   x60→y31.81  x70→y35.19  x76→y37.38
+                   → y = 10.9 + 0.348x   (아래 .pclip 의 polygon 이 이 선이다)
+                   ⚠️ «어둠»과 «TOP SECRET 인장»은 밝기가 비슷하다.
+                      채도로 갈라야 한다 (어둠 R-B≤35 · 인장 R-B≈102)
+
+     ⚠️ 예전에는 별도 누끼(assets/cut/passport-single.png)를 좌표(left 64.8% / 폭 30% /
+        기울기 15°)로 앉히고, 다 나온 뒤 생성 사진으로 바꿔쳤다.
+        네이비 박스 폭은 0.1% 이내로 맞춰 뒀는데도 «그림 자체»가 달라서
+        (누끼는 더 기울고 뒤에 카드가 비친다) 교체 순간이 그대로 보였다.
+        지금은 누끼를 사진에서 직접 떠서 같은 상자에 얹는다. 맞출 값이 없다. */
+  #op-opening .pclip{
+    position:absolute;inset:0;
+    -webkit-clip-path:polygon(0% 0%, 100% 0%, 100% 45.7%, 0% 10.9%);
+            clip-path:polygon(0% 0%, 100% 0%, 100% 45.7%, 0% 10.9%);
+  }
+  /* 미끄러지는 여권. env-passport.jpg 에서 «여권만» 오려낸 그림이다
+     (social/_make-passport-cut.mjs — 빈 봉투 사진과의 픽셀 차이로 딴다).
+
+     ⚠️ 좌표를 «손으로» 맞추지 않는다. 스크립트가 실측한 상자를 그대로 쓰기 때문에
+        --out:0 이면 여권이 사진 속 자리에 겹친다. 그래서 멈춘 그림(#op-settled)으로
+        바꿔쳐도 튀지 않는다. 사진을 바꾸면 스크립트를 다시 돌려 아래 네 값을 갈아 끼운다.
+
+     밀어 넣는 방향은 여권의 세로축 — 아래로, 약간 왼쪽(약 13°).
+     그림 자체가 이미 기울어져 있으므로 rotate 를 걸면 두 번 기운다. translate 만 쓴다 */
+  #op-opening .pass{
+    --out:0;                    /* 0 다 나옴 → 1 완전히 봉투 속. 단위 없는 «비율»이다 */
+    position:absolute;display:block;
+    /* 여권 상자 (프레임 대비 %). 스크립트가 실측해 찍어 준 값을 그대로 옮긴다.
+       이 네 값이 맞으면 --out:0 에서 사진 속 여권과 픽셀이 겹친다 */
+    left:51.375%; top:2.313%; width:34.125%; height:33.938%;
+    /* translate 의 % 는 «자기 크기» 기준이라 프레임 기준 34% 이동이
+       -22.4% / 97.6% 로 환산된다. 이것도 스크립트가 계산해 준다 */
+    transform:translate(calc(var(--out) * -22.4%), calc(var(--out) * 97.6%));
+  }
+
+  /* 다 나온 뒤 «이 사진»으로 바꿔친다.
+     누끼는 미끄러지는 동안만 쓰고, 멈춘 그림은 조명·그림자가 봉투와 맞는 사진을 쓴다 */
+  #op-opening #op-settled{position:absolute;inset:0;opacity:0}
+  html:not([data-motion="static"]) #op-opening #op-settled{transition:none}
+
+  /* ═════════════════════════════════════════════════════════
+     페이지 넘김 — 개봉 구간 «후반»이다 (예전에는 별도 #pages 섹션이었다)
+
+     프레임 이미지를 여러 장 쓰지 않는다. 실제 인쇄 지면 7장을
+     CSS 3D 로 세워서 «장(leaf)»을 넘긴다 → 프레임 간 흔들림이 0.
+
+       leaf0  앞 p01(표지)  뒤 p02
+       leaf1  앞 p03        뒤 p04
+       leaf2  앞 p05        뒤 p06(경복궁 지령서)
+       고정   p07(경복궁 보고서)
+
+     세 장을 다 넘기면 왼쪽 p06 · 오른쪽 p07 — 경복궁 펼침면이 된다.
+
+     ⚠️ 핀 규칙에 id 를 섞지 말 것. «#pages .pin» 같은 선택자는 특이도가
+        .anim .pin 보다 높아 sticky 를 이겨 버린다. 예전에 실제로 그 함정에 걸렸다.
+        섹션을 합치면서 그 규칙은 사라졌지만, 새로 만들 때 되살리기 쉽다.
+        핀은 .pin / .anim .pin 두 규칙만으로 결정한다
+     ═════════════════════════════════════════════════════════ */
+  /* 정적 모드에서는 그냥 흐르는 블록이다 */
+  #op-opening .bookwrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,64px)}
+  #op-opening .riser{position:relative}
+  /* ⚠️ --t0..2 는 여기가 «주인»이다. .book 에 두면 안 된다 —
+     JS 가 이 요소에 값을 걸고, .book 은 상속으로 받는다.
+     .book 쪽에 같은 이름의 선언이 남아 있으면 «자기 선언»이 상속을 이겨
+     정적 모드에서 책이 넘어간 채로 굳는다.
+     기본값 1 = «다 넘긴 상태» — JS 가 없어도 경복궁이 그대로 보인다 */
+  #op-opening .bookstage{
+    --t0:1; --t1:1; --t2:1; --t3:1; --t4:1; --t5:1;
+    --open:1;             /* 펼침 정도 — 표지가 열리면 1, 뒤표지로 닫히면 다시 0 */
+    --lit:0;
+    --turn:0;             /* 0 정면 · 1 옆으로 90° */              /* 1 = 사진에서 편 표지 · 0 = 인쇄 지면 그대로 */
+    position:relative;display:grid;place-items:center;min-width:0;
+    perspective:2200px;perspective-origin:50% 44%;
+  }
+  html:not([data-motion="static"]) #op-opening .bookstage{--t0:0; --t1:0; --t2:0; --t3:0; --t4:0; --t5:0; --open:0}
+  #op-opening .book{
+    /* ⚠️ 40vw 를 여기에도 넣는다. .anim 쪽에만 있으면 정적·무JS 모드의 390px 화면에서
+       책이 605px 로 그려져 문서가 가로로 넘친다 (실측 scrollWidth 624 / clientWidth 390).
+       1440px 에서는 min() 결과가 그대로 300px 이라 데스크톱 정적 배치는 안 바뀐다 */
+    --pw:min(40vh,300px,40vw);
+    position:relative;
+    width:calc(var(--pw) * 2);
+    height:calc(var(--pw) / 0.704);
+    transform-style:preserve-3d;
+    /* 닫혔을 땐 한 면만 보이므로 중앙으로 당긴다 */
+    /* 닫혔을 땐 오른쪽 반만 보이므로 왼쪽으로 당기고,
+       마지막 장이 넘어가면 왼쪽 반만 남으므로 오른쪽으로 되돌린다.
+       표지 한 장으로 시작해 뒤표지 한 장으로 끝나는 대칭이 된다 */
+    transform:translateX(calc(-25% * (1 - var(--t0)) + 25% * var(--t5))) rotateX(5deg);
+  }
+  /* ⚠️ 정적 모드에서는 경복궁 펼침면이 «통째로» 보인다 — 닫힘(-25%)도 끝맺음(+25%)도
+     보정할 것이 없다. 그런데 --t5 가 1 이라 위 식이 «오른쪽으로 25%» 를 그대로 먹인다.
+     --t5 는 1 이라야 앞표지가 숨으므로(아래 .page-fixed 의 opacity) 값은 손대지 않고
+     여기서 «옮기는 것만» 끈다.
+     그대로 두면 1440px «미만»에서 문서가 가로로 스크롤된다 —
+     768 에서 70px · 360 에서 37px 실측. 본문 왼쪽이 그만큼 잘린다.
+     ⚠️ 로밍·2G/3G·saveData 손님은 boot.js 가 «자동으로» 정적 모드로 보낸다.
+        인바운드 손님이 가장 많이 만나는 화면이 이쪽이라 더 나쁘다. 2026-09-13 에 잡았다.
+     고친 뒤 반드시  node social/_check-overflow.mjs */
+  html[data-motion="static"] #op-opening .book{transform:rotateX(5deg)}
+
+  #op-opening .bshadow{
+    /* ⚠️ .book 에 걸린 translateX(-25%) 를 그림자도 같이 먹어서, 닫혔을 때
+       그림자가 표지에서 «반 페이지» 왼쪽으로 밀려 있었다 (실측 92.4px = --pw/2 × k).
+       --t0 로 되돌리므로 새 타이밍 값이 없고, 다 열리면 지금과 완전히 같아진다 */
+    position:absolute;left:calc(50% + var(--pw) * (1 - var(--t0)) / 2);bottom:-26px;
+    width:calc(var(--pw) * (1 + var(--open)) * .92);height:26px;
+    transform:translateX(-50%);pointer-events:none;
+    background:radial-gradient(50% 50% at 50% 50%,
+      rgba(70,49,31,calc(.30 - .10 * var(--open))), rgba(70,49,31,0) 72%);
+    filter:blur(3px);
+  }
+
+  #op-opening .page-fixed,
+#op-opening .leaf{
+    position:absolute;top:0;right:0;
+    width:var(--pw);height:100%;
+  }
+  /* 마지막 장이 넘어가는 동안 같이 사라진다. 그래야 «뒤표지 한 장»만 남는다 */
+  /* ⚠️ 마지막 장이 «돌기 시작하자마자» 사라져야 한다.
+     1 - --t5 로 두면 장이 90° 를 넘길 때까지 뒤에 남아 뒤표지가 두 번 보인다.
+     실제로 그렇게 나왔다. 4배로 빼면 t5 = .25 에서 없어지는데,
+     그때는 아직 마지막 장이 이 면을 완전히 덮고 있어 사라지는 것이 안 보인다 */
+  #op-opening .page-fixed{overflow:hidden;border-radius:2px 7px 7px 2px;background:#f6f1e4;
+              opacity:calc(1 - var(--t5) * 4)}
+  #op-opening .page-fixed img{width:100%;height:100%;object-fit:cover;display:block}
+
+  #op-opening .leaf{transform-origin:left center;transform-style:preserve-3d;will-change:transform}
+  /* ⚠️ JS 가 없거나 정적 모드일 때도 «다 넘긴» 상태가 보여야 한다.
+     예전 주석은 «CSS 기본값(--t 전부 1)이라 경복궁 펼침면이 그대로 보인다»고 적어 뒀지만
+     장을 «돌리는» 규칙이 CSS 에 없어서 실제로는 닫힌 표지(p01)가 보였다.
+     z-index 까지 뒤집어야 «마지막에 넘긴 장»(p06)이 왼쪽 맨 위에 온다 —
+     DOM 순서대로 두면 leaf0(p02)이 덮어 버린다 */
+  /* ⚠️ 「전부 돌리고 마지막 장을 맨 위에」로 두면 뒤표지가 보인다. 실제로 그랬다.
+     경복궁 펼침면은 «leaf2 까지 돌아가고 leaf3 은 그대로» 일 때 나온다 —
+     돌아간 leaf2 의 뒷면이 p06(왼쪽), 안 돌아간 leaf3 의 앞면이 p07(오른쪽)이다 */
+  html[data-motion="static"] #op-opening #op-leaf0,
+html[data-motion="static"] #op-opening #op-leaf1,
+html[data-motion="static"] #op-opening #op-leaf2{transform:rotateY(-180deg)}
+  html[data-motion="static"] #op-opening #op-leaf0{z-index:1}
+  html[data-motion="static"] #op-opening #op-leaf1{z-index:2}
+  html[data-motion="static"] #op-opening #op-leaf2{z-index:3}
+  html[data-motion="static"] #op-opening #op-leaf3{z-index:4}
+  #op-opening .leaf .face{
+    position:absolute;inset:0;overflow:hidden;
+    backface-visibility:hidden;-webkit-backface-visibility:hidden;
+    background:#f6f1e4;border-radius:2px 7px 7px 2px;
+    box-shadow:0 10px 26px rgba(70,49,31,.16);
+  }
+  #op-opening .leaf .face img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* ═══ 경복궁 기록면을 «직접 채우는» 겹 ═══════════════════
+     스크롤이 그 펼침면에서 잠깐 멈추는 동안 칸이 하나씩 채워지고,
+     마지막에 요원 인장 스티커가 붙는다.
+
+     ⚠️ 손글씨 «서체»를 쓰지 않는다 (CLAUDE.md). 외부 웹폰트도 못 받는다.
+        화면에서 이 글자는 9~11px 라 서체가 아니라 «잉크가 도는 리듬»이 보인다.
+        그래서 시스템 서체를 쓰되 줄마다 조금씩 기울여 기계적인 기준선을 깬다.
+        체크 표시와 서명은 아예 «획»(SVG stroke)이라 서체가 필요 없다.
+     ⚠️ 글자 크기는 --pw 에 매단다. 뷰포트가 바뀌어도 지면과 같은 비율로 따라간다 */
+  #op-opening .fill{
+    position:absolute;inset:0;z-index:4;pointer-events:none;
+    font-size:calc(var(--pw) * .030);
+    color:#26314d;
+  }
+  /* 손글씨는 «구운 그림»이다 (social/_make-hand.mjs · TlabYoonDJ 펜글씨).
+     ⚠️ 선택자에 .fill 만 쓰면 안 된다. 위쪽 .leaf .face img 가 특이도가 높아
+        width:100%·object-fit:cover 로 덮어써 지면을 통째로 가린다. 실제로 그랬다.
+     ⚠️ 폭만 % 로 준다. 높이는 그림 비율이 알아서 잡는다 —
+        높이까지 % 로 주면 지면 «높이» 기준이라 글씨가 눌린다 */
+  #op-opening .leaf .face .fill .h{
+    position:absolute;height:auto;object-fit:contain;
+    transform:translateY(-50%);
+    /* 왼쪽에서 오른쪽으로 «써 나간다» */
+    clip-path:inset(0 calc((1 - var(--w,0)) * 100%) 0 0);
+  }
+  #op-opening .leaf .face .fill .h.mid{transform:translate(-50%,-50%)}
+
+  /* 밑줄 위에 앉히는 글씨 — 길이가 달라져도 «쓰기 시작하는 자리»가 안 움직인다 */
+  #op-opening .leaf .face .fill .h.hb{transform:none}
+  /* 세로쓰기는 구울 때 이미 돌려 놨다. 드러나는 방향만 아래→위로 바꾼다 */
+  #op-opening .leaf .face .fill .h.vt{clip-path:inset(calc((1 - var(--w,0)) * 100%) 0 0 0)}
+
+  /* 서약 지면(p04)의 서명. 기록면(p07)과 «같은 획»을 쓴다 — 같은 사람이니까 */
+  #op-opening .fill .sign.p04{left:66%;top:86.1%;width:26%;stroke-dashoffset:calc((1 - var(--p04sign,0)) * 520)}
+
+  #op-opening .fill .tick{
+    position:absolute;transform:translate(-50%,-50%) rotate(-6deg);
+    width:calc(var(--pw) * .036);height:calc(var(--pw) * .036);
+    fill:none;stroke:#26314d;stroke-width:2.6;
+    stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:26;stroke-dashoffset:calc((1 - var(--w,0)) * 26);
+  }
+  #op-opening .fill .sign{
+    position:absolute;left:72%;top:90.4%;transform:translateY(-50%);
+    width:20%;height:auto;
+    fill:none;stroke:#26314d;stroke-width:3.4;
+    stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:520;stroke-dashoffset:calc((1 - var(--wg,0)) * 520);
+  }
+  /* 스티커 — 위에서 내려와 «눌러 붙는다». 다 붙으면 살짝 기울어 남는다 */
+  /* ⚠️ 선택자를 «.fill .seal» 로만 쓰면 안 된다. 위쪽 .leaf .face img 규칙이
+     특이도가 더 높아 width:100%·object-fit:cover 로 덮어써서 스티커가
+     지면을 통째로 덮는다. 실제로 그렇게 나왔다 */
+  #op-opening .leaf .face .fill .seal{
+    position:absolute;left:85.5%;top:89%;width:18%;height:auto;object-fit:contain;
+    opacity:var(--wh,0);
+    transform:translate(-50%,-50%)
+              scale(calc(1.5 - .5 * var(--wh,0)))
+              rotate(calc(-14deg + 6deg * var(--wh,0)));
+  }
+  #op-opening .leaf .back{transform:rotateY(180deg);border-radius:7px 2px 2px 7px}
+  /* 책등 쪽 음영 — 종이가 안쪽으로 말려 들어가는 느낌 */
+  #op-opening .leaf .face::after{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(90deg,rgba(60,40,20,.24),rgba(60,40,20,0) 13%);
+  }
+  #op-opening .leaf .back::after{
+    background:linear-gradient(270deg,rgba(60,40,20,.24),rgba(60,40,20,0) 13%);
+  }
+  #op-opening .page-fixed::after{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(90deg,rgba(60,40,20,.20),rgba(60,40,20,0) 11%);
+  }
+
+  /* 사진에서 «편» 표지 한 겹. 인계하는 동안 책을 사진 그 자체로 만든다.
+     (social/_make-cover-skin.mjs — 26.49° 를 되돌려 88:125 판형으로 퍼낸다)
+
+     왜 필요한가 — 겉모양·크기·각도를 0.5px 안에서 맞춰 놔도 «무늬»가 다른 물건이다.
+     사진 표지(제미나이)는 금박 원이 12% 크고 4% 아래에 있고, 인쇄 표지(p01)는
+     작고 선명하다. 그래서 크로스페이드 한복판에 원과 SEOUL 이 두 겹으로 어긋나 보였다.
+     이 겹을 씌우면 인계 구간의 크로스페이드가 «사진 → 같은 사진»이 되어 아예 안 보이고,
+     무늬가 바뀌는 것은 봉투가 아직 아랫부분을 가리고 있는 동안으로 밀린다.
+
+     ⚠️ 선택자에 #op-leaf0 를 붙일 것 — .leaf .front 로 쓰면 뒤에 넘어가는 p03·p05 에도 붙는다.
+     ⚠️ 표지 아랫부분은 사진에 없어서 알파가 0 이다. 그 자리는 밑의 p01 이 그대로 비친다 */
+  #op-opening #op-leaf0 .front .skin{
+    position:absolute;inset:0;z-index:3;pointer-events:none;
+    width:100%;height:100%;object-fit:cover;display:block;
+    opacity:var(--lit,0);
+  }
+
+  /* 봉투 «앞판 사본» — 3D 책을 앞판 «뒤»에 넣는 층.
+
+     왜 clip-path 가 아니라 사본인가 — 책 레이어를 입술선에서 자르면 그 선을
+     언젠가 «풀어야» 하고, 푸는 순간이 반드시 보인다(직선이 표지를 훑고 내려간다).
+     사본은 봉투와 같은 opacity·transform·filter 를 받으므로 봉투가 물러나는
+     동안에도 등록이 안 어긋나고, 가림이 «봉투가 지나가면서» 저절로 풀린다.
+
+     ⚠️ 이미지는 #op-composite 가 이미 쓰는 env-open.jpg 다. 새 요청이 없다.
+     ⚠️ clip-path 의 두 값(10.9 / 45.7)은 .pclip 의 polygon 과 «같은 직선»이다.
+        복제가 아니라 같은 선을 반대쪽에서 쓰는 것이다 — .pclip 은 위, 이건 아래.
+     ⚠️ 가장자리 마스크를 .frame > img 와 똑같이 걸어야 프레임 아래·옆에서
+        봉투 그림자가 딱딱하게 잘린 띠가 안 생긴다.
+     ⚠️ 자리(left/top/width/height)는 measure() 가 #op-composite 의 실제 rect 로 넣는다 */
+  #op-opening .lipmask{display:none}
+  html:not([data-motion="static"]) #op-opening .lipmask{
+    display:block;position:absolute;opacity:0;pointer-events:none;
+    -webkit-clip-path:polygon(0% 10.9%, 100% 45.7%, 100% 100%, 0% 100%);
+            clip-path:polygon(0% 10.9%, 100% 45.7%, 100% 100%, 0% 100%);
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0, #000 .5%, #000 99.5%, transparent 100%),
+      linear-gradient(to bottom, transparent 0, #000 .5%, #000 99.5%, transparent 100%);
+            mask-image:
+      linear-gradient(to right, transparent 0, #000 .5%, #000 99.5%, transparent 100%),
+      linear-gradient(to bottom, transparent 0, #000 .5%, #000 99.5%, transparent 100%);
+    -webkit-mask-composite:source-in;
+            mask-composite:intersect;
+  }
+
+  /* 정적 모드 마무리 — sc3 의 그림 칸(#op-bookslot)은 애니메이션에서 2단 격자를
+     지키려고 비워 둔 것이다. 정적에서는 그 빈 칸이 540.9×0 짜리 «구멍»으로 남아
+     오른쪽 절반이 통째로 빈다. 정적에서는 칸을 없애고 카피를 두 칸에 걸친다.
+     세 번째 줄 — 책 그림자가 bottom:-26px 이라 #chapters 첫 줄을 27.6px 덮고 있었다 */
+  html[data-motion="static"] #op-opening #op-bookslot{display:none}
+  html[data-motion="static"] #op-opening #op-sc3 .copy{grid-column:1 / -1}
+  html[data-motion="static"] #op-opening .bookwrap{padding-bottom:clamp(48px,7vh,88px)}
+
+  /* 넘기는 지면마다 붙는 설명.
+     정적·무JS 에서는 그냥 «목록»으로 읽힌다 — 움직임을 줄여 달라고 한 사람도
+     같은 내용을 다 본다. 애니메이션에서만 겹쳐 놓고 하나씩 갈아 끼운다 */
+  #op-opening .pagecopy{max-width:44em;margin:0 auto;padding:0 clamp(20px,5vw,64px) clamp(40px,6vh,72px)}
+  #op-opening .pagecopy p{margin:0 0 18px}
+  #op-opening .pagecopy b{
+    display:block;font-weight:800;color:var(--brown);
+    font-size:clamp(1.05rem,1.7vw,1.35rem);letter-spacing:-.01em;margin-bottom:6px;
+  }
+  #op-opening .pagecopy span{
+    display:block;color:var(--muted);line-height:1.7;
+    font-size:clamp(.88rem,1.25vw,1rem);
+  }
+  #op-opening .pagecopy b,
+#op-opening .pagecopy span{word-break:keep-all}
+
+  html:not([data-motion="static"]) #op-opening .pagecopy{
+    position:absolute;left:0;right:0;bottom:0;
+    max-width:none;padding:0;pointer-events:none;text-align:center;
+  }
+  html:not([data-motion="static"]) #op-opening .pagecopy p{
+    position:absolute;left:0;right:0;bottom:clamp(26px,5vh,56px);
+    margin:0;padding:0 clamp(20px,5vw,64px);
+    opacity:var(--o,0);
+  }
+
+  #op-opening .hint{display:none}
+
+  /* ═════════════════════════════════════════════════════════
+     덧입히는 상태 = «애니메이션». <html class="anim"> 일 때만
+     ═════════════════════════════════════════════════════════ */
+  /* 한 핀에 두 구간을 싣는다 — 봉투를 여는 구간과 책장을 넘기는 구간.
+     길이는 «여기 두 숫자»만 고치면 된다. JS 는 이 값을 읽어 분할점을 계산하므로
+     SPANS·WRITE·CAPS 의 튜닝값(진행률 기준)은 한 줄도 안 고쳐도 된다.
+     ⚠️ sticky 핀이 실제로 «미끄러지는 거리»는 height − 100vh 다. 그냥 더하면 안 된다.
+        그래서 높이에 100 을 더한다.
+     ⚠️ 넘김이 긴 것은 장이 여섯이고, 경복궁 펼침면에서 «직접 쓰는» 구간이
+        464vh 나 들어가기 때문이다. */
+  html:not([data-motion="static"]) #op-opening{
+    --open-vh:320;    /* 봉투가 열리고 여권이 나와 책으로 인계되는 구간 */
+    --turn-vh:760;    /* 책장을 넘기는 구간 — 뒷장을 뗀 뒤의 값 */
+    height:calc((var(--open-vh) + var(--turn-vh) + 100) * 1vh);
+  }
+  /* GSAP 의 pin 을 CSS sticky 로 대체한다. 라이브러리 없이 같은 결과가 나온다 */
+  html:not([data-motion="static"]) #op-opening .pin{position:sticky;top:var(--bar);height:calc(100svh - var(--bar));overflow:hidden}
+
+  /* 책 레이어 — 핀 전체를 덮는다. .anim .scene 과 같은 절대 레이어다.
+     ⚠️ 선택자에서 #pages 를 뺐다면 --pw 규칙도 같이 옮겨야 한다.
+        안 옮기면 오류 없이 조용히 기본값 min(40vh,300px) 로 떨어져 책만 10% 작아진다.
+     ⚠️ 40vw 를 넣은 것은 모바일에서 펼친 책(2×--pw)이 뷰포트를 넘어
+        .pin 의 overflow:hidden 에 잘리던 «기존» 버그를 같이 잡기 위해서다 */
+  html:not([data-motion="static"]) #op-opening .bookwrap{
+    position:absolute;inset:0;max-width:none;padding:0;
+    display:grid;place-items:center;pointer-events:none;
+  }
+  html:not([data-motion="static"]) #op-opening .riser{width:100%;height:100%;display:grid;place-items:center}
+  html:not([data-motion="static"]) #op-opening .book{--pw:min(44vh,330px,40vw)}
+
+  /* 닫혔을 때는 sc3 오른쪽 칸 한가운데, 열리면서 화면 한가운데로 온다.
+     --t0 (표지가 열리는 진행률) 하나로 굴리므로 새 타이밍 값이 없다.
+
+     오른쪽 칸 중심과 화면 중심의 거리 —
+       칸 폭 비율이 1 : 1.05, 사이 간격이 --gap 이므로
+       offset = (본문폭 − gap)/4.1 + gap/2
+     1440px 에서 285.6px 이 나오고, 실측값 285.5px 과 맞는다 */
+  html:not([data-motion="static"]) #op-opening .bookstage{
+    --gap:clamp(16px,4vw,56px);
+    --slot-dx:calc((min(1240px, 100vw) - 2 * clamp(20px,5vw,64px) - var(--gap)) / 4.1
+                   + var(--gap) / 2);
+    /* --turn 이 1 이면 90° 돌아간다. p03 의 요원 정보가 «세로쓰기»라
+       그대로는 못 읽고 못 쓴다 — 공책을 옆으로 돌려 놓고 쓰는 것과 같다 */
+    transform:translateX(calc(var(--slot-dx) * (1 - var(--t0))))
+              rotate(calc(var(--turn, 0) * 90deg))
+              /* 돌리면 세로가 길어져 아래 설명과 겹친다. 그만큼 줄인다 */
+              scale(calc(1 - .14 * var(--turn, 0)));
+  }
+  /* 한 칸짜리 화면에서는 카피가 위, 그림이 아래로 쌓이므로 옮길 필요가 없다 */
+  @media (max-width:860px){ html:not([data-motion="static"]) #op-opening .bookstage{--slot-dx:0px} }
+  html:not([data-motion="static"]) #op-opening .scene{
+    position:absolute;inset:0;
+    padding-top:0;padding-bottom:0;
+    align-content:center;
+  }
+  html:not([data-motion="static"]) #op-opening .scene + .scene{border-top:0}
+
+  /* ⚠️ JS 가 돌기 «전»의 첫 프레임을 CSS 로 못 박는다.
+     .anim 이 붙으면 네 장면이 같은 자리에 절대배치로 겹치는데, 그동안 아무도
+     투명도를 안 정하면 카피 네 벌이 한꺼번에 겹쳐 찍히고 닫힌 책이 봉투 자리에
+     그대로 떠 있다. 느린 회선에서 실제로 그렇게 보였다 (700ms 지점).
+     스크립트가 문서 끝에 있어서 생기는 일이라 «순서»로는 못 막는다.
+
+     아래 값은 render(0) 이 넣는 값과 «같아야» 한다. 어긋나면 JS 가 도는 순간 한 번 튄다.
+       sc0 프레임·카피 1 · hint 1        (CSS 기본값 그대로 두면 된다)
+       sc1 프레임·카피 0 · composite 0 · sc3(riser) 0 · sc2 카피 0
+       --out 1 (여권이 봉투 «속»에 있는 상태) */
+  html:not([data-motion="static"]) #op-opening #op-sc1 .frame,
+html:not([data-motion="static"]) #op-opening #op-sc1 .copy,
+html:not([data-motion="static"]) #op-opening #op-sc2 .copy,
+html:not([data-motion="static"]) #op-opening #op-sc3 .copy,
+html:not([data-motion="static"]) #op-opening #op-composite,
+html:not([data-motion="static"]) #op-opening #op-riser{opacity:0}
+  html:not([data-motion="static"]) #op-opening .pass{--out:1}
+  html:not([data-motion="static"]) #op-opening .scene .pic{height:76vh}
+  html:not([data-motion="static"]) #op-opening .frame > img{will-change:transform,opacity}
+
+  html:not([data-motion="static"]) #op-opening .hint{
+    display:flex;
+    position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:5;
+    font-size:.7rem;letter-spacing:.18em;font-weight:950;color:var(--muted);
+    text-transform:uppercase;flex-direction:column;align-items:center;gap:8px;
+  }
+  html:not([data-motion="static"]) #op-opening .hint i{
+    display:block;width:1px;height:24px;
+    background:linear-gradient(180deg,transparent,var(--muted));
+    animation:drop 1.8s ease-in-out infinite;
+  }
+  @keyframes drop{0%,100%{transform:translateY(-5px);opacity:.35}50%{transform:translateY(5px);opacity:1}}
+  /* 부드러운 개봉에서는 화살표도 흔들지 않는다 */
+  html[data-motion="soft"] #op-opening .hint i{animation:none;opacity:.6}
+
+  /* ═════════════════════════════════════════════════════════
+     개봉 시퀀스 «뒤» 구간 (S4~)
+
+     여기서부터는 핀이 없다. 평범하게 흐르는 문서다.
+     개봉 구간이 «영화»라면 여기는 «설명서»다 — 리듬을 바꾸는 것이 의도다
+     ═════════════════════════════════════════════════════════ */
+  #op-opening #chapters{
+    /* 사진 배경색에서 사이트 크림으로 넘어가는 자리.
+       ⚠️ % 로 잡으면 구간 수가 늘 때마다 색 위치가 밀린다.
+       위쪽 전환 구간만 px 로 고정한다 */
+    /* ⚠️ 중간에 #fff5d0 을 끼우면 «누런 띠»가 생긴다.
+       #f9e9d0(249,233,208) → #fff5d0(255,245,208) 은 B 가 같은 채로 R·G 만 올라가서
+       그 구간만 노랗게 뜬다. 사진 배경색에서 끝점까지 한 번에 흘린다 */
+    background:linear-gradient(180deg,var(--photo-bg) 0, #fffdf3 900px);
+  }
+  #op-opening .chapter{
+    max-width:1240px;margin:0 auto;
+    padding:clamp(80px,11vh,140px) clamp(20px,5vw,64px);
+    display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+    align-items:center;gap:clamp(28px,5vw,72px);
+  }
+  /* 사진과 글의 좌우를 번갈아 놓는다. 같은 배치가 이어지면 지루하다 */
+  #op-opening .chapter.flip .shot{order:2}
+  #op-opening .chapter.flip .copy{order:1}
+
+  /* ⚠️ 내지 사진은 배경이 흰색·회색이다.
+     히어로처럼 크림에 흘려 넣을 수 없어서 (배경과 종이의 밝기가 겹친다)
+     따뜻하게 화이트밸런스한 뒤 «둥근 카드»에 담는다.
+     CLAUDE.md 의 «콘텐츠는 둥근 카드에 담는다 · 38px» 규칙과도 맞는다 */
+  #op-opening .shot{
+    border-radius:38px;overflow:hidden;
+    box-shadow:var(--shadow);
+    background:#fdf3e3;
+    line-height:0;
+  }
+  #op-opening .shot img{width:100%;height:auto;display:block}
+
+  #op-opening .chapter .copy .lead + .lead{margin-top:1em}
+
+  /* 스크롤 등장 효과. 패럴랙스는 쓰지 않는다 (CLAUDE.md)
+     ⚠️ 기본은 «보이는» 상태다. 숨기는 것은 anim 모드에서만.
+     .rv{opacity:0} 을 기본에 두면 JS 나 GSAP 이 없을 때 본문이 통째로 사라진다 */
+  html:not([data-motion="static"]) #op-opening .rv{opacity:0;will-change:opacity,transform}
+
+  /* ───────── 프로토타입 전용 : 모드 전환 ─────────
+     실제 사이트에 남길지는 결정이 필요하다 */
+  #op-opening .mtoggle{
+    position:fixed;right:16px;bottom:16px;z-index:99;
+    font:inherit;font-size:.78rem;font-weight:800;cursor:pointer;
+    border-radius:999px;min-height:42px;padding:0 18px;
+    border:1px solid rgba(97,65,43,.18);
+    background:rgba(255,255,255,.86);color:var(--brown);
+    box-shadow:0 8px 24px rgba(39,28,18,.14);
+    backdrop-filter:blur(10px);
+  }
+  #op-opening .mtoggle b{font-weight:950}
+  #op-opening .mtoggle small{display:block;font-weight:600;opacity:.62;font-size:.68rem;margin-top:1px}
+
+  /* ───────── 모바일 : 축약이 아니라 단순화 ───────── */
+  @media (max-width:860px){
+    #op-opening .scene{grid-template-columns:1fr;gap:20px;padding:56px clamp(20px,5vw,64px)}
+    #op-opening .lead{max-width:none}
+
+    html:not([data-motion="static"]) #op-opening .scene{
+      /* ⚠️ 카피 칸을 «고정 높이»로 잡는다.
+         auto 로 두면 카피 줄 수가 다른 장면끼리 사진 칸 높이가 달라져,
+         겹쳐 둔 봉투 두 장의 크기가 어긋나 인장이 두 개로 보인다 */
+      /* ⚠️ vh «만»으로 잡으면 안 된다. 칸은 화면과 같이 줄어드는데 카피 높이는 rem 이라
+         안 줄어든다. 화면이 짧을수록 칸이 먼저 작아져 맨 아래 링크부터 잘려 나간다 —
+         320×568 에서 139px 이 잘렸다. 그래서 «px 바닥»을 깐다.
+
+         300px 은 sc0 을 실측한 값이다 (sc0 이 네 장면 중 가장 길다 —
+         제목 두 줄 + 본문 두 줄 + 실체 한 줄 + 링크). 필요치는 265~284px 이다.
+         남는 만큼이 그대로 봉투 크기라, 바닥을 넉넉히 깔면 봉투가 작아진다.
+         고치면 반드시 다시 잰다:  node social/_fit-sc0.mjs
+         ⚠️ 네 장면이 «같은» 값을 쓰는 한 얼마든 올려도 된다. 장면마다 다른 것만 금지다 */
+      grid-template-rows:max(300px, 34vh) minmax(0,1fr);
+      gap:0;padding-top:8vh;padding-bottom:8vh;
+    }
+    html:not([data-motion="static"]) #op-opening .scene .copy{align-self:start}
+    /* 좁은 화면에서는 실체 한 줄이 두 줄로 접힌다. 여백을 줄여 칸 안에 넣는다 */
+    html:not([data-motion="static"]) #op-opening .scene .spec{margin-top:14px;font-size:.74rem;line-height:1.75}
+    html:not([data-motion="static"]) #op-opening .scene .go{margin-top:12px}
+  }
+
+  /* 화면이 짧으면 카피 칸(px 바닥)이 거의 전부를 먹는다.
+     그 상태에서 SCROLL 힌트는 봉투 «위»에 얹혀 둘 다 못 읽게 만든다.
+     장식이고 같은 화면에 「건너뛰기」가 이미 있으므로 짧을 때만 접는다 */
+  @media (max-height:680px){
+    html:not([data-motion="static"]) #op-opening .hint{display:none}
+  }
+
+  /* ───────── 아주 좁은 화면 ─────────
+     카피 칸의 px 바닥이 화면을 다 먹으면 봉투가 사라진다. 위아래 여백부터 줄인다 */
+  @media (max-width:400px){
+    html:not([data-motion="static"]) #op-opening .scene{padding-top:4vh;padding-bottom:4vh}
+    /* 340px 이하에서는 실체 한 줄이 «세 줄»로 접혀 325px 이 필요해진다 */
+    @media (max-width:340px){ html:not([data-motion="static"]) #op-opening .scene{grid-template-rows:max(336px, 34vh) minmax(0,1fr)} }
+    html:not([data-motion="static"]) #op-opening .scene .spec{font-size:.7rem;line-height:1.62;margin-top:12px}
+    html:not([data-motion="static"]) #op-opening .scene .pic{height:100%;min-height:0}
+  }

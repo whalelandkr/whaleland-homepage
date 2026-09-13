@@ -14,6 +14,15 @@
 <link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/privacy/" />
 <link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/privacy/" />
 <link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/privacy/" />
+<!-- noindex 라 검색에는 안 뜨지만, 메신저로 주소를 보내면 미리보기가 뜹니다. -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:url" content="https://whalelandkr.com/covert/site/privacy/" />
+<meta property="og:title" content="Privacy Policy — C.O.V.E.R.T" />
+<meta property="og:description" content="How this website handles personal information. Operated by Whale Land." />
+<meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
 
 <!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
 <link rel="icon" href="../favicon.ico" sizes="any" />
@@ -21,6 +30,7 @@
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
 <!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다. 외부 웹폰트를 받지 않습니다. -->
 <link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/boot.js"></script>
 
 <style>
 /* ================= LEGAL ONLY ================= */
@@ -28,12 +38,6 @@
 .legal-lede{font-size:16px;line-height:1.85;color:var(--ink-soft);max-width:52ch;margin:0 0 20px}
 .stamp-date{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--red);margin:0 0 7px}
 .stamp-eff{font-size:13.5px;line-height:1.75;color:var(--ink-soft);margin:0 0 44px}
-
-.doc{padding:clamp(26px,3.4vw,42px);margin:0 0 26px}
-.doc-h{font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
-  border-bottom:1px solid var(--line);padding-bottom:13px;margin:0 0 26px;
-  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.doc-h b{color:var(--orange-ink);font-weight:950}
 
 .arts{list-style:none;margin:0;padding:0;counter-reset:art}
 .arts > li{counter-increment:art;padding:0 0 26px;margin:0 0 26px;border-bottom:1px solid var(--line)}
@@ -55,15 +59,19 @@
 
 .none{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--red);margin:0 0 10px}
 
-.mailto{margin:8px 0 64px;font-size:15px}
-.mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
-
 @media (max-width:600px){
   .legaldoc{padding:44px 0 16px}
-  .doc{padding:24px 20px 22px}
-  .biz li{grid-template-columns:96px 1fr;gap:0 16px;padding:11px 0}
+
+  .biz li{grid-template-columns:96px minmax(0,1fr);gap:0 16px;padding:11px 0}
   .biz b{font-size:12.5px;line-height:1.45}
   .biz p{font-size:14px}
+}
+/* ⚠️ 아주 좁은 화면에서는 라벨을 «위»로 올립니다. 값 칸이 1fr 이라 min-content 아래로
+   줄지 않아, 320px 에서 contact@whalelandkr.com 이 안 끊겨 문서가 가로로 넘쳤습니다.
+   법정 고지가 옆으로 밀리면 안 됩니다. 고친 뒤 node social/_check-overflow.mjs */
+@media (max-width:380px){
+  .biz li{grid-template-columns:1fr;gap:2px 0}
+  .biz b{padding-top:0}
 }
 </style>
 </head>
@@ -92,7 +100,7 @@
 
     <p class="kicker">Legal</p>
     <h1 class="head">Privacy policy</h1>
-    <p class="legal-lede">This notice explains what happens to personal information on this website. The short version: this site doesn't collect any. The longer version is below, including the two things that do get stored and who handles them.</p>
+    <p class="legal-lede">This notice explains what happens to personal information on this website. The short version: this site doesn't collect any. The longer version is below, including what does get stored and who handles it.</p>
     <p class="stamp-date">Posted: August 21, 2026 &nbsp;|&nbsp; Effective: August 28, 2026</p>
     <p class="stamp-eff">This Privacy Policy takes effect on August 28, 2026.</p>
 
@@ -101,10 +109,10 @@
       <p class="doc-h"><span><b>CONTROLLER</b></span><span>WHO IS RESPONSIBLE</span></p>
       <ul class="biz">
         <li><b>Company</b><p>Whale Land</p></li>
-        <li><b>Representative</b><p>Wook Jang</p></li>
+        <li><b>Representative</b><p>김정후</p></li>
         <li><b>Business reg. no.</b><p>428-04-03222</p></li>
-        <li><b>Address</b><p>425 Eonju-ro, Gangnam-gu, Seoul, Republic of Korea</p></li>
-        <li><b>Privacy officer</b><p>Wook Jang &mdash; contact@whalelandkr.com</p></li>
+        <li><b>Address</b><p>서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)</p></li>
+        <li><b>Privacy officer</b><p>김정후 &mdash; contact@whalelandkr.com &middot; 010-9937-1628</p></li>
       </ul>
     </div>
 
@@ -119,27 +127,31 @@
         </li>
         <li>
           <h2>What your browser stores</h2>
-          <p>When you first arrive, the site checks your browser's language setting once and sends you to the matching language folder. To avoid doing that again on every visit, it saves a single flag in your browser's local storage:</p>
+          <p>The site keeps the settings a screen has to remember in your browser's local storage. On your first visit it checks your language once, and when you pick a language or a motion setting yourself, it writes that choice down. Four values are stored:</p>
           <ul>
-            <li><b>cov_lang</b> — value <b>1</b>. Nothing else. It records only that the check has already happened.</li>
+            <li><b>covertLanguage</b> — the language you are reading (<b>kr</b> · <b>en</b> · <b>jp</b> · <b>cn</b>). It updates when you switch languages.</li>
+            <li><b>cov_lang</b> — value <b>1</b>. Nothing else. It records only that the language check has already happened.</li>
+            <li><b>covert-motion</b> — your on-screen motion setting (<b>auto</b> · <b>full</b> · <b>static</b>). Written only when you change it in the footer.</li>
+            <li><b>cov_seen_open</b> — value <b>1</b>. Nothing else. It records only that you have already seen the opening sequence on the front page.</li>
           </ul>
-          <p>This flag stays in your browser and is never sent to us. Clearing your browser storage removes it, and the site keeps working either way. We use no advertising or tracking cookies.</p>
+          <p>All four stay in your browser and are never sent to us. None of them identifies you, and clearing your browser storage deletes them along with everything else. The site keeps working either way.</p>
+          <p>We run nothing that collects personal information automatically. We use no advertising or tracking cookies.</p>
         </li>
         <li>
           <h2>Hosting and server logs</h2>
           <p>The site is hosted on GitHub Pages. Like any web server, that service records requests it receives, which can include IP addresses. Those logs belong to the hosting provider and are handled under its own policy — we neither receive them nor keep copies.</p>
         </li>
         <li>
-          <h2>Fonts loaded from other services</h2>
-          <p>Typefaces are loaded from Google Fonts and jsDelivr. Your browser contacts those services directly to fetch the font files, which means they see the request. We don't receive anything from that exchange.</p>
+          <h2>Fonts</h2>
+          <p>We do not load typefaces from anywhere else. The site uses only the system fonts already installed on your device, so nothing goes out to another service to fetch a font.</p>
         </li>
         <li>
           <h2>When you buy something</h2>
-          <p>Purchases happen on our online shop, not here. Whatever you enter there — name, address, contact details, payment — is collected and handled under that shop's own privacy notice, which you should read before ordering. This page does not cover it.</p>
+          <p>Purchases happen not here but on <a href="https://whaleland.cafe24.com" target="_blank" rel="noopener">the online shop Whale Land runs</a>. It is our own shop, not a marketplace we sell through. Whatever you enter there — name, address, contact details, payment — is collected and handled under the privacy notice posted on that shop, which you should read before ordering. This page covers only this promotional site.</p>
         </li>
         <li>
           <h2>Things we haven't switched on yet</h2>
-          <p>We intend to add a contact form, a newsletter sign-up and website analytics. None of these are running today. When any of them goes live, we will update this page first — with what is collected, why, and how long it is kept — and the change will be dated.</p>
+          <p>We intend to add a contact form, a newsletter sign-up, pickup bookings and website analytics. None of these are running today. When any of them goes live, we will update this page first — with what is collected, why, and how long it is kept — and the change will be dated.</p>
         </li>
         <li>
           <h2>Sharing and outsourcing</h2>
@@ -150,6 +162,11 @@
           <h2>Your rights</h2>
           <p>Under Korean law you may ask to see the personal information an organisation holds about you, have it corrected or deleted, or ask that its processing be stopped. Since we hold none from this site, there would be nothing to show you — but if you want to check, write to us and we will confirm.</p>
           <p>For anything you entered while buying, please direct the request to the shop where you placed the order.</p>
+          <p>If you believe your rights over your personal information have been infringed, you may apply to either of the following bodies for dispute resolution or advice.</p>
+          <ul>
+            <li>Personal Information Dispute Mediation Committee (개인정보분쟁조정위원회) — 1833-6972 · <a href="https://www.kopico.go.kr" target="_blank" rel="noopener">kopico.go.kr</a></li>
+            <li>Privacy Infringement Report Centre (개인정보침해신고센터) — 118 · <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener">privacy.kisa.or.kr</a></li>
+          </ul>
         </li>
         <li>
           <h2>Changes to this notice</h2>
@@ -170,7 +187,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--orange)">.</i></p>
         <p class="foot-tag">Ordinary trips, turned into extraordinary missions.</p>
         <div class="sns">
           <span>INSTAGRAM</span>
@@ -184,15 +201,16 @@
       <nav aria-label="Operations">
         <p class="foot-h">Operation</p>
         <ul class="foot-list">
-          <li><a href="../mission/">The briefing</a></li>
+          <li><a href="../zones/">The zones</a></li>
           <li><a href="../kit/">The kit</a></li>
-          <li><a href="../report/">Field reports</a></li>
+          <li><a href="../field-report/">Field reports</a></li>
         </ul>
       </nav>
 
       <nav aria-label="Support">
         <p class="foot-h">Support</p>
         <ul class="foot-list">
+          <li><a href="../get/">How to get it</a></li>
           <li><a href="../support/">Shipping &amp; returns</a></li>
           <li><a href="../support/#faq">FAQ</a></li>
           <li><a href="mailto:contact@whalelandkr.com">Contact us</a></li>
@@ -216,32 +234,15 @@
         <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
       </div>
       <p>
-        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
-        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        웨일랜드 (Whale Land) · 대표 김정후 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 010-9937-1628<br />
+        서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)<br />
         contact@whalelandkr.com<br />
         © 2026 Whale Land. C.O.V.E.R.T is a trademark of Whale Land.
       </p>
     </div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var sel = document.getElementById('lang');
-  if(sel){ sel.addEventListener('change', function(){
-    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
-    location.href = sel.value;
-  }); }
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var rv = document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window && !reduce){
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    },{threshold:.05});
-    rv.forEach(function(el){ io.observe(el); });
-  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
-})();
-</script>
 
 </body>
 </html>

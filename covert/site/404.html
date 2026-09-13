@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>404 — C.O.V.E.R.T</title>
+<meta name="robots" content="noindex" />
+
+<!-- ⚠️⚠️ 이 파일은 «자기완결형»입니다. 바깥 파일을 하나도 부르지 않습니다.
+     스타일을 인라인으로 두고, 링크는 전부 절대 주소(https://…)입니다.
+
+     왜 — GitHub Pages 는 이 파일을 «없는 모든 주소»에서 내보냅니다.
+     /kr/없는페이지/ 에서도 열리므로 상대경로는 깊이마다 달라져 깨집니다.
+     그래서 예전에는 /assets/site.css 처럼 «루트 절대경로»를 썼는데,
+     이 사이트는 도메인 루트가 아니라 «하위 경로»에 놓입니다 —
+
+         whalelandkr.com/covert/site/          (확정 배포처)
+         whalelandkr.github.io/covert-site/    (저장소 Pages)
+
+     그래서 /assets/site.css 가 도메인 루트로 가 버려 2026-09-13 에
+     실제로 «스타일이 하나도 안 붙은 맨몸 404» 가 떠 있는 것을 확인했습니다.
+     경로 접두사가 배포처마다 다르므로 한 값으로 맞출 수가 없습니다.
+     그래서 바깥 자산을 아예 안 쓰고, 나가는 링크만 절대 주소로 둡니다.
+
+     ⚠️ 팔레트 값은 assets/site.css 에서 옮겨 온 것입니다. 거기를 고치면 여기도 고칩니다.
+     ⚠️ 배포처가 바뀌면 아래 SITE 주소 네 개를 같이 고칩니다. -->
+
+<style>
+:root{
+  --cream:#fff5d0; --cream-soft:#fff9e6;
+  --orange:#f19a45; --orange-ink:#a2611f;
+  --brown:#61412b; --ink:#1f2228; --muted:#72706c;
+  --line:rgba(70,49,31,.12);
+  --shadow:0 26px 70px rgba(39,28,18,.14);
+  --body:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR','Noto Sans JP','Noto Sans SC',sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75;
+  background:linear-gradient(180deg,#fff5d0,#fffdf3);
+  min-height:100svh;display:flex;flex-direction:column;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--orange-ink);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 max(20px,4vw);width:100%}
+
+.topbar{padding:18px 0;border-bottom:1px solid var(--line)}
+.mark{
+  color:var(--brown);font-weight:950;font-size:.96rem;letter-spacing:.16em;
+  text-decoration:none;display:inline-block
+}
+.mark i{font-style:normal;color:var(--orange)}
+
+.nf{flex:1;display:flex;align-items:center;padding:60px 0 80px}
+.nf-sheet{
+  max-width:620px;padding:clamp(30px,4.4vw,52px);position:relative;
+  background:rgba(255,255,255,.64);border:1px solid rgba(255,255,255,.6);
+  border-radius:38px;box-shadow:var(--shadow);
+}
+.nf-stamp{
+  position:absolute;right:clamp(20px,3vw,34px);top:-14px;
+  display:inline-flex;align-items:center;padding:6px 14px;border-radius:999px;
+  background:rgba(241,154,69,.18);color:var(--orange-ink);
+  font-size:.7rem;font-weight:950;letter-spacing:.14em;text-transform:uppercase
+}
+.nf-code{color:var(--orange-ink);font-size:.72rem;font-weight:950;letter-spacing:.20em;text-transform:uppercase;margin:0 0 12px}
+.nf-h{color:var(--brown);font-weight:800;font-size:clamp(26px,4vw,40px);line-height:1.24;letter-spacing:-.025em;margin:0 0 16px}
+.nf-say{font-size:1.02rem;line-height:1.85;color:var(--muted);margin:0 0 30px}
+.nf-langs{border-top:1px solid var(--line);padding-top:24px;display:flex;gap:20px;flex-wrap:wrap;font-size:.9rem;font-weight:800}
+.nf-langs a{color:var(--muted);border-bottom:2px solid transparent;padding-bottom:3px;text-decoration:none}
+.nf-langs a:hover{color:var(--brown);border-bottom-color:var(--orange)}
+
+.foot{border-top:1px solid var(--line);padding:28px 0 34px}
+.legal{font-size:.8rem;line-height:1.95;color:var(--muted)}
+.legal p{margin:0}
+
+@media (max-width:600px){
+  .nf{padding:40px 0 60px}
+  /* 좁은 화면에서 카드 밖으로 튀어나온 배지는 잘린다. 흐름 안으로 넣는다. */
+  .nf-stamp{position:static;display:inline-flex;margin:0 0 14px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="https://whalelandkr.com/covert/site/" class="mark">C.O.V.E.R.T<i>.</i></a>
+  </div>
+</header>
+
+<main class="nf">
+  <div class="wrap">
+    <div class="nf-sheet">
+      <span class="nf-stamp">FILE NOT FOUND</span>
+      <p class="nf-code">ERROR 404</p>
+      <h1 class="nf-h">This document is not in the archive.</h1>
+      <p class="nf-say">The file you requested was either moved, or never issued. Pick a language below and start again from the entrance.</p>
+      <div class="nf-langs">
+        <a href="https://whalelandkr.com/covert/site/">EN — English</a>
+        <a href="https://whalelandkr.com/covert/site/kr/">KR — 한국어</a>
+        <a href="https://whalelandkr.com/covert/site/jp/">JP — 日本語</a>
+        <a href="https://whalelandkr.com/covert/site/cn/">CN — 简体中文</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="legal">
+      <p>
+        웨일랜드 (Whale Land) · 대표 김정후 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 010-9937-1628<br />
+        서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T is a trademark of Whale Land.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

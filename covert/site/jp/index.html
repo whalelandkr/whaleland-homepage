@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>C.O.V.E.R.T — 観光客として着き、諜報員として発つ。</title>
-<meta name="description" content="密封された封筒、紙のパスポート、45の指令。最初の作戦はソウル。インストールするアプリも、ついて回る引率者もない。あなたと、まだあなたを知らない街だけ。" />
+<title>C.O.V.E.R.T — 旅行者として着き、エージェントとして発つ。</title>
+<meta name="description" content="密封された封筒がひとつ、紙のパスポートが一冊、四十五の指令。最初の作戦はソウル。入れるアプリも、ついて回るガイドもない。あなたと、まだあなたを知らない街だけ。" />
 
 <!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
 <link rel="canonical" href="https://whalelandkr.com/covert/site/jp/" />
@@ -15,9 +15,10 @@
 <link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/" />
 
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://whalelandkr.com/covert/site/jp/" />
 <meta property="og:site_name" content="C.O.V.E.R.T" />
-<meta property="og:title" content="C.O.V.E.R.T — 観光客として着き、諜報員として発つ。" />
-<meta property="og:description" content="密封された封筒、紙のパスポート、45の指令。最初の作戦はソウル。" />
+<meta property="og:title" content="C.O.V.E.R.T — 旅行者として着き、エージェントとして発つ。" />
+<meta property="og:description" content="密封された封筒がひとつ、紙のパスポートが一冊、四十五の指令。最初の作戦はソウル。" />
 <meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
 <meta property="og:locale" content="ja_JP" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -29,68 +30,69 @@
 
 <!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다.
      외부 웹폰트를 받지 않으므로 첫 화면이 그만큼 빨라집니다. -->
+<!-- 개봉의 첫 화면에 «반드시» 필요한 두 장. 이게 늦으면 봉투 없이 글자만 뜬다 -->
+<link rel="preload" as="image" href="../assets/hero/env-closed.jpg" />
+<link rel="preload" as="image" href="../assets/hero/env-open.jpg" />
+
 <link rel="stylesheet" href="../assets/site.css" />
+<link rel="stylesheet" href="../assets/opening-jp.css" />
+<script src="../assets/boot.js"></script>
+<script src="../assets/opening-jp.js" defer></script>
 
 <style>
 /* ================= HOME ONLY ================= */
 
-/* --- 01 : hero --- */
-.hero{padding:56px 0 76px}
-.hero-in{
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.76fr);
-  gap:clamp(28px,4vw,52px);align-items:center;min-height:calc(100svh - 70px)
-}
-.hero h1{
-  color:var(--brown);font-weight:800;
-  font-size:clamp(30px,4.6vw,54px);line-height:1.26;letter-spacing:-.025em;
-  margin:0 0 20px
-}
-.hero h1 .lo{color:var(--ink)}
-.hero-lede{font-size:clamp(1rem,1.6vw,1.16rem);line-height:1.85;color:var(--muted);max-width:26em;margin:0 0 30px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+/* ── 개봉 구간 ──────────────────────────────────────────
+   ⚠️ 이 페이지에서는 부드러운 스크롤을 «끈다». 켜 두면 건너뛰기 링크가
+      1,080vh 를 «부드럽게» 지나며 연출을 통째로 폭주 재생한다
+   ⚠️ 헤더 높이는 html 에 건다. .topbar 에 걸면 «헤더 밖에 있는» 핀이 못 받아
+      핀이 22px 아래에서 시작하고 책 밑동이 잘린다. 실제로 그랬다 */
+html{scroll-behavior:auto}
+/* :root 로 적는다. site.css 의 :root 와 «같은 특이도»여야 뒤에 온 이쪽이 이긴다 —
+   html{} 로 적으면 특이도가 낮아 70px 이 그대로 남는다. 실제로 그랬다 */
+:root{--bar:48px}
 
-/* 범이 뒤에 은은한 오렌지 원을 깔아 카드 없이도 무게가 잡히게 한다. */
-.hero-fig{position:relative;isolation:isolate}
-.hero-fig::before{
-  content:"";position:absolute;inset:4% 2% 8%;z-index:-1;border-radius:50%;
-  background:radial-gradient(closest-side, rgba(241,154,69,.30), transparent 72%)
+/* 길이 — CSS 두 줄이 정하고 JS 가 읽는다 (assets/opening-jp.css 참조) */
+@media (max-width:768px){
+  /* 좁은 화면에서는 손글씨가 읽히지도 않는데 매 프레임 clip-path 를 40개 넘게
+     다시 계산한다. 기입 구간을 줄여 절반 이하로 내린다 */
+  html:not([data-motion="static"]) #op-opening{--open-vh:200;--turn-vh:320}
 }
-.hero-fig img{width:100%;max-width:340px;margin:0 auto;filter:drop-shadow(0 24px 34px rgba(97,65,43,.26))}
+/* 두 번째 방문·언어 전환·지령 귀환 — 정지 히어로 한 장으로 접는다.
+   12화면을 다시 보게 하지 않는다. scrollTo 로 위치를 조작하지 않는다 — 뒤로가기와 싸운다 */
+html[data-seen] #op-opening{--open-vh:0;--turn-vh:0;height:100svh}
+html[data-seen] #op-opening .pin{position:relative;height:100svh}
+html[data-seen] #op-opening .hint,
+html[data-seen] #op-opening .skip-btn{display:none}
 
-/* --- 02 : operation --- */
-.op{padding:10px 0 72px}
-.op-card{max-width:880px;margin:0 auto;padding:clamp(30px,4.4vw,54px)}
-.op-city{color:var(--brown);font-weight:800;font-size:clamp(40px,6vw,66px);line-height:1.05;letter-spacing:-.03em;margin:0 0 18px}
-.op-meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px}
-.op-body{font-size:clamp(1rem,1.5vw,1.14rem);line-height:1.85;color:var(--muted);margin:0 0 30px}
-.op-links{display:flex;gap:28px;flex-wrap:wrap}
-.op-next{
-  margin:34px 0 0;padding-top:24px;border-top:1px solid var(--line);
-  font-size:.76rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)
-}
 
-/* --- 03 : agent --- */
-.agent{padding:0 0 96px}
-.agent-card{max-width:880px;margin:0 auto;padding:clamp(30px,4.4vw,54px);text-align:center}
-.agent-quote{display:block;color:var(--orange);font-size:62px;font-weight:950;line-height:.62;margin:0 0 10px}
-.agent-say{margin:0}
-.agent-say p{
-  color:var(--brown);font-weight:800;
-  font-size:clamp(1.14rem,2.2vw,1.56rem);line-height:1.62;letter-spacing:-.02em;margin:0
+/* 홈에만 있는 것 — 섹터 명부 카드와 귀환 스트립.
+   장면 틀(.chapter · .lead · .band · .bignum · .pills)은 assets/site.css 로 올렸다 */
+/* 섹터 다섯 줄. 표가 아니라 «명부»로 읽히게 왼쪽 정렬한다 */
+.sectors{width:100%;max-width:720px;padding:clamp(24px,3.2vw,36px);text-align:left}
+.sectors ul{list-style:none;margin:0;padding:0}
+.sectors li{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;
+  padding:14px 0;border-top:1px solid var(--line);
 }
-.agent-by{margin:24px 0 0;font-size:.76rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.agent-by b{color:var(--orange-ink);font-weight:950}
+.sectors li:first-child{border-top:0;padding-top:0}
+.sectors li:last-child{padding-bottom:0}
+.sectors b{
+  color:var(--orange-ink);font-size:.72rem;font-weight:950;
+  letter-spacing:.16em;text-transform:uppercase;min-width:10.5em;
+}
+.sectors span{color:var(--brown);font-weight:800;font-size:1.02rem;word-break:normal;line-break:strict}
+
+/* ── 귀환 — 인쇄된 QR 로 들어온 사람 ──────────────────
+   이미 여권을 갖고 있으므로 파는 말을 하지 않는다. 보내 주기만 한다 */
+.backstrip{border-top:1px solid var(--line);padding:clamp(30px,4vw,46px) 0}
+.backstrip .wrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 28px;justify-content:center}
+/* ⚠️ 여기 제목은 한글이라 kicker 처럼 자간을 벌리지 않는다 */
+.backstrip-h{margin:0;font-size:.92rem;font-weight:800;color:var(--muted);word-break:normal;line-break:strict}
+.backstrip-links{display:flex;flex-wrap:wrap;gap:12px 26px;margin:0}
 
 @media (max-width:900px){
-  .hero-in{grid-template-columns:1fr;gap:24px;min-height:0}
-  .hero{padding:44px 0 64px}
-  /* 좁은 화면에서는 범이를 먼저 보여준다. 카드가 없어 글부터 나오면 심심하다. */
-  .hero-fig{order:-1}
-  .hero-fig img{max-width:240px}
-}
-@media (max-width:600px){
-  .hero-fig img{max-width:200px}
-  .agent-quote{font-size:52px}
+  .sectors b{min-width:0;width:100%}
 }
 </style>
 </head>
@@ -98,7 +100,7 @@
 
 <a class="skip" href="#main">本文へスキップ</a>
 
-<header class="topbar">
+<header class="topbar slim">
   <div class="topbar-in">
     <a href="./" class="mark">C.O.V.E.R.T<i>.</i></a>
     <div class="langsel">
@@ -113,60 +115,376 @@
   </div>
 </header>
 
+<!--OPENING:START-->
+<section id="op-opening">
+  <div class="pin">
+    <!-- 초점을 받았을 때만 나오는 .skip 과 달리 «항상» 보인다.
+         푸터가 유일한 내비인데 개봉이 그 위에 열 화면을 깔기 때문이다 -->
+    <button class="skip-btn" type="button" data-skip="#main">スキップ</button>
+
+    <div class="scene" id="op-sc0">
+      <!-- ⚠️ 카피 규격은 _카피규칙.md 에 있다. 고치기 전에 반드시 읽을 것.
+           숫자(15·45·88×125mm·40p)는 본문에 넣지 않는다 — 숫자 전용 장면(S6·S7)으로 뺐다 -->
+      <div class="copy">
+        <p class="kicker">Operation 01 · Seoul</p>
+        <h1>旅行者として着き、<br>エージェントとして発つ。</h1>
+        <p class="lead">着いた日から発つ日まで、<br>ソウルですることが紙一冊に書いてある。</p>
+        <p class="spec"><i aria-hidden="true">[</i> 機密封筒 · エージェントパスポート · スタンプシール · 要員証 · ボーディングパス · キーリング <i aria-hidden="true">]</i></p>
+        <!-- ⚠️ 상대 경로다. 홈(kr/)에서 kr/kit/ 로 간다.
+             이 프로토타입 파일에서는 갈 곳이 없다 — 접합된 홈에서만 뜻이 있다 -->
+        <p class="go"><a class="linkarrow" href="kit/">キットを見る →</a></p>
+      </div>
+      <div class="pic"><div class="frame sq">
+        <!-- ⚠️ 이 컷은 «열린 봉투(env-open.jpg)를 참조로» 다시 뽑은 것이다.
+             봉투 상자를 실측해 자리를 맞췄고(social/_align-envelope.mjs),
+             보정량이 배율 0.26% · 이동 1·8px 뿐이라 사실상 같은 자리에서 찍힌 셈이다.
+             TOP SECRET 인장도 폭 38.50 vs 38.56 · 중심 51.75 vs 51.84 로 0.3% 이내다.
+             그래서 sc0 → sc1 크로스페이드에서 «뚜껑만» 움직이는 것으로 읽힌다.
+
+             예전에는 인장이 13.3% 어긋난 컷이라, 몸통은 env-open 을 깔고 그 위에
+             닫힌 «뚜껑만» 마스크로 덮는 편법을 썼다. 그러면 뚜껑이 몸통보다 좁아
+             위쪽에 몸통 크라프트가 삼각형으로 드러나고 끈이 두 개가 됐다.
+             그 편법은 이제 없다 — 한 장이면 된다 -->
+        <img src="../assets/hero/env-closed.jpg" width="1200" height="1200"
+             alt="紐で結んだクラフト機密封筒">
+      </div></div>
+    </div>
+
+    <div class="scene" id="op-sc1">
+      <div class="copy">
+        <h2>案内のない出発</h2>
+        <p class="lead">空港にもホテルのロビーにも迎えはいない。<br>封筒がひとつあるだけだ。</p>
+      </div>
+      <div class="pic"><div class="frame sq">
+        <img data-src="../assets/hero/env-open.jpg" data-wave="1" width="1200" height="1200"
+             alt="口の開いた機密封筒">
+      </div></div>
+    </div>
+
+    <!-- 여권이 나오는 구간. 두 가지를 겹쳐 쓴다.
+
+         1) 미끄러지는 «동안»  — 빈 봉투 사진 + 실물 누끼.
+            누끼가 «입술선» 아래로 내려가면 봉투 속에 있는 것이 되고,
+            --out 을 줄이면 진짜로 올라온다. 생성 사진은 정지라 이걸 못 한다.
+         2) 다 나온 «뒤»       — 생성 사진 s2-passport-emerging.jpg 로 바꿔친다.
+            누끼는 평평해 보이지만 생성 사진은 조명·그림자가 봉투와 맞는다.
+
+         두 여권의 위치를 0.1% 이내로 맞춰 놨으므로 바꿔쳐도 티가 나지 않는다 -->
+    <div class="scene" id="op-sc2">
+      <div class="copy">
+        <h2>名前のない旅券</h2>
+        <p class="lead">名前を書く欄が先にある。<br>書いたら、その名前でソウルを歩く。</p>
+      </div>
+      <div class="pic"><div class="frame sq" id="op-composite">
+        <img data-src="../assets/hero/env-open.jpg" data-wave="1" width="1200" height="1200" alt="">
+        <div class="pclip" id="op-pclip">
+          <img class="pass" id="op-pass" data-src="../assets/hero/passport-cut.webp" data-wave="1"
+               width="546" height="543" alt="">
+        </div>
+        <!-- 다 나온 «뒤» 이 사진으로 바꿔친다. 누끼는 미끄러지는 동안만 쓴다.
+             ⚠️ 예전 s2-passport-emerging.jpg 는 여권이 뚜껑 «뒤»에 꽂혀 있고
+                뒤로 흰 종이가 비쳐 폐기했다. 이건 대표가 다시 만든 컷이다.
+             실측 대조 (네이비 픽셀 박스, 프레임 대비 %)
+               이 사진    x 51.75~84.75  중심 68.25  폭 33.0  상단 2.69
+               누끼 합성  x 51.8 ~84.8   중심 68.3   폭 33.0  상단 2.9   ← 0.1% 이내 -->
+        <img data-src="../assets/hero/env-passport.jpg" data-wave="1" id="op-settled"
+             width="1200" height="1200" alt="封筒から出た旅券型ミッションブック">
+      </div></div>
+    </div>
+
+    <div class="scene" id="op-sc3">
+      <div class="copy">
+        <h2>正解のない記録</h2>
+        <p class="lead">同じ路地を歩いても紙に残るものは人それぞれで、<br>だから一冊ずつ違ってくる。</p>
+      </div>
+      <!-- ⚠️ 여기에 표지 «사진»을 넣지 않는다. 아래 .bookwrap 의 3D 책이 이 자리의 그림이다.
+           예전에는 여기에 p01.jpg 정지 표지를 두고, 화면을 더 내리면 «아래에 있는 다른 여권»이
+           페이지를 넘겼다. 두 여권은 배율 1.456배 · 중심 285.5px 어긋나 있어서
+           갈아타는 순간이 그대로 보였다. 대표 지시로 그 정지 표지를 없앴다 —
+           봉투에서 나온 여권이 «그 자리에서» 열린다.
+           칸은 비워 두되 남긴다. 지우면 2단 격자가 무너져 카피가 가운데로 밀린다 -->
+      <div class="pic" id="op-bookslot"></div>
+    </div>
+
+    <!-- 여권이 열리고 «한 장씩» 넘어간다. 세 번 넘기면 경복궁 펼침면이다.
+         사진이 아니라 실제 인쇄 지면 7장을 3D 로 세운 것이라 어느 배율에서도 깨지지 않는다.
+
+         ⚠️ .scene 안이 아니라 «핀 전체를 덮는» 레이어다.
+            펼치면 폭이 2배(660px)라 sc3 오른쪽 칸(약 541px)을 넘기 때문이다.
+            닫혔을 때는 오른쪽 칸 한가운데에 서 있다가, 열리면서 화면 한가운데로 온다 -->
+    <div class="bookwrap">
+      <div class="riser" id="op-riser">
+        <div class="bookstage">
+          <div class="book" id="op-book">
+            <div class="bshadow"></div>
+
+            <!-- 맨 뒤에 깔린 «빈 면». 마지막 장이 넘어가는 동안 사라져서 뒤표지 한 장만 남는다.
+                 그림을 넣지 않는다 — 넣으면 마지막 장이 도는 동안 뒤표지가 두 번 보인다 -->
+            <div class="page-fixed"></div>
+
+            <!-- 넘어가는 장 넷. 뒤에 올수록 위에 쌓인다 (z-index 는 JS 가 뒤집는다)
+                 1 → 2·3 → 4·5 → 6·7(경복궁)
+                 ⚠️ 36~40 은 «여행을 마친 뒤»의 지면이라 홈에서 뗐다.
+                    지운 것이 아니라 /kit/ 「여행이 끝난 뒤」로 옮긴다 (8단계).
+                    되살리려면 이 커밋을 되돌린다. -->
+            <div class="leaf" id="op-leaf3">
+              <!-- 경복궁 기록 면. 여기서 스크롤이 잠깐 멈추고 «직접 쓰는» 장면이 붙는다.
+                   자리(%)는 인쇄 지면 7.png 을 재서 넣은 값이다 -->
+              <div class="face front">
+                <img data-src="../assets/book/jp/p07.webp" data-wave="2" width="1000" height="1421"
+                     alt="景福宮・西村区域の記録面">
+                <div class="fill" aria-hidden="true">
+                  <!-- 날짜 두 칸 -->
+                  <img class="h mid h-d1" data-src="../assets/book/hand/jp/d1.webp" data-wave="2" style="width:2.65%;left:35.15%;top:7.9%;--w:var(--hd1)" alt="">
+                  <img class="h mid h-d2" data-src="../assets/book/hand/jp/d2.webp" data-wave="2" style="width:2.85%;left:40.25%;top:7.9%;--w:var(--hd2)" alt="">
+                  <svg class="tick" style="left:61.00%;top:7.90%;--w:var(--hwx)" viewBox="0 0 20 20"><path d="M3 11 L8 16 L17 4"/></svg>
+
+                  <!-- 닷 메모지 위에 그날의 일기.
+                       줄 간격은 점 격자 한 칸(4%)이 아니라 «두 칸»(8%) 이다 —
+                       공책에 편하게 쓸 때 한 줄씩 띄어 쓰는 것과 같다.
+                       격자의 배수라 글씨가 여전히 점 위에 앉는다 -->
+                  <img class="h h-diary1" data-src="../assets/book/hand/jp/diary1.webp" data-wave="2" style="width:51.35%;left:11.5%;top:16.5%;--w:var(--hy1)" alt="">
+                  <img class="h h-diary2" data-src="../assets/book/hand/jp/diary2.webp" data-wave="2" style="width:66.4%;left:11.5%;top:24.5%;--w:var(--hy2)" alt="">
+                  <img class="h h-diary3" data-src="../assets/book/hand/jp/diary3.webp" data-wave="2" style="width:63%;left:11.5%;top:32.5%;--w:var(--hy3)" alt="">
+                  <img class="h h-diary4" data-src="../assets/book/hand/jp/diary4.webp" data-wave="2" style="width:70.45%;left:11.5%;top:40.5%;--w:var(--hy4)" alt="">
+
+                  <!-- 아래 기입란. 인쇄된 라벨보다 살짝 위에 앉힌다 -->
+                  <svg class="tick" style="left:43.55%;top:77.00%;--w:var(--hcx)" viewBox="0 0 20 20"><path d="M3 11 L8 16 L17 4"/></svg>
+                  <img class="h h-menu" data-src="../assets/book/hand/jp/menu.webp" data-wave="2" style="width:27.45%;left:29.30%;top:80.1%;--w:var(--hm)" alt="">
+                  <img class="h h-cost" data-src="../assets/book/hand/jp/cost.webp" data-wave="2" style="width:7.65%;left:25.10%;top:83.4%;--w:var(--hc)" alt="">
+                  <img class="h h-kw1" data-src="../assets/book/hand/jp/kw1.webp" data-wave="2" style="width:7.45%;left:36.80%;top:86.8%;--w:var(--hk1)" alt="">
+                  <img class="h h-kw2" data-src="../assets/book/hand/jp/kw2.webp" data-wave="2" style="width:13.5%;left:54.40%;top:86.8%;--w:var(--hk2)" alt="">
+                  <img class="h h-kw3" data-src="../assets/book/hand/jp/kw3.webp" data-wave="2" style="width:5.25%;left:72.20%;top:86.8%;--w:var(--hk3)" alt="">
+                  <!-- 서명. 글씨가 아니라 «획»이라 폰트가 필요 없다 -->
+                  <svg class="sign" viewBox="0 0 160 46"><path d="M6 33 C14 9 21 10 23 26 C25 42 31 41 36 26 C41 11 48 13 48 28 C48 40 54 40 60 29 C66 18 74 21 78 32 C88 27 97 18 106 7 M96 20 C114 27 132 30 152 26"/></svg>
+                  <img class="seal" data-src="../assets/detail/seal-red.webp" data-wave="2" width="420" height="420" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="leaf" id="op-leaf2">
+              <div class="face front"><img data-src="../assets/book/jp/p05.webp" data-wave="2" width="1000" height="1421" alt=""></div>
+              <div class="face back"><img data-src="../assets/book/jp/p06.webp" data-wave="2" width="1000" height="1421" alt="景福宮・西村区域の指令面"></div>
+            </div>
+            <div class="leaf" id="op-leaf1">
+              <div class="face front"><img data-src="../assets/book/jp/p03.webp" data-wave="2" width="1000" height="1421" alt="">
+                <div class="fill" aria-hidden="true">
+                  <img class="h hb vt h-fname" data-src="../assets/book/hand/jp/fname.webp" data-wave="2" style="width:5.1%;right:76.0%;bottom:47.4%;--w:var(--fname)" alt="">
+                  <img class="h hb vt h-fid" data-src="../assets/book/hand/jp/fid.webp" data-wave="2" style="width:4%;right:67.6%;bottom:52.4%;--w:var(--fid)" alt="">
+                  <img class="h hb vt h-fcode" data-src="../assets/book/hand/jp/fcode.webp" data-wave="2" style="width:4.55%;right:59.2%;bottom:54.5%;--w:var(--fcode)" alt="">
+                  <img class="h hb vt h-fnat" data-src="../assets/book/hand/jp/fnat.webp" data-wave="2" style="width:3.1%;right:50.7%;bottom:57.4%;--w:var(--fnat)" alt="">
+                  <img class="h hb vt h-fdob" data-src="../assets/book/hand/jp/fdob.webp" data-wave="2" style="width:2.85%;right:42.3%;bottom:59.5%;--w:var(--fdob)" alt="">
+                  <img class="h hb vt h-fsex" data-src="../assets/book/hand/jp/fsex.webp" data-wave="2" style="width:3.3%;right:33.9%;bottom:48.6%;--w:var(--fsex)" alt="">
+                  <img class="h hb vt h-fmbti" data-src="../assets/book/hand/jp/fmbti.webp" data-wave="2" style="width:3.1%;right:33.9%;bottom:59.8%;--w:var(--fmbti)" alt="">
+                  <img class="h hb vt h-fcolor" data-src="../assets/book/hand/jp/fcolor.webp" data-wave="2" style="width:5.05%;right:25.5%;bottom:61.6%;--w:var(--fcolor)" alt="">
+                </div>
+              </div>
+              <div class="face back"><img data-src="../assets/book/jp/p04.webp" data-wave="2" width="1000" height="1421" alt="">
+                <div class="fill" aria-hidden="true">
+                  <svg class="sign p04" viewBox="0 0 160 46"><path d="M6 33 C14 9 21 10 23 26 C25 42 31 41 36 26 C41 11 48 13 48 28 C48 40 54 40 60 29 C66 18 74 21 78 32 C88 27 97 18 106 7 M96 20 C114 27 132 30 152 26"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="leaf" id="op-leaf0">
+              <!-- 앞면은 두 겹이다. 밑이 인쇄 표지, 위가 «사진에서 편» 표지.
+                   인계하는 동안에는 위가 불투명해서 책이 곧 사진이고,
+                   봉투가 아직 아랫부분을 가리고 있는 동안 위가 걷힌다 -->
+              <div class="face front">
+                <img data-src="../assets/book/jp/p01.webp" data-wave="2" width="1000" height="1421"
+                     alt="濃紺の表紙に金箔を押した旅券型ミッションブック">
+                <img class="skin" data-src="../assets/book/p01-skin.webp" data-wave="2" width="700" height="995"
+                     alt="" aria-hidden="true">
+              </div>
+              <div class="face back"><img data-src="../assets/book/jp/p02.webp" data-wave="2" width="1000" height="1421" alt="">
+                <div class="fill" aria-hidden="true">
+                  <img class="h hb h-id02" data-src="../assets/book/hand/jp/id02.webp" data-wave="2" style="width:18.9%;left:54.20%;bottom:20.80%;--w:var(--id02)" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 봉투 앞판 사본 — 책 «위»에 놓여 표지 아랫부분을 가린다.
+           .riser 뒤에 둬야 책을 덮는다. DOM 순서가 곧 z 순서다.
+           .scene 안에 넣으면 책 레이어보다 «먼저» 그려져 가릴 수가 없다 -->
+      <img class="lipmask" id="op-lipmask" data-src="../assets/hero/env-open.jpg" data-wave="1"
+           width="1200" height="1200" alt="" aria-hidden="true">
+    </div>
+
+    <!-- 넘기는 지면마다 붙는 설명. 책 아래 가운데에 한 줄씩 갈아 끼운다 -->
+    <div class="pagecopy" id="op-pagecopy">
+      <p style="--o:var(--cap1)"><b>名前を書くことから始まる</b><span>要員名と要員番号を自分で埋める。<br>その名前でソウルを歩く。</span></p>
+      <p style="--o:var(--cap2)"><b>五つの心得に署名する</b><span>そして十五区域の分析表が一枚に広がる。</span></p>
+      <p style="--o:var(--cap3)"><b>区域ごとに指令と記録が向き合う</b><span>左は何を探すか、右は何を残すか。</span></p>
+    </div>
+
+    <div class="hint" id="op-hint"><span>Scroll</span><i></i></div>
+  </div>
+</section>
+<!--OPENING:END-->
+
 <main id="main">
 
-<!-- 01 -->
-<section class="hero">
-  <div class="wrap hero-in">
-    <div>
-      <p class="kicker">Classified &middot; 要員登録受付中</p>
-      <h1>観光客として着き、<br /><span class="lo">諜報員として発つ。</span></h1>
-      <p class="hero-lede">密封された封筒がひとつ。紙のパスポートが一冊。45の指令、そして、まだあなたを知らない街。</p>
-      <div class="hero-actions">
-        <a class="cta" href="mission/">ブリーフィングを読む</a>
-        <a class="cta cta-2" href="kit/">キットを見る</a>
-      </div>
-    </div>
+<!-- ═══════════════════════════════════════════════════════════════
+     홈 챕터 일곱 장면
 
-    <div class="hero-fig">
-      <img src="../assets/bummy-black-suit.png" alt="同僚諜報員 BUMMY" width="340" height="421" decoding="async" />
-    </div>
-  </div>
-</section>
+     ⚠️ 카피 규격은 _카피규칙.md 다. 고치기 전에 읽고, 고친 뒤에는
+        node social/_copycheck.mjs 를 돌린다.
 
-<!-- 02 -->
-<section class="op">
+     일곱 장면이 지키는 것 —
+       제목   3어절 「(명사)+(부사)+(동사)~ㄴ다」 하나의 틀을 일곱 번 반복
+       본문   전부 두 문장 · 41~55자 (편차 1.34 · 기준 1.7 이하)
+       숫자   본문에 아라비아 숫자 0개. 수는 전부 문장 밖 라벨로 뺐다
+       화자   호명·명령·1인칭 0건. 범이는 «말하지 않고» 서술된다
+
+     ⚠️ 제목이 동사 종결인 것은 규격(「명사·관형형 종결」)에서 «의도한 이탈»이다.
+        S4 「지령을 먼저 읽는다」가 확정 카피라 손댈 수 없고,
+        「장면마다 다른 멋을 부리지 않는다」가 더 강한 규칙이라 틀을 거기 맞췄다.
+        개봉 네 장면은 명사구 제목(「A 없는 B」)이라 두 덩이가 서로 구분된다.
+
+     ⚠️ 세계관 어휘(요원·임무·작전·지령)는 본문에서 S4 한 장면만 쓴다.
+        kicker 와 라벨은 셈에서 뺀다 — 산문이 아니다
+     ═══════════════════════════════════════════════════════════════ -->
+<div id="chapters">
+
+  <!-- S4 · 지령 — 여권 왼쪽 면.  ⚠️ 확정 카피다. 한 글자도 고치지 않는다 -->
+  <section class="chapter">
+    <div class="shot rv">
+      <img src="../assets/detail/directive.jpg" width="1200" height="800"
+           loading="lazy" decoding="async"
+           alt="区域情報と座標が記されたパスポートの指令書面">
+    </div>
+    <!-- ⚠️ 카피 주의점 (검수에서 걸린 것)
+         · «지령이 도착한다» 로 쓰지 않는다 — 지령은 따로 배송되지 않고 여권 면에 이미 인쇄돼 있다
+         · «지하철 출구 번호» 로 쓰지 않는다 — 확정 사실은 «지하철 출구» 까지다 -->
+    <div class="copy">
+      <p class="kicker rv">Classified Directive</p>
+      <h2 class="rv">指令を先に読む</h2>
+      <p class="lead rv">区域ごとに実際の座標と地下鉄出口が記されている。</p>
+      <p class="lead rv">何を探すのかもここにある。</p>
+    </div>
+  </section>
+
+  <!-- S5 · 기록 — 여권 오른쪽 면.
+       ⚠️ 「도장을 찍는다」로 쓰지 않는다. 실물 잉크 도장은 없고 25mm 원은
+          «투명 스티커를 붙이는 자리»다 (CLAUDE.md). 사진도 붙인 뒤의 것이다 -->
+  <section class="chapter flip portrait">
+    <div class="shot rv">
+      <img src="../assets/detail/seal-sticker.jpg" width="1000" height="1333"
+           loading="lazy" decoding="async"
+           alt="点のグリッドの上の空の円と、その下の署名欄に貼った透明の印章シール">
+    </div>
+    <div class="copy">
+      <p class="kicker rv">Field Report</p>
+      <h2 class="rv">記録を自分で残す</h2>
+      <p class="lead rv">右の面は点のグリッドと空欄だけでできている。</p>
+      <p class="lead rv">区域を終えたら、空いていた円に透明シールを貼る。</p>
+    </div>
+  </section>
+
+  <!-- S6 · 판본 — 인바운드 손님이 가장 먼저 묻는 것이라 구역보다 앞에 둔다 -->
+  <section class="chapter band">
+    <div class="copy">
+      <p class="kicker rv">Four Editions</p>
+      <h2 class="rv">版をそれぞれ刷る</h2>
+      <p class="lead rv">同じパスポートを四つの言語でそれぞれ印刷する。</p>
+      <p class="lead rv">翻訳を添えたのではなく、版が四つある。</p>
+    </div>
+    <p class="pills rv">
+      <span class="badge">한국어</span>
+      <span class="badge">English</span>
+      <span class="badge">日本語</span>
+      <span class="badge">简体中文</span>
+    </p>
+  </section>
+
+  <!-- S7 · 구역 — 숫자 전용 장면.
+       ⚠️ 섹터 이름과 갈래는 «인쇄 지면»에서 잰 값이다 (CLAUDE.md · social/_zones.mjs).
+          메모장 파일명이나 C.O.V.E.R.T. 1.txt 의 표를 베끼지 않는다 — 둘 다 옛 초안이다 -->
+  <section class="chapter band">
+    <div class="copy">
+      <p class="kicker rv">Operation 01 · Seoul</p>
+      <h2 class="rv">区域を五つにまとめる</h2>
+      <p class="lead rv">性格の近い区域どうしが五つの系統に分かれている。</p>
+      <p class="lead rv">ひとつの系統に三つの区域が入る。</p>
+    </div>
+    <p class="bignum rv"><b>15</b> 区域 <i>·</i> <b>45</b> 任務</p>
+    <div class="sheet sectors rv">
+      <ul>
+        <li><b>Sector Alpha</b><span>ヘリテージ＆ヒストリー</span></li>
+        <li><b>Sector Bravo</b><span>金融＆ハイバリュー</span></li>
+        <li><b>Sector Charlie</b><span>リコン＆観測</span></li>
+        <li><b>Sector Delta</b><span>インダストリアル＆サブカルチャー</span></li>
+        <li><b>Sector Echo</b><span>ロジスティクス＆トランジット</span></li>
+      </ul>
+    </div>
+    <p class="go rv"><a class="linkarrow" href="zones/">区域表を見る →</a></p>
+  </section>
+
+  <!-- S8 · 범이 — «소개»만 한다. 홈 본문에서 범이는 말하지 않는다 (_카피규칙.md).
+       예전 이 자리에는 범이 대사 인용 카드가 있었다. 조사한 브랜드 홈에
+       캐릭터 화자가 있는 곳은 0곳이었다 -->
+  <section class="chapter">
+    <div class="shot rv">
+      <img src="../assets/product/keyrings.jpg" width="1200" height="800"
+           loading="lazy" decoding="async"
+           alt="それぞれ違う服を着たBUMMYキーリング十五種">
+    </div>
+    <div class="copy">
+      <p class="kicker rv">Agent BUMMY</p>
+      <h2 class="rv">BUMMYが一緒に歩く</h2>
+      <p class="lead rv">区域ごとに着替えたBUMMYが紙面に隠れている。</p>
+      <p class="lead rv">キーリングは十五種の中から無作為にひとつ入る。</p>
+    </div>
+  </section>
+
+  <!-- S9 · 종이 — 제품의 핵심 주장이다.
+       「앱 설치·관광지 제휴 없이 완결」 (CLAUDE.md). 과장 없이 «없다»로만 적는다 -->
+  <section class="chapter band">
+    <div class="copy">
+      <p class="kicker rv">No App · No Booking</p>
+      <h2 class="rv">すべてを紙で終える</h2>
+      <p class="lead rv">入れるアプリも、先に取る予約もない。</p>
+      <p class="lead rv">必要なものは封筒の中に全部入っている。</p>
+    </div>
+    <p class="pills rv">
+      <span class="badge off">アプリ不要</span>
+      <span class="badge off">予約不要</span>
+      <span class="badge off">ガイドなし</span>
+    </p>
+  </section>
+
+  <!-- S10 · 초판 — 마지막 슬롯.
+       ⚠️ 절대 규칙 2 — 홈에는 가격도 구매 버튼도 두지 않는다.
+          카페24 상품 주소가 정해지고 «홈에 가격을 노출한다»는 결정(D1)이 나면
+          아래 .cta 를 구매 버튼 한 벌로 바꾼다. 그 전까지는 키트로 보낸다.
+       ⚠️ 언어별 부수(KR 250 · EN 250 …)는 쓰지 않는다. 합계만 쓴다 (CLAUDE.md) -->
+  <section class="chapter band">
+    <div class="copy">
+      <p class="kicker rv">First Printing</p>
+      <h2 class="rv">初版を限って刷る</h2>
+      <p class="lead rv">初回分は四つの版を合わせて千五百セットだ。</p>
+      <p class="lead rv">構成と価格はキットの側にある。</p>
+    </div>
+    <p class="bignum rv"><b>1,500</b> セット</p>
+    <p class="go rv"><a class="cta" href="kit/">キットを見る</a></p>
+  </section>
+
+</div>
+
+<!-- 귀환 — 인쇄된 QR 로 들어온 사람. 이미 여권을 갖고 있다.
+     ⚠️ 보존 5화면이라 한 벌뿐이고 언어 폴더 «밖»에 있다 (절대 규칙 0). ../ 로 나간다.
+     ⚠️ /briefing/ 은 «언어를 고르는» 화면이라 ?lang= 을 붙이지 않는다.
+        /report/ 는 ?lang= 을 읽으므로 붙여서 언어를 잃지 않게 보낸다 -->
+<aside class="backstrip">
   <div class="wrap">
-    <div class="sheet op-card rv">
-      <p class="kicker">Operation 01</p>
-      <h2 class="op-city">ソウル</h2>
-      <p class="op-meta">
-        <span class="badge">15 districts</span>
-        <span class="badge">45 assignments</span>
-        <span class="badge">no deadline</span>
-      </p>
-      <p class="op-body">15の区域、45の任務。自分で埋めていくパスポートが一冊。同僚要員 BUMMY と行く、スパイの旅。終わったあとに残るのは、あなたがそこにいたという事実ひとつだ。</p>
-      <div class="op-links">
-        <a class="linkarrow" href="mission/">ブリーフィングを読む →</a>
-        <a class="linkarrow" href="kit/">キットを見る →</a>
-      </div>
-      <p class="op-next">Operation 02 — location classified</p>
-    </div>
+    <p class="backstrip-h">すでにパスポートをお持ちなら</p>
+    <p class="backstrip-links">
+      <a class="linkarrow" href="../briefing/">任務を受け取る →</a>
+      <a class="linkarrow" href="../report/?lang=jp">任務を報告する →</a>
+    </p>
   </div>
-</section>
-
-<!-- 03 -->
-<section class="agent">
-  <div class="wrap">
-    <div class="sheet agent-card rv">
-      <span class="agent-quote" aria-hidden="true">&ldquo;</span>
-      <blockquote class="agent-say">
-        <p>封筒を開けて、ひとつずつ片づけていけばいい。一緒に行こう。</p>
-      </blockquote>
-      <p class="agent-by"><b>BUMMY</b> &middot; 同僚諜報員 &middot; Operation 01</p>
-    </div>
-  </div>
-</section>
+</aside>
 
 </main>
 
@@ -188,15 +506,16 @@
       <nav aria-label="作戦">
         <p class="foot-h">Operation</p>
         <ul class="foot-list">
-          <li><a href="mission/">ブリーフィング</a></li>
+          <li><a href="zones/">区域</a></li>
           <li><a href="kit/">キット</a></li>
-          <li><a href="report/">フィールドレポート</a></li>
+          <li><a href="field-report/">フィールドレポート</a></li>
         </ul>
       </nav>
 
       <nav aria-label="サポート">
         <p class="foot-h">Support</p>
         <ul class="foot-list">
+          <li><a href="get/">お受け取り</a></li>
           <li><a href="support/">配送 &middot; 返品</a></li>
           <li><a href="support/#faq">よくある質問</a></li>
           <li><a href="mailto:contact@whalelandkr.com">お問い合わせ</a></li>
@@ -217,65 +536,18 @@
       <div class="legal-links">
         <a href="terms/">利用規約</a>
         <a href="privacy/">プライバシーポリシー</a>
-        <a href="https://whalelandkr.com" target="_blank" rel="noopener">웨일랜드</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
       </div>
       <p>
-        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
-        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        웨일랜드 (Whale Land) · 대표 김정후 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 010-9937-1628<br />
+        서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)<br />
         contact@whalelandkr.com<br />
         © 2026 Whale Land. C.O.V.E.R.T は Whale Land の商標です。
       </p>
     </div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* 언어 자동 전환은 영문 홈에만 둡니다. 여기서도 돌리면 서로 튕겨냅니다. */
-
-  /* ---- 언어 선택 ---- */
-  var sel = document.getElementById('lang');
-  if(sel){ sel.addEventListener('change', function(){
-    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
-    location.href = sel.value;
-  }); }
-
-  /* ---- 스크롤 등장 ---- */
-  var rv = document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window && !reduce){
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    },{threshold:.14});
-    rv.forEach(function(el){ io.observe(el); });
-  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
-})();
-</script>
-
-<!-- ============================================================
-     GA4 — 측정 ID 발급 후 G-XXXXXXXXXX 를 교체하고 주석을 해제하세요
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
-     ============================================================ -->
-
-<!-- ============================================================
-     META PIXEL — 픽셀 ID 발급 후 000000000000000 을 교체하고 주석을 해제하세요
-<script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '000000000000000');
-  fbq('track', 'PageView');
-</script>
-     ============================================================ -->
 
 </body>
 </html>

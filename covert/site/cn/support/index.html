@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Q&amp;A — C.O.V.E.R.T</title>
+<title>配送 &middot; 退换 &middot; 常见问题 — C.O.V.E.R.T</title>
 <meta name="description" content="C.O.V.E.R.T 的配送、撤销订单与换货说明，以及最常被问到的问题。" />
 
 <!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/site 을 일괄 치환하면 됩니다. -->
@@ -15,8 +15,9 @@
 <link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/support/" />
 
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://whalelandkr.com/covert/site/cn/support/" />
 <meta property="og:site_name" content="C.O.V.E.R.T" />
-<meta property="og:title" content="Q&amp;A — C.O.V.E.R.T" />
+<meta property="og:title" content="配送 &middot; 退换 &middot; 常见问题 — C.O.V.E.R.T" />
 <meta property="og:description" content="配送、撤销订单与换货说明，以及最常被问到的问题。" />
 <meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
 <meta property="og:locale" content="zh_CN" />
@@ -28,6 +29,7 @@
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
 <!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다. 외부 웹폰트를 받지 않습니다. -->
 <link rel="stylesheet" href="../../assets/site.css" />
+<script src="../../assets/boot.js"></script>
 
 <style>
 /* ================= SUPPORT ONLY ================= */
@@ -35,11 +37,8 @@
 .sup{padding:56px 0 24px}
 .sup-lede{font-size:16.5px;line-height:1.9;color:var(--ink-soft);max-width:34em;margin:0 0 44px}
 
-.doc{padding:clamp(26px,3.4vw,42px);margin:0 0 26px;scroll-margin-top:100px}
-.doc-h{font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
-  border-bottom:1px solid var(--line);padding-bottom:13px;margin:0 0 26px;
-  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.doc-h b{color:var(--orange-ink);font-weight:950}
+/* 공용 .doc 에 이 페이지만의 한 가지를 더한다 (site.css 참조) */
+.doc{scroll-margin-top:100px}
 
 /* 라벨은 왼쪽, 본문은 오른쪽. 좁은 화면에서도 위아래로 쪼개지 않는다.
    쪼개면 라벨이 그냥 굵은 한 줄로 묻혀서 훑어보기 어렵다. */
@@ -61,12 +60,9 @@
 .fine{font-size:13px;line-height:1.9;color:var(--ink-faint);margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line)}
 .fine b{color:var(--red);font-weight:400;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;display:block;margin:0 0 6px}
 
-.mailto{margin:8px 0 64px;font-size:15px}
-.mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
-
 @media (max-width:600px){
   .sup{padding:44px 0 16px}
-  .doc{padding:24px 20px 22px}
+
   .rows li{grid-template-columns:78px 1fr;gap:0 14px;padding:14px 0}
   .rows b{font-size:12.5px;line-height:1.45}
   .rows p{font-size:14px;line-height:1.75}
@@ -102,7 +98,7 @@
 
     <!-- 배송 -->
     <div class="sheet doc rv" id="shipping">
-      <p class="doc-h"><span><b>SHIPPING</b></span><span>ONLINE ORDERS</span></p>
+      <h2 class="doc-h"><span><b>SHIPPING</b></span><span>ONLINE ORDERS</span></h2>
       <ul class="rows">
         <li>
           <b>出货</b>
@@ -110,11 +106,11 @@
         </li>
         <li>
           <b>韩国境内</b>
-          <p>由 CJ 大韩通运寄出。运费为 3,000 韩元，订单满 50,000 韩元免运费。发货后 1 至 3 个工作日送达。</p>
+          <p>由 CJ 大韩通运寄出。运费为 3,000 韩元，订单满 50,000 韩元免运费。济州加收 3,000 韩元，其他离岛及山区加收 5,000 韩元。发货后 1 至 3 个工作日送达。</p>
         </li>
         <li>
           <b>国际配送</b>
-          <p>由韩国邮政 EMS 寄出。运费在下单时按目的地国家与重量以 EMS 标准费率自动计算，另加包装费 3,000 韩元。海外配送不适用免运费。</p>
+          <p>由韩国邮政 EMS 寄出。运费在下单时按目的地国家与重量以 EMS 标准费率自动计算，不收取包装费。海外配送不适用免运费。</p>
           <p>发货后 2 至 5 个工作日送达，清关所需时间不计在内。关税与进口环节税由目的地国家征收，由收件人承担。我们无法事先代为计算。</p>
         </li>
         <li>
@@ -126,7 +122,7 @@
 
     <!-- 취소·교환·환불 -->
     <div class="sheet doc rv" id="returns">
-      <p class="doc-h"><span><b>RETURNS</b></span><span>CANCELLATION &middot; EXCHANGE &middot; REFUND</span></p>
+      <h2 class="doc-h"><span><b>RETURNS</b></span><span>CANCELLATION &middot; EXCHANGE &middot; REFUND</span></h2>
       <ul class="rows">
         <li>
           <b>出货前取消</b>
@@ -166,7 +162,7 @@
 
     <!-- FAQ -->
     <div class="sheet doc rv" id="faq">
-      <p class="doc-h"><span><b>FAQ</b></span><span>ASKED MOST OFTEN</span></p>
+      <h2 class="doc-h"><span><b>FAQ</b></span><span>ASKED MOST OFTEN</span></h2>
       <ul class="faq">
         <li>
           <q>看不懂韩文可以吗？</q>
@@ -174,7 +170,7 @@
         </li>
         <li>
           <q>需要装应用吗？</q>
-          <p>不需要。没有应用，也没有账号，全程用纸完成。最后一页有一个二维码可以把报告发回总部，但那是可选的，没有任何环节依赖它。</p>
+          <p>不需要。没有应用，也没有账号，全程用纸完成。护照后面有一个二维码可以把报告发回总部，但那是可选的，没有任何环节依赖它。</p>
         </li>
         <li>
           <q>要去哪里盖章吗？</q>
@@ -219,7 +215,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--orange)">.</i></p>
         <p class="foot-tag">把平凡的旅行，变成特别的任务。</p>
         <div class="sns">
           <span>INSTAGRAM</span>
@@ -233,15 +229,16 @@
       <nav aria-label="行动">
         <p class="foot-h">Operation</p>
         <ul class="foot-list">
-          <li><a href="../mission/">简报</a></li>
+          <li><a href="../zones/">区域</a></li>
           <li><a href="../kit/">套装</a></li>
-          <li><a href="../report/">现场报告</a></li>
+          <li><a href="../field-report/">现场报告</a></li>
         </ul>
       </nav>
 
       <nav aria-label="支持">
         <p class="foot-h">Support</p>
         <ul class="foot-list">
+          <li><a href="../get/">领取</a></li>
           <li><a href="./">配送 &middot; 退换</a></li>
           <li><a href="#faq">常见问题</a></li>
           <li><a href="mailto:contact@whalelandkr.com">联系我们</a></li>
@@ -265,56 +262,15 @@
         <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
       </div>
       <p>
-        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
-        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        웨일랜드 (Whale Land) · 대표 김정후 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 010-9937-1628<br />
+        서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)<br />
         contact@whalelandkr.com<br />
         © 2026 Whale Land. C.O.V.E.R.T 是 Whale Land 的商标。
       </p>
     </div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var sel = document.getElementById('lang');
-  if(sel){ sel.addEventListener('change', function(){
-    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
-    location.href = sel.value;
-  }); }
-  var rv = document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window && !reduce){
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    },{threshold:.1});
-    rv.forEach(function(el){ io.observe(el); });
-  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
-})();
-</script>
-
-<!-- ============================================================
-     GA4 — 측정 ID 발급 후 G-XXXXXXXXXX 를 교체하고 주석을 해제하세요
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
-     ============================================================ -->
-
-<!-- ============================================================
-     META PIXEL — 픽셀 ID 발급 후 000000000000000 을 교체하고 주석을 해제하세요
-<script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '000000000000000');
-  fbq('track', 'PageView');
-</script>
-     ============================================================ -->
 
 </body>
 </html>

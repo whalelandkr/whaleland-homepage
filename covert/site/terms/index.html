@@ -14,6 +14,15 @@
 <link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/site/jp/terms/" />
 <link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/site/cn/terms/" />
 <link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/site/terms/" />
+<!-- noindex 라 검색에는 안 뜨지만, 메신저로 주소를 보내면 미리보기가 뜹니다. -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:url" content="https://whalelandkr.com/covert/site/terms/" />
+<meta property="og:title" content="Terms of Service — C.O.V.E.R.T" />
+<meta property="og:description" content="Terms governing the use of the C.O.V.E.R.T website, operated by Whale Land." />
+<meta property="og:image" content="https://whalelandkr.com/covert/site/assets/og.png" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
 
 <!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
 <link rel="icon" href="../favicon.ico" sizes="any" />
@@ -21,6 +30,7 @@
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
 <!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다. 외부 웹폰트를 받지 않습니다. -->
 <link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/boot.js"></script>
 
 <style>
 /* ================= LEGAL ONLY ================= */
@@ -28,12 +38,6 @@
 .legal-lede{font-size:16px;line-height:1.85;color:var(--ink-soft);max-width:52ch;margin:0 0 20px}
 .stamp-date{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--red);margin:0 0 7px}
 .stamp-eff{font-size:13.5px;line-height:1.75;color:var(--ink-soft);margin:0 0 44px}
-
-.doc{padding:clamp(26px,3.4vw,42px);margin:0 0 26px}
-.doc-h{font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
-  border-bottom:1px solid var(--line);padding-bottom:13px;margin:0 0 26px;
-  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.doc-h b{color:var(--orange-ink);font-weight:950}
 
 /* 조문 */
 .arts{list-style:none;margin:0;padding:0;counter-reset:art}
@@ -54,15 +58,19 @@
 .biz b{font-weight:700;font-size:13.5px;line-height:1.5;color:var(--ink);padding-top:1px}
 .biz p{margin:0;font-size:14.5px;line-height:1.7}
 
-.mailto{margin:8px 0 64px;font-size:15px}
-.mailto a{border-bottom:1px solid var(--red);padding-bottom:2px}
-
 @media (max-width:600px){
   .legaldoc{padding:44px 0 16px}
-  .doc{padding:24px 20px 22px}
-  .biz li{grid-template-columns:96px 1fr;gap:0 16px;padding:11px 0}
+
+  .biz li{grid-template-columns:96px minmax(0,1fr);gap:0 16px;padding:11px 0}
   .biz b{font-size:12.5px;line-height:1.45}
   .biz p{font-size:14px}
+}
+/* ⚠️ 아주 좁은 화면에서는 라벨을 «위»로 올립니다. 값 칸이 1fr 이라 min-content 아래로
+   줄지 않아, 320px 에서 contact@whalelandkr.com 이 안 끊겨 문서가 가로로 넘쳤습니다.
+   법정 고지가 옆으로 밀리면 안 됩니다. 고친 뒤 node social/_check-overflow.mjs */
+@media (max-width:380px){
+  .biz li{grid-template-columns:1fr;gap:2px 0}
+  .biz b{padding-top:0}
 }
 </style>
 </head>
@@ -100,11 +108,11 @@
       <p class="doc-h"><span><b>OPERATOR</b></span><span>WHO RUNS THIS SITE</span></p>
       <ul class="biz">
         <li><b>Company</b><p>Whale Land</p></li>
-        <li><b>Representative</b><p>Wook Jang</p></li>
+        <li><b>Representative</b><p>김정후</p></li>
         <li><b>Business reg. no.</b><p>428-04-03222</p></li>
-        <li><b>Mail-order reg. no.</b><p>2025-Seoul Gangnam-04140</p></li>
-        <li><b>Address</b><p>425 Eonju-ro, Gangnam-gu, Seoul, Republic of Korea</p></li>
-        <li><b>Contact</b><p>contact@whalelandkr.com</p></li>
+        <li><b>Mail-order reg. no.</b><p>2025-서울강남-04140</p></li>
+        <li><b>Address</b><p>서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)</p></li>
+        <li><b>Contact</b><p>contact@whalelandkr.com · 010-9937-1628</p></li>
       </ul>
     </div>
 
@@ -122,16 +130,17 @@
         </li>
         <li>
           <h2>Purchases</h2>
-          <p>Buying is done on our online shop, which we reach through a link from this site. The contract of sale is formed there, and that shop's own terms, cancellation policy and privacy notice apply to it.</p>
+          <p>Buying is done on Whale Land's online shop, not here. The contract of sale is formed there, and that shop's own terms, cancellation policy and privacy notice apply to it. When the shop opens, we will link to it from this site.</p>
           <p>Prices and specifications shown here are for information. Where this site and the shop differ, the shop at the moment of purchase governs.</p>
         </li>
         <li>
           <h2>Changes to these terms</h2>
-          <p>We may revise these terms where the law or our operations require it. A revised version is posted on this page with its effective date, and takes effect from that date. If you continue using the site afterwards, we take that as acceptance.</p>
+          <p>We may revise these terms where the law or our operations require it. A revised version is posted on this page, stating its effective date and the reason for the change, <b>from seven days before it applies</b>. Where a revision is unfavourable to you, it is posted <b>from thirty days before</b>, set out alongside the previous wording so that you can compare the two.</p>
+          <p>If you do not object while the revision is posted, we take that as acceptance. If you do not agree, you may stop using the site, and a revised version does not apply to any transaction already concluded before its effective date.</p>
         </li>
         <li>
           <h2>Intellectual property</h2>
-          <p>The C.O.V.E.R.T name and mark, the Bummy character, all illustrations, mission text, page designs, photographs and the design of this site belong to Whale Land or to those who licensed them to us.</p>
+          <p>The C.O.V.E.R.T name and mark, the BUMMY character, all illustrations, mission text, page designs, photographs and the design of this site belong to Whale Land or to those who licensed them to us.</p>
           <p>You may not copy, reproduce, distribute, sell or make derivative works from any of it — including the contents of the kit — without our written permission. Quoting a short passage with attribution, or posting your own photographs of a kit you bought, is fine.</p>
           <p>Some cover art and illustrations were produced with the assistance of generative AI (Midjourney). We disclose this rather than leave it unsaid.</p>
         </li>
@@ -151,12 +160,13 @@
         </li>
         <li>
           <h2>Doing what we can, and what we can't promise</h2>
-          <p>We keep the site available as best we can, but it may be interrupted by maintenance, technical failure or events outside our control. We aren't liable for loss arising from such interruptions, except where the law says otherwise.</p>
+          <p>We keep the site available as best we can, but it may be interrupted by maintenance, technical failure or events outside our control. We aren't liable for loss arising from such interruptions. <b>This does not, however, exclude loss caused by Whale Land's intent or gross negligence.</b></p>
           <p>Missions in the kit take place in public spaces run by others. Opening hours, admission and conditions change without notice, and we can't guarantee any particular place will be open or accessible on the day you go. Take care of yourself while you're out there.</p>
         </li>
         <li>
-          <h2>Governing law</h2>
-          <p>These terms are governed by the law of the Republic of Korea. Disputes are brought before the court having jurisdiction under Korean civil procedure. Nothing here limits rights you hold as a consumer under Korean law.</p>
+          <h2>Governing law and disputes</h2>
+          <p>These terms are governed by the law of the Republic of Korea. A dispute is brought before the court with jurisdiction over your address at the time the suit is filed, or over your place of residence if you have no address. Where the address and the place of residence are unclear, or where you are outside Korea, jurisdiction follows the Korean Civil Procedure Act.</p>
+          <p>Nothing here limits rights you hold as a consumer under Korean law. These terms are provided in four languages; where the translations differ in meaning, the Korean version governs.</p>
         </li>
       </ol>
     </div>
@@ -173,7 +183,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--red)">.</i></p>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--orange)">.</i></p>
         <p class="foot-tag">Ordinary trips, turned into extraordinary missions.</p>
         <div class="sns">
           <span>INSTAGRAM</span>
@@ -187,15 +197,16 @@
       <nav aria-label="Operations">
         <p class="foot-h">Operation</p>
         <ul class="foot-list">
-          <li><a href="../mission/">The briefing</a></li>
+          <li><a href="../zones/">The zones</a></li>
           <li><a href="../kit/">The kit</a></li>
-          <li><a href="../report/">Field reports</a></li>
+          <li><a href="../field-report/">Field reports</a></li>
         </ul>
       </nav>
 
       <nav aria-label="Support">
         <p class="foot-h">Support</p>
         <ul class="foot-list">
+          <li><a href="../get/">How to get it</a></li>
           <li><a href="../support/">Shipping &amp; returns</a></li>
           <li><a href="../support/#faq">FAQ</a></li>
           <li><a href="mailto:contact@whalelandkr.com">Contact us</a></li>
@@ -219,32 +230,15 @@
         <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
       </div>
       <p>
-        웨일랜드 (Whale Land) · 대표 장욱 · 사업자등록번호 428-04-03222<br />
-        통신판매업신고 2025-서울강남-04140 · 서울특별시 강남구 언주로 425<br />
+        웨일랜드 (Whale Land) · 대표 김정후 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 010-9937-1628<br />
+        서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)<br />
         contact@whalelandkr.com<br />
         © 2026 Whale Land. C.O.V.E.R.T is a trademark of Whale Land.
       </p>
     </div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var sel = document.getElementById('lang');
-  if(sel){ sel.addEventListener('change', function(){
-    try{ localStorage.setItem('cov_lang','1'); }catch(e){}
-    location.href = sel.value;
-  }); }
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var rv = document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window && !reduce){
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    },{threshold:.05});
-    rv.forEach(function(el){ io.observe(el); });
-  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
-})();
-</script>
 
 </body>
 </html>
