@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>404 — Whale Land</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" href="/assets/whaleland-logo.png" />
+
+<!-- ⚠️ 이 파일은 «도메인 전체»의 404 입니다.
+     GitHub Pages 는 404.html 을 «서비스하는 저장소의 루트»에서만 읽습니다.
+     그래서 covert/site/404.html 은 whalelandkr.com 에서 한 번도 뜨지 않았고,
+     대신 GitHub 의 기본 「Page not found」가 떠 있었습니다 (2026-09-14 실측).
+
+     여기는 도메인 루트라 /assets/… 같은 루트절대경로가 제대로 풀립니다 —
+     covert 쪽 404 가 자기완결형이어야 했던 이유(하위 경로 배포)가 여기엔 없습니다.
+
+     ⚠️ 팔레트·서체는 home.css 에서 옮겨 온 것입니다. 거기를 고치면 여기도 고칩니다.
+     ⚠️ 사업자 정보는 «일부러» 넣지 않았습니다. 전자상거래법 §10 은 초기화면 의무이고,
+        홈 푸터와 /covert/site/ 푸터의 값이 서로 달라(대표 표기·주소·전화) 세 번째
+        사본을 만들면 반드시 어긋납니다. 두 곳 중 하나로 보내는 것이 이 페이지의 일입니다. -->
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" /></noscript>
+<style>
+@font-face{
+  font-family:'Gmarket Sans';font-weight:700;font-style:normal;font-display:swap;
+  src:url('https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSansBold.woff2') format('woff2'),
+      url('https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSansBold.woff') format('woff');
+}
+:root{
+  --wl-blue:#3182f6; --wl-blue-dark:#1b64da;
+  --wl-ink:#191f28; --wl-body:#4e5968; --wl-caption:#8b95a1;
+  --wl-line:#e5e8eb; --wl-bg:#ffffff; --wl-bg-soft:#f9fafb;
+  --wl-radius-lg:28px; --wl-radius-md:20px;
+  --wl-shadow:0 6px 24px rgba(2,32,71,.06);
+  --wl-body-font:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,
+    "Segoe UI",Roboto,"Noto Sans KR","Apple SD Gothic Neo",sans-serif;
+  --wl-display:"Gmarket Sans",var(--wl-body-font);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--wl-bg);color:var(--wl-ink);
+  font-family:var(--wl-body-font);font-size:17px;line-height:1.6;
+  min-height:100svh;display:flex;flex-direction:column;
+}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--wl-blue);outline-offset:3px}
+.wrap{width:100%;max-width:960px;margin:0 auto;padding:0 max(20px,4vw)}
+
+.hd{padding:17px 0;border-bottom:1px solid var(--wl-line)}
+.brand{display:inline-flex;align-items:center;font-weight:800;font-size:17px;letter-spacing:-.02em}
+
+.nf{flex:1;display:flex;align-items:center;padding:64px 0 88px}
+.card{
+  max-width:600px;padding:clamp(30px,4.4vw,48px);
+  background:var(--wl-bg-soft);border:1px solid var(--wl-line);
+  border-radius:var(--wl-radius-lg);box-shadow:var(--wl-shadow);
+}
+.code{
+  font-family:var(--wl-display);font-weight:700;font-size:clamp(44px,8vw,68px);
+  line-height:1;letter-spacing:-.02em;color:var(--wl-blue);margin:0 0 18px
+}
+.h{font-size:clamp(21px,3vw,27px);font-weight:800;letter-spacing:-.025em;line-height:1.35;margin:0 0 10px}
+.say{color:var(--wl-body);margin:0 0 6px}
+.say-en{color:var(--wl-caption);font-size:15.5px;margin:0 0 30px}
+.acts{display:flex;flex-wrap:wrap;gap:10px}
+.btn{
+  display:inline-flex;align-items:center;min-height:50px;padding:0 22px;
+  border-radius:999px;font-size:15.5px;font-weight:700;
+  background:var(--wl-blue);color:#fff;
+  transition:background .2s ease,transform .2s ease
+}
+.btn:hover{background:var(--wl-blue-dark);transform:translateY(-1px)}
+.btn-2{background:var(--wl-bg);color:var(--wl-body);border:1px solid var(--wl-line)}
+.btn-2:hover{background:var(--wl-bg);color:var(--wl-ink);border-color:var(--wl-caption)}
+
+.ft{border-top:1px solid var(--wl-line);padding:26px 0 32px}
+.ft p{margin:0;font-size:14px;line-height:1.9;color:var(--wl-caption)}
+.ft strong{color:var(--wl-body);font-weight:700}
+
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="wrap"><a class="brand" href="/">Whale Land</a></div>
+</header>
+
+<main class="nf">
+  <div class="wrap">
+    <div class="card">
+      <p class="code">404</p>
+      <h1 class="h">찾으시는 페이지가 없습니다.</h1>
+      <p class="say">주소가 바뀌었거나, 처음부터 없던 페이지입니다. 아래에서 다시 시작해 주세요.</p>
+      <p class="say-en">This page doesn&rsquo;t exist, or it has moved. Start again from one of the links below.</p>
+      <div class="acts">
+        <a class="btn" href="/">웨일랜드 홈 &middot; Home</a>
+        <a class="btn btn-2" href="/covert/site/">C.O.V.E.R.T</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <p><strong>Whale Land</strong> &middot; Fun ideas, useful services, happier moments.<br />
+    &copy; 2026 Whale Land. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
