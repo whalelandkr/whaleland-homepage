@@ -225,7 +225,17 @@
        --t0 도 0 으로 되돌려야 닫힌 표지의 자리를 잰다 */
     var pt = sc3f.style.transform;
     var pv = stage.style.getPropertyValue('--t0');
+    /* ⚠️⚠️ #op-composite 의 변형도 «반드시» 같이 걷어낸다.
+       연출 막바지(진행률 .85~)에 render() 가 여기에
+       translateY(24%) scale(.92) 를 건다. 그 상태로 재면 cr 이 그 값을 머금어
+       ① 앞판 사본(.lipmask)이 아래로 94px · 폭 27px 어긋나고 — 봉투가 «둘»로 보인다
+       ② HAND.k 가 cr.width 로 나오므로 표지 배율까지 같이 틀어진다.
+       2026-09-14 에 실측으로 확인했다 (390×844).
+       언제 그 시점에 재게 되나 — iOS 사파리는 «스크롤 중 주소표시줄이 접힐 때»
+       resize 를 낸다. 연출 어느 지점에서든 여기로 들어온다. */
+    var pc = composite.style.transform;
     sc3f.style.transform = 'none';
+    composite.style.transform = 'none';
     stage.style.setProperty('--t0', '0');
 
     var cr = composite.getBoundingClientRect();
@@ -233,6 +243,7 @@
     var rr = sc3f.getBoundingClientRect();
 
     sc3f.style.transform = pt;
+    composite.style.transform = pc;
     if (pv) stage.style.setProperty('--t0', pv); else stage.style.removeProperty('--t0');
 
     if (!cr.width || !lr.width || !rr.width) return;
@@ -510,7 +521,11 @@
          화면을 덮는다 — 봉투가 확 커졌다 작아지는 것으로 보인다.
          2026-09-14 에 실제로 그렇게 배포돼 있었다. 프로토타입에는 지연 로딩이
          없어 이 결함이 «생성물에만» 생긴다. 원본만 보면 못 잡는다 */
-      im.addEventListener('load', function () { measure(); }, { once: true });
+      /* ⚠️ 「아직 못 쟀을 때»만» 잰다. 2026-09-14 에 조건 없이 불렀더니
+         폰에서 책 지면 그림이 늦게·띄엄띄엄 도착하면서 연출 막바지에 재는 일이
+         생겼다. 그 시점에는 #composite 에 변형이 걸려 있어 값이 오염된다.
+         measure() 안에서도 변형을 걷어내지만, 부를 이유가 없는 호출은 안 만든다 */
+      im.addEventListener('load', function () { if (!measured) measure(); }, { once: true });
       im.src = im.getAttribute('data-src');
       im.removeAttribute('data-src');
     }
