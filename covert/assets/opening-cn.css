@@ -282,6 +282,19 @@ html[data-motion="static"] #op-opening .fill{--wh:1;--wg:1}
   #op-opening .leaf .face{
     position:absolute;inset:0;overflow:hidden;
     backface-visibility:hidden;-webkit-backface-visibility:hidden;
+    /* ⚠️⚠️ isolation 을 빼지 말 것 — 이게 없으면 «앞면 잉크가 뒷면 위로 샌다».
+       .fill 은 z-index:4 를 가진 위치지정 요소인데, 이 규칙의 나머지 속성
+       (position·inset·overflow·backface-visibility·background·radius·shadow)은
+       하나도 쌓임 맥락을 만들지 않는다. 그러면 .fill 의 z-index 가 .face 가 아니라
+       «그 위의 .leaf»(preserve-3d + will-change 라 쌓임 맥락이다)에서 풀려,
+       앞면의 잉크가 같은 장의 .back 위에 그려진다.
+       크롬은 아래 backface-visibility «한 줄»이 평탄화된 판을 통째로 잘라 줘서 안 보이는데,
+       WebKit 은 그걸 «합성 레이어마다» 적용한다 — 손글씨는 전부 clip-path 가 걸려
+       각자 레이어로 떨어져 나가므로 자기 뒷면을 계속 그린다.
+       2026-09-14 에 아이폰에서 「글씨가 뒤로 넘어가 다음 페이지까지 보인다」로 신고됐다.
+       ⚠️ transform 으로 쌓임 맥락을 만들면 안 된다 — .leaf 의 preserve-3d 가 깨진다.
+          isolation 은 3D 맥락을 안 건드리고 쌓임 맥락만 만든다. */
+    isolation:isolate;
     background:#f6f1e4;border-radius:2px 7px 7px 2px;
     box-shadow:0 10px 26px rgba(70,49,31,.16);
   }
@@ -300,6 +313,18 @@ html[data-motion="static"] #op-opening .fill{--wh:1;--wg:1}
     position:absolute;inset:0;z-index:4;pointer-events:none;
     font-size:calc(var(--pw) * .030);
     color:#111827;
+  }
+  /* ⚠️⚠️ 잉크 요소마다 «스스로» 뒷면을 숨긴다 — 위 .face 의 isolation 과 «둘 다» 둔다.
+     WebKit 은 backface-visibility 를 합성 레이어마다 적용하는데,
+     .h 는 clip-path 로 애니메이션하고 .tick·.sign 은 stroke-dashoffset 으로 그린다 —
+     전부 레이어로 승격되는 조건이다. 레이어가 떨어져 나가도 각자 숨게 한다.
+     ⚠️ 크롬에서는 이 줄이 있으나 없으나 결과가 같다(실측). 지우고 싶어지는 종류다 — 두라. */
+  #op-opening .fill,
+#op-opening .leaf .face .fill .h,
+#op-opening .fill .tick,
+#op-opening .fill .sign,
+#op-opening .leaf .face .fill .seal{
+    backface-visibility:hidden;-webkit-backface-visibility:hidden;
   }
   /* 손글씨는 «구운 그림»이다 (social/_make-hand.mjs · TlabYoonDJ 펜글씨).
      ⚠️ 선택자에 .fill 만 쓰면 안 된다. 위쪽 .leaf .face img 가 특이도가 높아
