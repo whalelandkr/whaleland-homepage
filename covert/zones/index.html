@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>The Fifteen Zones — C.O.V.E.R.T</title>
+<meta name="description" content="Fifteen zones and thirty places across Seoul. Every zone carries real coordinates and a subway exit, and three assignments sit inside. Operation 01 is Seoul." />
+
+<!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/ 를 일괄 치환하면 됩니다. -->
+<link rel="canonical" href="https://whalelandkr.com/covert/zones/" />
+<link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/zones/" />
+<link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/kr/zones/" />
+<link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/jp/zones/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/cn/zones/" />
+<link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/zones/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://whalelandkr.com/covert/zones/" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:title" content="The Fifteen Zones — C.O.V.E.R.T" />
+<meta property="og:description" content="Fifteen zones and thirty places across Seoul. Every zone carries real coordinates and a subway exit." />
+<meta property="og:image" content="https://whalelandkr.com/covert/assets/og.png" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
+<link rel="icon" href="../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다. 외부 웹폰트를 받지 않습니다. -->
+<link rel="stylesheet" href="../assets/site.css" />
+<script src="../assets/boot.js"></script>
+
+<style>
+/* ================= ZONES ONLY =================
+   장면 틀(.chapter · .lead · .band)은 assets/site.css 에 있습니다.
+   여기에는 «명부»에만 필요한 것만 둡니다. */
+
+/* 히어로도 장면 틀을 그대로 쓰고 제목만 h1 로 세웁니다 */
+.zhero h1{
+  color:var(--brown);font-weight:800;margin:0 0 18px;
+  font-size:clamp(2rem,4.4vw,3.2rem);line-height:1.18;letter-spacing:-.025em;
+  word-break:keep-all;
+}
+.zhero .tagrow{justify-content:center;margin-top:26px}
+.zhero .tagrow b{font-size:1.08rem}
+
+/* 장면 틀의 위아래 여백은 «사진 있는 장면»에 맞춘 값이라, 글만 있는 장면이
+   둘 연달아 서면 사이가 250px 넘게 벌어집니다. 명부로 이어지는 두 장면만 조입니다.
+   ⚠️ .rosterhead 는 «아래 명부의 머리»입니다. 떨어져 있으면 머리로 안 읽힙니다 */
+.zhero{padding-bottom:clamp(26px,4vh,52px)}
+.rosterhead{padding-top:clamp(30px,5vh,64px);padding-bottom:clamp(18px,3vh,34px)}
+
+/* ── 구역 명부 ────────────────────────────────────
+   표가 아니라 «명부»입니다. 한 줄에 구역 하나, 그 구역의 범이가 왼쪽에 섭니다.
+   ⚠️ 값은 손으로 적지 않습니다 — social/_zones.json 에서 생성합니다.
+      마커 사이를 고치면 다음 생성 때 사라집니다:
+          node social/_zone-roster.mjs en --write */
+.roster{padding:0 0 clamp(24px,4vh,48px)}
+.roster .wrap{max-width:940px}
+
+.sec{padding:clamp(22px,3vw,34px) clamp(22px,3.2vw,38px);margin:0 0 20px}
+.sec:last-child{margin-bottom:0}
+.sec-h{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;
+  margin:0;padding:0 0 16px;border-bottom:1px solid var(--line);
+}
+.sec-h b{color:var(--orange-ink);font-size:.72rem;font-weight:950;letter-spacing:.16em;text-transform:uppercase}
+.sec-h span{color:var(--brown);font-weight:800;font-size:1.02rem;word-break:keep-all}
+
+.zlist{list-style:none;margin:0;padding:0}
+.zlist li{
+  display:grid;grid-template-columns:76px minmax(0,1fr);gap:0 18px;align-items:center;
+  padding:15px 0;border-top:1px solid var(--line);
+}
+.zlist li:first-child{border-top:0}
+.zlist li:last-child{padding-bottom:0}
+/* ⚠️ 범이는 비율을 지킵니다. 칸에 맞춰 늘이거나 누르지 않습니다 */
+.zlist img{width:100%;height:auto}
+
+.z-no{
+  margin:0 0 3px;font-size:.68rem;font-weight:950;letter-spacing:.18em;
+  color:var(--muted);font-variant-numeric:tabular-nums;
+}
+.z-name{
+  margin:0;color:var(--brown);font-weight:800;word-break:keep-all;
+  font-size:clamp(1.02rem,1.7vw,1.2rem);line-height:1.35;letter-spacing:-.015em;
+}
+.z-name i{font-style:normal;color:var(--orange);font-weight:900;margin:0 .22em}
+.z-geo{
+  margin:7px 0 0;display:flex;flex-wrap:wrap;gap:2px 16px;line-height:1.6;
+  font-size:.7rem;letter-spacing:.045em;color:var(--muted);font-variant-numeric:tabular-nums;
+}
+/* 좌표는 한 덩이로 읽혀야 합니다. 역 이름은 길어서 접히게 둡니다
+   (DONGDAEMUN HISTORY & CULTURE PARK STN. 이 가장 깁니다) */
+.z-geo .co{white-space:nowrap}
+
+@media (max-width:560px){
+  .zlist li{grid-template-columns:58px minmax(0,1fr);gap:0 14px}
+  .z-geo{font-size:.66rem;gap:1px 12px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="../" class="mark">C.O.V.E.R.T<i>.</i></a>
+    <div class="langsel">
+      <label class="sr" for="lang">Language</label>
+      <select id="lang">
+        <option value="../zones/" selected>EN — English</option>
+        <option value="../kr/zones/">KR — 한국어</option>
+        <option value="../jp/zones/">JP — 日本語</option>
+        <option value="../cn/zones/">CN — 简体中文</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ═══════════════════════════════════════════════════════════════
+     ⚠️ 카피 규격은 _카피규칙.md 입니다. 고친 뒤 node social/_copycheck.mjs 를 돌립니다.
+        제목 넷은 홈 챕터와 «같은 틀»입니다 — 3어절 「(명사)+(부사)+(동사)~ㄴ다」.
+        본문은 전부 두 문장, 39~45자, 아라비아 숫자 0개입니다.
+
+     ⚠️ 세계관 어휘(구역·임무·작전)를 여기서는 한 장면으로 묶지 않습니다.
+        홈과 달리 이 페이지의 «주제»가 그것이라 피하면 말이 되지 않습니다.
+
+     ⚠️ 임무 «내용»은 한 줄도 적지 않습니다. 그건 상품입니다 —
+        지면을 열어야 나오는 것으로 둡니다.
+     ═══════════════════════════════════════════════════════════════ -->
+
+<section class="chapter band zhero">
+  <div class="copy">
+    <p class="kicker rv">Operation 01 &middot; Seoul</p>
+    <h1 class="rv">Seoul is cut into zones</h1>
+    <p class="lead rv">Fifteen zones fall into five sectors.</p>
+    <p class="lead rv">Each zone carries two places and real coordinates.</p>
+    <p class="tagrow rv">
+      <span><b>15</b> zones</span>
+      <span><b>30</b> places</span>
+      <span><b>45</b> assignments</span>
+    </p>
+  </div>
+</section>
+
+<section class="chapter band rosterhead">
+  <div class="copy">
+    <p class="kicker rv">Sector Roster</p>
+    <h2 class="rv">Five sectors hold the fifteen</h2>
+    <p class="lead rv">Zones of a similar character sit in one sector.</p>
+    <p class="lead rv">The BUMMY on each line wears that zone’s disguise.</p>
+  </div>
+</section>
+
+<section class="roster">
+  <div class="wrap">
+<!--ROSTER:START-->
+  <div class="sheet sec rv">
+    <p class="sec-h"><b>Sector Alpha</b><span>HERITAGE &amp; HISTORY</span></p>
+    <ul class="zlist">
+      <li>
+        <img src="../assets/zone/z01.webp" width="180" height="253"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 01 disguise">
+        <div>
+          <p class="z-no">01</p>
+          <p class="z-name">Gyeongbokgung Palace <i>/</i> Seochon</p>
+          <p class="z-geo"><span class="co">37.5776 N · 126.9769 E</span><span>GYEONGBOKGUNG STN. EXIT 05</span></p>
+        </div>
+      </li>
+      <li>
+        <img src="../assets/zone/z02.webp" width="180" height="263"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 02 disguise">
+        <div>
+          <p class="z-no">02</p>
+          <p class="z-name">Gwanghwamun <i>/</i> Bukchon Hanok Village</p>
+          <p class="z-geo"><span class="co">37.5726 N · 126.9769 E</span><span>GWANGHWAMUN STN. EXIT 07</span></p>
+        </div>
+      </li>
+      <li>
+        <img src="../assets/zone/z03.webp" width="180" height="242"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 03 disguise">
+        <div>
+          <p class="z-no">03</p>
+          <p class="z-name">National Museum of Korea <i>/</i> Yongridan-gil</p>
+          <p class="z-geo"><span class="co">37.5239 N · 126.9804 E</span><span>ICHON STN. EXIT 02</span></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="sheet sec rv">
+    <p class="sec-h"><b>Sector Bravo</b><span>FINANCE &amp; HIGH-VALUE ASSETS</span></p>
+    <ul class="zlist">
+      <li>
+        <img src="../assets/zone/z04.webp" width="180" height="224"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 04 disguise">
+        <div>
+          <p class="z-no">04</p>
+          <p class="z-name">COEX <i>/</i> Bongeunsa Temple</p>
+          <p class="z-geo"><span class="co">37.5117 N · 127.0592 E</span><span>BONGEUNSA STN. EXIT 07</span></p>
+        </div>
+      </li>
+      <li>
+        <img src="../assets/zone/z05.webp" width="180" height="232"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 05 disguise">
+        <div>
+          <p class="z-no">05</p>
+          <p class="z-name">Yeouido <i>/</i> The Hyundai Seoul</p>
+          <p class="z-geo"><span class="co">37.5259 N · 126.9285 E</span><span>YEOUIDO STN. EXIT 03</span></p>
+        </div>
+      </li>
+      <li>
+        <img src="../assets/zone/z06.webp" width="180" height="228"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 06 disguise">
+        <div>
+          <p class="z-no">06</p>
+          <p class="z-name">Apgujeong Rodeo <i>/</i> Dosan Park</p>
+          <p class="z-geo"><span class="co">37.5247 N · 127.0356 E</span><span>APGUJEONG RODEO STN. EXIT 05</span></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="sheet sec rv">
+    <p class="sec-h"><b>Sector Charlie</b><span>RECON &amp; OBSERVATION</span></p>
+    <ul class="zlist">
+      <li>
+        <img src="../assets/zone/z07.webp" width="180" height="224"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 07 disguise">
+        <div>
+          <p class="z-no">07</p>
+          <p class="z-name">Lotte World Tower <i>/</i> Seokchon Lake</p>
+          <p class="z-geo"><span class="co">37.5125 N · 127.1026 E</span><span>JAMSIL STN. EXIT 02</span></p>
+        </div>
+      </li>
+      <li>
+        <img src="../assets/zone/z08.webp" width="180" height="249"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 08 disguise">
+        <div>
+          <p class="z-no">08</p>
+          <p class="z-name">Namsan <i>/</i> Haebangchon Sinheung Market</p>
+          <p class="z-geo"><span class="co">37.5512 N · 126.9882 E</span><span>MYEONG-DONG STN. EXIT 03</span></p>
+        </div>
+      </li>
+      <li>
+        <img src="../assets/zone/z09.webp" width="180" height="233"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 09 disguise">
+        <div>
+          <p class="z-no">09</p>
+          <p class="z-name">Banpo Hangang Park <i>/</i> Famille Station</p>
+          <p class="z-geo"><span class="co">37.5137 N · 126.9960 E</span><span>EXPRESS BUS TERMINAL STN. EXIT 8-1</span></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="sheet sec rv">
+    <p class="sec-h"><b>Sector Delta</b><span>INDUSTRIAL &amp; SUBCULTURE</span></p>
+    <ul class="zlist">
+      <li>
+        <img src="../assets/zone/z10.webp" width="180" height="215"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 10 disguise">
+        <div>
+          <p class="z-no">10</p>
+          <p class="z-name">Itaewon <i>/</i> Hannam-dong</p>
+          <p class="z-geo"><span class="co">37.5345 N · 126.9946 E</span><span>ITAEWON STN. EXIT 01</span></p>
+        </div>
+      </li>
+      <li>
+        <img src="../assets/zone/z11.webp" width="180" height="264"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 11 disguise">
+        <div>
+          <p class="z-no">11</p>
+          <p class="z-name">Seongsu-dong <i>/</i> Seoul Forest</p>
+          <p class="z-geo"><span class="co">37.5446 N · 127.0557 E</span><span>SEONGSU STN. EXIT 03</span></p>
+        </div>
+      </li>
+      <li>
+        <img src="../assets/zone/z12.webp" width="180" height="223"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 12 disguise">
+        <div>
+          <p class="z-no">12</p>
+          <p class="z-name">Hongdae <i>/</i> Yeonnam-dong</p>
+          <p class="z-geo"><span class="co">37.5533 N · 126.9224 E</span><span>HONGIK UNIV. STN. EXIT 09</span></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="sheet sec rv">
+    <p class="sec-h"><b>Sector Echo</b><span>LOGISTICS &amp; TRANSIT</span></p>
+    <ul class="zlist">
+      <li>
+        <img src="../assets/zone/z13.webp" width="180" height="252"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 13 disguise">
+        <div>
+          <p class="z-no">13</p>
+          <p class="z-name">Myeongdong <i>/</i> Euljiro</p>
+          <p class="z-geo"><span class="co">37.5636 N · 126.9837 E</span><span>MYEONG-DONG STN. EXIT 06</span></p>
+        </div>
+      </li>
+      <li>
+        <img src="../assets/zone/z14.webp" width="180" height="251"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 14 disguise">
+        <div>
+          <p class="z-no">14</p>
+          <p class="z-name">DDP <i>/</i> Dongdaemun Gate</p>
+          <p class="z-geo"><span class="co">37.5665 N · 127.0093 E</span><span>DONGDAEMUN HISTORY &amp; CULTURE PARK STN. EXIT 01</span></p>
+        </div>
+      </li>
+      <li>
+        <img src="../assets/zone/z15.webp" width="180" height="225"
+             loading="lazy" decoding="async" alt="Agent BUMMY in the Zone 15 disguise">
+        <div>
+          <p class="z-no">15</p>
+          <p class="z-name">Gwangjang Market <i>/</i> Cheonggyecheon</p>
+          <p class="z-geo"><span class="co">37.5700 N · 126.9996 E</span><span>JONGNO 5-GA STN. EXIT 08</span></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+<!--ROSTER:END-->
+  </div>
+</section>
+
+<section class="chapter band">
+  <div class="copy">
+    <p class="kicker rv">Three Each</p>
+    <h2 class="rv">Three assignments to a zone</h2>
+    <p class="lead rv">Every zone lists three things to do.</p>
+    <p class="lead rv">What they are stays inside the envelope.</p>
+  </div>
+</section>
+
+<section class="chapter band">
+  <div class="copy">
+    <p class="kicker rv">No Fixed Order</p>
+    <h2 class="rv">The order is left open</h2>
+    <p class="lead rv">It makes no difference which zone comes first.</p>
+    <p class="lead rv">Nothing expires, so it keeps until the next trip.</p>
+  </div>
+  <p class="go rv"><a class="cta" href="../kit/">See the kit</a></p>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--orange)">.</i></p>
+        <p class="foot-tag">Ordinary trips, turned into extraordinary missions.</p>
+        <div class="sns">
+          <span>INSTAGRAM</span>
+          <span>FACEBOOK</span>
+          <span>YOUTUBE</span>
+          <span>TIKTOK</span>
+          <a href="https://tumblbug.com/covertkr" target="_blank" rel="me noopener">TUMBLBUG</a>
+        </div>
+      </div>
+
+      <nav aria-label="Operations">
+        <p class="foot-h">Operation</p>
+        <ul class="foot-list">
+          <li><a href="./">The zones</a></li>
+          <li><a href="../kit/">The kit</a></li>
+          <li><a href="../field-report/">Field reports</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Support">
+        <p class="foot-h">Support</p>
+        <ul class="foot-list">
+          <li><a href="../get/">How to get it</a></li>
+          <li><a href="../support/">Shipping &amp; returns</a></li>
+          <li><a href="../support/#faq">FAQ</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">Contact us</a></li>
+        </ul>
+      </nav>
+
+      <div class="news">
+        <p class="foot-h">Dispatches</p>
+        <p>New operations, restocks, and nothing else. We send maybe four times a year.</p>
+        <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">Join the roster</a> -->
+        <span class="cta cta-2 cta-off">Join the roster</span>
+        <p class="news-soon">Sign-up opening soon.</p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-links">
+        <a href="../terms/">Terms of service</a>
+        <a href="../privacy/">Privacy policy</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
+      </div>
+      <p>
+        웨일랜드 (Whale Land) · 대표 김정후 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 010-9937-1628<br />
+        서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T is a trademark of Whale Land.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

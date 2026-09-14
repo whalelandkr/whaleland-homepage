@@ -192,11 +192,16 @@ function renderStore() {
   document.getElementById("shopButton").textContent = copy.shopButton;
   document.getElementById("helpBox").textContent = copy.help;
 
-  /* 새 공식 사이트. 영어판은 루트, 나머지는 언어 폴더로 보낸다. */
+  /* 새 공식 사이트. 언어 폴더를 «직접 찍지 않고» 라우터에 맡긴다.
+     ⚠️ 2026-09-14 — 사이트가 /covert/site/ 에서 /covert/ 로 올라가면서
+        여기가 ../site/kr/ 같은 «없는 주소»를 만들고 있었다.
+        ../?lang=xx 로 보내면 assets/boot.js 가 받아
+        en 은 루트에 두고 kr·jp·cn 은 언어 폴더로 보내며,
+        손님이 고른 언어를 covertLanguage 에 남겨 보존 화면과도 어긋나지 않는다. */
   const siteLink = document.getElementById("siteLink");
   if (siteLink) {
     siteLink.textContent = copy.siteLink;
-    siteLink.href = currentLanguage === "en" ? "../site/" : "../site/" + currentLanguage + "/";
+    siteLink.href = "../?lang=" + currentLanguage;
   }
 
   const params = new URLSearchParams(window.location.search);

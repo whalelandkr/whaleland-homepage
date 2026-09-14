@@ -5,17 +5,28 @@ Allow: /
 # C.O.V.E.R.T 공식 사이트의 «보존 화면» — 들어가면 24초짜리 터미널이 자동으로 돌아갑니다.
 # 검색 결과로 들어오는 자리가 아니고, 그 페이지들은 head 를 고칠 수 없어(원본 보존)
 # noindex 를 넣지 못합니다. 그래서 여기서 막습니다.
-# ⚠️ /covert/briefing/ (구 사이트, 인쇄 QR 이 가는 곳)은 «막지 않습니다».
-Disallow: /covert/site/briefing/
-Disallow: /covert/site/mission/
-Disallow: /covert/site/report/
+#
+# ⚠️ 2026-09-14 에 사이트가 /covert/site/ 에서 /covert/ 로 «올라왔습니다».
+#    그래서 이 경로들도 같이 올라왔습니다. 그전에는 「/covert/briefing/ 은 구 사이트라
+#    막지 않는다」고 적혀 있었는데, 이제 그 주소가 곧 보존 화면입니다.
+# ⚠️ 인쇄 QR(/go/covert/ → /covert/briefing/)은 그대로 열립니다.
+#    robots.txt 가 막는 것은 «검색 노출»이지 방문이 아닙니다.
+Disallow: /covert/briefing/
+Disallow: /covert/mission/
+Disallow: /covert/report/
 
 # 후기 페이지. 아직 수신 0건이라 공개하지 않습니다 (HTML 안에도 noindex 가 있습니다).
-Disallow: /covert/site/field-report/
-Disallow: /covert/site/kr/field-report/
-Disallow: /covert/site/jp/field-report/
-Disallow: /covert/site/cn/field-report/
+Disallow: /covert/field-report/
+Disallow: /covert/kr/field-report/
+Disallow: /covert/jp/field-report/
+Disallow: /covert/cn/field-report/
+
+# 옛 주소. 되돌림 한 장만 남아 있습니다 (2026-09-13~14 하루 살아 있었습니다).
+Disallow: /covert/site/
+
+# 현장 판매 일정을 고치는 내부 화면입니다. 검색에 뜰 자리가 아닙니다.
+Disallow: /covert/admin-local.html
 
 Sitemap: https://whalelandkr.com/sitemap.xml
-# C.O.V.E.R.T 공식 사이트 (/covert/site/). 위 줄은 그대로 둔다.
-Sitemap: https://whalelandkr.com/covert/site/sitemap.xml
+# C.O.V.E.R.T 공식 사이트 (/covert/). 위 줄은 그대로 둔다.
+Sitemap: https://whalelandkr.com/covert/sitemap.xml

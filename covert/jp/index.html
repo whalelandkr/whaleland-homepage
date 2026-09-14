@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>C.O.V.E.R.T — Arrive a tourist. Leave an agent.</title>
-<meta name="description" content="One sealed envelope, one paper passport, forty-five directives. Operation 01 is Seoul — no app to install, no guide to follow." />
+<title>C.O.V.E.R.T — 旅行者として着き、エージェントとして発つ。</title>
+<meta name="description" content="密封された封筒がひとつ、紙のパスポートが一冊、四十五の指令。最初の作戦はソウル。入れるアプリも、ついて回るガイドもない。あなたと、まだあなたを知らない街だけ。" />
 
 <!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/ 를 일괄 치환하면 됩니다. -->
-<link rel="canonical" href="https://whalelandkr.com/covert/" />
+<link rel="canonical" href="https://whalelandkr.com/covert/jp/" />
 <link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/" />
 <link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/kr/" />
 <link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/jp/" />
@@ -15,29 +15,29 @@
 <link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/" />
 
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://whalelandkr.com/covert/" />
+<meta property="og:url" content="https://whalelandkr.com/covert/jp/" />
 <meta property="og:site_name" content="C.O.V.E.R.T" />
-<meta property="og:title" content="C.O.V.E.R.T — Arrive a tourist. Leave an agent." />
-<meta property="og:description" content="One sealed envelope, one paper passport, forty-five directives. Operation 01 is Seoul." />
+<meta property="og:title" content="C.O.V.E.R.T — 旅行者として着き、エージェントとして発つ。" />
+<meta property="og:description" content="密封された封筒がひとつ、紙のパスポートが一冊、四十五の指令。最初の作戦はソウル。" />
 <meta property="og:image" content="https://whalelandkr.com/covert/assets/og.png" />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="ja_JP" />
 <meta name="twitter:card" content="summary_large_image" />
 
 <!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
-<link rel="icon" href="favicon.ico" sizes="any" />
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="icon" href="../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
 
 <!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다.
      외부 웹폰트를 받지 않으므로 첫 화면이 그만큼 빨라집니다. -->
 <!-- 개봉의 첫 화면에 «반드시» 필요한 두 장. 이게 늦으면 봉투 없이 글자만 뜬다 -->
-<link rel="preload" as="image" href="assets/hero/env-closed.jpg" />
-<link rel="preload" as="image" href="assets/hero/env-open.jpg" />
+<link rel="preload" as="image" href="../assets/hero/env-closed.jpg" />
+<link rel="preload" as="image" href="../assets/hero/env-open.jpg" />
 
-<link rel="stylesheet" href="assets/site.css" />
-<link rel="stylesheet" href="assets/opening-en.css" />
-<script src="assets/boot.js" data-root></script>
-<script src="assets/opening-en.js" defer></script>
+<link rel="stylesheet" href="../assets/site.css" />
+<link rel="stylesheet" href="../assets/opening-jp.css" />
+<script src="../assets/boot.js"></script>
+<script src="../assets/opening-jp.js" defer></script>
 
 <style>
 /* ================= HOME ONLY ================= */
@@ -52,7 +52,7 @@ html{scroll-behavior:auto}
    html{} 로 적으면 특이도가 낮아 70px 이 그대로 남는다. 실제로 그랬다 */
 :root{--bar:48px}
 
-/* 길이 — CSS 두 줄이 정하고 JS 가 읽는다 (assets/opening-en.css 참조) */
+/* 길이 — CSS 두 줄이 정하고 JS 가 읽는다 (assets/opening-jp.css 참조) */
 @media (max-width:768px){
   /* 좁은 화면에서는 손글씨가 읽히지도 않는데 매 프레임 clip-path 를 40개 넘게
      다시 계산한다. 기입 구간을 줄여 절반 이하로 내린다 */
@@ -81,14 +81,14 @@ html[data-seen] #op-opening .skip-btn{display:none}
   color:var(--orange-ink);font-size:.72rem;font-weight:950;
   letter-spacing:.16em;text-transform:uppercase;min-width:10.5em;
 }
-.sectors span{color:var(--brown);font-weight:800;font-size:1.02rem;word-break:keep-all}
+.sectors span{color:var(--brown);font-weight:800;font-size:1.02rem;word-break:normal;line-break:strict}
 
 /* ── 귀환 — 인쇄된 QR 로 들어온 사람 ──────────────────
    이미 여권을 갖고 있으므로 파는 말을 하지 않는다. 보내 주기만 한다 */
 .backstrip{border-top:1px solid var(--line);padding:clamp(30px,4vw,46px) 0}
 .backstrip .wrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 28px;justify-content:center}
 /* ⚠️ 여기 제목은 한글이라 kicker 처럼 자간을 벌리지 않는다 */
-.backstrip-h{margin:0;font-size:.92rem;font-weight:800;color:var(--muted);word-break:keep-all}
+.backstrip-h{margin:0;font-size:.92rem;font-weight:800;color:var(--muted);word-break:normal;line-break:strict}
 .backstrip-links{display:flex;flex-wrap:wrap;gap:12px 26px;margin:0}
 
 @media (max-width:900px){
@@ -98,18 +98,18 @@ html[data-seen] #op-opening .skip-btn{display:none}
 </head>
 <body>
 
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">本文へスキップ</a>
 
 <header class="topbar slim">
   <div class="topbar-in">
     <a href="./" class="mark">C.O.V.E.R.T<i>.</i></a>
     <div class="langsel">
-      <label class="sr" for="lang">Language</label>
+      <label class="sr" for="lang">言語</label>
       <select id="lang">
-        <option value="./" selected>EN — English</option>
-        <option value="kr/">KR — 한국어</option>
-        <option value="jp/">JP — 日本語</option>
-        <option value="cn/">CN — 简体中文</option>
+        <option value="../">EN — English</option>
+        <option value="../kr/">KR — 한국어</option>
+        <option value="../jp/" selected>JP — 日本語</option>
+        <option value="../cn/">CN — 简体中文</option>
       </select>
     </div>
   </div>
@@ -120,19 +120,19 @@ html[data-seen] #op-opening .skip-btn{display:none}
   <div class="pin">
     <!-- 초점을 받았을 때만 나오는 .skip 과 달리 «항상» 보인다.
          푸터가 유일한 내비인데 개봉이 그 위에 열 화면을 깔기 때문이다 -->
-    <button class="skip-btn" type="button" data-skip="#main">Skip</button>
+    <button class="skip-btn" type="button" data-skip="#main">スキップ</button>
 
     <div class="scene" id="op-sc0">
       <!-- ⚠️ 카피 규격은 _카피규칙.md 에 있다. 고치기 전에 반드시 읽을 것.
            숫자(15·45·88×125mm·40p)는 본문에 넣지 않는다 — 숫자 전용 장면(S6·S7)으로 뺐다 -->
       <div class="copy">
         <p class="kicker">Operation 01 · Seoul</p>
-        <h1>Arrive a tourist.<br>Leave an agent.</h1>
-        <p class="lead">From the day you land to the day you leave,<br>what to do in Seoul is written in one paper book.</p>
-        <p class="spec"><i aria-hidden="true">[</i> Classified envelope · Agent passport · Seal stickers · Agent ID · Boarding pass · Keyring <i aria-hidden="true">]</i></p>
+        <h1>旅行者として着き、<br>エージェントとして発つ。</h1>
+        <p class="lead">着いた日から発つ日まで、<br>ソウルですることが紙一冊に書いてある。</p>
+        <p class="spec"><i aria-hidden="true">[</i> 機密封筒 · エージェントパスポート · スタンプシール · 要員証 · ボーディングパス · キーリング <i aria-hidden="true">]</i></p>
         <!-- ⚠️ 상대 경로다. 홈(kr/)에서 kr/kit/ 로 간다.
              이 프로토타입 파일에서는 갈 곳이 없다 — 접합된 홈에서만 뜻이 있다 -->
-        <p class="go"><a class="linkarrow" href="kit/">Inspect the kit →</a></p>
+        <p class="go"><a class="linkarrow" href="kit/">キットを見る →</a></p>
       </div>
       <div class="pic"><div class="frame sq">
         <!-- ⚠️ 이 컷은 «열린 봉투(env-open.jpg)를 참조로» 다시 뽑은 것이다.
@@ -145,19 +145,19 @@ html[data-seen] #op-opening .skip-btn{display:none}
              닫힌 «뚜껑만» 마스크로 덮는 편법을 썼다. 그러면 뚜껑이 몸통보다 좁아
              위쪽에 몸통 크라프트가 삼각형으로 드러나고 끈이 두 개가 됐다.
              그 편법은 이제 없다 — 한 장이면 된다 -->
-        <img src="assets/hero/env-closed.jpg" width="1200" height="1200"
-             alt="A kraft confidential envelope tied with string">
+        <img src="../assets/hero/env-closed.jpg" width="1200" height="1200"
+             alt="紐で結んだクラフト機密封筒">
       </div></div>
     </div>
 
     <div class="scene" id="op-sc1">
       <div class="copy">
-        <h2>No guide, no greeting</h2>
-        <p class="lead">No one waits at the airport or the hotel lobby.<br>There is only an envelope.</p>
+        <h2>案内のない出発</h2>
+        <p class="lead">空港にもホテルのロビーにも迎えはいない。<br>封筒がひとつあるだけだ。</p>
       </div>
       <div class="pic"><div class="frame sq">
-        <img data-src="assets/hero/env-open.jpg" data-wave="1" width="1200" height="1200"
-             alt="The confidential envelope, open">
+        <img data-src="../assets/hero/env-open.jpg" data-wave="1" width="1200" height="1200"
+             alt="口の開いた機密封筒">
       </div></div>
     </div>
 
@@ -172,13 +172,13 @@ html[data-seen] #op-opening .skip-btn{display:none}
          두 여권의 위치를 0.1% 이내로 맞춰 놨으므로 바꿔쳐도 티가 나지 않는다 -->
     <div class="scene" id="op-sc2">
       <div class="copy">
-        <h2>A passport with no name</h2>
-        <p class="lead">A blank for your name comes first.<br>Fill it in, and you walk Seoul under it.</p>
+        <h2>名前のない旅券</h2>
+        <p class="lead">名前を書く欄が先にある。<br>書いたら、その名前でソウルを歩く。</p>
       </div>
       <div class="pic"><div class="frame sq" id="op-composite">
-        <img data-src="assets/hero/env-open.jpg" data-wave="1" width="1200" height="1200" alt="">
+        <img data-src="../assets/hero/env-open.jpg" data-wave="1" width="1200" height="1200" alt="">
         <div class="pclip" id="op-pclip">
-          <img class="pass" id="op-pass" data-src="assets/hero/passport-cut.webp" data-wave="1"
+          <img class="pass" id="op-pass" data-src="../assets/hero/passport-cut.webp" data-wave="1"
                width="546" height="543" alt="">
         </div>
         <!-- 다 나온 «뒤» 이 사진으로 바꿔친다. 누끼는 미끄러지는 동안만 쓴다.
@@ -187,15 +187,15 @@ html[data-seen] #op-opening .skip-btn{display:none}
              실측 대조 (네이비 픽셀 박스, 프레임 대비 %)
                이 사진    x 51.75~84.75  중심 68.25  폭 33.0  상단 2.69
                누끼 합성  x 51.8 ~84.8   중심 68.3   폭 33.0  상단 2.9   ← 0.1% 이내 -->
-        <img data-src="assets/hero/env-passport.jpg" data-wave="1" id="op-settled"
-             width="1200" height="1200" alt="The passport-style mission book out of the envelope">
+        <img data-src="../assets/hero/env-passport.jpg" data-wave="1" id="op-settled"
+             width="1200" height="1200" alt="封筒から出た旅券型ミッションブック">
       </div></div>
     </div>
 
     <div class="scene" id="op-sc3">
       <div class="copy">
-        <h2>A record with no right answer</h2>
-        <p class="lead">Walk the same alley and what stays on paper differs.<br>So every copy ends up different.</p>
+        <h2>正解のない記録</h2>
+        <p class="lead">同じ路地を歩いても紙に残るものは人それぞれで、<br>だから一冊ずつ違ってくる。</p>
       </div>
       <!-- ⚠️ 여기에 표지 «사진»을 넣지 않는다. 아래 .bookwrap 의 3D 책이 이 자리의 그림이다.
            예전에는 여기에 p01.jpg 정지 표지를 두고, 화면을 더 내리면 «아래에 있는 다른 여권»이
@@ -231,54 +231,54 @@ html[data-seen] #op-opening .skip-btn{display:none}
               <!-- 경복궁 기록 면. 여기서 스크롤이 잠깐 멈추고 «직접 쓰는» 장면이 붙는다.
                    자리(%)는 인쇄 지면 7.png 을 재서 넣은 값이다 -->
               <div class="face front">
-                <img data-src="assets/book/en/p07.webp" data-wave="2" width="1000" height="1421"
-                     alt="The report page for the Gyeongbokgung / Seochon zone">
+                <img data-src="../assets/book/jp/p07.webp" data-wave="2" width="1000" height="1421"
+                     alt="景福宮・西村区域の記録面">
                 <div class="fill" aria-hidden="true">
                   <!-- 날짜 두 칸 -->
-                  <img class="h mid h-d1" data-src="assets/book/hand/en/d1.webp" data-wave="2" style="width:3.1%;left:34.30%;top:7.9%;--w:var(--hd1)" alt="">
-                  <img class="h mid h-d2" data-src="assets/book/hand/en/d2.webp" data-wave="2" style="width:3.15%;left:39.55%;top:7.9%;--w:var(--hd2)" alt="">
-                  <svg class="tick" style="left:60.55%;top:7.90%;--w:var(--hwx)" viewBox="0 0 20 20"><path d="M3 11 L8 16 L17 4"/></svg>
+                  <img class="h mid h-d1" data-src="../assets/book/hand/jp/d1.webp" data-wave="2" style="width:2.65%;left:35.15%;top:7.9%;--w:var(--hd1)" alt="">
+                  <img class="h mid h-d2" data-src="../assets/book/hand/jp/d2.webp" data-wave="2" style="width:2.85%;left:40.25%;top:7.9%;--w:var(--hd2)" alt="">
+                  <svg class="tick" style="left:61.00%;top:7.90%;--w:var(--hwx)" viewBox="0 0 20 20"><path d="M3 11 L8 16 L17 4"/></svg>
 
                   <!-- 닷 메모지 위에 그날의 일기.
                        줄 간격은 점 격자 한 칸(4%)이 아니라 «두 칸»(8%) 이다 —
                        공책에 편하게 쓸 때 한 줄씩 띄어 쓰는 것과 같다.
                        격자의 배수라 글씨가 여전히 점 위에 앉는다 -->
-                  <img class="h h-diary1" data-src="assets/book/hand/en/diary1.webp" data-wave="2" style="width:62.85%;left:11.5%;top:16.5%;--w:var(--hy1)" alt="">
-                  <img class="h h-diary2" data-src="assets/book/hand/en/diary2.webp" data-wave="2" style="width:66.7%;left:11.5%;top:24.5%;--w:var(--hy2)" alt="">
-                  <img class="h h-diary3" data-src="assets/book/hand/en/diary3.webp" data-wave="2" style="width:64.95%;left:11.5%;top:32.5%;--w:var(--hy3)" alt="">
-                  <img class="h h-diary4" data-src="assets/book/hand/en/diary4.webp" data-wave="2" style="width:62.5%;left:11.5%;top:40.5%;--w:var(--hy4)" alt="">
+                  <img class="h h-diary1" data-src="../assets/book/hand/jp/diary1.webp" data-wave="2" style="width:51.35%;left:11.5%;top:16.5%;--w:var(--hy1)" alt="">
+                  <img class="h h-diary2" data-src="../assets/book/hand/jp/diary2.webp" data-wave="2" style="width:66.4%;left:11.5%;top:24.5%;--w:var(--hy2)" alt="">
+                  <img class="h h-diary3" data-src="../assets/book/hand/jp/diary3.webp" data-wave="2" style="width:63%;left:11.5%;top:32.5%;--w:var(--hy3)" alt="">
+                  <img class="h h-diary4" data-src="../assets/book/hand/jp/diary4.webp" data-wave="2" style="width:70.45%;left:11.5%;top:40.5%;--w:var(--hy4)" alt="">
 
                   <!-- 아래 기입란. 인쇄된 라벨보다 살짝 위에 앉힌다 -->
-                  <svg class="tick" style="left:53.05%;top:77.00%;--w:var(--hcx)" viewBox="0 0 20 20"><path d="M3 11 L8 16 L17 4"/></svg>
-                  <img class="h h-menu" data-src="assets/book/hand/en/menu.webp" data-wave="2" style="width:36.55%;left:34.10%;top:80.1%;--w:var(--hm)" alt="">
-                  <img class="h h-cost" data-src="assets/book/hand/en/cost.webp" data-wave="2" style="width:12.2%;left:32.60%;top:83.4%;--w:var(--hc)" alt="">
-                  <img class="h h-kw1" data-src="assets/book/hand/en/kw1.webp" data-wave="2" style="width:10.9%;left:35.20%;top:86.8%;--w:var(--hk1)" alt="">
-                  <img class="h h-kw2" data-src="assets/book/hand/en/kw2.webp" data-wave="2" style="width:12.2%;left:53.00%;top:86.8%;--w:var(--hk2)" alt="">
-                  <img class="h h-kw3" data-src="assets/book/hand/en/kw3.webp" data-wave="2" style="width:11.55%;left:71.00%;top:86.8%;--w:var(--hk3)" alt="">
+                  <svg class="tick" style="left:43.55%;top:77.00%;--w:var(--hcx)" viewBox="0 0 20 20"><path d="M3 11 L8 16 L17 4"/></svg>
+                  <img class="h h-menu" data-src="../assets/book/hand/jp/menu.webp" data-wave="2" style="width:27.45%;left:29.30%;top:80.1%;--w:var(--hm)" alt="">
+                  <img class="h h-cost" data-src="../assets/book/hand/jp/cost.webp" data-wave="2" style="width:7.65%;left:25.10%;top:83.4%;--w:var(--hc)" alt="">
+                  <img class="h h-kw1" data-src="../assets/book/hand/jp/kw1.webp" data-wave="2" style="width:7.45%;left:36.80%;top:86.8%;--w:var(--hk1)" alt="">
+                  <img class="h h-kw2" data-src="../assets/book/hand/jp/kw2.webp" data-wave="2" style="width:13.5%;left:54.40%;top:86.8%;--w:var(--hk2)" alt="">
+                  <img class="h h-kw3" data-src="../assets/book/hand/jp/kw3.webp" data-wave="2" style="width:5.25%;left:72.20%;top:86.8%;--w:var(--hk3)" alt="">
                   <!-- 서명. 글씨가 아니라 «획»이라 폰트가 필요 없다 -->
                   <svg class="sign" viewBox="0 0 160 46"><path d="M6 33 C14 9 21 10 23 26 C25 42 31 41 36 26 C41 11 48 13 48 28 C48 40 54 40 60 29 C66 18 74 21 78 32 C88 27 97 18 106 7 M96 20 C114 27 132 30 152 26"/></svg>
-                  <img class="seal" data-src="assets/detail/seal-red.webp" data-wave="2" width="420" height="420" alt="">
+                  <img class="seal" data-src="../assets/detail/seal-red.webp" data-wave="2" width="420" height="420" alt="">
                 </div>
               </div>
             </div>
             <div class="leaf" id="op-leaf2">
-              <div class="face front"><img data-src="assets/book/en/p05.webp" data-wave="2" width="1000" height="1421" alt=""></div>
-              <div class="face back"><img data-src="assets/book/en/p06.webp" data-wave="2" width="1000" height="1421" alt="The directive page for the Gyeongbokgung / Seochon zone"></div>
+              <div class="face front"><img data-src="../assets/book/jp/p05.webp" data-wave="2" width="1000" height="1421" alt=""></div>
+              <div class="face back"><img data-src="../assets/book/jp/p06.webp" data-wave="2" width="1000" height="1421" alt="景福宮・西村区域の指令面"></div>
             </div>
             <div class="leaf" id="op-leaf1">
-              <div class="face front"><img data-src="assets/book/en/p03.webp" data-wave="2" width="1000" height="1421" alt="">
+              <div class="face front"><img data-src="../assets/book/jp/p03.webp" data-wave="2" width="1000" height="1421" alt="">
                 <div class="fill" aria-hidden="true">
-                  <img class="h hb vt h-fname" data-src="assets/book/hand/en/fname.webp" data-wave="2" style="width:5.15%;right:76.0%;bottom:47.4%;--w:var(--fname)" alt="">
-                  <img class="h hb vt h-fid" data-src="assets/book/hand/en/fid.webp" data-wave="2" style="width:4.5%;right:67.6%;bottom:52.4%;--w:var(--fid)" alt="">
-                  <img class="h hb vt h-fcode" data-src="assets/book/hand/en/fcode.webp" data-wave="2" style="width:5.2%;right:59.2%;bottom:54.5%;--w:var(--fcode)" alt="">
-                  <img class="h hb vt h-fnat" data-src="assets/book/hand/en/fnat.webp" data-wave="2" style="width:4%;right:50.7%;bottom:57.4%;--w:var(--fnat)" alt="">
-                  <img class="h hb vt h-fdob" data-src="assets/book/hand/en/fdob.webp" data-wave="2" style="width:3.55%;right:42.3%;bottom:59.5%;--w:var(--fdob)" alt="">
-                  <img class="h hb vt h-fsex" data-src="assets/book/hand/en/fsex.webp" data-wave="2" style="width:4.45%;right:33.9%;bottom:48.6%;--w:var(--fsex)" alt="">
-                  <img class="h hb vt h-fmbti" data-src="assets/book/hand/en/fmbti.webp" data-wave="2" style="width:4.1%;right:33.9%;bottom:59.8%;--w:var(--fmbti)" alt="">
-                  <img class="h hb vt h-fcolor" data-src="assets/book/hand/en/fcolor.webp" data-wave="2" style="width:5.8%;right:25.5%;bottom:61.6%;--w:var(--fcolor)" alt="">
+                  <img class="h hb vt h-fname" data-src="../assets/book/hand/jp/fname.webp" data-wave="2" style="width:5.1%;right:76.0%;bottom:47.4%;--w:var(--fname)" alt="">
+                  <img class="h hb vt h-fid" data-src="../assets/book/hand/jp/fid.webp" data-wave="2" style="width:4%;right:67.6%;bottom:52.4%;--w:var(--fid)" alt="">
+                  <img class="h hb vt h-fcode" data-src="../assets/book/hand/jp/fcode.webp" data-wave="2" style="width:4.55%;right:59.2%;bottom:54.5%;--w:var(--fcode)" alt="">
+                  <img class="h hb vt h-fnat" data-src="../assets/book/hand/jp/fnat.webp" data-wave="2" style="width:3.1%;right:50.7%;bottom:57.4%;--w:var(--fnat)" alt="">
+                  <img class="h hb vt h-fdob" data-src="../assets/book/hand/jp/fdob.webp" data-wave="2" style="width:2.85%;right:42.3%;bottom:59.5%;--w:var(--fdob)" alt="">
+                  <img class="h hb vt h-fsex" data-src="../assets/book/hand/jp/fsex.webp" data-wave="2" style="width:3.3%;right:33.9%;bottom:48.6%;--w:var(--fsex)" alt="">
+                  <img class="h hb vt h-fmbti" data-src="../assets/book/hand/jp/fmbti.webp" data-wave="2" style="width:3.1%;right:33.9%;bottom:59.8%;--w:var(--fmbti)" alt="">
+                  <img class="h hb vt h-fcolor" data-src="../assets/book/hand/jp/fcolor.webp" data-wave="2" style="width:5.05%;right:25.5%;bottom:61.6%;--w:var(--fcolor)" alt="">
                 </div>
               </div>
-              <div class="face back"><img data-src="assets/book/en/p04.webp" data-wave="2" width="1000" height="1421" alt="">
+              <div class="face back"><img data-src="../assets/book/jp/p04.webp" data-wave="2" width="1000" height="1421" alt="">
                 <div class="fill" aria-hidden="true">
                   <svg class="sign p04" viewBox="0 0 160 46"><path d="M6 33 C14 9 21 10 23 26 C25 42 31 41 36 26 C41 11 48 13 48 28 C48 40 54 40 60 29 C66 18 74 21 78 32 C88 27 97 18 106 7 M96 20 C114 27 132 30 152 26"/></svg>
                 </div>
@@ -289,14 +289,14 @@ html[data-seen] #op-opening .skip-btn{display:none}
                    인계하는 동안에는 위가 불투명해서 책이 곧 사진이고,
                    봉투가 아직 아랫부분을 가리고 있는 동안 위가 걷힌다 -->
               <div class="face front">
-                <img data-src="assets/book/en/p01.webp" data-wave="2" width="1000" height="1421"
-                     alt="A deep navy passport-style mission book stamped in gold">
-                <img class="skin" data-src="assets/book/p01-skin.webp" data-wave="2" width="700" height="995"
+                <img data-src="../assets/book/jp/p01.webp" data-wave="2" width="1000" height="1421"
+                     alt="濃紺の表紙に金箔を押した旅券型ミッションブック">
+                <img class="skin" data-src="../assets/book/p01-skin.webp" data-wave="2" width="700" height="995"
                      alt="" aria-hidden="true">
               </div>
-              <div class="face back"><img data-src="assets/book/en/p02.webp" data-wave="2" width="1000" height="1421" alt="">
+              <div class="face back"><img data-src="../assets/book/jp/p02.webp" data-wave="2" width="1000" height="1421" alt="">
                 <div class="fill" aria-hidden="true">
-                  <img class="h hb h-id02" data-src="assets/book/hand/en/id02.webp" data-wave="2" style="width:23.7%;left:56.50%;bottom:28.61%;--w:var(--id02)" alt="">
+                  <img class="h hb h-id02" data-src="../assets/book/hand/jp/id02.webp" data-wave="2" style="width:18.9%;left:54.20%;bottom:20.80%;--w:var(--id02)" alt="">
                 </div>
               </div>
             </div>
@@ -307,15 +307,15 @@ html[data-seen] #op-opening .skip-btn{display:none}
       <!-- 봉투 앞판 사본 — 책 «위»에 놓여 표지 아랫부분을 가린다.
            .riser 뒤에 둬야 책을 덮는다. DOM 순서가 곧 z 순서다.
            .scene 안에 넣으면 책 레이어보다 «먼저» 그려져 가릴 수가 없다 -->
-      <img class="lipmask" id="op-lipmask" data-src="assets/hero/env-open.jpg" data-wave="1"
+      <img class="lipmask" id="op-lipmask" data-src="../assets/hero/env-open.jpg" data-wave="1"
            width="1200" height="1200" alt="" aria-hidden="true">
     </div>
 
     <!-- 넘기는 지면마다 붙는 설명. 책 아래 가운데에 한 줄씩 갈아 끼운다 -->
     <div class="pagecopy" id="op-pagecopy">
-      <p style="--o:var(--cap1)"><b>It starts with writing your name</b><span>You fill in the agent name and number yourself.<br>Then you walk Seoul under it.</span></p>
-      <p style="--o:var(--cap2)"><b>You sign five rules</b><span>And fifteen zones are laid out on one page.</span></p>
-      <p style="--o:var(--cap3)"><b>Each zone faces a directive and a report</b><span>Left is what to find. Right is what to leave behind.</span></p>
+      <p style="--o:var(--cap1)"><b>名前を書くことから始まる</b><span>要員名と要員番号を自分で埋める。<br>その名前でソウルを歩く。</span></p>
+      <p style="--o:var(--cap2)"><b>五つの心得に署名する</b><span>そして十五区域の分析表が一枚に広がる。</span></p>
+      <p style="--o:var(--cap3)"><b>区域ごとに指令と記録が向き合う</b><span>左は何を探すか、右は何を残すか。</span></p>
     </div>
 
     <div class="hint" id="op-hint"><span>Scroll</span><i></i></div>
@@ -350,18 +350,18 @@ html[data-seen] #op-opening .skip-btn{display:none}
   <!-- S4 · 지령 — 여권 왼쪽 면.  ⚠️ 확정 카피다. 한 글자도 고치지 않는다 -->
   <section class="chapter">
     <div class="shot rv">
-      <img src="assets/detail/directive.jpg" width="1200" height="800"
+      <img src="../assets/detail/directive.jpg" width="1200" height="800"
            loading="lazy" decoding="async"
-           alt="The directive page with zone information and coordinates">
+           alt="区域情報と座標が記されたパスポートの指令書面">
     </div>
     <!-- ⚠️ 카피 주의점 (검수에서 걸린 것)
          · «지령이 도착한다» 로 쓰지 않는다 — 지령은 따로 배송되지 않고 여권 면에 이미 인쇄돼 있다
          · «지하철 출구 번호» 로 쓰지 않는다 — 확정 사실은 «지하철 출구» 까지다 -->
     <div class="copy">
       <p class="kicker rv">Classified Directive</p>
-      <h2 class="rv">The directive comes first</h2>
-      <p class="lead rv">Each zone lists real coordinates and a subway exit.</p>
-      <p class="lead rv">What to look for is written here too.</p>
+      <h2 class="rv">指令を先に読む</h2>
+      <p class="lead rv">区域ごとに実際の座標と地下鉄出口が記されている。</p>
+      <p class="lead rv">何を探すのかもここにある。</p>
     </div>
   </section>
 
@@ -370,15 +370,15 @@ html[data-seen] #op-opening .skip-btn{display:none}
           «투명 스티커를 붙이는 자리»다 (CLAUDE.md). 사진도 붙인 뒤의 것이다 -->
   <section class="chapter flip portrait">
     <div class="shot rv">
-      <img src="assets/detail/seal-sticker.jpg" width="1000" height="1333"
+      <img src="../assets/detail/seal-sticker.jpg" width="1000" height="1333"
            loading="lazy" decoding="async"
-           alt="An empty circle on the dot grid, and a clear seal sticker placed on the signature line below">
+           alt="点のグリッドの上の空の円と、その下の署名欄に貼った透明の印章シール">
     </div>
     <div class="copy">
       <p class="kicker rv">Field Report</p>
-      <h2 class="rv">You write the record yourself</h2>
-      <p class="lead rv">The right-hand page is only a dot grid and blanks.</p>
-      <p class="lead rv">Finish a zone and a clear sticker goes in the empty circle.</p>
+      <h2 class="rv">記録を自分で残す</h2>
+      <p class="lead rv">右の面は点のグリッドと空欄だけでできている。</p>
+      <p class="lead rv">区域を終えたら、空いていた円に透明シールを貼る。</p>
     </div>
   </section>
 
@@ -386,9 +386,9 @@ html[data-seen] #op-opening .skip-btn{display:none}
   <section class="chapter band">
     <div class="copy">
       <p class="kicker rv">Four Editions</p>
-      <h2 class="rv">Each edition is printed apart</h2>
-      <p class="lead rv">The same passport is printed in four languages.</p>
-      <p class="lead rv">Not a translation laid over one book, but four editions.</p>
+      <h2 class="rv">版をそれぞれ刷る</h2>
+      <p class="lead rv">同じパスポートを四つの言語でそれぞれ印刷する。</p>
+      <p class="lead rv">翻訳を添えたのではなく、版が四つある。</p>
     </div>
     <p class="pills rv">
       <span class="badge">한국어</span>
@@ -404,21 +404,21 @@ html[data-seen] #op-opening .skip-btn{display:none}
   <section class="chapter band">
     <div class="copy">
       <p class="kicker rv">Operation 01 · Seoul</p>
-      <h2 class="rv">Five sectors hold the zones</h2>
-      <p class="lead rv">Zones of a similar character fall into five sectors.</p>
-      <p class="lead rv">Three zones sit in each sector.</p>
+      <h2 class="rv">区域を五つにまとめる</h2>
+      <p class="lead rv">性格の近い区域どうしが五つの系統に分かれている。</p>
+      <p class="lead rv">ひとつの系統に三つの区域が入る。</p>
     </div>
-    <p class="bignum rv"><b>15</b> zones <i>·</i> <b>45</b> assignments</p>
+    <p class="bignum rv"><b>15</b> 区域 <i>·</i> <b>45</b> 任務</p>
     <div class="sheet sectors rv">
       <ul>
-        <li><b>Sector Alpha</b><span>HERITAGE &amp; HISTORY</span></li>
-        <li><b>Sector Bravo</b><span>FINANCE &amp; HIGH-VALUE ASSETS</span></li>
-        <li><b>Sector Charlie</b><span>RECON &amp; OBSERVATION</span></li>
-        <li><b>Sector Delta</b><span>INDUSTRIAL &amp; SUBCULTURE</span></li>
-        <li><b>Sector Echo</b><span>LOGISTICS &amp; TRANSIT</span></li>
+        <li><b>Sector Alpha</b><span>ヘリテージ＆ヒストリー</span></li>
+        <li><b>Sector Bravo</b><span>金融＆ハイバリュー</span></li>
+        <li><b>Sector Charlie</b><span>リコン＆観測</span></li>
+        <li><b>Sector Delta</b><span>インダストリアル＆サブカルチャー</span></li>
+        <li><b>Sector Echo</b><span>ロジスティクス＆トランジット</span></li>
       </ul>
     </div>
-    <p class="go rv"><a class="linkarrow" href="zones/">See the zone roster →</a></p>
+    <p class="go rv"><a class="linkarrow" href="zones/">区域表を見る →</a></p>
   </section>
 
   <!-- S8 · 범이 — «소개»만 한다. 홈 본문에서 범이는 말하지 않는다 (_카피규칙.md).
@@ -426,15 +426,15 @@ html[data-seen] #op-opening .skip-btn{display:none}
        캐릭터 화자가 있는 곳은 0곳이었다 -->
   <section class="chapter">
     <div class="shot rv">
-      <img src="assets/product/keyrings.jpg" width="1200" height="800"
+      <img src="../assets/product/keyrings.jpg" width="1200" height="800"
            loading="lazy" decoding="async"
-           alt="Fifteen BUMMY keyrings, each in a different outfit">
+           alt="それぞれ違う服を着たBUMMYキーリング十五種">
     </div>
     <div class="copy">
       <p class="kicker rv">Agent BUMMY</p>
-      <h2 class="rv">BUMMY travels with you</h2>
-      <p class="lead rv">A BUMMY in a different outfit hides on each zone’s page.</p>
-      <p class="lead rv">One keyring comes at random out of fifteen kinds.</p>
+      <h2 class="rv">BUMMYが一緒に歩く</h2>
+      <p class="lead rv">区域ごとに着替えたBUMMYが紙面に隠れている。</p>
+      <p class="lead rv">キーリングは十五種の中から無作為にひとつ入る。</p>
     </div>
   </section>
 
@@ -443,14 +443,14 @@ html[data-seen] #op-opening .skip-btn{display:none}
   <section class="chapter band">
     <div class="copy">
       <p class="kicker rv">No App · No Booking</p>
-      <h2 class="rv">It all ends on paper</h2>
-      <p class="lead rv">There is no app to install and no booking to make.</p>
-      <p class="lead rv">Everything you need is already in the envelope.</p>
+      <h2 class="rv">すべてを紙で終える</h2>
+      <p class="lead rv">入れるアプリも、先に取る予約もない。</p>
+      <p class="lead rv">必要なものは封筒の中に全部入っている。</p>
     </div>
     <p class="pills rv">
-      <span class="badge off">No app</span>
-      <span class="badge off">No booking</span>
-      <span class="badge off">No guide</span>
+      <span class="badge off">アプリ不要</span>
+      <span class="badge off">予約不要</span>
+      <span class="badge off">ガイドなし</span>
     </p>
   </section>
 
@@ -462,12 +462,12 @@ html[data-seen] #op-opening .skip-btn{display:none}
   <section class="chapter band">
     <div class="copy">
       <p class="kicker rv">First Printing</p>
-      <h2 class="rv">The first printing is limited</h2>
-      <p class="lead rv">The first run is fifteen hundred sets across four editions.</p>
-      <p class="lead rv">What is inside, and the price, are on the kit page.</p>
+      <h2 class="rv">初版を限って刷る</h2>
+      <p class="lead rv">初回分は四つの版を合わせて千五百セットだ。</p>
+      <p class="lead rv">構成と価格はキットの側にある。</p>
     </div>
-    <p class="bignum rv"><b>1,500</b> sets</p>
-    <p class="go rv"><a class="cta" href="kit/">See the kit</a></p>
+    <p class="bignum rv"><b>1,500</b> セット</p>
+    <p class="go rv"><a class="cta" href="kit/">キットを見る</a></p>
   </section>
 
 </div>
@@ -478,10 +478,10 @@ html[data-seen] #op-opening .skip-btn{display:none}
         /report/ 는 ?lang= 을 읽으므로 붙여서 언어를 잃지 않게 보낸다 -->
 <aside class="backstrip">
   <div class="wrap">
-    <p class="backstrip-h">Already holding a passport?</p>
+    <p class="backstrip-h">すでにパスポートをお持ちなら</p>
     <p class="backstrip-links">
-      <a class="linkarrow" href="briefing/">Collect your mission →</a>
-      <a class="linkarrow" href="report/?lang=en">File your report →</a>
+      <a class="linkarrow" href="../briefing/">任務を受け取る →</a>
+      <a class="linkarrow" href="../report/?lang=jp">任務を報告する →</a>
     </p>
   </div>
 </aside>
@@ -493,7 +493,7 @@ html[data-seen] #op-opening .skip-btn{display:none}
     <div class="foot-grid">
       <div>
         <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--orange)">.</i></p>
-        <p class="foot-tag">Ordinary trips, turned into extraordinary missions.</p>
+        <p class="foot-tag">ふつうの旅を、特別な任務に。</p>
         <div class="sns">
           <span>INSTAGRAM</span>
           <span>FACEBOOK</span>
@@ -503,39 +503,39 @@ html[data-seen] #op-opening .skip-btn{display:none}
         </div>
       </div>
 
-      <nav aria-label="Operations">
+      <nav aria-label="作戦">
         <p class="foot-h">Operation</p>
         <ul class="foot-list">
-          <li><a href="zones/">The zones</a></li>
-          <li><a href="kit/">The kit</a></li>
-          <li><a href="field-report/">Field reports</a></li>
+          <li><a href="zones/">区域</a></li>
+          <li><a href="kit/">キット</a></li>
+          <li><a href="field-report/">フィールドレポート</a></li>
         </ul>
       </nav>
 
-      <nav aria-label="Support">
+      <nav aria-label="サポート">
         <p class="foot-h">Support</p>
         <ul class="foot-list">
-          <li><a href="get/">How to get it</a></li>
-          <li><a href="support/">Shipping &amp; returns</a></li>
-          <li><a href="support/#faq">FAQ</a></li>
-          <li><a href="mailto:contact@whalelandkr.com">Contact us</a></li>
+          <li><a href="get/">お受け取り</a></li>
+          <li><a href="support/">配送 &middot; 返品</a></li>
+          <li><a href="support/#faq">よくある質問</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">お問い合わせ</a></li>
         </ul>
       </nav>
 
       <div class="news">
         <p class="foot-h">Dispatches</p>
-        <p>New operations, restocks, and nothing else. We send maybe four times a year.</p>
+        <p>新しい作戦と再入荷のお知らせだけをお送りします。年に四回ほどです。</p>
         <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
-             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">Join the roster</a> -->
-        <span class="cta cta-2 cta-off">Join the roster</span>
-        <p class="news-soon">Sign-up opening soon.</p>
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">リストに登録</a> -->
+        <span class="cta cta-2 cta-off">リストに登録</span>
+        <p class="news-soon">登録は近日開始します。</p>
       </div>
     </div>
 
     <div class="legal">
       <div class="legal-links">
-        <a href="terms/">Terms of service</a>
-        <a href="privacy/">Privacy policy</a>
+        <a href="terms/">利用規約</a>
+        <a href="privacy/">プライバシーポリシー</a>
         <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
       </div>
       <p>
@@ -543,7 +543,7 @@ html[data-seen] #op-opening .skip-btn{display:none}
         통신판매업신고 2025-서울강남-04140 · 010-9937-1628<br />
         서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)<br />
         contact@whalelandkr.com<br />
-        © 2026 Whale Land. C.O.V.E.R.T is a trademark of Whale Land.
+        © 2026 Whale Land. C.O.V.E.R.T は Whale Land の商標です。
       </p>
     </div>
   </div>

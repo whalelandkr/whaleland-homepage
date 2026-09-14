@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>隐私政策 — C.O.V.E.R.T</title>
+<meta name="description" content="本网站如何处理个人信息。由 Whale Land 运营。" />
+<meta name="robots" content="noindex, follow" />
+
+<!-- 정식 도메인. 바꿀 일이 생기면 이 파일들의 https://whalelandkr.com/covert/ 를 일괄 치환하면 됩니다. -->
+<link rel="canonical" href="https://whalelandkr.com/covert/cn/privacy/" />
+<link rel="alternate" hreflang="en" href="https://whalelandkr.com/covert/privacy/" />
+<link rel="alternate" hreflang="ko" href="https://whalelandkr.com/covert/kr/privacy/" />
+<link rel="alternate" hreflang="ja" href="https://whalelandkr.com/covert/jp/privacy/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://whalelandkr.com/covert/cn/privacy/" />
+<link rel="alternate" hreflang="x-default" href="https://whalelandkr.com/covert/privacy/" />
+<!-- noindex 라 검색에는 안 뜨지만, 메신저로 주소를 보내면 미리보기가 뜹니다. -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="C.O.V.E.R.T" />
+<meta property="og:url" content="https://whalelandkr.com/covert/cn/privacy/" />
+<meta property="og:title" content="隐私政策 — C.O.V.E.R.T" />
+<meta property="og:description" content="本网站如何处理个人信息。由 Whale Land 运营。" />
+<meta property="og:image" content="https://whalelandkr.com/covert/assets/og.png" />
+<meta property="og:locale" content="zh_CN" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- 상대경로. 도메인 루트에서도, GitHub Pages 하위 경로에서도 동작합니다. -->
+<link rel="icon" href="../../favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png" />
+<!-- 서체는 구 사이트와 같은 시스템 산세리프를 씁니다. 외부 웹폰트를 받지 않습니다. -->
+<link rel="stylesheet" href="../../assets/site.css" />
+<script src="../../assets/boot.js"></script>
+
+<style>
+/* ================= LEGAL ONLY ================= */
+
+.legaldoc{padding:56px 0 24px}
+.legal-lede{font-size:16px;line-height:1.9;color:var(--ink-soft);max-width:34em;margin:0 0 20px}
+.stamp-date{font-size:13px;color:var(--red);margin:0 0 7px}
+.stamp-eff{font-size:13.5px;line-height:1.75;color:var(--ink-soft);margin:0 0 44px}
+
+.arts{list-style:none;margin:0;padding:0;counter-reset:art}
+.arts > li{counter-increment:art;padding:0 0 26px;margin:0 0 26px;border-bottom:1px solid var(--line)}
+.arts > li:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
+.arts > li > h2{font-family:var(--body);font-weight:700;font-size:16px;letter-spacing:-.01em;margin:0 0 10px}
+.arts > li > h2::before{content:counter(art,decimal-leading-zero);display:block;
+  font-family:var(--mono);font-weight:400;font-size:10.5px;letter-spacing:.16em;color:var(--red);margin:0 0 5px}
+.arts p{margin:0 0 10px;font-size:14.5px;line-height:1.95;color:var(--ink-soft)}
+.arts p:last-child{margin-bottom:0}
+.arts ol,.arts ul{margin:0 0 10px;padding-left:20px}
+.arts li li{font-size:14.5px;line-height:1.95;color:var(--ink-soft);margin:0 0 7px}
+.arts li li:last-child{margin-bottom:0}
+
+.biz{list-style:none;margin:0;padding:0}
+.biz li{display:grid;grid-template-columns:150px 1fr;gap:0 20px;padding:9px 0;border-bottom:1px solid var(--line)}
+.biz li:last-child{border-bottom:0}
+.biz b{font-weight:700;font-size:13.5px;line-height:1.5;color:var(--ink);padding-top:1px}
+.biz p{margin:0;font-size:14.5px;line-height:1.7}
+
+.none{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--red);margin:0 0 10px}
+
+@media (max-width:600px){
+  .legaldoc{padding:44px 0 16px}
+
+  .biz li{grid-template-columns:96px minmax(0,1fr);gap:0 16px;padding:11px 0}
+  .biz b{font-size:12.5px;line-height:1.45}
+  .biz p{font-size:14px}
+}
+/* ⚠️ 아주 좁은 화면에서는 라벨을 «위»로 올립니다. 값 칸이 1fr 이라 min-content 아래로
+   줄지 않아, 320px 에서 contact@whalelandkr.com 이 안 끊겨 문서가 가로로 넘쳤습니다.
+   법정 고지가 옆으로 밀리면 안 됩니다. 고친 뒤 node social/_check-overflow.mjs */
+@media (max-width:380px){
+  .biz li{grid-template-columns:1fr;gap:2px 0}
+  .biz b{padding-top:0}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">跳到正文</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="../" class="mark">C.O.V.E.R.T<i>.</i></a>
+    <div class="langsel">
+      <label class="sr" for="lang">语言</label>
+      <select id="lang">
+        <option value="../../privacy/">EN — English</option>
+        <option value="../../kr/privacy/">KR — 한국어</option>
+        <option value="../../jp/privacy/">JP — 日本語</option>
+        <option value="../../cn/privacy/" selected>CN — 简体中文</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="legaldoc">
+  <div class="wrap wrap-narrow">
+
+    <p class="kicker">LEGAL</p>
+    <h1 class="head">隐私政策</h1>
+    <p class="legal-lede">本页说明个人信息在本网站上会如何被处理。简单说：本站不收集任何个人信息。以下写明实际会被存下的内容，以及它们由谁处理。</p>
+    <p class="stamp-date">公告日期: 2026年8月21日 &nbsp;|&nbsp; 生效日期: 2026年8月28日</p>
+    <p class="stamp-eff">本隐私政策自2026年8月28日起生效。</p>
+
+    <!-- 관리자 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>CONTROLLER</b></span><span>WHO IS RESPONSIBLE</span></p>
+      <ul class="biz">
+        <li><b>公司名称</b><p>Whale Land（웨일랜드）</p></li>
+        <li><b>法定代表人</b><p>김정후</p></li>
+        <li><b>营业执照号</b><p>428-04-03222</p></li>
+        <li><b>地址</b><p>서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)</p></li>
+        <li><b>个人信息保护负责人</b><p>김정후 &mdash; contact@whalelandkr.com &middot; 010-9937-1628</p></li>
+      </ul>
+    </div>
+
+    <!-- 조문 -->
+    <div class="sheet doc rv">
+      <p class="doc-h"><span><b>POLICY</b></span><span>WHAT WE DO AND DON'T HOLD</span></p>
+      <ol class="arts">
+        <li>
+          <h2>本站收集的个人信息</h2>
+          <p class="none">没有</p>
+          <p>本站没有注册、登录、购物车、支付，也没有任何输入表单。任何页面都不会向您索取姓名、联系方式或支付信息，我们也不保有关于访客的任何数据库。</p>
+        </li>
+        <li>
+          <h2>浏览器中保存的值</h2>
+          <p>本站会把界面需要记住的设置留在浏览器的本地存储里。您第一次到访时，本站会判断一次语言；当您自行选择语言或画面动效时，本站会记下这个选择。留下的值共有四个。</p>
+          <ul>
+            <li><b>covertLanguage</b> — 您正在浏览的语言（<b>kr</b> · <b>en</b> · <b>jp</b> · <b>cn</b>）。更换语言时会随之更新。</li>
+            <li><b>cov_lang</b> — 值为 <b>1</b>。仅记录“语言已经判断过一次”这件事。</li>
+            <li><b>covert-motion</b> — 画面动效的设置（<b>auto</b> · <b>full</b> · <b>static</b>）。只有当您在页脚更改时才会留下。</li>
+            <li><b>cov_seen_open</b> — 值为 <b>1</b>。仅记录“首屏的开场演出您已经看过”这件事。</li>
+          </ul>
+          <p>这四个值都只留在您的浏览器里，不会发送给我们。它们不是能够识别特定个人的信息；清除浏览器存储即会一并删除，清除之后本站仍可正常使用。</p>
+          <p>我们不运行自动收集个人信息的装置，也不使用广告或追踪目的的 Cookie。</p>
+        </li>
+        <li>
+          <h2>托管与服务器日志</h2>
+          <p>本站托管于 GitHub Pages。与任何网页服务器一样，该服务会记录它收到的请求，其中可能包含 IP 地址。这些日志归属于托管服务商，依其自身政策处理；我们既不会收到，也不会留存副本。</p>
+        </li>
+        <li>
+          <h2>字体</h2>
+          <p>本站不从外部加载字体。只使用您设备上已安装的系统字体，因此不会因为字体而向其他服务发出请求。</p>
+        </li>
+        <li>
+          <h2>当您购买时</h2>
+          <p>购买不在本站进行，而是在 <a href="https://whaleland.cafe24.com" target="_blank" rel="noopener">Whale Land 自营的线上商店</a>。那不是第三方平台，而是我们自己的商店。您在那里填写的姓名、地址、联系方式与支付信息，依该商店所公示的隐私政策收集和处理，下单前请先阅读。本页只涵盖这个宣传网站。</p>
+        </li>
+        <li>
+          <h2>尚未启用的功能</h2>
+          <p>我们计划加入联系表单、订阅登记、领取预约受理与网站分析工具。目前这些都没有运行。其中任何一项开始运行时，我们会先更新本页 —— 说明收集什么、为什么收集、保留多久 —— 并标注变更日期。</p>
+        </li>
+        <li>
+          <h2>对外提供与委托处理</h2>
+          <p class="none">没有</p>
+          <p>由于本站没有保有任何个人信息，因此没有可向第三方提供的内容，没有委托他人处理的内容，也没有向境外转移的内容。</p>
+        </li>
+        <li>
+          <h2>您的权利</h2>
+          <p>依大韩民国个人信息保护法，您可以要求查阅、更正、删除自己的个人信息，或要求停止处理。由于本站未保有相关信息，实际上没有可以出示给您的内容；若您希望确认，请与我们联系，我们会核实后回复。</p>
+          <p>购买过程中填写的信息，相关请求可以向您下单的那家商店提出。</p>
+          <p>若您认为自己在个人信息方面的权益受到侵害，可以向下列机构申请争议调解或咨询。</p>
+          <ul>
+            <li>个人信息纠纷调解委员会（개인정보분쟁조정위원회）— 韩国境内直拨 1833-6972 · <a href="https://www.kopico.go.kr" target="_blank" rel="noopener">kopico.go.kr</a></li>
+            <li>个人信息侵害举报中心（개인정보침해신고센터）— 韩国境内直拨 118 · <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener">privacy.kisa.or.kr</a></li>
+          </ul>
+        </li>
+        <li>
+          <h2>本政策的变更</h2>
+          <p>若收集内容发生变化，或法规有此要求，我们会修订本政策，并连同新的生效日公布于本页。重要变更会在生效前先行告知。</p>
+        </li>
+      </ol>
+    </div>
+
+    <p class="mailto">
+      对隐私有疑问？ <a href="mailto:contact@whalelandkr.com">contact@whalelandkr.com</a>
+    </p>
+
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">C.O.V.E.R.T<i style="font-style:normal;color:var(--orange)">.</i></p>
+        <p class="foot-tag">把平凡的旅行，变成特别的任务。</p>
+        <div class="sns">
+          <span>INSTAGRAM</span>
+          <span>FACEBOOK</span>
+          <span>YOUTUBE</span>
+          <span>TIKTOK</span>
+          <a href="https://tumblbug.com/covertkr" target="_blank" rel="me noopener">TUMBLBUG</a>
+        </div>
+      </div>
+
+      <nav aria-label="行动">
+        <p class="foot-h">Operation</p>
+        <ul class="foot-list">
+          <li><a href="../zones/">区域</a></li>
+          <li><a href="../kit/">套装</a></li>
+          <li><a href="../field-report/">现场报告</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="支持">
+        <p class="foot-h">Support</p>
+        <ul class="foot-list">
+          <li><a href="../get/">领取</a></li>
+          <li><a href="../support/">配送 &middot; 退换</a></li>
+          <li><a href="../support/#faq">常见问题</a></li>
+          <li><a href="mailto:contact@whalelandkr.com">联系我们</a></li>
+        </ul>
+      </nav>
+
+      <div class="news">
+        <p class="foot-h">Dispatches</p>
+        <p>只发送新行动和补货消息。一年大约四次。</p>
+        <!-- 구글폼 주소가 정해지면 아래 두 줄을 이 한 줄로 되돌립니다.
+             <a class="cta cta-2" href="폼주소" target="_blank" rel="noopener">加入名单</a> -->
+        <span class="cta cta-2 cta-off">加入名单</span>
+        <p class="news-soon">登记即将开放。</p>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div class="legal-links">
+        <a href="../terms/">服务条款</a>
+        <a href="./">隐私政策</a>
+        <a href="https://whalelandkr.com" target="_blank" rel="noopener">Whale Land</a>
+      </div>
+      <p>
+        웨일랜드 (Whale Land) · 대표 김정후 · 사업자등록번호 428-04-03222<br />
+        통신판매업신고 2025-서울강남-04140 · 010-9937-1628<br />
+        서울특별시 강남구 언주로 425, 지하1층 22호(역삼동, 아레나빌딩)<br />
+        contact@whalelandkr.com<br />
+        © 2026 Whale Land. C.O.V.E.R.T 是 Whale Land 的商标。
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
