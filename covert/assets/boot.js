@@ -30,7 +30,8 @@
      covertLanguage   보존 5화면이 읽는 키 (kr|en|jp|cn)
      cov_lang         자동 이동을 «이미 했다»는 표시
      covert-motion    모션 모드 (auto|full|static)
-     cov_seen_open    개봉 연출을 본 적 있다
+   ⚠️ cov_seen_open 은 2026-09-14 에 «없앴다» (대표 지시 — 개봉은 항상 튼다).
+      /privacy/ 네 벌의 고지에서도 같이 뺐다. 다시 만들면 그 네 장도 같이 고친다.
    ========================================================== */
 (function () {
   'use strict';
@@ -131,11 +132,17 @@
     else if (mq.addListener) mq.addListener(onSys);
   } catch (e) {}
 
-  /* ── 4. 개봉을 본 적 있는가 ──────────────────────────────────────
-     두 번째 방문·언어 전환·지령 귀환에서는 개봉을 정지 히어로 한 장으로
-     접습니다. 12화면을 다시 보게 하지 않습니다.
+  /* ── 4. 개봉을 접을 것인가 ──────────────────────────────────────
+     ⚠️ 2026-09-14 대표 지시 — **개봉은 항상 튼다.**
+     예전에는 끝까지 본 사람에게 cov_seen_open 을 남겨 다음 방문부터
+     정지 히어로 한 장으로 접었다. 그래서 «한 번 보면 다시는 안 나오는»
+     것으로 보였고, 다시 보는 길이 아예 없었다. 그 기록을 없앴다.
+
+     접힌 화면 자체는 남겨 둔다 — 주소에 ?keep=1 을 붙이면 그대로 나온다.
+     되돌리려면 이 조건에 cov_seen_open 을 다시 넣으면 된다(한 줄).
+     ⚠️ 되돌릴 때는 /privacy/ 네 벌의 「브라우저에 저장되는 값」도 같이 고친다.
      ⚠️ scrollTo 로 위치를 조작하지 않습니다 — 뒤로가기와 싸웁니다. */
-  if (ls.get('cov_seen_open') || /[?&]keep=1\b/.test(location.search)) {
+  if (/[?&]keep=1\b/.test(location.search)) {
     doc.setAttribute('data-seen', '1');
   }
 
@@ -181,17 +188,12 @@
          preventScroll 로 방금 맞춘 위치를 다시 흔들지 않는다. 2026-09-13 에 잡았다 */
       if (to.tabIndex < 0) to.setAttribute('tabindex', '-1');
       try { to.focus({ preventScroll: true }); } catch (e) { to.focus(); }
-      ls.set('cov_seen_open', '1');
     });
 
-    /* 개봉을 끝까지 본 사람은 다음부터 접어서 본다 */
-    var op = document.getElementById('op-opening');
-    if (op) {
-      window.addEventListener('scroll', function () {
-        var r = op.getBoundingClientRect();
-        if (r.bottom <= window.innerHeight * 1.2) ls.set('cov_seen_open', '1');
-      }, { passive: true });
-    }
+    /* ⚠️ 여기에 있던 「개봉을 끝까지 본 사람은 다음부터 접어서 본다」를 뗐다
+       (2026-09-14 대표 지시 — 개봉은 항상 튼다). 건너뛰기 단추와 스크롤 감시가
+       cov_seen_open 을 남기고 있었다. 이제 아무것도 남기지 않는다 —
+       쓰지 않을 값을 저장해 두면 /privacy/ 의 고지만 늘어난다. */
 
     /* 스크롤 등장 */
     var rv = document.querySelectorAll('.rv');
