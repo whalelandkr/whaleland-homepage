@@ -272,16 +272,13 @@ html[data-motion="static"] #op-opening .fill{--wh:1;--wg:1}
      장을 «돌리는» 규칙이 CSS 에 없어서 실제로는 닫힌 표지(p01)가 보였다.
      z-index 까지 뒤집어야 «마지막에 넘긴 장»(p06)이 왼쪽 맨 위에 온다 —
      DOM 순서대로 두면 leaf0(p02)이 덮어 버린다 */
-  /* ⚠️ 「전부 돌리고 마지막 장을 맨 위에」로 두면 뒤표지가 보인다. 실제로 그랬다.
-     경복궁 펼침면은 «leaf2 까지 돌아가고 leaf3 은 그대로» 일 때 나온다 —
-     돌아간 leaf2 의 뒷면이 p06(왼쪽), 안 돌아간 leaf3 의 앞면이 p07(오른쪽)이다 */
-  html[data-motion="static"] #op-opening #op-leaf0,
-html[data-motion="static"] #op-opening #op-leaf1,
-html[data-motion="static"] #op-opening #op-leaf2{transform:rotateY(-180deg)}
+  html[data-motion="static"] #op-opening .leaf{transform:rotateY(-180deg)}
   html[data-motion="static"] #op-opening #op-leaf0{z-index:1}
   html[data-motion="static"] #op-opening #op-leaf1{z-index:2}
   html[data-motion="static"] #op-opening #op-leaf2{z-index:3}
   html[data-motion="static"] #op-opening #op-leaf3{z-index:4}
+  html[data-motion="static"] #op-opening #leaf4{z-index:5}
+  html[data-motion="static"] #op-opening #leaf5{z-index:6}
   #op-opening .leaf .face{
     position:absolute;inset:0;overflow:hidden;
     backface-visibility:hidden;-webkit-backface-visibility:hidden;
@@ -456,8 +453,8 @@ html[data-motion="static"] #op-opening #op-leaf2{transform:rotateY(-180deg)}
      ⚠️ 넘김이 긴 것은 장이 여섯이고, 경복궁 펼침면에서 «직접 쓰는» 구간이
         464vh 나 들어가기 때문이다. */
   html:not([data-motion="static"]) #op-opening{
-    --open-vh:320;    /* 봉투가 열리고 여권이 나와 책으로 인계되는 구간 */
-    --turn-vh:760;    /* 책장을 넘기는 구간 — 뒷장을 뗀 뒤의 값 */
+    --open-vh:360;    /* 봉투가 열리고 여권이 나와 책으로 인계되는 구간 */
+    --turn-vh:1800;   /* 책장을 넘기는 구간 */
     height:calc((var(--open-vh) + var(--turn-vh) + 100) * 1vh);
   }
   /* GSAP 의 pin 을 CSS sticky 로 대체한다. 라이브러리 없이 같은 결과가 나온다 */
