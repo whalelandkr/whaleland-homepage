@@ -203,8 +203,22 @@
      반드시 다시 뽑을 것. 안 뽑으면 오류 없이 «조용히» 어긋난다 */
   var COVER = { cx: 75.585, cy: 6.878, w: 22.255, deg: 26.49 };
   var HAND  = { k: .36, deg: COVER.deg, tx: 0, ty: 0 };
+
+  /* ⚠️⚠️ measure() 가 «한 번이라도 성공했는지» 기억한다.
+     실패하면 봉투 앞판 사본(.lipmask)이 자리·크기를 못 받아 «원본 1200px» 그대로
+     남는다. 543px 짜리 장면 위에 1200px 봉투가 덮여 «봉투가 확 커졌다 작아지는»
+     것으로 보인다. 2026-09-14 에 실제로 그렇게 배포돼 있었다.
+     여기(프로토타입)는 그림을 바로 받아 첫 호출에 성공하지만,
+     «배포본»은 _extract-opening.mjs 가 지연 로딩(wave)을 끼워 넣어
+     #op-composite 가 그림이 오기 전까지 0×0 이다 — 그래서 첫 호출이 걸러진다.
+     예전에는 resize 때만 다시 쟀다. 창을 안 건드리면 영영 안 고쳐졌다. */
+  var measured = false;
+
   function measure() {
     if (!composite || !sc3f || !leaves[0]) return;
+    /* ⚠️ 싼 검사를 «먼저» 한다. 아래에서 변형을 걷어내는 것은 강제 리플로라
+       그림이 오기 전 프레임마다 되풀이하면 그만큼 비싸다 */
+    if (!composite.getBoundingClientRect().width) return;
     /* ⚠️ 재는 동안 변형을 «걷어낸다».
        걸린 채로 재면 그 배율이 다시 곱해져 값이 눈덩이처럼 커진다 —
        실제로 k 가 0.56 이어야 하는데 1.58 까지 튀었다.
@@ -252,6 +266,7 @@
        riser 중심을 기준으로 두면 회전할 때 표지가 큰 호를 그리며 휙 돈다 */
     sc3f.style.transformOrigin = (lcx - rr.left).toFixed(1) + 'px ' + (lcy - rr.top).toFixed(1) + 'px';
     HAND = { k: kk, deg: COVER.deg, tx: px - lcx, ty: py - lcy };
+    measured = true;
   }
 
   /* ── 페이지 넘김 ───────────────────────
@@ -418,6 +433,10 @@
   }
   function onScroll() {
     if (!running) return;
+    /* ⚠️ 아직 못 쟀으면 다시 잰다. 봉투 사진이 «늦게» 오는 배포본에서
+       첫 호출이 걸러지기 때문이다 (measured 주석 참조).
+       성공하면 다시는 안 부른다 — 싼 검사가 measure() 맨 앞에 있다 */
+    if (!measured) measure();
     /* 한 구간에 두 타임라인을 싣는다. 분할점은 근사가 아니라 정확히 0.5 다 —
        핀의 이동거리가 height−100vh 라서 1180vh 의 «앞 1/3»(360vh)이
        합치기 전 개봉 구간의 이동거리(460−100)와 같다.
@@ -455,6 +474,8 @@
       var m0 = mapAt(progressOf(opening));
       curO = tarO = m0.o;
       curP = tarP = m0.p;
+      /* ⚠️ clearAll() 이 방금 lipmask 의 자리·크기를 지웠다. 다시 재야 한다 */
+      measured = false;
       measure();
       render(curO, soft);
       renderPages(curP);
@@ -482,6 +503,14 @@
     var list = opening.querySelectorAll('img[data-wave="' + n + '"]');
     for (var i = 0; i < list.length; i++) {
       var im = list[i];
+      /* ⚠️⚠️ 그림이 «도착하면» 다시 잰다.
+         measure() 는 #composite 의 rect 로 봉투 앞판 사본(.lipmask)의 자리와
+         크기를 정하는데, 지연 로딩을 끼운 탓에 그 그림이 오기 전에는 0×0 이다.
+         그래서 첫 호출이 걸러지고 lipmask 가 «원본 1200px» 로 남아
+         화면을 덮는다 — 봉투가 확 커졌다 작아지는 것으로 보인다.
+         2026-09-14 에 실제로 그렇게 배포돼 있었다. 프로토타입에는 지연 로딩이
+         없어 이 결함이 «생성물에만» 생긴다. 원본만 보면 못 잡는다 */
+      im.addEventListener('load', function () { measure(); }, { once: true });
       im.src = im.getAttribute('data-src');
       im.removeAttribute('data-src');
     }
