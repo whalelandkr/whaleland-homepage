@@ -3,13 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>잉크 진단 — C.O.V.E.R.T</title>
+<meta name="color-scheme" content="only light" />
+<title>잉크 진단 ② 방어 있음 — C.O.V.E.R.T</title>
 <meta name="robots" content="noindex, nofollow" />
 <!-- ⚠️ 임시 진단 페이지다. 색 구성표를 «일부러» 선언하지 않는다 —
      브라우저가 강제로 어둡게 만들려 들면 «막지 않고 그대로 보여 주는» 것이 목적이다.
      원인을 가린 뒤 지운다. -->
 <style>
-  :root{ --ink:#111827; --cream:#fff5d0; --soft:#fffdf3; --line:rgba(70,49,31,.18); }
+  :root{ color-scheme: only light; --ink:#111827; --cream:#fff5d0; --soft:#fffdf3; --line:rgba(70,49,31,.18); }
   *{box-sizing:border-box}
   body{
     margin:0; background:var(--soft); color:var(--ink);
@@ -37,18 +38,26 @@
     font:12px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
     white-space:pre-wrap;word-break:break-all;
   }
+  @media (prefers-color-scheme: dark){
+    :root{ color-scheme: only light; --ink:#111827; --cream:#fff5d0; --soft:#fffdf3; --line:rgba(70,49,31,.18); }
+    body{ color:var(--ink); background:var(--soft); }
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>잉크 진단</h1>
-  <p class="sub">아래 ①~⑨ 는 <b>전부 같은 색(#111827)</b>입니다. 방식만 다릅니다.</p>
+  <h1>잉크 진단 ② — 방어 있음</h1>
+  <p class="sub">앞 판과 «내용은 같고» 색 구성표 방어만 걸었습니다. 사이트에 걸린 것과 똑같은 세 겹입니다.</p>
 
   <div class="chk">
-    이 화면을 그대로 찍어 보내 주세요.<br />
-    ⓐ 배경이 <b>크림색</b>인가요, 아니면 <b>어두운 색</b>인가요?<br />
-    ⓑ ①~⑨ 중 <b>옅거나 회색으로 보이는 번호</b>가 있나요?
-  <br /><a href="./ink2.html" style="color:#a2611f">다음 → 방어를 건 판 보기</a></div>
+    이 화면도 <b>그대로 찍어</b> 보내 주세요.<br />
+    <br />
+    앞 판(방어 없음)은 어두웠습니다. <b>이 판도 어두우면</b> 삼성 인터넷이
+    표준 차단(<code>color-scheme: only light</code>)을 <b>무시</b>하는 것이고,
+    <b>크림색이면</b> 방어가 먹는 것이라 사이트의 증상은 다른 원인입니다.<br />
+    <br />
+    <a href="./ink.html" style="color:#a2611f">← 방어 없는 판으로</a>
+  </div>
 
   
 <section class="row">
