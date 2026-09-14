@@ -338,3 +338,31 @@ html:not(.js) .rv{opacity:1;transform:none}
   .cta,.cta-2,.linkarrow{transition:none}
   .cta:hover{transform:none}
 }
+
+/* ⚠️⚠️ 삼성 인터넷의 「웹페이지 어둡게 만들기」 대책 (2026-09-14)
+   그 기능은 «자기 다크 테마가 없는» 페이지만 색을 계산해 뒤집는다.
+   color-scheme: only light 는 «크롬»의 자동 다크를 물러나게 한다 —
+   Emulation.setAutoDarkModeOverride 로 실물에서 확인했다.
+   그런데 삼성 것은 그것만으로 안 물러났다 (대표 갤럭시에서 그대로였다).
+   그래서 «다크 설정도 우리가 다룬다»고 알린다. 값은 라이트 그대로다.
+
+   ⚠️ 이것은 다크모드 «지원»이 아니다 (절대 규칙 6). 팔레트는 여전히 하나다 —
+      「어두운 설정에서도 이 색을 쓴다」고 못박는 선언이다.
+   ⚠️ 위 :root 의 값을 고치면 여기도 같이 고친다. 두 곳이 갈리면 어두운 기기에서만 달라진다. */
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme: only light;
+    --cream:#fff5d0; --cream-soft:#fff9e6;
+    --orange:#f19a45; --orange-ink:#a2611f;
+    --brown:#61412b; --ink:#1f2228; --muted:#72706c;
+    --line:rgba(70,49,31,.12); --navy:#07111f; --red:#aa2525; --green:#54be78;
+  }
+  body{
+    color:var(--ink);
+    background:
+      url("cream-bg.png") center / cover fixed,
+      linear-gradient(180deg, var(--cream) 0%, #fffdf3 100%);
+  }
+  .topbar{background:rgba(255,245,208,.82)}
+  .sheet{background:rgba(255,255,255,.64)}
+}
