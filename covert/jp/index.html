@@ -38,7 +38,7 @@
 <link rel="stylesheet" href="../assets/site.css?v=111dad8a" />
 <link rel="stylesheet" href="../assets/opening-jp.css?v=84c0eb51" />
 <script src="../assets/boot.js?v=21ab241a"></script>
-<script src="../assets/opening-jp.js?v=52217f74" defer></script>
+<script src="../assets/opening-jp.js?v=9a3cb0e4" defer></script>
 
 <style>
 /* ================= HOME ONLY ================= */
@@ -81,17 +81,17 @@ html[data-seen] #op-opening .skip-btn{display:none}
 /* 홈에만 있는 것 — 섹터 명부 카드와 귀환 스트립.
    장면 틀(.chapter · .lead · .band · .bignum · .pills)은 assets/site.css 로 올렸다 */
 /* 섹터 다섯 줄. 표가 아니라 «명부»로 읽히게 왼쪽 정렬한다 */
-.sectors{width:100%;max-width:720px;padding:clamp(24px,3.2vw,36px);text-align:left}
+.sectors{width:100%;max-width:720px;padding:clamp(24px,3.2vw,36px);text-align:center}
 .sectors ul{list-style:none;margin:0;padding:0}
 .sectors li{
-  display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;
+  display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:4px 16px;
   padding:14px 0;border-top:1px solid var(--line);
 }
 .sectors li:first-child{border-top:0;padding-top:0}
 .sectors li:last-child{padding-bottom:0}
 .sectors b{
   color:var(--orange-ink);font-size:.72rem;font-weight:950;
-  letter-spacing:.16em;text-transform:uppercase;min-width:10.5em;
+  letter-spacing:.16em;text-transform:uppercase;
 }
 .sectors span{color:var(--brown);font-weight:800;font-size:1.02rem;word-break:normal;line-break:strict}
 
@@ -164,8 +164,8 @@ html[data-seen] #op-opening .skip-btn{display:none}
 
     <div class="scene" id="op-sc1">
       <div class="copy">
-        <h2>案内のない出発</h2>
-        <p class="lead">空港にもホテルのロビーにも迎えはいない。<br>封筒がひとつあるだけだ。</p>
+        <h2>謎の封筒がひとつ</h2>
+        <p class="lead">封筒の紐をほどいた瞬間から、<br>あなたは C.O.V.E.R.T の要員になる。</p>
       </div>
       <div class="pic"><div class="frame sq">
         <img data-src="../assets/hero/env-open.jpg?v=66942558" data-wave="1" width="1200" height="1200"
@@ -356,12 +356,12 @@ html[data-seen] #op-opening .skip-btn{display:none}
 
     <!-- 넘기는 지면마다 붙는 설명. 책 아래 가운데에 한 줄씩 갈아 끼운다 -->
     <div class="pagecopy" id="op-pagecopy">
-      <p style="--o:var(--cap1)"><b>名前を書くことから始まる</b><span>要員名と要員番号を自分で埋める。<br>その名前でソウルを歩く。</span></p>
-      <p style="--o:var(--cap2)"><b>五つの心得に署名する</b><span>そして十五区域の分析表が一枚に広がる。</span></p>
-      <p style="--o:var(--cap3)"><b>区域ごとに指令と記録が向き合う</b><span>左は何を探すか、右は何を残すか。</span></p>
-      <p style="--o:var(--cap4)"><b>終わったら二度まとめる</b><span>物として残ったものと、心に残ったものを分けて書く。</span></p>
-      <p style="--o:var(--cap5)"><b>本部が最後の手紙を送る</b><span>次の都市の名はまだ塗りつぶされている。</span></p>
-      <p style="--o:var(--cap6)"><b>そして何もなかったことになる</b><span>裏表紙にそう書いてある。</span></p>
+      <p style="--o:var(--cap1)"><b>本物の旅券のような造り</b><span>紛失に備えて自分の SNS ID を書き、<br>身上情報を記入せよ。</span></p>
+      <p style="--o:var(--cap2)"><b>任務の前に知っておくことを確認せよ</b><span>五つの心得に署名し、区域分析表を確認せよ。</span></p>
+      <p style="--o:var(--cap3)"><b>任務開始</b><span>ソウルを探索し、自分だけの記録を残せ。</span></p>
+      <p style="--o:var(--cap4)"><b>ソウルに残ったもの</b><span>物として残ったものと、心に残ったものを分けて書く。</span></p>
+      <p style="--o:var(--cap5)"><b>本部からの連絡</b><span>最後の手紙を確認し、最終報告を送れ。</span></p>
+      <p style="--o:var(--cap6)"><b>そして何もなかったことになる</b></p>
     </div>
 
     <div class="hint" id="op-hint"><span>Scroll</span><i></i></div>
@@ -405,7 +405,7 @@ html[data-seen] #op-opening .skip-btn{display:none}
          · «지하철 출구 번호» 로 쓰지 않는다 — 확정 사실은 «지하철 출구» 까지다 -->
     <div class="copy">
       <p class="kicker rv">Classified Directive</p>
-      <h2 class="rv">指令を先に読む</h2>
+      <h2 class="rv">場所を把握し、任務を確認せよ</h2>
       <p class="lead rv">区域ごとに実際の座標と地下鉄出口が記されている。</p>
       <p class="lead rv">何を探すのかもここにある。</p>
     </div>
@@ -423,25 +423,9 @@ html[data-seen] #op-opening .skip-btn{display:none}
     <div class="copy">
       <p class="kicker rv">Field Report</p>
       <h2 class="rv">記録を自分で残す</h2>
-      <p class="lead rv">右の面は点のグリッドと空欄だけでできている。</p>
-      <p class="lead rv">区域を終えたら、空いていた円に透明シールを貼る。</p>
+      <p class="lead rv">探索の結果をまとめよ。</p>
+      <p class="lead rv">終えたらシールを貼って締めくくる。</p>
     </div>
-  </section>
-
-  <!-- S6 · 판본 — 인바운드 손님이 가장 먼저 묻는 것이라 구역보다 앞에 둔다 -->
-  <section class="chapter band">
-    <div class="copy">
-      <p class="kicker rv">Four Editions</p>
-      <h2 class="rv">版をそれぞれ刷る</h2>
-      <p class="lead rv">同じパスポートを四つの言語でそれぞれ印刷する。</p>
-      <p class="lead rv">翻訳を添えたのではなく、版が四つある。</p>
-    </div>
-    <p class="pills rv">
-      <span class="badge">한국어</span>
-      <span class="badge">English</span>
-      <span class="badge">日本語</span>
-      <span class="badge">简体中文</span>
-    </p>
   </section>
 
   <!-- S7 · 구역 — 숫자 전용 장면.
@@ -454,7 +438,7 @@ html[data-seen] #op-opening .skip-btn{display:none}
       <p class="lead rv">性格の近い区域どうしが五つの系統に分かれている。</p>
       <p class="lead rv">ひとつの系統に三つの区域が入る。</p>
     </div>
-    <p class="bignum rv"><b>15</b> 区域 <i>·</i> <b>45</b> 任務</p>
+    <p class="bignum rv"><b>15</b> 区域 <i>·</i> <b>30</b> 場所 <i>·</i> <b>45</b> 任務</p>
     <div class="sheet sectors rv">
       <ul>
         <li><b>Sector Alpha</b><span>ヘリテージ＆ヒストリー</span></li>
@@ -472,15 +456,15 @@ html[data-seen] #op-opening .skip-btn{display:none}
        캐릭터 화자가 있는 곳은 0곳이었다 -->
   <section class="chapter">
     <div class="shot rv">
-      <img src="../assets/product/keyrings.jpg?v=af8d811a" width="1200" height="800"
+      <img src="../assets/product/keyrings.jpg?v=cbfc195b" width="1200" height="800"
            loading="lazy" decoding="async"
            alt="それぞれ違う服を着たBUMMYキーリング十五種">
     </div>
     <div class="copy">
       <p class="kicker rv">Agent BUMMY</p>
       <h2 class="rv">BUMMYが一緒に歩く</h2>
-      <p class="lead rv">区域ごとに着替えたBUMMYが紙面に隠れている。</p>
-      <p class="lead rv">キーリングは十五種の中から無作為にひとつ入る。</p>
+      <p class="lead rv">その場所に合う服で潜入したBUMMYと、</p>
+      <p class="lead rv">パートナーとして任務を遂行する。</p>
     </div>
   </section>
 
@@ -496,25 +480,12 @@ html[data-seen] #op-opening .skip-btn{display:none}
     <p class="pills rv">
       <span class="badge off">アプリ不要</span>
       <span class="badge off">予約不要</span>
-      <span class="badge off">ガイドなし</span>
     </p>
-  </section>
-
-  <!-- S10 · 초판 — 마지막 슬롯.
-       ⚠️ 절대 규칙 2 — 홈에는 가격도 구매 버튼도 두지 않는다.
-          카페24 상품 주소가 정해지고 «홈에 가격을 노출한다»는 결정(D1)이 나면
-          아래 .cta 를 구매 버튼 한 벌로 바꾼다. 그 전까지는 키트로 보낸다.
-       ⚠️ 언어별 부수(KR 250 · EN 250 …)는 쓰지 않는다. 합계만 쓴다 (CLAUDE.md) -->
-  <section class="chapter band">
-    <div class="copy">
-      <p class="kicker rv">First Printing</p>
-      <h2 class="rv">初版を限って刷る</h2>
-      <p class="lead rv">初回分は四つの版を合わせて千五百セットだ。</p>
-      <p class="lead rv">構成と価格はキットの側にある。</p>
-    </div>
-    <p class="bignum rv"><b>1,500</b> セット</p>
+    <!-- ⚠️ 이 단추는 S10(초판)에 있던 것이다. 2026-09-15 에 S10 을 떼면서
+         홈에서 /kit/ 로 가는 «유일한» 단추가 사라지므로 여기로 옮겼다 -->
     <p class="go rv"><a class="cta" href="kit/">キットを見る</a></p>
   </section>
+
 
 </div>
 

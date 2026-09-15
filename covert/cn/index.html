@@ -38,7 +38,7 @@
 <link rel="stylesheet" href="../assets/site.css?v=111dad8a" />
 <link rel="stylesheet" href="../assets/opening-cn.css?v=93556f8b" />
 <script src="../assets/boot.js?v=21ab241a"></script>
-<script src="../assets/opening-cn.js?v=52217f74" defer></script>
+<script src="../assets/opening-cn.js?v=9a3cb0e4" defer></script>
 
 <style>
 /* ================= HOME ONLY ================= */
@@ -81,17 +81,17 @@ html[data-seen] #op-opening .skip-btn{display:none}
 /* 홈에만 있는 것 — 섹터 명부 카드와 귀환 스트립.
    장면 틀(.chapter · .lead · .band · .bignum · .pills)은 assets/site.css 로 올렸다 */
 /* 섹터 다섯 줄. 표가 아니라 «명부»로 읽히게 왼쪽 정렬한다 */
-.sectors{width:100%;max-width:720px;padding:clamp(24px,3.2vw,36px);text-align:left}
+.sectors{width:100%;max-width:720px;padding:clamp(24px,3.2vw,36px);text-align:center}
 .sectors ul{list-style:none;margin:0;padding:0}
 .sectors li{
-  display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;
+  display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:4px 16px;
   padding:14px 0;border-top:1px solid var(--line);
 }
 .sectors li:first-child{border-top:0;padding-top:0}
 .sectors li:last-child{padding-bottom:0}
 .sectors b{
   color:var(--orange-ink);font-size:.72rem;font-weight:950;
-  letter-spacing:.16em;text-transform:uppercase;min-width:10.5em;
+  letter-spacing:.16em;text-transform:uppercase;
 }
 .sectors span{color:var(--brown);font-weight:800;font-size:1.02rem;word-break:normal;line-break:strict}
 
@@ -164,8 +164,8 @@ html[data-seen] #op-opening .skip-btn{display:none}
 
     <div class="scene" id="op-sc1">
       <div class="copy">
-        <h2>没有向导的出发</h2>
-        <p class="lead">机场和酒店大堂都没有人来接，<br>只有一个信封。</p>
+        <h2>一个可疑的信封</h2>
+        <p class="lead">从解开信封绳子的那一刻起，<br>你就是 C.O.V.E.R.T 的特工。</p>
       </div>
       <div class="pic"><div class="frame sq">
         <img data-src="../assets/hero/env-open.jpg?v=66942558" data-wave="1" width="1200" height="1200"
@@ -356,12 +356,12 @@ html[data-seen] #op-opening .skip-btn{display:none}
 
     <!-- 넘기는 지면마다 붙는 설명. 책 아래 가운데에 한 줄씩 갈아 끼운다 -->
     <div class="pagecopy" id="op-pagecopy">
-      <p style="--o:var(--cap1)"><b>从写下名字开始</b><span>特工名和编号由你自己填。<br>然后用那个名字走首尔。</span></p>
-      <p style="--o:var(--cap2)"><b>在五条守则上签名</b><span>然后十五个区域的分析表摊开在一页上。</span></p>
-      <p style="--o:var(--cap3)"><b>每个区域，指令与记录相对</b><span>左边是要找什么，右边是要留下什么。</span></p>
-      <p style="--o:var(--cap4)"><b>结束后整理两次</b><span>把留下的物件和留在心里的分开写。</span></p>
-      <p style="--o:var(--cap5)"><b>总部寄来最后一封信</b><span>下一座城市的名字还被涂掉着。</span></p>
-      <p style="--o:var(--cap6)"><b>然后一切都当作没发生过</b><span>封底就是这么写的。</span></p>
+      <p style="--o:var(--cap1)"><b>与真护照一样的设计</b><span>为防遗失，写下自己的社交账号，<br>并填入个人信息。</span></p>
+      <p style="--o:var(--cap2)"><b>任务开始前，先确认该知道的事</b><span>在五条守则上签名，并确认区域分析表。</span></p>
+      <p style="--o:var(--cap3)"><b>任务开始</b><span>探索首尔，留下只属于你的记录。</span></p>
+      <p style="--o:var(--cap4)"><b>首尔留下的东西</b><span>把留下的物件和留在心里的分开写。</span></p>
+      <p style="--o:var(--cap5)"><b>来自总部的联络</b><span>确认最后一封信，并提交最终报告。</span></p>
+      <p style="--o:var(--cap6)"><b>然后一切都当作没发生过</b></p>
     </div>
 
     <div class="hint" id="op-hint"><span>Scroll</span><i></i></div>
@@ -405,7 +405,7 @@ html[data-seen] #op-opening .skip-btn{display:none}
          · «지하철 출구 번호» 로 쓰지 않는다 — 확정 사실은 «지하철 출구» 까지다 -->
     <div class="copy">
       <p class="kicker rv">Classified Directive</p>
-      <h2 class="rv">先读指令</h2>
+      <h2 class="rv">确认地点，核对任务</h2>
       <p class="lead rv">每个区域都记有真实坐标和地铁出口。</p>
       <p class="lead rv">要找什么，也写在这里。</p>
     </div>
@@ -423,25 +423,9 @@ html[data-seen] #op-opening .skip-btn{display:none}
     <div class="copy">
       <p class="kicker rv">Field Report</p>
       <h2 class="rv">记录亲手留下</h2>
-      <p class="lead rv">右页只有点阵格和空栏。</p>
-      <p class="lead rv">完成一个区域，就在空着的圆圈贴上透明贴纸。</p>
+      <p class="lead rv">整理探索的结果。</p>
+      <p class="lead rv">完成之后贴上贴纸收尾。</p>
     </div>
-  </section>
-
-  <!-- S6 · 판본 — 인바운드 손님이 가장 먼저 묻는 것이라 구역보다 앞에 둔다 -->
-  <section class="chapter band">
-    <div class="copy">
-      <p class="kicker rv">Four Editions</p>
-      <h2 class="rv">每种版本分开印刷</h2>
-      <p class="lead rv">同一本护照分别以四种语言印刷。</p>
-      <p class="lead rv">不是加上译文，而是有四个版本。</p>
-    </div>
-    <p class="pills rv">
-      <span class="badge">한국어</span>
-      <span class="badge">English</span>
-      <span class="badge">日本語</span>
-      <span class="badge">简体中文</span>
-    </p>
   </section>
 
   <!-- S7 · 구역 — 숫자 전용 장면.
@@ -454,7 +438,7 @@ html[data-seen] #op-opening .skip-btn{display:none}
       <p class="lead rv">性质相近的区域分成五个类别。</p>
       <p class="lead rv">每一类里放三个区域。</p>
     </div>
-    <p class="bignum rv"><b>15</b> 区域 <i>·</i> <b>45</b> 任务</p>
+    <p class="bignum rv"><b>15</b> 区域 <i>·</i> <b>30</b> 地点 <i>·</i> <b>45</b> 任务</p>
     <div class="sheet sectors rv">
       <ul>
         <li><b>Sector Alpha</b><span>文化遗产与历史</span></li>
@@ -472,15 +456,15 @@ html[data-seen] #op-opening .skip-btn{display:none}
        캐릭터 화자가 있는 곳은 0곳이었다 -->
   <section class="chapter">
     <div class="shot rv">
-      <img src="../assets/product/keyrings.jpg?v=af8d811a" width="1200" height="800"
+      <img src="../assets/product/keyrings.jpg?v=cbfc195b" width="1200" height="800"
            loading="lazy" decoding="async"
            alt="十五种身着不同服装的BUMMY钥匙扣">
     </div>
     <div class="copy">
       <p class="kicker rv">Agent BUMMY</p>
       <h2 class="rv">BUMMY一路同行</h2>
-      <p class="lead rv">每个区域换了装的BUMMY藏在页面里。</p>
-      <p class="lead rv">钥匙扣从十五种中随机放入一个。</p>
+      <p class="lead rv">换上与当地相称装束潜入的BUMMY，</p>
+      <p class="lead rv">作为搭档一同执行任务。</p>
     </div>
   </section>
 
@@ -496,25 +480,12 @@ html[data-seen] #op-opening .skip-btn{display:none}
     <p class="pills rv">
       <span class="badge off">无需应用</span>
       <span class="badge off">无需预约</span>
-      <span class="badge off">没有导游</span>
     </p>
-  </section>
-
-  <!-- S10 · 초판 — 마지막 슬롯.
-       ⚠️ 절대 규칙 2 — 홈에는 가격도 구매 버튼도 두지 않는다.
-          카페24 상품 주소가 정해지고 «홈에 가격을 노출한다»는 결정(D1)이 나면
-          아래 .cta 를 구매 버튼 한 벌로 바꾼다. 그 전까지는 키트로 보낸다.
-       ⚠️ 언어별 부수(KR 250 · EN 250 …)는 쓰지 않는다. 합계만 쓴다 (CLAUDE.md) -->
-  <section class="chapter band">
-    <div class="copy">
-      <p class="kicker rv">First Printing</p>
-      <h2 class="rv">首印限量印刷</h2>
-      <p class="lead rv">首批四个版本合计一千五百套。</p>
-      <p class="lead rv">构成和价格在套装那边。</p>
-    </div>
-    <p class="bignum rv"><b>1,500</b> 套</p>
+    <!-- ⚠️ 이 단추는 S10(초판)에 있던 것이다. 2026-09-15 에 S10 을 떼면서
+         홈에서 /kit/ 로 가는 «유일한» 단추가 사라지므로 여기로 옮겼다 -->
     <p class="go rv"><a class="cta" href="kit/">查看套装</a></p>
   </section>
+
 
 </div>
 

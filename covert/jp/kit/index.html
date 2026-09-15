@@ -75,7 +75,19 @@
   font-style:normal;font-size:.72rem;font-weight:900;letter-spacing:.1em;
   color:var(--muted);flex-shrink:0;font-variant-numeric:tabular-nums;
 }
-.pack p{margin:6px 0 0 36px;font-size:.9rem;line-height:1.8;color:var(--muted);flex-basis:100%;word-break:normal;line-break:strict}
+/* ⚠️ 사진과 설명은 «둘째 줄»에 나란히 선다. 품명 줄이 꽉 차 있어 자동으로 넘어간다.
+   사진에는 배경색이 이미 구워져 있다 (social/_photo.mjs) — CSS 로 또 깔지 않는다 */
+.pack .pk-body{flex-basis:100%;display:flex;gap:14px;align-items:flex-start;margin-top:8px}
+.pack .pk-shot{
+  width:112px;height:112px;flex:none;align-self:flex-start;
+  margin:0 0 0 36px;border-radius:14px;border:1px solid var(--line);
+}
+.pack p{margin:0;font-size:.9rem;line-height:1.8;color:var(--muted);flex:1;word-break:normal;line-break:strict}
+@media (max-width:520px){
+  .pack .pk-body{flex-basis:100%;display:flex;gap:14px;align-items:flex-start;margin-top:8px}
+.pack .pk-shot{width:86px;height:86px;margin-left:24px}
+  .pack .pk-body{gap:10px}
+}
 
 /* 사진 두 장을 나란히. 품목 설명만으로는 크기가 안 잡히는 것들입니다 */
 .pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2.4vw,22px);margin:26px 0 0}
@@ -87,7 +99,7 @@
 
 /* ── 여행이 끝난 뒤 — 지면 다섯 장 ──
    ⚠️ 작게 싣습니다. 크게 실으면 편지 글씨가 읽혀 «받아야 보이는 것»이 미리 새어 나갑니다. */
-.strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(10px,1.6vw,18px);margin:24px 0 0}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.8vw,22px);margin:24px 0 0}
 .strip figure{margin:0}
 .strip img{
   width:100%;height:auto;border-radius:10px;
@@ -136,7 +148,7 @@
 
 @media (max-width:700px){
   .pair{grid-template-columns:1fr}
-  .strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
   .spec th{width:38%;padding-right:12px;font-size:.8rem}
   .spec td{font-size:.88rem}
 }
@@ -205,7 +217,7 @@
 <section class="bigshot">
   <div class="wrap">
     <div class="shot rv">
-      <img src="../../assets/cream/kit-all.jpg?v=5b35cfb4" width="1200" height="900"
+      <img src="../../assets/cream/kit-all.jpg?v=9ec1a012" width="1200" height="900"
            loading="lazy" decoding="async"
            alt="クラフト封筒とパスポート型ミッションブック、ボーディングパスカード、ケースに入った要員証とランヤード、透明シール、BUMMYキーリングを広げたところ">
     </div>
@@ -223,34 +235,58 @@
       <ul class="pack">
         <li>
           <i>01</i><b>専用機密封筒</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
-          <p>紐で留めるクラフト書類封筒です。表に TOP SECRET の印章が入っています。</p>
+            <div class="pk-body">
+              <img class="pk-shot" src="../../assets/pack/envelope.jpg?v=50846525" width="640" height="640"
+                 loading="lazy" decoding="async" alt="紐で留める、表に TOP SECRET の印章が入ったクラフト封筒">
+              <p>表に TOP SECRET の印章、裏に C.O.V.E.R.T のロゴが入っています。</p>
+            </div>
         </li>
         <li>
           <i>02</i><b>パスポート型ミッションブック</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
-          <p>レザーテックス合紙の表紙に、マットな金箔でエンブレムを押しています。区域と場所、任務が順に載っています。</p>
+            <div class="pk-body">
+              <img class="pk-shot" src="../../assets/pack/passport.jpg?v=500297d4" width="640" height="640"
+                 loading="lazy" decoding="async" alt="マットな金箔のエンブレムが入った濃紺のパスポート型ミッションブック二冊">
+              <p>レザーテックス合紙の表紙に、マットな金箔でエンブレムを押した上質な意匠です。本物の旅券と同じ判型で作りました。任務をどうぞ無事に。</p>
+            </div>
         </li>
         <li>
           <i>03</i><b>スタンプ型シール</b><span class="leader" aria-hidden="true"></span><em>× 20</em>
-          <p>貼ると下の印刷が透ける透明シールです。紙面の印章の位置に合わせて断裁してあり、円の中にエンブレムが入っています。</p>
+            <div class="pk-body">
+              <img class="pk-shot" src="../../assets/pack/stickers.jpg?v=315ce7aa" width="640" height="640"
+                 loading="lazy" decoding="async" alt="円の中に肉球のエンブレムが入った透明のスタンプ型シール二十枚">
+              <p>貼ると下の印刷が透ける透明シールです。円の中にエンブレムが入り、下に日付を書く欄があります。</p>
+            </div>
         </li>
         <li>
           <i>04</i><b>ボーディングパス型ミッションカード</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
-          <p>航空券の形をしたカードです。要員名と要員番号、入国審査の欄はご自身で記入します。</p>
+            <div class="pk-body">
+              <img class="pk-shot" src="../../assets/pack/boarding.jpg?v=9e1541ab" width="640" height="640"
+                 loading="lazy" decoding="async" alt="要員名と要員番号、入国審査の欄が空いているボーディングパス型ミッションカード">
+              <p>航空券の形をしたカードです。要員名と要員番号、入国審査の欄はご自身で記入します。</p>
+            </div>
         </li>
         <li>
           <i>05</i><b>要員証セット</b><span class="leader" aria-hidden="true"></span><em>× 1 SET</em>
-          <p>PVC の要員証にカードケースとランヤードが付きます。両面とも印刷済みで届くため、記入する欄はありません。</p>
+            <div class="pk-body">
+              <img class="pk-shot" src="../../assets/pack/id-card.jpg?v=2e3c02af" width="640" height="640"
+                 loading="lazy" decoding="async" alt="スーツ姿の BUMMY が印刷された薄紫の PVC 要員証">
+              <p>パートナーである BUMMY の要員証をお付けします。首から下げて任務に臨んでください。</p>
+            </div>
         </li>
         <li>
           <i>06</i><b>BUMMYキーリング</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
-          <p>十五種のうちひとつが無作為に入ります。種類はお選びいただけません。</p>
+            <div class="pk-body">
+              <img class="pk-shot" src="../../assets/pack/keyrings.jpg?v=d7311fd3" width="640" height="640"
+                 loading="lazy" decoding="async" alt="それぞれ違う服を着たBUMMYキーリング十五種と銀色の包装袋">
+              <p>変装した十五種の BUMMY キーリングのうちひとつが、あなたのパートナーとして届きます。</p>
+            </div>
         </li>
       </ul>
 
       <div class="pair rv">
         <figure>
           <div class="shot">
-            <img src="../../assets/product/boarding.jpg?v=edba7423" width="1200" height="800"
+            <img src="../../assets/product/boarding.jpg?v=1851b973" width="1200" height="800"
                  loading="lazy" decoding="async"
                  alt="要員名と要員番号、入国審査の欄が空いているボーディングパス型ミッションカード">
           </div>
@@ -258,7 +294,7 @@
         </figure>
         <figure>
           <div class="shot">
-            <img src="../../assets/product/keyrings.jpg?v=af8d811a" width="1200" height="800"
+            <img src="../../assets/product/keyrings.jpg?v=cbfc195b" width="1200" height="800"
                  loading="lazy" decoding="async"
                  alt="それぞれ違う服を着たBUMMYキーリング十五種と銀色の包装袋">
           </div>
@@ -322,9 +358,6 @@
           <tr><th>要員証セット</th><td>PVCカード · ケース · ランヤード<span>CARD 54 × 86 MM · 両面印刷</span></td></tr>
           <tr><th>スタンプ型シール</th><td>透明 · 基本15枚 + 予備5枚<span>20 TOTAL</span></td></tr>
           <tr><th>収録範囲</th><td>区域と場所、任務<span>15 ZONES · 30 PLACES · 45 ASSIGNMENTS</span></td></tr>
-          <tr><th>イラスト</th><td>変装したBUMMY<span>30 DISGUISES</span></td></tr>
-          <tr><th>版</th><td>韓国語 · 英語 · 日本語 · 中国語簡体 — ご注文時にお選びいただきます<span>4 EDITIONS</span></td></tr>
-          <tr><th>初回数量</th><td>全版合計<span>1,500 SETS</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -394,17 +427,17 @@
           <tr role="row"><th role="rowheader" scope="row">品名および型名</th><td role="cell">C.O.V.E.R.T ミッションキット — OPERATION 01 SEOUL<br>型名 OPERATION 01 SEOUL</td></tr>
           <tr role="row">
             <th role="rowheader" scope="row">法令による認証・許可等</th>
-            <td role="cell">該当ありません。満13歳以下の子どもが使用することを目的に製造・販売する製品ではないため、「子ども製品安全特別法」による安全認証・安全確認の対象ではありません。</td>
+            <td role="cell">該当ありません。</td>
           </tr>
           <tr role="row"><th role="rowheader" scope="row">製造国または原産地</th><td role="cell">中国</td></tr>
-          <tr role="row"><th role="rowheader" scope="row">製造者 / 輸入者</th><td role="cell">製造者 — 中国の委託製造先（商号は確認中です）<br>輸入者 — Whale Land</td></tr>
+          <tr role="row"><th role="rowheader" scope="row">製造者 / 輸入者</th><td role="cell">製造者 — 中国の委託製造先<br>輸入者 — Whale Land</td></tr>
           <tr role="row"><th role="rowheader" scope="row">アフターサービス責任者と電話番号</th><td role="cell">Whale Land · 010-9937-1628</td></tr>
 
           <tr role="row">
             <th role="rowheader" scope="row">供給方法および供給時期</th>
             <td role="cell">
               国内は CJ大韓通運、海外は郵便局 EMS でお送りします。営業日に出荷し、出荷後は国内1〜3営業日・海外2〜5営業日かかります（通関時間は含みません）。
-              送料は国内3,000ウォン、5万ウォン以上のご注文で無料です。済州は3,000ウォン、その他の離島・山間地域は5,000ウォンが加算されます。海外は EMS 標準料率で自動計算され、梱包費はいただきません。
+              送料は国内3,000ウォン、5万ウォン以上のご注文で無料です。済州は3,000ウォン、その他の離島・山間地域は5,000ウォンが加算されます。海外は EMS 標準料率で自動計算され、
             </td>
           </tr>
           <tr role="row">

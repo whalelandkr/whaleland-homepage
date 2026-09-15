@@ -38,7 +38,7 @@
 <link rel="stylesheet" href="../assets/site.css?v=111dad8a" />
 <link rel="stylesheet" href="../assets/opening.css?v=c0108f4f" />
 <script src="../assets/boot.js?v=21ab241a"></script>
-<script src="../assets/opening.js?v=52217f74" defer></script>
+<script src="../assets/opening.js?v=9a3cb0e4" defer></script>
 
 <style>
 /* ================= HOME ONLY ================= */
@@ -81,17 +81,17 @@ html[data-seen] #op-opening .skip-btn{display:none}
 /* 홈에만 있는 것 — 섹터 명부 카드와 귀환 스트립.
    장면 틀(.chapter · .lead · .band · .bignum · .pills)은 assets/site.css 로 올렸다 */
 /* 섹터 다섯 줄. 표가 아니라 «명부»로 읽히게 왼쪽 정렬한다 */
-.sectors{width:100%;max-width:720px;padding:clamp(24px,3.2vw,36px);text-align:left}
+.sectors{width:100%;max-width:720px;padding:clamp(24px,3.2vw,36px);text-align:center}
 .sectors ul{list-style:none;margin:0;padding:0}
 .sectors li{
-  display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;
+  display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:4px 16px;
   padding:14px 0;border-top:1px solid var(--line);
 }
 .sectors li:first-child{border-top:0;padding-top:0}
 .sectors li:last-child{padding-bottom:0}
 .sectors b{
   color:var(--orange-ink);font-size:.72rem;font-weight:950;
-  letter-spacing:.16em;text-transform:uppercase;min-width:10.5em;
+  letter-spacing:.16em;text-transform:uppercase;
 }
 .sectors span{color:var(--brown);font-weight:800;font-size:1.02rem;word-break:keep-all}
 
@@ -164,8 +164,8 @@ html[data-seen] #op-opening .skip-btn{display:none}
 
     <div class="scene" id="op-sc1">
       <div class="copy">
-        <h2>안내 없는 출발</h2>
-        <p class="lead">공항에도 호텔 로비에도 마중 나온 사람은 없고,<br>봉투 하나가 전부다.</p>
+        <h2>의문의 봉투 하나</h2>
+        <p class="lead">봉투의 줄을 풀 때부터<br>당신은 C.O.V.E.R.T 의 요원이 된다.</p>
       </div>
       <div class="pic"><div class="frame sq">
         <img data-src="../assets/hero/env-open.jpg?v=66942558" data-wave="1" width="1200" height="1200"
@@ -356,12 +356,12 @@ html[data-seen] #op-opening .skip-btn{display:none}
 
     <!-- 넘기는 지면마다 붙는 설명. 책 아래 가운데에 한 줄씩 갈아 끼운다 -->
     <div class="pagecopy" id="op-pagecopy">
-      <p style="--o:var(--cap1)"><b>이름을 적는 것부터 시작한다</b><span>요원명과 요원번호를 직접 채운다.<br>그 이름으로 서울을 걷는다.</span></p>
-      <p style="--o:var(--cap2)"><b>수칙 다섯 개에 서명한다</b><span>그리고 열다섯 구역의 분석표가 한 장에 펼쳐진다.</span></p>
-      <p style="--o:var(--cap3)"><b>구역마다 지령과 기록이 마주 본다</b><span>왼쪽은 무엇을 찾을지, 오른쪽은 무엇을 남길지.</span></p>
-      <p style="--o:var(--cap4)"><b>끝나면 두 번 정리한다</b><span>물건으로 남은 것과 마음에 남은 것을 나눠 적는다.</span></p>
-      <p style="--o:var(--cap5)"><b>본부가 마지막 편지를 보낸다</b><span>다음 도시의 이름은 아직 지워져 있다.</span></p>
-      <p style="--o:var(--cap6)"><b>그리고 아무 일도 없었던 것이 된다</b><span>뒤표지에 그렇게 적혀 있다.</span></p>
+      <p style="--o:var(--cap1)"><b>실제 여권 같은 디자인</b><span>분실에 유의해 본인의 SNS 아이디를 적고,<br>신상 정보를 입력하라.</span></p>
+      <p style="--o:var(--cap2)"><b>미션을 하기 전에 알아야 할 정보를 체크할 것</b><span>수칙 다섯 개에 서명하고, 구역 분석표를 확인하라.</span></p>
+      <p style="--o:var(--cap3)"><b>미션 시작</b><span>서울을 탐험하며 나만의 기록을 남겨라.</span></p>
+      <p style="--o:var(--cap4)"><b>서울에서 남은 것들</b><span>물건으로 남은 것과 마음에 남은 것을 나눠 적는다.</span></p>
+      <p style="--o:var(--cap5)"><b>본부에서의 연락</b><span>마지막 편지를 확인하고, 최종 리포트를 전달하라.</span></p>
+      <p style="--o:var(--cap6)"><b>그리고 아무 일도 없었던 것이 된다</b></p>
     </div>
 
     <div class="hint" id="op-hint"><span>Scroll</span><i></i></div>
@@ -405,7 +405,7 @@ html[data-seen] #op-opening .skip-btn{display:none}
          · «지하철 출구 번호» 로 쓰지 않는다 — 확정 사실은 «지하철 출구» 까지다 -->
     <div class="copy">
       <p class="kicker rv">Classified Directive</p>
-      <h2 class="rv">지령을 먼저 읽는다</h2>
+      <h2 class="rv">장소를 파악하고 미션을 확인하라</h2>
       <p class="lead rv">구역마다 실제 좌표와 지하철 출구가 적혀 있다.</p>
       <p class="lead rv">무엇을 찾아야 하는지도 여기 있다.</p>
     </div>
@@ -423,25 +423,9 @@ html[data-seen] #op-opening .skip-btn{display:none}
     <div class="copy">
       <p class="kicker rv">Field Report</p>
       <h2 class="rv">기록을 직접 남긴다</h2>
-      <p class="lead rv">오른쪽 면은 점 격자와 빈 칸으로만 되어 있다.</p>
-      <p class="lead rv">구역을 끝내면 비어 있던 원에 투명 스티커를 붙인다.</p>
+      <p class="lead rv">탐험의 결과를 정리하라.</p>
+      <p class="lead rv">완료한 뒤에는 스티커를 붙여 마무리한다.</p>
     </div>
-  </section>
-
-  <!-- S6 · 판본 — 인바운드 손님이 가장 먼저 묻는 것이라 구역보다 앞에 둔다 -->
-  <section class="chapter band">
-    <div class="copy">
-      <p class="kicker rv">Four Editions</p>
-      <h2 class="rv">판본을 따로 찍는다</h2>
-      <p class="lead rv">같은 여권을 네 가지 언어로 각각 인쇄한다.</p>
-      <p class="lead rv">번역을 덧댄 것이 아니라 판이 넷이다.</p>
-    </div>
-    <p class="pills rv">
-      <span class="badge">한국어</span>
-      <span class="badge">English</span>
-      <span class="badge">日本語</span>
-      <span class="badge">简体中文</span>
-    </p>
   </section>
 
   <!-- S7 · 구역 — 숫자 전용 장면.
@@ -454,7 +438,7 @@ html[data-seen] #op-opening .skip-btn{display:none}
       <p class="lead rv">성격이 비슷한 구역끼리 다섯 갈래로 나뉘어 있다.</p>
       <p class="lead rv">한 갈래에 세 구역씩 들어간다.</p>
     </div>
-    <p class="bignum rv"><b>15</b> 구역 <i>·</i> <b>45</b> 임무</p>
+    <p class="bignum rv"><b>15</b> 구역 <i>·</i> <b>30</b> 장소 <i>·</i> <b>45</b> 임무</p>
     <div class="sheet sectors rv">
       <ul>
         <li><b>Sector Alpha</b><span>유산 &amp; 역사</span></li>
@@ -472,15 +456,15 @@ html[data-seen] #op-opening .skip-btn{display:none}
        캐릭터 화자가 있는 곳은 0곳이었다 -->
   <section class="chapter">
     <div class="shot rv">
-      <img src="../assets/product/keyrings.jpg?v=af8d811a" width="1200" height="800"
+      <img src="../assets/product/keyrings.jpg?v=cbfc195b" width="1200" height="800"
            loading="lazy" decoding="async"
            alt="저마다 다른 옷을 입은 범이 키링 열다섯 종">
     </div>
     <div class="copy">
       <p class="kicker rv">Agent BUMMY</p>
-      <h2 class="rv">범이가 같이 다닌다</h2>
-      <p class="lead rv">구역마다 옷을 갈아입은 범이가 지면에 숨어 있다.</p>
-      <p class="lead rv">키링 하나는 열다섯 종 가운데 무작위로 들어간다.</p>
+      <h2 class="rv">범이와 같이 다닌다</h2>
+      <p class="lead rv">해당 장소에 어울리는 옷을 입고 잠입한 범이와</p>
+      <p class="lead rv">파트너로 미션을 수행한다.</p>
     </div>
   </section>
 
@@ -496,25 +480,12 @@ html[data-seen] #op-opening .skip-btn{display:none}
     <p class="pills rv">
       <span class="badge off">앱 설치 없음</span>
       <span class="badge off">예약 없음</span>
-      <span class="badge off">인솔자 없음</span>
     </p>
-  </section>
-
-  <!-- S10 · 초판 — 마지막 슬롯.
-       ⚠️ 절대 규칙 2 — 홈에는 가격도 구매 버튼도 두지 않는다.
-          카페24 상품 주소가 정해지고 «홈에 가격을 노출한다»는 결정(D1)이 나면
-          아래 .cta 를 구매 버튼 한 벌로 바꾼다. 그 전까지는 키트로 보낸다.
-       ⚠️ 언어별 부수(KR 250 · EN 250 …)는 쓰지 않는다. 합계만 쓴다 (CLAUDE.md) -->
-  <section class="chapter band">
-    <div class="copy">
-      <p class="kicker rv">First Printing</p>
-      <h2 class="rv">초판을 한정해 찍는다</h2>
-      <p class="lead rv">첫 인쇄분은 네 판본을 합쳐 천오백 세트다.</p>
-      <p class="lead rv">구성과 가격은 키트 쪽에 있다.</p>
-    </div>
-    <p class="bignum rv"><b>1,500</b> 세트</p>
+    <!-- ⚠️ 이 단추는 S10(초판)에 있던 것이다. 2026-09-15 에 S10 을 떼면서
+         홈에서 /kit/ 로 가는 «유일한» 단추가 사라지므로 여기로 옮겼다 -->
     <p class="go rv"><a class="cta" href="kit/">키트 보기</a></p>
   </section>
+
 
 </div>
 

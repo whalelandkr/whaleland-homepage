@@ -75,7 +75,19 @@
   font-style:normal;font-size:.72rem;font-weight:900;letter-spacing:.1em;
   color:var(--muted);flex-shrink:0;font-variant-numeric:tabular-nums;
 }
-.pack p{margin:6px 0 0 36px;font-size:.9rem;line-height:1.8;color:var(--muted);flex-basis:100%;word-break:normal;line-break:strict}
+/* ⚠️ 사진과 설명은 «둘째 줄»에 나란히 선다. 품명 줄이 꽉 차 있어 자동으로 넘어간다.
+   사진에는 배경색이 이미 구워져 있다 (social/_photo.mjs) — CSS 로 또 깔지 않는다 */
+.pack .pk-body{flex-basis:100%;display:flex;gap:14px;align-items:flex-start;margin-top:8px}
+.pack .pk-shot{
+  width:112px;height:112px;flex:none;align-self:flex-start;
+  margin:0 0 0 36px;border-radius:14px;border:1px solid var(--line);
+}
+.pack p{margin:0;font-size:.9rem;line-height:1.8;color:var(--muted);flex:1;word-break:normal;line-break:strict}
+@media (max-width:520px){
+  .pack .pk-body{flex-basis:100%;display:flex;gap:14px;align-items:flex-start;margin-top:8px}
+.pack .pk-shot{width:86px;height:86px;margin-left:24px}
+  .pack .pk-body{gap:10px}
+}
 
 /* 사진 두 장을 나란히. 품목 설명만으로는 크기가 안 잡히는 것들입니다 */
 .pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2.4vw,22px);margin:26px 0 0}
@@ -87,7 +99,7 @@
 
 /* ── 여행이 끝난 뒤 — 지면 다섯 장 ──
    ⚠️ 작게 싣습니다. 크게 실으면 편지 글씨가 읽혀 «받아야 보이는 것»이 미리 새어 나갑니다. */
-.strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(10px,1.6vw,18px);margin:24px 0 0}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.8vw,22px);margin:24px 0 0}
 .strip figure{margin:0}
 .strip img{
   width:100%;height:auto;border-radius:10px;
@@ -136,7 +148,7 @@
 
 @media (max-width:700px){
   .pair{grid-template-columns:1fr}
-  .strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
   .spec th{width:38%;padding-right:12px;font-size:.8rem}
   .spec td{font-size:.88rem}
 }
@@ -205,7 +217,7 @@
 <section class="bigshot">
   <div class="wrap">
     <div class="shot rv">
-      <img src="../../assets/cream/kit-all.jpg?v=5b35cfb4" width="1200" height="900"
+      <img src="../../assets/cream/kit-all.jpg?v=9ec1a012" width="1200" height="900"
            loading="lazy" decoding="async"
            alt="牛皮纸信封、护照型任务手册、登机牌卡片、装在卡套里的特工证与挂绳、透明贴纸和BUMMY钥匙扣的全家福">
     </div>
@@ -223,34 +235,58 @@
       <ul class="pack">
         <li>
           <i>01</i><b>专用机密信封</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
-          <p>用绳子系合的牛皮纸文件信封。正面印有 TOP SECRET 印章。</p>
+            <div class="pk-body">
+              <img class="pk-shot" src="../../assets/pack/envelope.jpg?v=50846525" width="640" height="640"
+                 loading="lazy" decoding="async" alt="用绳系合、正面印有 TOP SECRET 印章的牛皮纸信封">
+              <p>正面印有 TOP SECRET 印章，背面印有 C.O.V.E.R.T 标志。</p>
+            </div>
         </li>
         <li>
           <i>02</i><b>护照型任务手册</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
-          <p>皮纹合纸封面上以哑光烫金压印徽章。区域、地点与任务按顺序排列。</p>
+            <div class="pk-body">
+              <img class="pk-shot" src="../../assets/pack/passport.jpg?v=500297d4" width="640" height="640"
+                 loading="lazy" decoding="async" alt="压有哑光烫金徽章的深蓝色护照型任务手册两本">
+              <p>皮纹合纸封面以哑光烫金压印徽章，做工考究。尺寸与真护照一致。请顺利完成任务。</p>
+            </div>
         </li>
         <li>
           <i>03</i><b>印章型贴纸</b><span class="leader" aria-hidden="true"></span><em>× 20</em>
-          <p>贴上后可透出下方印刷的透明贴纸。按页面上的印章位置裁切，圆圈内含有徽章。</p>
+            <div class="pk-body">
+              <img class="pk-shot" src="../../assets/pack/stickers.jpg?v=315ce7aa" width="640" height="640"
+                 loading="lazy" decoding="async" alt="圆圈内含有肉垫徽章的透明印章型贴纸二十张">
+              <p>贴上后可透出下方印刷的透明贴纸。圆圈内含有徽章，下方设有填写日期的栏位。</p>
+            </div>
         </li>
         <li>
           <i>04</i><b>登机牌型任务卡</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
-          <p>做成机票形状的卡片。特工姓名、特工编号和入境审查栏由你自己填写。</p>
+            <div class="pk-body">
+              <img class="pk-shot" src="../../assets/pack/boarding.jpg?v=9e1541ab" width="640" height="640"
+                 loading="lazy" decoding="async" alt="特工姓名、特工编号和入境审查栏均为空白的登机牌型任务卡">
+              <p>做成机票形状的卡片。特工姓名、特工编号和入境审查栏由你自己填写。</p>
+            </div>
         </li>
         <li>
           <i>05</i><b>特工证套装</b><span class="leader" aria-hidden="true"></span><em>× 1 SET</em>
-          <p>PVC 特工证附带卡套和挂绳。两面均已印好，没有需要填写的栏位。</p>
+            <div class="pk-body">
+              <img class="pk-shot" src="../../assets/pack/id-card.jpg?v=2e3c02af" width="640" height="640"
+                 loading="lazy" decoding="async" alt="印有身穿西装的 BUMMY 的淡紫色 PVC 特工证">
+              <p>随附你的搭档 BUMMY 的特工证。请佩戴着去执行任务。</p>
+            </div>
         </li>
         <li>
           <i>06</i><b>BUMMY钥匙扣</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
-          <p>从十五种中随机放入一个。无法指定种类。</p>
+            <div class="pk-body">
+              <img class="pk-shot" src="../../assets/pack/keyrings.jpg?v=d7311fd3" width="640" height="640"
+                 loading="lazy" decoding="async" alt="十五种身着不同服装的BUMMY钥匙扣和银色包装袋">
+              <p>十五款乔装的 BUMMY 钥匙扣中，会有一个作为你的搭档来到身边。</p>
+            </div>
         </li>
       </ul>
 
       <div class="pair rv">
         <figure>
           <div class="shot">
-            <img src="../../assets/product/boarding.jpg?v=edba7423" width="1200" height="800"
+            <img src="../../assets/product/boarding.jpg?v=1851b973" width="1200" height="800"
                  loading="lazy" decoding="async"
                  alt="特工姓名、特工编号和入境审查栏均为空白的登机牌型任务卡">
           </div>
@@ -258,7 +294,7 @@
         </figure>
         <figure>
           <div class="shot">
-            <img src="../../assets/product/keyrings.jpg?v=af8d811a" width="1200" height="800"
+            <img src="../../assets/product/keyrings.jpg?v=cbfc195b" width="1200" height="800"
                  loading="lazy" decoding="async"
                  alt="十五种身着不同服装的BUMMY钥匙扣和银色包装袋">
           </div>
@@ -322,9 +358,6 @@
           <tr><th>特工证套装</th><td>PVC卡 · 卡套 · 挂绳<span>CARD 54 × 86 MM · 双面印刷</span></td></tr>
           <tr><th>印章型贴纸</th><td>透明 · 基本15张 + 备用5张<span>20 TOTAL</span></td></tr>
           <tr><th>收录范围</th><td>区域、地点与任务<span>15 ZONES · 30 PLACES · 45 ASSIGNMENTS</span></td></tr>
-          <tr><th>插画</th><td>伪装的BUMMY<span>30 DISGUISES</span></td></tr>
-          <tr><th>版本</th><td>韩语 · 英语 · 日语 · 简体中文 — 下单时选择<span>4 EDITIONS</span></td></tr>
-          <tr><th>首批数量</th><td>所有版本合计<span>1,500 SETS</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -394,17 +427,17 @@
           <tr role="row"><th role="rowheader" scope="row">品名及型号</th><td role="cell">C.O.V.E.R.T 任务套装 — OPERATION 01 SEOUL<br>型号 OPERATION 01 SEOUL</td></tr>
           <tr role="row">
             <th role="rowheader" scope="row">依法取得的认证·许可等</th>
-            <td role="cell">无。本产品并非以未满13周岁人士使用为目的制造和销售，因此不属于《儿童产品安全特别法》规定的安全认证·安全确认对象。</td>
+            <td role="cell">无。</td>
           </tr>
           <tr role="row"><th role="rowheader" scope="row">制造国或原产地</th><td role="cell">中国</td></tr>
-          <tr role="row"><th role="rowheader" scope="row">制造者 / 进口者</th><td role="cell">制造者 — 中国的委托生产厂商（商号确认中）<br>进口者 — Whale Land</td></tr>
+          <tr role="row"><th role="rowheader" scope="row">制造者 / 进口者</th><td role="cell">制造者 — 中国的委托生产厂商<br>进口者 — Whale Land</td></tr>
           <tr role="row"><th role="rowheader" scope="row">售后负责人与电话</th><td role="cell">Whale Land · 010-9937-1628</td></tr>
 
           <tr role="row">
             <th role="rowheader" scope="row">供货方式及供货时间</th>
             <td role="cell">
               韩国国内经 CJ大韩通运、海外经邮政 EMS 寄出。于工作日发货，发货后韩国国内需1〜3个工作日、海外需2〜5个工作日（不含通关时间）。
-              韩国国内运费为3,000韩元，订单满5万韩元免运费。济州加收3,000韩元，其他离岛及山区加收5,000韩元。海外按 EMS 标准费率自动计算，不收取包装费。
+              韩国国内运费为3,000韩元，订单满5万韩元免运费。济州加收3,000韩元，其他离岛及山区加收5,000韩元。海外按 EMS 标准费率自动计算，
             </td>
           </tr>
           <tr role="row">
