@@ -150,6 +150,37 @@
 @media (max-width:420px){
   .strip{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+/* ── 고시 팝업 ──────────────────────────────────────
+   ⚠️ JS 가 한 줄도 없습니다. :target 으로만 엽니다 —
+      법정 고지라 스크립트가 죽어도 읽혀야 합니다 (CLAUDE.md) */
+.goshi-band{display:grid;place-items:center;margin:clamp(20px,3vw,32px) 0 0}
+.modal{display:none}
+.modal:target{display:block;position:fixed;inset:0;z-index:70}
+.modal-bg{position:absolute;inset:0;background:rgba(39,28,18,.46)}
+.modal-box{
+  position:relative;z-index:1;margin:clamp(14px,5vh,54px) auto;
+  width:min(940px,calc(100% - 28px));max-height:86vh;overflow:auto;
+  background:var(--cream-soft);border-radius:38px;box-shadow:var(--shadow);
+  padding:clamp(20px,4vw,40px);
+}
+.modal-x{
+  position:sticky;top:0;float:right;z-index:2;
+  width:40px;height:40px;display:grid;place-items:center;border-radius:999px;
+  background:rgba(255,255,255,.86);border:1px solid var(--line);
+  color:var(--brown);font-weight:900;text-decoration:none;
+}
+.modal-box .doc{background:none;box-shadow:none;border-radius:0;padding:0}
+/* ⚠️ 닫기 단추가 머리글 오른쪽 글자를 가린다. 그만큼 비워 둔다 */
+.modal-box .doc-h{padding-right:54px}
+/* QR 예시 — 지면 한 장을 문장 옆에 세운다 */
+.qr-row{display:flex;gap:clamp(14px,2.4vw,22px);align-items:flex-start}
+.qr-row p{margin:0}
+.qr-shot{
+  width:clamp(96px,16%,132px);height:auto;flex:none;
+  border-radius:10px;border:1px solid var(--line);
+  box-shadow:0 6px 18px rgba(39,28,18,.10);
+}
+@media (max-width:520px){ .qr-row{gap:12px} .qr-shot{width:84px} }
 </style>
 </head>
 <body>
@@ -212,7 +243,7 @@
 <section class="bigshot">
   <div class="wrap">
     <div class="shot rv">
-      <img src="../../assets/cream/kit-all.jpg?v=def34ee9" width="1400" height="1050"
+      <img src="../../assets/cream/kit-all.jpg?v=e1e01411" width="1400" height="1050"
            loading="lazy" decoding="async"
            alt="크라프트 봉투와 여권형 미션북, 보딩패스 카드, 케이스에 든 요원증과 랜야드, 투명 스티커, 범이 키링을 펼쳐 놓은 모습">
     </div>
@@ -231,7 +262,7 @@
         <li>
           <i>01</i><b>전용 기밀 봉투</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/envelope.jpg?v=f4383892" width="900" height="900"
+              <img class="pk-shot" src="../../assets/pack/envelope.jpg?v=9b314d4d" width="900" height="900"
                  loading="lazy" decoding="async" alt="끈으로 여미고 앞면에 TOP SECRET 인장이 찍힌 크라프트 봉투">
               <p>앞면에 TOP SECRET 인장이, 뒷면에 C.O.V.E.R.T 로고가 찍혀 있습니다.</p>
             </div>
@@ -239,7 +270,7 @@
         <li>
           <i>02</i><b>여권형 미션북</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/passport.jpg?v=0dadc5c4" width="900" height="900"
+              <img class="pk-shot" src="../../assets/pack/passport.jpg?v=8736dfbf" width="900" height="900"
                  loading="lazy" decoding="async" alt="무광 금박 엠블럼이 찍힌 딥네이비 여권형 미션북 두 권">
               <p>레더텍스 합지 표지에 무광 금박으로 엠블럼을 찍어 고급스러운 디자인을 만들었습니다. 실제 여권 사이즈에 맞춰서 제작하였습니다. 임무를 잘 수행해 주세요.</p>
             </div>
@@ -247,7 +278,7 @@
         <li>
           <i>03</i><b>스탬프형 스티커</b><span class="leader" aria-hidden="true"></span><em>× 20</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/stickers.jpg?v=cb88ceb2" width="900" height="900"
+              <img class="pk-shot" src="../../assets/pack/stickers.jpg?v=782f3edb" width="900" height="900"
                  loading="lazy" decoding="async" alt="원 안에 발바닥 엠블럼이 들어간 투명 스탬프형 스티커 스무 장">
               <p>붙이면 아래 인쇄가 비치는 투명 스티커입니다. 원 안에 엠블럼이 들어가 있고, 아래쪽에 날짜를 적는 칸이 있습니다.</p>
             </div>
@@ -255,7 +286,7 @@
         <li>
           <i>04</i><b>보딩패스형 미션카드</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/boarding.jpg?v=57e3f87d" width="900" height="900"
+              <img class="pk-shot" src="../../assets/pack/boarding.jpg?v=5ab87bfe" width="900" height="900"
                  loading="lazy" decoding="async" alt="요원명과 요원 번호, 입국 심사 칸이 비어 있는 보딩패스형 미션카드">
               <p>항공권 모양의 카드입니다. 요원명과 요원 번호, 입국 심사 칸을 직접 채웁니다.</p>
             </div>
@@ -263,7 +294,7 @@
         <li>
           <i>05</i><b>요원증 세트</b><span class="leader" aria-hidden="true"></span><em>× 1 SET</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/id-card.jpg?v=6c2263b7" width="900" height="900"
+              <img class="pk-shot" src="../../assets/pack/id-card.jpg?v=477c0d6a" width="900" height="900"
                  loading="lazy" decoding="async" alt="정장을 입은 범이가 인쇄된 연보라색 PVC 요원증">
               <p>나의 파트너인 범이의 요원증을 제공합니다. 요원증을 차고 임무를 수행해 보세요.</p>
             </div>
@@ -271,7 +302,7 @@
         <li>
           <i>06</i><b>범이 키링</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/keyrings.jpg?v=fdb58a5a" width="900" height="900"
+              <img class="pk-shot" src="../../assets/pack/keyrings.jpg?v=ea875a0d" width="900" height="900"
                  loading="lazy" decoding="async" alt="저마다 다른 옷을 입은 범이 키링 열다섯 종과 은색 포장 봉지">
               <p>열다섯 개의 변장한 범이의 키링 중에 하나가 당신의 파트너로 찾아갑니다.</p>
             </div>
@@ -279,10 +310,16 @@
       </ul>
 
 
-      <p class="fine">
-        <b>Also included</b>
-        여권 안의 QR로 본부에 보고서를 보내실 수 있습니다. 선택 사항입니다 — 열다섯 구역은 종이만으로 끝까지 진행되고, 설치할 앱도 들러야 할 제휴처도 없습니다.
-      </p>
+      <!-- ⚠️ QR 예시는 «실제 지면»(p39)입니다. 따로 찍은 사진이 아니라 인쇄 지면이라
+           「여권 안의 QR」이라는 문장과 같은 것을 가리킵니다 -->
+      <div class="fine qr-row">
+        <img class="qr-shot" src="../../assets/book/p39.webp?v=0d70d377" width="480" height="682"
+             loading="lazy" decoding="async" alt="스캔하라고 적힌 QR 코드가 실린 여권 마지막 지면">
+        <p>
+          <b>Also included</b>
+          여권 안의 QR로 본부에 보고서를 보내실 수 있습니다. 선택 사항입니다 — 열다섯 구역은 종이만으로 끝까지 진행되고, 설치할 앱도 들러야 할 제휴처도 없습니다.
+        </p>
+      </div>
     </div>
 
     <!-- ── 여행이 끝난 뒤 ───────────────────────────────────
@@ -393,7 +430,26 @@
          ⚠️ 인증·허가 항목은 «문자»로 적습니다 (Ⅳ. 2). 사진이나 「제품에 별도 표기」로 대체할 수 없습니다.
          ⚠️ 배포 직전에 law.go.kr 에서 제2022-15호가 아직 「현행」인지 한 번 더 확인합니다.
          ══════════════════════════════════════════════════════ -->
-    <div class="sheet doc rv">
+    <!-- ⚠️⚠️ 고시표는 «팝업»으로 옮겼습니다 (2026-09-15 대표 지시 「너무 지저분해 보여」).
+         ⚠️ JS 를 쓰지 않습니다 — :target 하나로 엽니다.
+            법정 고지라 JS 가 죽어도 읽혀야 합니다 (CLAUDE.md 「법정 고지를 JS 로 넣지 않는다」).
+            표는 이 페이지의 DOM 에 그대로 있고, 주소로도 바로 열립니다 (/kit/#goshi). -->
+    <p class="goshi-band" id="goshi-open">
+      <a class="cta cta-2" href="#goshi">상품정보제공고시 보기</a>
+    </p>
+
+  </div>
+</section>
+
+<p class="back"><a class="linkarrow" href="../zones/">구역 보기 →</a></p>
+
+
+<!-- 상품정보제공고시 — 팝업. 닫으면 부른 자리(#goshi-open)로 돌아갑니다 -->
+<div class="modal" id="goshi" role="dialog" aria-modal="true" aria-label="상품정보제공고시">
+  <a class="modal-bg" href="#goshi-open" aria-label="닫기"></a>
+  <div class="modal-box">
+    <a class="modal-x" href="#goshi-open" aria-label="닫기">✕</a>
+    <div class="doc">
       <h2 class="doc-h"><span><b class="ko">상품정보제공고시</b></span><span class="ko">기타 재화</span></h2>
             <!-- ⚠️ role 을 «일부러» 적었습니다. 560px 이하에서 th·td 에 display:block 을 걸어
            라벨을 값 위로 올리는데, 그러면 접근성 트리에서 표 구조가 통째로 사라집니다.
@@ -414,7 +470,7 @@
             <th role="rowheader" scope="row">공급방법 및 공급시기</th>
             <td role="cell">
               국내 CJ대한통운 · 해외 우체국 EMS로 보내 드립니다. 영업일에 출고하며, 출고 후 국내 1~3영업일 · 해외 2~5영업일이 걸립니다(통관 시간은 포함되지 않습니다).
-              배송비는 국내 3,000원이고 5만원 이상 주문하시면 무료입니다. 제주는 3,000원, 그 밖의 도서·산간은 5,000원이 더해집니다. 해외는 EMS 표준 요율로 자동 계산되며
+              배송비는 국내 3,000원이고 5만원 이상 주문하시면 무료입니다. 제주는 3,000원, 그 밖의 도서·산간은 5,000원이 더해집니다. 해외는 EMS 표준 요율로 자동 계산됩니다.
             </td>
           </tr>
           <tr role="row">
@@ -447,11 +503,8 @@
         배송과 환불의 자세한 내용은 <a class="linkarrow" href="../support/" style="font-size:.84rem">배송 · 환불 →</a> 에 있습니다.
       </p>
     </div>
-
   </div>
-</section>
-
-<p class="back"><a class="linkarrow" href="../zones/">구역 보기 →</a></p>
+</div>
 
 </main>
 

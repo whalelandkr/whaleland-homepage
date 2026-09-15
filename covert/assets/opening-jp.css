@@ -516,8 +516,14 @@ html[data-motion="static"] #op-opening .fill{--wh:1;--wg:1}
         안 옮기면 오류 없이 조용히 기본값 min(40vh,300px) 로 떨어져 책만 10% 작아진다.
      ⚠️ 40vw 를 넣은 것은 모바일에서 펼친 책(2×--pw)이 뷰포트를 넘어
         .pin 의 overflow:hidden 에 잘리던 «기존» 버그를 같이 잡기 위해서다 */
+  /* ⚠️⚠️ 아래쪽 여백은 «자막 칸»이다. 안 두면 책이 핀 한가운데에 서면서
+     자막 위로 내려와 글씨가 지면과 겹친다 — 1440×900 에서 89px 파고들었다
+     (대표 신고 2026-09-15 「글씨가 여권이랑 겹쳐」).
+     ⚠️ 자막 «문구»를 줄여서 맞추지 말 것 — 번역문 길이는 우리가 못 정한다.
+     node social/_check-caption.mjs 가 네 언어 × 다섯 화면에서 이것을 지킨다 */
   html:not([data-motion="static"]) #op-opening .bookwrap{
-    position:absolute;inset:0;max-width:none;padding:0;
+    position:absolute;inset:0;max-width:none;
+    padding:0 0 clamp(112px,24vh,230px);
     display:grid;place-items:center;pointer-events:none;
   }
   html:not([data-motion="static"]) #op-opening .riser{width:100%;height:100%;display:grid;place-items:center}
