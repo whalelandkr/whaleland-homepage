@@ -26,7 +26,7 @@
    .fill .h 로만 적었더니 조용히 졌다 (특이도 1,3,1 대 1,4,0) */
 html[data-motion="static"] #op-opening .leaf .face .fill .h{-webkit-clip-path:none;clip-path:none}
 html[data-motion="static"] #op-opening .leaf .face .fill .tick,
-html[data-motion="static"] #op-opening .leaf .face .fill .sign{stroke-dashoffset:0}
+html[data-motion="static"] #op-opening .leaf .face .fill .sign{-webkit-clip-path:none;clip-path:none}
 html[data-motion="static"] #op-opening .fill{--wh:1;--wg:1}
 #op-opening::after{
   content:"";position:absolute;left:0;right:0;bottom:0;height:720px;
@@ -307,7 +307,7 @@ html[data-motion="static"] #op-opening .fill{--wh:1;--wg:1}
      ⚠️ 손글씨 «서체»를 쓰지 않는다 (CLAUDE.md). 외부 웹폰트도 못 받는다.
         화면에서 이 글자는 9~11px 라 서체가 아니라 «잉크가 도는 리듬»이 보인다.
         그래서 시스템 서체를 쓰되 줄마다 조금씩 기울여 기계적인 기준선을 깬다.
-        체크 표시와 서명은 아예 «획»(SVG stroke)이라 서체가 필요 없다.
+        체크 표시와 서명은 «획»이라 서체가 필요 없다 — 아래 .tick · .sign 을 본다.
      ⚠️ 글자 크기는 --pw 에 매단다. 뷰포트가 바뀌어도 지면과 같은 비율로 따라간다 */
   #op-opening .fill{
     /* ⚠️⚠️ 「크게 재고 작게 그린다」 — 브라우저 강제 어둡게가 손글씨를 뒤집는 것을 막는다.
@@ -317,17 +317,25 @@ html[data-motion="static"] #op-opening .fill{--wh:1;--wg:1}
        ⚠️ 보이는 결과는 한 화소도 안 바뀐다. 안의 자리·크기가 전부 % 라 같이 커지고 같이 준다.
        ⚠️ --k 를 낮추지 말 것 — 폰에서 가장 작은 글씨(d1 「09」)가 3.25% 라
           320px 화면(지면 128px)에서 4.2px 이라, 문턱 64px 을 넘으려면 «일본어 d1 기준» 23 이상이어야 한다.
-       ⚠️ % 가 아닌 값을 이 안에 새로 쓰면 --k 를 같이 곱해야 한다 (.tick 이 그 예다). */
+       ⚠️ % 가 아닌 값을 이 안에 새로 쓰면 --k 를 같이 곱해야 한다.
+       ⚠️ 예외는 .tick 과 .sign 둘뿐이다 — 마스크를 써서 «작은 상자 + scale» 로 간다.
+          그 까닭은 아래 그 규칙에 적어 두었다. 따라 하지 말 것 */
     --k:24;
     position:absolute;left:0;top:0;z-index:4;pointer-events:none;
     width:calc(100% * var(--k));height:calc(100% * var(--k));
     transform:scale(calc(1 / var(--k)));transform-origin:0 0;
     font-size:calc(var(--pw) * .030 * var(--k));
     color:#111827;
+    /* 체크 표시와 서명의 «모양». 잉크색이 아니라 오려 낼 자국이라 알파만 쓰인다 —
+       아래 .tick · .sign 이 이 자국으로 배경색을 오려 낸다. 무슨 색을 적어도 결과가 같다.
+       ⚠️ 색을 #000 처럼 «문자 그대로» 적지 않는다 — _extract-opening.mjs 의 renameIds 가
+          #으로 시작하는 것을 아이디로 보고 건드린다. %23 으로 적는다 */
+    --ink-tick:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M3 11 L8 16 L17 4' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --ink-sign:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 46'%3E%3Cpath d='M6 33 C14 9 21 10 23 26 C25 42 31 41 36 26 C41 11 48 13 48 28 C48 40 54 40 60 29 C66 18 74 21 78 32 C88 27 97 18 106 7 M96 20 C114 27 132 30 152 26' fill='none' stroke='%23000' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
   /* ⚠️⚠️ 잉크 요소마다 «스스로» 뒷면을 숨긴다 — 위 .face 의 isolation 과 «둘 다» 둔다.
      WebKit 은 backface-visibility 를 합성 레이어마다 적용하는데,
-     .h 는 clip-path 로 애니메이션하고 .tick·.sign 은 stroke-dashoffset 으로 그린다 —
+     .h · .tick · .sign 이 전부 clip-path 로 애니메이션한다 —
      전부 레이어로 승격되는 조건이다. 레이어가 떨어져 나가도 각자 숨게 한다.
      ⚠️ 크롬에서는 이 줄이 있으나 없으나 결과가 같다(실측). 지우고 싶어지는 종류다 — 두라. */
   #op-opening .fill,
@@ -356,23 +364,39 @@ html[data-motion="static"] #op-opening .fill{--wh:1;--wg:1}
   #op-opening .leaf .face .fill .h.vt{clip-path:inset(calc((1 - var(--w,0)) * 100%) 0 0 0)}
 
   /* 서약 지면(p04)의 서명. 기록면(p07)과 «같은 획»을 쓴다 — 같은 사람이니까 */
-  #op-opening .fill .sign.p04{left:66%;top:86.1%;width:26%;stroke-dashoffset:calc((1 - var(--p04sign,0)) * 520)}
+  #op-opening .fill .sign.p04{left:66%;top:86.1%;width:calc(26% / var(--k));
+    clip-path:inset(0 calc((1 - var(--p04sign,0)) * 100%) 0 0)}
 
+  /* ⚠️⚠️ 이 둘만 «작은 상자를 scale 로 키워» 그린다 — 마스크 때문이다.
+     마스크는 프레임마다 «상자 크기»의 임시 버퍼를 뜬다. 상자를 --k(24)배로 키워 두면
+     그 버퍼가 24×24 = 576배가 되어 개봉이 60fps → «30fps» 로 떨어진다.
+     기준선과 번갈아 다섯 번씩 재서 확인했다 (중앙값 33.3ms 대 16.7ms · 5/5).
+     작은 상자 + scale(--k) 로 바꾸면 16.7ms 로 돌아오고 «그려지는 결과는 같다» —
+     테두리 상자가 1화소 이내로 겹치고 가장 진한 점이 24 로 같다 (지면 333·144px 실측).
+     ⚠️ 그래서 여기 width 에는 --k 를 «곱하지 않는다». 곱하면 상자가 도로 커진다.
+     ⚠️ 그림(.h · .seal)은 반대다 — 마스크가 없어 버퍼를 안 뜨고,
+        «큰 레이아웃»이 있어야 강제 어둡게가 아이콘으로 안 본다. 두 규칙을 섞지 말 것 */
   #op-opening .fill .tick{
-    position:absolute;transform:translate(-50%,-50%) rotate(-6deg);
-    /* ⚠️ --pw 는 «지면 폭»이라 .fill 의 --k 배 확대를 안 따라간다. 직접 곱한다.
-       안 곱하면 체크 표시만 16배 작아진다 (위 .fill 주석 참고) */
-    width:calc(var(--pw) * .036 * var(--k));height:calc(var(--pw) * .036 * var(--k));
-    fill:none;stroke:#111827;stroke-width:2.6;
-    stroke-linecap:round;stroke-linejoin:round;
-    stroke-dasharray:26;stroke-dashoffset:calc((1 - var(--w,0)) * 26);
+    position:absolute;
+    transform:translate(-50%,-50%) rotate(-6deg) scale(var(--k));
+    width:calc(var(--pw) * .036);height:calc(var(--pw) * .036);
+    background-color:#111827;
+    -webkit-mask:var(--ink-tick) 0 0/100% 100% no-repeat;
+            mask:var(--ink-tick) 0 0/100% 100% no-repeat;
+    clip-path:inset(0 calc((1 - var(--w,0)) * 100%) 0 0);
   }
   #op-opening .fill .sign{
-    position:absolute;left:72%;top:90.4%;transform:translateY(-50%);
-    width:20%;height:auto;
-    fill:none;stroke:#111827;stroke-width:3.4;
-    stroke-linecap:round;stroke-linejoin:round;
-    stroke-dasharray:520;stroke-dashoffset:calc((1 - var(--wg,0)) * 520);
+    position:absolute;left:72%;top:90.4%;
+    /* ⚠️ 서명은 «왼쪽 끝»이 left 에 못 박혀야 한다. 그래서 기준점을 왼쪽 가운데로 옮긴다.
+       체크 표시는 가운데 기준이 맞아 그대로 둔다 (translate(-50%,-50%) 가 그 뜻이다) */
+    transform-origin:0 50%;transform:translateY(-50%) scale(var(--k));
+    /* ⚠️ 예전에는 <svg height:auto> 가 viewBox 에서 비율을 얻었다.
+       이제 평범한 상자라 비율을 직접 적는다 — 160:46 은 그 viewBox 다 */
+    width:calc(20% / var(--k));aspect-ratio:160 / 46;
+    background-color:#111827;
+    -webkit-mask:var(--ink-sign) 0 0/100% 100% no-repeat;
+            mask:var(--ink-sign) 0 0/100% 100% no-repeat;
+    clip-path:inset(0 calc((1 - var(--wg,0)) * 100%) 0 0);
   }
   /* 스티커 — 위에서 내려와 «눌러 붙는다». 다 붙으면 살짝 기울어 남는다 */
   /* ⚠️ 선택자를 «.fill .seal» 로만 쓰면 안 된다. 위쪽 .leaf .face img 규칙이
