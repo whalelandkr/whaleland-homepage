@@ -228,7 +228,8 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- footer : 이 사이트의 유일한 내비게이션 ---------- */
 .foot{border-top:1px solid var(--line);margin-top:40px;padding:60px 0 46px;background:rgba(255,249,230,.5)}
-.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.4fr;gap:38px}
+/* ⚠️ 2026-09-15 대표 지시로 푸터의 Dispatches(뉴스레터) 칸을 뗐다. 넷 → 셋 */
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:38px}
 .foot-h{color:var(--orange-ink);font-size:0.72rem;font-weight:950;letter-spacing:.20em;text-transform:uppercase;margin:0 0 16px}
 .foot-list{list-style:none;margin:0;padding:0;display:grid;gap:11px}
 .foot-list a{font-size:0.94rem;font-weight:700;color:var(--muted)}
