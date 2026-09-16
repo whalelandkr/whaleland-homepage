@@ -75,27 +75,32 @@
   font-style:normal;font-size:.72rem;font-weight:900;letter-spacing:.1em;
   color:var(--muted);flex-shrink:0;font-variant-numeric:tabular-nums;
 }
-/* ⚠️ 사진과 설명은 «둘째 줄»에 나란히 선다. 품명 줄이 꽉 차 있어 자동으로 넘어간다.
-   사진에는 배경색이 이미 구워져 있다 (social/_photo.mjs) — CSS 로 또 깔지 않는다 */
+/* 사진의 바깥 여백만 접는다. 원본 파일과 제품의 글자·그림은 보존한다. */
+.photo-window{
+  position:relative;display:block;overflow:hidden;
+  aspect-ratio:var(--crop-ratio);padding:0;
+}
+.photo-window.photo-window > img{
+  position:absolute;left:var(--photo-left);top:var(--photo-top);
+  width:var(--photo-width);height:var(--photo-height);
+  max-width:none;max-height:none;margin:0;padding:0;border:0;border-radius:0;
+  transform-origin:0 0;
+}
+.photo-window[data-photo="01"] > img{transform:rotate(-90deg)}
 .pack .pk-body{flex-basis:100%;display:flex;gap:14px;align-items:flex-start;margin-top:8px}
 .pack .pk-shot{
-  /* ⚠️⚠️ 비율을 강제하지 «않는다». 정사각에 맞추면 가로로 긴 사진(키링·보딩패스)이
-     위아래로 남아 제품이 작아진다 — 대표가 「키링 사진은 거의 안 보여」라고 신고했다.
-     높이만 맞추면 줄이 가지런하면서 가로로 긴 것이 제 크기로 온다.
-     ⚠️ 사진은 원본 배경을 «살려» 굽는다 (social/_photo.mjs --keep --wb).
-        흰 바탕으로 갈아 끼우면 흰 종이 제품(보딩패스·스티커 대지)이 같이 먹힌다 */
-  max-height:clamp(150px,24vw,250px);max-width:54%;
-  width:auto;height:auto;flex:none;align-self:flex-start;
-  margin:0 0 0 36px;border-radius:16px;border:1px solid var(--line);
+  width:min(54%,calc(clamp(150px,24vw,250px) * var(--crop-ratio)));
+  height:auto;flex:none;align-self:flex-start;
+  margin:0;border:0;border-radius:6px;
 }
+/* 카드 외곽까지 맞추고 둥근 모서리 바깥의 흰 바탕도 감춘다. */
+.pack .pk-shot[data-photo="06"]{border-radius:6.2% / 4%}
 .pack p{margin:0;font-size:.9rem;line-height:1.8;color:var(--muted);flex:1;word-break:normal;line-break:strict}
 @media (max-width:520px){
-  .pack .pk-shot{max-height:clamp(120px,34vw,180px);max-width:48%;margin-left:20px}
+  .pack .pk-shot{width:min(48%,calc(clamp(120px,34vw,180px) * var(--crop-ratio)))}
   .pack .pk-body{gap:10px}
   .pack p{flex-basis:100%}
 }
-
-
 
 /* ── 여행이 끝난 뒤 — 지면 다섯 장 ──
    ⚠️ 작게 싣습니다. 크게 실으면 편지 글씨가 읽혀 «받아야 보이는 것»이 미리 새어 나갑니다. */
@@ -249,9 +254,11 @@
 <section class="bigshot">
   <div class="wrap">
     <div class="shot rv">
-      <img src="../../assets/cream/kit-all.webp?v=8aa843c5" width="1086" height="1448"
+      <span class="photo-window" data-photo="01" style="--crop-ratio:1.1531190926;--photo-left:-7.86885246%;--photo-top:101.32325142%;--photo-width:89.01639344%;--photo-height:136.86200378%">
+                <img src="../../assets/cream/kit-all.webp?v=8aa843c5" width="1086" height="1448"
            loading="lazy" decoding="async"
            alt="C.O.V.E.R.T任务套装的组成物品平铺展示">
+              </span>
     </div>
   </div>
 </section>
@@ -268,48 +275,60 @@
         <li>
           <i>01</i><b>专用机密信封</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/envelope.webp?v=6efa0857" width="1086" height="1448"
+              <span class="pk-shot photo-window" data-photo="02" style="--crop-ratio:0.7059980334;--photo-left:-25.62674095%;--photo-top:-20.64896755%;--photo-width:151.25348189%;--photo-height:142.37954769%">
+                <img src="../../assets/pack/envelope.webp?v=6efa0857" width="1086" height="1448"
                  loading="lazy" decoding="async" alt="用绳系合、正面印有 TOP SECRET 印章的牛皮纸信封">
+              </span>
               <p>正面印有 TOP SECRET 印章的牛皮纸文件信封。解开绳子即可打开。</p>
             </div>
         </li>
         <li>
           <i>02</i><b>护照型任务手册</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/passport.webp?v=2474da98" width="1086" height="1448"
+              <span class="pk-shot photo-window" data-photo="03" style="--crop-ratio:1.1298129813;--photo-left:-5.06329114%;--photo-top:-37.40374037%;--photo-width:105.74488802%;--photo-height:159.29592959%">
+                <img src="../../assets/pack/passport.webp?v=2474da98" width="1086" height="1448"
                  loading="lazy" decoding="async" alt="压有哑光烫金徽章的深蓝色护照型任务手册两本">
+              </span>
               <p>皮纹合纸封面以哑光烫金压印徽章，做工考究。尺寸与真护照一致。请顺利完成任务。</p>
             </div>
         </li>
         <li>
           <i>03</i><b>印章型贴纸</b><span class="leader" aria-hidden="true"></span><em>× 20</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/stickers.webp?v=f53647b1" width="1086" height="1448"
+              <span class="pk-shot photo-window" data-photo="04" style="--crop-ratio:0.7807183365;--photo-left:-15.73849879%;--photo-top:-15.87901701%;--photo-width:131.47699758%;--photo-height:136.86200378%">
+                <img src="../../assets/pack/stickers.webp?v=f53647b1" width="1086" height="1448"
                  loading="lazy" decoding="async" alt="圆圈内含有肉垫徽章的透明印章型贴纸二十张">
+              </span>
               <p>贴上后可透出下方印刷的透明贴纸。圆圈内含有肉垫徽章。</p>
             </div>
         </li>
         <li>
           <i>04</i><b>登机牌型任务卡</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/boarding.webp?v=36852967" width="1448" height="1086"
+              <span class="pk-shot photo-window" data-photo="05" style="--crop-ratio:2.2342657343;--photo-left:-6.72926448%;--photo-top:-49.30069930%;--photo-width:113.30203443%;--photo-height:189.86013986%">
+                <img src="../../assets/pack/boarding.webp?v=36852967" width="1448" height="1086"
                  loading="lazy" decoding="async" alt="特工姓名、特工编号和入境审查栏均为空白的登机牌型任务卡">
+              </span>
               <p>做成机票形状的卡片。特工姓名、特工编号和入境审查栏由你自己填写。</p>
             </div>
         </li>
         <li>
           <i>05</i><b>特工证套装</b><span class="leader" aria-hidden="true"></span><em>× 1 SET</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/id-card.webp?v=2d5a48cd" width="1122" height="1402"
+              <span class="pk-shot photo-window" data-photo="06" style="--crop-ratio:0.6451612903;--photo-left:-32.50000000%;--photo-top:-16.69829222%;--photo-width:165.00000000%;--photo-height:133.01707780%">
+                <img src="../../assets/pack/id-card.webp?v=2d5a48cd" width="1122" height="1402"
                  loading="lazy" decoding="async" alt="印有身穿西装的 BUMMY 的淡紫色 PVC 特工证">
+              </span>
               <p>随附你的搭档 BUMMY 的特工证。请佩戴着去执行任务。</p>
             </div>
         </li>
         <li>
           <i>06</i><b>BUMMY钥匙扣</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/product/keyrings.webp?v=85f7eb81" width="1448" height="1086"
+              <span class="pk-shot photo-window" data-photo="07" style="--crop-ratio:1.2705544933;--photo-left:-8.27689992%;--photo-top:-2.39005736%;--photo-width:108.95410083%;--photo-height:103.82409178%">
+                <img src="../../assets/product/keyrings.webp?v=85f7eb81" width="1448" height="1086"
                  loading="lazy" decoding="async" alt="十五种身着不同服装的BUMMY钥匙扣和银色包装袋">
+              </span>
               <p>十五款乔装的 BUMMY 钥匙扣中，会有一个作为你的搭档来到身边。</p>
             </div>
         </li>

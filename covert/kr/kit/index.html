@@ -75,27 +75,32 @@
   font-style:normal;font-size:.72rem;font-weight:900;letter-spacing:.1em;
   color:var(--muted);flex-shrink:0;font-variant-numeric:tabular-nums;
 }
-/* ⚠️ 사진과 설명은 «둘째 줄»에 나란히 선다. 품명 줄이 꽉 차 있어 자동으로 넘어간다.
-   사진에는 배경색이 이미 구워져 있다 (social/_photo.mjs) — CSS 로 또 깔지 않는다 */
+/* 사진의 바깥 여백만 접는다. 원본 파일과 제품의 글자·그림은 보존한다. */
+.photo-window{
+  position:relative;display:block;overflow:hidden;
+  aspect-ratio:var(--crop-ratio);padding:0;
+}
+.photo-window.photo-window > img{
+  position:absolute;left:var(--photo-left);top:var(--photo-top);
+  width:var(--photo-width);height:var(--photo-height);
+  max-width:none;max-height:none;margin:0;padding:0;border:0;border-radius:0;
+  transform-origin:0 0;
+}
+.photo-window[data-photo="01"] > img{transform:rotate(-90deg)}
 .pack .pk-body{flex-basis:100%;display:flex;gap:14px;align-items:flex-start;margin-top:8px}
 .pack .pk-shot{
-  /* ⚠️⚠️ 비율을 강제하지 «않는다». 정사각에 맞추면 가로로 긴 사진(키링·보딩패스)이
-     위아래로 남아 제품이 작아진다 — 대표가 「키링 사진은 거의 안 보여」라고 신고했다.
-     높이만 맞추면 줄이 가지런하면서 가로로 긴 것이 제 크기로 온다.
-     ⚠️ 사진은 원본 배경을 «살려» 굽는다 (social/_photo.mjs --keep --wb).
-        흰 바탕으로 갈아 끼우면 흰 종이 제품(보딩패스·스티커 대지)이 같이 먹힌다 */
-  max-height:clamp(150px,24vw,250px);max-width:54%;
-  width:auto;height:auto;flex:none;align-self:flex-start;
-  margin:0 0 0 36px;border-radius:16px;border:1px solid var(--line);
+  width:min(54%,calc(clamp(150px,24vw,250px) * var(--crop-ratio)));
+  height:auto;flex:none;align-self:flex-start;
+  margin:0;border:0;border-radius:6px;
 }
+/* 카드 외곽까지 맞추고 둥근 모서리 바깥의 흰 바탕도 감춘다. */
+.pack .pk-shot[data-photo="06"]{border-radius:6.2% / 4%}
 .pack p{margin:0;font-size:.9rem;line-height:1.8;color:var(--muted);flex:1;word-break:keep-all}
 @media (max-width:520px){
-  .pack .pk-shot{max-height:clamp(120px,34vw,180px);max-width:48%;margin-left:20px}
+  .pack .pk-shot{width:min(48%,calc(clamp(120px,34vw,180px) * var(--crop-ratio)))}
   .pack .pk-body{gap:10px}
   .pack p{flex-basis:100%}
 }
-
-
 
 /* ── 여행이 끝난 뒤 — 지면 다섯 장 ──
    ⚠️ 작게 싣습니다. 크게 실으면 편지 글씨가 읽혀 «받아야 보이는 것»이 미리 새어 나갑니다. */
@@ -249,9 +254,11 @@
 <section class="bigshot">
   <div class="wrap">
     <div class="shot rv">
-      <img src="../../assets/cream/kit-all.webp?v=8aa843c5" width="1086" height="1448"
+      <span class="photo-window" data-photo="01" style="--crop-ratio:1.1531190926;--photo-left:-7.86885246%;--photo-top:101.32325142%;--photo-width:89.01639344%;--photo-height:136.86200378%">
+                <img src="../../assets/cream/kit-all.webp?v=8aa843c5" width="1086" height="1448"
            loading="lazy" decoding="async"
            alt="C.O.V.E.R.T 미션 키트의 구성품을 펼쳐 놓은 모습">
+              </span>
     </div>
   </div>
 </section>
@@ -268,48 +275,60 @@
         <li>
           <i>01</i><b>전용 기밀 봉투</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/envelope.webp?v=6efa0857" width="1086" height="1448"
+              <span class="pk-shot photo-window" data-photo="02" style="--crop-ratio:0.7059980334;--photo-left:-25.62674095%;--photo-top:-20.64896755%;--photo-width:151.25348189%;--photo-height:142.37954769%">
+                <img src="../../assets/pack/envelope.webp?v=6efa0857" width="1086" height="1448"
                  loading="lazy" decoding="async" alt="끈으로 여미고 앞면에 TOP SECRET 인장이 찍힌 크라프트 봉투">
+              </span>
               <p>앞면에 TOP SECRET 인장이 찍힌 크라프트 서류 봉투입니다. 끈을 풀어서 엽니다.</p>
             </div>
         </li>
         <li>
           <i>02</i><b>여권형 미션북</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/passport.webp?v=2474da98" width="1086" height="1448"
+              <span class="pk-shot photo-window" data-photo="03" style="--crop-ratio:1.1298129813;--photo-left:-5.06329114%;--photo-top:-37.40374037%;--photo-width:105.74488802%;--photo-height:159.29592959%">
+                <img src="../../assets/pack/passport.webp?v=2474da98" width="1086" height="1448"
                  loading="lazy" decoding="async" alt="무광 금박 엠블럼이 찍힌 딥네이비 여권형 미션북 두 권">
+              </span>
               <p>레더텍스 합지 표지에 무광 금박으로 엠블럼을 찍어 고급스러운 디자인을 만들었습니다. 실제 여권 사이즈에 맞춰서 제작하였습니다. 임무를 잘 수행해 주세요.</p>
             </div>
         </li>
         <li>
           <i>03</i><b>스탬프형 스티커</b><span class="leader" aria-hidden="true"></span><em>× 20</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/stickers.webp?v=f53647b1" width="1086" height="1448"
+              <span class="pk-shot photo-window" data-photo="04" style="--crop-ratio:0.7807183365;--photo-left:-15.73849879%;--photo-top:-15.87901701%;--photo-width:131.47699758%;--photo-height:136.86200378%">
+                <img src="../../assets/pack/stickers.webp?v=f53647b1" width="1086" height="1448"
                  loading="lazy" decoding="async" alt="원 안에 발바닥 엠블럼이 들어간 투명 스탬프형 스티커 스무 장">
+              </span>
               <p>붙이면 아래 인쇄가 비치는 투명 스티커입니다. 원 안에 발바닥 엠블럼이 들어가 있습니다.</p>
             </div>
         </li>
         <li>
           <i>04</i><b>보딩패스형 미션카드</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/boarding.webp?v=36852967" width="1448" height="1086"
+              <span class="pk-shot photo-window" data-photo="05" style="--crop-ratio:2.2342657343;--photo-left:-6.72926448%;--photo-top:-49.30069930%;--photo-width:113.30203443%;--photo-height:189.86013986%">
+                <img src="../../assets/pack/boarding.webp?v=36852967" width="1448" height="1086"
                  loading="lazy" decoding="async" alt="요원명과 요원 번호, 입국 심사 칸이 비어 있는 보딩패스형 미션카드">
+              </span>
               <p>항공권 모양의 카드입니다. 요원명과 요원 번호, 입국 심사 칸을 직접 채웁니다.</p>
             </div>
         </li>
         <li>
           <i>05</i><b>요원증 세트</b><span class="leader" aria-hidden="true"></span><em>× 1 SET</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/pack/id-card.webp?v=2d5a48cd" width="1122" height="1402"
+              <span class="pk-shot photo-window" data-photo="06" style="--crop-ratio:0.6451612903;--photo-left:-32.50000000%;--photo-top:-16.69829222%;--photo-width:165.00000000%;--photo-height:133.01707780%">
+                <img src="../../assets/pack/id-card.webp?v=2d5a48cd" width="1122" height="1402"
                  loading="lazy" decoding="async" alt="정장을 입은 범이가 인쇄된 연보라색 PVC 요원증">
+              </span>
               <p>나의 파트너인 범이의 요원증을 제공합니다. 요원증을 차고 임무를 수행해 보세요.</p>
             </div>
         </li>
         <li>
           <i>06</i><b>범이 키링</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <img class="pk-shot" src="../../assets/product/keyrings.webp?v=85f7eb81" width="1448" height="1086"
+              <span class="pk-shot photo-window" data-photo="07" style="--crop-ratio:1.2705544933;--photo-left:-8.27689992%;--photo-top:-2.39005736%;--photo-width:108.95410083%;--photo-height:103.82409178%">
+                <img src="../../assets/product/keyrings.webp?v=85f7eb81" width="1448" height="1086"
                  loading="lazy" decoding="async" alt="저마다 다른 옷을 입은 범이 키링 열다섯 종과 은색 포장 봉지">
+              </span>
               <p>열다섯 개의 변장한 범이의 키링 중에 하나가 당신의 파트너로 찾아갑니다.</p>
             </div>
         </li>
