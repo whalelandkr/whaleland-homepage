@@ -48,7 +48,7 @@
 /* 대표 사진 한 장. 글 없이 «무엇이 들어 있는지»만 보여 주는 자리입니다 */
 .bigshot{padding:0 0 clamp(30px,5vh,56px)}
 .bigshot .wrap{max-width:1000px}
-.bigshot .shot{margin:0}
+.bigshot .shot{margin:0;border-radius:0}
 
 .docs{padding:0 0 clamp(30px,5vh,60px)}
 .docs .wrap{max-width:880px}
@@ -91,7 +91,7 @@
 .pack .pk-shot{
   width:min(54%,calc(clamp(150px,24vw,250px) * var(--crop-ratio)));
   height:auto;flex:none;align-self:flex-start;
-  margin:0;border:0;border-radius:6px;
+  margin:0;border:0;border-radius:0;
 }
 /* 카드 외곽까지 맞추고 둥근 모서리 바깥의 흰 바탕도 감춘다. */
 .pack .pk-shot[data-photo="06"]{border-radius:6.2% / 4%}
@@ -254,7 +254,7 @@
 <section class="bigshot">
   <div class="wrap">
     <div class="shot rv">
-      <span class="photo-window" data-photo="01" style="--crop-ratio:1.1531190926;--photo-left:-7.86885246%;--photo-top:101.32325142%;--photo-width:89.01639344%;--photo-height:136.86200378%">
+      <span class="photo-window" data-photo="01" style="--crop-ratio:1.1623188406;--photo-left:-8.72817955%;--photo-top:102.31884058%;--photo-width:90.27431421%;--photo-height:139.90338164%">
                 <img src="../assets/cream/kit-all.webp?v=8aa843c5" width="1086" height="1448"
            loading="lazy" decoding="async"
            alt="The components of the C.O.V.E.R.T mission kit, laid out together">
@@ -275,7 +275,7 @@
         <li>
           <i>01</i><b>Classified envelope</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <span class="pk-shot photo-window" data-photo="02" style="--crop-ratio:0.7059980334;--photo-left:-25.62674095%;--photo-top:-20.64896755%;--photo-width:151.25348189%;--photo-height:142.37954769%">
+              <span class="pk-shot photo-window" data-photo="02" style="--crop-ratio:0.7041832669;--photo-left:-26.73267327%;--photo-top:-21.41434263%;--photo-width:153.60678925%;--photo-height:144.22310757%">
                 <img src="../assets/pack/envelope.webp?v=6efa0857" width="1086" height="1448"
                  loading="lazy" decoding="async" alt="A kraft envelope that ties shut, with a TOP SECRET stamp on the front">
               </span>
@@ -285,7 +285,7 @@
         <li>
           <i>02</i><b>Passport mission book</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <span class="pk-shot photo-window" data-photo="03" style="--crop-ratio:1.1298129813;--photo-left:-5.06329114%;--photo-top:-37.40374037%;--photo-width:105.74488802%;--photo-height:159.29592959%">
+              <span class="pk-shot photo-window" data-photo="03" style="--crop-ratio:1.1399776036;--photo-left:-5.40275049%;--photo-top:-38.40985442%;--photo-width:106.67976424%;--photo-height:162.15005599%">
                 <img src="../assets/pack/passport.webp?v=2474da98" width="1086" height="1448"
                  loading="lazy" decoding="async" alt="Two deep-navy passport mission books with the emblem in matte gold foil">
               </span>
@@ -295,7 +295,7 @@
         <li>
           <i>03</i><b>Seal stickers</b><span class="leader" aria-hidden="true"></span><em>× 20</em>
             <div class="pk-body">
-              <span class="pk-shot photo-window" data-photo="04" style="--crop-ratio:0.7807183365;--photo-left:-15.73849879%;--photo-top:-15.87901701%;--photo-width:131.47699758%;--photo-height:136.86200378%">
+              <span class="pk-shot photo-window" data-photo="04" style="--crop-ratio:0.7760765550;--photo-left:-16.89272503%;--photo-top:-16.65071770%;--photo-width:133.90875462%;--photo-height:138.56459330%">
                 <img src="../assets/pack/stickers.webp?v=f53647b1" width="1086" height="1448"
                  loading="lazy" decoding="async" alt="Twenty clear seal stickers, each with the paw emblem inside a circle">
               </span>
@@ -305,7 +305,7 @@
         <li>
           <i>04</i><b>Boarding-pass mission card</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <span class="pk-shot photo-window" data-photo="05" style="--crop-ratio:2.2342657343;--photo-left:-6.72926448%;--photo-top:-49.30069930%;--photo-width:113.30203443%;--photo-height:189.86013986%">
+              <span class="pk-shot photo-window" data-photo="05" style="--crop-ratio:2.2688172043;--photo-left:-7.26698262%;--photo-top:-51.61290323%;--photo-width:114.37598736%;--photo-height:194.62365591%">
                 <img src="../assets/pack/boarding.webp?v=36852967" width="1448" height="1086"
                  loading="lazy" decoding="async" alt="The boarding-pass mission card with the agent name, agent number and immigration fields left blank">
               </span>
@@ -315,7 +315,7 @@
         <li>
           <i>05</i><b>Agent ID set</b><span class="leader" aria-hidden="true"></span><em>× 1 SET</em>
             <div class="pk-body">
-              <span class="pk-shot photo-window" data-photo="06" style="--crop-ratio:0.6451612903;--photo-left:-32.50000000%;--photo-top:-16.69829222%;--photo-width:165.00000000%;--photo-height:133.01707780%">
+              <span class="pk-shot photo-window" data-photo="06" style="--crop-ratio:0.6448243115;--photo-left:-32.69513991%;--photo-top:-16.71415005%;--photo-width:165.24300442%;--photo-height:133.14339981%">
                 <img src="../assets/pack/id-card.webp?v=2d5a48cd" width="1122" height="1402"
                  loading="lazy" decoding="async" alt="A lavender PVC agent ID printed with BUMMY in a suit">
               </span>
@@ -325,7 +325,7 @@
         <li>
           <i>06</i><b>BUMMY keyring</b><span class="leader" aria-hidden="true"></span><em>× 1</em>
             <div class="pk-body">
-              <span class="pk-shot photo-window" data-photo="07" style="--crop-ratio:1.2705544933;--photo-left:-8.27689992%;--photo-top:-2.39005736%;--photo-width:108.95410083%;--photo-height:103.82409178%">
+              <span class="pk-shot photo-window" data-photo="07" style="--crop-ratio:1.2736943907;--photo-left:-8.95975702%;--photo-top:-2.99806576%;--photo-width:109.94684890%;--photo-height:105.02901354%">
                 <img src="../assets/product/keyrings.webp?v=85f7eb81" width="1448" height="1086"
                  loading="lazy" decoding="async" alt="Fifteen BUMMY keyrings, each in a different outfit, and a silver packet">
               </span>
