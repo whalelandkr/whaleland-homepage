@@ -61,15 +61,23 @@
     "teamBody": "고등학교 친구에서 공동창업자로.\n2025년부터 함께 제품을 만들고 있습니다.",
     "founderJeonghuName": "KIM JEONGHU / 김정후",
     "founderJeonghuRole": "Co-founder / Business & Product",
-    "founderJeonghuBio": "사업기획, 제품개발, 영업 및 사업개발을 담당합니다.\n메카트로닉스공학을 전공했으며, 글로벌 산업용 센서 기업의 한국법인에서 기술영업 경험을 쌓았습니다.",
+    "founderJeonghuBio": "메카트로닉스공학을 전공했으며, 글로벌 산업용 센서 기업의 한국법인에서 기술영업 경험을 쌓았습니다.",
     "founderWookName": "JANG WOOK / 장욱",
     "founderWookRole": "Co-founder / Design & Operations",
-    "founderWookBio": "디자인, 제품개발 및 운영을 담당합니다.\n항공지리정보를 전공했으며, 요식업 현장에서 고객 경험과 매장 운영을 직접 경험했습니다.",
+    "founderWookBio": "항공지리정보를 전공했으며, 요식업 현장에서 고객 경험과 매장 운영을 직접 경험했습니다.",
     "founderEmailLabel": "이메일",
     "contactWookLabel": "장욱",
     "partnershipCta": "Investment / Partnership",
     "togetherTitle": "기획과 비즈니스, 디자인과 운영.\n각자의 역할에서 시작해 하나의 제품을 함께 완성합니다.",
-    "togetherBody": "Korean Birth Type부터 C.O.V.E.R.T Seoul, PixelWar까지\n두 사람이 아이디어를 실제 제품으로 만들고 있습니다."
+    "togetherBody": "별도의 직원 없이 두 사람이 제품의 기획부터 출시와 운영까지 직접 맡아왔습니다.",
+    "founderWookResponsibility": "브랜드와 제품의 시각적 방향을 만들고, 디지털 서비스와 실물 제품이 실제 사용자에게 전달되는 단계까지 제품개발과 운영을 담당합니다.",
+    "founderJeonghuResponsibility": "아이디어를 사업과 제품의 형태로 구체화하고, 제품기획부터 시장 진입, 영업, 유통과 파트너십까지 연결하는 역할을 담당합니다.",
+    "productProofLabel": "두 창업자가 만든 대표 제품",
+    "productProofDescriptions": {
+      "korean-birth-type": "글로벌 성격·관계 탐색 서비스",
+      "covert": "미션으로 즐기는 서울 여행 제품",
+      "pixelwar": "세계지도 위 글로벌 영토 게임"
+    }
   },
   "services": {
     "korean-birth-type": {

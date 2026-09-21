@@ -1160,3 +1160,24 @@ button { font-family: inherit; }
  .founder-card + .founder-card::after { content:""; position:absolute; top:-33px; left:50%; height:32px; border-left:1px solid rgba(95,125,170,.32); }
  .founders-together { padding-top:8px; }
 }
+
+/* Founder responsibilities and compact evidence of their work. */
+.founder-responsibility { margin:0 0 16px; color:var(--wl-ink); font-size:15.5px; font-weight:650; line-height:1.8; word-break:keep-all; }
+.founder-bio { font-size:14px; line-height:1.8; }
+.team-product-proof { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; width:100%; margin:36px 0 0; padding:0; list-style:none; }
+.team-product-proof-item { min-width:0; }
+.team-product-proof-item a { display:flex; flex-direction:column; align-items:flex-start; height:100%; padding:18px 0 8px; border-top:1px solid var(--wl-line); transition:transform .2s ease,border-color .2s ease; text-decoration:none; }
+.team-product-proof-item a:hover { transform:translateY(-2px); border-color:rgba(49,130,246,.4); }
+.team-product-proof-item a:focus-visible { outline:2px solid var(--wl-blue); outline-offset:5px; border-radius:3px; }
+.team-product-proof-item strong { font-size:16px; line-height:1.5; color:var(--wl-ink); }
+.team-proof-status { display:flex; align-items:center; gap:6px; margin:7px 0 9px; color:#66748b; font-size:9px; line-height:1.5; font-weight:750; letter-spacing:.09em; }
+.team-proof-status::before { content:""; width:5px; height:5px; border-radius:50%; background:#8995b8; }
+.team-proof-status[data-state="live"]::before { background:#5c9b8b; }
+.team-proof-description { color:var(--wl-caption); font-size:12px; line-height:1.65; word-break:keep-all; }
+@media(max-width:759px) {
+ .team-product-proof { grid-template-columns:1fr; gap:10px; margin-top:28px; }
+ .team-product-proof-item a { display:grid; grid-template-columns:minmax(0,1fr) auto; column-gap:12px; padding:15px 0; }
+ .team-proof-status { margin:4px 0; }
+ .team-proof-description { grid-column:1 / -1; margin-top:4px; }
+}
+@media(prefers-reduced-motion:reduce) { .team-product-proof-item a:hover { transform:none; } }

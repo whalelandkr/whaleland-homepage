@@ -61,15 +61,23 @@
     "teamBody": "High-school friends turned co-founders.\nBuilding products together since 2025.",
     "founderJeonghuName": "KIM JEONGHU",
     "founderJeonghuRole": "Co-founder / Business & Product",
-    "founderJeonghuBio": "Leads business strategy, product development, sales, and business development.\nHe studied Mechatronics Engineering and has prior experience in technical sales at the Korean subsidiary of a global industrial sensor company.",
+    "founderJeonghuBio": "He studied Mechatronics Engineering and has prior experience in technical sales at the Korean subsidiary of a global industrial sensor company.",
     "founderWookName": "JANG WOOK",
     "founderWookRole": "Co-founder / Design & Operations",
-    "founderWookBio": "Leads design, product development, and operations.\nHe studied Aeronautical Geographic Information and has hands-on experience in customer service and day-to-day operations in the food service industry.",
+    "founderWookBio": "He studied Aeronautical Geographic Information and has hands-on experience in customer service and day-to-day operations in the food service industry.",
     "founderEmailLabel": "Email",
     "contactWookLabel": "Jang Wook",
     "partnershipCta": "Investment / Partnership",
     "togetherTitle": "Business and product. Design and operations.\nDifferent roles, one product team.",
-    "togetherBody": "From Korean Birth Type and C.O.V.E.R.T Seoul to PixelWar,\nwe turn ideas into real products together."
+    "togetherBody": "Without a separate in-house team, the two founders have worked directly across product planning, launch, and operations.",
+    "founderWookResponsibility": "Leads the visual direction of WhaleLand products and works across product development and operations, from early concepts to the point where digital and physical products reach real users.",
+    "founderJeonghuResponsibility": "Turns ideas into products and business opportunities, working across product strategy, go-to-market, sales, distribution, and partnerships.",
+    "productProofLabel": "Products built by the two founders",
+    "productProofDescriptions": {
+      "korean-birth-type": "Global personality & relationship experience",
+      "covert": "Mission-based Seoul travel product",
+      "pixelwar": "Global territory game on a shared world map"
+    }
   },
   "services": {
     "korean-birth-type": {

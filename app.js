@@ -343,6 +343,24 @@ function createWorldCard(service, language, index = 0) {
 
 function renderHome(copy, language) {
   const services = getFeaturedServices(copy);
+  const proof = $("#teamProductProof");
+  if (proof) {
+    proof.setAttribute("aria-label", copy.home.productProofLabel);
+    proof.replaceChildren(...["korean-birth-type", "covert", "pixelwar"].map((slug, index) => {
+      const service = copy.services[slug];
+      const item = document.createElement("li");
+      item.className = "team-product-proof-item reveal";
+      item.style.setProperty("--rd", `${index * .12}s`);
+      const url = serviceExternalUrl(service, language);
+      const external = isExternalUrl(url) ? ' target="_blank" rel="noopener noreferrer"' : "";
+      item.innerHTML = `<a href="${escapeHtml(url)}"${external}>
+        <strong>${escapeHtml(service.title)}</strong>
+        <span class="team-proof-status" data-state="${service.status === "LIVE" ? "live" : "development"}">${escapeHtml(service.status)}</span>
+        <span class="team-proof-description">${escapeHtml(copy.home.productProofDescriptions[slug])}</span>
+      </a>`;
+      return item;
+    }));
+  }
   const serviceStory = $("#serviceStory, #service-story");
   const serviceList = $("#serviceList");
   const worldList = $("#worldList");
