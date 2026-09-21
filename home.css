@@ -759,9 +759,11 @@ button { font-family: inherit; }
 
 .founders-photo {
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  transform: translate3d(var(--team-x), var(--team-y), 0) scale(1.015);
+  image-rendering: auto;
+  transform: translate3d(var(--team-x), var(--team-y), 0) scale(1.008);
   transition: transform .32s var(--wl-ease), filter .3s ease;
 }
 
@@ -1163,4 +1165,9 @@ button { font-family: inherit; }
     transform: none;
     transition: none;
   }
+}
+
+@media (min-width: 900px) {
+  .team-inner { max-width: 980px; }
+  .founders-photo-wrap { max-width: 900px; margin-inline: auto; }
 }
