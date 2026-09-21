@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "Whale Land — An idea company for playful services",
-    "description": "Whale Land creates playful services that make the world more varied, useful, and happy."
+    "title": "WhaleLand — Playful ideas, real products",
+    "description": "WhaleLand is a product studio founded by high-school friends in 2025. Discover Korean Birth Type, C.O.V.E.R.T Seoul, Bummy Stamp Tour, PixelWar, and Haedurio."
   },
   "common": {
-    "navCompany": "Company",
-    "navServiceIntro": "Services",
+    "navCompany": "About",
+    "navServiceIntro": "Products",
     "navServiceList": "Service list",
     "navContact": "Contact",
     "backHome": "Back to Whale Land",
@@ -35,18 +35,18 @@
     "logoKicker": "WHALE LAND / IDEA COMPANY",
     "logoNote": "SEOUL · IDEAS IN MOTION",
     "introEyebrow": "ABOUT WHALE LAND",
-    "introTitle": "We turn playful ideas\\ninto real products.",
-    "introBody": "WhaleLand is a two-founder product studio started by high-school friends in 2025.\\nAcross digital culture, travel, community, and interactive entertainment,\\nwe build and launch ideas we genuinely find worth making.",
+    "introTitle": "We turn playful ideas\ninto real products.",
+    "introBody": "WhaleLand is a two-founder product studio started by high-school friends in 2025.\n\nAcross digital culture, travel, community, and interactive entertainment, we build and launch ideas we genuinely find worth making.",
     "serviceSectionEyebrow": "SERVICE INTRODUCTION",
     "serviceLinkCta": "View service page",
     "serviceListEyebrow": "SERVICE HUB",
     "serviceListTitle": "Whale Land services you can meet now",
     "serviceListBody": "Each service is an independent project with its own world and purpose. New services can be added to this hub as Whale Land evolves.",
     "contactEyebrow": "CONTACT WHALE LAND",
-    "contactTitle": "Investment, partnerships, and new ideas are welcome.",
+    "contactTitle": "Investment, partnerships,\nand new ideas are welcome.",
     "contactBody": "For investment, distribution, partnerships, or product collaboration, get in touch with WhaleLand.",
     "contactPhoneLabel": "Phone",
-    "contactEmailLabel": "Email",
+    "contactEmailLabel": "Kim Jeonghu",
     "contactCopyEmail": "Copy inquiry email",
     "contactCopiedEmail": "Email copied",
     "featuredServiceSlugs": [
@@ -58,16 +58,18 @@
     "principles": [],
     "teamEyebrow": "FOUNDERS",
     "teamTitle": "The two people building WhaleLand",
-    "teamBody": "High-school friends turned co-founders, building real products together since 2025.",
+    "teamBody": "High-school friends turned co-founders.\nBuilding products together since 2025.",
     "teamPhotoCaption": "The two founders of WhaleLand — candid, hands-on, and building together.",
     "founderJeonghuName": "KIM JEONGHU",
     "founderJeonghuRole": "Co-founder / Business & Product",
-    "founderJeonghuBio": "Leads business strategy, product development, sales, and business development.\\nHe studied Mechatronics Engineering and has prior experience in technical sales at the Korean subsidiary of a global industrial sensor company.",
+    "founderJeonghuBio": "Leads business strategy, product development, sales, and business development.\nHe studied Mechatronics Engineering and has prior experience in technical sales at the Korean subsidiary of a global industrial sensor company.",
     "founderWookName": "JANG WOOK",
     "founderWookRole": "Co-founder / Design & Operations",
-    "founderWookBio": "Leads design, product development, and operations.\\nHe studied Aeronautical Geographic Information and has hands-on experience in customer service and day-to-day operations in the food service industry.",
+    "founderWookBio": "Leads design, product development, and operations.\nHe studied Aeronautical Geographic Information and has hands-on experience in customer service and day-to-day operations in the food service industry.",
     "founderEmailLabel": "Email",
-    "teamNote": "The two founders work end-to-end across product strategy, development, design, sales, and operations. We value the ability to turn an idea into a real product and put it in front of users quickly."
+    "teamNote": "The two founders work end-to-end across product strategy, development, design, sales, and operations. We value the ability to turn an idea into a real product and put it in front of users quickly.",
+    "contactWookLabel": "Jang Wook",
+    "partnershipCta": "Investment / Partnership"
   },
   "services": {
     "korean-birth-type": {
@@ -210,11 +212,11 @@
       "theme": "covert",
       "accent": "#d4b26f",
       "illustration": "covert-bummy.png",
-      "status": "PREPARING",
+      "status": "LIVE",
       "category": "MISSION TRAVEL",
-      "title": "C.O.V.E.R.T",
+      "title": "C.O.V.E.R.T Seoul",
       "cardTitle": "No more ordinary trips!",
-      "summary": "No more ordinary trips! It is the age of covert infiltration action tourism. Mission CLEAR with Beomi!",
+      "summary": "Bummy Stamp Tour · Explore Seoul through secret missions and keep your travel memories.",
       "homeEyebrow": "C.O.V.E.R.T",
       "homeTitle": "No more ordinary trips!",
       "homeDescription": "It is the age of covert infiltration action tourism. Mission CLEAR with Beomi!",
@@ -269,7 +271,7 @@
         }
       ],
       "closingTitle": "Seoul is already an operation zone.",
-      "closingBody": "The independent site for agent registration and final reports is being prepared."
+      "closingBody": "Start your Seoul missions with Bummy and record your own journey."
     },
     "pixelwar": {
       "slug": "pixelwar",
@@ -284,9 +286,9 @@
       "summary": "A real-time social project where people claim, color, and compete over millions of cells on a shared world map.",
       "homeEyebrow": "PIXELWAR",
       "homeTitle": "One world map.\nMillions of moves.",
-      "homeDescription": "Claim cells, shape regions, and compete with people around the world\nin a persistent global social game.",
+      "homeDescription": "Claim cells, expand your colors, and collaborate or compete with players around the world.",
       "heroTitle": "A social game where the world competes on one shared map.",
-      "heroLead": "PixelWar turns the real world into a cell-based game board. Players claim areas, expand their color, and compete or collaborate with others.",
+      "heroLead": "PixelWar turns the real world map into a cell-based game board.\nClaim territory, expand your colors, and collaborate or compete with others.",
       "visualCaption": "A persistent social world built on a shared map.",
       "externalUrl": "",
       "externalCta": "Explore PixelWar",
@@ -308,7 +310,7 @@
         {
           "index": "02",
           "title": "Live change",
-          "body": "Player actions appear quickly on the shared map so the world keeps moving."
+          "body": "Player actions are quickly reflected on the shared map."
         },
         {
           "index": "03",
@@ -316,27 +318,11 @@
           "body": "Individuals, regions, and communities collaborate and compete on the same map."
         }
       ],
-      "processEyebrow": "CORE LOOP",
-      "processTitle": "Zoom in, make a move, change the world.",
-      "steps": [
-        {
-          "index": "01",
-          "title": "Explore",
-          "body": "Move across the world map and find a region or cell to act on."
-        },
-        {
-          "index": "02",
-          "title": "Claim",
-          "body": "Leave your mark and expand your color and influence."
-        },
-        {
-          "index": "03",
-          "title": "Compete together",
-          "body": "Create local movements with other players and communities."
-        }
-      ],
+      "processEyebrow": "",
+      "processTitle": "",
+      "steps": [],
       "closingTitle": "A playable demo is in development.",
-      "closingBody": "We want the product to explain itself through play, not through a long presentation."
+      "closingBody": "Our goal is to show the idea through actual play."
     }
   }
 }

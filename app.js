@@ -1,6 +1,6 @@
 "use strict";
 
-const SUPPORTED_LANGUAGES = ["ko", "en", "ja", "zh-cn"];
+const SUPPORTED_LANGUAGES = ["ko", "en"];
 const LANGUAGE_ALIASES = {
   kr: "ko",
   jp: "ja",
@@ -24,14 +24,6 @@ function normalizeLanguage(value) {
 
 function detectBrowserLanguage() {
   const browserLanguage = (navigator.language || "").toLowerCase();
-
-  if (browserLanguage.startsWith("ja")) {
-    return "ja";
-  }
-
-  if (browserLanguage.startsWith("zh")) {
-    return "zh-cn";
-  }
 
   if (browserLanguage.startsWith("en")) {
     return "en";
@@ -116,6 +108,7 @@ function setDocumentLanguage(language) {
 function setActiveLanguage(language) {
   $$('[data-lang]').forEach((button) => {
     button.classList.toggle("is-active", button.dataset.lang === language);
+    button.setAttribute("aria-pressed", String(button.dataset.lang === language));
   });
 }
 
@@ -138,7 +131,9 @@ function updateHomeLinks(language) {
     const section = link.dataset.homeSection;
 
     if (section) {
-      link.href = `./index.html?lang=${encodeURIComponent(language)}#${section}`;
+      link.href = document.documentElement.dataset.page === "home"
+        ? `#${section}`
+        : `./index.html?lang=${encodeURIComponent(language)}#${section}`;
     }
   });
 
@@ -233,6 +228,7 @@ function createServiceFeaturePanel(service, language, index) {
         <span class="service-feature-number">${String(index + 1).padStart(2, "0")}</span>
         <h2>${escapeHtml(service.homeTitle || service.title)}</h2>
         <p>${escapeHtml(service.homeDescription || service.summary)}</p>
+        ${service.slug === "pixelwar" ? `<div class="home-service-tags">${service.tags.map(tag => `<span>${escapeHtml(tag)}</span>`).join("")}</div>` : ""}
         <a class="button button-primary" href="${escapeHtml(url)}"${externalAttrs}>
           ${escapeHtml(ctaLabel)}
         </a>
@@ -335,6 +331,12 @@ function renderService(copy, language, serviceSlug) {
   }
 
   document.body.dataset.theme = service.theme;
+  if (serviceSlug === "pixelwar") {
+    $(".process-section")?.remove();
+    $(".feature-section .section-head")?.remove();
+    $("#serviceVisualCaption")?.remove();
+    $(".service-hero [data-external-link]")?.remove();
+  }
   document.title = `${service.title} — Whale Land`;
 
   const metaDescription = $('meta[name="description"]');
@@ -521,34 +523,6 @@ function setupVoyagePointerMotion() {
   });
 }
 
-function setupFoundersMotion() {
-  const photo = $(".founders-photo-wrap");
-
-  if (!photo || photo.dataset.bound === "true" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    return;
-  }
-
-  photo.dataset.bound = "true";
-
-  photo.addEventListener("pointermove", (event) => {
-    const rect = photo.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-
-    photo.style.setProperty("--team-rx", `${y * -2.2}deg`);
-    photo.style.setProperty("--team-ry", `${x * 2.2}deg`);
-    photo.style.setProperty("--team-x", `${x * 5}px`);
-    photo.style.setProperty("--team-y", `${y * 5}px`);
-  });
-
-  photo.addEventListener("pointerleave", () => {
-    photo.style.setProperty("--team-rx", "0deg");
-    photo.style.setProperty("--team-ry", "0deg");
-    photo.style.setProperty("--team-x", "0px");
-    photo.style.setProperty("--team-y", "0px");
-  });
-}
-
 function setupCopyEmail() {
   $$('[data-copy-email]').forEach((button) => {
     if (button.dataset.bound === "true") {
@@ -576,11 +550,16 @@ function setupCopyEmail() {
 
 let currentLanguage = getInitialLanguage();
 let currentCopy = null;
+let languageRequest = 0;
 
 async function renderLanguage(language, { updateHistory = true } = {}) {
   const normalized = normalizeLanguage(language) || DEFAULT_LANGUAGE;
   const page = document.documentElement.dataset.page;
   const serviceSlug = page === "service" ? getServiceSlug() : "";
+
+  const request = ++languageRequest;
+  const copy = await loadCopy(normalized);
+  if (request !== languageRequest) return;
 
   currentLanguage = normalized;
   localStorage.setItem("whalelandLanguage", normalized);
@@ -591,7 +570,7 @@ async function renderLanguage(language, { updateHistory = true } = {}) {
     updateUrl(normalized, serviceSlug);
   }
 
-  currentCopy = await loadCopy(normalized);
+  currentCopy = copy;
   document.title = currentCopy.meta?.title || "Whale Land";
 
   const metaDescription = $('meta[name="description"]');
@@ -648,7 +627,6 @@ async function initialize() {
     setupHeaderScroll();
     setupMenu();
     setupVoyagePointerMotion();
-    setupFoundersMotion();
     setupCopyEmail();
     await renderLanguage(currentLanguage);
   } catch (error) {

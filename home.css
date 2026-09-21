@@ -638,7 +638,7 @@ button { font-family: inherit; }
 }
 
 .service-list-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   box-shadow: var(--wl-shadow-hover);
   border-color: color-mix(in srgb, var(--accent) 30%, transparent);
 }
@@ -739,22 +739,17 @@ button { font-family: inherit; }
 .team-heading { max-width: 760px; }
 
 .founders-photo-wrap {
-  --team-rx: 0deg;
-  --team-ry: 0deg;
-  --team-x: 0px;
-  --team-y: 0px;
   position: relative;
   margin: 0;
   overflow: hidden;
   border-radius: clamp(22px, 3vw, 34px);
   background: #e9edf2;
-  box-shadow: 0 24px 64px rgba(2,32,71,.12);
-  transform: perspective(1200px) rotateX(var(--team-rx)) rotateY(var(--team-ry));
+  box-shadow: 0 12px 32px rgba(2,32,71,.08);
   transition: transform .28s var(--wl-ease), box-shadow .35s ease;
 }
 
 .founders-photo-wrap:hover {
-  box-shadow: 0 30px 78px rgba(2,32,71,.17);
+  box-shadow: 0 16px 38px rgba(2,32,71,.10);
 }
 
 .founders-photo {
@@ -763,11 +758,11 @@ button { font-family: inherit; }
   aspect-ratio: 4 / 3;
   object-fit: cover;
   image-rendering: auto;
-  transform: translate3d(var(--team-x), var(--team-y), 0) scale(1.008);
+  transform: scale(1);
   transition: transform .32s var(--wl-ease), filter .3s ease;
 }
 
-.founders-photo-wrap:hover .founders-photo { filter: saturate(1.03) contrast(1.015); }
+.founders-photo-wrap:hover .founders-photo { transform: scale(1.008); }
 
 .founders-photo-wrap figcaption {
   position: absolute;
@@ -823,7 +818,7 @@ button { font-family: inherit; }
 }
 
 .founder-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   box-shadow: var(--wl-shadow-hover);
   border-color: rgba(49,130,246,.24);
 }
@@ -1172,7 +1167,19 @@ button { font-family: inherit; }
   .founders-photo-wrap { max-width: 900px; margin-inline: auto; }
 }
 
-/* Founder photo quality guard: do not stretch the current source across the full canvas. */
-@media (min-width: 900px) {
-  .founders-photo-wrap { max-width: 760px; }
+
+
+/* Homepage refinement: restrained details and readable contact links. */
+.team-heading .section-body { white-space: pre-line; }
+.founders-photo-wrap { width: 100%; border-radius: 20px; }
+.founder-card { border-radius: 18px; transition-duration: .22s; }
+.founder-card::before { transition-duration: .22s; }
+.founder-contact strong, .contact-line strong { overflow-wrap: anywhere; }
+.home-service-tags { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 22px 0 0; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: #596479; }
+.partnership-link { font-weight: 700; color: var(--wl-blue); }
+.product-fallback { padding: 32px; text-align: center; }
+[hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+  .founders-photo-wrap:hover .founders-photo, .founder-card:hover { transform: none; }
 }
