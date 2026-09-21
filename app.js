@@ -182,7 +182,8 @@ function illustrationPath(service) {
   const fileNames = {
     birth: "birth-type.svg",
     haedurio: "haedurio.svg",
-    covert: "covert.svg"
+    covert: "covert.svg",
+    pixelwar: "pixelwar.svg"
   };
   const fileName = service.illustration || fileNames[service.theme] || "covert.svg";
 
@@ -513,6 +514,34 @@ function setupVoyagePointerMotion() {
   });
 }
 
+function setupFoundersMotion() {
+  const photo = $(".founders-photo-wrap");
+
+  if (!photo || photo.dataset.bound === "true" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  photo.dataset.bound = "true";
+
+  photo.addEventListener("pointermove", (event) => {
+    const rect = photo.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+    photo.style.setProperty("--team-rx", `${y * -2.2}deg`);
+    photo.style.setProperty("--team-ry", `${x * 2.2}deg`);
+    photo.style.setProperty("--team-x", `${x * 5}px`);
+    photo.style.setProperty("--team-y", `${y * 5}px`);
+  });
+
+  photo.addEventListener("pointerleave", () => {
+    photo.style.setProperty("--team-rx", "0deg");
+    photo.style.setProperty("--team-ry", "0deg");
+    photo.style.setProperty("--team-x", "0px");
+    photo.style.setProperty("--team-y", "0px");
+  });
+}
+
 function setupCopyEmail() {
   $$('[data-copy-email]').forEach((button) => {
     if (button.dataset.bound === "true") {
@@ -612,6 +641,7 @@ async function initialize() {
     setupHeaderScroll();
     setupMenu();
     setupVoyagePointerMotion();
+    setupFoundersMotion();
     setupCopyEmail();
     await renderLanguage(currentLanguage);
   } catch (error) {
