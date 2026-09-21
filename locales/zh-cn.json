@@ -28,32 +28,46 @@
     "phoneLabel": "电话",
     "emailLabel": "邮箱",
     "footerTerms": "服务条款",
-    "footerPrivacy": "隐私政策"
+    "footerPrivacy": "隐私政策",
+    "navTeam": "团队"
   },
   "home": {
     "logoKicker": "WHALE LAND / IDEA COMPANY",
     "logoNote": "SEOUL · IDEAS IN MOTION",
     "introEyebrow": "ABOUT WHALE LAND",
-    "introTitle": "用好玩又快乐的创意，\n让世界更多样、更幸福。",
-    "introBody": "Whale Land 是一家为日常与旅行增添小小乐趣的创意公司。\n我们自由结合技术、故事、角色与线下体验，\n打造让世界更多样、更幸福的服务。",
+    "introTitle": "把有趣的想法，\\n真正带到世界上。",
+    "introBody": "WhaleLand 是由两位高中同学于2025年创立的双人产品工作室。\\n从数字文化、旅行、社区到互动娱乐，\\n我们亲自打造并发布真正感兴趣的产品。",
     "serviceSectionEyebrow": "SERVICE INTRODUCTION",
     "serviceLinkCta": "查看服务页面",
     "serviceListEyebrow": "SERVICE HUB",
     "serviceListTitle": "现在可以体验的 Whale Land 服务",
     "serviceListBody": "每项服务都是拥有独立世界观和功能的项目。未来有新服务时，也会自然加入这个服务中枢。",
     "contactEyebrow": "CONTACT WHALE LAND",
-    "contactTitle": "欢迎新的提案、合作与咨询。",
-    "contactBody": "如有服务使用、合作、制作或商务咨询，请通过下方联系方式与我们联系。邮箱地址可以一键复制。",
+    "contactTitle": "欢迎投资、合作与新的提案。",
+    "contactBody": "如有投资、渠道、合作伙伴或产品协作需求，欢迎联系 WhaleLand。",
     "contactPhoneLabel": "电话",
     "contactEmailLabel": "邮箱",
     "contactCopyEmail": "复制咨询邮箱",
     "contactCopiedEmail": "邮箱已复制",
     "featuredServiceSlugs": [
       "korean-birth-type",
-      "haedurio",
-      "covert"
+      "covert",
+      "pixelwar",
+      "haedurio"
     ],
-    "principles": []
+    "principles": [],
+    "teamEyebrow": "FOUNDERS",
+    "teamTitle": "打造 WhaleLand 的两个人",
+    "teamBody": "从高中同学到共同创始人，自2025年起，两个人一起把想法做成真正的产品。",
+    "teamPhotoCaption": "不刻意摆拍，更接近真实工作的 WhaleLand 两位共同创始人。",
+    "founderJeonghuName": "KIM JEONGHU / 金正厚",
+    "founderJeonghuRole": "Co-founder / Business & Product",
+    "founderJeonghuBio": "负责商业策划、产品开发、销售与业务拓展。\\n主修机电一体化工程，并曾在全球工业传感器企业韩国法人从事技术销售。",
+    "founderWookName": "JANG WOOK / 张旭",
+    "founderWookRole": "Co-founder / Design & Operations",
+    "founderWookBio": "负责设计、产品开发与运营。\\n主修航空地理信息，并拥有餐饮现场的客户体验与门店运营经验。",
+    "founderEmailLabel": "邮箱",
+    "teamNote": "两位创始人从产品策划、开发、设计到销售和运营都亲自参与。我们重视小团队快速把想法做成真实产品并推向市场的执行力。"
   },
   "services": {
     "korean-birth-type": {
@@ -125,7 +139,7 @@
     },
     "haedurio": {
       "slug": "haedurio",
-      "order": "02",
+      "order": "04",
       "theme": "haedurio",
       "accent": "#060644",
       "illustration": "haedurio-logo.png",
@@ -192,7 +206,7 @@
     },
     "covert": {
       "slug": "covert",
-      "order": "03",
+      "order": "02",
       "theme": "covert",
       "accent": "#d4b26f",
       "illustration": "covert-bummy.png",
@@ -256,6 +270,73 @@
       ],
       "closingTitle": "首尔已经是作战区域。",
       "closingBody": "用于特工注册和最终报告的独立网站正在准备中。"
+    },
+    "pixelwar": {
+      "slug": "pixelwar",
+      "order": "03",
+      "theme": "pixelwar",
+      "accent": "#6c7cff",
+      "illustration": "pixelwar.svg",
+      "status": "开发中",
+      "category": "GLOBAL SOCIAL GAME",
+      "title": "PixelWar",
+      "cardTitle": "全世界在同一张地图上竞争。",
+      "summary": "在共享世界地图上争夺、涂色并竞争大量网格的实时社交项目。",
+      "homeEyebrow": "PIXELWAR",
+      "homeTitle": "一张世界地图。\n无数玩家的战争。",
+      "homeDescription": "占领网格、形成区域，并与世界各地用户竞争的\n全球实时社交游戏正在开发中。",
+      "heroTitle": "把世界变成共享画布的社交游戏。",
+      "heroLead": "PixelWar把真实世界地图变成巨大的网格棋盘，让玩家占领区域、协作并实时竞争。",
+      "visualCaption": "A persistent social world built on a shared map.",
+      "externalUrl": "",
+      "externalCta": "了解 PixelWar",
+      "tags": [
+        "WORLD MAP",
+        "REAL-TIME",
+        "COMMUNITY"
+      ],
+      "statementEyebrow": "ONE MAP, MANY PLAYERS",
+      "statementTitle": "地图不是背景，而是所有人共同改变的游戏棋盘。",
+      "statementBody": "每一个网格都会随玩家行动变化。个人的小动作形成区域颜色，并最终发展成全球竞争。",
+      "featuresTitle": "从一个网格开始的全球竞争",
+      "features": [
+        {
+          "index": "01",
+          "title": "真实地图基础",
+          "body": "基于真实世界地图探索并占领区域和网格。"
+        },
+        {
+          "index": "02",
+          "title": "实时变化",
+          "body": "玩家行动快速反映到共享地图上，让世界持续变化。"
+        },
+        {
+          "index": "03",
+          "title": "社区竞争",
+          "body": "个人、地区和社区在同一张地图上协作与竞争。"
+        }
+      ],
+      "processEyebrow": "CORE LOOP",
+      "processTitle": "放大、行动、改变世界。",
+      "steps": [
+        {
+          "index": "01",
+          "title": "探索区域",
+          "body": "在世界地图中移动，寻找想要参与的区域和网格。"
+        },
+        {
+          "index": "02",
+          "title": "占领网格",
+          "body": "留下行动，扩大自己的颜色与影响力。"
+        },
+        {
+          "index": "03",
+          "title": "竞争与协作",
+          "body": "与其他玩家共同形成地区级别的行动。"
+        }
+      ],
+      "closingTitle": "PixelWar目前正在开发中。",
+      "closingBody": "我们正在扩展一个让全球用户在同一张持续地图上互动的可玩Demo。"
     }
   }
 }
