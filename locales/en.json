@@ -285,8 +285,8 @@
       "homeEyebrow": "PIXELWAR",
       "homeTitle": "One world map.\nMillions of moves.",
       "homeDescription": "Claim cells, shape regions, and compete with people around the world\nin a persistent global social game.",
-      "heroTitle": "A social game that turns the world into a shared canvas.",
-      "heroLead": "PixelWar transforms a real world map into a massive cell board where players claim territory, collaborate, and compete in real time.",
+      "heroTitle": "A social game where the world competes on one shared map.",
+      "heroLead": "PixelWar turns the real world into a cell-based game board. Players claim areas, expand their color, and compete or collaborate with others.",
       "visualCaption": "A persistent social world built on a shared map.",
       "externalUrl": "",
       "externalCta": "Explore PixelWar",
@@ -296,19 +296,19 @@
         "COMMUNITY"
       ],
       "statementEyebrow": "ONE MAP, MANY PLAYERS",
-      "statementTitle": "The map is not a background. It is the game board everyone changes together.",
-      "statementBody": "Every cell becomes part of a living world shaped by player actions. Small individual moves become regional identity, and regional activity grows into global competition.",
-      "featuresTitle": "World-scale competition, one cell at a time",
+      "statementTitle": "The map itself is the game board.",
+      "statementBody": "Small actions change local territory, and local movements grow into larger competition.",
+      "featuresTitle": "PixelWar comes down to three things.",
       "features": [
         {
           "index": "01",
-          "title": "Real map foundation",
-          "body": "Explore and claim cells across a map based on the real world."
+          "title": "World map",
+          "body": "Explore a real-world map and claim cells in the places that matter to you."
         },
         {
           "index": "02",
-          "title": "Live changes",
-          "body": "Player actions update the shared world quickly and keep it visibly alive."
+          "title": "Live change",
+          "body": "Player actions appear quickly on the shared map so the world keeps moving."
         },
         {
           "index": "03",
@@ -335,8 +335,8 @@
           "body": "Create local movements with other players and communities."
         }
       ],
-      "closingTitle": "PixelWar is currently in development.",
-      "closingBody": "We are expanding a playable demo where global users move on the same persistent map."
+      "closingTitle": "A playable demo is in development.",
+      "closingBody": "We want the product to explain itself through play, not through a long presentation."
     }
   }
 }
