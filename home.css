@@ -1171,3 +1171,8 @@ button { font-family: inherit; }
   .team-inner { max-width: 980px; }
   .founders-photo-wrap { max-width: 900px; margin-inline: auto; }
 }
+
+/* Founder photo quality guard: do not stretch the current source across the full canvas. */
+@media (min-width: 900px) {
+  .founders-photo-wrap { max-width: 760px; }
+}
