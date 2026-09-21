@@ -878,7 +878,9 @@ button { font-family: inherit; }
 
 
 @media (max-width: 620px) {
-
+  .founder-card { min-height: 0; }
+  .founder-contact { align-items: flex-start; flex-direction: column; gap: 4px; }
+}
 
 /* --------------------------------------------------------------------------
    Chapter 8 · Contact
