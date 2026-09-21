@@ -380,9 +380,16 @@ function renderService(copy, language, serviceSlug) {
   );
 
   $$('[data-external-link]').forEach((link) => {
-    const externalUrl = service.externalUrl || "#";
+    const externalUrl = service.externalUrl || "";
     const isExternalUrl = /^https?:\/\//i.test(externalUrl);
 
+    if (!externalUrl) {
+      link.hidden = true;
+      link.removeAttribute("href");
+      return;
+    }
+
+    link.hidden = false;
     link.href = externalUrl;
     link.textContent = service.externalCta || copy.common.learnMore;
 
