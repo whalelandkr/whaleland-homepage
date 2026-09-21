@@ -66,3 +66,4 @@
  .service-feature-panel[data-theme="pixelwar"] .pw-preview { transform:none; }
 }
 @media(prefers-reduced-motion:reduce) { .pw-page *, .pw-preview, .pw-preview * { transition:none!important; animation:none!important; }.service-feature-panel[data-theme="pixelwar"] .pw-preview { transform:none; } }
+.service-feature-panel[data-theme="pixelwar"] .home-service-tags { color:#bdc8ed; margin-bottom:24px; }
