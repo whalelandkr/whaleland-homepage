@@ -28,32 +28,46 @@
     "phoneLabel": "電話",
     "emailLabel": "メール",
     "footerTerms": "利用規約",
-    "footerPrivacy": "プライバシーポリシー"
+    "footerPrivacy": "プライバシーポリシー",
+    "navTeam": "チーム"
   },
   "home": {
     "logoKicker": "WHALE LAND / IDEA COMPANY",
     "logoNote": "SEOUL · IDEAS IN MOTION",
     "introEyebrow": "ABOUT WHALE LAND",
-    "introTitle": "楽しく遊び心のあるアイデアで、\n世界をもっと多様で幸せに。",
-    "introBody": "Whale Landは、日常と旅に小さな楽しさを添えるアイデアカンパニーです。\n技術・物語・キャラクター・オフライン体験を自由に組み合わせ、\n世界を少しだけ多様で幸せにするサービスをつくっています。",
+    "introTitle": "面白いアイデアを、\\n本当に世の中へ。",
+    "introBody": "WhaleLandは2025年、高校時代からの友人二人が始めたプロダクトスタジオです。\\nデジタルカルチャー、旅行、コミュニティ、インタラクティブエンターテインメントまで、\\n面白いと思ったアイデアを自分たちでつくり、リリースします。",
     "serviceSectionEyebrow": "SERVICE INTRODUCTION",
     "serviceLinkCta": "サービスページを見る",
     "serviceListEyebrow": "SERVICE HUB",
     "serviceListTitle": "今出会えるWhale Landのサービス",
     "serviceListBody": "それぞれのサービスは、独自の世界観と役割を持つ独立したプロジェクトです。新しいサービスが生まれたら、このハブに自然に追加されます。",
     "contactEyebrow": "CONTACT WHALE LAND",
-    "contactTitle": "新しい提案、協業、お問い合わせをお待ちしています。",
-    "contactBody": "サービス利用、提携、制作、事業に関するお問い合わせは、下記の連絡先へお送りください。メールアドレスはボタンでコピーできます。",
+    "contactTitle": "投資、提携、新しい提案を歓迎します。",
+    "contactBody": "投資、流通、パートナーシップ、プロダクト協業についてお気軽にご連絡ください。",
     "contactPhoneLabel": "電話",
     "contactEmailLabel": "メール",
     "contactCopyEmail": "問い合わせメールをコピー",
     "contactCopiedEmail": "メールをコピーしました",
     "featuredServiceSlugs": [
       "korean-birth-type",
-      "haedurio",
-      "covert"
+      "covert",
+      "pixelwar",
+      "haedurio"
     ],
-    "principles": []
+    "principles": [],
+    "teamEyebrow": "FOUNDERS",
+    "teamTitle": "WhaleLandをつくる二人",
+    "teamBody": "高校時代からの友人が共同創業者となり、2025年から二人でアイデアを実際のプロダクトにしています。",
+    "teamPhotoCaption": "演出よりも実際の姿に近い、WhaleLandの共同創業者二人。",
+    "founderJeonghuName": "KIM JEONGHU / キム・ジョンフ",
+    "founderJeonghuRole": "Co-founder / Business & Product",
+    "founderJeonghuBio": "事業企画、プロダクト開発、営業、事業開発を担当。\\nメカトロニクス工学を専攻し、グローバル産業用センサー企業の韓国法人で技術営業を経験しました。",
+    "founderWookName": "JANG WOOK / チャン・ウク",
+    "founderWookRole": "Co-founder / Design & Operations",
+    "founderWookBio": "デザイン、プロダクト開発、運営を担当。\\n航空地理情報を専攻し、飲食業の現場で顧客体験と店舗運営を経験しました。",
+    "founderEmailLabel": "メール",
+    "teamNote": "二人の創業者が企画、開発、デザイン、営業、運営まで直接行います。小さなチームだからこそ、アイデアを素早く実際のプロダクトにする実行力を大切にしています。"
   },
   "services": {
     "korean-birth-type": {
@@ -125,7 +139,7 @@
     },
     "haedurio": {
       "slug": "haedurio",
-      "order": "02",
+      "order": "04",
       "theme": "haedurio",
       "accent": "#060644",
       "illustration": "haedurio-logo.png",
@@ -192,7 +206,7 @@
     },
     "covert": {
       "slug": "covert",
-      "order": "03",
+      "order": "02",
       "theme": "covert",
       "accent": "#d4b26f",
       "illustration": "covert-bummy.png",
@@ -256,6 +270,73 @@
       ],
       "closingTitle": "ソウルはすでに作戦区域です。",
       "closingBody": "エージェント登録と最終報告のための独立サイトは準備中です。"
+    },
+    "pixelwar": {
+      "slug": "pixelwar",
+      "order": "03",
+      "theme": "pixelwar",
+      "accent": "#6c7cff",
+      "illustration": "pixelwar.svg",
+      "status": "開発中",
+      "category": "GLOBAL SOCIAL GAME",
+      "title": "PixelWar",
+      "cardTitle": "世界中のユーザーが一つの地図で競います。",
+      "summary": "世界地図上のセルを取り、色を塗り、競い合うリアルタイム・ソーシャルプロジェクトです。",
+      "homeEyebrow": "PIXELWAR",
+      "homeTitle": "一つの世界地図。\n無数のプレイヤーの戦い。",
+      "homeDescription": "セルを獲得し、地域をつくり、世界中のユーザーと競う\nグローバルソーシャルゲームを開発中です。",
+      "heroTitle": "世界を共有キャンバスに変えるソーシャルゲーム。",
+      "heroLead": "PixelWarは実際の世界地図を巨大なセルボードに変え、プレイヤーが領域を獲得し、協力し、競い合うインタラクティブプロジェクトです。",
+      "visualCaption": "A persistent social world built on a shared map.",
+      "externalUrl": "",
+      "externalCta": "PixelWarを見る",
+      "tags": [
+        "WORLD MAP",
+        "REAL-TIME",
+        "COMMUNITY"
+      ],
+      "statementEyebrow": "ONE MAP, MANY PLAYERS",
+      "statementTitle": "地図は背景ではなく、みんなで変えるゲーム盤です。",
+      "statementBody": "一つ一つのセルがプレイヤーの行動で変化し、小さな動きが地域の色となり、世界規模の競争へつながります。",
+      "featuresTitle": "一つのセルから始まる世界規模の競争",
+      "features": [
+        {
+          "index": "01",
+          "title": "リアル地図ベース",
+          "body": "実際の世界地図をもとに地域とセルを探索し、獲得します。"
+        },
+        {
+          "index": "02",
+          "title": "リアルタイム変化",
+          "body": "プレイヤーの行動が素早く地図に反映され、生きた世界をつくります。"
+        },
+        {
+          "index": "03",
+          "title": "コミュニティ競争",
+          "body": "個人、地域、コミュニティが同じ地図で協力し競います。"
+        }
+      ],
+      "processEyebrow": "CORE LOOP",
+      "processTitle": "拡大して、選び、世界を変える。",
+      "steps": [
+        {
+          "index": "01",
+          "title": "地域探索",
+          "body": "世界地図を移動し、狙う地域やセルを探します。"
+        },
+        {
+          "index": "02",
+          "title": "セル獲得",
+          "body": "セルに行動を残し、自分の色と影響力を広げます。"
+        },
+        {
+          "index": "03",
+          "title": "競争と協力",
+          "body": "他のプレイヤーと地域単位の動きを生み出します。"
+        }
+      ],
+      "closingTitle": "PixelWarは現在開発中です。",
+      "closingBody": "世界中のユーザーが同じ地図上で動くプレイ可能なデモを拡張しています。"
     }
   }
 }
