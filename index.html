@@ -27,7 +27,7 @@
            url('https://cdn.jsdelivr.net/gh/fonts-archive/GmarketSans/GmarketSansBold.woff') format('woff');
     }
   </style>
-  <link rel="stylesheet" href="./home.css?v=10" />
+  <link rel="stylesheet" href="./home.css?v=11" />
 </head>
 <body>
   <header class="site-header">
@@ -40,6 +40,7 @@
       <a href="#company" data-home-section="company" data-i18n="common.navCompany"></a>
       <a href="#service-story" data-home-section="service-story" data-i18n="common.navServiceIntro"></a>
       <a href="#service-list" data-home-section="service-list" data-i18n="common.navServiceList"></a>
+      <a href="#team" data-home-section="team" data-i18n="common.navTeam"></a>
       <a href="#contact" data-home-section="contact" data-i18n="common.navContact"></a>
     </nav>
 
@@ -47,8 +48,6 @@
       <nav class="language-nav" aria-label="Language selector">
         <button type="button" data-lang="ko">KR</button>
         <button type="button" data-lang="en">EN</button>
-        <button type="button" data-lang="ja">JP</button>
-        <button type="button" data-lang="zh-cn">CN</button>
       </nav>
 
       <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Menu">
@@ -61,6 +60,7 @@
     <a href="#company" data-home-section="company" data-i18n="common.navCompany"></a>
     <a href="#service-story" data-home-section="service-story" data-i18n="common.navServiceIntro"></a>
     <a href="#service-list" data-home-section="service-list" data-i18n="common.navServiceList"></a>
+    <a href="#team" data-home-section="team" data-i18n="common.navTeam"></a>
     <a href="#contact" data-home-section="contact" data-i18n="common.navContact"></a>
   </nav>
 
@@ -105,7 +105,61 @@
       </div>
     </section>
 
-    <!-- Chapter 7 · Contact -->
+
+    <!-- Chapter 7 · Founders -->
+    <section class="chapter team-chapter" id="team">
+      <div class="section-inner team-inner">
+        <div class="team-heading">
+          <p class="eyebrow reveal" data-i18n="home.teamEyebrow"></p>
+          <h2 class="section-title reveal" style="--rd:.08s" data-i18n="home.teamTitle"></h2>
+          <p class="section-body reveal" style="--rd:.16s" data-i18n="home.teamBody"></p>
+        </div>
+
+        <figure class="founders-photo-wrap reveal" style="--rd:.08s">
+          <img class="founders-photo" src="./assets/founders.jpg" alt="Whale Land founders Kim Jeonghu and Jang Wook" />
+          <figcaption data-i18n="home.teamPhotoCaption"></figcaption>
+        </figure>
+
+        <div class="founder-grid">
+          <article class="founder-card reveal" style="--rd:.04s">
+            <div class="founder-card-top">
+              <span class="founder-index">01</span>
+              <div>
+                <h3 data-i18n="home.founderJeonghuName"></h3>
+                <p class="founder-role" data-i18n="home.founderJeonghuRole"></p>
+              </div>
+            </div>
+            <p class="founder-bio" data-i18n="home.founderJeonghuBio"></p>
+            <a class="founder-contact" href="mailto:kjhoo@whalelandkr.com">
+              <span data-i18n="home.founderEmailLabel"></span>
+              <strong>kjhoo@whalelandkr.com</strong>
+            </a>
+          </article>
+
+          <article class="founder-card reveal" style="--rd:.12s">
+            <div class="founder-card-top">
+              <span class="founder-index">02</span>
+              <div>
+                <h3 data-i18n="home.founderWookName"></h3>
+                <p class="founder-role" data-i18n="home.founderWookRole"></p>
+              </div>
+            </div>
+            <p class="founder-bio" data-i18n="home.founderWookBio"></p>
+            <a class="founder-contact" href="mailto:woogiboogi@whalelandkr.com">
+              <span data-i18n="home.founderEmailLabel"></span>
+              <strong>woogiboogi@whalelandkr.com</strong>
+            </a>
+          </article>
+        </div>
+
+        <div class="team-note reveal" style="--rd:.18s">
+          <span class="team-note-dot" aria-hidden="true"></span>
+          <p data-i18n="home.teamNote"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapter 8 · Contact -->
     <section class="chapter contact-chapter" id="contact">
       <div class="section-inner">
         <div class="contact-card reveal">
@@ -181,6 +235,6 @@
     </div>
   </footer>
 
-  <script src="./app.js?v=10"></script>
+  <script src="./app.js?v=11"></script>
 </body>
 </html>
