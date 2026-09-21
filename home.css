@@ -849,7 +849,8 @@ button { font-family: inherit; }
 .founder-card h3 {
   margin: 0 0 4px;
   font-family: var(--wl-display);
-  font-size: clamp(23px, 3vw, 30px);
+  font-size: clamp(20px, 1.75vw, 24px);
+  word-break: keep-all;
   line-height: 1.2;
   letter-spacing: -.025em;
 }
