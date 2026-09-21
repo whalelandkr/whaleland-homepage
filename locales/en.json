@@ -59,7 +59,6 @@
     "teamEyebrow": "FOUNDERS",
     "teamTitle": "The two people building WhaleLand",
     "teamBody": "High-school friends turned co-founders.\nBuilding products together since 2025.",
-    "teamPhotoCaption": "The two founders of WhaleLand — candid, hands-on, and building together.",
     "founderJeonghuName": "KIM JEONGHU",
     "founderJeonghuRole": "Co-founder / Business & Product",
     "founderJeonghuBio": "Leads business strategy, product development, sales, and business development.\nHe studied Mechatronics Engineering and has prior experience in technical sales at the Korean subsidiary of a global industrial sensor company.",
@@ -67,9 +66,10 @@
     "founderWookRole": "Co-founder / Design & Operations",
     "founderWookBio": "Leads design, product development, and operations.\nHe studied Aeronautical Geographic Information and has hands-on experience in customer service and day-to-day operations in the food service industry.",
     "founderEmailLabel": "Email",
-    "teamNote": "The two founders work end-to-end across product strategy, development, design, sales, and operations. We value the ability to turn an idea into a real product and put it in front of users quickly.",
     "contactWookLabel": "Jang Wook",
-    "partnershipCta": "Investment / Partnership"
+    "partnershipCta": "Investment / Partnership",
+    "togetherTitle": "Business and product. Design and operations.\nDifferent roles, one product team.",
+    "togetherBody": "From Korean Birth Type and C.O.V.E.R.T Seoul to PixelWar,\nwe turn ideas into real products together."
   },
   "services": {
     "korean-birth-type": {
@@ -280,49 +280,66 @@
       "accent": "#6c7cff",
       "illustration": "pixelwar.svg",
       "status": "IN DEVELOPMENT",
-      "category": "GLOBAL SOCIAL GAME",
       "title": "PixelWar",
-      "cardTitle": "The world competes on one shared map.",
-      "summary": "A real-time social project where people claim, color, and compete over millions of cells on a shared world map.",
       "homeEyebrow": "PIXELWAR",
-      "homeTitle": "One world map.\nMillions of moves.",
-      "homeDescription": "Claim cells, expand your colors, and collaborate or compete with players around the world.",
-      "heroTitle": "A social game where the world competes on one shared map.",
-      "heroLead": "PixelWar turns the real world map into a cell-based game board.\nClaim territory, expand your colors, and collaborate or compete with others.",
-      "visualCaption": "A persistent social world built on a shared map.",
       "externalUrl": "",
       "externalCta": "Explore PixelWar",
+      "category": "GLOBAL TERRITORY GAME",
       "tags": [
         "WORLD MAP",
-        "REAL-TIME",
-        "COMMUNITY"
+        "100M CELLS",
+        "REAL-TIME TERRITORY"
       ],
-      "statementEyebrow": "ONE MAP, MANY PLAYERS",
-      "statementTitle": "The map itself is the game board.",
-      "statementBody": "Small actions change local territory, and local movements grow into larger competition.",
-      "featuresTitle": "PixelWar comes down to three things.",
-      "features": [
-        {
-          "index": "01",
-          "title": "World map",
-          "body": "Explore a real-world map and claim cells in the places that matter to you."
-        },
-        {
-          "index": "02",
-          "title": "Live change",
-          "body": "Player actions are quickly reflected on the shared map."
-        },
-        {
-          "index": "03",
-          "title": "Community competition",
-          "body": "Individuals, regions, and communities collaborate and compete on the same map."
-        }
+      "cardTitle": "One world. 100 million territories.",
+      "summary": "A time-limited, real-time territory game in development. Claim and reclaim territory for your Homeland.",
+      "homeTitle": "One world.\n100 million territories.",
+      "homeDescription": "The real world map, divided into 100 million playable cells.\nClaim territory, take it back, and expand the front for your Homeland.",
+      "heroTitle": "One world.\n100 million territories.",
+      "heroLead": "PixelWar is a time-limited, real-time territory game on the real world map. Choose your Homeland, use Supply to claim and reclaim territory, and expand the front.",
+      "worldTitle": "The real world becomes the board.",
+      "worldBody": "Land, rivers, canals, and lakes become square cells. Use your Homeland’s territory as a foothold to extend the front through four neighboring directions.",
+      "cellCount": "100 million",
+      "movesTitle": "One cell can move the front.",
+      "moves": [
+        [
+          "CLAIM",
+          "Take your territory",
+          "Use Supply to claim unclaimed land, reclaim lost territory, and enter another Homeland’s territory."
+        ],
+        [
+          "CONNECT",
+          "Build the front together",
+          "Territory held by players of the same Homeland becomes a foothold for the next capture. Individual moves build a shared front."
+        ],
+        [
+          "HOLD",
+          "Defend. Return. Repeat.",
+          "Protection periods, changing capture costs, and recapture keep territory contested. One capture is not the end."
+        ]
       ],
-      "processEyebrow": "",
-      "processTitle": "",
-      "steps": [],
-      "closingTitle": "A playable demo is in development.",
-      "closingBody": "Our goal is to show the idea through actual play."
+      "supply": "Earn Supply through time, attendance, events, and optional ads, or purchase more. Purchases give you more Supply; spending itself does not change processing order, protection, entry rules, rank abilities, or Unit abilities.",
+      "rankTitle": "More perspectives. More stories.",
+      "rankBody": "Country territory, Player battles, and Unit front activity have their own records. No single overall ranking defines every achievement.",
+      "ranks": [
+        [
+          "COUNTRY",
+          "Territory controlled"
+        ],
+        [
+          "PLAYER",
+          "The holder’s battle record"
+        ],
+        [
+          "UNIT",
+          "Shared front activity"
+        ]
+      ],
+      "unitNote": "A Unit brings together up to 1,000 players of the same Homeland. Country controls territory; Player is its holder. Units do not own territory.",
+      "finalTitle": "The war ends.\nThe world you changed remains.",
+      "finalBody": "At ceasefire, the world is frozen as the Final Map. Country, Player, Unit, and Cell histories remain in the Archive.",
+      "devNote": "A playable demo is in development.",
+      "mapAlt": "Concept illustration of a world map with square cells, colored territories, and a front. Not actual gameplay.",
+      "previewNote": "World and territory concept · Not actual gameplay"
     }
   }
 }

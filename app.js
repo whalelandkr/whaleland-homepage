@@ -206,6 +206,67 @@ function isExternalUrl(url) {
   return /^https?:\/\//i.test(url);
 }
 
+// An explicitly labelled, schematic preview. No live game data is simulated.
+function pixelWarMap(service, id) {
+  const land = 'M45 70L73 50 103 49 116 34 147 40 159 56 186 56 190 75 176 94 156 101 145 125 126 139 125 155 143 165 149 185 133 180 119 163 103 151 91 122 74 119 65 104 45 98Z M170 35L195 28 217 35 211 58 190 73 177 60Z M151 177L173 182 189 199 202 208 198 231 180 249 170 276 158 288 151 264 142 245 140 221 130 203 135 186Z M276 97L286 86 300 87 306 67 323 59 330 77 317 97 323 107 310 120 290 115 281 122 268 114Z M279 126L308 122 330 134 342 156 329 181 320 194 313 220 297 229 285 213 280 184 264 168 263 145Z M324 83L347 65 380 58 395 49 431 53 455 47 490 64 534 70 554 87 533 102 513 104 501 122 480 132 472 154 460 156 452 178 441 167 437 143 414 133 407 151 392 175 381 158 375 137 354 131 342 112 321 108Z M469 189L487 195 501 205 487 212 470 204 453 202 446 194Z M482 228L510 215 539 230 545 250 531 269 502 271 479 254Z M553 274L563 263 567 272 556 288 549 291Z M340 213L348 204 350 221 343 232Z M512 129L519 117 524 132 515 146 507 149Z M262 99L268 94 270 107 262 112Z';
+  return `<figure class="pw-preview">
+    <div class="pw-preview-bar"><span>PIXELWAR / WORLD</span><span>CONCEPT PREVIEW</span></div>
+    <svg class="pw-map" viewBox="0 0 600 320" role="img" aria-label="${escapeHtml(service.mapAlt)}">
+      <defs>
+        <pattern id="${id}-sea" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#dde5ee" stroke-width=".5"/></pattern>
+        <pattern id="${id}-cells" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M6 0H0V6" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width=".65"/></pattern>
+        <clipPath id="${id}-land"><path d="${land}"/></clipPath>
+      </defs>
+      <rect width="600" height="320" fill="#edf2f7"/>
+      <rect width="600" height="320" fill="url(#${id}-sea)"/>
+      <path d="${land}" fill="#cbd7e3" stroke="#b7c6d5" stroke-width=".8"/>
+      <g clip-path="url(#${id}-land)">
+        <path d="M60 66H150V84H168V108H132V126H96V108H60Z M270 132H312V150H324V174H300V180H276Z" fill="#9aa9ee"/>
+        <path d="M330 78H432V96H414V120H378V132H354V114H330Z M144 198H186V222H174V246H150Z" fill="#8fc7bc"/>
+        <path d="M438 96H528V114H504V144H474V150H456V132H438Z M492 228H540V252H516V264H492Z" fill="#e7be7f"/>
+        <rect width="600" height="320" fill="url(#${id}-cells)"/>
+        <path class="pw-front" d="M432 96H438V114H444V126H456V132H462V150" fill="none" stroke="#4f629a" stroke-width="2" stroke-dasharray="3 3"/>
+        <g class="pw-selected" fill="#6178dc" stroke="#fff" stroke-width="1"><rect x="432" y="102" width="6" height="6"/><rect x="438" y="114" width="6" height="6"/><rect x="444" y="126" width="6" height="6"/></g>
+      </g>
+    </svg>
+    <figcaption><span>${escapeHtml(service.previewNote)}</span><span class="pw-preview-state">DEMO IN DEVELOPMENT</span></figcaption>
+  </figure>`;
+}
+
+function renderPixelWar(service) {
+  const e = escapeHtml;
+  const title = (eyebrow, heading) => `<p class="pw-eyebrow">${eyebrow}</p><h2>${e(heading)}</h2>`;
+  $("main").innerHTML = `<div class="pw-page">
+    <section class="pw-hero pw-section">
+      <div class="pw-hero-copy reveal is-visible">
+        <p class="pw-eyebrow">PIXELWAR / GLOBAL TERRITORY GAME</p>
+        <h1>${e(service.heroTitle)}</h1>
+        <p class="pw-lead">${e(service.heroLead)}</p>
+        <span class="pw-status">IN DEVELOPMENT</span>
+      </div>
+      <div class="pw-hero-art reveal is-visible">${pixelWarMap(service, 'detail')}</div>
+    </section>
+    <section class="pw-world pw-section reveal">
+      <div>${title('THE WORLD IS THE BOARD', service.worldTitle)}<p>${e(service.worldBody)}</p></div>
+      <div class="pw-count"><strong>${e(service.cellCount)}</strong><span>PLAYABLE CELLS</span><div class="pw-cell-cross" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></div>
+    </section>
+    <section class="pw-moves pw-section">
+      <div class="reveal">${title('HOW THE WAR MOVES', service.movesTitle)}</div>
+      <div class="pw-three">${service.moves.map((m,i)=>`<article class="pw-move reveal" style="--rd:${i*.12}s"><div class="pw-move-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></div><p class="pw-eyebrow">0${i+1} / ${e(m[0])}</p><h3>${e(m[1])}</h3><p>${e(m[2])}</p></article>`).join('')}</div>
+      <p class="pw-supply reveal"><strong>SUPPLY</strong>${e(service.supply)}</p>
+    </section>
+    <section class="pw-rankings pw-section reveal">
+      ${title('MORE THAN ONE RANKING', service.rankTitle)}<p class="pw-rank-intro">${e(service.rankBody)}</p>
+      <div class="pw-three pw-rank-grid">${service.ranks.map((r)=>`<div><span class="pw-eyebrow">${e(r[0])}</span><h3>${e(r[1])}</h3></div>`).join('')}</div>
+      <p class="pw-unit-note">${e(service.unitNote)}</p>
+    </section>
+    <section class="pw-final pw-section reveal">
+      <div class="pw-final-mark" aria-hidden="true"><span>FINAL MAP</span><i></i><i></i><i></i><i></i></div>
+      <div>${title('EVERY WAR ENDS', service.finalTitle)}<p>${e(service.finalBody)}</p><p class="pw-dev-note">${e(service.devNote)}</p></div>
+    </section>
+  </div>`;
+}
+
 function createServiceFeaturePanel(service, language, index) {
   const section = document.createElement("section");
   section.className = "chapter service-feature-panel";
@@ -233,11 +294,8 @@ function createServiceFeaturePanel(service, language, index) {
           ${escapeHtml(ctaLabel)}
         </a>
       </div>
-      <div class="service-feature-visual reveal" style="--rd:.15s" aria-hidden="true">
-        <div class="service-feature-orbit"></div>
-        <div class="service-feature-frame">
-          <img src="${illustrationPath(service)}" alt="" />
-        </div>
+      <div class="service-feature-visual reveal" style="--rd:.15s">
+        ${service.slug === "pixelwar" ? pixelWarMap(service, "home") : `<div class="service-feature-orbit" aria-hidden="true"></div><div class="service-feature-frame"><img src="${illustrationPath(service)}" alt="" /></div>`}
       </div>
     </div>
   `;
@@ -331,17 +389,16 @@ function renderService(copy, language, serviceSlug) {
   }
 
   document.body.dataset.theme = service.theme;
-  if (serviceSlug === "pixelwar") {
-    $(".process-section")?.remove();
-    $(".feature-section .section-head")?.remove();
-    $("#serviceVisualCaption")?.remove();
-    $(".service-hero [data-external-link]")?.remove();
-  }
   document.title = `${service.title} — Whale Land`;
 
   const metaDescription = $('meta[name="description"]');
   if (metaDescription) {
     metaDescription.content = service.summary;
+  }
+
+  if (serviceSlug === "pixelwar") {
+    renderPixelWar(service);
+    return;
   }
 
   const textMap = {
