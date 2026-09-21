@@ -28,32 +28,46 @@
     "phoneLabel": "Tel",
     "emailLabel": "Email",
     "footerTerms": "Terms of Service",
-    "footerPrivacy": "Privacy Policy"
+    "footerPrivacy": "Privacy Policy",
+    "navTeam": "Team"
   },
   "home": {
     "logoKicker": "WHALE LAND / IDEA COMPANY",
     "logoNote": "SEOUL · IDEAS IN MOTION",
     "introEyebrow": "ABOUT WHALE LAND",
-    "introTitle": "Playful ideas for a more\nvaried and happier world.",
-    "introBody": "Whale Land is an idea company that adds small sparks of fun to everyday life and travel.\nWe freely weave technology, stories, characters, and offline experiences\ninto services that make the world a little more diverse and happy.",
+    "introTitle": "We turn playful ideas\\ninto real products.",
+    "introBody": "WhaleLand is a two-founder product studio started by high-school friends in 2025.\\nAcross digital culture, travel, community, and interactive entertainment,\\nwe build and launch ideas we genuinely find worth making.",
     "serviceSectionEyebrow": "SERVICE INTRODUCTION",
     "serviceLinkCta": "View service page",
     "serviceListEyebrow": "SERVICE HUB",
     "serviceListTitle": "Whale Land services you can meet now",
     "serviceListBody": "Each service is an independent project with its own world and purpose. New services can be added to this hub as Whale Land evolves.",
     "contactEyebrow": "CONTACT WHALE LAND",
-    "contactTitle": "We welcome proposals, partnerships, and questions.",
-    "contactBody": "For service use, partnerships, production, or business inquiries, contact us below. You can copy the email address with one button.",
+    "contactTitle": "Investment, partnerships, and new ideas are welcome.",
+    "contactBody": "For investment, distribution, partnerships, or product collaboration, get in touch with WhaleLand.",
     "contactPhoneLabel": "Phone",
     "contactEmailLabel": "Email",
     "contactCopyEmail": "Copy inquiry email",
     "contactCopiedEmail": "Email copied",
     "featuredServiceSlugs": [
       "korean-birth-type",
-      "haedurio",
-      "covert"
+      "covert",
+      "pixelwar",
+      "haedurio"
     ],
-    "principles": []
+    "principles": [],
+    "teamEyebrow": "FOUNDERS",
+    "teamTitle": "The two people building WhaleLand",
+    "teamBody": "High-school friends turned co-founders, building real products together since 2025.",
+    "teamPhotoCaption": "The two founders of WhaleLand — candid, hands-on, and building together.",
+    "founderJeonghuName": "KIM JEONGHU",
+    "founderJeonghuRole": "Co-founder / Business & Product",
+    "founderJeonghuBio": "Leads business strategy, product development, sales, and business development.\\nHe studied Mechatronics Engineering and has prior experience in technical sales at the Korean subsidiary of a global industrial sensor company.",
+    "founderWookName": "JANG WOOK",
+    "founderWookRole": "Co-founder / Design & Operations",
+    "founderWookBio": "Leads design, product development, and operations.\\nHe studied Aeronautical Geographic Information and has hands-on experience in customer service and day-to-day operations in the food service industry.",
+    "founderEmailLabel": "Email",
+    "teamNote": "The two founders work end-to-end across product strategy, development, design, sales, and operations. We value the ability to turn an idea into a real product and put it in front of users quickly."
   },
   "services": {
     "korean-birth-type": {
@@ -125,7 +139,7 @@
     },
     "haedurio": {
       "slug": "haedurio",
-      "order": "02",
+      "order": "04",
       "theme": "haedurio",
       "accent": "#060644",
       "illustration": "haedurio-logo.png",
@@ -192,7 +206,7 @@
     },
     "covert": {
       "slug": "covert",
-      "order": "03",
+      "order": "02",
       "theme": "covert",
       "accent": "#d4b26f",
       "illustration": "covert-bummy.png",
@@ -256,6 +270,73 @@
       ],
       "closingTitle": "Seoul is already an operation zone.",
       "closingBody": "The independent site for agent registration and final reports is being prepared."
+    },
+    "pixelwar": {
+      "slug": "pixelwar",
+      "order": "03",
+      "theme": "pixelwar",
+      "accent": "#6c7cff",
+      "illustration": "pixelwar.svg",
+      "status": "IN DEVELOPMENT",
+      "category": "GLOBAL SOCIAL GAME",
+      "title": "PixelWar",
+      "cardTitle": "The world competes on one shared map.",
+      "summary": "A real-time social project where people claim, color, and compete over millions of cells on a shared world map.",
+      "homeEyebrow": "PIXELWAR",
+      "homeTitle": "One world map.\nMillions of moves.",
+      "homeDescription": "Claim cells, shape regions, and compete with people around the world\nin a persistent global social game.",
+      "heroTitle": "A social game that turns the world into a shared canvas.",
+      "heroLead": "PixelWar transforms a real world map into a massive cell board where players claim territory, collaborate, and compete in real time.",
+      "visualCaption": "A persistent social world built on a shared map.",
+      "externalUrl": "",
+      "externalCta": "Explore PixelWar",
+      "tags": [
+        "WORLD MAP",
+        "REAL-TIME",
+        "COMMUNITY"
+      ],
+      "statementEyebrow": "ONE MAP, MANY PLAYERS",
+      "statementTitle": "The map is not a background. It is the game board everyone changes together.",
+      "statementBody": "Every cell becomes part of a living world shaped by player actions. Small individual moves become regional identity, and regional activity grows into global competition.",
+      "featuresTitle": "World-scale competition, one cell at a time",
+      "features": [
+        {
+          "index": "01",
+          "title": "Real map foundation",
+          "body": "Explore and claim cells across a map based on the real world."
+        },
+        {
+          "index": "02",
+          "title": "Live changes",
+          "body": "Player actions update the shared world quickly and keep it visibly alive."
+        },
+        {
+          "index": "03",
+          "title": "Community competition",
+          "body": "Individuals, regions, and communities collaborate and compete on the same map."
+        }
+      ],
+      "processEyebrow": "CORE LOOP",
+      "processTitle": "Zoom in, make a move, change the world.",
+      "steps": [
+        {
+          "index": "01",
+          "title": "Explore",
+          "body": "Move across the world map and find a region or cell to act on."
+        },
+        {
+          "index": "02",
+          "title": "Claim",
+          "body": "Leave your mark and expand your color and influence."
+        },
+        {
+          "index": "03",
+          "title": "Compete together",
+          "body": "Create local movements with other players and communities."
+        }
+      ],
+      "closingTitle": "PixelWar is currently in development.",
+      "closingBody": "We are expanding a playable demo where global users move on the same persistent map."
     }
   }
 }
