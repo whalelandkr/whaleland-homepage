@@ -285,8 +285,8 @@
       "homeEyebrow": "PIXELWAR",
       "homeTitle": "하나의 세계 지도.\n수많은 사람들의 전쟁.",
       "homeDescription": "셀을 차지하고, 지역을 만들고, 전 세계 사용자와 경쟁하는\n실시간 글로벌 소셜 게임을 개발하고 있습니다.",
-      "heroTitle": "세계를 하나의 공유 캔버스로 만드는 소셜 게임.",
-      "heroLead": "PixelWar는 실제 세계 지도를 거대한 셀 보드로 바꾸고, 사용자들이 지역을 차지하고 협력하며 경쟁하도록 설계한 인터랙티브 프로젝트입니다.",
+      "heroTitle": "전 세계가 같은 지도 위에서 경쟁하는 소셜 게임.",
+      "heroLead": "PixelWar는 실제 세계 지도를 셀 단위의 게임판으로 바꿉니다. 사용자는 지역을 차지하고, 색을 넓히고, 다른 사람들과 협력하거나 경쟁합니다.",
       "visualCaption": "A persistent social world built on a shared map.",
       "externalUrl": "",
       "externalCta": "PixelWar 살펴보기",
@@ -296,24 +296,24 @@
         "COMMUNITY"
       ],
       "statementEyebrow": "ONE MAP, MANY PLAYERS",
-      "statementTitle": "지도는 배경이 아니라, 모두가 함께 바꾸는 게임판입니다.",
-      "statementBody": "확대하면 보이는 셀 하나하나가 플레이어의 행동으로 바뀝니다. 개인의 작은 선택이 지역의 색이 되고, 지역의 움직임이 전 세계의 경쟁으로 이어집니다.",
-      "featuresTitle": "셀 하나에서 시작되는 세계 규모의 경쟁",
+      "statementTitle": "지도 자체가 게임판입니다.",
+      "statementBody": "한 사람의 작은 행동이 지역의 색을 바꾸고, 지역의 움직임이 다시 더 큰 경쟁으로 이어집니다.",
+      "featuresTitle": "PixelWar의 핵심은 세 가지입니다.",
       "features": [
         {
           "index": "01",
-          "title": "실제 지도 기반",
-          "body": "실제 세계 지도를 기반으로 지역과 셀을 탐색하고 점유합니다."
+          "title": "세계 지도",
+          "body": "실제 세계 지도를 기반으로 원하는 지역을 탐색하고 셀을 차지합니다."
         },
         {
           "index": "02",
           "title": "실시간 변화",
-          "body": "사용자의 행동이 지도에 빠르게 반영되어 살아있는 세계를 만듭니다."
+          "body": "사용자의 행동이 공유 지도에 빠르게 반영되어 세계가 계속 변합니다."
         },
         {
           "index": "03",
           "title": "커뮤니티 경쟁",
-          "body": "개인, 지역, 커뮤니티가 같은 지도 위에서 협력하고 경쟁합니다."
+          "body": "개인과 지역, 커뮤니티가 같은 지도 위에서 협력하고 경쟁합니다."
         }
       ],
       "processEyebrow": "CORE LOOP",
@@ -335,8 +335,8 @@
           "body": "다른 플레이어와 지역 단위의 움직임을 만들어냅니다."
         }
       ],
-      "closingTitle": "PixelWar는 현재 개발 중입니다.",
-      "closingBody": "글로벌 사용자가 같은 지도 위에서 움직이는 플레이 가능한 데모를 확장하고 있습니다."
+      "closingTitle": "현재 플레이 가능한 데모를 개발하고 있습니다.",
+      "closingBody": "과한 설명보다 실제 플레이 경험으로 보여주는 것을 목표로 하고 있습니다."
     }
   }
 }
