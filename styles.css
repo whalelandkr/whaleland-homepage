@@ -1833,3 +1833,166 @@ body {
   }
 }
 
+
+/* --------------------------------------------------------------------------
+   PixelWar compact service presentation
+   -------------------------------------------------------------------------- */
+body[data-theme="pixelwar"] {
+  background: #f7f9fc;
+}
+
+body[data-theme="pixelwar"] .page-grain { display: none; }
+
+body[data-theme="pixelwar"] .service-hero {
+  min-height: auto;
+  padding-top: 126px;
+  padding-bottom: 76px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+  gap: 44px;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(111, 124, 255, .24), transparent 27%),
+    radial-gradient(circle at 20% 76%, rgba(49, 130, 246, .22), transparent 30%),
+    linear-gradient(145deg, #0b1020, #111b35 60%, #13274b);
+}
+
+body[data-theme="pixelwar"] .service-hero::after { display: none; }
+
+body[data-theme="pixelwar"] .service-hero-title {
+  max-width: 760px;
+  font-size: clamp(2.8rem, 5vw, 5.4rem);
+  line-height: 1.02;
+  letter-spacing: -.055em;
+}
+
+body[data-theme="pixelwar"] .service-hero-lead {
+  max-width: 610px;
+  margin-top: 22px;
+  line-height: 1.72;
+}
+
+body[data-theme="pixelwar"] .service-art {
+  min-height: 390px;
+}
+
+body[data-theme="pixelwar"] .service-art-orbit {
+  width: min(410px, 82vw);
+  opacity: .5;
+}
+
+body[data-theme="pixelwar"] .service-art-frame {
+  width: min(350px, 74vw);
+  padding: 24px;
+  border-radius: 30px;
+  background: rgba(255,255,255,.96);
+}
+
+body[data-theme="pixelwar"] .service-art-caption {
+  bottom: 0;
+  max-width: 360px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+body[data-theme="pixelwar"] .statement-section {
+  padding-top: 82px;
+  padding-bottom: 56px;
+  background: #fff;
+}
+
+body[data-theme="pixelwar"] .statement-grid {
+  max-width: 1100px;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 48px;
+}
+
+body[data-theme="pixelwar"] .statement-title {
+  font-size: clamp(2.25rem, 4.5vw, 4.5rem);
+  line-height: 1.04;
+}
+
+body[data-theme="pixelwar"] .statement-body {
+  margin-top: 26px;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+body[data-theme="pixelwar"] .feature-section {
+  padding-top: 70px;
+  padding-bottom: 88px;
+  background: #f7f9fc;
+}
+
+body[data-theme="pixelwar"] .feature-section .section-head {
+  display: block;
+  max-width: 760px;
+}
+
+body[data-theme="pixelwar"] .feature-section .section-title {
+  font-size: clamp(2.2rem, 4vw, 4.2rem);
+  line-height: 1.04;
+}
+
+body[data-theme="pixelwar"] .feature-grid {
+  margin-top: 34px;
+  gap: 14px;
+}
+
+body[data-theme="pixelwar"] .feature-card {
+  min-height: 220px;
+  padding: 24px;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(8,33,63,.07);
+}
+
+body[data-theme="pixelwar"] .feature-card h3 {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+body[data-theme="pixelwar"] .feature-card p {
+  margin-top: 10px;
+  line-height: 1.68;
+}
+
+body[data-theme="pixelwar"] .process-section {
+  display: none;
+}
+
+body[data-theme="pixelwar"] .closing-section {
+  padding-top: 0;
+  padding-bottom: 88px;
+  background: #f7f9fc;
+}
+
+body[data-theme="pixelwar"] .closing-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 42px 48px;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(108,124,255,.28), transparent 26%),
+    linear-gradient(135deg,#0b1020,#15264b);
+}
+
+body[data-theme="pixelwar"] .closing-card h2 {
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.04;
+}
+
+body[data-theme="pixelwar"] .closing-card p {
+  margin-top: 14px;
+}
+
+@media (max-width: 900px) {
+  body[data-theme="pixelwar"] .service-hero {
+    grid-template-columns: 1fr;
+    padding-top: 104px;
+  }
+  body[data-theme="pixelwar"] .statement-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  body[data-theme="pixelwar"] .service-art {
+    min-height: 320px;
+  }
+}
